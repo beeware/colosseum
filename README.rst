@@ -53,7 +53,10 @@ Then, you can instantiate CSS nodes, and query the layout that results::
 Requesting the ``layout`` attribute of a CSSNode forces the box model to be
 evaluated. Once evaluated, the layout will be cached. Modifying any CSS
 property on a node will mark the layout as dirty, and the layout will be
-recomputed the next time the layout is accessed::
+recomputed the next time the layout is accessed. For example, if we switch
+the outer node to be a "column" flexBox, rather than a "row" flexBox,
+you'll see the coordinates of the child boxes update to reflect a vertical,
+rather than horizontal layout::
 
     >>> node.flexDirection = 'column'
     >>> print(node.layout)
