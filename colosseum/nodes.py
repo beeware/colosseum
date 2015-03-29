@@ -88,6 +88,9 @@ class CSSNode(object):
                 measure=None
             ):
 
+        self._parent = None
+        self.children = ChildList(self)
+
         self._width = width
         self._height = height
 
@@ -103,34 +106,11 @@ class CSSNode(object):
         self._flex = flex
 
         if margin:
-            try:
-                if len(margin) == 4:
-                    self._marginTop = margin[0]
-                    self._marginRight = margin[1]
-                    self._marginBottom = margin[2]
-                    self._marginLeft = margin[3]
-                elif len(margin) == 3:
-                    self._marginTop = margin[0]
-                    self._marginRight = margin[1]
-                    self._marginBottom = margin[2]
-                    self._marginLeft = margin[3]
-                elif len(margin) == 2:
-                    self._marginTop = margin[0]
-                    self._marginRight = margin[1]
-                    self._marginBottom = margin[0]
-                    self._marginLeft = margin[1]
-                elif len(margin) == 1:
-                    self._marginTop = margin[0]
-                    self._marginRight = margin[0]
-                    self._marginBottom = margin[0]
-                    self._marginLeft = margin[0]
-                else:
-                    raise Exception('Invalid margin definition')
-            except TypeError:
-                self._marginTop = margin
-                self._marginRight = margin
-                self._marginBottom = margin
-                self._marginLeft = margin
+            self._marginTop = None
+            self._marginRight = None
+            self._marginBottom = None
+            self._marginLeft = None
+            self.margin = margin
         else:
             self._marginTop = marginTop
             self._marginRight = marginRight
@@ -138,34 +118,11 @@ class CSSNode(object):
             self._marginLeft = marginLeft
 
         if padding:
-            try:
-                if len(padding) == 4:
-                    self._paddingTop = padding[0]
-                    self._paddingRight = padding[1]
-                    self._paddingBottom = padding[2]
-                    self._paddingLeft = padding[3]
-                elif len(padding) == 3:
-                    self._paddingTop = padding[0]
-                    self._paddingRight = padding[1]
-                    self._paddingBottom = padding[2]
-                    self._paddingLeft = padding[3]
-                elif len(padding) == 2:
-                    self._paddingTop = padding[0]
-                    self._paddingRight = padding[1]
-                    self._paddingBottom = padding[0]
-                    self._paddingLeft = padding[1]
-                elif len(padding) == 1:
-                    self._paddingTop = padding[0]
-                    self._paddingRight = padding[0]
-                    self._paddingBottom = padding[0]
-                    self._paddingLeft = padding[0]
-                else:
-                    raise Exception('Invalid padding definition')
-            except TypeError:
-                self._paddingTop = padding
-                self._paddingRight = padding
-                self._paddingBottom = padding
-                self._paddingLeft = padding
+            self._paddingTop = None
+            self._paddingRight = None
+            self._paddingBottom = None
+            self._paddingLeft = None
+            self.padding = padding
         else:
             self._paddingTop = paddingTop
             self._paddingRight = paddingRight
@@ -173,49 +130,22 @@ class CSSNode(object):
             self._paddingLeft = paddingLeft
 
         if borderWidth:
-            try:
-                if len(borderWidth) == 4:
-                    self._borderTopWidth = borderWidth[0]
-                    self._borderRightWidth = borderWidth[1]
-                    self._borderBottomWidth = borderWidth[2]
-                    self._borderLeftWidth = borderWidth[3]
-                elif len(borderWidth) == 3:
-                    self._borderTopWidth = borderWidth[0]
-                    self._borderRightWidth = borderWidth[1]
-                    self._borderBottomWidth = borderWidth[2]
-                    self._borderLeftWidth = borderWidth[3]
-                elif len(borderWidth) == 2:
-                    self._borderTopWidth = borderWidth[0]
-                    self._borderRightWidth = borderWidth[1]
-                    self._borderBottomWidth = borderWidth[0]
-                    self._borderLeftWidth = borderWidth[1]
-                elif len(borderWidth) == 1:
-                    self._borderTopWidth = borderWidth[0]
-                    self._borderRightWidth = borderWidth[0]
-                    self._borderBottomWidth = borderWidth[0]
-                    self._borderLeftWidth = borderWidth[0]
-                else:
-                    raise Exception('Invalid borderWidth definition')
-            except TypeError:
-                self._borderTopWidth = borderWidth
-                self._borderRightWidth = borderWidth
-                self._borderBottomWidth = borderWidth
-                self._borderLeftWidth = borderWidth
+            self._borderTopWidth = None
+            self._borderRightWidth = None
+            self._borderBottomWidth = None
+            self._borderLeftWidth = None
+            self.borderWidth = borderWidth
         else:
             self._borderTopWidth = borderTopWidth
-            self._borderLeftWidth = borderLeftWidth
-            self._borderBottomWidth = borderBottomWidth
             self._borderRightWidth = borderRightWidth
-
+            self._borderBottomWidth = borderBottomWidth
+            self._borderLeftWidth = borderLeftWidth
 
         self._justifyContent = justifyContent
         self._alignItems = alignItems
         self._alignSelf = alignSelf
 
         self.measure = measure
-
-        self._parent = None
-        self.children = ChildList(self)
 
         self._dirty = True
         self._layout = Layout()
@@ -335,6 +265,41 @@ class CSSNode(object):
             self.dirty = True
 
     @property
+    def margin(self):
+        return (self._marginTop, self._marginRight, self._marginBottom, self._marginLeft)
+
+    @margin.setter
+    def margin(self, value):
+        try:
+            if len(value) == 4:
+                self.marginTop = value[0]
+                self.marginRight = value[1]
+                self.marginBottom = value[2]
+                self.marginLeft = value[3]
+            elif len(value) == 3:
+                self.marginTop = value[0]
+                self.marginRight = value[1]
+                self.marginBottom = value[2]
+                self.marginLeft = value[3]
+            elif len(value) == 2:
+                self.marginTop = value[0]
+                self.marginRight = value[1]
+                self.marginBottom = value[0]
+                self.marginLeft = value[1]
+            elif len(value) == 1:
+                self.marginTop = value[0]
+                self.marginRight = value[0]
+                self.marginBottom = value[0]
+                self.marginLeft = value[0]
+            else:
+                raise Exception('Invalid margin definition')
+        except TypeError:
+            self.marginTop = value
+            self.marginRight = value
+            self.marginBottom = value
+            self.marginLeft = value
+
+    @property
     def marginTop(self):
         return self._marginTop
 
@@ -373,6 +338,41 @@ class CSSNode(object):
         if value != self._marginLeft:
             self._marginLeft = value
             self.dirty = True
+
+    @property
+    def padding(self):
+        return (self._paddingTop, self._paddingRight, self._paddingBottom, self._paddingLeft)
+
+    @padding.setter
+    def padding(self, value):
+        try:
+            if len(value) == 4:
+                self.paddingTop = value[0]
+                self.paddingRight = value[1]
+                self.paddingBottom = value[2]
+                self.paddingLeft = value[3]
+            elif len(value) == 3:
+                self.paddingTop = value[0]
+                self.paddingRight = value[1]
+                self.paddingBottom = value[2]
+                self.paddingLeft = value[3]
+            elif len(value) == 2:
+                self.paddingTop = value[0]
+                self.paddingRight = value[1]
+                self.paddingBottom = value[0]
+                self.paddingLeft = value[1]
+            elif len(value) == 1:
+                self.paddingTop = value[0]
+                self.paddingRight = value[0]
+                self.paddingBottom = value[0]
+                self.paddingLeft = value[0]
+            else:
+                raise Exception('Invalid padding definition')
+        except TypeError:
+            self.paddingTop = value
+            self.paddingRight = value
+            self.paddingBottom = value
+            self.paddingLeft = value
 
     @property
     def paddingTop(self):
@@ -414,6 +414,41 @@ class CSSNode(object):
             self._paddingLeft = value
             self.dirty = True
 
+
+    @property
+    def borderWidth(self):
+        return (self._borderTopWidth, self._borderRightWidth, self._borderBottomWidth, self._borderLeftWidth)
+
+    @borderWidth.setter
+    def borderWidth(self, value):
+        try:
+            if len(value) == 4:
+                self.borderTopWidth = value[0]
+                self.borderRightWidth = value[1]
+                self.borderBottomWidth = value[2]
+                self.borderLeftWidth = value[3]
+            elif len(value) == 3:
+                self.borderTopWidth = value[0]
+                self.borderRightWidth = value[1]
+                self.borderBottomWidth = value[2]
+                self.borderLeftWidth = value[3]
+            elif len(value) == 2:
+                self.borderTopWidth = value[0]
+                self.borderRightWidth = value[1]
+                self.borderBottomWidth = value[0]
+                self.borderLeftWidth = value[1]
+            elif len(value) == 1:
+                self.borderTopWidth = value[0]
+                self.borderRightWidth = value[0]
+                self.borderBottomWidth = value[0]
+                self.borderLeftWidth = value[0]
+            else:
+                raise Exception('Invalid borderWidth definition')
+        except TypeError:
+            self.borderTopWidth = value
+            self.borderRightWidth = value
+            self.borderBottomWidth = value
+            self.borderLeftWidth = value
 
     @property
     def borderTopWidth(self):
@@ -500,11 +535,8 @@ class CSSNode(object):
     def padding_and_border(self, position):
         return getattr(self, 'padding' + position.title()) + getattr(self, 'border' + position.title() + 'Width')
 
-    def margin(self, position):
-        return getattr(self, 'margin' + position.title())
-
     def margin_for_axis(self, axis):
-        return self.margin(leading(axis)) + self.margin(trailing(axis))
+        return getattr(self, 'margin' + leading(axis).title()) + getattr(self, 'margin' + trailing(axis).title())
 
     def padding_and_border_for_axis(self, axis):
         return self.padding_and_border(leading(axis)) + self.padding_and_border(trailing(axis))
@@ -523,7 +555,7 @@ class CSSNode(object):
         return self.alignItems
 
     def dimension_with_margin(self, axis):
-        return getattr(self._layout, dimension(axis)) + self.margin(leading(axis)) + self.margin(trailing(axis))
+        return getattr(self._layout, dimension(axis)) + getattr(self, 'margin' + leading(axis).title()) + getattr(self, 'margin' + trailing(axis).title())
 
     @property
     def is_flex(self):
@@ -573,12 +605,12 @@ class CSSNode(object):
         setattr(
             self._layout,
             leading(main_axis),
-            getattr(self._layout, leading(main_axis)) + self.margin(leading(main_axis)) + self.relative_position(main_axis)
+            getattr(self._layout, leading(main_axis)) + getattr(self, 'margin' + leading(main_axis).title()) + self.relative_position(main_axis)
         )
         setattr(
             self._layout,
             leading(cross_axis),
-            getattr(self._layout, leading(cross_axis)) + self.margin(leading(cross_axis)) + self.relative_position(cross_axis)
+            getattr(self._layout, leading(cross_axis)) + getattr(self, 'margin' + leading(cross_axis).title()) + self.relative_position(cross_axis)
         )
 
         if self.measure:
@@ -809,7 +841,7 @@ class CSSNode(object):
                     setattr(
                         child._layout,
                         position(main_axis),
-                        getattr(child, leading(main_axis)) + getattr(self, 'border' + leading(main_axis).title() + 'Width') + child.margin(leading(main_axis))
+                        getattr(child, leading(main_axis)) + getattr(self, 'border' + leading(main_axis).title() + 'Width') + getattr(child, 'margin' + leading(main_axis).title())
                     )
                 else:
                     # If the child is position absolute (without top/left) or relative,
@@ -863,7 +895,7 @@ class CSSNode(object):
                     setattr(
                         child._layout,
                         position(cross_axis),
-                        getattr(child, leading(cross_axis)) + getattr(self, 'border' + leading(cross_axis).title() + 'Width') + child.margin(leading(cross_axis))
+                        getattr(child, leading(cross_axis)) + getattr(self, 'border' + leading(cross_axis).title() + 'Width') + getattr(child, 'margin' + leading(cross_axis).title())
                     )
 
                 else:
