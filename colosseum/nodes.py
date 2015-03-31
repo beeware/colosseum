@@ -698,15 +698,15 @@ class CSSNode(object):
             # We only need to give a dimension for the text if we haven't got any
             # for it computed yet. It can either be from the style attribute or because
             # the element is flexible.
-            isRowUndefined = not self.dimension_is_defined(ROW) and getattr(self._layout, dimension(ROW)) is None
-            isColumnUndefined = not self.dimension_is_defined(COLUMN) and getattr(self._layout, dimension(COLUMN)) is None
+            row_undefined = not self.dimension_is_defined(ROW) and getattr(self._layout, dimension(ROW)) is None
+            column_undefined = not self.dimension_is_defined(COLUMN) and getattr(self._layout, dimension(COLUMN)) is None
 
             # Let's not measure the text if we already know both dimensions
-            if isRowUndefined or isColumnUndefined:
+            if row_undefined or column_undefined:
                 measureDim = self.measure(width)
-                if (isRowUndefined):
+                if row_undefined:
                     self._layout.width = measureDim['width'] + self.padding_and_border_for_axis(ROW)
-                if (isColumnUndefined):
+                if column_undefined:
                     self._layout.height = measureDim['height'] + self.padding_and_border_for_axis(COLUMN)
             return
 
@@ -896,21 +896,21 @@ class CSSNode(object):
                         # And we recursively call the layout algorithm for this child
                         child._calculate_layout(maxWidth)
 
-            # We use justifyContent to figure out how to allocate the remaining
+            # We use justify_content to figure out how to allocate the remaining
             # space available
             else:
-                justifyContent = self.justifyContent
-                if justifyContent == CENTER:
+                justify_content = self.justifyContent
+                if justify_content == CENTER:
                     leading_main_dim = remaining_main_dim / 2.0
-                elif justifyContent == FLEX_END:
+                elif justify_content == FLEX_END:
                     leading_main_dim = remaining_main_dim
-                elif justifyContent == SPACE_BETWEEN:
+                elif justify_content == SPACE_BETWEEN:
                     remaining_main_dim = max(remaining_main_dim, 0)
                     if flexible_children_count + non_flexible_children_count - 1 != 0:
                         between_main_dim = remaining_main_dim / (flexible_children_count + non_flexible_children_count - 1)
                     else:
                         between_main_dim = 0
-                elif (justifyContent == SPACE_AROUND):
+                elif (justify_content == SPACE_AROUND):
                     # Space on the edges is half of the space between elements
                     between_main_dim = remaining_main_dim / (flexible_children_count + non_flexible_children_count)
                     leading_main_dim = between_main_dim / 2.0
@@ -953,11 +953,11 @@ class CSSNode(object):
                     # can only be one element in that cross dimension.
                     cross_dim = max(cross_dim, child.boundAxis(cross_axis, child.dimension_with_margin(cross_axis)))
 
-            containerMainAxis = getattr(self._layout, dimension(main_axis))
+            container_main_axis = getattr(self._layout, dimension(main_axis))
             # If the user didn't specify a width or height, and it has not been set
             # by the container, then we set it via the children.
-            if containerMainAxis is None:
-                containerMainAxis = max(
+            if container_main_axis is None:
+                container_main_axis = max(
                     # We're missing the last padding at this point to get the final
                     # dimension
                     self.boundAxis(main_axis, main_dim + self.padding_and_border(trailing(main_axis))),
@@ -965,9 +965,9 @@ class CSSNode(object):
                     self.padding_and_border_for_axis(main_axis)
                 )
 
-            containerCrossAxis = getattr(self._layout, dimension(cross_axis))
+            container_cross_axis = getattr(self._layout, dimension(cross_axis))
             if getattr(self._layout, dimension(cross_axis)) is None:
-                containerCrossAxis = max(
+                container_cross_axis = max(
                     # For the cross dim, we add both sides at the end because the value
                     # is aggregate via a max function. Intermediate negative values
                     # can mess this computation otherwise
@@ -976,7 +976,6 @@ class CSSNode(object):
                 )
 
             # <Loop D> Position elements in the cross axis
-
             for child in self.children[start_line:end_line]:
                 if child.position == ABSOLUTE and child.position_is_defined(leading(cross_axis)):
                     # In case the child is absolutely positionned and has a
@@ -1004,7 +1003,7 @@ class CSSNode(object):
                                     dimension(cross_axis),
                                     max(
                                         child.boundAxis(cross_axis,
-                                            containerCrossAxis
+                                            container_cross_axis
                                             - self.padding_and_border_for_axis(cross_axis)
                                             - child.margin_for_axis(cross_axis)
                                         ),
@@ -1015,7 +1014,7 @@ class CSSNode(object):
                         elif alignItem != FLEX_START:
                             # The remaining space between the parent dimensions+padding and child
                             # dimensions+margin.
-                            remainingCrossDim = containerCrossAxis - self.padding_and_border_for_axis(cross_axis) - child.dimension_with_margin(cross_axis)
+                            remainingCrossDim = container_cross_axis - self.padding_and_border_for_axis(cross_axis) - child.dimension_with_margin(cross_axis)
 
                             if alignItem == CENTER:
                                 leadingCrossDim = leadingCrossDim + remainingCrossDim / 2
