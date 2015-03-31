@@ -1,5 +1,5 @@
 # Derived from https://github.com/facebook/css-layout
-# Tests match hash: a7a8d1d40dd08a25f8da0f08d2569b3f5ee171c5
+# Tests match hash: 2b6844f00acc3166ba9d57f49acebd0146e6007e in freakboy3742 minmax branch
 
 try:
     from unittest import TestCase, expectedFailure
@@ -1790,6 +1790,312 @@ class LayoutEngineTest(TestCase):
                 'width': 0, 'height': 0, 'top': 0, 'left': 0,
                 CHILDREN: [
                     {'width': 100, 'height': BIG_HEIGHT, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    def test_should_use_max_bounds(self):
+        self.assertLayout(
+            {STYLE: {'width': 100, 'height': 200, 'maxWidth': 90, 'maxHeight': 190}},
+            {'width': 90, 'height': 190, 'top': 0, 'left': 0}
+        )
+
+    def test_should_use_min_bounds(self):
+        self.assertLayout(
+            {STYLE: {'width': 100, 'height': 200, 'minWidth': 110, 'minHeight': 210}},
+            {'width': 110, 'height': 210, 'top': 0, 'left': 0}
+        )
+
+    def test_should_use_min_bounds_over_max_bounds(self):
+        self.assertLayout(
+            {STYLE: {'width': 100, 'height': 200, 'minWidth': 110, 'maxWidth': 90, 'minHeight': 210, 'maxHeight': 190}},
+            {'width': 110, 'height': 210, 'top': 0, 'left': 0}
+        )
+
+    def test_should_use_min_bounds_over_max_bounds_and_natural_width(self):
+        self.assertLayout(
+            {STYLE: {'width': 100, 'height': 200, 'minWidth': 90, 'maxWidth': 80, 'minHeight': 190, 'maxHeight': 180}},
+            {'width': 90, 'height': 190, 'top': 0, 'left': 0}
+        )
+
+    def test_should_ignore_negative_min_bounds(self):
+        self.assertLayout(
+            {STYLE: {'width': 100, 'height': 200, 'minWidth': -10, 'minHeight': -20}},
+            {'width': 100, 'height': 200, 'top': 0, 'left': 0}
+        )
+
+    def test_should_ignore_negative_max_bounds(self):
+        self.assertLayout(
+            {STYLE: {'width': 100, 'height': 200, 'maxWidth': -10, 'maxHeight': -20}},
+            {'width': 100, 'height': 200, 'top': 0, 'left': 0}
+        )
+
+    def test_should_use_padded_size_over_max_bounds(self):
+        self.assertLayout(
+            {STYLE: {'paddingTop': 15, 'paddingBottom': 15, 'paddingLeft': 20, 'paddingRight': 20, 'maxWidth': 30, 'maxHeight': 10}},
+            {'width': 40, 'height': 30, 'top': 0, 'left': 0}
+        )
+
+    def test_should_use_min_size_over_padded_size(self):
+        self.assertLayout(
+            {STYLE: {'paddingTop': 15, 'paddingBottom': 15, 'paddingLeft': 20, 'paddingRight': 20, 'minWidth': 50, 'minHeight': 40}},
+            {'width': 50, 'height': 40, 'top': 0, 'left': 0}
+        )
+
+    def test_should_override_flex_direction_size_with_min_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200, 'flexDirection': 'row'},
+                CHILDREN: [
+                    {STYLE: {'flex': 1}},
+                    {STYLE: {'flex': 1, 'minWidth': 200}},
+                    {STYLE: {'flex': 1}}
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 50, 'height': 200, 'top': 0, 'left': 0},
+                    {'width': 200, 'height': 200, 'top': 0, 'left': 50},
+                    {'width': 50, 'height': 200, 'top': 0, 'left': 250}
+                ]
+            }
+        )
+
+    def test_should_not_override_flex_direction_size_within_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200, 'flexDirection': 'row'},
+                CHILDREN: [
+                    {STYLE: {'flex': 1}},
+                    {STYLE: {'flex': 1, 'minWidth': 90, 'maxWidth': 110}},
+                    {STYLE: {'flex': 1}}
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 100, 'height': 200, 'top': 0, 'left': 0},
+                    {'width': 100, 'height': 200, 'top': 0, 'left': 100},
+                    {'width': 100, 'height': 200, 'top': 0, 'left': 200}
+                ]
+            }
+        )
+
+    def test_should_override_flex_direction_size_with_max_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200, 'flexDirection':'row'},
+                CHILDREN: [
+                    {STYLE: {'flex': 1}},
+                    {STYLE: {'flex': 1, 'maxWidth': 60}},
+                    {STYLE: {'flex': 1}}
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 120, 'height': 200, 'top': 0, 'left': 0},
+                    {'width': 60, 'height': 200, 'top': 0, 'left': 120},
+                    {'width': 120, 'height': 200, 'top': 0, 'left': 180}
+                ]
+            }
+        )
+
+    def test_should_pre_fill_child_size_within_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200},
+                CHILDREN: [
+                    {STYLE: {'flex': 1, 'minWidth': 290, 'maxWidth': 310}},
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 300, 'height': 200, 'top': 0, 'left': 0},
+                ]
+            }
+        )
+
+    def test_should_pre_fill_child_size_within_max_bound(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200},
+                CHILDREN: [
+                    {STYLE: {'flex': 1, 'maxWidth': 290}},
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 290, 'height': 200, 'top': 0, 'left': 0},
+                ]
+            }
+        )
+
+    def test_should_pre_fill_child_size_within_min_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200},
+                CHILDREN: [
+                    {STYLE: {'flex': 1, 'minWidth': 310}},
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 310, 'height': 200, 'top': 0, 'left': 0},
+                ]
+            }
+        )
+
+    def test_should_set_parents_size_based_on_bounded_children(self):
+        self.assertLayout(
+            {
+                STYLE: {'minWidth': 100, 'maxWidth': 300, 'minHeight': 500, 'maxHeight': 700},
+                CHILDREN: [
+                    {STYLE: {'width': 200, 'height': 300}},
+                    {STYLE: {'width': 200, 'height': 300}},
+                ]
+            },
+            {
+                'width': 200, 'height': 600, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 200, 'height': 300, 'top': 0, 'left': 0},
+                    {'width': 200, 'height': 300, 'top': 300, 'left': 0},
+                ]
+            }
+        )
+
+    def test_should_set_parents_size_based_on_max_bounded_children(self):
+        self.assertLayout(
+            {
+                STYLE: {'maxWidth': 100, 'maxHeight': 500},
+                CHILDREN: [
+                    {STYLE: {'width': 200, 'height': 300}},
+                    {STYLE: {'width': 200, 'height': 300}},
+                ]
+            },
+            {
+                'width': 100, 'height': 500, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 200, 'height': 300, 'top': 0, 'left': 0},
+                    {'width': 200, 'height': 300, 'top': 300, 'left': 0},
+                ]
+            }
+        )
+
+    def test_should_set_parents_size_based_on_min_bounded_children(self):
+        self.assertLayout(
+            {
+                STYLE: {'minWidth': 300, 'minHeight': 700},
+                CHILDREN: [
+                    {STYLE: {'width': 200, 'height': 300}},
+                    {STYLE: {'width': 200, 'height': 300}},
+                ]
+            },
+            {
+                'width': 300, 'height': 700, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 200, 'height': 300, 'top': 0, 'left': 0},
+                    {'width': 200, 'height': 300, 'top': 300, 'left': 0},
+                ]
+            }
+        )
+
+    def test_should_keep_stretched_size_within_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 1000, 'alignItems': 'stretch'},
+                CHILDREN: [
+                    {STYLE: {'height': 100, 'minHeight': 90, 'maxHeight': 110, 'minWidth': 900, 'maxWidth': 1100}}
+                ]
+            },
+            {
+                'width': 1000, 'height': 100, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 1000, 'height': 100, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    def test_should_keep_stretched_size_within_max_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 1000, 'alignItems': 'stretch'},
+                CHILDREN: [
+                    {STYLE: {'height': 100, 'maxHeight': 90, 'maxWidth': 900}}
+                ]
+            },
+            {
+                'width': 1000, 'height': 90, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 900, 'height': 90, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    def test_should_keep_stretched_size_within_min_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 1000, 'alignItems': 'stretch'},
+                CHILDREN: [
+                    {STYLE: {'height': 100, 'minHeight': 110, 'minWidth': 1100}}
+                ]
+            },
+            {
+                'width': 1000, 'height': 110, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 1100, 'height': 110, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    def test_should_keep_cross_axis_size_within_min_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 1000, 'flexDirection': 'row'},
+                CHILDREN: [
+                    {STYLE: {'height': 100, 'minHeight': 110, 'minWidth': 100}}
+                ]
+            },
+            {
+                'width': 1000, 'height': 110, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 100, 'height': 110, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    def test_should_layout_node_with_position_absolute_top_and_left_and_max_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 1000, 'height': 1000},
+                CHILDREN: [
+                    {STYLE: {'position': 'absolute', 'top': 100, 'left': 100, 'bottom': 100, 'right': 100, 'maxWidth': 500, 'maxHeight': 600}}
+                ]
+            },
+            {
+                'width': 1000, 'height': 1000, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 500, 'height': 600, 'top': 100, 'left': 100},
+                ]
+            }
+        )
+
+    def test_should_layout_node_with_position_absolute_top_and_left_and_min_bounds(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 1000, 'height': 1000},
+                CHILDREN: [
+                    {STYLE: {'position': 'absolute', 'top': 100, 'left': 100, 'bottom': 100, 'right': 100, 'minWidth': 900, 'minHeight': 1000}}
+                ]
+            },
+            {
+                'width': 1000, 'height': 1000, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 900, 'height': 1000, 'top': 100, 'left': 100},
                 ]
             }
         )

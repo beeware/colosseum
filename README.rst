@@ -9,6 +9,8 @@ The following CSS attributes and value types are supported:
 Name                                                                               Value
 =================================================================================  =========================================================
 width, height                                                                      positive number
+minWidth, minHeight                                                                positive number
+maxWidth, maxHeight                                                                positive number
 left, right, top, bottom                                                           number
 margin, marginLeft, marginRight, marginTop, marginBottom                           number
 padding, paddingLeft, paddingRight, paddingTop, paddingBottom                      positive number
