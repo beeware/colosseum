@@ -79,14 +79,14 @@ class CSSNode(object):
 
     def __init__(self,
                 width=None, height=None,
-                minWidth=None, maxWidth=None, minHeight=None, maxHeight=None,
+                min_width=None, max_width=None, min_height=None, max_height=None,
                 top=None, bottom=None, left=None, right=None,
                 position=RELATIVE,
-                flexDirection=COLUMN, flexWrap=NOWRAP, flex=None,
-                margin=None, marginTop=0, marginBottom=0, marginLeft=0, marginRight=0,
-                padding=None, paddingTop=0, paddingBottom=0, paddingLeft=0, paddingRight=0,
-                borderWidth=None, borderTopWidth=0, borderBottomWidth=0, borderRightWidth=0, borderLeftWidth=0,
-                justifyContent=FLEX_START, alignItems=STRETCH, alignSelf=AUTO,
+                flex_direction=COLUMN, flex_wrap=NOWRAP, flex=None,
+                margin=None, margin_top=0, margin_bottom=0, margin_left=0, margin_right=0,
+                padding=None, padding_top=0, padding_bottom=0, padding_left=0, padding_right=0,
+                border_width=None, border_top_width=0, border_bottom_width=0, border_right_width=0, border_left_width=0,
+                justify_content=FLEX_START, align_items=STRETCH, align_self=AUTO,
                 measure=None
             ):
 
@@ -95,11 +95,11 @@ class CSSNode(object):
 
         self._width = width
         self._height = height
-        self._minWidth = minWidth
+        self._min_width = min_width
 
-        self._minHeight = minHeight
-        self._maxWidth = maxWidth
-        self._maxHeight = maxHeight
+        self._min_height = min_height
+        self._max_width = max_width
+        self._max_height = max_height
 
         self._position = position
 
@@ -108,49 +108,49 @@ class CSSNode(object):
         self._left = left
         self._right = right
 
-        self._flexDirection = flexDirection
-        self._flexWrap = flexWrap
+        self._flex_direction = flex_direction
+        self._flex_wrap = flex_wrap
         self._flex = flex
 
         if margin:
-            self._marginTop = None
-            self._marginRight = None
-            self._marginBottom = None
-            self._marginLeft = None
+            self._margin_top = None
+            self._margin_right = None
+            self._margin_bottom = None
+            self._margin_left = None
             self.margin = margin
         else:
-            self._marginTop = marginTop
-            self._marginRight = marginRight
-            self._marginBottom = marginBottom
-            self._marginLeft = marginLeft
+            self._margin_top = margin_top
+            self._margin_right = margin_right
+            self._margin_bottom = margin_bottom
+            self._margin_left = margin_left
 
         if padding:
-            self._paddingTop = None
-            self._paddingRight = None
-            self._paddingBottom = None
-            self._paddingLeft = None
+            self._padding_top = None
+            self._padding_right = None
+            self._padding_bottom = None
+            self._padding_left = None
             self.padding = padding
         else:
-            self._paddingTop = paddingTop
-            self._paddingRight = paddingRight
-            self._paddingBottom = paddingBottom
-            self._paddingLeft = paddingLeft
+            self._padding_top = padding_top
+            self._padding_right = padding_right
+            self._padding_bottom = padding_bottom
+            self._padding_left = padding_left
 
-        if borderWidth:
-            self._borderTopWidth = None
-            self._borderRightWidth = None
-            self._borderBottomWidth = None
-            self._borderLeftWidth = None
-            self.borderWidth = borderWidth
+        if border_width:
+            self._border_top_width = None
+            self._border_right_width = None
+            self._border_bottom_width = None
+            self._border_left_width = None
+            self.border_width = border_width
         else:
-            self._borderTopWidth = borderTopWidth
-            self._borderRightWidth = borderRightWidth
-            self._borderBottomWidth = borderBottomWidth
-            self._borderLeftWidth = borderLeftWidth
+            self._border_top_width = border_top_width
+            self._border_right_width = border_right_width
+            self._border_bottom_width = border_bottom_width
+            self._border_left_width = border_left_width
 
-        self._justifyContent = justifyContent
-        self._alignItems = alignItems
-        self._alignSelf = alignSelf
+        self._justify_content = justify_content
+        self._align_items = align_items
+        self._align_self = align_self
 
         self.measure = measure
 
@@ -192,43 +192,43 @@ class CSSNode(object):
             self.dirty = True
 
     @property
-    def minWidth(self):
-        return self._minWidth
+    def min_width(self):
+        return self._min_width
 
-    @minWidth.setter
-    def minWidth(self, value):
-        if value != self._minWidth:
-            self._minWidth = value
+    @min_width.setter
+    def min_width(self, value):
+        if value != self._min_width:
+            self._min_width = value
             self.dirty = True
 
     @property
-    def minHeight(self):
-        return self._minHeight
+    def min_height(self):
+        return self._min_height
 
-    @minHeight.setter
-    def minHeight(self, value):
-        if value != self._minHeight:
-            self._minHeight = value
+    @min_height.setter
+    def min_height(self, value):
+        if value != self._min_height:
+            self._min_height = value
             self.dirty = True
 
     @property
-    def maxWidth(self):
-        return self._maxWidth
+    def max_width(self):
+        return self._max_width
 
-    @maxWidth.setter
-    def maxWidth(self, value):
-        if value != self._maxWidth:
-            self._maxWidth = value
+    @max_width.setter
+    def max_width(self, value):
+        if value != self._max_width:
+            self._max_width = value
             self.dirty = True
 
     @property
-    def maxHeight(self):
-        return self._maxHeight
+    def max_height(self):
+        return self._max_height
 
-    @maxHeight.setter
-    def maxHeight(self, value):
-        if value != self._maxHeight:
-            self._maxHeight = value
+    @max_height.setter
+    def max_height(self, value):
+        if value != self._max_height:
+            self._max_height = value
             self.dirty = True
 
     @property
@@ -282,23 +282,23 @@ class CSSNode(object):
             self.dirty = True
 
     @property
-    def flexDirection(self):
-        return self._flexDirection
+    def flex_direction(self):
+        return self._flex_direction
 
-    @flexDirection.setter
-    def flexDirection(self, value):
-        if value != self._flexDirection:
-            self._flexDirection = value
+    @flex_direction.setter
+    def flex_direction(self, value):
+        if value != self._flex_direction:
+            self._flex_direction = value
             self.dirty = True
 
     @property
-    def flexWrap(self):
-        return self._flexWrap
+    def flex_wrap(self):
+        return self._flex_wrap
 
-    @flexWrap.setter
-    def flexWrap(self, value):
-        if value != self._flexWrap:
-            self._flexWrap = value
+    @flex_wrap.setter
+    def flex_wrap(self, value):
+        if value != self._flex_wrap:
+            self._flex_wrap = value
             self.dirty = True
 
     @property
@@ -313,259 +313,259 @@ class CSSNode(object):
 
     @property
     def margin(self):
-        return (self._marginTop, self._marginRight, self._marginBottom, self._marginLeft)
+        return (self._margin_top, self._margin_right, self._margin_bottom, self._margin_left)
 
     @margin.setter
     def margin(self, value):
         try:
             if len(value) == 4:
-                self.marginTop = value[0]
-                self.marginRight = value[1]
-                self.marginBottom = value[2]
-                self.marginLeft = value[3]
+                self.margin_top = value[0]
+                self.margin_right = value[1]
+                self.margin_bottom = value[2]
+                self.margin_left = value[3]
             elif len(value) == 3:
-                self.marginTop = value[0]
-                self.marginRight = value[1]
-                self.marginBottom = value[2]
-                self.marginLeft = value[3]
+                self.margin_top = value[0]
+                self.margin_right = value[1]
+                self.margin_bottom = value[2]
+                self.margin_left = value[3]
             elif len(value) == 2:
-                self.marginTop = value[0]
-                self.marginRight = value[1]
-                self.marginBottom = value[0]
-                self.marginLeft = value[1]
+                self.margin_top = value[0]
+                self.margin_right = value[1]
+                self.margin_bottom = value[0]
+                self.margin_left = value[1]
             elif len(value) == 1:
-                self.marginTop = value[0]
-                self.marginRight = value[0]
-                self.marginBottom = value[0]
-                self.marginLeft = value[0]
+                self.margin_top = value[0]
+                self.margin_right = value[0]
+                self.margin_bottom = value[0]
+                self.margin_left = value[0]
             else:
                 raise Exception('Invalid margin definition')
         except TypeError:
-            self.marginTop = value
-            self.marginRight = value
-            self.marginBottom = value
-            self.marginLeft = value
+            self.margin_top = value
+            self.margin_right = value
+            self.margin_bottom = value
+            self.margin_left = value
 
     @property
-    def marginTop(self):
-        return self._marginTop
+    def margin_top(self):
+        return self._margin_top
 
-    @marginTop.setter
-    def marginTop(self, value):
-        if value != self._marginTop:
-            self._marginTop = value
+    @margin_top.setter
+    def margin_top(self, value):
+        if value != self._margin_top:
+            self._margin_top = value
             self.dirty = True
 
     @property
-    def marginRight(self):
-        return self._marginRight
+    def margin_right(self):
+        return self._margin_right
 
-    @marginRight.setter
-    def marginRight(self, value):
-        if value != self._marginRight:
-            self._marginRight = value
+    @margin_right.setter
+    def margin_right(self, value):
+        if value != self._margin_right:
+            self._margin_right = value
             self.dirty = True
 
     @property
-    def marginBottom(self):
-        return self._marginBottom
+    def margin_bottom(self):
+        return self._margin_bottom
 
-    @marginBottom.setter
-    def marginBottom(self, value):
-        if value != self._marginBottom:
-            self._marginBottom = value
+    @margin_bottom.setter
+    def margin_bottom(self, value):
+        if value != self._margin_bottom:
+            self._margin_bottom = value
             self.dirty = True
 
     @property
-    def marginLeft(self):
-        return self._marginLeft
+    def margin_left(self):
+        return self._margin_left
 
-    @marginLeft.setter
-    def marginLeft(self, value):
-        if value != self._marginLeft:
-            self._marginLeft = value
+    @margin_left.setter
+    def margin_left(self, value):
+        if value != self._margin_left:
+            self._margin_left = value
             self.dirty = True
 
     @property
     def padding(self):
-        return (self._paddingTop, self._paddingRight, self._paddingBottom, self._paddingLeft)
+        return (self._padding_top, self._padding_right, self._padding_bottom, self._padding_left)
 
     @padding.setter
     def padding(self, value):
         try:
             if len(value) == 4:
-                self.paddingTop = value[0]
-                self.paddingRight = value[1]
-                self.paddingBottom = value[2]
-                self.paddingLeft = value[3]
+                self.padding_top = value[0]
+                self.padding_right = value[1]
+                self.padding_bottom = value[2]
+                self.padding_left = value[3]
             elif len(value) == 3:
-                self.paddingTop = value[0]
-                self.paddingRight = value[1]
-                self.paddingBottom = value[2]
-                self.paddingLeft = value[3]
+                self.padding_top = value[0]
+                self.padding_right = value[1]
+                self.padding_bottom = value[2]
+                self.padding_left = value[3]
             elif len(value) == 2:
-                self.paddingTop = value[0]
-                self.paddingRight = value[1]
-                self.paddingBottom = value[0]
-                self.paddingLeft = value[1]
+                self.padding_top = value[0]
+                self.padding_right = value[1]
+                self.padding_bottom = value[0]
+                self.padding_left = value[1]
             elif len(value) == 1:
-                self.paddingTop = value[0]
-                self.paddingRight = value[0]
-                self.paddingBottom = value[0]
-                self.paddingLeft = value[0]
+                self.padding_top = value[0]
+                self.padding_right = value[0]
+                self.padding_bottom = value[0]
+                self.padding_left = value[0]
             else:
                 raise Exception('Invalid padding definition')
         except TypeError:
-            self.paddingTop = value
-            self.paddingRight = value
-            self.paddingBottom = value
-            self.paddingLeft = value
+            self.padding_top = value
+            self.padding_right = value
+            self.padding_bottom = value
+            self.padding_left = value
 
     @property
-    def paddingTop(self):
-        return self._paddingTop
+    def padding_top(self):
+        return self._padding_top
 
-    @paddingTop.setter
-    def paddingTop(self, value):
-        if value != self._paddingTop:
-            self._paddingTop = value
+    @padding_top.setter
+    def padding_top(self, value):
+        if value != self._padding_top:
+            self._padding_top = value
             self.dirty = True
 
     @property
-    def paddingRight(self):
-        return self._paddingRight
+    def padding_right(self):
+        return self._padding_right
 
-    @paddingRight.setter
-    def paddingRight(self, value):
-        if value != self._paddingRight:
-            self._paddingRight = value
+    @padding_right.setter
+    def padding_right(self, value):
+        if value != self._padding_right:
+            self._padding_right = value
             self.dirty = True
 
     @property
-    def paddingBottom(self):
-        return self._paddingBottom
+    def padding_bottom(self):
+        return self._padding_bottom
 
-    @paddingBottom.setter
-    def paddingBottom(self, value):
-        if value != self._paddingBottom:
-            self._paddingBottom = value
+    @padding_bottom.setter
+    def padding_bottom(self, value):
+        if value != self._padding_bottom:
+            self._padding_bottom = value
             self.dirty = True
 
     @property
-    def paddingLeft(self):
-        return self._paddingLeft
+    def padding_left(self):
+        return self._padding_left
 
-    @paddingLeft.setter
-    def paddingLeft(self, value):
-        if value != self._paddingLeft:
-            self._paddingLeft = value
+    @padding_left.setter
+    def padding_left(self, value):
+        if value != self._padding_left:
+            self._padding_left = value
             self.dirty = True
 
 
     @property
-    def borderWidth(self):
-        return (self._borderTopWidth, self._borderRightWidth, self._borderBottomWidth, self._borderLeftWidth)
+    def border_width(self):
+        return (self._border_top_width, self._border_right_width, self._border_bottom_width, self._border_left_width)
 
-    @borderWidth.setter
-    def borderWidth(self, value):
+    @border_width.setter
+    def border_width(self, value):
         try:
             if len(value) == 4:
-                self.borderTopWidth = value[0]
-                self.borderRightWidth = value[1]
-                self.borderBottomWidth = value[2]
-                self.borderLeftWidth = value[3]
+                self.border_top_width = value[0]
+                self.border_right_width = value[1]
+                self.border_bottom_width = value[2]
+                self.border_left_width = value[3]
             elif len(value) == 3:
-                self.borderTopWidth = value[0]
-                self.borderRightWidth = value[1]
-                self.borderBottomWidth = value[2]
-                self.borderLeftWidth = value[3]
+                self.border_top_width = value[0]
+                self.border_right_width = value[1]
+                self.border_bottom_width = value[2]
+                self.border_left_width = value[3]
             elif len(value) == 2:
-                self.borderTopWidth = value[0]
-                self.borderRightWidth = value[1]
-                self.borderBottomWidth = value[0]
-                self.borderLeftWidth = value[1]
+                self.border_top_width = value[0]
+                self.border_right_width = value[1]
+                self.border_bottom_width = value[0]
+                self.border_left_width = value[1]
             elif len(value) == 1:
-                self.borderTopWidth = value[0]
-                self.borderRightWidth = value[0]
-                self.borderBottomWidth = value[0]
-                self.borderLeftWidth = value[0]
+                self.border_top_width = value[0]
+                self.border_right_width = value[0]
+                self.border_bottom_width = value[0]
+                self.border_left_width = value[0]
             else:
-                raise Exception('Invalid borderWidth definition')
+                raise Exception('Invalid border_width definition')
         except TypeError:
-            self.borderTopWidth = value
-            self.borderRightWidth = value
-            self.borderBottomWidth = value
-            self.borderLeftWidth = value
+            self.border_top_width = value
+            self.border_right_width = value
+            self.border_bottom_width = value
+            self.border_left_width = value
 
     @property
-    def borderTopWidth(self):
-        return self._borderTopWidth
+    def border_top_width(self):
+        return self._border_top_width
 
-    @borderTopWidth.setter
-    def borderTopWidth(self, value):
-        if value != self._borderTopWidth:
-            self._borderTopWidth = value
+    @border_top_width.setter
+    def border_top_width(self, value):
+        if value != self._border_top_width:
+            self._border_top_width = value
             self.dirty = True
 
     @property
-    def borderRightWidth(self):
-        return self._borderRightWidth
+    def border_right_width(self):
+        return self._border_right_width
 
-    @borderRightWidth.setter
-    def borderRightWidth(self, value):
-        if value != self._borderRightWidth:
-            self._borderRightWidth = value
+    @border_right_width.setter
+    def border_right_width(self, value):
+        if value != self._border_right_width:
+            self._border_right_width = value
             self.dirty = True
 
     @property
-    def borderBottomWidth(self):
-        return self._borderBottomWidth
+    def border_bottom_width(self):
+        return self._border_bottom_width
 
-    @borderBottomWidth.setter
-    def borderBottomWidth(self, value):
-        if value != self._borderBottomWidth:
-            self._borderBottomWidth = value
+    @border_bottom_width.setter
+    def border_bottom_width(self, value):
+        if value != self._border_bottom_width:
+            self._border_bottom_width = value
             self.dirty = True
 
     @property
-    def borderLeftWidth(self):
-        return self._borderLeftWidth
+    def border_left_width(self):
+        return self._border_left_width
 
-    @borderLeftWidth.setter
-    def borderLeftWidth(self, value):
-        if value != self._borderLeftWidth:
-            self._borderLeftWidth = value
+    @border_left_width.setter
+    def border_left_width(self, value):
+        if value != self._border_left_width:
+            self._border_left_width = value
             self.dirty = True
 
 
     @property
-    def justifyContent(self):
-        return self._justifyContent
+    def justify_content(self):
+        return self._justify_content
 
-    @justifyContent.setter
-    def justifyContent(self, value):
-        if value != self._justifyContent:
-            self._justifyContent = value
+    @justify_content.setter
+    def justify_content(self, value):
+        if value != self._justify_content:
+            self._justify_content = value
             self.dirty = True
 
     @property
-    def alignItems(self):
-        return self._alignItems
+    def align_items(self):
+        return self._align_items
 
-    @alignItems.setter
-    def alignItems(self, value):
-        if value != self._alignItems:
-            self._alignItems = value
+    @align_items.setter
+    def align_items(self, value):
+        if value != self._align_items:
+            self._align_items = value
             self.dirty = True
 
     @property
-    def alignSelf(self):
-        return self._alignSelf
+    def align_self(self):
+        return self._align_self
 
-    @alignSelf.setter
-    def alignSelf(self, value):
-        if value != self._alignSelf:
-            self._alignSelf = value
+    @align_self.setter
+    def align_self(self, value):
+        if value != self._align_self:
+            self._align_self = value
             self.dirty = True
 
     ######################################################################
@@ -580,10 +580,10 @@ class CSSNode(object):
         return getattr(self, position) is not None
 
     def padding_and_border(self, position):
-        return getattr(self, 'padding' + position.title()) + getattr(self, 'border' + position.title() + 'Width')
+        return getattr(self, 'padding_' + position) + getattr(self, 'border_' + position + '_width')
 
     def margin_for_axis(self, axis):
-        return getattr(self, 'margin' + leading(axis).title()) + getattr(self, 'margin' + trailing(axis).title())
+        return getattr(self, 'margin_' + leading(axis)) + getattr(self, 'margin_' + trailing(axis))
 
     def padding_and_border_for_axis(self, axis):
         return self.padding_and_border(leading(axis)) + self.padding_and_border(trailing(axis))
@@ -596,13 +596,13 @@ class CSSNode(object):
         return -value if value is not None else 0
 
     def align_item(self, child):
-        if child.alignSelf != AUTO:
-            return child.alignSelf
+        if child.align_self != AUTO:
+            return child.align_self
 
-        return self.alignItems
+        return self.align_items
 
     def dimension_with_margin(self, axis):
-        return getattr(self._layout, dimension(axis)) + getattr(self, 'margin' + leading(axis).title()) + getattr(self, 'margin' + trailing(axis).title())
+        return getattr(self._layout, dimension(axis)) + getattr(self, 'margin_' + leading(axis)) + getattr(self, 'margin_' + trailing(axis))
 
     @property
     def is_flex(self):
@@ -610,13 +610,13 @@ class CSSNode(object):
 
     def boundAxis(self, axis, value):
         minValue = {
-            ROW: self.minWidth,
-            COLUMN: self.minHeight,
+            ROW: self.min_width,
+            COLUMN: self.min_height,
         }[axis]
 
         maxValue = {
-            ROW: self.maxWidth,
-            COLUMN: self.maxHeight,
+            ROW: self.max_width,
+            COLUMN: self.max_height,
         }[axis]
 
         boundValue = value
@@ -660,7 +660,7 @@ class CSSNode(object):
         for child in self.children:
             child._layout.reset()
 
-        main_axis = self.flexDirection
+        main_axis = self.flex_direction
         cross_axis = COLUMN if main_axis == ROW else ROW
 
         # Handle width and height style attributes
@@ -672,12 +672,12 @@ class CSSNode(object):
         setattr(
             self._layout,
             leading(main_axis),
-            getattr(self._layout, leading(main_axis)) + getattr(self, 'margin' + leading(main_axis).title()) + self.relative_position(main_axis)
+            getattr(self._layout, leading(main_axis)) + getattr(self, 'margin_' + leading(main_axis)) + self.relative_position(main_axis)
         )
         setattr(
             self._layout,
             leading(cross_axis),
-            getattr(self._layout, leading(cross_axis)) + getattr(self, 'margin' + leading(cross_axis).title()) + self.relative_position(cross_axis)
+            getattr(self._layout, leading(cross_axis)) + getattr(self, 'margin_' + leading(cross_axis)) + self.relative_position(cross_axis)
         )
 
         if self.measure:
@@ -800,19 +800,19 @@ class CSSNode(object):
                     next_content_dim = child.padding_and_border_for_axis(main_axis) + child.margin_for_axis(main_axis)
 
                 else:
-                    maxWidth = None;
+                    max_width = None;
                     if main_axis != ROW:
                         try:
-                            maxWidth = parent_max_width - self.margin_for_axis(ROW) - self.padding_and_border_for_axis(ROW)
+                            max_width = parent_max_width - self.margin_for_axis(ROW) - self.padding_and_border_for_axis(ROW)
                         except TypeError:
                             pass
 
                         if self.dimension_is_defined(ROW):
-                            maxWidth = getattr(self._layout, dimension(ROW)) - self.padding_and_border_for_axis(ROW)
+                            max_width = getattr(self._layout, dimension(ROW)) - self.padding_and_border_for_axis(ROW)
 
                     # This is the main recursive call. We layout non flexible children.
                     if not already_computed_next_layout:
-                        child._calculate_layout(maxWidth)
+                        child._calculate_layout(max_width)
 
                     # Absolute positioned elements do not take part of the layout, so we
                     # don't use them to compute main_content_dim
@@ -822,7 +822,7 @@ class CSSNode(object):
                         next_content_dim = child.dimension_with_margin(main_axis)
 
                 # The element we are about to add would make us go to the next line
-                if (self.flexWrap == WRAP and
+                if (self.flex_wrap == WRAP and
                         getattr(self._layout, dimension(main_axis)) is not None and
                         main_content_dim + next_content_dim > defined_main_dim and
                         # If there's only one element, then it's bigger than the content
@@ -884,22 +884,22 @@ class CSSNode(object):
                             flexible_main_dim * child.flex + child.padding_and_border_for_axis(main_axis))
                         )
 
-                        maxWidth = None
+                        max_width = None
                         if self.dimension_is_defined(ROW):
-                            maxWidth = getattr(self._layout, dimension(ROW)) - self.padding_and_border_for_axis(ROW)
+                            max_width = getattr(self._layout, dimension(ROW)) - self.padding_and_border_for_axis(ROW)
                         elif main_axis != ROW:
                             try:
-                                maxWidth = parent_max_width - self.margin_for_axis(ROW) - self.padding_and_border_for_axis(ROW)
+                                max_width = parent_max_width - self.margin_for_axis(ROW) - self.padding_and_border_for_axis(ROW)
                             except TypeError:
                                 pass
 
                         # And we recursively call the layout algorithm for this child
-                        child._calculate_layout(maxWidth)
+                        child._calculate_layout(max_width)
 
             # We use justify_content to figure out how to allocate the remaining
             # space available
             else:
-                justify_content = self.justifyContent
+                justify_content = self.justify_content
                 if justify_content == CENTER:
                     leading_main_dim = remaining_main_dim / 2.0
                 elif justify_content == FLEX_END:
@@ -931,7 +931,7 @@ class CSSNode(object):
                     setattr(
                         child._layout,
                         position(main_axis),
-                        getattr(child, leading(main_axis)) + getattr(self, 'border' + leading(main_axis).title() + 'Width') + getattr(child, 'margin' + leading(main_axis).title())
+                        getattr(child, leading(main_axis)) + getattr(self, 'border_' + leading(main_axis) + '_width') + getattr(child, 'margin_' + leading(main_axis))
                     )
                 else:
                     # If the child is position absolute (without top/left) or relative,
@@ -984,14 +984,14 @@ class CSSNode(object):
                     setattr(
                         child._layout,
                         position(cross_axis),
-                        getattr(child, leading(cross_axis)) + getattr(self, 'border' + leading(cross_axis).title() + 'Width') + getattr(child, 'margin' + leading(cross_axis).title())
+                        getattr(child, leading(cross_axis)) + getattr(self, 'border_' + leading(cross_axis) + '_width') + getattr(child, 'margin_' + leading(cross_axis))
                     )
 
                 else:
                     leadingCrossDim = self.padding_and_border(leading(cross_axis))
 
-                    # For a relative children, we're either using alignItems (parent) or
-                    # alignSelf (child) in order to determine the position in the cross axis
+                    # For a relative children, we're either using align_items (parent) or
+                    # align_self (child) in order to determine the position in the cross axis
                     if child.position == RELATIVE:
                         alignItem = self.align_item(child)
                         if alignItem == STRETCH:
