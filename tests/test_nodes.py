@@ -66,7 +66,7 @@ class CSSNodeTest(TestCase):
             margin=(50, 51, 52, 53),
             padding=(60, 61, 62, 63),
             border_width=(70, 71, 72, 73),
-            justify_content=FLEX_END, align_items=SPACE_BETWEEN, align_self=SPACE_AROUND
+            justify_content=FLEX_END, align_items=CENTER, align_self=FLEX_START
         )
 
         self.assertEqual(node.width, 10)
@@ -107,8 +107,8 @@ class CSSNodeTest(TestCase):
         self.assertEqual(node.border_left_width, 73)
 
         self.assertEqual(node.justify_content, FLEX_END)
-        self.assertEqual(node.align_items, SPACE_BETWEEN)
-        self.assertEqual(node.align_self, SPACE_AROUND)
+        self.assertEqual(node.align_items, CENTER)
+        self.assertEqual(node.align_self, FLEX_START)
 
     def test_unknown_style_in_constructor(self):
         "Unknown style properties in a constructor raise an exception"

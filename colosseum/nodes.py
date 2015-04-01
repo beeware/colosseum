@@ -77,13 +77,18 @@ class ChildList(list):
         self.parent.dirty = True
 
 
-def css_property(name, default=None):
+def css_property(name, choices=None, default=None):
     "Define a simple CSS property attribute."
     def getter(self):
         return getattr(self, '_%s' % name, default)
 
     def setter(self, value):
         if value != getattr(self, '_%s' % name, default):
+            if choices and value not in choices:
+                raise InvalidCSSStyleException("Invalid value for CSS property '%s'; Valid values are: %s" % (
+                    name,
+                    ', '.join(s.replace('-', '_').upper() for s in choices))
+                )
             setattr(self, '_%s' % name, value)
             self.dirty = True
 
@@ -131,7 +136,7 @@ def css_directional_property(name, default=0):
                 setattr(self, name % 'bottom', value[0])
                 setattr(self, name % 'left', value[0])
             else:
-                raise InvalidCSSStyleException('Invalid value for %s' % (name % ''))
+                raise InvalidCSSStyleException("Invalid value for '%s'; value must be an number, or a 1-4 tuple." % (name % ''))
         except TypeError:
             setattr(self, name % 'top', value)
             setattr(self, name % 'right', value)
@@ -170,34 +175,34 @@ class CSSNode(object):
     max_width = css_property('max_width')
     max_height = css_property('max_height')
 
-    position = css_property('position', RELATIVE)
+    position = css_property('position', choices=set([RELATIVE, ABSOLUTE]), default=RELATIVE)
     top = css_property('top')
     bottom = css_property('bottom')
     left = css_property('left')
     right = css_property('right')
 
-    flex_direction = css_property('flex_direction', COLUMN)
-    flex_wrap = css_property('flex_wrap', NOWRAP)
+    flex_direction = css_property('flex_direction', choices=set([COLUMN, ROW]), default=COLUMN)
+    flex_wrap = css_property('flex_wrap', choices=set([WRAP, NOWRAP]), default=NOWRAP)
     flex = css_property('flex')
 
-    margin_top = css_property('margin_top', 0)
-    margin_right = css_property('margin_right', 0)
-    margin_bottom = css_property('margin_bottom', 0)
-    margin_left = css_property('margin_left', 0)
+    margin_top = css_property('margin_top', default=0)
+    margin_right = css_property('margin_right', default=0)
+    margin_bottom = css_property('margin_bottom', default=0)
+    margin_left = css_property('margin_left', default=0)
 
-    padding_top = css_property('padding_top', 0)
-    padding_right = css_property('padding_right', 0)
-    padding_bottom = css_property('padding_bottom', 0)
-    padding_left = css_property('padding_left', 0)
+    padding_top = css_property('padding_top', default=0)
+    padding_right = css_property('padding_right', default=0)
+    padding_bottom = css_property('padding_bottom', default=0)
+    padding_left = css_property('padding_left', default=0)
 
-    border_top_width = css_property('border_top_width', 0)
-    border_right_width = css_property('border_right_width', 0)
-    border_bottom_width = css_property('border_bottom_width', 0)
-    border_left_width = css_property('border_left_width', 0)
+    border_top_width = css_property('border_top_width', default=0)
+    border_right_width = css_property('border_right_width', default=0)
+    border_bottom_width = css_property('border_bottom_width', default=0)
+    border_left_width = css_property('border_left_width', default=0)
 
-    justify_content = css_property('justify_content', FLEX_START)
-    align_items = css_property('align_items', STRETCH)
-    align_self = css_property('align_self', AUTO)
+    justify_content = css_property('justify_content', choices=set([FLEX_START, CENTER, FLEX_END, SPACE_BETWEEN, SPACE_AROUND]), default=FLEX_START)
+    align_items = css_property('align_items', choices=set([FLEX_START, CENTER, FLEX_END, STRETCH]), default=STRETCH)
+    align_self = css_property('align_self', choices=set([FLEX_START, CENTER, FLEX_END, STRETCH, AUTO]), default=AUTO)
 
     # Some special case meta-properties that defer to underlying top/bottom/left/right base properties
     margin = css_directional_property('margin_%s')
