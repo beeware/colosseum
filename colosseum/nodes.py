@@ -531,7 +531,6 @@ class CSSNode(object):
             self._border_left_width = value
             self.dirty = True
 
-
     @property
     def justify_content(self):
         return self._justify_content
@@ -860,11 +859,16 @@ class CSSNode(object):
                             remaining_main_dim = remaining_main_dim - bound_main_dim
                             total_flexible = total_flexible - child.flex
 
-                flexible_main_dim = remaining_main_dim / total_flexible
+                if total_flexible != 0:
+                    flexible_main_dim = remaining_main_dim / total_flexible
+                elif remaining_main_dim > 0:
+                    flexible_main_dim = float('inf')
+                else:
+                    flexible_main_dim = float('-inf')
 
                 # The non flexible children can overflow the container, in this case
                 # we should just assume that there is no space available.
-                if (flexible_main_dim < 0.0):
+                if flexible_main_dim < 0.0:
                     flexible_main_dim = 0.0
 
                 # We iterate over the full array and only apply the action on flexible

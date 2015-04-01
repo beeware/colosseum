@@ -1,5 +1,5 @@
 # Derived from https://github.com/facebook/css-layout
-# Tests match hash: 2b6844f00acc3166ba9d57f49acebd0146e6007e in freakboy3742 minmax branch
+# Tests match hash: 6ca5fc5cb41aa31ae58c2936a0a2075b99b227a3 in freakboy3742 minmax branch
 
 try:
     from unittest import TestCase, expectedFailure
@@ -1898,6 +1898,46 @@ class LayoutEngineTest(TestCase):
                     {'width': 120, 'height': 200, 'top': 0, 'left': 0},
                     {'width': 60, 'height': 200, 'top': 0, 'left': 120},
                     {'width': 120, 'height': 200, 'top': 0, 'left': 180}
+                ]
+            }
+        )
+
+    def test_should_ignore_flex_size_if_fully_bound(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200, 'flex_direction':'row'},
+                CHILDREN: [
+                    {STYLE: {'flex': 1, 'max_width': 60}},
+                    {STYLE: {'flex': 1, 'max_width': 60}},
+                    {STYLE: {'flex': 1, 'max_width': 60}}
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 60, 'height': 200, 'top': 0, 'left': 0},
+                    {'width': 60, 'height': 200, 'top': 0, 'left': 60},
+                    {'width': 60, 'height': 200, 'top': 0, 'left': 120}
+                ]
+            }
+        )
+
+    def test_should_ignore_flex_size_if_fully_min_bound(self):
+        self.assertLayout(
+            {
+                STYLE: {'width': 300, 'height': 200, 'flex_direction':'row'},
+                CHILDREN: [
+                    {STYLE: {'flex': 1, 'min_width': 120}},
+                    {STYLE: {'flex': 1, 'min_width': 120}},
+                    {STYLE: {'flex': 1, 'min_width': 120}}
+                ]
+            },
+            {
+                'width': 300, 'height': 200, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 120, 'height': 200, 'top': 0, 'left': 0},
+                    {'width': 120, 'height': 200, 'top': 0, 'left': 120},
+                    {'width': 120, 'height': 200, 'top': 0, 'left': 240}
                 ]
             }
         )
