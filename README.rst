@@ -5,23 +5,23 @@ A (partial) implementation of the CSS box and flexbox layout algorithm.
 
 The following CSS attributes and value types are supported:
 
-=================================================================================  =========================================================
-Name                                                                               Value
-=================================================================================  =========================================================
-width, height                                                                      positive number
-minWidth, minHeight                                                                positive number
-maxWidth, maxHeight                                                                positive number
-left, right, top, bottom                                                           number
-margin, marginLeft, marginRight, marginTop, marginBottom                           number
-padding, paddingLeft, paddingRight, paddingTop, paddingBottom                      positive number
-borderWidth, borderLeftWidth, borderRightWidth, borderTopWidth, borderBottomWidth  positive number
-flexDirection                                                                      ``"column"``, ``"row"``
-justifyContent                                                                     ``"flex-start"``, ``"center"``, ``"flex-end"``, ``"space-between"``, ``"space-around"``
-alignItems, alignSelf                                                              ``"flex-start"``, ``"center"``, ``"flex-end"``, ``"stretch"``
-flex                                                                               positive number
-flexWrap                                                                           ``"wrap"``, ``"nowrap"``
-position                                                                           ``"relative"``, ``"absolute"``
-=================================================================================  =========================================================
+==========================================================================================  =========================================================
+Name                                                                                        Value
+==========================================================================================  =========================================================
+width, height                                                                               positive number
+min_width, min_height                                                                       positive number
+max_width, max_height                                                                       positive number
+left, right, top, bottom                                                                    number
+margin, margin_left, margin_right, margin_top, margin_bottom                                number
+padding, padding_left, padding_right, padding_top, padding_bottom                           positive number
+border_width, border_left_width, border_right_width, border_top_width, border_bottom_width  positive number
+flex_direction                                                                              ``"column"``, ``"row"``
+justify_content                                                                             ``"flex-start"``, ``"center"``, ``"flex-end"``, ``"space-between"``, ``"space-around"``
+align_items, align_self                                                                     ``"flex-start"``, ``"center"``, ``"flex-end"``, ``"stretch"``
+flex                                                                                        positive number
+flex_wrap                                                                                   ``"wrap"``, ``"nowrap"``
+position                                                                                    ``"relative"``, ``"absolute"``
+==========================================================================================  =========================================================
 
 Quickstart
 ----------
@@ -32,8 +32,8 @@ In your virtualenv, install Colosseum::
 
 Then, you can instantiate CSS nodes, and query the layout that results::
 
-    >>> from colosseum import CSSNode
-    >>> node = CSSNode(width=1000, height=1000, flexDirection='row')
+    >>> from colosseum import CSSNode, ROW, COLUMN
+    >>> node = CSSNode(width=1000, height=1000, flex_direction=ROW)
     >>> node.children.add(CSSNode(width=100, height=200))
     >>> node.children.add(CSSNode(width=300, height=150))
     >>> layout = node.layout
@@ -56,11 +56,11 @@ Requesting the ``layout`` attribute of a CSSNode forces the box model to be
 evaluated. Once evaluated, the layout will be cached. Modifying any CSS
 property on a node will mark the layout as dirty, and the layout will be
 recomputed the next time the layout is accessed. For example, if we switch
-the outer node to be a "column" flexBox, rather than a "row" flexBox,
+the outer node to be a "column" flex box, rather than a "row" flex box,
 you'll see the coordinates of the child boxes update to reflect a vertical,
 rather than horizontal layout::
 
-    >>> node.flexDirection = 'column'
+    >>> node.flex_direction = COLUMN
     >>> print(node.layout)
     <Layout (1000x1000 @ 0,0)>
     >>> for child in node.children:
