@@ -75,16 +75,18 @@ a ``CSSNode``::
     >>> print(node.layout)
     <Layout (1500x800 @ 0,0)>
 
-Style attributes can also be removed; either by setting their value to
-``None``, or deleting the attribute on the ``CSSNode``::
+Style attributes can also be removed by deleting the attribute on the
+``CSSNode``. If you do this, the value of the attribute will revert to
+the default value for that property::
 
     >>> node.style(margin_top=10, margin_left=20)
     >>> print(node.layout)
     <Layout (1500x800 @ 20,10)>
-    >>> node.margin_top = None
     >>> del(node.margin_left)
+    >>> print(node.margin_left)
+    0
     >>> print(node.layout)
-    <Layout (1500x800 @ 0,0)>
+    <Layout (1500x800 @ 0,10)>
 
 
 Community
