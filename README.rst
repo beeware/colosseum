@@ -76,8 +76,7 @@ a ``CSSNode``::
     <Layout (1500x800 @ 0,0)>
 
 Style attributes can also be removed by deleting the attribute on the
-``CSSNode``. If you do this, the value of the attribute will revert to
-the default value for that property::
+``CSSNode``. The value of the property will revert to the default::
 
     >>> node.style(margin_top=10, margin_left=20)
     >>> print(node.layout)
