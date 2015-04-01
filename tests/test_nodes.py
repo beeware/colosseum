@@ -112,7 +112,7 @@ class CSSNodeTest(TestCase):
 
     def test_unknown_style_in_constructor(self):
         "Unknown style properties in a constructor raise an exception"
-        with self.assertRaises(TypeError):
+        with self.assertRaises(UnknownCSSStyleException):
             CSSNode(doesnt_exist=10)
 
     def test_set_style(self):
@@ -130,26 +130,51 @@ class CSSNodeTest(TestCase):
 
     def test_delete_style(self):
         "Individual style properties can be removed"
-        node = CSSNode(width=10, height=20)
+        node = CSSNode(width=10, height=20, padding_left=30, margin_right=40)
 
         del(node.width)
         del(node.height)
         # A property that hasn't been set before
         del(node.top)
+        # A property with a default value
+        del(node.padding_left)
+        # A meta-property
+        del(node.margin)
 
         self.assertIsNone(node.width)
         self.assertIsNone(node.height)
         self.assertIsNone(node.top)
+        self.assertEqual(node.padding_left, 0)
+        self.assertEqual(node.padding, (0, 0, 0, 0))
+        self.assertEqual(node.margin_right, 0)
+        self.assertEqual(node.margin, (0, 0, 0, 0))
+
+        # Try to delete them all again.
+        del(node.width)
+        del(node.height)
+        del(node.top)
+        del(node.padding_left)
+        del(node.margin)
+
+        self.assertIsNone(node.width)
+        self.assertIsNone(node.height)
+        self.assertIsNone(node.top)
+        self.assertEqual(node.padding_left, 0)
+        self.assertEqual(node.padding, (0, 0, 0, 0))
+        self.assertEqual(node.margin_right, 0)
+        self.assertEqual(node.margin, (0, 0, 0, 0))
 
     def test_bulk_style(self):
         "Style properties can be set in bulk"
         node = CSSNode(width=10, height=20)
 
-        node.style(width=30, height=40, top=50)
+        node.style(width=30, height=40, top=50, margin=60)
 
         self.assertEqual(node.width, 30)
         self.assertEqual(node.height, 40)
         self.assertEqual(node.top, 50)
+        self.assertEqual(node.margin, (60, 60, 60, 60))
+        self.assertEqual(node.margin_left, 60)
 
     def test_unknown_style_in_bulk(self):
         "Bulk style-set method raises exception on unknown style"

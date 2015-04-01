@@ -42,7 +42,6 @@ def text(value):
                 HEIGHT: SMALL_HEIGHT if width >= BIG_WIDTH else BIG_HEIGHT
             }
 
-    # fn.toString = function() { return value; };
     return fn;
 
 
