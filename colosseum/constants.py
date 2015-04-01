@@ -1,3 +1,7 @@
+##########################################################################
+# Attribute names
+##########################################################################
+
 # Dimensions
 WIDTH = 'width'
 HEIGHT = 'height'
@@ -12,7 +16,11 @@ RIGHT = 'right'
 COLUMN = 'column'
 ROW = 'row'
 
-# Alignments & Justification types
+##########################################################################
+# CSS Style values
+##########################################################################
+
+# Alignments & Justification values
 AUTO = 'auto'
 FLEX_START = 'flex-start'
 CENTER = 'center'
@@ -21,10 +29,10 @@ STRETCH = 'stretch'
 SPACE_BETWEEN = 'space-between'
 SPACE_AROUND = 'space-around'
 
-# Position types
+# Position values
 RELATIVE = 'relative'
 ABSOLUTE = 'absolute'
 
-# Wrap types
+# Wrap values
 NOWRAP = 'nowrap'
 WRAP = 'wrap'
