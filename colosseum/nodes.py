@@ -7,6 +7,10 @@ class UnknownCSSStyleException(Exception):
     pass
 
 
+class InvalidCSSStyleException(Exception):
+    pass
+
+
 def leading(axis):
     "Return the dimension attribute for leading space corresponding to the given axis"
     return TOP if axis == COLUMN else LEFT
@@ -110,7 +114,7 @@ class CSSNode(object):
         self._flex_wrap = flex_wrap
         self._flex = flex
 
-        if margin:
+        if margin is not None:
             self._margin_top = None
             self._margin_right = None
             self._margin_bottom = None
@@ -122,7 +126,7 @@ class CSSNode(object):
             self._margin_bottom = margin_bottom
             self._margin_left = margin_left
 
-        if padding:
+        if padding is not None:
             self._padding_top = None
             self._padding_right = None
             self._padding_bottom = None
@@ -134,7 +138,7 @@ class CSSNode(object):
             self._padding_bottom = padding_bottom
             self._padding_left = padding_left
 
-        if border_width:
+        if border_width is not None:
             self._border_top_width = None
             self._border_right_width = None
             self._border_bottom_width = None
@@ -403,7 +407,7 @@ class CSSNode(object):
                 self.margin_top = value[0]
                 self.margin_right = value[1]
                 self.margin_bottom = value[2]
-                self.margin_left = value[3]
+                self.margin_left = value[1]
             elif len(value) == 2:
                 self.margin_top = value[0]
                 self.margin_right = value[1]
@@ -415,7 +419,7 @@ class CSSNode(object):
                 self.margin_bottom = value[0]
                 self.margin_left = value[0]
             else:
-                raise Exception('Invalid margin definition')
+                raise InvalidCSSStyleException('Invalid margin definition')
         except TypeError:
             self.margin_top = value
             self.margin_right = value
@@ -506,7 +510,7 @@ class CSSNode(object):
                 self.padding_top = value[0]
                 self.padding_right = value[1]
                 self.padding_bottom = value[2]
-                self.padding_left = value[3]
+                self.padding_left = value[1]
             elif len(value) == 2:
                 self.padding_top = value[0]
                 self.padding_right = value[1]
@@ -518,7 +522,7 @@ class CSSNode(object):
                 self.padding_bottom = value[0]
                 self.padding_left = value[0]
             else:
-                raise Exception('Invalid padding definition')
+                raise InvalidCSSStyleException('Invalid padding definition')
         except TypeError:
             self.padding_top = value
             self.padding_right = value
@@ -609,7 +613,7 @@ class CSSNode(object):
                 self.border_top_width = value[0]
                 self.border_right_width = value[1]
                 self.border_bottom_width = value[2]
-                self.border_left_width = value[3]
+                self.border_left_width = value[1]
             elif len(value) == 2:
                 self.border_top_width = value[0]
                 self.border_right_width = value[1]
@@ -621,7 +625,7 @@ class CSSNode(object):
                 self.border_bottom_width = value[0]
                 self.border_left_width = value[0]
             else:
-                raise Exception('Invalid border_width definition')
+                raise InvalidCSSStyleException('Invalid border_width definition')
         except TypeError:
             self.border_top_width = value
             self.border_right_width = value

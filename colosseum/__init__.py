@@ -5,6 +5,7 @@ __all__ = [
     '__version__',
     'CSSNode',
     'UnknownCSSStyleException',
+    'InvalidCSSStyleException',
 
     'AUTO',
     'FLEX_START',
