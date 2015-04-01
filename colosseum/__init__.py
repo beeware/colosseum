@@ -4,6 +4,7 @@ from .nodes import *
 __all__ = [
     '__version__',
     'CSSNode',
+    'UnknownCSSStyleException',
 
     'AUTO',
     'FLEX_START',

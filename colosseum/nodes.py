@@ -3,6 +3,10 @@ from __future__ import print_function, absolute_import, division, unicode_litera
 from .constants import *
 
 
+class UnknownCSSStyleException(Exception):
+    pass
+
+
 def leading(axis):
     "Return the dimension attribute for leading space corresponding to the given axis"
     return TOP if axis == COLUMN else LEFT
@@ -154,6 +158,13 @@ class CSSNode(object):
     ######################################################################
     # Style properties
     ######################################################################
+
+    def style(self, **styles):
+        "Set multiple styles on the CSS node."
+        for style, value in styles.items():
+            if not hasattr(self, '_%s' % style) and style not in ('margin', 'padding', 'border_width'):
+                raise UnknownCSSStyleException("Unknown CSS style '%s'" % style)
+            setattr(self, style, value)
 
     @property
     def dirty(self):

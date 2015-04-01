@@ -68,6 +68,13 @@ rather than horizontal layout::
     <Layout (100x200 @ 0,0)>
     <Layout (300x150 @ 0,200)>
 
+Style attributes can also be set in bulk, using the ``style()`` method on
+a CSSNode::
+
+    >>> node.style(width=1500, height=800)
+    >>> print(node.layout)
+    <Layout (1500x800 @ 0,0)>
+
 Community
 ---------
 
