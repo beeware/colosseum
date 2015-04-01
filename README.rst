@@ -30,7 +30,7 @@ In your virtualenv, install Colosseum::
 
     $ pip install colosseum
 
-Then, you can instantiate CSS nodes, and query the layout that results::
+Then, you can instantiate ``CSSnode``s, and query the layout that results::
 
     >>> from colosseum import CSSNode, ROW, COLUMN
     >>> node = CSSNode(width=1000, height=1000, flex_direction=ROW)
@@ -52,7 +52,7 @@ Then, you can instantiate CSS nodes, and query the layout that results::
     <Layout (100x200 @ 0,0)>
     <Layout (300x150 @ 100,0)>
 
-Requesting the ``layout`` attribute of a CSSNode forces the box model to be
+Requesting the ``layout`` attribute of a ``CSSNode`` forces the box model to be
 evaluated. Once evaluated, the layout will be cached. Modifying any CSS
 property on a node will mark the layout as dirty, and the layout will be
 recomputed the next time the layout is accessed. For example, if we switch
@@ -69,11 +69,23 @@ rather than horizontal layout::
     <Layout (300x150 @ 0,200)>
 
 Style attributes can also be set in bulk, using the ``style()`` method on
-a CSSNode::
+a ``CSSNode``::
 
     >>> node.style(width=1500, height=800)
     >>> print(node.layout)
     <Layout (1500x800 @ 0,0)>
+
+Style attributes can also be removed; either by setting their value to
+``None``, or deleting the attribute on the ``CSSNode``::
+
+    >>> node.style(margin_top=10, margin_left=20)
+    >>> print(node.layout)
+    <Layout (1500x800 @ 20,10)>
+    >>> node.margin_top = None
+    >>> del(node.margin_left)
+    >>> print(node.layout)
+    <Layout (1500x800 @ 0,0)>
+
 
 Community
 ---------

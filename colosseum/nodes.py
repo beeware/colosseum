@@ -186,6 +186,12 @@ class CSSNode(object):
             self._width = value
             self.dirty = True
 
+    @width.deleter
+    def width(self):
+        self._width = None
+        self.dirty = True
+
+
     @property
     def height(self):
         return self._height
@@ -195,6 +201,11 @@ class CSSNode(object):
         if value != self._height:
             self._height = value
             self.dirty = True
+
+    @height.deleter
+    def height(self):
+        self._height = None
+        self.dirty = True
 
     @property
     def min_width(self):
@@ -206,6 +217,11 @@ class CSSNode(object):
             self._min_width = value
             self.dirty = True
 
+    @min_width.deleter
+    def min_width(self):
+        self._min_width = None
+        self.dirty = True
+
     @property
     def min_height(self):
         return self._min_height
@@ -215,6 +231,11 @@ class CSSNode(object):
         if value != self._min_height:
             self._min_height = value
             self.dirty = True
+
+    @min_height.deleter
+    def min_height(self):
+        self._min_height = None
+        self.dirty = True
 
     @property
     def max_width(self):
@@ -226,6 +247,11 @@ class CSSNode(object):
             self._max_width = value
             self.dirty = True
 
+    @max_width.deleter
+    def max_width(self):
+        self._max_width = None
+        self.dirty = True
+
     @property
     def max_height(self):
         return self._max_height
@@ -235,6 +261,11 @@ class CSSNode(object):
         if value != self._max_height:
             self._max_height = value
             self.dirty = True
+
+    @max_height.deleter
+    def max_height(self):
+        self._max_height = None
+        self.dirty = True
 
     @property
     def position(self):
@@ -246,6 +277,11 @@ class CSSNode(object):
             self._position = value
             self.dirty = True
 
+    @position.deleter
+    def position(self):
+        self._position = RELATIVE
+        self.dirty = True
+
     @property
     def top(self):
         return self._top
@@ -255,6 +291,11 @@ class CSSNode(object):
         if value != self._top:
             self._top = value
             self.dirty = True
+
+    @top.deleter
+    def top(self):
+        self._top = None
+        self.dirty = True
 
     @property
     def bottom(self):
@@ -266,6 +307,11 @@ class CSSNode(object):
             self._bottom = value
             self.dirty = True
 
+    @bottom.deleter
+    def bottom(self):
+        self._bottom = None
+        self.dirty = True
+
     @property
     def left(self):
         return self._left
@@ -275,6 +321,11 @@ class CSSNode(object):
         if value != self._left:
             self._left = value
             self.dirty = True
+
+    @left.deleter
+    def left(self):
+        self._left = None
+        self.dirty = True
 
     @property
     def right(self):
@@ -286,6 +337,11 @@ class CSSNode(object):
             self._right = value
             self.dirty = True
 
+    @right.deleter
+    def right(self):
+        self._right = None
+        self.dirty = True
+
     @property
     def flex_direction(self):
         return self._flex_direction
@@ -295,6 +351,11 @@ class CSSNode(object):
         if value != self._flex_direction:
             self._flex_direction = value
             self.dirty = True
+
+    @flex_direction.deleter
+    def flex_direction(self):
+        self._flex_direction = COLUMN
+        self.dirty = True
 
     @property
     def flex_wrap(self):
@@ -306,6 +367,11 @@ class CSSNode(object):
             self._flex_wrap = value
             self.dirty = True
 
+    @flex_wrap.deleter
+    def flex_wrap(self):
+        self._flex_wrap = NOWRAP
+        self.dirty = True
+
     @property
     def flex(self):
         return self._flex
@@ -315,6 +381,11 @@ class CSSNode(object):
         if value != self._flex:
             self._flex = value
             self.dirty = True
+
+    @flex.deleter
+    def flex(self):
+        self._flex = None
+        self.dirty = True
 
     @property
     def margin(self):
@@ -351,6 +422,14 @@ class CSSNode(object):
             self.margin_bottom = value
             self.margin_left = value
 
+    @margin.deleter
+    def margin(self):
+        self._margin_top = 0
+        self._margin_right = 0
+        self._margin_bottom = 0
+        self._margin_left = 0
+        self.dirty = True
+
     @property
     def margin_top(self):
         return self._margin_top
@@ -360,6 +439,11 @@ class CSSNode(object):
         if value != self._margin_top:
             self._margin_top = value
             self.dirty = True
+
+    @margin_top.deleter
+    def margin_top(self):
+        self._margin_top = 0
+        self.dirty = True
 
     @property
     def margin_right(self):
@@ -371,6 +455,11 @@ class CSSNode(object):
             self._margin_right = value
             self.dirty = True
 
+    @margin_right.deleter
+    def margin_right(self):
+        self._margin_right = 0
+        self.dirty = True
+
     @property
     def margin_bottom(self):
         return self._margin_bottom
@@ -381,6 +470,11 @@ class CSSNode(object):
             self._margin_bottom = value
             self.dirty = True
 
+    @margin_bottom.deleter
+    def margin_bottom(self):
+        self._margin_bottom = 0
+        self.dirty = True
+
     @property
     def margin_left(self):
         return self._margin_left
@@ -390,6 +484,11 @@ class CSSNode(object):
         if value != self._margin_left:
             self._margin_left = value
             self.dirty = True
+
+    @margin_left.deleter
+    def margin_left(self):
+        self._margin_left = 0
+        self.dirty = True
 
     @property
     def padding(self):
@@ -426,6 +525,14 @@ class CSSNode(object):
             self.padding_bottom = value
             self.padding_left = value
 
+    @padding.deleter
+    def padding(self):
+        self._padding_top = 0
+        self._padding_right = 0
+        self._padding_bottom = 0
+        self._padding_left = 0
+        self.dirty = True
+
     @property
     def padding_top(self):
         return self._padding_top
@@ -435,6 +542,11 @@ class CSSNode(object):
         if value != self._padding_top:
             self._padding_top = value
             self.dirty = True
+
+    @padding_top.deleter
+    def padding_top(self):
+        self._padding_top = 0
+        self.dirty = True
 
     @property
     def padding_right(self):
@@ -446,6 +558,11 @@ class CSSNode(object):
             self._padding_right = value
             self.dirty = True
 
+    @padding_right.deleter
+    def padding_right(self):
+        self._padding_right = 0
+        self.dirty = True
+
     @property
     def padding_bottom(self):
         return self._padding_bottom
@@ -455,6 +572,11 @@ class CSSNode(object):
         if value != self._padding_bottom:
             self._padding_bottom = value
             self.dirty = True
+
+    @padding_bottom.deleter
+    def padding_bottom(self):
+        self._padding_bottom = 0
+        self.dirty = True
 
     @property
     def padding_left(self):
@@ -466,6 +588,10 @@ class CSSNode(object):
             self._padding_left = value
             self.dirty = True
 
+    @padding_left.deleter
+    def padding_left(self):
+        self._padding_left = 0
+        self.dirty = True
 
     @property
     def border_width(self):
@@ -502,6 +628,14 @@ class CSSNode(object):
             self.border_bottom_width = value
             self.border_left_width = value
 
+    @border_width.deleter
+    def border_width(self):
+        self._border_width_top = 0
+        self._border_width_right = 0
+        self._border_width_bottom = 0
+        self._border_width_left = 0
+        self.dirty = True
+
     @property
     def border_top_width(self):
         return self._border_top_width
@@ -511,6 +645,11 @@ class CSSNode(object):
         if value != self._border_top_width:
             self._border_top_width = value
             self.dirty = True
+
+    @border_top_width.deleter
+    def border_top_width(self):
+        self._border_top_width = 0
+        self.dirty = True
 
     @property
     def border_right_width(self):
@@ -522,6 +661,11 @@ class CSSNode(object):
             self._border_right_width = value
             self.dirty = True
 
+    @border_right_width.deleter
+    def border_right_width(self):
+        self._border_right_width = 0
+        self.dirty = True
+
     @property
     def border_bottom_width(self):
         return self._border_bottom_width
@@ -531,6 +675,11 @@ class CSSNode(object):
         if value != self._border_bottom_width:
             self._border_bottom_width = value
             self.dirty = True
+
+    @border_bottom_width.deleter
+    def border_bottom_width(self):
+        self._border_bottom_width = 0
+        self.dirty = True
 
     @property
     def border_left_width(self):
@@ -542,6 +691,11 @@ class CSSNode(object):
             self._border_left_width = value
             self.dirty = True
 
+    @border_left_width.deleter
+    def border_left_width(self):
+        self._border_left_width = 0
+        self.dirty = True
+
     @property
     def justify_content(self):
         return self._justify_content
@@ -551,6 +705,11 @@ class CSSNode(object):
         if value != self._justify_content:
             self._justify_content = value
             self.dirty = True
+
+    @justify_content.deleter
+    def justify_content(self):
+        self._justify_content = FLEX_START
+        self.dirty = True
 
     @property
     def align_items(self):
@@ -562,6 +721,11 @@ class CSSNode(object):
             self._align_items = value
             self.dirty = True
 
+    @align_items.deleter
+    def align_items(self):
+        self._align_items = STRETCH
+        self.dirty = True
+
     @property
     def align_self(self):
         return self._align_self
@@ -571,6 +735,11 @@ class CSSNode(object):
         if value != self._align_self:
             self._align_self = value
             self.dirty = True
+
+    @align_self.deleter
+    def align_self(self):
+        self._align_self = AUTO
+        self.dirty = True
 
     ######################################################################
     # Internal helpers for computing layout
