@@ -245,4 +245,17 @@ class CSSNodeTest(TestCase):
             CSSNode(margin=[])
 
         with self.assertRaises(InvalidCSSStyleException):
-            CSSNode(margin=[1,2,3,4,5])
+            CSSNode(margin=[1, 2, 3, 4, 5])
+
+    def test_content_validation(self):
+        "Some attributes have validated choice values."
+
+        node = CSSNode()
+
+        node.align_self = 'center'
+        self.assertEqual(node.align_self, 'center')
+
+        with self.assertRaises(InvalidCSSStyleException):
+            node.align_self = 'invalid value'
+
+        self.assertEqual(node.align_self, 'center')
