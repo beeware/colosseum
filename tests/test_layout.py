@@ -2138,3 +2138,43 @@ class LayoutEngineTest(TestCase):
                 ]
             }
         )
+
+    def test_should_layout_minHeight_with_a_flex_child(self):
+        self.assertLayout(
+            {
+                STYLE: {'min_height': 800},
+                CHILDREN: [
+                    {STYLE: {'flex': 1}}
+                ]
+            },
+            {
+                'width': 0, 'height': 800, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 0, 'height': 800, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    def test_should_layout_node_with_a_nested_sibling_child_with_width(self):
+        self.assertLayout(
+            {
+                STYLE: {},
+                CHILDREN: [
+                    {STYLE: {'width': 5}},
+                    {STYLE: {}, CHILDREN: [
+                        {STYLE: {}}
+                    ]},
+                ]
+            },
+            {
+                'width': 5, 'height': 0, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 5, 'height': 0, 'top': 0, 'left': 0},
+                    {'width': 5, 'height': 0, 'top': 0, 'left': 0,
+                        CHILDREN: [
+                            {'width': 5, 'height': 0, 'top': 0, 'left': 0}
+                        ]
+                    }
+                ]
+            }
+        )
