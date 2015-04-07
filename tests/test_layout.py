@@ -1,5 +1,5 @@
 # Derived from https://github.com/facebook/css-layout
-# Tests match hash: 6ca5fc5cb41aa31ae58c2936a0a2075b99b227a3 in freakboy3742 minmax branch
+# Tests match hash: b8316413b310643ea6555a015b3903f4fde1104e in freakboy3742 minmax branch
 
 try:
     from unittest import TestCase, expectedFailure
@@ -2155,6 +2155,23 @@ class LayoutEngineTest(TestCase):
             }
         )
 
+    def test_should_layout_minHeight_without_a_flex_child(self):
+        self.assertLayout(
+            {
+                STYLE: {'min_height': 800},
+                CHILDREN: [
+                    {STYLE: {}}
+                ]
+            },
+            {
+                'width': 0, 'height': 800, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 0, 'height': 0, 'top': 0, 'left': 0}
+                ]
+            }
+        )
+
+    @expectedFailure
     def test_should_layout_node_with_a_nested_sibling_child_with_width(self):
         self.assertLayout(
             {

@@ -449,9 +449,9 @@ class CSSNode(object):
             for i, child in enumerate(self.children[start_line:]):
                 next_content_dim = 0
 
-                # It only makes sense to consider a child flexible if we have a computed
-                # dimension for the self.
-                if getattr(self._layout, dimension(main_axis)) is not None and child._is_flex:
+                # If it's a flexible child, accumulate the size that the child potentially
+                # contributes to the row
+                if child._is_flex:
                     flexible_children_count = flexible_children_count + 1
                     total_flexible = total_flexible + child.flex
 
@@ -509,7 +509,7 @@ class CSSNode(object):
             if getattr(self._layout, dimension(main_axis)) is not None:
                 remaining_main_dim = defined_main_dim - main_content_dim
             else:
-                remaining_main_dim = max(main_content_dim, 0) - main_content_dim
+                remaining_main_dim = self._bound_axis(main_axis, max(main_content_dim, 0)) - main_content_dim
 
             # If there are flexible children in the mix, they are going to fill the
             # remaining space
