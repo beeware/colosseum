@@ -1,7 +1,7 @@
 try:
-    from unittest import TestCase
-except ImportError:
     from unittest2 import TestCase
+except ImportError:
+    from unittest import TestCase
 
 from colosseum.nodes import CSSNode, UnknownCSSStyleException, InvalidCSSStyleException
 from colosseum.constants import *
@@ -53,7 +53,6 @@ class CSSNodeTest(TestCase):
         self.assertEqual(node.justify_content, FLEX_START)
         self.assertEqual(node.align_items, STRETCH)
         self.assertEqual(node.align_self, AUTO)
-
 
     def test_style_in_constructor(self):
         "A CSSNode can be constructed with a style"
@@ -259,3 +258,22 @@ class CSSNodeTest(TestCase):
             node.align_self = 'invalid value'
 
         self.assertEqual(node.align_self, 'center')
+
+    def test_construct_with_children(self):
+        "A node can be constructed with children"
+
+        child1 = CSSNode()
+        child2 = CSSNode()
+        child3 = CSSNode()
+
+        node = CSSNode(child1, child2, child3, margin=10)
+
+        self.assertEqual(node.margin_top, 10)
+        self.assertEqual(node.margin_right, 10)
+        self.assertEqual(node.margin_bottom, 10)
+        self.assertEqual(node.margin_left, 10)
+
+        self.assertEqual(len(node.children), 3)
+        self.assertEqual(node.children[0], child1)
+        self.assertEqual(node.children[1], child2)
+        self.assertEqual(node.children[2], child3)

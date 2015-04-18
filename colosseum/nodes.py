@@ -57,7 +57,8 @@ class Layout(object):
 
 
 class ChildList(list):
-    def __init__(self, parent):
+    def __init__(self, parent, elements):
+        super(ChildList, self).__init__(elements)
         self.parent = parent
 
     def append(self, child):
@@ -154,12 +155,12 @@ def css_directional_property(name, default=0):
 
 class CSSNode(object):
 
-    def __init__(self, measure=None, **style):
+    def __init__(self, *children, **style):
         self._layout = Layout()
         self._parent = None
-        self.children = ChildList(self)
+        self.children = ChildList(self, children)
 
-        self.measure = measure
+        self.measure = style.pop('measure', None)
 
         self.style(**style)
         self.dirty = True

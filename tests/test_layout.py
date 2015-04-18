@@ -2,9 +2,9 @@
 # Tests match hash: b8316413b310643ea6555a015b3903f4fde1104e in freakboy3742 minmax branch
 
 try:
-    from unittest import TestCase, expectedFailure
-except ImportError:
     from unittest2 import TestCase, expectedFailure
+except ImportError:
+    from unittest import TestCase, expectedFailure
 
 from colosseum.nodes import CSSNode, Layout
 from colosseum.constants import *
@@ -42,7 +42,7 @@ def text(value):
                 HEIGHT: SMALL_HEIGHT if width >= BIG_WIDTH else BIG_HEIGHT
             }
 
-    return fn;
+    return fn
 
 
 class LayoutEngineTest(TestCase):
