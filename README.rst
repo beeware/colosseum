@@ -87,6 +87,17 @@ Style attributes can also be removed by deleting the attribute on the
     >>> print(node.layout)
     <Layout (1500x800 @ 0,10)>
 
+Child nodes can also be defined declaratively by providing the child nodes
+as arguments to the parent node at time of construction. The original example
+could have been defined as follows::
+
+    >>> node = CSSNode(
+    ...     CSSNode(width=100, height=200),
+    ...     CSSNode(width=300, height=150),
+    ...     width=1000,
+    ...     height=1000,
+    ...     flex_direction=ROW
+    ... )
 
 Community
 ---------
