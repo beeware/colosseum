@@ -30,7 +30,7 @@ In your virtualenv, install Colosseum::
 
     $ pip install colosseum
 
-Then, you can instantiate ``CSSnode``s, and query the layout that results::
+Then, you can instantiate a ``CSSnode``, and query the layout that results::
 
     >>> from colosseum import CSSNode, ROW, COLUMN
     >>> node = CSSNode(width=1000, height=1000, flex_direction=ROW)
