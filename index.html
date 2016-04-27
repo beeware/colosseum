@@ -83,7 +83,7 @@
 >>> node.children.add(CSSNode(width=300, height=150))
 >>> layout = node.layout
 >>> print(layout)
-<Layout (1000x1000 @ 0,0)>
+&lt;Layout (1000x1000 @ 0,0)&gt;
 >>> layout.width
 1000
 >>> layout.height
@@ -94,8 +94,8 @@
 0
 >>> for child in node.children:
 ...     print(child.layout)
-<Layout (100x200 @ 0,0)>
-<Layout (300x150 @ 100,0)>
+&lt;Layout (100x200 @ 0,0)&gt;
+&lt;Layout (300x150 @ 100,0)&gt;
 </code></pre>
 
 <p>Requesting the <code>layout</code> attribute of a <code>CSSNode</code> forces the box model to be
@@ -108,11 +108,11 @@ rather than horizontal layout:</p>
 
 <pre><code>>>> node.flex_direction = COLUMN
 >>> print(node.layout)
-<Layout (1000x1000 @ 0,0)>
+&lt;Layout (1000x1000 @ 0,0)&gt;
 >>> for child in node.children:
 ...     print(child.layout)
-<Layout (100x200 @ 0,0)>
-<Layout (300x150 @ 0,200)>
+&lt;Layout (100x200 @ 0,0)&gt;
+&lt;Layout (300x150 @ 0,200)&gt;
 </code></pre>
 
 <p>Style attributes can also be set in bulk, using the <code>style()</code> method on
@@ -120,7 +120,7 @@ a <code>CSSNode</code>:</p>
 
 <pre><code>>>> node.style(width=1500, height=800)
 >>> print(node.layout)
-<Layout (1500x800 @ 0,0)>
+&lt;Layout (1500x800 @ 0,0)&gt;
 </code></pre>
 
 <p>Style attributes can also be removed by deleting the attribute on the
@@ -128,12 +128,12 @@ a <code>CSSNode</code>:</p>
 
 <pre><code>>>> node.style(margin_top=10, margin_left=20)
 >>> print(node.layout)
-<Layout (1500x800 @ 20,10)>
+&lt;Layout (1500x800 @ 20,10)&gt;
 >>> del(node.margin_left)
 >>> print(node.margin_left)
 0
 >>> print(node.layout)
-<Layout (1500x800 @ 0,10)>
+&lt;Layout (1500x800 @ 0,10)&gt;
 </code></pre>
 
 <p>Child nodes can also be defined declaratively by providing the child nodes
