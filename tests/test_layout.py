@@ -1,3 +1,5 @@
+from __future__ import print_function, absolute_import, division, unicode_literals
+
 # Derived from https://github.com/facebook/css-layout
 # Tests match hash: b8316413b310643ea6555a015b3903f4fde1104e in freakboy3742 minmax branch
 
@@ -6,8 +8,11 @@ try:
 except ImportError:
     from unittest import TestCase, expectedFailure
 
-from colosseum.nodes import CSSNode, Layout
 from colosseum.constants import *
+from colosseum.exceptions import UnknownCSSStyleException, InvalidCSSStyleException
+from colosseum.layout import CSS, Layout
+
+from .utils import TestNode
 
 STYLE = 'style'
 CHILDREN = 'children'
@@ -53,20 +58,20 @@ class LayoutEngineTest(TestCase):
 
     def _add_children(self, node, children):
         for child_data in children:
-            child = CSSNode(**child_data[STYLE])
+            child = TestNode(style=CSS(**child_data[STYLE]))
             self._add_children(child, child_data.get(CHILDREN, []))
             node.children.append(child)
 
     def _assertLayout(self, node, layout):
         # Internal recursive method for checking a node's layout
         child_layouts = layout.pop(CHILDREN, [])
-        self.assertEqual(node.layout, Layout(**layout))
+        self.assertEqual(node.style.layout, Layout(**layout))
         for child, child_layout in zip(node.children, child_layouts):
             self._assertLayout(child, child_layout)
 
     def assertLayout(self, node_data, layout):
         # Recursively create the node and children
-        node = CSSNode(**node_data[STYLE])
+        node = TestNode(style=CSS(**node_data[STYLE]))
         self._add_children(node, node_data.get(CHILDREN, []))
 
         # Recursively compare the layout

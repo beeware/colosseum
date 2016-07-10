@@ -1,9 +1,13 @@
 # Core capabilities
-from .nodes import *
+from .constants import *
+from .declaration import *
+from .exceptions import *
+from .layout import *
+from .utils import *
 
 __all__ = [
     '__version__',
-    'CSSNode',
+    'CSS',
     'UnknownCSSStyleException',
     'InvalidCSSStyleException',
 
@@ -30,4 +34,4 @@ __all__ = [
 # __version__ = '1.2.3'       # Final Release
 # __version__ = '1.2.3.post1' # Post Release 1
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
