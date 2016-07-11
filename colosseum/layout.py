@@ -72,17 +72,6 @@ class CSSNode(Declaration):
             child.style.dirty = value
 
     ######################################################################
-    # Style manipulation
-    ######################################################################
-
-    def set(self, **styles):
-        "Set multiple styles on the CSS definition."
-        for style, value in styles.items():
-            if not hasattr(self, style):
-                raise UnknownCSSStyleException("Unknown CSS style '%s'" % style)
-            setattr(self, style, value)
-
-    ######################################################################
     # Internal helpers for computing layout
     ######################################################################
 
