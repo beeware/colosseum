@@ -3,6 +3,10 @@ from __future__ import print_function, absolute_import, division, unicode_litera
 # Derived from https://github.com/facebook/css-layout
 # Tests match hash: b8316413b310643ea6555a015b3903f4fde1104e in freakboy3742 minmax branch
 
+import os
+import json
+from six import add_metaclass
+
 try:
     from unittest2 import TestCase, expectedFailure
 except ImportError:
@@ -16,7 +20,11 @@ from .utils import TestNode
 
 STYLE = 'style'
 CHILDREN = 'children'
-
+POSITION = 'position'
+WIDTH = 'width'
+HEIGHT = 'height'
+LEFT = 'left'
+TOP = 'top'
 
 SMALL_WIDTH = 34.671875
 SMALL_HEIGHT = 16
@@ -50,7 +58,7 @@ def text(value):
     return fn
 
 
-class LayoutEngineTest(TestCase):
+class _LayoutEngineTest(TestCase):
 
     ######################################################################
     # Utility methods
@@ -76,6 +84,91 @@ class LayoutEngineTest(TestCase):
 
         # Recursively compare the layout
         self._assertLayout(node, layout)
+
+
+class LayoutEngineW3CTestSequenceMeta(type):
+
+    test_name_fmt = "test_w3c_{name}"
+    definitions_dir = 'tests/w3c_test_data/'
+    definitions_ext = '.json'
+
+    @classmethod
+    def getTestName(cls, definition):
+        return cls.test_name_fmt.format(name=definition["name"])
+
+    @classmethod
+    def getNodeData(cls, node_data):
+        """
+        Obtain a dict from definition['node_data'] that has the expected format
+        of the `node_data` arg in `_LayoutEngineTest.assertLayout`
+        """
+        return {
+            STYLE: node_data[STYLE],
+            CHILDREN: [cls.getNodeData(node) for node in node_data[CHILDREN]]
+        }
+
+    @classmethod
+    def getLayout(cls, node_data):
+        """
+        Obtain a dict from definition['node_data'] that has the expected format
+        of the `layout` arg in `_LayoutEngineTest.assertLayout`
+        """
+        return {
+            WIDTH: node_data[POSITION][WIDTH],
+            HEIGHT: node_data[POSITION][HEIGHT],
+            LEFT: node_data[POSITION][LEFT],
+            TOP: node_data[POSITION][TOP],
+            CHILDREN: [cls.getLayout(node) for node in node_data[CHILDREN]]
+        }
+
+    @classmethod
+    def readDefinition(cls, fname):
+        """Read .json definition"""
+        path = os.path.join(cls.definitions_dir, fname)
+        with open(path, 'r') as fd:
+            descriptions = json.loads(fd.read())
+
+        for description in descriptions:
+            description['name'] = fname[:-len(cls.definitions_ext)]
+
+        return descriptions
+
+    @classmethod
+    def getDefinitions(cls):
+        """Read all .json files in `cls.definitions_dir`"""
+        test_files = [f for f in os.listdir(cls.definitions_dir)
+                      if f.endswith(cls.definitions_ext)]
+
+        definitions = []
+        for fname in test_files:
+            definitions.extend(cls.readDefinition(fname))
+
+        return definitions
+
+    def __new__(mcs, name, bases, dict):
+        """Setup new tests via `mcs.getDefinitions()`"""
+        def gen_test(definition):
+            def test(self):
+                self.assertLayout(
+                    mcs.getNodeData(definition['node_data']),
+                    mcs.getLayout(definition['node_data'])
+                )
+            return test
+
+        for definition in mcs.getDefinitions():
+            test_name = mcs.getTestName(definition)
+            dict[test_name] = gen_test(definition)
+
+        return type.__new__(mcs, name, bases, dict)
+
+
+@add_metaclass(LayoutEngineW3CTestSequenceMeta)
+class LayoutEngineW3CTestSequence(_LayoutEngineTest):
+    """Dynamically populate a sequence of W3C CSS tests."""
+    pass
+
+
+class LayoutEngineTest(_LayoutEngineTest):
 
     ######################################################################
     # Layout tests
