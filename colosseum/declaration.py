@@ -15,7 +15,8 @@ def css_property(name, choices=None, default=None):
     def setter(self, value):
         if value != getattr(self, '_%s' % name, default):
             if choices and value not in choices:
-                raise InvalidCSSStyleException("Invalid value for CSS property '%s'; Valid values are: %s" % (
+                raise InvalidCSSStyleException("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
+                    value,
                     name,
                     ', '.join(s.replace('-', '_').upper() for s in choices))
                 )
