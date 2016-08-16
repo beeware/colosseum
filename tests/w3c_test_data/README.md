@@ -13,7 +13,7 @@ W3C tests are defined as:
 
 __Do this regularly__:
 
-1. Loop over tests defined in `w3c/csswg-test`
+1. Loop over tests defined in `https://github.com/w3c/csswg-test`
     1. Use `Selenium` to launch a browser to interpret CSS and render:
         1. Pull attribute/value pairs as test inputs
         2. Pull width/height/x/y as test outputs
@@ -22,15 +22,16 @@ __Do this regularly__:
 2. Commit list of definitions to `pybee/colosseum` repo
 
 
-__Do this on every test__:
+__Do this every time the test suite is run__:
 
 1. Loop over list of definitions:
-    1. Construct `nested_dict` for inputs and expected outputs from definition
-    2. Run as unit test
+    1. Dynamically create a unit test for each definition
+    2. Construct dicts for inputs and expected outputs from definition
 
 # Definitions Schema
 
-The definitions is stored as a JSON on disk. It is in essence a list of dict where each dict has the following specification:
+The definitions are stored as JSON files on disk. Each file is in essence a
+list of dicts where each dict has the following specification:
 
 | field | description |
 | :---- | :---------- |

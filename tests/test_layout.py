@@ -20,11 +20,6 @@ from .utils import TestNode
 
 STYLE = 'style'
 CHILDREN = 'children'
-POSITION = 'position'
-WIDTH = 'width'
-HEIGHT = 'height'
-LEFT = 'left'
-TOP = 'top'
 
 SMALL_WIDTH = 34.671875
 SMALL_HEIGHT = 16
@@ -93,55 +88,55 @@ class LayoutEngineW3CTestSequenceMeta(type):
     definitions_ext = '.json'
 
     @classmethod
-    def getTestName(cls, definition):
-        return cls.test_name_fmt.format(name=definition["name"])
+    def getTestName(mcs, definition):
+        return mcs.test_name_fmt.format(name=definition["name"])
 
     @classmethod
-    def getNodeData(cls, node_data):
+    def getNodeData(mcs, node_data):
         """
         Obtain a dict from definition['node_data'] that has the expected format
         of the `node_data` arg in `_LayoutEngineTest.assertLayout`
         """
         return {
             STYLE: node_data[STYLE],
-            CHILDREN: [cls.getNodeData(node) for node in node_data[CHILDREN]]
+            CHILDREN: [mcs.getNodeData(node) for node in node_data[CHILDREN]]
         }
 
     @classmethod
-    def getLayout(cls, node_data):
+    def getLayout(mcs, node_data):
         """
         Obtain a dict from definition['node_data'] that has the expected format
         of the `layout` arg in `_LayoutEngineTest.assertLayout`
         """
         return {
-            WIDTH: node_data[POSITION][WIDTH],
-            HEIGHT: node_data[POSITION][HEIGHT],
-            LEFT: node_data[POSITION][LEFT],
-            TOP: node_data[POSITION][TOP],
-            CHILDREN: [cls.getLayout(node) for node in node_data[CHILDREN]]
+            'width': node_data['position']['width'],
+            'height': node_data['position']['height'],
+            'left': node_data['position']['left'],
+            'top': node_data['position']['top'],
+            CHILDREN: [mcs.getLayout(node) for node in node_data[CHILDREN]]
         }
 
     @classmethod
-    def readDefinition(cls, fname):
-        """Read .json definition"""
-        path = os.path.join(cls.definitions_dir, fname)
+    def getDefinition(mcs, fname):
+        """Read definitions in a .json file"""
+        path = os.path.join(mcs.definitions_dir, fname)
         with open(path, 'r') as fd:
             descriptions = json.loads(fd.read())
 
         for description in descriptions:
-            description['name'] = fname[:-len(cls.definitions_ext)]
+            description['name'] = fname[:-len(mcs.definitions_ext)]
 
         return descriptions
 
     @classmethod
-    def getDefinitions(cls):
-        """Read all .json files in `cls.definitions_dir`"""
-        test_files = [f for f in os.listdir(cls.definitions_dir)
-                      if f.endswith(cls.definitions_ext)]
+    def getDefinitions(mcs):
+        """Read all .json files in `mcs.definitions_dir`"""
+        test_files = [f for f in os.listdir(mcs.definitions_dir)
+                      if f.endswith(mcs.definitions_ext)]
 
         definitions = []
         for fname in test_files:
-            definitions.extend(cls.readDefinition(fname))
+            definitions.extend(mcs.getDefinition(fname))
 
         return definitions
 
