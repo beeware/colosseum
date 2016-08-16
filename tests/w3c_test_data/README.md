@@ -13,7 +13,7 @@ W3C tests are defined as:
 
 __Do this regularly__:
 
-1. Loop over tests defined in `https://github.com/w3c/csswg-test`
+1. Run `get_w3c_test_data.py`, loop over tests defined in `https://github.com/w3c/csswg-test`:
     1. Use `Selenium` to launch a browser to interpret CSS and render:
         1. Pull attribute/value pairs as test inputs
         2. Pull width/height/x/y as test outputs
@@ -31,79 +31,20 @@ __Do this every time the test suite is run__:
 # Definitions Schema
 
 The definitions are stored as JSON files on disk. Each file is in essence a
-list of dicts where each dict has the following specification:
+dict with the following keys:
 
 | field | description |
 | :---- | :---------- |
 | capabilities | Selenium output, obtain from `driver.capabilities` |
-| node_data | test descriptions, a tree of nodes where each node contains three keys, `children` is a list of children nodes, `position` is a dict with keys `height`, `left`, `top` and `width`, and `style` is a list of key-value pairs of allowed style keywords. |
+| node_data | test definition, see sub-items |
+| node_data.style | key-value pairs of the CSS style to be applied to the node |
+| node_data.position | key-value pairs with keys for 'width', 'height', 'top', 'left' |
+| node_data.children | a list of nodes with the same specification as `node_data`. For nodes without children, use an empty list. |
 | stored_time | linux timestamp |
 | w3c_path | path of the W3C CSS test file relative to the root of the `csswg-test` repo |
 | w3c_sha | Commit SHA of the `csswg-test` repo at the time of definitions generation |
 
 # Example Definition
 
-```
-[
-    {
-        "capabilities": {},
-        "node_data": {
-            "children": [
-                {
-                    "children": [],
-                    "position": {
-                        "height": 500,
-                        "left": 0,
-                        "top": 0,
-                        "width": 500
-                    },
-                    "style": {
-                        "height": 500,
-                        "width": 500
-                    }
-                },
-                {
-                    "children": [],
-                    "position": {
-                        "height": 250,
-                        "left": 0,
-                        "top": 500,
-                        "width": 250
-                    },
-                    "style": {
-                        "height": 250,
-                        "width": 250
-                    }
-                },
-                {
-                    "children": [],
-                    "position": {
-                        "height": 125,
-                        "left": 0,
-                        "top": 750,
-                        "width": 125
-                    },
-                    "style": {
-                        "height": 125,
-                        "width": 125
-                    }
-                }
-            ],
-            "position": {
-                "height": 1000,
-                "left": 0,
-                "top": 0,
-                "width": 1000
-            },
-            "style": {
-                "height": 1000,
-                "width": 1000
-            }
-        },
-        "stored_time": 1471228060,
-        "w3c_path": "css-flexbox-1/align-content-001.htm",
-        "w3c_sha": "7be59dd2ba04892c68f9978bd601935a23375473"
-    },
-    ...
-]
-```
+See `example.json`, which implements `test_layout.LayoutEngineTest.test_should_layout_node_with_children`
+in the schema defined above.

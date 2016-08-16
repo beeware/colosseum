@@ -118,25 +118,24 @@ class LayoutEngineW3CTestSequenceMeta(type):
 
     @classmethod
     def getDefinition(mcs, fname):
-        """Read definitions in a .json file"""
+        """Read test definition from a .json file"""
         path = os.path.join(mcs.definitions_dir, fname)
         with open(path, 'r') as fd:
-            descriptions = json.loads(fd.read())
+            definition = json.loads(fd.read())
 
-        for description in descriptions:
-            description['name'] = fname[:-len(mcs.definitions_ext)]
+        definition['name'] = fname[:-len(mcs.definitions_ext)]
 
-        return descriptions
+        return definition
 
     @classmethod
     def getDefinitions(mcs):
         """Read all .json files in `mcs.definitions_dir`"""
-        test_files = [f for f in os.listdir(mcs.definitions_dir)
-                      if f.endswith(mcs.definitions_ext)]
+        definitions_files = [f for f in os.listdir(mcs.definitions_dir)
+                             if f.endswith(mcs.definitions_ext)]
 
         definitions = []
-        for fname in test_files:
-            definitions.extend(mcs.getDefinition(fname))
+        for fname in definitions_files:
+            definitions.append(mcs.getDefinition(fname))
 
         return definitions
 
