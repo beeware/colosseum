@@ -2,14 +2,15 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
 import json
-from time import time
-from subprocess import check_output
 from os import chdir, listdir
 from os.path import abspath, join, split
+from subprocess import check_output
 from sys import argv
+from time import time
 
 from colosseum.declaration import _CSS_PROPERTIES
 from selenium import webdriver
+
 
 SCRIPT = """
     var el = arguments[0]
@@ -40,9 +41,6 @@ def _get_node_data(driver, element, x_offset, y_offset):
                      for child in element.find_elements_by_xpath("./*")],
     }
 
-def get_test_data(driver, url, root_selector, w3c_root, w3c_path, w3c_sha):
-    url = "file://{}/{}".format(w3c_root, w3c_path)
-
 
 class WrongStructureException(Exception):
     pass
@@ -56,6 +54,12 @@ class TestDataGetter(object):
         self.w3c_sha = sha_bytes.decode('utf8').strip()
     
     def fetch_single_test(self, driver, w3c_path):
+        """Get the test data for a single test.
+        
+        Will raise WrongStructureException if the test does not have a)
+        a body element with a single child, or b) a body element with
+        two children, the first of which is a <p> (which is ignored).
+        """
         url = "file://{}/{}".format(abspath(self.w3c_root), w3c_path)
         driver.get(url)
         body = driver.find_element_by_css_selector('body')
@@ -78,6 +82,8 @@ class TestDataGetter(object):
         }
 
     def run(self):
+        """Run the test data generator."""
+        # TODO: Run under multiple drivers and check result consistency
         driver = webdriver.Firefox()
         try:
             for path in listdir(join(self.w3c_root, "css-flexbox-1")):
@@ -100,7 +106,7 @@ class TestDataGetter(object):
 
 def main():
     output_dir = join(split(__file__)[0], 'w3c_test_data')
-    data = TestDataGetter(argv[1], output_dir).run()
+    TestDataGetter(argv[1], output_dir).run()
 
 if __name__ == "__main__":
     main()
