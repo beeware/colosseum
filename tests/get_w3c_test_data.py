@@ -4,7 +4,7 @@ from __future__ import (absolute_import, division, print_function,
 import json
 from time import time
 from subprocess import check_output
-from os import chdir
+from os import chdir, listdir
 from os.path import abspath, join, split
 from sys import argv
 
@@ -42,31 +42,30 @@ def _get_node_data(driver, element, x_offset, y_offset):
 
 def get_test_data(driver, url, root_selector, w3c_root, w3c_path, w3c_sha):
     url = "file://{}/{}".format(w3c_root, w3c_path)
+
+
+class WrongStructureException(Exception):
+    pass
     
 
 class TestDataGetter(object):
-    tests = [
-        ('css-flexbox-1/align-content-001.htm', 'div#flexbox'),
-        ('css-flexbox-1/align-content-002.htm', 'div#flexbox'),
-        ('css-flexbox-1/align-content-003.htm', 'div#flexbox'),
-        ('css-flexbox-1/align-content-004.htm', 'div#flexbox'),
-        ('css-flexbox-1/align-content-005.htm', 'div#flexbox'),
-        ('css-flexbox-1/align-content-006.htm', 'div#flexbox'),
-        ('css-flexbox-1/align-content_center.html', 'div#test'),
-        ('css-flexbox-1/align-content_flex-end.html', 'div#test'),
-        ('css-flexbox-1/align-content_flex-start.html', 'div#test'),
-    ]
-
     def __init__(self, w3c_root, output_dir):
         self.w3c_root = w3c_root
         self.output_dir = output_dir
         sha_bytes = check_output(('git', 'rev-parse', 'HEAD'), cwd=w3c_root)
         self.w3c_sha = sha_bytes.decode('utf8').strip()
     
-    def fetch_single_test(self, driver, w3c_path, root_selector):
+    def fetch_single_test(self, driver, w3c_path):
         url = "file://{}/{}".format(abspath(self.w3c_root), w3c_path)
         driver.get(url)
-        root_element = driver.find_elements_by_css_selector(root_selector)[0]
+        body = driver.find_element_by_css_selector('body')
+        body_children = body.find_elements_by_xpath("./*")
+        if len(body_children) == 2 and body_children[0].tag_name == "p":
+            root_element = body_children[1]
+        elif len(body_children) == 1:
+            root_element = body_children[0]
+        else:
+            raise WrongStructureException()
         location = root_element.location
         x_offset, y_offset = location['x'], location['y']
 
@@ -81,9 +80,18 @@ class TestDataGetter(object):
     def run(self):
         driver = webdriver.Firefox()
         try:
-            for path, selector in self.tests:
-                print("Generating {}".format(path))
-                test_data = self.fetch_single_test(driver, path, selector)
+            for path in listdir(join(self.w3c_root, "css-flexbox-1")):
+                if not (path.endswith(".htm") or path.endswith('.html')) or 'ref' in path:
+                    continue
+                try:
+                    test_data = self.fetch_single_test(
+                        driver, join('css-flexbox-1', path)
+                    )
+                    print("Generating case for {}".format(path))
+                except WrongStructureException:
+                    print("Skipping {} because it doesn't fit the expected"
+                          "structure".format(path))
+                    continue
                 path = join(self.output_dir, path.replace('/', '_')) + '.json'
                 with open(path, 'w') as f:
                     json.dump(test_data, f, indent=4, sort_keys=True)
@@ -93,7 +101,6 @@ class TestDataGetter(object):
 def main():
     output_dir = join(split(__file__)[0], 'w3c_test_data')
     data = TestDataGetter(argv[1], output_dir).run()
-    print(json.dumps(data, indent=4))
 
 if __name__ == "__main__":
     main()
