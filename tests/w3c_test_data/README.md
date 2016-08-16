@@ -13,6 +13,7 @@ W3C tests are defined as:
 
 __Do this regularly__:
 
+0. Install `selenium`.
 1. Run `tests/get_w3c_test_data.py TEST_DIR`, where `TEST_DIR` is the path to a checkout of `https://github.com/w3c/csswg-test`. This will:
     1. Use `Selenium` to launch a browser to interpret CSS and render:
         1. Pull attribute/value pairs as test inputs
