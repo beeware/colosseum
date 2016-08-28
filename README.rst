@@ -1,9 +1,13 @@
 Colosseum
 =========
 
-A (partial) implementation of the CSS box and flexbox layout algorithm.
+An independent implementation of the CSS layout algorithm. This
+implementation is completely standalone - it isn't dependent on
+a browser, and can be run over any box-like set of objects that
+need to be laid out on a page (either physical or virtual)
 
-The following CSS attributes and value types are supported:
+At present, the implementation is partial; only **portions** of
+the box and flexbox section of the specification are defined:
 
 ==========================================================================================  =======================================================================================
 Name                                                                                        Value
@@ -37,20 +41,15 @@ any object providing the required API. The simplest possible DOM
 node is the following:
 
     class MyDOMNode(object):
-        def __init__(self, style, children):
+        def __init__(self, style, children=None, parent=None):
             self.parent = None
             self.children = []
             if children:
                 for child in children:
-                    self.add(child)
+                    self.children.append(child)
+                    child.parent = self
 
             self.style = style.apply(self)
-
-    def add(self, child):
-        self.children.append(child)
-        child.parent = self.parent
-        if self.parent:
-            self.parent.dirty = True
 
 That is, a node must provide:
 
@@ -67,8 +66,8 @@ that results::
 
     >>> from colosseum import CSS, ROW, COLUMN
     >>> node = MyDOMNode(style=CSS(width=1000, height=1000, flex_direction=ROW))
-    >>> node.children.add(MyDOMNode(style=CSS(width=100, height=200)))
-    >>> node.children.add(MyDOMNode(style=CSS(width=300, height=150)))
+    >>> node.children.append(MyDOMNode(style=CSS(width=100, height=200)), parent=node)
+    >>> node.children.appebd(MyDOMNode(style=CSS(width=300, height=150)), parent=node)
     >>> layout = node.style.layout
     >>> print(layout)
     <Layout (1000x1000 @ 0,0)>
