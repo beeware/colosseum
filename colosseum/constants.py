@@ -32,8 +32,10 @@ SPACE_BETWEEN = 'space-between'
 SPACE_AROUND = 'space-around'
 
 # Position values
-RELATIVE = 'relative'
+STATIC = 'static'
 ABSOLUTE = 'absolute'
+FIXED = 'fixed'
+RELATIVE = 'relative'
 
 # Wrap values
 NOWRAP = 'nowrap'

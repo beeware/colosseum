@@ -153,11 +153,14 @@ class CSSNode(Declaration):
 
     @property
     def layout(self):
+        self.recompute()
+        return self._layout
+
+    def recompute(self):
         if self.dirty:
             self._layout.reset()
             self._calculate_layout(None)
             self.dirty = False
-        return self._layout
 
     def _calculate_layout(self, parent_max_width=None):
         for child in self._node.children:

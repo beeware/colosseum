@@ -105,7 +105,7 @@ class Declaration(object):
     max_width = css_property('max_width')
     max_height = css_property('max_height')
 
-    position = css_property('position', choices=set([RELATIVE, ABSOLUTE]), default=RELATIVE)
+    position = css_property('position', choices=set([STATIC, ABSOLUTE, FIXED, RELATIVE]), default=RELATIVE)
     top = css_property('top')
     bottom = css_property('bottom')
     left = css_property('left')
