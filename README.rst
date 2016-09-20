@@ -40,16 +40,15 @@ objects. There is no required base class; Colosseum will duck-type
 any object providing the required API. The simplest possible DOM
 node is the following:
 
-    class MyDOMNode(object):
-        def __init__(self, style, children=None, parent=None):
+    class MyDOMNode:
+        def __init__(self, style):
             self.parent = None
             self.children = []
-            if children:
-                for child in children:
-                    self.children.append(child)
-                    child.parent = self
-
             self.style = style.apply(self)
+
+        def add(self, child):
+            self.children.append(child)
+            child.parent = self
 
 That is, a node must provide:
 
@@ -66,8 +65,8 @@ that results::
 
     >>> from colosseum import CSS, ROW, COLUMN
     >>> node = MyDOMNode(style=CSS(width=1000, height=1000, flex_direction=ROW))
-    >>> node.children.append(MyDOMNode(style=CSS(width=100, height=200)), parent=node)
-    >>> node.children.appebd(MyDOMNode(style=CSS(width=300, height=150)), parent=node)
+    >>> node.add(MyDOMNode(style=CSS(width=100, height=200)))
+    >>> node.add(MyDOMNode(style=CSS(width=300, height=150)))
     >>> layout = node.style.layout
     >>> print(layout)
     <Layout (1000x1000 @ 0,0)>
@@ -118,6 +117,34 @@ style attribute. The value of the property will revert to the default::
     0
     >>> print(node.style.layout)
     <Layout (1500x800 @ 0,10)>
+
+Layout values are given relative to their parent node. If you want to
+know the absolute position of a node on the display canvas, you can
+request the `origin` attribute of the layout. This will give you the
+point on the canvas from which all the node's attributes are measured.
+You can also request the `absolute` attribute of the layout, which will
+give you the position of the element on the entire canvas::
+
+    >>> node.style.set(margin_top=10, margin_left=20)
+    >>> print(node.style.layout)
+    <Layout (1500x800 @ 20,10)>
+    >>> for child in node.children:
+    ...     print(child.style.layout)
+    <Layout (100x200 @ 0,0)>
+    <Layout (300x150 @ 0,200)>
+    >>> print(node.style.layout.origin)
+    <Point (0,0)>
+    >>> for child in node.children:
+    ...     print(child.style.layout.origin)
+    <Point (20,10)>
+    <Point (20,10)>
+    >>> print(node.style.layout.absolute)
+    <Point (20,10)>
+    >>> for child in node.children:
+    ...     print(child.style.layout.absolute)
+    <Point (20,10)>
+    <Point (20,210)>
+
 
 Community
 ---------
