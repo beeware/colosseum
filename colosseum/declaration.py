@@ -159,39 +159,17 @@ class Declaration(object):
     # Style hinting
     ######################################################################
 
-    def hint(self, height=None, width=None):
-        if isinstance(height, tuple):
-            if len(height) == 2:
-                if height[0] is not None and self.min_height is None:
-                    self.min_height = height[0]
-                if height[1] is not None and self.max_height is None:
-                    self.max_height = height[1]
-            elif len(height) == 3:
-                if height[0] is not None and self.min_height is None:
-                    self.min_height = height[0]
-                if height[1] is not None and self.height is None:
-                    self.height = height[1]
-                if height[2] is not None and self.max_height is None:
-                    self.max_height = height[2]
-            else:
-                raise ValueError("Height hints must be a 2-tuple (min, max) or 3-tuple (min, preferred, max)")
-        elif height is not None and self.height is None:
-            self.height = height
+    def hint(self, **style):
+        for attr, new_value in style.items():
+            try:
+                # Only set the value if:
+                #  - it's an explicit hint to None, or
+                #  - if there isn't an existing value for the attribute.
+                old_value = getattr(self, attr)
+                if new_value is None or old_value is None:
+                    setattr(self, attr, new_value)
+            except KeyError:
+                pass
 
-        if isinstance(width, tuple):
-            if len(width) == 2:
-                if width[0] is not None and self.min_width is None:
-                    self.min_width = width[0]
-                if width[1] is not None and self.max_width is None:
-                    self.max_width = width[1]
-            elif len(width) == 3:
-                if width[0] is not None and self.min_width is None:
-                    self.min_width = width[0]
-                if width[1] is not None and self.width is None:
-                    self.width = width[1]
-                if width[2] is not None and self.max_width is None:
-                    self.max_width = width[2]
-            else:
-                raise ValueError("Width hints must be a 2-tuple (min, max) or 3-tuple (min, preferred, max)")
-        elif width is not None and self.width is None:
-            self.width = width
+        # print("HINTED HEIGHT", self.min_height, self.height, self.max_height)
+        # print("HINTED WIDTH", self.min_width, self.width, self.max_width)
