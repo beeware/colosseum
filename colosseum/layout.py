@@ -1,20 +1,28 @@
-from __future__ import print_function, absolute_import, division, unicode_literals
-
 from .constants import *
 from .declaration import Declaration
 from .exceptions import *
 from .utils import dimension, leading, position, trailing
 
 
-class Layout(object):
-    def __init__(self, width=None, height=None, top=0, left=0):
+class Point:
+    def __init__(self, top, left):
+        self.top = top
+        self.left = left
+
+    def __repr__(self):
+        return '<Point (%s,%s)>' % (self.left, self.top)
+
+
+class Layout:
+    def __init__(self, node, width=None, height=None, top=0, left=0):
+        self.node = node
         self.width = width
         self.height = height
         self.top = top
         self.left = left
 
     def __repr__(self):
-        return u'<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.left, self.top)
+        return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.absolute.left, self.absolute.top)
 
     def __eq__(self, value):
         return all([
@@ -38,6 +46,28 @@ class Layout(object):
     def bottom(self):
         return self.top + self.height
 
+    @property
+    def absolute(self):
+        if self.node.parent:
+            parent_layout = self.node.parent.style.layout
+            return Point(
+                top=parent_layout.origin.top + parent_layout.top + self.top,
+                left=parent_layout.origin.left + parent_layout.left + self.left,
+            )
+        else:
+            return Point(top=self.top, left=self.left)
+
+    @property
+    def origin(self):
+        if self.node.parent:
+            parent_layout = self.node.parent.style.layout
+            return Point(
+                top=parent_layout.origin.top + parent_layout.top,
+                left=parent_layout.origin.left + parent_layout.left,
+            )
+        else:
+            return Point(top=0, left=0)
+
 
 class CSS(Declaration):
     ######################################################################
@@ -51,7 +81,7 @@ class CSS(Declaration):
 class CSSNode(Declaration):
     def __init__(self, node, style=None):
         super(CSSNode, self).__init__()
-        self._layout = Layout()
+        self._layout = Layout(node)
         self._node = node
         self._dirty = True
         if style:
