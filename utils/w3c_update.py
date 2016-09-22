@@ -22,8 +22,7 @@ SCRIPT = """
     return style_obj
 """
 
-TEST_HARNESS_STUB = """
-import os
+TEST_HARNESS_STUB = """import os
 import json
 
 from tests.utils import LayoutEngineTestCase, build_w3c_test
@@ -89,23 +88,20 @@ class SuiteBuilder(object):
         x_offset, y_offset = location['x'], location['y']
 
         return {
-            'capabilities': driver.capabilities,
             'node_data': _get_node_data(driver, root_element, x_offset, y_offset),
-            'stored_time': time(),
             'w3c_path': w3c_path,
-            'w3c_sha': self.w3c_sha,
         }
 
     def run(self):
         """Run the test data generator."""
         # TODO: Run under multiple drivers and check result consistency
         driver = getattr(webdriver, self.browser)()
-        missing = []
         try:
             section_dir = os.path.join(self.w3c_root, self.section)
             for dirpath, dirnames, filenames in os.walk(section_dir):
                 dirname = dirpath[len(self.w3c_root):]
                 print("Process directory {}...".format(dirname))
+                missing = []
                 present = []
                 for filename in filenames:
                     if '-ref.' not in filename and (
@@ -133,7 +129,7 @@ class SuiteBuilder(object):
                             present.append(result[len(self.output_dir) + 1:])
                         except WrongStructureException:
                             print("    ... skipping because it doesn't fit the expected structure")
-                            missing.append(os.path.join(dirname, filename))
+                            missing.append(filename)
 
                 if present:
                     with open(os.path.join(self.output_dir, dirname, 'test_w3c.py'), 'w') as f:
@@ -142,11 +138,14 @@ class SuiteBuilder(object):
                             test_name = os.path.splitext(os.path.basename(filename))[0].replace('-', '_')
                             f.write("    test_%s = build_w3c_test('%s')\n" % (test_name, filename))
 
+                    with open(os.path.join(self.output_dir, dirname, 'missing.json'), 'w') as f:
+                        json.dump({
+                                'w3c_sha': self.w3c_sha,
+                                'missing': missing
+                            }, f, indent=4, sort_keys=True)
+
         finally:
             driver.close()
-
-        with open(os.path.join(self.output_dir, 'missing.json'), 'w') as f:
-            json.dump(missing, f, indent=4, sort_keys=True)
 
 
 if __name__ == "__main__":
