@@ -16,7 +16,7 @@ from colosseum.constants import *
 from colosseum.exceptions import UnknownCSSStyleException, InvalidCSSStyleException
 from colosseum.layout import CSS, Layout
 
-from .utils import TestNode
+from .utils import TestNode, LayoutEngineTestCase
 
 STYLE = 'style'
 CHILDREN = 'children'
@@ -53,117 +53,7 @@ def text(value):
     return fn
 
 
-class _LayoutEngineTest(TestCase):
-
-    ######################################################################
-    # Utility methods
-    ######################################################################
-
-    def _add_children(self, node, children):
-        for child_data in children:
-            child = TestNode(style=CSS(**child_data[STYLE]))
-            self._add_children(child, child_data.get(CHILDREN, []))
-            node.children.append(child)
-
-    def _assertLayout(self, node, layout):
-        # Internal recursive method for checking a node's layout
-        child_layouts = layout.pop(CHILDREN, [])
-        self.assertEqual(node.style.layout, Layout(**layout))
-        for child, child_layout in zip(node.children, child_layouts):
-            self._assertLayout(child, child_layout)
-
-    def assertLayout(self, node_data, layout):
-        # Recursively create the node and children
-        node = TestNode(style=CSS(**node_data[STYLE]))
-        self._add_children(node, node_data.get(CHILDREN, []))
-
-        # Recursively compare the layout
-        self._assertLayout(node, layout)
-
-
-class LayoutEngineW3CTestSequenceMeta(type):
-
-    test_name_fmt = "test_w3c_{name}"
-    definitions_dir = 'tests/w3c_test_data/'
-    definitions_ext = '.json'
-
-    @classmethod
-    def getTestName(mcs, definition):
-        return mcs.test_name_fmt.format(name=definition["name"])
-
-    @classmethod
-    def getNodeData(mcs, node_data):
-        """
-        Obtain a dict from definition['node_data'] that has the expected format
-        of the `node_data` arg in `_LayoutEngineTest.assertLayout`
-        """
-        return {
-            STYLE: node_data[STYLE],
-            CHILDREN: [mcs.getNodeData(node) for node in node_data[CHILDREN]]
-        }
-
-    @classmethod
-    def getLayout(mcs, node_data):
-        """
-        Obtain a dict from definition['node_data'] that has the expected format
-        of the `layout` arg in `_LayoutEngineTest.assertLayout`
-        """
-        return {
-            'width': node_data['position']['width'],
-            'height': node_data['position']['height'],
-            'left': node_data['position']['left'],
-            'top': node_data['position']['top'],
-            CHILDREN: [mcs.getLayout(node) for node in node_data[CHILDREN]]
-        }
-
-    @classmethod
-    def getDefinition(mcs, fname):
-        """Read test definition from a .json file"""
-        path = os.path.join(mcs.definitions_dir, fname)
-        with open(path, 'r') as fd:
-            definition = json.loads(fd.read())
-
-        definition['name'] = fname[:-len(mcs.definitions_ext)]
-
-        return definition
-
-    @classmethod
-    def getDefinitions(mcs):
-        """Read all .json files in `mcs.definitions_dir`"""
-        definitions_files = [f for f in os.listdir(mcs.definitions_dir)
-                             if f.endswith(mcs.definitions_ext)]
-
-        definitions = []
-        for fname in definitions_files:
-            definitions.append(mcs.getDefinition(fname))
-
-        return definitions
-
-    def __new__(mcs, name, bases, dict):
-        """Setup new tests via `mcs.getDefinitions()`"""
-        def gen_test(definition):
-            def test(self):
-                self.assertLayout(
-                    mcs.getNodeData(definition['node_data']),
-                    mcs.getLayout(definition['node_data'])
-                )
-            return test
-
-        for definition in mcs.getDefinitions():
-            test_name = mcs.getTestName(definition)
-            dict[test_name] = gen_test(definition)
-
-        return type.__new__(mcs, name, bases, dict)
-
-
-@add_metaclass(LayoutEngineW3CTestSequenceMeta)
-class LayoutEngineW3CTestSequence(_LayoutEngineTest):
-    """Dynamically populate a sequence of W3C CSS tests."""
-    pass
-
-
-class LayoutEngineTest(_LayoutEngineTest):
-
+class LayoutEngineTest(LayoutEngineTestCase):
     ######################################################################
     # Layout tests
     ######################################################################

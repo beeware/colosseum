@@ -22,7 +22,10 @@ class Layout:
         self.left = left
 
     def __repr__(self):
-        return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.absolute.left, self.absolute.top)
+        if self.node:
+            return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.absolute.left, self.absolute.top)
+        else:
+            return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.left, self.top)
 
     def __eq__(self, value):
         return all([
