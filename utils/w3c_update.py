@@ -1,6 +1,3 @@
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
-
 import argparse
 import json
 import os
@@ -97,52 +94,67 @@ class SuiteBuilder(object):
         # TODO: Run under multiple drivers and check result consistency
         driver = getattr(webdriver, self.browser)()
         try:
-            section_dir = os.path.join(self.w3c_root, self.section)
-            for dirpath, dirnames, filenames in os.walk(section_dir):
-                dirname = dirpath[len(self.w3c_root):]
-                print("Process directory {}...".format(dirname))
-                missing = []
-                present = []
-                for filename in filenames:
-                    if '-ref.' not in filename and (
-                                filename.endswith(".htm")
-                                or filename.endswith('.html')
-                                or filename.endswith('.xht')
-                            ):
-                        try:
-                            print("    Generating case for {}/{} ...".format(dirname, filename))
-                            test_data = self.fetch_single_test(
-                                driver, os.path.join(dirname, filename)
-                            )
+            if self.section is None:
+                sections = [
+                    d
+                    for d in os.listdir(self.output_dir)
+                    if os.path.isdir(os.path.join(self.output_dir, d))
+                    and d != '__pycache__'
+                ]
+            else:
+                sections = [self.section]
 
+            for section in sections:
+                section_dir = os.path.join(self.w3c_root, section)
+                for dirpath, dirnames, filenames in os.walk(section_dir):
+                    dirname = dirpath[len(self.w3c_root):]
+                    print("Process directory {}...".format(dirname))
+                    missing = []
+                    present = []
+                    for filename in filenames:
+                        if '-ref.' not in filename and (
+                                    filename.endswith(".htm")
+                                    or filename.endswith('.html')
+                                    or filename.endswith('.xht')
+                                ):
                             try:
-                                os.makedirs(os.path.join(self.output_dir, dirname))
-                                with open(os.path.join(self.output_dir, dirname, '__init__.py'), 'w') as f:
+                                print("    Generating case for {}/{} ...".format(dirname, filename))
+                                test_data = self.fetch_single_test(
+                                    driver, os.path.join(dirname, filename)
+                                )
+
+                                try:
+                                    os.makedirs(os.path.join(self.output_dir, dirname))
+                                    with open(os.path.join(self.output_dir, dirname, '__init__.py'), 'w') as f:
+                                        pass
+                                except OSError:
                                     pass
-                            except OSError:
-                                pass
-                            result = os.path.join(self.output_dir, dirname, os.path.splitext(filename)[0]) + '.json'
+                                result = os.path.join(self.output_dir, dirname, os.path.splitext(filename)[0]) + '.json'
 
-                            with open(result, 'w') as f:
-                                json.dump(test_data, f, indent=4, sort_keys=True)
+                                with open(result, 'w') as f:
+                                    json.dump(test_data, f, indent=4, sort_keys=True)
 
-                            present.append(result[len(self.output_dir) + 1:])
-                        except WrongStructureException:
-                            print("    ... skipping because it doesn't fit the expected structure")
-                            missing.append(filename)
+                                present.append(result[len(self.output_dir) + 1:])
+                            except WrongStructureException:
+                                print("    ... skipping because it doesn't fit the expected structure")
+                                missing.append(filename)
 
-                if present:
-                    with open(os.path.join(self.output_dir, dirname, 'test_w3c.py'), 'w') as f:
-                        f.write(TEST_HARNESS_STUB % os.path.basename(dirname).replace('-', '').title())
-                        for filename in present:
-                            test_name = os.path.splitext(os.path.basename(filename))[0].replace('-', '_')
-                            f.write("    test_%s = build_w3c_test('%s')\n" % (test_name, filename))
+                    if present:
+                        testfile = os.path.join(self.output_dir, dirname, 'test_w3c.py')
+                        if os.path.isfile(testfile):
+                            testfile = os.path.join(self.output_dir, dirname, 'test_w3c_new.py')
 
-                    with open(os.path.join(self.output_dir, dirname, 'missing.json'), 'w') as f:
-                        json.dump({
-                                'w3c_sha': self.w3c_sha,
-                                'missing': missing
-                            }, f, indent=4, sort_keys=True)
+                        with open(testfile, 'w') as f:
+                            f.write(TEST_HARNESS_STUB % os.path.basename(dirname).replace('-', '').title())
+                            for filename in present:
+                                test_name = os.path.splitext(os.path.basename(filename))[0].replace('-', '_')
+                                f.write("    test_%s = build_w3c_test('%s')\n" % (test_name, filename))
+
+                        with open(os.path.join(self.output_dir, dirname, 'missing.json'), 'w') as f:
+                            json.dump({
+                                    'w3c_sha': self.w3c_sha,
+                                    'missing': missing
+                                }, f, indent=4, sort_keys=True)
 
         finally:
             driver.close()
@@ -167,15 +179,15 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        'source',
-        metavar='<w3c source directory>',
-        help='The path to the https://github.com/w3c/csswg-test checkout'
+        '-s', '--section',
+        help='The top level test section to process',
+        default=None
     )
 
     parser.add_argument(
-        'section',
-        metavar='<w3c test section>',
-        help='The top level test section to process'
+        'source',
+        metavar='<w3c source directory>',
+        help='The path to the https://github.com/w3c/csswg-test checkout'
     )
 
     args = parser.parse_args()
