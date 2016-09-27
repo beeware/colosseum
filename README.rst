@@ -60,7 +60,7 @@ Colosseum provides a ``CSS`` class that allows you to define CSS
 properties, and apply them can be applied to any DOM-like tree of
 objects. There is no required base class; Colosseum will duck-type
 any object providing the required API. The simplest possible DOM
-node is the following:
+node is the following::
 
     class MyDOMNode:
         def __init__(self, style):
