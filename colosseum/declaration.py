@@ -1,7 +1,4 @@
-from __future__ import print_function, absolute_import, division, unicode_literals
-
 from .constants import *
-from .exceptions import *
 
 
 _CSS_PROPERTIES = []
@@ -15,7 +12,7 @@ def css_property(name, choices=None, default=None):
     def setter(self, value):
         if value != getattr(self, '_%s' % name, default):
             if choices and value not in choices:
-                raise InvalidCSSStyleException("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
+                raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                     value,
                     name,
                     ', '.join(s.replace('-', '_').upper() for s in choices))
@@ -68,7 +65,7 @@ def css_directional_property(name, default=0):
                 setattr(self, name % '_bottom', value[0])
                 setattr(self, name % '_left', value[0])
             else:
-                raise InvalidCSSStyleException("Invalid value for '%s'; value must be an number, or a 1-4 tuple." % (name % ''))
+                raise ValueError("Invalid value for '%s'; value must be an number, or a 1-4 tuple." % (name % ''))
         except TypeError:
             setattr(self, name % '_top', value)
             setattr(self, name % '_right', value)
@@ -147,7 +144,7 @@ class Declaration(object):
         "Set multiple styles on the CSS definition."
         for style, value in styles.items():
             if not hasattr(self, style):
-                raise UnknownCSSStyleException("Unknown CSS style '%s'" % style)
+                raise NameError("Unknown CSS style '%s'" % style)
             setattr(self, style, value)
 
     def copy(self, source):

@@ -1,5 +1,3 @@
-from __future__ import print_function, absolute_import, division, unicode_literals
-
 # Derived from https://github.com/facebook/css-layout
 # Tests match hash: b8316413b310643ea6555a015b3903f4fde1104e in freakboy3742 minmax branch
 
@@ -13,7 +11,6 @@ except ImportError:
     from unittest import TestCase, expectedFailure
 
 from colosseum.constants import *
-from colosseum.exceptions import UnknownCSSStyleException, InvalidCSSStyleException
 from colosseum.layout import CSS, Layout
 
 from .utils import TestNode, LayoutEngineTestCase

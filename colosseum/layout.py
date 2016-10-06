@@ -1,6 +1,5 @@
 from .constants import *
 from .declaration import Declaration
-from .exceptions import *
 from .utils import dimension, leading, position, trailing
 
 

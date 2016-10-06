@@ -1,12 +1,6 @@
-from __future__ import print_function, absolute_import, division, unicode_literals
-
-try:
-    from unittest2 import TestCase
-except ImportError:
-    from unittest import TestCase
+from unittest import TestCase
 
 from colosseum.constants import *
-from colosseum.exceptions import UnknownCSSStyleException, InvalidCSSStyleException
 from colosseum.layout import CSS
 
 from .utils import TestNode
@@ -116,7 +110,7 @@ class CSSNodeTest(TestCase):
 
     def test_unknown_style_in_constructor(self):
         "Unknown style properties in a constructor raise an exception"
-        with self.assertRaises(UnknownCSSStyleException):
+        with self.assertRaises(NameError):
             TestNode(style=CSS(doesnt_exist=10))
 
     def test_set_style(self):
@@ -184,7 +178,7 @@ class CSSNodeTest(TestCase):
         "Bulk style-set method raises exception on unknown style"
         node = TestNode(style=CSS(width=10, height=20))
 
-        with self.assertRaises(UnknownCSSStyleException):
+        with self.assertRaises(NameError):
             node.style.set(width=30, height=40, top=50, doesnt_exist=60)
 
     def test_directional_attribute_from_single_number(self):
@@ -245,10 +239,10 @@ class CSSNodeTest(TestCase):
     def test_directional_attribute_other_lists(self):
         "Attributes that have directional underpinning can be set by other list sizes."
 
-        with self.assertRaises(InvalidCSSStyleException):
+        with self.assertRaises(ValueError):
             TestNode(style=CSS(margin=[]))
 
-        with self.assertRaises(InvalidCSSStyleException):
+        with self.assertRaises(ValueError):
             TestNode(style=CSS(margin=[1, 2, 3, 4, 5]))
 
     def test_content_validation(self):
@@ -259,7 +253,7 @@ class CSSNodeTest(TestCase):
         node.style.align_self = 'center'
         self.assertEqual(node.style.align_self, 'center')
 
-        with self.assertRaises(InvalidCSSStyleException):
+        with self.assertRaises(ValueError):
             node.style.align_self = 'invalid value'
 
         self.assertEqual(node.style.align_self, 'center')
