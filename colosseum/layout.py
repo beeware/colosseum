@@ -286,7 +286,7 @@ class BoxModelEngine:
 
                     # This is the main recursive call. We layout non flexible children.
                     if not already_computed_next_layout:
-                        child._compute(max_width)
+                        child.compute(max_width)
 
                     # Absolute positioned elements do not take part of the layout, so we
                     # don't use them to compute main_content_dim
@@ -395,7 +395,7 @@ class BoxModelEngine:
                                 pass
 
                         # And we recursively call the layout algorithm for this child
-                        child._compute(max_width)
+                        child.compute(max_width)
 
             # We use justify_content to figure out how to allocate the remaining
             # space available

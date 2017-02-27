@@ -37,9 +37,12 @@ class TestLayout:
         self.left = 0
 
     ######################################################################
-    # Style dirtiness tracking.
+    # Layout dirtiness tracking.
+    #
+    # If dirty == True, the layout is known to be invalid.
+    # If dirty == False, the layout is known to be good.
+    # If dirty is None, the layout is currently being re-evaluated.
     ######################################################################
-
     @property
     def dirty(self):
         return self._dirty
@@ -88,13 +91,14 @@ class TestNode:
     ######################################################################
     # Compute layout
     ######################################################################
-    def _compute(self, max_width):
-        self._engine.compute(max_width)
-
     def compute(self, max_width=None):
-        if self.layout.dirty:
-            self.layout.reset()
-            self._compute(max_width)
+        if self.layout.dirty != False:
+            # If the layout is actually dirty, reset the layout
+            # and mark the layout as currently being recomputed.
+            if self.layout.dirty:
+                self.layout.reset()
+                self.layout.dirty = None
+            self._engine.compute(max_width)
             self.layout.dirty = False
 
 
