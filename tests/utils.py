@@ -63,11 +63,10 @@ class TestNode:
                 self.add(child)
 
         self.layout = TestLayout(self)
-        self._style = style
         if style:
-            self._engine = style.engine(self)
+            self.style = style
         else:
-            self._engine = CSS().engine(self)
+            self.style = CSS()
 
     @property
     def style(self):
@@ -75,7 +74,7 @@ class TestNode:
 
     @style.setter
     def style(self, value):
-        self._style = value.apply(self)
+        self._style = value
         self._engine = value.engine(self)
 
     @property

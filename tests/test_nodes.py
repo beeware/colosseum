@@ -7,7 +7,7 @@ from colosseum.constants import (
     AUTO, CENTER, STRETCH,
     WRAP, NOWRAP
 )
-from colosseum.layout import CSS
+from colosseum.declaration import CSS
 
 from .utils import TestNode
 
