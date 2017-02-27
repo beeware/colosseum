@@ -1,19 +1,11 @@
 # Derived from https://github.com/facebook/css-layout
 # Tests match hash: b8316413b310643ea6555a015b3903f4fde1104e in freakboy3742 minmax branch
 
-import os
-import json
-from six import add_metaclass
+from unittest import expectedFailure
 
-try:
-    from unittest2 import TestCase, expectedFailure
-except ImportError:
-    from unittest import TestCase, expectedFailure
+from colosseum.constants import WIDTH, HEIGHT
 
-from colosseum.constants import *
-from colosseum.layout import CSS
-
-from .utils import TestNode, LayoutEngineTestCase
+from .utils import LayoutEngineTestCase
 
 STYLE = 'style'
 CHILDREN = 'children'
@@ -876,12 +868,17 @@ class LayoutEngineTest(LayoutEngineTestCase):
 
     def test_should_layout_node_with_position_absolute_left_and_margin_left(self):
         self.assertLayout(
-            {STYLE: {}, CHILDREN: [
-                {STYLE: {'left': 5, 'margin_left': 5, 'position': 'absolute'}}
+            {
+                STYLE: {},
+                CHILDREN: [
+                    {
+                        STYLE: {'left': 5, 'margin_left': 5, 'position': 'absolute'}
+                    }
                 ]
             },
             {
-                'width': 0, 'height': 0, 'top': 0, 'left': 0, CHILDREN: [
+                'width': 0, 'height': 0, 'top': 0, 'left': 0,
+                CHILDREN: [
                     {'width': 0, 'height': 0, 'top': 0, 'left': 10}
                 ]
             }
@@ -1434,7 +1431,10 @@ class LayoutEngineTest(LayoutEngineTestCase):
                 STYLE: {'width': 200, 'height': 200},
                 CHILDREN: [
                     {
-                        STYLE: {'position': 'absolute', 'justify_content': 'center', 'top': 0, 'left': 0, 'right': 0, 'bottom': 0},
+                        STYLE: {
+                            'position': 'absolute', 'justify_content': 'center',
+                            'top': 0, 'left': 0, 'right': 0, 'bottom': 0
+                        },
                         CHILDREN: [
                             {STYLE: {'width': 100, 'height': 100}}
                         ]
@@ -1543,8 +1543,9 @@ class LayoutEngineTest(LayoutEngineTestCase):
                 ]
             },
             {
-                'width': 0, 'height': 0, 'top': 0, 'left': 0, CHILDREN: [
-                {'width': 10, 'height': 0, 'top': 0, 'left': -10}
+                'width': 0, 'height': 0, 'top': 0, 'left': 0,
+                CHILDREN: [
+                    {'width': 10, 'height': 0, 'top': 0, 'left': -10}
                 ]
             }
         )
@@ -1786,13 +1787,23 @@ class LayoutEngineTest(LayoutEngineTestCase):
 
     def test_should_use_min_bounds_over_max_bounds(self):
         self.assertLayout(
-            {STYLE: {'width': 100, 'height': 200, 'min_width': 110, 'max_width': 90, 'min_height': 210, 'max_height': 190}},
+            {
+                STYLE: {
+                    'width': 100, 'height': 200, 'min_width': 110, 'max_width': 90,
+                    'min_height': 210, 'max_height': 190
+                }
+            },
             {'width': 110, 'height': 210, 'top': 0, 'left': 0}
         )
 
     def test_should_use_min_bounds_over_max_bounds_and_natural_width(self):
         self.assertLayout(
-            {STYLE: {'width': 100, 'height': 200, 'min_width': 90, 'max_width': 80, 'min_height': 190, 'max_height': 180}},
+            {
+                STYLE: {
+                    'width': 100, 'height': 200, 'min_width': 90, 'max_width': 80,
+                    'min_height': 190, 'max_height': 180
+                }
+            },
             {'width': 90, 'height': 190, 'top': 0, 'left': 0}
         )
 
@@ -1810,13 +1821,24 @@ class LayoutEngineTest(LayoutEngineTestCase):
 
     def test_should_use_padded_size_over_max_bounds(self):
         self.assertLayout(
-            {STYLE: {'padding_top': 15, 'padding_bottom': 15, 'padding_left': 20, 'padding_right': 20, 'max_width': 30, 'max_height': 10}},
+            {
+                STYLE: {
+                    'padding_top': 15, 'padding_bottom': 15,
+                    'padding_left': 20, 'padding_right': 20,
+                    'max_width': 30, 'max_height': 10
+                }
+            },
             {'width': 40, 'height': 30, 'top': 0, 'left': 0}
         )
 
     def test_should_use_min_size_over_padded_size(self):
         self.assertLayout(
-            {STYLE: {'padding_top': 15, 'padding_bottom': 15, 'padding_left': 20, 'padding_right': 20, 'min_width': 50, 'min_height': 40}},
+            {
+                STYLE: {
+                    'padding_top': 15, 'padding_bottom': 15, 'padding_left': 20, 'padding_right': 20,
+                    'min_width': 50, 'min_height': 40
+                }
+            },
             {'width': 50, 'height': 40, 'top': 0, 'left': 0}
         )
 
@@ -1863,7 +1885,7 @@ class LayoutEngineTest(LayoutEngineTestCase):
     def test_should_override_flex_direction_size_with_max_bounds(self):
         self.assertLayout(
             {
-                STYLE: {'width': 300, 'height': 200, 'flex_direction':'row'},
+                STYLE: {'width': 300, 'height': 200, 'flex_direction': 'row'},
                 CHILDREN: [
                     {STYLE: {'flex': 1}},
                     {STYLE: {'flex': 1, 'max_width': 60}},
@@ -1883,7 +1905,7 @@ class LayoutEngineTest(LayoutEngineTestCase):
     def test_should_ignore_flex_size_if_fully_bound(self):
         self.assertLayout(
             {
-                STYLE: {'width': 300, 'height': 200, 'flex_direction':'row'},
+                STYLE: {'width': 300, 'height': 200, 'flex_direction': 'row'},
                 CHILDREN: [
                     {STYLE: {'flex': 1, 'max_width': 60}},
                     {STYLE: {'flex': 1, 'max_width': 60}},
@@ -1903,7 +1925,7 @@ class LayoutEngineTest(LayoutEngineTestCase):
     def test_should_ignore_flex_size_if_fully_min_bound(self):
         self.assertLayout(
             {
-                STYLE: {'width': 300, 'height': 200, 'flex_direction':'row'},
+                STYLE: {'width': 300, 'height': 200, 'flex_direction': 'row'},
                 CHILDREN: [
                     {STYLE: {'flex': 1, 'min_width': 120}},
                     {STYLE: {'flex': 1, 'min_width': 120}},
@@ -2027,7 +2049,12 @@ class LayoutEngineTest(LayoutEngineTestCase):
             {
                 STYLE: {'width': 1000, 'align_items': 'stretch'},
                 CHILDREN: [
-                    {STYLE: {'height': 100, 'min_height': 90, 'max_height': 110, 'min_width': 900, 'max_width': 1100}}
+                    {
+                        STYLE: {
+                            'height': 100, 'min_height': 90, 'max_height': 110,
+                            'min_width': 900, 'max_width': 1100
+                        }
+                    }
                 ]
             },
             {
@@ -2091,7 +2118,13 @@ class LayoutEngineTest(LayoutEngineTestCase):
             {
                 STYLE: {'width': 1000, 'height': 1000},
                 CHILDREN: [
-                    {STYLE: {'position': 'absolute', 'top': 100, 'left': 100, 'bottom': 100, 'right': 100, 'max_width': 500, 'max_height': 600}}
+                    {
+                        STYLE: {
+                            'position': 'absolute',
+                            'top': 100, 'left': 100, 'bottom': 100, 'right': 100,
+                            'max_width': 500, 'max_height': 600
+                        }
+                    }
                 ]
             },
             {
@@ -2107,7 +2140,13 @@ class LayoutEngineTest(LayoutEngineTestCase):
             {
                 STYLE: {'width': 1000, 'height': 1000},
                 CHILDREN: [
-                    {STYLE: {'position': 'absolute', 'top': 100, 'left': 100, 'bottom': 100, 'right': 100, 'min_width': 900, 'min_height': 1000}}
+                    {
+                        STYLE: {
+                            'position': 'absolute',
+                            'top': 100, 'left': 100, 'bottom': 100, 'right': 100,
+                            'min_width': 900, 'min_height': 1000
+                        }
+                    }
                 ]
             },
             {
@@ -2166,7 +2205,8 @@ class LayoutEngineTest(LayoutEngineTestCase):
                 'width': 5, 'height': 0, 'top': 0, 'left': 0,
                 CHILDREN: [
                     {'width': 5, 'height': 0, 'top': 0, 'left': 0},
-                    {'width': 5, 'height': 0, 'top': 0, 'left': 0,
+                    {
+                        'width': 5, 'height': 0, 'top': 0, 'left': 0,
                         CHILDREN: [
                             {'width': 5, 'height': 0, 'top': 0, 'left': 0}
                         ]

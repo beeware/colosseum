@@ -1,4 +1,10 @@
-from .constants import *
+from .constants import (
+    STATIC, ABSOLUTE, FIXED, RELATIVE,
+    ROW, COLUMN,
+    FLEX_START, FLEX_END,
+    AUTO, CENTER, STRETCH, SPACE_BETWEEN, SPACE_AROUND,
+    WRAP, NOWRAP
+)
 
 
 _CSS_PROPERTIES = []
@@ -127,9 +133,20 @@ class CSS:
     border_bottom_width = css_property('border_bottom_width', default=0)
     border_left_width = css_property('border_left_width', default=0)
 
-    justify_content = css_property('justify_content', choices=set([FLEX_START, CENTER, FLEX_END, SPACE_BETWEEN, SPACE_AROUND]), default=FLEX_START)
-    align_items = css_property('align_items', choices=set([FLEX_START, CENTER, FLEX_END, STRETCH]), default=STRETCH)
-    align_self = css_property('align_self', choices=set([FLEX_START, CENTER, FLEX_END, STRETCH, AUTO]), default=AUTO)
+    justify_content = css_property(
+        'justify_content',
+        choices=set([FLEX_START, CENTER, FLEX_END, SPACE_BETWEEN, SPACE_AROUND]),
+        default=FLEX_START
+    )
+    align_items = css_property(
+        'align_items',
+        choices=set([FLEX_START, CENTER, FLEX_END, STRETCH]),
+        default=STRETCH)
+    align_self = css_property(
+        'align_self',
+        choices=set([FLEX_START, CENTER, FLEX_END, STRETCH, AUTO]),
+        default=AUTO
+    )
 
     # Some special case meta-properties that defer to underlying top/bottom/left/right base properties
     margin = css_directional_property('margin%s')

@@ -1,6 +1,12 @@
 from unittest import TestCase
 
-from colosseum.constants import *
+from colosseum.constants import (
+    ABSOLUTE, RELATIVE,
+    ROW, COLUMN,
+    FLEX_START, FLEX_END,
+    AUTO, CENTER, STRETCH,
+    WRAP, NOWRAP
+)
 from colosseum.layout import CSS
 
 from .utils import TestNode

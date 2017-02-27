@@ -2,8 +2,6 @@ import argparse
 import json
 import os
 from subprocess import check_output
-import sys
-from time import time
 
 from colosseum.declaration import _CSS_PROPERTIES
 from selenium import webdriver
@@ -33,6 +31,7 @@ def _get_filtered_style(driver, element):
     """Get the style attributes we care about for a given element."""
     css = driver.execute_script(SCRIPT, element)
     return {k: v for k, v in css.items() if k in _CSS_PROPERTIES}
+
 
 def _get_node_data(driver, element, x_offset, y_offset):
     """Recursively get node_data for an element and its children."""
@@ -129,7 +128,11 @@ class SuiteBuilder(object):
                                         pass
                                 except OSError:
                                     pass
-                                result = os.path.join(self.output_dir, dirname, os.path.splitext(filename)[0]) + '.json'
+                                result = os.path.join(
+                                    self.output_dir,
+                                    dirname,
+                                    os.path.splitext(filename)[0]
+                                ) + '.json'
 
                                 with open(result, 'w') as f:
                                     json.dump(test_data, f, indent=4, sort_keys=True)
