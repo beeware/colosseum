@@ -5,7 +5,7 @@ from .constants import (
     AUTO, CENTER, STRETCH, SPACE_BETWEEN, SPACE_AROUND,
     WRAP, NOWRAP
 )
-
+from .layout import BoxModelEngine
 
 _CSS_PROPERTIES = []
 
@@ -190,9 +190,7 @@ class CSS:
         # print("HINTED WIDTH", self.min_width, self.width, self.max_width)
 
     ######################################################################
-    # Apply a style to a DOM node.
+    # Get the
     ######################################################################
-
-    def apply(self, node):
-        from .layout import CSSNode
-        return CSSNode(node, self)
+    def engine(self, node):
+        return BoxModelEngine(node)

@@ -2,7 +2,7 @@ import os
 import json
 from unittest import TestCase, expectedFailure
 
-from colosseum.layout import CSS
+from colosseum.declaration import CSS
 
 
 STYLE = 'style'
@@ -60,10 +60,11 @@ class TestNode:
                 self.add(child)
 
         self.layout = TestLayout(self)
+        self._style = style
         if style:
-            self._style = style.apply(self)
+            self._engine = style.engine(self)
         else:
-            self._style = CSS().apply(self)
+            self._engine = CSS().engine(self)
 
     @property
     def style(self):
@@ -72,6 +73,7 @@ class TestNode:
     @style.setter
     def style(self, value):
         self._style = value.apply(self)
+        self._engine = value.engine(self)
 
     @property
     def children(self):
@@ -84,13 +86,15 @@ class TestNode:
             self.parent.layout.dirty = True
 
     ######################################################################
-    # Calculate layout
+    # Compute layout
     ######################################################################
+    def _compute(self, max_width):
+        self._engine.compute(max_width)
 
-    def recompute(self):
+    def compute(self, max_width=None):
         if self.layout.dirty:
             self.layout.reset()
-            self.style.recompute(None)
+            self._compute(max_width)
             self.layout.dirty = False
 
 
@@ -118,7 +122,7 @@ class LayoutEngineTestCase(TestCase):
         self._add_children(node, node_data.get(CHILDREN, []))
 
         # Compute the layout.
-        node.recompute()
+        node.compute()
         # Recursively compare the layout
         self._assertLayout(node, layout)
 
