@@ -164,11 +164,13 @@ class CSS:
                 raise NameError("Unknown CSS style '%s'" % style)
             setattr(self, style, value)
 
-    def copy(self, source):
-        "Copy all the style declarations from the source onto this declaration."
+    def copy(self):
+        "Create a duplicate of this style declaration."
+        dup = CSS()
         for style in _CSS_PROPERTIES:
-            setattr(self, style, getattr(source, style))
-        self.measure = source.measure
+            setattr(dup, style, getattr(self, style))
+        dup.measure = self.measure
+        return dup
 
     ######################################################################
     # Style hinting
