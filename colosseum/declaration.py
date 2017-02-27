@@ -86,7 +86,7 @@ def css_directional_property(name, default=0):
     return property(getter, setter, deleter)
 
 
-class Declaration(object):
+class CSS:
     def __init__(self, **style):
         self.measure = style.pop('measure', None)
         self.set(**style)
@@ -151,6 +151,7 @@ class Declaration(object):
         "Copy all the style declarations from the source onto this declaration."
         for style in _CSS_PROPERTIES:
             setattr(self, style, getattr(source, style))
+        self.measure = source.measure
 
     ######################################################################
     # Style hinting
@@ -170,3 +171,11 @@ class Declaration(object):
 
         # print("HINTED HEIGHT", self.min_height, self.height, self.max_height)
         # print("HINTED WIDTH", self.min_width, self.width, self.max_width)
+
+    ######################################################################
+    # Apply a style to a DOM node.
+    ######################################################################
+
+    def apply(self, node):
+        from .layout import CSSNode
+        return CSSNode(node, self)

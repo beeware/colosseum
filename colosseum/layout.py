@@ -1,107 +1,13 @@
 from .constants import *
-from .declaration import Declaration
+from .declaration import CSS
 from .utils import dimension, leading, position, trailing
 
 
-class Point:
-    def __init__(self, top, left):
-        self.top = top
-        self.left = left
-
-    def __repr__(self):
-        return '<Point (%s,%s)>' % (self.left, self.top)
-
-
-class Layout:
-    def __init__(self, node, width=None, height=None, top=0, left=0):
+class CSSNode(CSS):
+    def __init__(self, node, css):
+        super().__init__()
         self.node = node
-        self.width = width
-        self.height = height
-        self.top = top
-        self.left = left
-
-    def __repr__(self):
-        if self.node:
-            return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.absolute.left, self.absolute.top)
-        else:
-            return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.left, self.top)
-
-    def __eq__(self, value):
-        return all([
-            self.width == value.width,
-            self.height == value.height,
-            self.top == value.top,
-            self.left == value.left
-        ])
-
-    def reset(self):
-        self.width = None
-        self.height = None
-        self.top = 0
-        self.left = 0
-
-    @property
-    def right(self):
-        return self.left + self.width
-
-    @property
-    def bottom(self):
-        return self.top + self.height
-
-    @property
-    def absolute(self):
-        if self.node.parent:
-            parent_layout = self.node.parent.style.layout
-            return Point(
-                top=parent_layout.origin.top + parent_layout.top + self.top,
-                left=parent_layout.origin.left + parent_layout.left + self.left,
-            )
-        else:
-            return Point(top=self.top, left=self.left)
-
-    @property
-    def origin(self):
-        if self.node.parent:
-            parent_layout = self.node.parent.style.layout
-            return Point(
-                top=parent_layout.origin.top + parent_layout.top,
-                left=parent_layout.origin.left + parent_layout.left,
-            )
-        else:
-            return Point(top=0, left=0)
-
-
-class CSS(Declaration):
-    ######################################################################
-    # Utilities for contributing a style to a DOM node.
-    ######################################################################
-
-    def apply(self, node):
-        return CSSNode(node, self)
-
-
-class CSSNode(Declaration):
-    def __init__(self, node, style=None):
-        super(CSSNode, self).__init__()
-        self._layout = Layout(node)
-        self._node = node
-        self._dirty = True
-        if style:
-            self.copy(style)
-
-    ######################################################################
-    # Style dirtiness tracking.
-    ######################################################################
-
-    @property
-    def dirty(self):
-        return self._dirty
-
-    @dirty.setter
-    def dirty(self, value):
-        self._dirty = value
-        for child in self._node.children:
-            child.style.dirty = value
+        self.copy(css)
 
     ######################################################################
     # Internal helpers for computing layout
@@ -137,7 +43,7 @@ class CSSNode(Declaration):
         return self.align_items
 
     def _dimension_with_margin(self, axis):
-        return getattr(self._layout, dimension(axis)) + getattr(self, 'margin_' + leading(axis)) + getattr(self, 'margin_' + trailing(axis))
+        return getattr(self.node.layout, dimension(axis)) + getattr(self, 'margin_' + leading(axis)) + getattr(self, 'margin_' + trailing(axis))
 
     @property
     def _is_flex(self):
@@ -165,7 +71,7 @@ class CSSNode(Declaration):
 
     def _set_dimension_from_style(self, axis):
         # The parent already computed us a width or height. We just skip it
-        if getattr(self._layout, dimension(axis)) is not None:
+        if getattr(self.node.layout, dimension(axis)) is not None:
             return
 
         # We only run if there's a width or height defined
@@ -177,26 +83,11 @@ class CSSNode(Declaration):
             self._bound_axis(axis, getattr(self, dimension(axis))),
             self._padding_and_border_for_axis(axis)
         )
-        setattr(self._layout, dimension(axis), maxLayoutDimension)
+        setattr(self.node.layout, dimension(axis), maxLayoutDimension)
 
-    ######################################################################
-    # Calculate layout
-    ######################################################################
-
-    @property
-    def layout(self):
-        self.recompute()
-        return self._layout
-
-    def recompute(self):
-        if self.dirty:
-            self._layout.reset()
-            self._calculate_layout(None)
-            self.dirty = False
-
-    def _calculate_layout(self, parent_max_width=None):
-        for child in self._node.children:
-            child.style._layout.reset()
+    def recompute(self, parent_max_width=None):
+        for child in self.node.children:
+            child.layout.reset()
 
         main_axis = self.flex_direction
         cross_axis = COLUMN if main_axis == ROW else ROW
@@ -208,22 +99,22 @@ class CSSNode(Declaration):
         # The position is set by the parent, but we need to complete it with a
         # delta composed of the margin and left/top/right/bottom
         setattr(
-            self._layout,
+            self.node.layout,
             leading(main_axis),
-            getattr(self._layout, leading(main_axis)) + getattr(self, 'margin_' + leading(main_axis)) + self._relative_position(main_axis)
+            getattr(self.node.layout, leading(main_axis)) + getattr(self, 'margin_' + leading(main_axis)) + self._relative_position(main_axis)
         )
         setattr(
-            self._layout,
+            self.node.layout,
             leading(cross_axis),
-            getattr(self._layout, leading(cross_axis)) + getattr(self, 'margin_' + leading(cross_axis)) + self._relative_position(cross_axis)
+            getattr(self.node.layout, leading(cross_axis)) + getattr(self, 'margin_' + leading(cross_axis)) + self._relative_position(cross_axis)
         )
 
         if self.measure:
             width = None
             if self._dimension_is_defined(ROW):
                 width = self.width
-            elif getattr(self._layout, dimension(ROW)) is not None:
-                width = getattr(self._layout, dimension(ROW))
+            elif getattr(self.node.layout, dimension(ROW)) is not None:
+                width = getattr(self.node.layout, dimension(ROW))
             else:
                 try:
                     width = parent_max_width - self._margin_for_axis(ROW)
@@ -236,33 +127,33 @@ class CSSNode(Declaration):
             # We only need to give a dimension for the text if we haven't got any
             # for it computed yet. It can either be from the style attribute or because
             # the element is flexible.
-            row_undefined = not self._dimension_is_defined(ROW) and getattr(self._layout, dimension(ROW)) is None
-            column_undefined = not self._dimension_is_defined(COLUMN) and getattr(self._layout, dimension(COLUMN)) is None
+            row_undefined = not self._dimension_is_defined(ROW) and getattr(self.node.layout, dimension(ROW)) is None
+            column_undefined = not self._dimension_is_defined(COLUMN) and getattr(self.node.layout, dimension(COLUMN)) is None
 
             # Let's not measure the text if we already know both dimensions
             if row_undefined or column_undefined:
                 measureDim = self.measure(width)
                 if row_undefined:
-                    self._layout.width = measureDim['width'] + self._padding_and_border_for_axis(ROW)
+                    self.node.layout.width = measureDim['width'] + self._padding_and_border_for_axis(ROW)
                 if column_undefined:
-                    self._layout.height = measureDim['height'] + self._padding_and_border_for_axis(COLUMN)
+                    self.node.layout.height = measureDim['height'] + self._padding_and_border_for_axis(COLUMN)
             return
 
         # Pre-fill some dimensions straight from the parent
-        for i, child in enumerate(self._node.children):
+        for i, child in enumerate(self.node.children):
             # Pre-fill cross axis dimensions when the child is using stretch before
             # we call the recursive layout pass
             if (self._align_item(child) == STRETCH and
                     child.style.position == RELATIVE and
-                    getattr(self._layout, dimension(cross_axis)) is not None and
+                    getattr(self.node.layout, dimension(cross_axis)) is not None and
                     not child.style._dimension_is_defined(cross_axis)):
                 setattr(
-                    child.style._layout,
+                    child.layout,
                     dimension(cross_axis),
                     max(
                         child.style._bound_axis(
                             cross_axis,
-                            getattr(self._layout, dimension(cross_axis))
+                            getattr(self.node.layout, dimension(cross_axis))
                             - self._padding_and_border_for_axis(cross_axis)
                             - child.style._margin_for_axis(cross_axis)
                         ),
@@ -275,17 +166,17 @@ class CSSNode(Declaration):
                 # Pre-fill dimensions when using absolute position and both offsets for the axis are defined (either both
                 # left and right or top and bottom).
                 for axis in [ROW, COLUMN]:
-                    if (getattr(self._layout, dimension(axis)) is not None and
+                    if (getattr(self.node.layout, dimension(axis)) is not None and
                             not child.style._dimension_is_defined(axis) and
                             child.style._position_is_defined(leading(axis)) and
                             child.style._position_is_defined(trailing(axis))):
                         setattr(
-                            child.style._layout,
+                            child.layout,
                             dimension(axis),
                             max(
                                 child.style._bound_axis(
                                     axis,
-                                    getattr(self._layout, dimension(axis))
+                                    getattr(self.node.layout, dimension(axis))
                                     - self._padding_and_border_for_axis(axis)
                                     - child.style._margin_for_axis(axis)
                                     - getattr(child.style, leading(axis))
@@ -297,8 +188,8 @@ class CSSNode(Declaration):
                         )
 
         defined_main_dim = None
-        if getattr(self._layout, dimension(main_axis)) is not None:
-            defined_main_dim = getattr(self._layout, dimension(main_axis)) - self._padding_and_border_for_axis(main_axis)
+        if getattr(self.node.layout, dimension(main_axis)) is not None:
+            defined_main_dim = getattr(self.node.layout, dimension(main_axis)) - self._padding_and_border_for_axis(main_axis)
 
         # We want to execute the next two loops one per line with flex-wrap
         start_line = 0
@@ -309,7 +200,7 @@ class CSSNode(Declaration):
         lines_cross_dim = 0.0
         lines_main_dim = 0.0
 
-        while end_line < len(self._node.children):
+        while end_line < len(self.node.children):
             # <Loop A> Layout non flexible children and count children by type
 
             # main_content_dim is accumulation of the dimensions and margin of all the
@@ -324,7 +215,7 @@ class CSSNode(Declaration):
             total_flexible = 0
             non_flexible_children_count = 0
 
-            for i, child in enumerate(self._node.children[start_line:]):
+            for i, child in enumerate(self.node.children[start_line:]):
                 next_content_dim = 0
 
                 # If it's a flexible child, accumulate the size that the child potentially
@@ -348,11 +239,11 @@ class CSSNode(Declaration):
                             pass
 
                         if self._dimension_is_defined(ROW):
-                            max_width = getattr(self._layout, dimension(ROW)) - self._padding_and_border_for_axis(ROW)
+                            max_width = getattr(self.node.layout, dimension(ROW)) - self._padding_and_border_for_axis(ROW)
 
                     # This is the main recursive call. We layout non flexible children.
                     if not already_computed_next_layout:
-                        child.style._calculate_layout(max_width)
+                        child.style.recompute(max_width)
 
                     # Absolute positioned elements do not take part of the layout, so we
                     # don't use them to compute main_content_dim
@@ -363,7 +254,7 @@ class CSSNode(Declaration):
 
                 # The element we are about to add would make us go to the next line
                 if (self.flex_wrap == WRAP and
-                        getattr(self._layout, dimension(main_axis)) is not None and
+                        getattr(self.node.layout, dimension(main_axis)) is not None and
                         main_content_dim + next_content_dim > defined_main_dim and
                         # If there's only one element, then it's bigger than the content
                         # and needs its own line
@@ -384,7 +275,7 @@ class CSSNode(Declaration):
 
             # The remaining available space that needs to be allocated
             remaining_main_dim = 0.0
-            if getattr(self._layout, dimension(main_axis)) is not None:
+            if getattr(self.node.layout, dimension(main_axis)) is not None:
                 remaining_main_dim = defined_main_dim - main_content_dim
             else:
                 remaining_main_dim = self._bound_axis(main_axis, max(main_content_dim, 0)) - main_content_dim
@@ -397,7 +288,7 @@ class CSSNode(Declaration):
                 # Iterate over every child in the axis. If the flex share of remaining
                 # space doesn't meet min/max bounds, remove this child from flex
                 # calculations.
-                for child in self._node.children[start_line:end_line]:
+                for child in self.node.children[start_line:end_line]:
                     if child.style._is_flex:
                         base_main_dim = flexible_main_dim * child.style.flex + child.style._padding_and_border_for_axis(main_axis)
                         bound_main_dim = child.style._bound_axis(main_axis, base_main_dim)
@@ -421,12 +312,12 @@ class CSSNode(Declaration):
                 # We iterate over the full array and only apply the action on flexible
                 # children. This is faster than actually allocating a new array that
                 # contains only flexible children.
-                for child in self._node.children[start_line:end_line]:
+                for child in self.node.children[start_line:end_line]:
                     if child.style._is_flex:
                         # At this point we know the final size of the element in the main
                         # dimension
                         setattr(
-                            child.style._layout,
+                            child.layout,
                             dimension(main_axis),
                             child.style._bound_axis(
                                 main_axis,
@@ -436,7 +327,7 @@ class CSSNode(Declaration):
 
                         max_width = None
                         if self._dimension_is_defined(ROW):
-                            max_width = getattr(self._layout, dimension(ROW)) - self._padding_and_border_for_axis(ROW)
+                            max_width = getattr(self.node.layout, dimension(ROW)) - self._padding_and_border_for_axis(ROW)
                         elif main_axis != ROW:
                             try:
                                 max_width = parent_max_width - self._margin_for_axis(ROW) - self._padding_and_border_for_axis(ROW)
@@ -444,7 +335,7 @@ class CSSNode(Declaration):
                                 pass
 
                         # And we recursively call the layout algorithm for this child
-                        child.style._calculate_layout(max_width)
+                        child.style.recompute(max_width)
 
             # We use justify_content to figure out how to allocate the remaining
             # space available
@@ -473,13 +364,13 @@ class CSSNode(Declaration):
             # container!
             cross_dim = 0.0
             main_dim = leading_main_dim + self._padding_and_border(leading(main_axis))
-            for child in self._node.children[start_line:end_line]:
+            for child in self.node.children[start_line:end_line]:
                 if child.style.position == ABSOLUTE and child.style._position_is_defined(leading(main_axis)):
                     # In case the child is position absolute and has left/top being
                     # defined, we override the position to whatever the user said
                     # (and margin/border).
                     setattr(
-                        child.style._layout,
+                        child.layout,
                         position(main_axis),
                         getattr(child.style, leading(main_axis)) + getattr(self, 'border_' + leading(main_axis) + '_width') + getattr(child.style, 'margin_' + leading(main_axis))
                     )
@@ -487,9 +378,9 @@ class CSSNode(Declaration):
                     # If the child is position absolute (without top/left) or relative,
                     # we put it at the current accumulated offset.
                     setattr(
-                        child.style._layout,
+                        child.layout,
                         position(main_axis),
-                        getattr(child.style._layout, position(main_axis)) + main_dim
+                        getattr(child.layout, position(main_axis)) + main_dim
                     )
 
                 # Now that we placed the element, we need to update the variables
@@ -503,7 +394,7 @@ class CSSNode(Declaration):
                     # can only be one element in that cross dimension.
                     cross_dim = max(cross_dim, child.style._bound_axis(cross_axis, child.style._dimension_with_margin(cross_axis)))
 
-            container_main_axis = getattr(self._layout, dimension(main_axis))
+            container_main_axis = getattr(self.node.layout, dimension(main_axis))
             # If the user didn't specify a width or height, and it has not been set
             # by the container, then we set it via the children.
             if container_main_axis is None:
@@ -515,8 +406,8 @@ class CSSNode(Declaration):
                     self._padding_and_border_for_axis(main_axis)
                 )
 
-            container_cross_axis = getattr(self._layout, dimension(cross_axis))
-            if getattr(self._layout, dimension(cross_axis)) is None:
+            container_cross_axis = getattr(self.node.layout, dimension(cross_axis))
+            if getattr(self.node.layout, dimension(cross_axis)) is None:
                 container_cross_axis = max(
                     # For the cross dim, we add both sides at the end because the value
                     # is aggregate via a max function. Intermediate negative values
@@ -526,13 +417,13 @@ class CSSNode(Declaration):
                 )
 
             # <Loop D> Position elements in the cross axis
-            for child in self._node.children[start_line:end_line]:
+            for child in self.node.children[start_line:end_line]:
                 if child.style.position == ABSOLUTE and child.style._position_is_defined(leading(cross_axis)):
                     # In case the child is absolutely positionned and has a
                     # top/left/bottom/right being set, we override all the previously
                     # computed positions to set it correctly.
                     setattr(
-                        child.style._layout,
+                        child.layout,
                         position(cross_axis),
                         getattr(child.style, leading(cross_axis)) + getattr(self, 'border_' + leading(cross_axis) + '_width') + getattr(child.style, 'margin_' + leading(cross_axis))
                     )
@@ -549,7 +440,7 @@ class CSSNode(Declaration):
                             # previously.
                             if not child.style._dimension_is_defined(cross_axis):
                                 setattr(
-                                    child.style._layout,
+                                    child.layout,
                                     dimension(cross_axis),
                                     max(
                                         child.style._bound_axis(
@@ -574,9 +465,9 @@ class CSSNode(Declaration):
 
                     # And we apply the position
                     setattr(
-                        child.style._layout,
+                        child.layout,
                         position(cross_axis),
-                        getattr(child.style._layout, position(cross_axis)) + lines_cross_dim + leading_cross_dim
+                        getattr(child.layout, position(cross_axis)) + lines_cross_dim + leading_cross_dim
                     )
 
             lines_cross_dim = lines_cross_dim + cross_dim
@@ -585,9 +476,9 @@ class CSSNode(Declaration):
 
         # If the user didn't specify a width or height, and it has not been set
         # by the container, then we set it via the children.
-        if getattr(self._layout, dimension(main_axis)) is None:
+        if getattr(self.node.layout, dimension(main_axis)) is None:
             setattr(
-                self._layout,
+                self.node.layout,
                 dimension(main_axis),
                 max(
                     # We're missing the last padding at this point to get the final
@@ -598,9 +489,9 @@ class CSSNode(Declaration):
                 )
             )
 
-        if getattr(self._layout, dimension(cross_axis)) is None:
+        if getattr(self.node.layout, dimension(cross_axis)) is None:
             setattr(
-                self._layout,
+                self.node.layout,
                 dimension(cross_axis),
                 max(
                     # For the cross dim, we add both sides at the end because the value
@@ -612,22 +503,22 @@ class CSSNode(Declaration):
             )
 
         # <Loop E> Calculate dimensions for absolutely positioned elements
-        for child in self._node.children:
+        for child in self.node.children:
             if child.style.position == ABSOLUTE:
                 # Pre-fill dimensions when using absolute position and both offsets for the axis are defined (either both
                 # left and right or top and bottom).
                 for axis in [ROW, COLUMN]:
-                    if (getattr(self._layout, dimension(axis)) is not None and
+                    if (getattr(self.node.layout, dimension(axis)) is not None and
                             not child.style._dimension_is_defined(axis) and
                             child.style._position_is_defined(leading(axis)) and
                             child.style._position_is_defined(trailing(axis))):
                         setattr(
-                            child.style._layout,
+                            child.layout,
                             dimension(axis),
                             max(
                                 child.style._bound_axis(
                                     axis,
-                                    getattr(self._layout, dimension(axis))
+                                    getattr(self.node.layout, dimension(axis))
                                         - self._padding_and_border_for_axis(axis)
                                         - child.style._margin_for_axis(axis)
                                         - getattr(child.style, leading(axis))
@@ -640,7 +531,7 @@ class CSSNode(Declaration):
                 for axis in [ROW, COLUMN]:
                     if child.style._position_is_defined(trailing(axis)) and not child.style._position_is_defined(leading(axis)):
                         setattr(
-                            child.style._layout,
+                            child.layout,
                             leading(axis),
-                            getattr(self._layout, dimension(axis)) - getattr(child.style._layout, dimension(axis)) - getattr(child.style, trailing(axis))
+                            getattr(self.node.layout, dimension(axis)) - getattr(child.layout, dimension(axis)) - getattr(child.style, trailing(axis))
                         )

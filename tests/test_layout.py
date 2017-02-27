@@ -11,7 +11,7 @@ except ImportError:
     from unittest import TestCase, expectedFailure
 
 from colosseum.constants import *
-from colosseum.layout import CSS, Layout
+from colosseum.layout import CSS
 
 from .utils import TestNode, LayoutEngineTestCase
 

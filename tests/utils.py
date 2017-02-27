@@ -2,14 +2,56 @@ import os
 import json
 from unittest import TestCase, expectedFailure
 
-from colosseum.layout import CSSNode, CSS, Layout
+from colosseum.layout import CSS
 
 
 STYLE = 'style'
 CHILDREN = 'children'
 
 
-class TestNode(object):
+class TestLayout:
+    def __init__(self, node, width=None, height=None, top=0, left=0):
+        self.node = node
+        self.width = width
+        self.height = height
+        self.top = top
+        self.left = left
+
+        self._dirty = True
+
+    def __repr__(self):
+        return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.left, self.top)
+
+    def __eq__(self, value):
+        return all([
+            self.width == value.width,
+            self.height == value.height,
+            self.top == value.top,
+            self.left == value.left
+        ])
+
+    def reset(self):
+        self.width = None
+        self.height = None
+        self.top = 0
+        self.left = 0
+
+    ######################################################################
+    # Style dirtiness tracking.
+    ######################################################################
+
+    @property
+    def dirty(self):
+        return self._dirty
+
+    @dirty.setter
+    def dirty(self, value):
+        self._dirty = value
+        for child in self.node.children:
+            child.layout.dirty = value
+
+
+class TestNode:
     def __init__(self, style=None, children=None):
         self.parent = None
         self._children = []
@@ -17,14 +59,19 @@ class TestNode(object):
             for child in children:
                 self.add(child)
 
+        self.layout = TestLayout(self)
         if style:
             self._style = style.apply(self)
         else:
-            self._style = CSSNode(self)
+            self._style = CSS().apply(self)
 
     @property
     def style(self):
         return self._style
+
+    @style.setter
+    def style(self, value):
+        self._style = value.apply(self)
 
     @property
     def children(self):
@@ -34,11 +81,20 @@ class TestNode(object):
         self._children.append(child)
         child.parent = self.parent
         if self.parent:
-            self.parent.dirty = True
+            self.parent.layout.dirty = True
+
+    ######################################################################
+    # Calculate layout
+    ######################################################################
+
+    def recompute(self):
+        if self.layout.dirty:
+            self.layout.reset()
+            self.style.recompute(None)
+            self.layout.dirty = False
 
 
 class LayoutEngineTestCase(TestCase):
-
     ######################################################################
     # Utility methods
     ######################################################################
@@ -52,7 +108,7 @@ class LayoutEngineTestCase(TestCase):
     def _assertLayout(self, node, layout):
         # Internal recursive method for checking a node's layout
         child_layouts = layout.pop(CHILDREN, [])
-        self.assertEqual(node.style.layout, Layout(None, **layout))
+        self.assertEqual(node.layout, TestLayout(None, **layout))
         for child, child_layout in zip(node.children, child_layouts):
             self._assertLayout(child, child_layout)
 
@@ -61,6 +117,8 @@ class LayoutEngineTestCase(TestCase):
         node = TestNode(style=CSS(**node_data[STYLE]))
         self._add_children(node, node_data.get(CHILDREN, []))
 
+        # Compute the layout.
+        node.recompute()
         # Recursively compare the layout
         self._assertLayout(node, layout)
 
