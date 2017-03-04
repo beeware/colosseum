@@ -95,6 +95,7 @@ def css_directional_property(name, default=0):
 class CSS:
     def __init__(self, **style):
         self.measure = style.pop('measure', None)
+        self._styles = set()
         self.set(**style)
 
     ######################################################################
@@ -163,6 +164,7 @@ class CSS:
             if not hasattr(self, style):
                 raise NameError("Unknown CSS style '%s'" % style)
             setattr(self, style, value)
+            self._styles.add(style)
 
     def copy(self):
         "Create a duplicate of this style declaration."
@@ -170,6 +172,7 @@ class CSS:
         for style in _CSS_PROPERTIES:
             setattr(dup, style, getattr(self, style))
         dup.measure = self.measure
+        dup._styles = self._styles.copy()
         return dup
 
     ######################################################################
@@ -192,7 +195,27 @@ class CSS:
         # print("HINTED WIDTH", self.min_width, self.width, self.max_width)
 
     ######################################################################
-    # Get the
+    # Get the box model for the style
     ######################################################################
     def engine(self, node):
         return BoxModelEngine(node)
+
+    ######################################################################
+    # Get the rendered form of the style declaration
+    ######################################################################
+    def render(self):
+        def render_value(val):
+            if isinstance(val, tuple):
+                return ' '.join(render_value(v) for v in val)
+            elif isinstance(val, int):
+                return '%spx' % val
+            else:
+                return str(val)
+
+        return "; ".join(
+            "%s: %s" % (
+                s.replace('_', '-'),
+                render_value(getattr(self, s))
+            )
+            for s in sorted(self._styles)
+        )
