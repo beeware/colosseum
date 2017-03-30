@@ -6,13 +6,17 @@ from .constants import (
     RELATIVE, ABSOLUTE,
 
     NOWRAP, WRAP,
+
+    ROW, COLUMN,
 )
+from .engine import Layout
 from .declaration import CSS
 # from .utils import *
 
 __all__ = [
     '__version__',
     'CSS',
+    'Layout',
 
     'AUTO',
     'FLEX_START',
@@ -27,6 +31,9 @@ __all__ = [
 
     'NOWRAP',
     'WRAP',
+
+    'ROW',
+    'COLUMN',
 ]
 
 # Examples of valid version strings

@@ -7,6 +7,52 @@ from .constants import (
 )
 from .utils import dimension, leading, position, trailing
 
+
+class Layout:
+    def __init__(self, node, width=None, height=None, top=0, left=0):
+        self.node = node
+        self.width = width
+        self.height = height
+        self.top = top
+        self.left = left
+
+        self._dirty = True
+
+    def __repr__(self):
+        return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.left, self.top)
+
+    def __eq__(self, value):
+        return all([
+            self.width == value.width,
+            self.height == value.height,
+            self.top == value.top,
+            self.left == value.left
+        ])
+
+    def reset(self):
+        self.width = None
+        self.height = None
+        self.top = 0
+        self.left = 0
+
+    ######################################################################
+    # Layout dirtiness tracking.
+    #
+    # If dirty == True, the layout is known to be invalid.
+    # If dirty == False, the layout is known to be good.
+    # If dirty is None, the layout is currently being re-evaluated.
+    ######################################################################
+    @property
+    def dirty(self):
+        return self._dirty
+
+    @dirty.setter
+    def dirty(self, value):
+        self._dirty = value
+        for child in self.node.children:
+            child.layout.dirty = value
+
+
 ######################################################################
 # Internal helpers for computing layout
 ######################################################################
@@ -286,7 +332,7 @@ class BoxModelEngine:
 
                     # This is the main recursive call. We layout non flexible children.
                     if not already_computed_next_layout:
-                        child.compute(max_width)
+                        child.style.apply(max_width)
 
                     # Absolute positioned elements do not take part of the layout, so we
                     # don't use them to compute main_content_dim
@@ -376,7 +422,6 @@ class BoxModelEngine:
                                 )
                             )
                         )
-                        print("child.layout.height", id(child), child.layout.height)
 
                         max_width = None
                         if dimension_is_defined(self.node.style, ROW):
@@ -395,7 +440,7 @@ class BoxModelEngine:
                                 pass
 
                         # And we recursively call the layout algorithm for this child
-                        child.compute(max_width)
+                        child.style.apply(max_width)
 
             # We use justify_content to figure out how to allocate the remaining
             # space available

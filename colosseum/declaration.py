@@ -5,7 +5,7 @@ from .constants import (
     AUTO, CENTER, STRETCH, SPACE_BETWEEN, SPACE_AROUND,
     WRAP, NOWRAP
 )
-from .layout import BoxModelEngine
+from .engine import BoxModelEngine
 
 _CSS_PROPERTIES = []
 
@@ -24,12 +24,12 @@ def css_property(name, choices=None, default=None):
                     ', '.join(s.replace('-', '_').upper() for s in choices))
                 )
             setattr(self, '_%s' % name, value)
-            self.dirty = True
+            self.make_dirty()
 
     def deleter(self):
         try:
             delattr(self, '_%s' % name)
-            self.dirty = True
+            self.make_dirty()
         except AttributeError:
             # Attribute doesn't exist
             pass
@@ -96,6 +96,8 @@ class CSS:
     def __init__(self, **style):
         self.measure = style.pop('measure', None)
         self._styles = set()
+        self._node = None
+        self._engine = None
         self.set(**style)
 
     ######################################################################
@@ -155,6 +157,30 @@ class CSS:
     border_width = css_directional_property('border%s_width')
 
     ######################################################################
+    # Track the relationship between layout, node, and style
+    ######################################################################
+
+    def make_dirty(self):
+        if self._node:
+            self._node.layout.dirty = True
+
+    def bind(self, node):
+        return self.copy(node=node)
+
+    def apply(self, max_width=None):
+        if self._engine is None:
+            self._engine = BoxModelEngine(self._node)
+
+        if self._node.layout.dirty != False:
+            # If the layout is actually dirty, reset the layout
+            # and mark the layout as currently being recomputed.
+            if self._node.layout.dirty:
+                self._node.layout.reset()
+                self._node.layout.dirty = None
+            self._engine.compute(max_width)
+            self._node.layout.dirty = False
+
+    ######################################################################
     # Style manipulation
     ######################################################################
 
@@ -166,13 +192,14 @@ class CSS:
             setattr(self, style, value)
             self._styles.add(style)
 
-    def copy(self):
+    def copy(self, node=None):
         "Create a duplicate of this style declaration."
         dup = CSS()
         for style in _CSS_PROPERTIES:
             setattr(dup, style, getattr(self, style))
         dup.measure = self.measure
         dup._styles = self._styles.copy()
+        dup._node = node
         return dup
 
     ######################################################################
@@ -193,12 +220,6 @@ class CSS:
 
         # print("HINTED HEIGHT", self.min_height, self.height, self.max_height)
         # print("HINTED WIDTH", self.min_width, self.width, self.max_width)
-
-    ######################################################################
-    # Get the box model for the style
-    ######################################################################
-    def engine(self, node):
-        return BoxModelEngine(node)
 
     ######################################################################
     # Get the rendered form of the style declaration

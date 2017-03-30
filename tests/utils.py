@@ -3,55 +3,11 @@ import json
 from unittest import TestCase, expectedFailure
 
 from colosseum.declaration import CSS
+from colosseum.engine import Layout
 
 
 STYLE = 'style'
 CHILDREN = 'children'
-
-
-class TestLayout:
-    def __init__(self, node, width=None, height=None, top=0, left=0):
-        self.node = node
-        self.width = width
-        self.height = height
-        self.top = top
-        self.left = left
-
-        self._dirty = True
-
-    def __repr__(self):
-        return '<Layout (%sx%s @ %s,%s)>' % (self.width, self.height, self.left, self.top)
-
-    def __eq__(self, value):
-        return all([
-            self.width == value.width,
-            self.height == value.height,
-            self.top == value.top,
-            self.left == value.left
-        ])
-
-    def reset(self):
-        self.width = None
-        self.height = None
-        self.top = 0
-        self.left = 0
-
-    ######################################################################
-    # Layout dirtiness tracking.
-    #
-    # If dirty == True, the layout is known to be invalid.
-    # If dirty == False, the layout is known to be good.
-    # If dirty is None, the layout is currently being re-evaluated.
-    ######################################################################
-    @property
-    def dirty(self):
-        return self._dirty
-
-    @dirty.setter
-    def dirty(self, value):
-        self._dirty = value
-        for child in self.node.children:
-            child.layout.dirty = value
 
 
 class TestNode:
@@ -62,7 +18,7 @@ class TestNode:
             for child in children:
                 self.add(child)
 
-        self.layout = TestLayout(self)
+        self.layout = Layout(self)
         if style:
             self.style = style
         else:
@@ -74,8 +30,7 @@ class TestNode:
 
     @style.setter
     def style(self, value):
-        self._style = value
-        self._engine = value.engine(self)
+        self._style = value.bind(self)
 
     @property
     def children(self):
@@ -86,19 +41,6 @@ class TestNode:
         child.parent = self.parent
         if self.parent:
             self.parent.layout.dirty = True
-
-    ######################################################################
-    # Compute layout
-    ######################################################################
-    def compute(self, max_width=None):
-        if self.layout.dirty != False:
-            # If the layout is actually dirty, reset the layout
-            # and mark the layout as currently being recomputed.
-            if self.layout.dirty:
-                self.layout.reset()
-                self.layout.dirty = None
-            self._engine.compute(max_width)
-            self.layout.dirty = False
 
 
 class LayoutEngineTestCase(TestCase):
@@ -115,7 +57,7 @@ class LayoutEngineTestCase(TestCase):
     def _assertLayout(self, node, layout):
         # Internal recursive method for checking a node's layout
         child_layouts = layout.pop(CHILDREN, [])
-        self.assertEqual(node.layout, TestLayout(None, **layout))
+        self.assertEqual(node.layout, Layout(None, **layout))
         for child, child_layout in zip(node.children, child_layouts):
             self._assertLayout(child, child_layout)
 
@@ -125,7 +67,7 @@ class LayoutEngineTestCase(TestCase):
         self._add_children(node, node_data.get(CHILDREN, []))
 
         # Compute the layout.
-        node.compute()
+        node.style.apply()
         # Recursively compare the layout
         self._assertLayout(node, layout)
 
