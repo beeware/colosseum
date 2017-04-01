@@ -588,6 +588,7 @@ class BoxModelEngine:
                                         padding_and_border_for_axis(child.style, cross_axis)
                                     )
                                 )
+
                         elif item_alignment != FLEX_START:
                             # The remaining space between the parent dimensions+padding and child
                             # dimensions+margin.
