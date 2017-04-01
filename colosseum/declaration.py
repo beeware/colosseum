@@ -7,16 +7,16 @@ from .constants import (
 )
 from .engine import BoxModelEngine
 
-_CSS_PROPERTIES = []
+_CSS_PROPERTIES = set()
 
 
 def css_property(name, choices=None, default=None):
     "Define a simple CSS property attribute."
     def getter(self):
-        return getattr(self, '_%s' % name, default)
+        return getattr(self, '_%s' % name, getattr(self, '_%s:hint' % name, default))
 
     def setter(self, value):
-        if value != getattr(self, '_%s' % name, default):
+        if value != getattr(self, '_%s' % name, getattr(self, '_%s:hint' % name, default)):
             if choices and value not in choices:
                 raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                     value,
@@ -34,7 +34,7 @@ def css_property(name, choices=None, default=None):
             # Attribute doesn't exist
             pass
 
-    _CSS_PROPERTIES.append(name)
+    _CSS_PROPERTIES.add(name)
     return property(getter, setter, deleter)
 
 
@@ -84,18 +84,17 @@ def css_directional_property(name, default=0):
         delattr(self, name % '_bottom')
         delattr(self, name % '_left')
 
-    _CSS_PROPERTIES.append(name % '')
-    _CSS_PROPERTIES.append(name % '_top')
-    _CSS_PROPERTIES.append(name % '_right')
-    _CSS_PROPERTIES.append(name % '_bottom')
-    _CSS_PROPERTIES.append(name % '_left')
+    _CSS_PROPERTIES.add(name % '')
+    _CSS_PROPERTIES.add(name % '_top')
+    _CSS_PROPERTIES.add(name % '_right')
+    _CSS_PROPERTIES.add(name % '_bottom')
+    _CSS_PROPERTIES.add(name % '_left')
     return property(getter, setter, deleter)
 
 
 class CSS:
     def __init__(self, **style):
         self.measure = style.pop('measure', None)
-        self._styles = set()
         self._node = None
         self._engine = None
         self.set(**style)
@@ -186,11 +185,14 @@ class CSS:
 
     def set(self, **styles):
         "Set multiple styles on the CSS definition."
-        for style, value in styles.items():
-            if not hasattr(self, style):
-                raise NameError("Unknown CSS style '%s'" % style)
-            setattr(self, style, value)
-            self._styles.add(style)
+        for name, value in styles.items():
+            if not hasattr(self, name):
+                raise NameError("Unknown CSS style '%s'" % name)
+
+            if value is None:
+                delattr(self, name)
+            else:
+                setattr(self, name, value)
 
     def copy(self, node=None):
         "Create a duplicate of this style declaration."
@@ -198,7 +200,6 @@ class CSS:
         for style in _CSS_PROPERTIES:
             setattr(dup, style, getattr(self, style))
         dup.measure = self.measure
-        dup._styles = self._styles.copy()
         dup._node = node
         return dup
 
@@ -207,24 +208,27 @@ class CSS:
     ######################################################################
 
     def hint(self, **style):
-        for attr, new_value in style.items():
-            try:
-                # Only set the value if:
-                #  - it's an explicit hint to None, or
-                #  - if there isn't an existing value for the attribute.
-                old_value = getattr(self, attr)
-                if new_value is None or old_value is None:
-                    setattr(self, attr, new_value)
-            except KeyError:
-                pass
+        for name, hint_value in style.items():
+            # If the hint value is None, delete the hint; otherwise,
+            # set the hint attribute
+            if hint_value is None:
+                delattr(self, '_%s:hint' % name)
+            else:
+                setattr(self, '_%s:hint' % name, hint_value)
 
-        # print("HINTED HEIGHT", self.min_height, self.height, self.max_height)
-        # print("HINTED WIDTH", self.min_width, self.width, self.max_width)
+            # If there is a user attribute, it takes priority.
+            # If there isn't a user attribute, then any change to the hint
+            # makes the layout dirty.
+            try:
+                getattr(self, '_%s' % name)
+            except AttributeError:
+                self.make_dirty()
 
     ######################################################################
     # Get the rendered form of the style declaration
     ######################################################################
-    def render(self):
+
+    def __str__(self):
         def render_value(val):
             if isinstance(val, tuple):
                 return ' '.join(render_value(v) for v in val)
@@ -233,10 +237,17 @@ class CSS:
             else:
                 return str(val)
 
+        non_default = []
+        for name in _CSS_PROPERTIES:
+            try:
+                non_default.append((
+                    name.replace('_', '-'),
+                    render_value(getattr(self, '_%s' % name))
+                ))
+            except AttributeError:
+                pass
+
         return "; ".join(
-            "%s: %s" % (
-                s.replace('_', '-'),
-                render_value(getattr(self, s))
-            )
-            for s in sorted(self._styles)
+            "%s: %s" % (name, value)
+            for name, value in sorted(non_default)
         )

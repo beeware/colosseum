@@ -282,3 +282,64 @@ class CSSNodeTest(TestCase):
         self.assertEqual(node.children[0], child1)
         self.assertEqual(node.children[1], child2)
         self.assertEqual(node.children[2], child3)
+
+    def test_hint(self):
+        node = TestNode(style=CSS(width=10, margin_left=40))
+        # Evaluate the layout
+        node.style.apply()
+        self.assertFalse(node.layout.dirty)
+
+        # Hint 2 manually set attributes:
+        #   - an attribute that doesn't have a default, and
+        #   - an attribute that *does* have a default
+        node.style.hint(
+            width=11,
+            margin_left=41
+        )
+
+        self.assertEqual(node.style.width, 10)
+        self.assertIsNone(node.style.height)
+        self.assertEqual(node.style.margin_top, 0)
+        self.assertEqual(node.style.margin_left, 40)
+
+        # Layout is not dirty, because hinting these attributes
+        # affects nothing.
+        self.assertFalse(node.layout.dirty)
+
+        # Hint 2 unset attributes:
+        #   - one that doesn't have a default, and
+        #   - one that *does* have a default
+        node.style.hint(
+            height=20,
+            margin_top=30,
+        )
+
+        self.assertEqual(node.style.width, 10)
+        self.assertEqual(node.style.height, 20)
+        self.assertEqual(node.style.margin_top, 30)
+        self.assertEqual(node.style.margin_left, 40)
+
+        # Layout is dirty
+        self.assertTrue(node.layout.dirty)
+
+        # Evaluate the layout
+        node.style.apply()
+        self.assertFalse(node.layout.dirty)
+
+        # Delete the two attributes that were initially set
+        node.style.set(
+            width=None,
+            margin_left=None
+        )
+
+        self.assertEqual(node.style.width, 11)
+        self.assertEqual(node.style.height, 20)
+        self.assertEqual(node.style.margin_top, 30)
+        self.assertEqual(node.style.margin_left, 41)
+
+        # Layout is dirty
+        self.assertTrue(node.layout.dirty)
+
+        # Evaluate the layout
+        node.style.apply()
+        self.assertFalse(node.layout.dirty)
