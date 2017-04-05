@@ -211,6 +211,8 @@ class CSS:
         for name, hint_value in style.items():
             # If the hint value is None, delete the hint; otherwise,
             # set the hint attribute
+            prev_value = getattr(self, '_%s:hint' % name, None)
+
             if hint_value is None:
                 delattr(self, '_%s:hint' % name)
             else:
@@ -220,9 +222,10 @@ class CSS:
             # If there isn't a user attribute, then any change to the hint
             # makes the layout dirty.
             try:
-                getattr(self, '_%s' % name)
+                val = getattr(self, '_%s' % name)
             except AttributeError:
-                self.make_dirty()
+                if hint_value != prev_value:
+                    self.make_dirty()
 
     ######################################################################
     # Get the rendered form of the style declaration
