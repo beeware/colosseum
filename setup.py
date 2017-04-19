@@ -25,7 +25,7 @@ setup(
     author_email='russell@keith-magee.com',
     # url='http://pybee.org/colosseum',
     url='https://github.com/pybee/colosseum',
-    packages=find_packages(exclude=['tests']),
+    packages=find_packages(exclude=['tests', 'utils']),
     install_requires=[],
     license='New BSD',
     classifiers=[
