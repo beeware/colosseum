@@ -58,24 +58,24 @@ class BaseUnitTests(TestCase):
 
     def test_pixels(self):
         p = 1 * px
-        self.assertAlmostEqual(p.pixels(display=self.simple), 1, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 1, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 1, places=3)
+        self.assertEqual(p.lu(display=self.simple), 64)
+        self.assertEqual(p.lu(display=self.print), 64)
+        self.assertEqual(p.lu(display=self.hidpi), 64)
 
-        self.assertAlmostEqual(p.pixels(font=self.helvetica12), 1, places=3)
-        self.assertAlmostEqual(p.pixels(font=self.helvetica16), 1, places=3)
-        self.assertAlmostEqual(p.pixels(font=self.courier12), 1, places=3)
+        self.assertEqual(p.lu(font=self.helvetica12), 64)
+        self.assertEqual(p.lu(font=self.helvetica16), 64)
+        self.assertEqual(p.lu(font=self.courier12), 64)
 
         p = 5 * px
-        self.assertAlmostEqual(p.pixels(display=self.simple), 5, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 5, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 5, places=3)
+        self.assertEqual(p.lu(display=self.simple), 320)
+        self.assertEqual(p.lu(display=self.print), 320)
+        self.assertEqual(p.lu(display=self.hidpi), 320)
 
-        self.assertAlmostEqual(p.pixels(font=self.helvetica12), 5, places=3)
-        self.assertAlmostEqual(p.pixels(font=self.helvetica16), 5, places=3)
-        self.assertAlmostEqual(p.pixels(font=self.courier12), 5, places=3)
+        self.assertEqual(p.lu(font=self.helvetica12), 320)
+        self.assertEqual(p.lu(font=self.helvetica16), 320)
+        self.assertEqual(p.lu(font=self.courier12), 320)
 
-        self.assertAlmostEqual(p.pixels(size=100), 5, places=3)
+        self.assertEqual(p.lu(size=100), 320)
 
         self.assertEqual(str(p), '5px')
 
@@ -99,66 +99,66 @@ class AbsoluteUnitTests(TestCase):
 
     def test_pica(self):
         p = 1 * pc
-        self.assertAlmostEqual(p.pixels(display=self.simple), 8, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 25, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 27.1666, places=3)
+        self.assertEqual(p.lu(display=self.simple), 512)
+        self.assertEqual(p.lu(display=self.print), 1600)
+        self.assertEqual(p.lu(display=self.hidpi), 1739)
 
         p = 5 * pc
-        self.assertAlmostEqual(p.pixels(display=self.simple), 40, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 125, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 135.8333, places=3)
+        self.assertEqual(p.lu(display=self.simple), 2560)
+        self.assertEqual(p.lu(display=self.print), 8000)
+        self.assertEqual(p.lu(display=self.hidpi), 8693)
 
         self.assertEqual(str(p), "5pc")
 
     def test_points(self):
         p = 1 * pt
-        self.assertAlmostEqual(p.pixels(display=self.simple), 1.333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 4.1666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 4.5277, places=3)
+        self.assertEqual(p.lu(display=self.simple), 85)
+        self.assertEqual(p.lu(display=self.print), 267)
+        self.assertEqual(p.lu(display=self.hidpi), 290)
 
         p = 5 * pt
-        self.assertAlmostEqual(p.pixels(display=self.simple), 6.6666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 20.833, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 22.6385, places=3)
+        self.assertEqual(p.lu(display=self.simple), 427)
+        self.assertEqual(p.lu(display=self.print), 1333)
+        self.assertEqual(p.lu(display=self.hidpi), 1449)
 
         self.assertEqual(str(p), "5pt")
 
     def test_inches(self):
         p = 1 * inch
-        self.assertAlmostEqual(p.pixels(display=self.simple), 96, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 300, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 326, places=3)
+        self.assertEqual(p.lu(display=self.simple), 6144)
+        self.assertEqual(p.lu(display=self.print), 19200)
+        self.assertEqual(p.lu(display=self.hidpi), 20864)
 
         p = 5 * inch
-        self.assertAlmostEqual(p.pixels(display=self.simple), 480, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 1500, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 1630, places=3)
+        self.assertEqual(p.lu(display=self.simple), 30720)
+        self.assertEqual(p.lu(display=self.print), 96000)
+        self.assertEqual(p.lu(display=self.hidpi), 104320)
 
         self.assertEqual(str(p), "5in")
 
     def test_centimeters(self):
         p = 1 * cm
-        self.assertAlmostEqual(p.pixels(display=self.simple), 37.795, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 118.110, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 128.3466, places=3)
+        self.assertEqual(p.lu(display=self.simple), 2419)
+        self.assertEqual(p.lu(display=self.print), 7559)
+        self.assertEqual(p.lu(display=self.hidpi), 8214)
 
         p = 5 * cm
-        self.assertAlmostEqual(p.pixels(display=self.simple), 188.9766, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 590.552, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 641.733, places=3)
+        self.assertEqual(p.lu(display=self.simple), 12095)
+        self.assertEqual(p.lu(display=self.print), 37795)
+        self.assertEqual(p.lu(display=self.hidpi), 41071)
 
         self.assertEqual(str(p), "5cm")
 
     def test_millimeters(self):
         p = 1 * mm
-        self.assertAlmostEqual(p.pixels(display=self.simple), 3.7795, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 11.8110, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 12.8346, places=3)
+        self.assertEqual(p.lu(display=self.simple), 242)
+        self.assertEqual(p.lu(display=self.print), 756)
+        self.assertEqual(p.lu(display=self.hidpi), 821)
 
         p = 5 * mm
-        self.assertAlmostEqual(p.pixels(display=self.simple), 18.8976, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 59.0552, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 64.1733, places=3)
+        self.assertEqual(p.lu(display=self.simple), 1209)
+        self.assertEqual(p.lu(display=self.print), 3780)
+        self.assertEqual(p.lu(display=self.hidpi), 4107)
 
         self.assertEqual(str(p), "5mm")
 
@@ -171,53 +171,53 @@ class ViewportUnitTests(TestCase):
 
     def test_viewwidth(self):
         p = 1 * vw
-        self.assertAlmostEqual(p.pixels(display=self.simple), 6.4, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 24.81, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 6.4, places=3)
+        self.assertEqual(p.lu(display=self.simple), 410)
+        self.assertEqual(p.lu(display=self.print), 1588)
+        self.assertEqual(p.lu(display=self.hidpi), 410)
 
         p = 5 * vw
-        self.assertAlmostEqual(p.pixels(display=self.simple), 32, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 124.05, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 32, places=3)
+        self.assertEqual(p.lu(display=self.simple), 2048)
+        self.assertEqual(p.lu(display=self.print), 7939)
+        self.assertEqual(p.lu(display=self.hidpi), 2048)
 
         self.assertEqual(str(p), "5vw")
 
     def test_viewheight(self):
         p = 1 * vh
-        self.assertAlmostEqual(p.pixels(display=self.simple), 4.8, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 35.07, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 11.36, places=3)
+        self.assertEqual(p.lu(display=self.simple), 307)
+        self.assertEqual(p.lu(display=self.print), 2244)
+        self.assertEqual(p.lu(display=self.hidpi), 727)
 
         p = 5 * vh
-        self.assertAlmostEqual(p.pixels(display=self.simple), 24, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 175.35, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 56.8, places=3)
+        self.assertEqual(p.lu(display=self.simple), 1536)
+        self.assertEqual(p.lu(display=self.print), 11222)
+        self.assertEqual(p.lu(display=self.hidpi), 3635)
 
         self.assertEqual(str(p), "5vh")
 
     def test_viewmin(self):
         p = 1 * vmin
-        self.assertAlmostEqual(p.pixels(display=self.simple), 4.8, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 24.81, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 6.4, places=3)
+        self.assertEqual(p.lu(display=self.simple), 307)
+        self.assertEqual(p.lu(display=self.print), 1588)
+        self.assertEqual(p.lu(display=self.hidpi), 410)
 
         p = 5 * vmin
-        self.assertAlmostEqual(p.pixels(display=self.simple), 24, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 124.05, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 32, places=3)
+        self.assertEqual(p.lu(display=self.simple), 1536)
+        self.assertEqual(p.lu(display=self.print), 7939)
+        self.assertEqual(p.lu(display=self.hidpi), 2048)
 
         self.assertEqual(str(p), "5vmin")
 
     def test_viewmax(self):
         p = 1 * vmax
-        self.assertAlmostEqual(p.pixels(display=self.simple), 6.4, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 35.07, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 11.36, places=3)
+        self.assertEqual(p.lu(display=self.simple), 410)
+        self.assertEqual(p.lu(display=self.print), 2244)
+        self.assertEqual(p.lu(display=self.hidpi), 727)
 
         p = 5 * vmax
-        self.assertAlmostEqual(p.pixels(display=self.simple), 32, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print), 175.35, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi), 56.8, places=3)
+        self.assertEqual(p.lu(display=self.simple), 2048)
+        self.assertEqual(p.lu(display=self.print), 11222)
+        self.assertEqual(p.lu(display=self.hidpi), 3635)
 
         self.assertEqual(str(p), "5vmax")
 
@@ -234,88 +234,88 @@ class FontUnitTests(TestCase):
 
     def test_em(self):
         p = 1 * em
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica12), 16.0, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica16), 21.3333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.courier12), 16.0, places=3)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica12), 1024)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica16), 1365)
+        self.assertEqual(p.lu(display=self.simple, font=self.courier12), 1024)
 
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica12), 50.0, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica16), 66.6666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.courier12), 50.0, places=3)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica12), 3200)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica16), 4267)
+        self.assertEqual(p.lu(display=self.print, font=self.courier12), 3200)
 
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica12), 54.3333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica16), 72.4444, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.courier12), 54.3333, places=3)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica12), 3477)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica16), 4636)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 3477)
 
         p = 5 * em
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica12), 80.0, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica16), 106.6666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.courier12), 80.0, places=3)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica12), 5120)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica16), 6827)
+        self.assertEqual(p.lu(display=self.simple, font=self.courier12), 5120)
 
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica12), 250.0, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica16), 333.3333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.courier12), 250.0, places=3)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica12), 16000)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica16), 21333)
+        self.assertEqual(p.lu(display=self.print, font=self.courier12), 16000)
 
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica12), 271.6666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica16), 362.2222, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.courier12), 271.6666, places=3)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica12), 17387)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica16), 23182)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 17387)
 
         self.assertEqual(str(p), "5em")
 
     def test_ex(self):
         p = 1 * ex
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica12), 10.4, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica16), 13.8666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.courier12), 12.0, places=3)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica12), 666)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica16), 887)
+        self.assertEqual(p.lu(display=self.simple, font=self.courier12), 768)
 
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica12), 32.5, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica16), 43.3333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.courier12), 37.5, places=3)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica12), 2080)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica16), 2773)
+        self.assertEqual(p.lu(display=self.print, font=self.courier12), 2400)
 
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica12), 35.3166, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica16), 47.0888, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.courier12), 40.75, places=3)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica12), 2260)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica16), 3014)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 2608)
 
         p = 5 * ex
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica12), 52.0, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica16), 69.3333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.courier12), 60.0, places=3)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica12), 3328)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica16), 4437)
+        self.assertEqual(p.lu(display=self.simple, font=self.courier12), 3840)
 
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica12), 162.5, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica16), 216.6666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.courier12), 187.5, places=3)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica12), 10400)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica16), 13867)
+        self.assertEqual(p.lu(display=self.print, font=self.courier12), 12000)
 
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica12), 176.5833, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica16), 235.4444, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.courier12), 203.75, places=3)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica12), 11301)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica16), 15068)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 13040)
 
         self.assertEqual(str(p), "5ex")
 
     def test_ch(self):
         p = 1 * ch
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica12), 11.36, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica16), 15.1466, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.courier12), 12.0, places=3)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica12), 727)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica16), 969)
+        self.assertEqual(p.lu(display=self.simple, font=self.courier12), 768)
 
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica12), 35.5, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica16), 47.3333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.courier12), 37.5, places=3)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica12), 2272)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica16), 3029)
+        self.assertEqual(p.lu(display=self.print, font=self.courier12), 2400)
 
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica12), 38.5766, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica16), 51.4355, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.courier12), 40.75, places=3)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica12), 2469)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica16), 3292)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 2608)
 
         p = 5 * ch
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica12), 56.8, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.helvetica16), 75.7333, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.simple, font=self.courier12), 60.0, places=3)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica12), 3635)
+        self.assertEqual(p.lu(display=self.simple, font=self.helvetica16), 4847)
+        self.assertEqual(p.lu(display=self.simple, font=self.courier12), 3840)
 
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica12), 177.5, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.helvetica16), 236.6666, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.print, font=self.courier12), 187.5, places=3)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica12), 11360)
+        self.assertEqual(p.lu(display=self.print, font=self.helvetica16), 15147)
+        self.assertEqual(p.lu(display=self.print, font=self.courier12), 12000)
 
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica12), 192.8833, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.helvetica16), 257.1777, places=3)
-        self.assertAlmostEqual(p.pixels(display=self.hidpi, font=self.courier12), 203.75, places=3)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica12), 12345)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.helvetica16), 16459)
+        self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 13040)
 
         self.assertEqual(str(p), "5ch")
 
@@ -323,13 +323,13 @@ class FontUnitTests(TestCase):
 class PercentUnitTests(TestCase):
     def test_percent(self):
         p = 1 * percent
-        self.assertAlmostEqual(p.pixels(size=10), 0.1, places=3)
-        self.assertAlmostEqual(p.pixels(size=100), 1, places=3)
-        self.assertAlmostEqual(p.pixels(size=500), 5, places=3)
+        self.assertEqual(p.lu(size=10), 6)
+        self.assertEqual(p.lu(size=100), 64)
+        self.assertEqual(p.lu(size=500), 320)
 
         p = 5 * percent
-        self.assertAlmostEqual(p.pixels(size=10), 0.5, places=3)
-        self.assertAlmostEqual(p.pixels(size=100), 5, places=3)
-        self.assertAlmostEqual(p.pixels(size=500), 25, places=3)
+        self.assertEqual(p.lu(size=10), 32)
+        self.assertEqual(p.lu(size=100), 320)
+        self.assertEqual(p.lu(size=500), 1600)
 
         self.assertEqual(str(p), "5%")

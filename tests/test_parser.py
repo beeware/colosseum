@@ -13,42 +13,42 @@ class ParseUnitTests(TestCase):
         # it's the same unit type, with the same value.
         actual = parser.units(value)
         self.assertEqual(actual.suffix, expected.suffix)
-        self.assertAlmostEqual(actual   .val, expected.val, places=3)
+        self.assertEqual(actual.val, expected.val)
 
     def test_unit_types(self):
-        self.assertEqualUnits('10ch', 10.0 * ch)
-        self.assertEqualUnits('10cm', 10.0 * cm)
-        self.assertEqualUnits('10em', 10.0 * em)
-        self.assertEqualUnits('10ex', 10.0 * ex)
-        self.assertEqualUnits('10in', 10.0 * inch)
-        self.assertEqualUnits('10mm', 10.0 * mm)
-        self.assertEqualUnits('10pc', 10.0 * pc)
-        self.assertEqualUnits('10%', 10.0 * percent)
-        self.assertEqualUnits('10pt', 10.0 * pt)
-        self.assertEqualUnits('10px', 10.0 * px)
-        self.assertEqualUnits('10vh', 10.0 * vh)
-        self.assertEqualUnits('10vmax', 10.0 * vmax)
-        self.assertEqualUnits('10vmin', 10.0 * vmin)
-        self.assertEqualUnits('10vw', 10.0 * vw)
+        self.assertEqualUnits('10ch', 10 * ch)
+        self.assertEqualUnits('10cm', 10 * cm)
+        self.assertEqualUnits('10em', 10 * em)
+        self.assertEqualUnits('10ex', 10 * ex)
+        self.assertEqualUnits('10in', 10 * inch)
+        self.assertEqualUnits('10mm', 10 * mm)
+        self.assertEqualUnits('10pc', 10 * pc)
+        self.assertEqualUnits('10%', 10 * percent)
+        self.assertEqualUnits('10pt', 10 * pt)
+        self.assertEqualUnits('10px', 10 * px)
+        self.assertEqualUnits('10vh', 10 * vh)
+        self.assertEqualUnits('10vmax', 10 * vmax)
+        self.assertEqualUnits('10vmin', 10 * vmin)
+        self.assertEqualUnits('10vw', 10 * vw)
 
     def test_unit(self):
-        self.assertEqualUnits(10 * pt, 10.0 * pt)
+        self.assertEqualUnits(10 * pt, 10 * pt)
 
     def test_float(self):
-        self.assertEqualUnits('10.0pt', 10.0 * pt)
-        self.assertEqualUnits('10.0 pt', 10.0 * pt)
+        self.assertEqualUnits('10.0pt', 10 * pt)
+        self.assertEqualUnits('10.0 pt', 10 * pt)
 
     def test_int(self):
-        self.assertEqualUnits('10pt', 10.0 * pt)
-        self.assertEqualUnits('10 pt', 10.0 * pt)
+        self.assertEqualUnits('10pt', 10 * pt)
+        self.assertEqualUnits('10 pt', 10 * pt)
 
     def test_raw(self):
-        self.assertEqualUnits(10, 10.0 * pt)
-        self.assertEqualUnits(10.0, 10.0 * pt)
+        self.assertEqualUnits(10, 10 * pt)
+        self.assertEqualUnits(10.0, 10 * pt)
 
     def test_no_units(self):
-        self.assertEqualUnits('10', 10.0 * pt)
-        self.assertEqualUnits('10.0', 10.0 * pt)
+        self.assertEqualUnits('10', 10 * pt)
+        self.assertEqualUnits('10.0', 10 * pt)
 
     def test_non_value(self):
         # A string that isn't a unit declaration
