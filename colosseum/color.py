@@ -1,18 +1,58 @@
 
 class rgb:
+    "A representation of an RGBA color"
     def __init__(self, r, g, b, a=1.0):
         self.r = r
         self.g = g
         self.b = b
         self.a = a
 
+    def __repr__(self):
+        return "rgba({}, {}, {}, {})".format(self.r, self.g, self.b, self.a)
+
+    @property
+    def rgb(self):
+        return self
+
+
 
 class hsl:
+    "A representation of an HSLA color"
     def __init__(self, h, s, l, a=1.0):
         self.h = h
         self.s = s
         self.l = l
         self.a = a
+
+    def __repr__(self):
+        return "hsla({}, {}, {}, {})".format(self.h, self.s, self.l, self.a)
+
+    @property
+    def rgb(self):
+        c = (1.0 - abs(2.0 * self.l - 1.0)) * self.s
+        h = self.h / 60.0
+        x = c * (1.0 - abs(h % 2 - 1.0))
+        m = self.l - 0.5 * c
+
+        if h < 1.0:
+            r, g, b = c + m, x + m, m
+        elif h < 2.0:
+            r, g, b = x + m, c + m, m
+        elif h < 3.0:
+            r, g, b = m, c + m, x + m
+        elif h < 4.0:
+            r, g, b = m, x + m, c + m
+        elif h < 5.0:
+            r, g, b = m, x + m, c + m
+        else:
+            r, g, b = c + m, m, x + m
+
+        return rgb(
+            round(r * 0xff),
+            round(g * 0xff),
+            round(b * 0xff),
+            self.a
+        )
 
 
 NAMED_COLOR = {
