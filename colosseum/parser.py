@@ -26,6 +26,7 @@ def units(value):
 def color(value):
     if isinstance(value, (rgb, hsl)):
         return value
+
     elif isinstance(value, str):
         if value[0] == '#':
             if len(value) == 4:
@@ -57,36 +58,40 @@ def color(value):
         elif value.startswith('rgba'):
             try:
                 values = value[5:-1].split(',')
-                return rgb(int(values[0]), int(values[1]), int(values[2]), float(values[3]))
+                if len(values) == 4:
+                    return rgb(int(values[0]), int(values[1]), int(values[2]), float(values[3]))
             except ValueError:
                 pass
         elif value.startswith('rgb'):
             try:
                 values = value[4:-1].split(',')
-                return rgb(int(values[0]), int(values[1]), int(values[2]))
+                if len(values) == 3:
+                    return rgb(int(values[0]), int(values[1]), int(values[2]))
             except ValueError:
                 pass
 
         elif value.startswith('hsla'):
             try:
                 values = value[5:-1].split(',')
-                return hsl(
-                    int(values[0]),
-                    int(values[1].strip().rstrip('%')),
-                    int(values[2].strip().rstrip('%')),
-                    float(values[3])
-                )
+                if len(values) == 4:
+                    return hsl(
+                        int(values[0]),
+                        int(values[1].strip().rstrip('%')) / 100.0,
+                        int(values[2].strip().rstrip('%')) / 100.0,
+                        float(values[3])
+                    )
             except ValueError:
                 pass
 
         elif value.startswith('hsl'):
             try:
                 values = value[4:-1].split(',')
-                return hsl(
-                    int(values[0]),
-                    int(values[1].strip().rstrip('%')),
-                    int(values[2].strip().rstrip('%')),
-                )
+                if len(values) == 3:
+                    return hsl(
+                        int(values[0]),
+                        int(values[1].strip().rstrip('%')) / 100.0,
+                        int(values[2].strip().rstrip('%')) / 100.0,
+                    )
             except ValueError:
                 pass
         else:

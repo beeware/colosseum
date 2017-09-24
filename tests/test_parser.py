@@ -77,6 +77,10 @@ class ParseColorTests(TestCase):
         self.assertEqual(actual.b, expected.b)
         self.assertAlmostEqual(actual.a, expected.a, places=3)
 
+    def test_noop(self):
+        self.assertEqualColor(rgb(1, 2, 3, 0.5), rgb(1, 2, 3, 0.5))
+        self.assertEqualHSL(hsl(1, 0.2, 0.3), hsl(1, 0.2, 0.3))
+
     def test_rgb(self):
         self.assertEqualColor('rgb(1,2,3)', rgb(1, 2, 3))
         self.assertEqualColor('rgb(1, 2, 3)', rgb(1, 2, 3))
@@ -84,6 +88,21 @@ class ParseColorTests(TestCase):
 
         self.assertEqualColor('#123', rgb(0x11, 0x22, 0x33))
         self.assertEqualColor('#112233', rgb(0x11, 0x22, 0x33))
+
+        with self.assertRaises(ValueError):
+            parser.color('rgb(10, 20)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgb(a, 10, 20)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgb(10, b, 20)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgb(10, 20, c)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgb(10, 20, 30, 0.5)')
 
     def test_rgba(self):
         self.assertEqualColor('rgba(1,2,3,0.5)', rgb(1, 2, 3, 0.5))
@@ -93,15 +112,66 @@ class ParseColorTests(TestCase):
         self.assertEqualColor('#1234', rgb(0x11, 0x22, 0x33, 0.2666))
         self.assertEqualColor('#11223344', rgb(0x11, 0x22, 0x33, 0.2666))
 
+        with self.assertRaises(ValueError):
+            parser.color('rgba(10, 20, 30)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgba(a, 10, 20, 0.5)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgba(10, b, 20, 0.5)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgba(10, 20, c, 0.5)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgba(10, 20, 30, c)')
+
+        with self.assertRaises(ValueError):
+            parser.color('rgba(10, 20, 30, 0.5, 5)')
+
     def test_hsl(self):
-        self.assertEqualHSL('hsl(1,20%,30%)', hsl(1, 20, 30))
-        self.assertEqualHSL('hsl(1, 20%, 30%)', hsl(1, 20, 30))
-        self.assertEqualHSL('hsl( 1, 20% , 30%)', hsl(1, 20, 30))
+        self.assertEqualHSL('hsl(1,20%,30%)', hsl(1, 0.2, 0.3))
+        self.assertEqualHSL('hsl(1, 20%, 30%)', hsl(1, 0.2, 0.3))
+        self.assertEqualHSL('hsl( 1, 20% , 30%)', hsl(1, 0.2, 0.3))
+
+        with self.assertRaises(ValueError):
+            parser.color('hsl(1, 20%)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsl(a, 20%, 30%)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsl(1, a, 30%)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsl(1, 20%, a)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsl(1, 20%, 30%, 0.5)')
 
     def test_hsla(self):
-        self.assertEqualHSL('hsla(1,20%,30%,0.5)', hsl(1, 20, 30, 0.5))
-        self.assertEqualHSL('hsla(1, 20%, 30%, 0.5)', hsl(1, 20, 30, 0.5))
-        self.assertEqualHSL('hsla( 1, 20% , 30% , 0.5)', hsl(1, 20, 30, 0.5))
+        self.assertEqualHSL('hsla(1,20%,30%,0.5)', hsl(1, 0.2, 0.3, 0.5))
+        self.assertEqualHSL('hsla(1, 20%, 30%, 0.5)', hsl(1, 0.2, 0.3, 0.5))
+        self.assertEqualHSL('hsla( 1, 20% , 30% , 0.5)', hsl(1, 0.2, 0.3, 0.5))
+
+        with self.assertRaises(ValueError):
+            parser.color('hsla(1, 20%, 30%)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsla(a, 20%, 30%, 0.5)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsla(1, a, 30%, 0.5)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsla(1, 20%, a, 0.5)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsla(1, 20%, 30%, a)')
+
+        with self.assertRaises(ValueError):
+            parser.color('hsla(1, 20%, 30%, 0.5, 5)')
 
     def test_named_color(self):
         self.assertEqualColor('Red', rgb(0xFF, 0, 0))

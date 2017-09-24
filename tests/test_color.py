@@ -10,6 +10,12 @@ class ColorTests(TestCase):
         self.assertEqual(a.rgb.b, b.rgb.b)
         self.assertEqual(a.rgb.a, b.rgb.a)
 
+    def test_rgb_repr(self):
+        self.assertEqual(repr(rgb(10, 20, 30, 0.5)), "rgba(10, 20, 30, 0.5)")
+
+    def test_hsl_repr(self):
+        self.assertEqual(repr(hsl(10, 0.2, 0.3, 0.5)), "hsla(10, 0.2, 0.3, 0.5)")
+
     def test_hsl_blacks(self):
         self.assertEqualColor(hsl(0, 0.0, 0.0), rgb(0x00, 0x00, 0x00))
         self.assertEqualColor(hsl(60, 0.0, 0.0), rgb(0x00, 0x00, 0x00))

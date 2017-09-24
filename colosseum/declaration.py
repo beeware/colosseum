@@ -1,35 +1,33 @@
+from . import engine as css_engine
 from .constants import (
-    STATIC, ABSOLUTE, FIXED, RELATIVE,
-    ROW, COLUMN,
-    FLEX_START, FLEX_END,
-    AUTO, CENTER, STRETCH, SPACE_BETWEEN, SPACE_AROUND,
-    WRAP, NOWRAP
+    AUTO, INLINE, STATIC, DISPLAY_CHOICES, POSITION_CHOICES, FLOAT_CHOICES, CLEAR_CHOICES,
 )
-from .engine import BoxModelEngine
+from .units import Unit
+
 
 _CSS_PROPERTIES = set()
 
 
-def css_property(name, choices=None, default=None):
+def dirty_property(name, choices=None, default=None):
     "Define a simple CSS property attribute."
     def getter(self):
-        return getattr(self, '_%s' % name, getattr(self, '_%s:hint' % name, default))
+        return getattr(self, '_%s' % name, default)
 
     def setter(self, value):
-        if value != getattr(self, '_%s' % name, getattr(self, '_%s:hint' % name, default)):
+        if value != getattr(self, '_%s' % name, default):
             if choices and value not in choices:
                 raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                     value,
                     name,
-                    ', '.join(s.replace('-', '_').upper() for s in choices))
+                    ', '.join(sorted(str(s).replace('_', '-') for s in choices)))
                 )
             setattr(self, '_%s' % name, value)
-            self.make_dirty()
+            self.dirty = True
 
     def deleter(self):
         try:
             delattr(self, '_%s' % name)
-            self.make_dirty()
+            self.dirty = True
         except AttributeError:
             # Attribute doesn't exist
             pass
@@ -38,8 +36,8 @@ def css_property(name, choices=None, default=None):
     return property(getter, setter, deleter)
 
 
-def css_directional_property(name, default=0):
-    "Define a CSS property attribute that defers to top/right/bottom/left alternatives."
+def directional_property(name, default=0):
+    "Define a property attribute that proxies for top/right/bottom/left alternatives."
     def getter(self):
         return (
             getattr(self, name % '_top', default),
@@ -92,97 +90,81 @@ def css_directional_property(name, default=0):
     return property(getter, setter, deleter)
 
 
+def render_value(val):
+    if isinstance(val, int):
+        return '%spx' % val
+    else:
+        return str(val)
+
+
 class CSS:
     def __init__(self, **style):
-        self.measure = style.pop('measure', None)
         self._node = None
-        self._engine = None
         self.set(**style)
 
     ######################################################################
     # Style properties
     ######################################################################
 
-    width = css_property('width')
-    height = css_property('height')
-    min_width = css_property('min_width')
-    min_height = css_property('min_height')
-    max_width = css_property('max_width')
-    max_height = css_property('max_height')
+    width = dirty_property('width', default=AUTO)
+    height = dirty_property('height', default=AUTO)
 
-    position = css_property('position', choices=set([STATIC, ABSOLUTE, FIXED, RELATIVE]), default=RELATIVE)
-    top = css_property('top')
-    bottom = css_property('bottom')
-    left = css_property('left')
-    right = css_property('right')
+    min_width = dirty_property('min_width', default=0)
+    min_height = dirty_property('min_height', default=0)
+    max_width = dirty_property('max_width')
+    max_height = dirty_property('max_height')
 
-    flex_direction = css_property('flex_direction', choices=set([COLUMN, ROW]), default=COLUMN)
-    flex_wrap = css_property('flex_wrap', choices=set([WRAP, NOWRAP]), default=NOWRAP)
-    flex = css_property('flex')
+    display = dirty_property('display', choices=DISPLAY_CHOICES, default=INLINE)
+    position = dirty_property('position', choices=POSITION_CHOICES, default=STATIC)
+    # float_ = dirty_property('float', choices=FLOAT_CHOICES, default=None)
+    clear = dirty_property('clear', choices=CLEAR_CHOICES, default=None)
 
-    margin_top = css_property('margin_top', default=0)
-    margin_right = css_property('margin_right', default=0)
-    margin_bottom = css_property('margin_bottom', default=0)
-    margin_left = css_property('margin_left', default=0)
+    top = dirty_property('top', default=AUTO)
+    bottom = dirty_property('bottom', default=AUTO)
+    left = dirty_property('left', default=AUTO)
+    right = dirty_property('right', default=AUTO)
 
-    padding_top = css_property('padding_top', default=0)
-    padding_right = css_property('padding_right', default=0)
-    padding_bottom = css_property('padding_bottom', default=0)
-    padding_left = css_property('padding_left', default=0)
+    margin_top = dirty_property('margin_top', default=0)
+    margin_right = dirty_property('margin_right', default=0)
+    margin_bottom = dirty_property('margin_bottom', default=0)
+    margin_left = dirty_property('margin_left', default=0)
 
-    border_top_width = css_property('border_top_width', default=0)
-    border_right_width = css_property('border_right_width', default=0)
-    border_bottom_width = css_property('border_bottom_width', default=0)
-    border_left_width = css_property('border_left_width', default=0)
+    padding_top = dirty_property('padding_top', default=0)
+    padding_right = dirty_property('padding_right', default=0)
+    padding_bottom = dirty_property('padding_bottom', default=0)
+    padding_left = dirty_property('padding_left', default=0)
 
-    justify_content = css_property(
-        'justify_content',
-        choices=set([FLEX_START, CENTER, FLEX_END, SPACE_BETWEEN, SPACE_AROUND]),
-        default=FLEX_START
-    )
-    align_items = css_property(
-        'align_items',
-        choices=set([FLEX_START, CENTER, FLEX_END, STRETCH]),
-        default=STRETCH)
-    align_self = css_property(
-        'align_self',
-        choices=set([FLEX_START, CENTER, FLEX_END, STRETCH, AUTO]),
-        default=AUTO
-    )
+    border_top_width = dirty_property('border_top_width', default=0)
+    border_right_width = dirty_property('border_right_width', default=0)
+    border_bottom_width = dirty_property('border_bottom_width', default=0)
+    border_left_width = dirty_property('border_left_width', default=0)
 
-    # Some special case meta-properties that defer to underlying top/bottom/left/right base properties
-    margin = css_directional_property('margin%s')
-    padding = css_directional_property('padding%s')
-    border_width = css_directional_property('border%s_width')
+    # Some special case meta-properties that proxy to
+    # underlying top/bottom/left/right base properties
+    margin = directional_property('margin%s', default=0)
+    padding = directional_property('padding%s', default=0)
+    border_width = directional_property('border%s_width', default=0)
 
     ######################################################################
-    # Track the relationship between layout, node, and style
+    # Proxy the dirtiness state of layout calculations
     ######################################################################
+    @property
+    def dirty(self):
+        return self._node.layout.dirty
 
-    def make_dirty(self):
-        if self._node:
-            self._node.layout.dirty = True
+    @dirty.setter
+    def dirty(self, value):
+        self._node.layout.dirty = value
 
-    def bind(self, node):
-        return self.copy(node=node)
-
-    def apply(self, max_width=None):
-        if self._engine is None:
-            self._engine = BoxModelEngine(self._node)
-
-        if self._node.layout.dirty != False:
-            # If the layout is actually dirty, reset the layout
-            # and mark the layout as currently being recomputed.
-            if self._node.layout.dirty:
-                self._node.layout.reset()
-                self._node.layout.dirty = None
-            self._engine.compute(max_width)
-            self._node.layout.dirty = False
+    ######################################################################
+    # Obtain the layout module
+    ######################################################################
+    def engine(self):
+        return css_engine
 
     ######################################################################
     # Style manipulation
     ######################################################################
-
     def set(self, **styles):
         "Set multiple styles on the CSS definition."
         for name, value in styles.items():
@@ -199,47 +181,13 @@ class CSS:
         dup = CSS()
         for style in _CSS_PROPERTIES:
             setattr(dup, style, getattr(self, style))
-        dup.measure = self.measure
         dup._node = node
         return dup
 
     ######################################################################
-    # Style hinting
-    ######################################################################
-
-    def hint(self, **style):
-        for name, hint_value in style.items():
-            # If the hint value is None, delete the hint; otherwise,
-            # set the hint attribute
-            prev_value = getattr(self, '_%s:hint' % name, None)
-
-            if hint_value is None:
-                delattr(self, '_%s:hint' % name)
-            else:
-                setattr(self, '_%s:hint' % name, hint_value)
-
-            # If there is a user attribute, it takes priority.
-            # If there isn't a user attribute, then any change to the hint
-            # makes the layout dirty.
-            try:
-                val = getattr(self, '_%s' % name)
-            except AttributeError:
-                if hint_value != prev_value:
-                    self.make_dirty()
-
-    ######################################################################
     # Get the rendered form of the style declaration
     ######################################################################
-
     def __str__(self):
-        def render_value(val):
-            if isinstance(val, tuple):
-                return ' '.join(render_value(v) for v in val)
-            elif isinstance(val, int):
-                return '%spx' % val
-            else:
-                return str(val)
-
         non_default = []
         for name in _CSS_PROPERTIES:
             try:
