@@ -18,15 +18,20 @@ class Unit:
     def lu(self, display=None, font=None, size=None):
         return round(LU_PER_PIXEL * self.val)
 
-    def dup(self, val):
-        return Unit(self.suffix, val)
-
     def __str__(self):
         return '{}{}'.format(self.val, self.suffix)
 
     def __rmul__(self, val):
         if isinstance(val, (int, float)):
             return self.dup(self.val * val)
+
+
+class PixelUnit(Unit):
+    def __init__(self, val=None):
+        super().__init__('px', val)
+
+    def dup(self, val):
+        return PixelUnit(val)
 
 
 class FontUnit(Unit):
@@ -72,7 +77,7 @@ class Percent(Unit):
         return Percent(val)
 
 
-px = Unit('px')
+px = PixelUnit()
 
 em = FontUnit('em')
 ex = FontUnit('ex')
