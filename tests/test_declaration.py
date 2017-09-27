@@ -4,6 +4,7 @@ from colosseum import engine as css_engine
 from colosseum.constants import AUTO, INLINE, BLOCK, TABLE
 from colosseum.declaration import CSS
 from colosseum.dimensions import Box
+from colosseum.units import px
 
 
 class TestNode:
@@ -310,13 +311,13 @@ class CssDeclarationTests(TestCase):
 
         self.assertEqual(node.style.width, 10)
         self.assertEqual(node.style.height, 20)
-        self.assertEqual(node.style.top, AUTO)
+        self.assertIs(node.style.top, AUTO)
         self.assertTrue(node.style.dirty)
 
         # Clear properties
         node.style.set(width=None, top=30)
 
-        self.assertEqual(node.style.width, AUTO)
+        self.assertIs(node.style.width, AUTO)
         self.assertEqual(node.style.height, 20)
         self.assertEqual(node.style.top, 30)
         self.assertTrue(node.style.dirty)
@@ -340,7 +341,7 @@ class CssDeclarationTests(TestCase):
             margin=(30, 40, 50, 60),
             display=BLOCK
         )
-
+        print(node.style.height)
         self.assertEqual(
             str(node.style),
             "display: block; height: 20px; "

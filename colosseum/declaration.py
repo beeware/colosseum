@@ -2,7 +2,7 @@ from . import engine as css_engine
 from .constants import (
     AUTO, INLINE, STATIC, DISPLAY_CHOICES, POSITION_CHOICES, FLOAT_CHOICES, CLEAR_CHOICES,
 )
-from .units import Unit
+from .units import PixelUnit
 
 
 _CSS_PROPERTIES = set()
@@ -14,13 +14,17 @@ def dirty_property(name, choices=None, default=None):
         return getattr(self, '_%s' % name, default)
 
     def setter(self, value):
+        if choices and value not in choices:
+            raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
+                value,
+                name,
+                ', '.join(sorted(str(s).replace('_', '-') for s in choices)))
+            )
+
+        if isinstance(value, int):
+            value = PixelUnit(value)
+
         if value != getattr(self, '_%s' % name, default):
-            if choices and value not in choices:
-                raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
-                    value,
-                    name,
-                    ', '.join(sorted(str(s).replace('_', '-') for s in choices)))
-                )
             setattr(self, '_%s' % name, value)
             self.dirty = True
 
@@ -88,13 +92,6 @@ def directional_property(name, default=0):
     _CSS_PROPERTIES.add(name % '_bottom')
     _CSS_PROPERTIES.add(name % '_left')
     return property(getter, setter, deleter)
-
-
-def render_value(val):
-    if isinstance(val, int):
-        return '%spx' % val
-    else:
-        return str(val)
 
 
 class CSS:
@@ -179,9 +176,12 @@ class CSS:
     def copy(self, node=None):
         "Create a duplicate of this style declaration."
         dup = CSS()
-        for style in _CSS_PROPERTIES:
-            setattr(dup, style, getattr(self, style))
         dup._node = node
+        for style in _CSS_PROPERTIES:
+            try:
+                setattr(dup, style, getattr(self, '_%s' % style))
+            except AttributeError:
+                pass
         return dup
 
     ######################################################################
@@ -193,7 +193,7 @@ class CSS:
             try:
                 non_default.append((
                     name.replace('_', '-'),
-                    render_value(getattr(self, '_%s' % name))
+                    getattr(self, '_%s' % name)
                 ))
             except AttributeError:
                 pass

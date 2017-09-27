@@ -18,6 +18,9 @@ class Unit:
     def lu(self, display=None, font=None, size=None):
         return round(LU_PER_PIXEL * self.val)
 
+    def __repr__(self):
+        return '{}{}'.format(self.val, self.suffix)
+
     def __str__(self):
         return '{}{}'.format(self.val, self.suffix)
 
@@ -33,6 +36,13 @@ class PixelUnit(Unit):
     def dup(self, val):
         return PixelUnit(val)
 
+    def __eq__(self, other):
+        if isinstance(other, int):
+            return self.val == other
+        elif isinstance(other, PixelUnit):
+            return self.val == other.val
+        return False
+
 
 class FontUnit(Unit):
     def lu(self, display=None, font=None, size=None):
@@ -40,6 +50,11 @@ class FontUnit(Unit):
 
     def dup(self, val):
         return FontUnit(self.suffix, val)
+
+    def __eq__(self, other):
+        if isinstance(other, FontUnit):
+            return self.val == other.val and self.suffix == other.suffix
+        return False
 
 
 class AbsoluteUnit(Unit):
@@ -53,6 +68,11 @@ class AbsoluteUnit(Unit):
     def dup(self, val):
         return AbsoluteUnit(self.suffix, self.scale, val)
 
+    def __eq__(self, other):
+        if isinstance(other, AbsoluteUnit):
+            return self.val == other.val and self.suffix == other.suffix
+        return False
+
 
 class ViewportUnit(Unit):
     def __init__(self, suffix, scale, val=None):
@@ -65,6 +85,11 @@ class ViewportUnit(Unit):
     def dup(self, val):
         return ViewportUnit(self.suffix, self.scale, val)
 
+    def __eq__(self, other):
+        if isinstance(other, ViewportUnit):
+            return self.val == other.val and self.suffix == other.suffix
+        return False
+
 
 class Percent(Unit):
     def __init__(self, val=None):
@@ -75,6 +100,11 @@ class Percent(Unit):
 
     def dup(self, val):
         return Percent(val)
+
+    def __eq__(self, other):
+        if isinstance(other, Percent):
+            return self.val == other.val and self.suffix == other.suffix
+        return False
 
 
 px = PixelUnit()

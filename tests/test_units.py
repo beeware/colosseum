@@ -78,6 +78,9 @@ class BaseUnitTests(TestCase):
         self.assertEqual(p.lu(size=100), 320)
 
         self.assertEqual(str(p), '5px')
+        self.assertEqual(repr(p), '5px')
+        self.assertEqual(p, 5)
+        self.assertEqual(p, 5 * px)
 
     def test_multiply(self):
         p1 = 5 * px
@@ -109,6 +112,10 @@ class AbsoluteUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 8693)
 
         self.assertEqual(str(p), "5pc")
+        self.assertEqual(repr(p), "5pc")
+        self.assertEqual(p, 5 * pc)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_points(self):
         p = 1 * pt
@@ -122,6 +129,10 @@ class AbsoluteUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 1449)
 
         self.assertEqual(str(p), "5pt")
+        self.assertEqual(repr(p), "5pt")
+        self.assertEqual(p, 5 * pt)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_inches(self):
         p = 1 * inch
@@ -135,6 +146,10 @@ class AbsoluteUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 104320)
 
         self.assertEqual(str(p), "5in")
+        self.assertEqual(repr(p), "5in")
+        self.assertEqual(p, 5 * inch)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_centimeters(self):
         p = 1 * cm
@@ -148,6 +163,10 @@ class AbsoluteUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 41071)
 
         self.assertEqual(str(p), "5cm")
+        self.assertEqual(repr(p), "5cm")
+        self.assertEqual(p, 5 * cm)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_millimeters(self):
         p = 1 * mm
@@ -161,6 +180,10 @@ class AbsoluteUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 4107)
 
         self.assertEqual(str(p), "5mm")
+        self.assertEqual(repr(p), "5mm")
+        self.assertEqual(p, 5 * mm)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
 
 class ViewportUnitTests(TestCase):
@@ -181,6 +204,10 @@ class ViewportUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 2048)
 
         self.assertEqual(str(p), "5vw")
+        self.assertEqual(repr(p), "5vw")
+        self.assertEqual(p, 5 * vw)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_viewheight(self):
         p = 1 * vh
@@ -194,6 +221,10 @@ class ViewportUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 3635)
 
         self.assertEqual(str(p), "5vh")
+        self.assertEqual(repr(p), "5vh")
+        self.assertEqual(p, 5 * vh)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_viewmin(self):
         p = 1 * vmin
@@ -207,6 +238,10 @@ class ViewportUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 2048)
 
         self.assertEqual(str(p), "5vmin")
+        self.assertEqual(repr(p), "5vmin")
+        self.assertEqual(p, 5 * vmin)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_viewmax(self):
         p = 1 * vmax
@@ -220,6 +255,10 @@ class ViewportUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi), 3635)
 
         self.assertEqual(str(p), "5vmax")
+        self.assertEqual(repr(p), "5vmax")
+        self.assertEqual(p, 5 * vmax)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
 
 class FontUnitTests(TestCase):
@@ -260,6 +299,10 @@ class FontUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 17387)
 
         self.assertEqual(str(p), "5em")
+        self.assertEqual(repr(p), "5em")
+        self.assertEqual(p, 5 * em)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_ex(self):
         p = 1 * ex
@@ -289,6 +332,10 @@ class FontUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 13040)
 
         self.assertEqual(str(p), "5ex")
+        self.assertEqual(repr(p), "5ex")
+        self.assertEqual(p, 5 * ex)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
     def test_ch(self):
         p = 1 * ch
@@ -318,6 +365,10 @@ class FontUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.hidpi, font=self.courier12), 13040)
 
         self.assertEqual(str(p), "5ch")
+        self.assertEqual(repr(p), "5ch")
+        self.assertEqual(p, 5 * ch)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
 
 
 class PercentUnitTests(TestCase):
@@ -333,3 +384,7 @@ class PercentUnitTests(TestCase):
         self.assertEqual(p.lu(size=500), 1600)
 
         self.assertEqual(str(p), "5%")
+        self.assertEqual(repr(p), "5%")
+        self.assertEqual(p, 5 * percent)
+        self.assertNotEqual(p, 5 * px)
+        self.assertNotEqual(p, 5)
