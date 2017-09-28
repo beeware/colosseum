@@ -20,8 +20,6 @@ class SizeTests(TestCase):
     def test_initial_state(self):
         self.assertIsNone(self.node.intrinsic.width)
         self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has not been touched.
         self.assertIsNone(self.node.layout.dirty)
@@ -31,8 +29,6 @@ class SizeTests(TestCase):
 
         self.assertEqual(self.node.intrinsic.width, 10)
         self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has been dirtied.
         self.assertTrue(self.node.intrinsic.dirty)
@@ -45,8 +41,6 @@ class SizeTests(TestCase):
 
         self.assertEqual(self.node.intrinsic.width, 10)
         self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has NOT been dirtied.
         self.assertFalse(self.node.intrinsic.dirty)
@@ -56,8 +50,6 @@ class SizeTests(TestCase):
 
         self.assertEqual(self.node.intrinsic.width, 20)
         self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has been dirtied.
         self.assertTrue(self.node.intrinsic.dirty)
@@ -67,8 +59,6 @@ class SizeTests(TestCase):
 
         self.assertIsNone(self.node.intrinsic.width)
         self.assertEqual(self.node.intrinsic.height, 10)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has been dirtied.
         self.assertTrue(self.node.intrinsic.dirty)
@@ -81,8 +71,6 @@ class SizeTests(TestCase):
 
         self.assertIsNone(self.node.intrinsic.width)
         self.assertEqual(self.node.intrinsic.height, 10)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has NOT been dirtied.
         self.assertFalse(self.node.intrinsic.dirty)
@@ -92,80 +80,6 @@ class SizeTests(TestCase):
 
         self.assertIsNone(self.node.intrinsic.width)
         self.assertEqual(self.node.intrinsic.height, 20)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
-
-        # Layout has been dirtied.
-        self.assertTrue(self.node.intrinsic.dirty)
-
-    def test_set_exact_width(self):
-        self.node.intrinsic.exact_width = False
-
-        self.assertIsNone(self.node.intrinsic.width)
-        self.assertIsNone(self.node.intrinsic.height)
-        self.assertFalse(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
-
-        # Layout has been dirtied.
-        self.assertTrue(self.node.intrinsic.dirty)
-
-        # Clean the layout
-        self.node.layout.dirty = False
-
-        # Set the exact_width to the same value
-        self.node.intrinsic.exact_width = False
-
-        self.assertIsNone(self.node.intrinsic.width)
-        self.assertIsNone(self.node.intrinsic.height)
-        self.assertFalse(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
-
-        # Layout has NOT been dirtied.
-        self.assertFalse(self.node.intrinsic.dirty)
-
-        # Set the exact_width to something new
-        self.node.intrinsic.exact_width = True
-
-        self.assertIsNone(self.node.intrinsic.width)
-        self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
-
-        # Layout has been dirtied.
-        self.assertTrue(self.node.intrinsic.dirty)
-
-    def test_set_exact_height(self):
-        self.node.intrinsic.exact_height = False
-
-        self.assertIsNone(self.node.intrinsic.width)
-        self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertFalse(self.node.intrinsic.exact_height)
-
-        # Layout has been dirtied.
-        self.assertTrue(self.node.intrinsic.dirty)
-
-        # Clean the layout
-        self.node.layout.dirty = False
-
-        # Set the exact height to the same value
-        self.node.intrinsic.exact_height = False
-
-        self.assertIsNone(self.node.intrinsic.width)
-        self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertFalse(self.node.intrinsic.exact_height)
-
-        # Layout has NOT been dirtied.
-        self.assertFalse(self.node.intrinsic.dirty)
-
-        # Set the exact height to something else
-        self.node.intrinsic.exact_height = True
-
-        self.assertIsNone(self.node.intrinsic.width)
-        self.assertIsNone(self.node.intrinsic.height)
-        self.assertTrue(self.node.intrinsic.exact_width)
-        self.assertTrue(self.node.intrinsic.exact_height)
 
         # Layout has been dirtied.
         self.assertTrue(self.node.intrinsic.dirty)

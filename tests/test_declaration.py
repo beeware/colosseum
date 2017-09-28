@@ -341,7 +341,7 @@ class CssDeclarationTests(TestCase):
             margin=(30, 40, 50, 60),
             display=BLOCK
         )
-        print(node.style.height)
+
         self.assertEqual(
             str(node.style),
             "display: block; height: 20px; "

@@ -11,18 +11,11 @@ class Size:
 
     width: The width of the node.
     height: The height of the node.
-    exact_width: If True, the width is exact. If False,
-        the width is the minimum allowed width.
-    exact_height: If True, the height is exact. If False,
-        the height is the minimum allowed width.
-
     """
     def __init__(self, node):
         self._node = node
         self._width = None
         self._height = None
-        self._exact_width = True
-        self._exact_height = True
 
     @property
     def dirty(self):
@@ -52,46 +45,27 @@ class Size:
             self._height = value
             self.dirty = True
 
-    @property
-    def exact_width(self):
-        return self._exact_width
-
-    @exact_width.setter
-    def exact_width(self, value):
-        if self._exact_width != value:
-            self._exact_width = value
-            self.dirty = True
-
-    @property
-    def exact_height(self):
-        return self._exact_height
-
-    @exact_height.setter
-    def exact_height(self, value):
-        if self._exact_height != value:
-            self._exact_height = value
-            self.dirty = True
-
 
 class Box:
     """Describe the layout of a box displaying a node in the DOM.
 
     Stored properties
     ~~~~~~~~~~~~~~~~~
-    width: The display width of the box
-    height: The display height of the box
-    top: The top position of the box, relative to the parent's box
-    left: The left position of the box, relative to the parent's box
-    origin_top: The absolute position of the top of the parent box.
-    origin_left: The absolute position of the left of the parent box.
+    width: The content width of the box
+    height: The content height of the box
+    top: The top position of the content box, relative to the containing block
+    left: The left position of the content box, relative to the containing block
+
+    origin_top: The absolute position of the top of the containing block
+    origin_left: The absolute position of the left of the containing block
 
     Computed properties
     ~~~~~~~~~~~~~~~~~~~
     Computed properties are automatically updated whenever a stored
     property changes.
 
-    bottom: The bottom position of the box, relative to the parent's box
-    right: The right position of the box, relative to the parent's box
+    bottom: The bottom position of the box, relative to the containing box
+    right: The right position of the box, relative to the containing box
     absolute_top: The absolute position of the top of the box.
     absolute_left: The absolute position of the left of the box.
 
@@ -117,7 +91,7 @@ class Box:
         # Current state of layout calculations
         self._dirty = True
 
-        # Set the origin via properties; this forces the calcuation of
+        # Set the origin via properties; this forces the calculation of
         # absolute positions.
         self.origin_top = 0
         self.origin_left = 0
