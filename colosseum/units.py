@@ -13,10 +13,13 @@ class Unit:
     def __init__(self, suffix, val=None):
         Unit.UNITS.append((suffix, self))
         self.suffix = suffix
-        self.val = val if val else 1
+        self.val = val if val is not None else 1
 
     def lu(self, display=None, font=None, size=None):
         return round(LU_PER_PIXEL * self.val)
+
+    def px(self, display=None, font=None, size=None):
+        return self.lu(display=display, font=font, size=size) // LU_PER_PIXEL
 
     def __repr__(self):
         return '{}{}'.format(self.val, self.suffix)
@@ -119,9 +122,9 @@ inch = AbsoluteUnit('in', 72)
 cm = AbsoluteUnit('cm', 28.3465)
 mm = AbsoluteUnit('mm', 2.83465)
 
-vh = ViewportUnit('vh', lambda d: d.height)
-vmax = ViewportUnit('vmax', lambda d: max(d.width, d.height))
-vmin = ViewportUnit('vmin', lambda d: min(d.width, d.height))
-vw = ViewportUnit('vw', lambda d: d.width)
+vh = ViewportUnit('vh', lambda d: d.content_height)
+vmax = ViewportUnit('vmax', lambda d: max(d.content_width, d.content_height))
+vmin = ViewportUnit('vmin', lambda d: min(d.content_width, d.content_height))
+vw = ViewportUnit('vw', lambda d: d.content_width)
 
 percent = Percent()

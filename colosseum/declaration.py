@@ -1,7 +1,10 @@
 from . import engine as css_engine
 from .constants import (
     AUTO, INLINE, STATIC, LTR, NORMAL,
+    MARGIN_CHOICES, PADDING_CHOICES, BORDER_WIDTH_CHOICES,
     DISPLAY_CHOICES, POSITION_CHOICES, FLOAT_CHOICES,
+    BOX_OFFSET_CHOICES, Z_INDEX_CHOICES, SIZE_CHOICES,
+    MIN_SIZE_CHOICES, MAX_SIZE_CHOICES,
     CLEAR_CHOICES, DIRECTION_CHOICES, UNICODE_BIDI_CHOICES,
 )
 from .units import PixelUnit
@@ -10,23 +13,21 @@ from .units import PixelUnit
 _CSS_PROPERTIES = set()
 
 
-def dirty_property(name, choices=None, default=None):
+def validated_property(name, choices=None, initial=None):
     "Define a simple CSS property attribute."
     def getter(self):
-        return getattr(self, '_%s' % name, default)
+        return getattr(self, '_%s' % name, initial)
 
     def setter(self, value):
-        if choices and value not in choices:
+        if choices and not choices.is_valid(value):
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
-                value,
-                name,
-                ', '.join(sorted(str(s).replace('_', '-') for s in choices)))
-            )
+                value, name, choices
+            ))
 
         if isinstance(value, int):
             value = PixelUnit(value)
 
-        if value != getattr(self, '_%s' % name, default):
+        if value != getattr(self, '_%s' % name, initial):
             setattr(self, '_%s' % name, value)
             self.dirty = True
 
@@ -42,14 +43,14 @@ def dirty_property(name, choices=None, default=None):
     return property(getter, setter, deleter)
 
 
-def directional_property(name, default=0):
+def directional_property(name, initial=0):
     "Define a property attribute that proxies for top/right/bottom/left alternatives."
     def getter(self):
         return (
-            getattr(self, name % '_top', default),
-            getattr(self, name % '_right', default),
-            getattr(self, name % '_bottom', default),
-            getattr(self, name % '_left', default),
+            getattr(self, name % '_top', initial),
+            getattr(self, name % '_right', initial),
+            getattr(self, name % '_bottom', initial),
+            getattr(self, name % '_left', initial),
         )
 
     def setter(self, value):
@@ -107,26 +108,26 @@ class CSS:
 
     # 8. Box model #######################################################
     # 8.3 Margin properties
-    margin_top = dirty_property('margin_top', default=0)
-    margin_right = dirty_property('margin_right', default=0)
-    margin_bottom = dirty_property('margin_bottom', default=0)
-    margin_left = dirty_property('margin_left', default=0)
-    margin = directional_property('margin%s', default=0)
+    margin_top = validated_property('margin_top', choices=MARGIN_CHOICES, initial=0)
+    margin_right = validated_property('margin_right', choices=MARGIN_CHOICES, initial=0)
+    margin_bottom = validated_property('margin_bottom', choices=MARGIN_CHOICES, initial=0)
+    margin_left = validated_property('margin_left', choices=MARGIN_CHOICES, initial=0)
+    margin = directional_property('margin%s', initial=0)
 
     # 8.4 Padding properties
-    padding_top = dirty_property('padding_top', default=0)
-    padding_right = dirty_property('padding_right', default=0)
-    padding_bottom = dirty_property('padding_bottom', default=0)
-    padding_left = dirty_property('padding_left', default=0)
-    padding = directional_property('padding%s', default=0)
+    padding_top = validated_property('padding_top', choices=PADDING_CHOICES, initial=0)
+    padding_right = validated_property('padding_right', choices=PADDING_CHOICES, initial=0)
+    padding_bottom = validated_property('padding_bottom', choices=PADDING_CHOICES, initial=0)
+    padding_left = validated_property('padding_left', choices=PADDING_CHOICES, initial=0)
+    padding = directional_property('padding%s', initial=0)
 
     # 8.5 Border properties
     # 8.5.1 Border width
-    border_top_width = dirty_property('border_top_width', default=0)
-    border_right_width = dirty_property('border_right_width', default=0)
-    border_bottom_width = dirty_property('border_bottom_width', default=0)
-    border_left_width = dirty_property('border_left_width', default=0)
-    border_width = directional_property('border%s_width', default=0)
+    border_top_width = validated_property('border_top_width', choices=BORDER_WIDTH_CHOICES, initial=0)
+    border_right_width = validated_property('border_right_width', choices=BORDER_WIDTH_CHOICES, initial=0)
+    border_bottom_width = validated_property('border_bottom_width', choices=BORDER_WIDTH_CHOICES, initial=0)
+    border_left_width = validated_property('border_left_width', choices=BORDER_WIDTH_CHOICES, initial=0)
+    border_width = directional_property('border%s_width', initial=0)
 
     # 8.5.2 Border color
     # border_top_color
@@ -151,39 +152,42 @@ class CSS:
 
     # 9. Visual formatting model #########################################
     # 9.2.4 The display property
-    display = dirty_property('display', choices=DISPLAY_CHOICES, default=INLINE)
+    display = validated_property('display', choices=DISPLAY_CHOICES, initial=INLINE)
     # 9.3 Positioning schemes
-    position = dirty_property('position', choices=POSITION_CHOICES, default=STATIC)
+    position = validated_property('position', choices=POSITION_CHOICES, initial=STATIC)
 
     # 9.3.2 Box offsets
-    top = dirty_property('top', default=AUTO)
-    bottom = dirty_property('bottom', default=AUTO)
-    left = dirty_property('left', default=AUTO)
-    right = dirty_property('right', default=AUTO)
+    top = validated_property('top', choices=BOX_OFFSET_CHOICES, initial=AUTO)
+    bottom = validated_property('bottom', choices=BOX_OFFSET_CHOICES, initial=AUTO)
+    left = validated_property('left', choices=BOX_OFFSET_CHOICES, initial=AUTO)
+    right = validated_property('right', choices=BOX_OFFSET_CHOICES, initial=AUTO)
 
     # 9.5.1 Positioning the float
-    # float_ = dirty_property('float', choices=FLOAT_CHOICES, default=None)
+    float_ = validated_property('float_', choices=FLOAT_CHOICES, initial=None)
     # 9.5.2 Controlling flow next to floats
-    clear = dirty_property('clear', choices=CLEAR_CHOICES, default=None)
+    clear = validated_property('clear', choices=CLEAR_CHOICES, initial=None)
+
+    # 9.9 Layered Presentation
+    z_index = validated_property('z_index', choices=Z_INDEX_CHOICES, initial=AUTO)
 
     # 9.10 Text Direction
-    direction = dirty_property('direction', choices=DIRECTION_CHOICES, default=LTR)
-    unicode_bidi = dirty_property('unicode_bidi', choices=UNICODE_BIDI_CHOICES, default=NORMAL)
+    direction = validated_property('direction', choices=DIRECTION_CHOICES, initial=LTR)
+    unicode_bidi = validated_property('unicode_bidi', choices=UNICODE_BIDI_CHOICES, initial=NORMAL)
 
     # 10. Visual formatting model details ################################
     # 10.2 Content width
-    width = dirty_property('width', default=AUTO)
+    width = validated_property('width', choices=SIZE_CHOICES, initial=AUTO)
 
     # 10.4 Minimum and maximum width
-    min_width = dirty_property('min_width', default=0)
-    max_width = dirty_property('max_width')
+    min_width = validated_property('min_width', choices=MIN_SIZE_CHOICES, initial=0)
+    max_width = validated_property('max_width', choices=MAX_SIZE_CHOICES)
 
     # 10.5 Content height
-    height = dirty_property('height', default=AUTO)
+    height = validated_property('height', choices=SIZE_CHOICES, initial=AUTO)
 
     # 10.7 Minimum and maximum heights
-    min_height = dirty_property('min_height', default=0)
-    max_height = dirty_property('max_height')
+    min_height = validated_property('min_height', choices=MIN_SIZE_CHOICES, initial=0)
+    max_height = validated_property('max_height', choices=MAX_SIZE_CHOICES)
 
     # 10.8 Leading and half-leading
     # line_height
@@ -304,11 +308,13 @@ class CSS:
     ######################################################################
     @property
     def dirty(self):
-        return self._node.layout.dirty
+        if self._node:
+            return self._node.layout.dirty
 
     @dirty.setter
     def dirty(self, value):
-        self._node.layout.dirty = value
+        if self._node:
+            self._node.layout.dirty = value
 
     ######################################################################
     # Obtain the layout module

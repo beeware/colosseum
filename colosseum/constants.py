@@ -1,9 +1,63 @@
 
+class Choices:
+    "A class to define allowable data types for a property"
+    def __init__(self, *constants, length=False, percentage=False, integer=False):
+        self.constants = set(constants)
+        self.length = length
+        self.percentage = percentage
+        self.integer = integer
+
+    def is_valid(self, value):
+        if hasattr(value, 'px'):
+            if self.length:
+                return True
+            if self.percentage and value.suffix == '%':
+                return True
+            return False
+        if isinstance(value, int) and (self.length or self.integer):
+            return True
+        if value in self.constants:
+            return True
+        return False
+
+    def __str__(self):
+        choices = [str(c).lower().replace('_', '-') for c in self.constants]
+        if self.length:
+            choices.append("<length>")
+        if self.percentage:
+            choices.append("<percentage>")
+        if self.integer:
+            choices.append("<integer>")
+        return ", ".join(sorted(choices))
+
+
+######################################################################
+# Common constants
+######################################################################
+
 AUTO = 'auto'
+
+######################################################################
+# Margins
+######################################################################
+
+MARGIN_CHOICES = Choices(AUTO, length=True, percentage=True)
+
+######################################################################
+# Padding
+######################################################################
+
+PADDING_CHOICES = Choices(length=True, percentage=True)
 
 ######################################################################
 # Borders
 ######################################################################
+
+THIN = 'thin'
+MEDIUM = 'medium'
+THICK = 'thick'
+
+BORDER_WIDTH_CHOICES = Choices(THIN, MEDIUM, THICK, length=True)
 
 HIDDEN = 'hidden'
 DOTTED = 'dotted'
@@ -15,7 +69,7 @@ RIDGE = 'ridge'
 INSET = 'inset'
 OUTSET = 'outset'
 
-BORDER_STYLES = {
+BORDER_STYLE_CHOICES = Choices(
     None,
     HIDDEN,
     DOTTED,
@@ -26,7 +80,7 @@ BORDER_STYLES = {
     RIDGE,
     INSET,
     OUTSET,
-}
+)
 
 ######################################################################
 # Display
@@ -47,7 +101,7 @@ TABLE_COLUMN = 'table-column'
 TABLE_CELL = 'table-cell'
 TABLE_CAPTION = 'table-caption'
 
-DISPLAY_CHOICES = {
+DISPLAY_CHOICES = Choices(
     None,
     INLINE,
     BLOCK,
@@ -63,7 +117,7 @@ DISPLAY_CHOICES = {
     TABLE_COLUMN,
     TABLE_CELL,
     TABLE_CAPTION,
-}
+)
 
 ######################################################################
 # Position
@@ -74,22 +128,9 @@ RELATIVE = 'relative'
 ABSOLUTE = 'absolute'
 FIXED = 'fixed'
 
-POSITION_CHOICES = { STATIC, RELATIVE, ABSOLUTE, FIXED }
+POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
-######################################################################
-# Direction
-######################################################################
-
-RTL = 'rtl'
-LTR = 'ltr'
-
-DIRECTION_CHOICES = { RTL, LTR }
-
-NORMAL = 'normal'
-EMBED = 'embed'
-BIDI_OVERRIDE = 'bidi-override'
-
-UNICODE_BIDI_CHOICES = { NORMAL, EMBED, BIDI_OVERRIDE }
+BOX_OFFSET_CHOICES = Choices(AUTO, length=True, percentage=True)
 
 ######################################################################
 # Float
@@ -99,5 +140,34 @@ LEFT = 'left'
 RIGHT = 'right'
 BOTH = 'both'
 
-FLOAT_CHOICES = { LEFT, RIGHT, None }
-CLEAR_CHOICES = { None, LEFT, RIGHT, BOTH }
+FLOAT_CHOICES = Choices(LEFT, RIGHT, None)
+CLEAR_CHOICES = Choices(None, LEFT, RIGHT, BOTH)
+
+######################################################################
+# Layers
+######################################################################
+
+Z_INDEX_CHOICES = Choices(AUTO, integer=True)
+
+######################################################################
+# Direction
+######################################################################
+
+RTL = 'rtl'
+LTR = 'ltr'
+
+DIRECTION_CHOICES = Choices(RTL, LTR)
+
+NORMAL = 'normal'
+EMBED = 'embed'
+BIDI_OVERRIDE = 'bidi-override'
+
+UNICODE_BIDI_CHOICES = Choices(NORMAL, EMBED, BIDI_OVERRIDE)
+
+######################################################################
+# Sizes
+######################################################################
+
+SIZE_CHOICES = Choices(AUTO, length=True, percentage=True)
+MIN_SIZE_CHOICES = Choices(length=True, percentage=True)
+MAX_SIZE_CHOICES = Choices(None, length=True, percentage=True)

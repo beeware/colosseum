@@ -4,14 +4,10 @@ from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
 )
 
-
-class Display:
-    def __init__(self, dpi, width, height):
-        self.dpi = dpi
-        self.width = width
-        self.height = height
+from .utils import Display
 
 
+# A dummy font declaration. ex < ch
 class Helvetica:
     def __init__(self, size):
         self.size = size
@@ -29,6 +25,7 @@ class Helvetica:
         return 0.71 * self.size
 
 
+# Another dummy font declaration. ex == ch == 3/4 of em
 class Courier:
     def __init__(self, size):
         self.size = size
@@ -47,6 +44,59 @@ class Courier:
 
 
 class BaseUnitTests(TestCase):
+    def setUp(self):
+        self.display = Display(dpi=96, width=640, height=480)
+
+    def test_logical_to_pixels(self):
+        p = 0 * px
+        self.assertEqual(p.lu(display=self.display), 0)
+        self.assertEqual(p.px(display=self.display), 0)
+
+        p = 0.2 * px
+        self.assertEqual(p.lu(display=self.display), 13)
+        self.assertEqual(p.px(display=self.display), 0)
+
+        p = 0.5 * px
+        self.assertEqual(p.lu(display=self.display), 32)
+        self.assertEqual(p.px(display=self.display), 0)
+
+        p = 0.7 * px
+        self.assertEqual(p.lu(display=self.display), 45)
+        self.assertEqual(p.px(display=self.display), 0)
+
+        p = 1 * px
+        self.assertEqual(p.lu(display=self.display), 64)
+        self.assertEqual(p.px(display=self.display), 1)
+
+        p = 1.2 * px
+        self.assertEqual(p.lu(display=self.display), 77)
+        self.assertEqual(p.px(display=self.display), 1)
+
+        p = 1.5 * px
+        self.assertEqual(p.lu(display=self.display), 96)
+        self.assertEqual(p.px(display=self.display), 1)
+
+        p = 1.7 * px
+        self.assertEqual(p.lu(display=self.display), 109)
+        self.assertEqual(p.px(display=self.display), 1)
+
+        p = 2 * px
+        self.assertEqual(p.lu(display=self.display), 128)
+        self.assertEqual(p.px(display=self.display), 2)
+
+    def test_multiply(self):
+        p1 = 5 * px
+
+        # A non-numerical unit can't be modified with units
+        with self.assertRaises(TypeError):
+            p1 * px
+
+        # Numbers are multiplied by units, not vice versa.
+        with self.assertRaises(TypeError):
+            px * 5
+
+
+class PixelUnitTests(TestCase):
     def setUp(self):
         self.simple = Display(dpi=96, width=640, height=480)
         self.print = Display(dpi=300, width=8.27*300, height=11.69*300)  # A4
@@ -82,16 +132,6 @@ class BaseUnitTests(TestCase):
         self.assertEqual(p, 5)
         self.assertEqual(p, 5 * px)
 
-    def test_multiply(self):
-        p1 = 5 * px
-
-        # A non-numerical unit can't be modified with units
-        with self.assertRaises(TypeError):
-            p1 * px
-
-        # Numbers are multiplied by units, not vice versa.
-        with self.assertRaises(TypeError):
-            px * 5
 
 
 class AbsoluteUnitTests(TestCase):

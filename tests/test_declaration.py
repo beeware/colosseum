@@ -1,17 +1,157 @@
 from unittest import TestCase
 
 from colosseum import engine as css_engine
-from colosseum.constants import AUTO, INLINE, BLOCK, TABLE
-from colosseum.declaration import CSS
+from colosseum.constants import AUTO, INLINE, BLOCK, TABLE, Choices
+from colosseum.declaration import CSS, validated_property
 from colosseum.dimensions import Box
-from colosseum.units import px
+from colosseum.units import px, percent
+
+from .utils import Display, TestNode
 
 
-class TestNode:
-    def __init__(self, style):
-        self.children = []
-        self.layout = Box(self)
-        self.style = style.copy(self)
+class PropertyChoiceTests(TestCase):
+    def test_no_choices(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices())
+
+        obj = MyObject()
+
+        with self.assertRaises(ValueError):
+            obj.prop = 10
+        with self.assertRaises(ValueError):
+            obj.prop = 20 * px
+        with self.assertRaises(ValueError):
+            obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = 'a'
+        with self.assertRaises(ValueError):
+            obj.prop = 'b'
+        with self.assertRaises(ValueError):
+            obj.prop = None
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: ")
+
+    def test_allow_length(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(length=True))
+
+        obj = MyObject()
+
+        obj.prop = 10
+        obj.prop = 20 * px
+        obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = 'a'
+        with self.assertRaises(ValueError):
+            obj.prop = 'b'
+        with self.assertRaises(ValueError):
+            obj.prop = None
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <length>")
+
+    def test_allow_percentage(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(percentage=True))
+
+        obj = MyObject()
+
+        with self.assertRaises(ValueError):
+            obj.prop = 10
+        with self.assertRaises(ValueError):
+            obj.prop = 20 * px
+        obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = 'a'
+        with self.assertRaises(ValueError):
+            obj.prop = 'b'
+        with self.assertRaises(ValueError):
+            obj.prop = None
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <percentage>")
+
+    def test_allow_integer(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(integer=True))
+
+        obj = MyObject()
+
+        obj.prop = 10
+        with self.assertRaises(ValueError):
+            obj.prop = 20 * px
+        with self.assertRaises(ValueError):
+            obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = 'a'
+        with self.assertRaises(ValueError):
+            obj.prop = 'b'
+        with self.assertRaises(ValueError):
+            obj.prop = None
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <integer>")
+
+    def test_values(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices('a', 'b', None))
+
+        obj = MyObject()
+
+        with self.assertRaises(ValueError):
+            obj.prop = 10
+        with self.assertRaises(ValueError):
+            obj.prop = 20 * px
+        with self.assertRaises(ValueError):
+            obj.prop = 30 * percent
+        obj.prop = 'a'
+        obj.prop = 'b'
+        obj.prop = None
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: a, b, none")
+
+    def test_all_choices(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(
+                'a', 'b', None, integer=True, length=True, percentage=True
+            ))
+
+        obj = MyObject()
+
+        obj.prop = 10
+        obj.prop = 20 * px
+        obj.prop = 30 * percent
+        obj.prop = 'a'
+        obj.prop = 'b'
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <integer>, <length>, <percentage>, a, b, none")
 
 
 class CssDeclarationTests(TestCase):

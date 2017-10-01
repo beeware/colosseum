@@ -3,6 +3,7 @@ from .constants import (
     INLINE, INLINE_TABLE, INLINE_BLOCK
 )
 
+
 class Size:
     """Representation of the size of a node in the DOM.
 
@@ -11,11 +12,21 @@ class Size:
 
     width: The width of the node.
     height: The height of the node.
+    exact_width: If True, the width is exact. If False,
+        the width is the minimum allowed width.
+    exact_height: If True, the height is exact. If False,
+        the height is the minimum allowed width.
+    ratio: The height between height and width. width = height * ratio
     """
     def __init__(self, node):
         self._node = node
         self._width = None
         self._height = None
+        self._exact_width = True
+        self._exact_height = True
+
+        self._ratio = None
+        self._is_replaced = False
 
     @property
     def dirty(self):
@@ -45,48 +56,167 @@ class Size:
             self._height = value
             self.dirty = True
 
+    @property
+    def exact_width(self):
+        return self._exact_width
+
+    @exact_width.setter
+    def exact_width(self, value):
+        if self._exact_width != value:
+            self._exact_width = value
+            self.dirty = True
+
+    @property
+    def exact_height(self):
+        return self._exact_height
+
+    @exact_height.setter
+    def exact_height(self, value):
+        if self._exact_height != value:
+            self._exact_height = value
+            self.dirty = True
+
+    @property
+    def ratio(self):
+        return self._ratio
+
+    @ratio.setter
+    def ratio(self, value):
+        if self._ratio != value:
+            self._ratio = value
+            self.dirty = True
+
+    @property
+    def is_replaced(self):
+        return self._is_replaced
+
+    @is_replaced.setter
+    def is_replaced(self, value):
+        if self._is_replaced != value:
+            self._is_replaced = value
+            self.dirty = True
 
 class Box:
     """Describe the layout of a box displaying a node in the DOM.
 
     Stored properties
     ~~~~~~~~~~~~~~~~~
-    width: The content width of the box
-    height: The content height of the box
-    top: The top position of the content box, relative to the containing block
-    left: The left position of the content box, relative to the containing block
+    displayed: The node is included in rendering. A value of False indicates
+        the node is not part of the rendered document; it takes up no space,
+        and is not visible.
+    visible: The node is included in rendering, and is visible. A value of
+        False indicates the node takes up space, but is not rendered.
 
-    origin_top: The absolute position of the top of the containing block
-    origin_left: The absolute position of the left of the containing block
+    content_width: The width of the content box
+    content_height: The height of the content box
+    content_top: The top position of the content box, relative to the block container
+    content_left: The left position of the content box, relative to the block container
+
+    origin_top: The absolute position of the top of the block container
+    origin_left: The absolute position of the left of the block container
+
+    margin_top: The top margin of the box
+    margin_right: The right margin of the box
+    margin_bottom: The bottom margin of the box
+    margin_left: The left margin of the box
+
+    padding_top: The top padding of the box
+    padding_right: The right padding of the box
+    padding_bottom: The bottom padding of the box
+    padding_left: The left padding of the box
+
+    border_top_width: The width of the top border of the box
+    border_right_width: The width of the right border of the box
+    border_bottom_width: The width of the bottom border of the box
+    border_left_width: The width of the left border of the box
 
     Computed properties
     ~~~~~~~~~~~~~~~~~~~
-    Computed properties are automatically updated whenever a stored
-    property changes.
 
-    bottom: The bottom position of the box, relative to the containing box
-    right: The right position of the box, relative to the containing box
-    absolute_top: The absolute position of the top of the box.
-    absolute_left: The absolute position of the left of the box.
+    margin_box_width: The width of the margin box.
+    margin_box_height: The height of the margin box.
+    margin_box_top: The position of the top of the margin box, relative to the block container.
+    margin_box_right: The position of the right of the margin box, relative to the block container.
+    margin_box_bottom: The position of the bottom of the margin box, relative to the block container.
+    margin_box_left: The position of the left of the margin box, relative to the block container.
+    absolute_margin_box_top: The absolute position of the top of the margin box.
+    absolute_margin_box_right: The absolute position of the right of the margin box.
+    absolute_margin_box_bottom: The absolute position of the bottom of the margin box.
+    absolute_margin_box_left: The absolute position of the left of the margin box.
+
+    border_box_width: The width of the border box.
+    border_box_height: The height of the border box.
+    border_box_top: The position of the top of the border box, relative to the block container.
+    border_box_right: The position of the right of the border box, relative to the block container.
+    border_box_bottom: The position of the bottom of the border box, relative to the block container.
+    border_box_left: The position of the left of the border box, relative to the block container.
+    absolute_border_box_top: The absolute position of the top of the border box.
+    absolute_border_box_right: The absolute position of the right of the border box.
+    absolute_border_box_bottom: The absolute position of the bottom of the border box.
+    absolute_border_box_left: The absolute position of the left of the border box.
+
+    padding_box_width: The width of the padding box.
+    padding_box_height: The height of the padding box.
+    padding_box_top: The position of the top of the padding box, relative to the block container.
+    padding_box_right: The position of the right of the padding box, relative to the block container.
+    padding_box_bottom: The position of the bottom of the padding box, relative to the block container.
+    padding_box_left: The position of the left of the padding box, relative to the block container.
+    absolute_padding_box_top: The absolute position of the top of the padding box.
+    absolute_padding_box_right: The absolute position of the right of the padding box.
+    absolute_padding_box_bottom: The absolute position of the bottom of the padding box.
+    absolute_padding_box_left: The absolute position of the left of the padding box.
+
+    content_bottom: The bottom position of the box, relative to the block container
+    content_right: The right position of the box, relative to the block container
+
+    absolute_content_top: The absolute position of the top of the content box.
+    absolute_content_left: The absolute position of the top of the content box.
+    absolute_content_bottom: The bottom position of the box, relative to the block container
+    absolute_content_right: The right position of the box, relative to the block container
+
 
     """
-    def __init__(self, node, width=10, height=16, top=0, left=0):
+    def __init__(self, node):
         self.node = node
+
+        # Some properties describing whether this node exists in
+        # layout *at all*.
+        self.displayed = True
+        self.visible = True
 
         # Set the core properties directly;
         # this primes storage for the later calculations
 
-        # Width and height of the box
-        self._width = width
-        self._height = height
+        # Width and height of the content box.
+        self._content_width = 0
+        self._content_height = 0
 
         # Box position, relative to the containing box
-        self._top = top
-        self._left = left
+        self._content_top = 0
+        self._content_left = 0
 
-        # Origin of the containing box, in absolute coordinates.
+        # Set and initial value for the origin that is
+        # guaranteed to be != any actual value
         self._origin_top = None
         self._origin_left = None
+
+        # Margins of the box
+        self._margin_top = 0
+        self._margin_right = 0
+        self._margin_bottom = 0
+        self._margin_left = 0
+
+        # Border of the box
+        self._border_top_width = 0
+        self._border_right_width = 0
+        self._border_bottom_width = 0
+        self._border_left_width = 0
+
+        # Padding of the box
+        self._padding_top = 0
+        self._padding_right = 0
+        self._padding_bottom = 0
+        self._padding_left = 0
 
         # Current state of layout calculations
         self._dirty = True
@@ -96,72 +226,72 @@ class Box:
         self.origin_top = 0
         self.origin_left = 0
 
-    def __repr__(self):
-        return '<Box (%sx%s @ %s,%s)>' % (self._width, self._height, self._absolute_left, self._absolute_top)
+    # def __repr__(self):
+    #     return '<Box (%sx%s @ %s,%s)>' % (self._width, self._height, self._absolute_content_left, self._absolute_content_top)
 
-    def __eq__(self, value):
-        return all([
-            self._width == value._width,
-            self._height == value._height,
-            self._absolute_top == value._absolute_top,
-            self._absolute_left == value._absolute_left
-        ])
+    # def __eq__(self, value):
+    #     return all([
+    #         self._width == value._width,
+    #         self._height == value._height,
+    #         self._absolute_margin_top == value._absolute_margin_top,
+    #         self._absolute_margin_left == value._absolute_margin_left
+    #     ])
 
-    def reset(self):
-        self._dirty = True
-        self._width = None
-        self._height = None
-        self._top = 0
-        self._left = 0
+    # def reset(self):
+    #     self._dirty = True
+    #     self._width = None
+    #     self._height = None
+    #     self._top = 0
+    #     self._left = 0
 
     ######################################################################
     # Core properties
     ######################################################################
-    @property
-    def top(self):
-        return self._top
-
-    @top.setter
-    def top(self, value):
-        if value != self._top:
-            self._top = value
-            self._absolute_top = value + self._origin_top
-            for child in self.node.children:
-                child.layout.origin_top = self._absolute_top
-            self._dirty = True
 
     @property
-    def left(self):
-        return self._left
+    def content_width(self):
+        return self._content_width
 
-    @left.setter
-    def left(self, value):
-        if value != self._left:
-            self._left = value
-            self._absolute_left = value + self._origin_left
-            for child in self.node.children:
-                child.layout.origin_left = self._absolute_left
-            self._dirty = True
+    @content_width.setter
+    def content_width(self, value):
+        if value != self._content_width:
+            self._content_width = value
 
-    @property
-    def width(self):
-        return self._width
-
-    @width.setter
-    def width(self, value):
-        if value != self._width:
-            self._width = value
             self.dirty = True
 
     @property
-    def height(self):
-        return self._height
+    def content_height(self):
+        return self._content_height
 
-    @height.setter
-    def height(self, value):
-        if value != self._height:
-            self._height = value
+    @content_height.setter
+    def content_height(self, value):
+        if value != self._content_height:
+            self._content_height = value
             self.dirty = True
+
+    @property
+    def content_top(self):
+        return self._content_top
+
+    @content_top.setter
+    def content_top(self, value):
+        if value != self._content_top:
+            self._content_top = value
+            for child in self.node.children:
+                child.layout.origin_top = self.absolute_content_top
+            self._dirty = True
+
+    @property
+    def content_left(self):
+        return self._content_left
+
+    @content_left.setter
+    def content_left(self, value):
+        if value != self._content_left:
+            self._content_left = value
+            for child in self.node.children:
+                child.layout.origin_left = self.absolute_content_left
+            self._dirty = True
 
     @property
     def origin_top(self):
@@ -171,9 +301,8 @@ class Box:
     def origin_top(self, value):
         if value != self._origin_top:
             self._origin_top = value
-            self._absolute_top = value + self._top
             for child in self.node.children:
-                child.layout.origin_top = self._absolute_top
+                child.layout.origin_top = self.absolute_content_top
             self._dirty = True
 
     @property
@@ -184,40 +313,386 @@ class Box:
     def origin_left(self, value):
         if value != self._origin_left:
             self._origin_left = value
-            self._absolute_left = value + self._left
             for child in self.node.children:
-                child.layout.origin_left = self._absolute_left
+                child.layout.origin_left = self.absolute_content_left
             self._dirty = True
 
+    @property
+    def margin_top(self):
+        return self._margin_top
+
+    @margin_top.setter
+    def margin_top(self, value):
+        if value != self._margin_top:
+            self._margin_top = value
+            self.dirty = True
+
+    @property
+    def margin_right(self):
+        return self._margin_right
+
+    @margin_right.setter
+    def margin_right(self, value):
+        if value != self._margin_right:
+            self._margin_right = value
+            self.dirty = True
+
+    @property
+    def margin_bottom(self):
+        return self._margin_bottom
+
+    @margin_bottom.setter
+    def margin_bottom(self, value):
+        if value != self._margin_bottom:
+            self._margin_bottom = value
+            self.dirty = True
+
+    @property
+    def margin_left(self):
+        return self._margin_left
+
+    @margin_left.setter
+    def margin_left(self, value):
+        if value != self._margin_left:
+            self._margin_left = value
+            self.dirty = True
+
+
+    @property
+    def border_top_width(self):
+        return self._border_top_width
+
+    @border_top_width.setter
+    def border_top_width(self, value):
+        if value != self._border_top_width:
+            self._border_top_width = value
+            self.dirty = True
+
+    @property
+    def border_right_width(self):
+        return self._border_right_width
+
+    @border_right_width.setter
+    def border_right_width(self, value):
+        if value != self._border_right_width:
+            self._border_right_width = value
+            self.dirty = True
+
+    @property
+    def border_bottom_width(self):
+        return self._border_bottom_width
+
+    @border_bottom_width.setter
+    def border_bottom_width(self, value):
+        if value != self._border_bottom_width:
+            self._border_bottom_width = value
+            self.dirty = True
+
+    @property
+    def border_left_width(self):
+        return self._border_left_width
+
+    @border_left_width.setter
+    def border_left_width(self, value):
+        if value != self._border_left_width:
+            self._border_left_width = value
+            self.dirty = True
+
+    @property
+    def padding_top(self):
+        return self._padding_top
+
+    @padding_top.setter
+    def padding_top(self, value):
+        if value != self._padding_top:
+            self._padding_top = value
+            self.dirty = True
+
+    @property
+    def padding_right(self):
+        return self._padding_right
+
+    @padding_right.setter
+    def padding_right(self, value):
+        if value != self._padding_right:
+            self._padding_right = value
+            self.dirty = True
+
+    @property
+    def padding_bottom(self):
+        return self._padding_bottom
+
+    @padding_bottom.setter
+    def padding_bottom(self, value):
+        if value != self._padding_bottom:
+            self._padding_bottom = value
+            self.dirty = True
+
+    @property
+    def padding_left(self):
+        return self._padding_left
+
+    @padding_left.setter
+    def padding_left(self, value):
+        if value != self._padding_left:
+            self._padding_left = value
+            self.dirty = True
+
     ######################################################################
-    # Relative dimensions
+    # Margin box dimensions
     ######################################################################
     @property
-    def bottom(self):
-        return self._top + self._height
+    def margin_box_top(self):
+        return self._content_top - self._padding_top - self._border_top_width - self._margin_top
 
     @property
-    def right(self):
-        return self._left + self._width
+    def margin_box_right(self):
+        return (
+            self._content_left
+            + self._content_width
+            + self._padding_right
+            + self._border_right_width
+            + self._margin_right
+        )
+
+    @property
+    def margin_box_bottom(self):
+        return (
+            self._content_top
+            + self._content_height
+            + self._padding_bottom
+            + self._border_bottom_width
+            + self._margin_bottom
+        )
+
+    @property
+    def margin_box_left(self):
+        return self._content_left - self._padding_left - self._border_left_width - self._margin_left
+
+    @property
+    def margin_box_width(self):
+        return (
+            self._margin_left
+            + self._border_left_width
+            + self._padding_left
+            + self._content_width
+            + self._padding_right
+            + self._border_right_width
+            + self._margin_right
+        )
+
+    @property
+    def margin_box_height(self):
+        return (
+            self._margin_top
+            + self._border_top_width
+            + self._padding_top
+            + self._content_height
+            + self._padding_bottom
+            + self._border_bottom_width
+            + self._margin_bottom
+        )
+
+    @property
+    def absolute_margin_top(self):
+        return (
+            self._origin_top + self._content_top
+            - self._padding_top
+            - self._border_top_width
+            - self._margin_top
+        )
+
+    @property
+    def absolute_margin_right(self):
+        return (
+            self._origin_left + self._content_left
+            + self._content_width
+            + self._padding_right
+            + self._border_right_width
+            + self._margin_right
+        )
+
+    @property
+    def absolute_margin_bottom(self):
+        return (
+            self._origin_top + self._content_top
+            + self._content_height
+            + self._padding_bottom
+            + self._border_bottom_width
+            + self._margin_bottom
+        )
+
+    @property
+    def absolute_margin_left(self):
+        return (
+            self._origin_left + self._content_left
+            - self._padding_left
+            - self._border_left_width
+            - self._margin_left
+        )
+
 
     ######################################################################
-    # Absolute dimensions
+    # Border box dimensions
     ######################################################################
     @property
-    def absolute_top(self):
-        return self._absolute_top
+    def border_box_top(self):
+        return self._content_top - self._padding_top - self._border_top_width
 
     @property
-    def absolute_left(self):
-        return self._absolute_left
+    def border_box_right(self):
+        return (
+            self._content_left
+            + self._content_width
+            + self._padding_right
+            + self._border_right_width
+        )
 
     @property
-    def absolute_bottom(self):
-        return self._absolute_top + self._height
+    def border_box_bottom(self):
+        return (
+            self._content_top
+            + self._content_height
+            + self._padding_bottom
+            + self._border_bottom_width
+        )
 
     @property
-    def absolute_right(self):
-        return self._absolute_left + self._width
+    def border_box_left(self):
+        return self._content_left - self._padding_left - self._border_left_width
+
+    @property
+    def border_box_width(self):
+        return (
+            self._border_left_width
+            + self._padding_left
+            + self._content_width
+            + self._padding_right
+            + self._border_right_width
+        )
+
+    @property
+    def border_box_height(self):
+        return (
+            self._border_top_width
+            + self._padding_top
+            + self._content_height
+            + self._padding_bottom
+            + self._border_bottom_width
+        )
+
+    @property
+    def absolute_border_top(self):
+        return (
+            self._origin_top + self._content_top
+            - self._padding_top
+            - self._border_top_width
+        )
+
+    @property
+    def absolute_border_right(self):
+        return (
+            self._origin_left + self._content_left
+            + self._content_width
+            + self._padding_right
+            + self._border_right_width
+        )
+
+    @property
+    def absolute_border_bottom(self):
+        return (
+            self._origin_top + self._content_top
+            + self._content_height
+            + self._padding_bottom
+            + self._border_bottom_width
+        )
+
+    @property
+    def absolute_border_left(self):
+        return (
+            self._origin_left + self._content_left
+            - self._padding_left
+            - self._border_left_width
+        )
+
+
+    ######################################################################
+    # Padding box dimensions
+    ######################################################################
+    @property
+    def padding_box_top(self):
+        return self._content_top - self._padding_top
+
+    @property
+    def padding_box_right(self):
+        return (
+            self._content_left
+            + self._content_width
+            + self._padding_right
+        )
+
+    @property
+    def padding_box_bottom(self):
+        return (
+            self._content_top
+            + self._content_height
+            + self._padding_bottom
+        )
+
+    @property
+    def padding_box_left(self):
+        return self._content_left - self._padding_left
+
+    @property
+    def padding_box_width(self):
+        return self._padding_left + self._content_width + self._padding_right
+
+    @property
+    def padding_box_height(self):
+        return self._padding_top + self._content_height + self._padding_bottom
+
+    @property
+    def absolute_padding_top(self):
+        return self._origin_top + self._content_top - self._padding_top
+
+    @property
+    def absolute_padding_right(self):
+        return self._origin_left + self._content_left + self._content_width + self._padding_right
+
+    @property
+    def absolute_padding_bottom(self):
+        return self._origin_top + self._content_top + self._content_height + self._padding_bottom
+
+    @property
+    def absolute_padding_left(self):
+        return self._origin_left + self._content_left - self._padding_left
+
+    ######################################################################
+    # Content box dimensions
+    ######################################################################
+    @property
+    def content_bottom(self):
+        return self._content_top + self._content_height
+
+    @property
+    def content_right(self):
+        return self._content_left + self._content_width
+
+    @property
+    def absolute_content_top(self):
+        return self._origin_top + self._content_top
+
+    @property
+    def absolute_content_right(self):
+        return self._origin_left + self._content_left + self._content_width
+
+    @property
+    def absolute_content_bottom(self):
+        return self._origin_top + self._content_top + self._content_height
+
+    @property
+    def absolute_content_left(self):
+        return self._origin_left + self._content_left
 
     ######################################################################
     # Layout dirtiness tracking.
@@ -236,52 +711,3 @@ class Box:
             self._dirty = value
             for child in self.node.children:
                 child.layout.dirty = value
-
-    ######################################################################
-
-    # @property
-    # def containing_block(self):
-    #     if self._node.parent:
-    #         return self._node.parent.layout
-
-    # @property
-    # def is_block_box(self):
-    #     return self.node.style.display in (BLOCK, LIST_ITEM, TABLE)
-
-    # @property
-    # def is_inline_box(self):
-    #     return self.node.style.display in (INLINE, INLINE_TABLE, INLINE_BLOCK)
-
-    # @property
-    # def is_positioned(self):
-    #     return self.node.style.position != STATIC
-
-    # ######################################################################
-
-    # @property
-    # def display(self):
-    #     if (self.node.style.position in (ABSOLUTE, FIXED)  # 9.7, point 2
-    #             or self.node.style.float is not None  # 9.7, point 3:
-    #             or self.node.parent is None):  # 9.7, point 4:
-    #         if self.node.style.display == INLINE_TABLE:
-    #             return TABLE
-    #         elif self.node.style.display in (
-    #                 INLINE, TABLE_ROW_GROUP, TABLE_COLUMN, TABLE_COLUMN_GROUP,
-    #                 TABLE_HEADER_GROUP, TABLE_FOOTER_GROUP, TABLE_ROW,
-    #                 TABLE_CELL, TABLE_CAPTION, INLINE_BLOCK):
-    #             return BLOCK
-    #     return self.node.style.display
-
-    # @property
-    # def position(self):
-    #     if self.node.style.display is None:
-    #         return None  # 9.7, point 1
-    #     return self.node.style.position
-
-    # @property
-    # def float(self):
-    #     if self.node.style.display is None:
-    #         return None  # 9.7, point 1
-    #     elif self.node.style.position in (ABSOLUTE, FIXED):
-    #         return None  # 9.7, point 2
-    #     return self.node.style.float
