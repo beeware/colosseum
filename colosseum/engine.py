@@ -414,6 +414,7 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
         raise NotImplementedError("Section 10.6.3 P2 (AUTO HEIGHT)")
     else:
         node.layout.content_height = node.style.height.px(**context)
+        node.layout.content_top = node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
 
 
 def calculate_block_replaced_normal_flow_height(node, context):

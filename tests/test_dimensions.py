@@ -247,26 +247,26 @@ class BoxTests(TestCase):
             actual['absolute'] = {}
             if 'margin' in expected['absolute']:
                 actual['absolute']['margin'] = (
-                    box.absolute_margin_top,
-                    box.absolute_margin_right,
-                    box.absolute_margin_bottom,
-                    box.absolute_margin_left,
+                    box.absolute_margin_box_top,
+                    box.absolute_margin_box_right,
+                    box.absolute_margin_box_bottom,
+                    box.absolute_margin_box_left,
                 )
 
             if 'border' in expected['absolute']:
                 actual['absolute']['border'] = (
-                    box.absolute_border_top,
-                    box.absolute_border_right,
-                    box.absolute_border_bottom,
-                    box.absolute_border_left,
+                    box.absolute_border_box_top,
+                    box.absolute_border_box_right,
+                    box.absolute_border_box_bottom,
+                    box.absolute_border_box_left,
                 )
 
             if 'padding' in expected['absolute']:
                 actual['absolute']['padding'] = (
-                    box.absolute_padding_top,
-                    box.absolute_padding_right,
-                    box.absolute_padding_bottom,
-                    box.absolute_padding_left,
+                    box.absolute_padding_box_top,
+                    box.absolute_padding_box_right,
+                    box.absolute_padding_box_bottom,
+                    box.absolute_padding_box_left,
                 )
 
             if 'content' in expected['absolute']:
@@ -285,6 +285,11 @@ class BoxTests(TestCase):
         self.assertEqual(c2, self.child2.layout.dirty)
         self.assertEqual(gc1, self.grandchild1_1.layout.dirty)
         self.assertEqual(gc2, self.grandchild1_2.layout.dirty)
+
+    def test_repr(self):
+        self.node.layout.origin_top = 1
+        self.node.layout.origin_left = 2
+        self.assertEqual(repr(self.node.layout), "<Box (10x16 @ 2,1)>")
 
     def test_initial(self):
         # Core attributes have been stored
@@ -746,3 +751,247 @@ class BoxTests(TestCase):
 
         # Only the affected child node, and grandchild nodes are dirty
         self.assertDirty(False, True, False, True, True)
+
+    def test_margins_and_borders(self):
+        self.maxDiff = None
+        self.node.layout.origin_top = 100
+        self.node.layout.origin_left = 200
+
+        self.node.layout.content_top = 50
+        self.node.layout.content_left = 75
+
+        self.assertLayout(
+            self.node.layout,
+            {
+                'origin': (200, 100),
+                'size': {
+                    'content': (10, 16),
+                    'padding': (10, 16),
+                    'border': (10, 16),
+                    'margin': (10, 16),
+                },
+                'relative': {
+                    'content': (50, 85, 66, 75),
+                    'padding': (50, 85, 66, 75),
+                    'border': (50, 85, 66, 75),
+                    'margin': (50, 85, 66, 75),
+                },
+                'absolute': {
+                    'content': (150, 285, 166, 275),
+                    'padding': (150, 285, 166, 275),
+                    'border': (150, 285, 166, 275),
+                    'margin': (150, 285, 166, 275),
+                },
+            }
+        )
+
+        # Add a margin.
+        self.node.layout.margin_top = 1
+        self.node.layout.margin_right = 2
+        self.node.layout.margin_bottom = 3
+        self.node.layout.margin_left = 4
+
+        self.assertLayout(
+            self.node.layout,
+            {
+                'origin': (200, 100),
+                'size': {
+                    'content': (10, 16),
+                    'padding': (10, 16),
+                    'border': (10, 16),
+                    'margin': (16, 20),
+                },
+                'relative': {
+                    'content': (50, 85, 66, 75),
+                    'padding': (50, 85, 66, 75),
+                    'border': (50, 85, 66, 75),
+                    'margin': (49, 87, 69, 71),
+                },
+                'absolute': {
+                    'content': (150, 285, 166, 275),
+                    'padding': (150, 285, 166, 275),
+                    'border': (150, 285, 166, 275),
+                    'margin': (149, 287, 169, 271),
+                },
+            }
+        )
+
+        # Add a border. This will push out the margin box.
+        self.node.layout.border_top_width = 5
+        self.node.layout.border_right_width = 6
+        self.node.layout.border_bottom_width = 7
+        self.node.layout.border_left_width = 8
+
+        self.assertLayout(
+            self.node.layout,
+            {
+                'origin': (200, 100),
+                'size': {
+                    'content': (10, 16),
+                    'padding': (10, 16),
+                    'border': (24, 28),
+                    'margin': (30, 32),
+                },
+                'relative': {
+                    'content': (50, 85, 66, 75),
+                    'padding': (50, 85, 66, 75),
+                    'border': (45, 91, 73, 67),
+                    'margin': (44, 93, 76, 63),
+                },
+                'absolute': {
+                    'content': (150, 285, 166, 275),
+                    'padding': (150, 285, 166, 275),
+                    'border': (145, 291, 173, 267),
+                    'margin': (144, 293, 176, 263),
+                },
+            }
+        )
+
+        # Add padding. This will push out the margin and border boxes.
+        self.node.layout.padding_top = 9
+        self.node.layout.padding_right = 10
+        self.node.layout.padding_bottom = 11
+        self.node.layout.padding_left = 12
+
+        self.assertLayout(
+            self.node.layout,
+            {
+                'origin': (200, 100),
+                'size': {
+                    'content': (10, 16),
+                    'padding': (32, 36),
+                    'border': (46, 48),
+                    'margin': (52, 52),
+                },
+                'relative': {
+                    'content': (50, 85, 66, 75),
+                    'padding': (41, 95, 77, 63),
+                    'border': (36, 101, 84, 55),
+                    'margin': (35, 103, 87, 51),
+                },
+                'absolute': {
+                    'content': (150, 285, 166, 275),
+                    'padding': (141, 295, 177, 263),
+                    'border': (136, 301, 184, 255),
+                    'margin': (135, 303, 187, 251),
+                },
+            }
+        )
+
+    def test_relative_equalities(self):
+        # Move the box around and set some borders.
+        self.node.layout.origin_top = 100
+        self.node.layout.origin_left = 200
+
+        self.node.layout.content_top = 50
+        self.node.layout.content_left = 75
+
+        self.node.layout.margin_top = 1
+        self.node.layout.margin_right = 2
+        self.node.layout.margin_bottom = 3
+        self.node.layout.margin_left = 4
+
+        self.node.layout.border_top_width = 5
+        self.node.layout.border_right_width = 6
+        self.node.layout.border_bottom_width = 7
+        self.node.layout.border_left_width = 8
+
+        self.node.layout.padding_top = 9
+        self.node.layout.padding_right = 10
+        self.node.layout.padding_bottom = 11
+        self.node.layout.padding_left = 12
+
+        self.assertEqual(
+            self.node.layout.content_left + self.node.layout.content_width,
+            self.node.layout.content_right
+        )
+        self.assertEqual(
+            self.node.layout.content_top + self.node.layout.content_height,
+            self.node.layout.content_bottom
+        )
+
+        self.assertEqual(
+            self.node.layout.padding_box_left + self.node.layout.padding_box_width,
+            self.node.layout.padding_box_right
+        )
+        self.assertEqual(
+            self.node.layout.padding_box_top + self.node.layout.padding_box_height,
+            self.node.layout.padding_box_bottom
+        )
+
+        self.assertEqual(
+            self.node.layout.border_box_left + self.node.layout.border_box_width,
+            self.node.layout.border_box_right
+        )
+        self.assertEqual(
+            self.node.layout.border_box_top + self.node.layout.border_box_height,
+            self.node.layout.border_box_bottom
+        )
+
+        self.assertEqual(
+            self.node.layout.margin_box_left + self.node.layout.margin_box_width,
+            self.node.layout.margin_box_right
+        )
+        self.assertEqual(
+            self.node.layout.margin_box_top + self.node.layout.margin_box_height,
+            self.node.layout.margin_box_bottom
+        )
+
+    def test_absolute_equalities(self):
+        # Move the box around and set some borders.
+        self.node.layout.origin_top = 100
+        self.node.layout.origin_left = 200
+
+        self.node.layout.content_top = 50
+        self.node.layout.content_left = 75
+
+        self.node.layout.margin_top = 1
+        self.node.layout.margin_right = 2
+        self.node.layout.margin_bottom = 3
+        self.node.layout.margin_left = 4
+
+        self.node.layout.border_top_width = 5
+        self.node.layout.border_right_width = 6
+        self.node.layout.border_bottom_width = 7
+        self.node.layout.border_left_width = 8
+
+        self.node.layout.padding_top = 9
+        self.node.layout.padding_right = 10
+        self.node.layout.padding_bottom = 11
+        self.node.layout.padding_left = 12
+
+        self.assertEqual(
+            self.node.layout.absolute_content_left + self.node.layout.content_width,
+            self.node.layout.absolute_content_right
+        )
+        self.assertEqual(
+            self.node.layout.absolute_content_top + self.node.layout.content_height,
+            self.node.layout.absolute_content_bottom
+        )
+
+        self.assertEqual(
+            self.node.layout.absolute_padding_box_left + self.node.layout.padding_box_width,
+            self.node.layout.absolute_padding_box_right
+        )
+        self.assertEqual(
+            self.node.layout.absolute_padding_box_top + self.node.layout.padding_box_height,
+            self.node.layout.absolute_padding_box_bottom
+        )
+
+        self.assertEqual(
+            self.node.layout.absolute_border_box_left + self.node.layout.border_box_width,
+            self.node.layout.absolute_border_box_right
+        )
+        self.assertEqual(
+            self.node.layout.absolute_border_box_top + self.node.layout.border_box_height,
+            self.node.layout.absolute_border_box_bottom
+        )
+
+        self.assertEqual(
+            self.node.layout.absolute_margin_box_left + self.node.layout.margin_box_width,
+            self.node.layout.absolute_margin_box_right
+        )
+        self.assertEqual(
+            self.node.layout.absolute_margin_box_top + self.node.layout.margin_box_height,
+            self.node.layout.absolute_margin_box_bottom
+        )

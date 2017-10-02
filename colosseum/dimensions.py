@@ -224,8 +224,8 @@ class Box:
 
     def __repr__(self):
         return '<Box (%sx%s @ %s,%s)>' % (
-            self._width, self._height,
-            self._absolute_content_left, self._absolute_content_top
+            self._content_width, self._content_height,
+            self.absolute_content_left, self.absolute_content_top
         )
 
     # def __eq__(self, value):
@@ -492,7 +492,7 @@ class Box:
         )
 
     @property
-    def absolute_margin_top(self):
+    def absolute_margin_box_top(self):
         return (
             self._origin_top + self._content_top
             - self._padding_top
@@ -501,7 +501,7 @@ class Box:
         )
 
     @property
-    def absolute_margin_right(self):
+    def absolute_margin_box_right(self):
         return (
             self._origin_left + self._content_left
             + self._content_width
@@ -511,7 +511,7 @@ class Box:
         )
 
     @property
-    def absolute_margin_bottom(self):
+    def absolute_margin_box_bottom(self):
         return (
             self._origin_top + self._content_top
             + self._content_height
@@ -521,7 +521,7 @@ class Box:
         )
 
     @property
-    def absolute_margin_left(self):
+    def absolute_margin_box_left(self):
         return (
             self._origin_left + self._content_left
             - self._padding_left
@@ -579,7 +579,7 @@ class Box:
         )
 
     @property
-    def absolute_border_top(self):
+    def absolute_border_box_top(self):
         return (
             self._origin_top + self._content_top
             - self._padding_top
@@ -587,7 +587,7 @@ class Box:
         )
 
     @property
-    def absolute_border_right(self):
+    def absolute_border_box_right(self):
         return (
             self._origin_left + self._content_left
             + self._content_width
@@ -596,7 +596,7 @@ class Box:
         )
 
     @property
-    def absolute_border_bottom(self):
+    def absolute_border_box_bottom(self):
         return (
             self._origin_top + self._content_top
             + self._content_height
@@ -605,7 +605,7 @@ class Box:
         )
 
     @property
-    def absolute_border_left(self):
+    def absolute_border_box_left(self):
         return (
             self._origin_left + self._content_left
             - self._padding_left
@@ -648,19 +648,19 @@ class Box:
         return self._padding_top + self._content_height + self._padding_bottom
 
     @property
-    def absolute_padding_top(self):
+    def absolute_padding_box_top(self):
         return self._origin_top + self._content_top - self._padding_top
 
     @property
-    def absolute_padding_right(self):
+    def absolute_padding_box_right(self):
         return self._origin_left + self._content_left + self._content_width + self._padding_right
 
     @property
-    def absolute_padding_bottom(self):
+    def absolute_padding_box_bottom(self):
         return self._origin_top + self._content_top + self._content_height + self._padding_bottom
 
     @property
-    def absolute_padding_left(self):
+    def absolute_padding_box_left(self):
         return self._origin_left + self._content_left - self._padding_left
 
     ######################################################################
