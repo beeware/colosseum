@@ -15,7 +15,6 @@ class rgb:
         return self
 
 
-
 class hsl:
     "A representation of an HSLA color"
     def __init__(self, h, s, l, a=1.0):

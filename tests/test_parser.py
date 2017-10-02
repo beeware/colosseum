@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from colosseum import parser
-from colosseum.color import rgb, hsl
+from colosseum.color import hsl, rgb
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
 )

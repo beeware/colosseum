@@ -1,11 +1,7 @@
 from .constants import (
-    AUTO,
-    ABSOLUTE,
-    INLINE, INLINE_BLOCK, BLOCK, LIST_ITEM, TABLE,
-    THIN, MEDIUM, THICK,
-    LTR,
+    ABSOLUTE, AUTO, BLOCK, INLINE, INLINE_BLOCK, LIST_ITEM, LTR, MEDIUM, TABLE,
+    THICK, THIN,
 )
-from .dimensions import Box
 
 
 def is_block_level_element(node):
@@ -110,7 +106,7 @@ def calculate_size(value, context):
     if value is AUTO:
         return value
     if value is THIN or value is MEDIUM or value is THICK:
-        return display.fixed_size(value)
+        return context['display'].fixed_size(value)
     if value == 0:
         return value
     return value.px(**context)
@@ -411,7 +407,7 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
     if node.layout.margin_top is AUTO:  # P2
         node.layout.margin_top = 0
 
-    if node.layout.margin_bottom is AUTO: # P2
+    if node.layout.margin_bottom is AUTO:  # P2
         node.layout.margin_bottom = 0
 
     if node.style.height is AUTO:

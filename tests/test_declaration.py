@@ -1,12 +1,11 @@
 from unittest import TestCase
 
 from colosseum import engine as css_engine
-from colosseum.constants import AUTO, INLINE, BLOCK, TABLE, Choices
+from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices
 from colosseum.declaration import CSS, validated_property
-from colosseum.dimensions import Box
-from colosseum.units import px, percent
+from colosseum.units import percent, px
 
-from .utils import Display, TestNode
+from .utils import TestNode
 
 
 class PropertyChoiceTests(TestCase):
@@ -34,7 +33,10 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 'invalid'
             self.fail('Should raise ValueError')
         except ValueError as v:
-            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: ")
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: "
+            )
 
     def test_allow_length(self):
         class MyObject:
@@ -57,7 +59,10 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 'invalid'
             self.fail('Should raise ValueError')
         except ValueError as v:
-            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <length>")
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <length>"
+            )
 
     def test_allow_percentage(self):
         class MyObject:
@@ -82,7 +87,10 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 'invalid'
             self.fail('Should raise ValueError')
         except ValueError as v:
-            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <percentage>")
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <percentage>"
+            )
 
     def test_allow_integer(self):
         class MyObject:
@@ -107,7 +115,10 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 'invalid'
             self.fail('Should raise ValueError')
         except ValueError as v:
-            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <integer>")
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <integer>"
+            )
 
     def test_values(self):
         class MyObject:
@@ -130,7 +141,10 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 'invalid'
             self.fail('Should raise ValueError')
         except ValueError as v:
-            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: a, b, none")
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: a, b, none"
+            )
 
     def test_all_choices(self):
         class MyObject:
@@ -151,7 +165,11 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 'invalid'
             self.fail('Should raise ValueError')
         except ValueError as v:
-            self.assertEqual(str(v), "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <integer>, <length>, <percentage>, a, b, none")
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; "
+                "Valid values are: <integer>, <length>, <percentage>, a, b, none"
+            )
 
 
 class CssDeclarationTests(TestCase):

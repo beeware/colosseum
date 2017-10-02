@@ -1,7 +1,4 @@
-from .constants import (
-    TOP, BOTTOM, HEIGHT,
-    COLUMN, LEFT, RIGHT, WIDTH
-)
+from .constants import BOTTOM, COLUMN, HEIGHT, LEFT, RIGHT, TOP, WIDTH
 
 
 def leading(axis):

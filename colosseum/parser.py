@@ -1,5 +1,5 @@
+from .color import NAMED_COLOR, hsl, rgb
 from .units import Unit, pt
-from .color import NAMED_COLOR, rgb, hsl
 
 
 def units(value):

@@ -1,8 +1,3 @@
-from .constants import (
-    BLOCK, LIST_ITEM, TABLE,
-    INLINE, INLINE_TABLE, INLINE_BLOCK
-)
-
 
 class Size:
     """Representation of the size of a node in the DOM.
@@ -95,6 +90,7 @@ class Size:
         if self._is_replaced != value:
             self._is_replaced = value
             self.dirty = True
+
 
 class Box:
     """Describe the layout of a box displaying a node in the DOM.
@@ -226,8 +222,11 @@ class Box:
         self.origin_top = 0
         self.origin_left = 0
 
-    # def __repr__(self):
-    #     return '<Box (%sx%s @ %s,%s)>' % (self._width, self._height, self._absolute_content_left, self._absolute_content_top)
+    def __repr__(self):
+        return '<Box (%sx%s @ %s,%s)>' % (
+            self._width, self._height,
+            self._absolute_content_left, self._absolute_content_top
+        )
 
     # def __eq__(self, value):
     #     return all([
@@ -356,7 +355,6 @@ class Box:
         if value != self._margin_left:
             self._margin_left = value
             self.dirty = True
-
 
     @property
     def border_top_width(self):
@@ -531,7 +529,6 @@ class Box:
             - self._margin_left
         )
 
-
     ######################################################################
     # Border box dimensions
     ######################################################################
@@ -614,7 +611,6 @@ class Box:
             - self._padding_left
             - self._border_left_width
         )
-
 
     ######################################################################
     # Padding box dimensions

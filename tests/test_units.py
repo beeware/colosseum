@@ -133,7 +133,6 @@ class PixelUnitTests(TestCase):
         self.assertEqual(p, 5 * px)
 
 
-
 class AbsoluteUnitTests(TestCase):
     def setUp(self):
         self.simple = Display(dpi=96, width=640, height=480)

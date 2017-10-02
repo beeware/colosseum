@@ -1,6 +1,6 @@
-from colosseum.constants import THIN, MEDIUM, THICK
-from colosseum.dimensions import Box, Size
+from colosseum.constants import MEDIUM, THICK, THIN
 from colosseum.declaration import CSS
+from colosseum.dimensions import Box, Size
 
 
 class Display:

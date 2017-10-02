@@ -1,14 +1,10 @@
 from unittest import TestCase
 
-from colosseum import engine as css_engine
-from colosseum.constants import AUTO, INLINE, BLOCK, TABLE
+from colosseum.constants import AUTO, BLOCK
 from colosseum.declaration import CSS
-from colosseum.dimensions import Box, Size
 from colosseum.engine import layout
-from colosseum.units import px
 
 from ..utils import Display, TestNode, layout_summary
-
 
 
 class BlockElementNormalFlowTests(TestCase):
@@ -30,7 +26,7 @@ class BlockElementNormalFlowTests(TestCase):
             'size': (640, 10)
         })
 
-    def test_single_element_auto_left(self):
+    def test_single_element_auto_left_margin(self):
         root = TestNode(
             style=CSS(display=BLOCK, height=10, margin_left=AUTO)
         )
@@ -42,7 +38,7 @@ class BlockElementNormalFlowTests(TestCase):
             'size': (640, 10)
         })
 
-    def test_single_element_auto_right(self):
+    def test_single_element_auto_right_margin(self):
         root = TestNode(
             style=CSS(display=BLOCK, height=10, margin_right=AUTO)
         )
@@ -54,7 +50,7 @@ class BlockElementNormalFlowTests(TestCase):
             'size': (640, 10)
         })
 
-    def test_single_element_auto_left_and_auto_right(self):
+    def test_single_element_auto_left_and_right_margin(self):
         root = TestNode(
             style=CSS(display=BLOCK, height=10, margin_left=AUTO, margin_right=AUTO)
         )
@@ -65,6 +61,7 @@ class BlockElementNormalFlowTests(TestCase):
             'position': (0, 0),
             'size': (640, 10)
         })
+
     def test_single_element_with_width(self):
         root = TestNode(
             style=CSS(display=BLOCK, width=50, height=10)
@@ -77,7 +74,7 @@ class BlockElementNormalFlowTests(TestCase):
             'size': (50, 10)
         })
 
-    def test_single_element_with_width_auto_left(self):
+    def test_single_element_with_width_auto_left_margin(self):
         root = TestNode(
             style=CSS(display=BLOCK, width=50, height=10, margin_left=AUTO)
         )
@@ -89,8 +86,7 @@ class BlockElementNormalFlowTests(TestCase):
             'size': (50, 10)
         })
 
-
-    def test_single_element_with_width_auto_right(self):
+    def test_single_element_with_width_auto_right_margin(self):
         root = TestNode(
             style=CSS(display=BLOCK, width=50, height=10, margin_right=AUTO)
         )
@@ -102,8 +98,7 @@ class BlockElementNormalFlowTests(TestCase):
             'size': (50, 10)
         })
 
-
-    def test_single_element_with_width_auto_left_and_right(self):
+    def test_single_element_with_width_auto_left_and_right_margin(self):
         root = TestNode(
             style=CSS(display=BLOCK, width=50, height=10, margin_left=AUTO, margin_right=AUTO)
         )

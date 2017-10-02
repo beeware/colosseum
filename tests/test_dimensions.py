@@ -1,7 +1,5 @@
 from unittest import TestCase
 
-from colosseum.dimensions import Size, Box
-
 from .utils import TestNode
 
 
@@ -419,7 +417,6 @@ class BoxTests(TestCase):
 
         # All the nodes have been marked dirty
         self.assertDirty(True, True, True, True, True)
-
 
     def test_set_height(self):
         self.node.layout.content_height = 5
