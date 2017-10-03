@@ -1,4 +1,4 @@
-from colosseum.constants import BLOCK, MEDIUM, THICK, THIN, SOLID
+from colosseum.constants import BLOCK, MEDIUM, SOLID, THICK, THIN
 from colosseum.declaration import CSS
 from colosseum.engine import layout
 

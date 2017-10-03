@@ -2,7 +2,7 @@ from colosseum.constants import AUTO, BLOCK, RTL, SOLID
 from colosseum.declaration import CSS
 from colosseum.engine import layout
 
-from ...utils import Display, LayoutTestCase, TestNode, layout_summary
+from ...utils import LayoutTestCase, TestNode
 
 
 class WidthTests(LayoutTestCase):
