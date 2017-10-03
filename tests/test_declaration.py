@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from colosseum import engine as css_engine
-from colosseum.color import NAMED_COLOR
+from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
 from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
@@ -10,11 +10,12 @@ from .utils import TestNode
 
 
 class PropertyChoiceTests(TestCase):
-    def test_no_choices(self):
+    def test_none(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices())
+            prop = validated_property('prop', choices=Choices(None), initial=None)
 
         obj = MyObject()
+        self.assertIsNone(obj.prop)
 
         with self.assertRaises(ValueError):
             obj.prop = 10
@@ -23,13 +24,15 @@ class PropertyChoiceTests(TestCase):
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
         with self.assertRaises(ValueError):
-            obj.prop = NAMED_COLOR['rebeccapurple']
+            obj.prop = REBECCAPURPLE
+        with self.assertRaises(ValueError):
+            obj.prop = '#112233'
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
-        with self.assertRaises(ValueError):
-            obj.prop = None
+        obj.prop = None
+        obj.prop = 'none'
 
         # Check the error message
         try:
@@ -38,26 +41,31 @@ class PropertyChoiceTests(TestCase):
         except ValueError as v:
             self.assertEqual(
                 str(v),
-                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: "
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: none"
             )
 
     def test_allow_length(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(length=True))
+            prop = validated_property('prop', choices=Choices(length=True), initial=0)
 
         obj = MyObject()
+        self.assertEqual(obj.prop, 0 * px)
 
         obj.prop = 10
         obj.prop = 20 * px
         obj.prop = 30 * percent
         with self.assertRaises(ValueError):
-            obj.prop = NAMED_COLOR['rebeccapurple']
+            obj.prop = REBECCAPURPLE
+        with self.assertRaises(ValueError):
+            obj.prop = '#112233'
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
         with self.assertRaises(ValueError):
             obj.prop = None
+        with self.assertRaises(ValueError):
+            obj.prop = 'none'
 
         # Check the error message
         try:
@@ -71,9 +79,10 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_percentage(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(percentage=True))
+            prop = validated_property('prop', choices=Choices(percentage=True), initial=99 * percent)
 
         obj = MyObject()
+        self.assertEqual(obj.prop, 99 * percent)
 
         with self.assertRaises(ValueError):
             obj.prop = 10
@@ -81,13 +90,17 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 20 * px
         obj.prop = 30 * percent
         with self.assertRaises(ValueError):
-            obj.prop = NAMED_COLOR['rebeccapurple']
+            obj.prop = REBECCAPURPLE
+        with self.assertRaises(ValueError):
+            obj.prop = '#112233'
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
         with self.assertRaises(ValueError):
             obj.prop = None
+        with self.assertRaises(ValueError):
+            obj.prop = 'none'
 
         # Check the error message
         try:
@@ -101,9 +114,10 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_integer(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(integer=True))
+            prop = validated_property('prop', choices=Choices(integer=True), initial=0)
 
         obj = MyObject()
+        self.assertEqual(obj.prop, 0)
 
         obj.prop = 10
         with self.assertRaises(ValueError):
@@ -111,13 +125,17 @@ class PropertyChoiceTests(TestCase):
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
         with self.assertRaises(ValueError):
-            obj.prop = NAMED_COLOR['rebeccapurple']
+            obj.prop = REBECCAPURPLE
+        with self.assertRaises(ValueError):
+            obj.prop = '#112233'
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
         with self.assertRaises(ValueError):
             obj.prop = None
+        with self.assertRaises(ValueError):
+            obj.prop = 'none'
 
         # Check the error message
         try:
@@ -131,9 +149,10 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_color(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(color=True))
+            prop = validated_property('prop', choices=Choices(color=True), initial='goldenrod')
 
         obj = MyObject()
+        self.assertEqual(obj.prop, NAMED_COLOR[GOLDENROD])
 
         with self.assertRaises(ValueError):
             obj.prop = 10
@@ -141,13 +160,16 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 20 * px
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
-        obj.prop = NAMED_COLOR['rebeccapurple']
+        obj.prop = REBECCAPURPLE
+        obj.prop = '#112233'
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
         with self.assertRaises(ValueError):
             obj.prop = None
+        with self.assertRaises(ValueError):
+            obj.prop = 'none'
 
         # Check the error message
         try:
@@ -161,9 +183,10 @@ class PropertyChoiceTests(TestCase):
 
     def test_values(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices('a', 'b', None))
+            prop = validated_property('prop', choices=Choices('a', 'b', None), initial='a')
 
         obj = MyObject()
+        self.assertEqual(obj.prop, 'a')
 
         with self.assertRaises(ValueError):
             obj.prop = 10
@@ -172,10 +195,13 @@ class PropertyChoiceTests(TestCase):
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
         with self.assertRaises(ValueError):
-            obj.prop = NAMED_COLOR['rebeccapurple']
+            obj.prop = REBECCAPURPLE
+        with self.assertRaises(ValueError):
+            obj.prop = '#112233'
         obj.prop = 'a'
         obj.prop = 'b'
         obj.prop = None
+        obj.prop = 'none'
 
         # Check the error message
         try:
@@ -190,17 +216,21 @@ class PropertyChoiceTests(TestCase):
     def test_all_choices(self):
         class MyObject:
             prop = validated_property('prop', choices=Choices(
-                'a', 'b', None, integer=True, length=True, percentage=True, color=True
-            ))
+                'a', 'b', None,
+                integer=True, length=True, percentage=True, color=True
+            ), initial=None)
 
         obj = MyObject()
 
         obj.prop = 10
         obj.prop = 20 * px
         obj.prop = 30 * percent
-        obj.prop = NAMED_COLOR['rebeccapurple']
+        obj.prop = REBECCAPURPLE
+        obj.prop = '#112233'
         obj.prop = 'a'
         obj.prop = 'b'
+        obj.prop = None
+        obj.prop = 'none'
 
         # Check the error message
         try:

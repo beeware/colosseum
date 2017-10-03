@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from colosseum import parser
-from colosseum.color import hsl, rgb
+from colosseum.colors import hsl, rgb
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
 )
@@ -43,12 +43,12 @@ class ParseUnitTests(TestCase):
         self.assertEqualUnits('10 pt', 10 * pt)
 
     def test_raw(self):
-        self.assertEqualUnits(10, 10 * pt)
-        self.assertEqualUnits(10.0, 10 * pt)
+        self.assertEqualUnits(10, 10 * px)
+        self.assertEqualUnits(10.0, 10 * px)
 
     def test_no_units(self):
-        self.assertEqualUnits('10', 10 * pt)
-        self.assertEqualUnits('10.0', 10 * pt)
+        self.assertEqualUnits('10', 10 * px)
+        self.assertEqualUnits('10.0', 10 * px)
 
     def test_non_value(self):
         # A string that isn't a unit declaration

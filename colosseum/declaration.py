@@ -4,26 +4,26 @@ from .constants import (
     BOX_OFFSET_CHOICES, CLEAR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
     FLOAT_CHOICES, INLINE, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
     MIN_SIZE_CHOICES, NORMAL, PADDING_CHOICES, POSITION_CHOICES, SIZE_CHOICES,
-    STATIC, UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES,
+    STATIC, TRANSPARENT, UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES,
 )
-from .units import PixelUnit
 
 _CSS_PROPERTIES = set()
 
 
-def validated_property(name, choices=None, initial=None):
+def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
+    initial = choices.validate(initial)
+
     def getter(self):
         return getattr(self, '_%s' % name, initial)
 
     def setter(self, value):
-        if choices and not choices.is_valid(value):
+        try:
+            value = choices.validate(value)
+        except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
             ))
-
-        if isinstance(value, int):
-            value = PixelUnit(value)
 
         if value != getattr(self, '_%s' % name, initial):
             setattr(self, '_%s' % name, value)
@@ -41,7 +41,7 @@ def validated_property(name, choices=None, initial=None):
     return property(getter, setter, deleter)
 
 
-def directional_property(name, initial=0):
+def directional_property(name, initial):
     "Define a property attribute that proxies for top/right/bottom/left alternatives."
     def getter(self):
         return (
@@ -128,10 +128,10 @@ class CSS:
     border_width = directional_property('border%s_width', initial=0)
 
     # 8.5.2 Border color
-    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES, initial=0)
-    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES, initial=0)
-    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES, initial=0)
-    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES, initial=0)
+    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
+    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
+    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
+    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
     border_color = directional_property('border%s_color', initial=0)
 
     # 8.5.3 Border style
@@ -178,14 +178,14 @@ class CSS:
 
     # 10.4 Minimum and maximum width
     min_width = validated_property('min_width', choices=MIN_SIZE_CHOICES, initial=0)
-    max_width = validated_property('max_width', choices=MAX_SIZE_CHOICES)
+    max_width = validated_property('max_width', choices=MAX_SIZE_CHOICES, initial=None)
 
     # 10.5 Content height
     height = validated_property('height', choices=SIZE_CHOICES, initial=AUTO)
 
     # 10.7 Minimum and maximum heights
     min_height = validated_property('min_height', choices=MIN_SIZE_CHOICES, initial=0)
-    max_height = validated_property('max_height', choices=MAX_SIZE_CHOICES)
+    max_height = validated_property('max_height', choices=MAX_SIZE_CHOICES, initial=None)
 
     # 10.8 Leading and half-leading
     # line_height

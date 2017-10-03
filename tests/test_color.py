@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from colosseum.color import hsl, rgb
+from colosseum.colors import hsl, rgb
 
 
 class ColorTests(TestCase):

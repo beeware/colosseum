@@ -1,4 +1,6 @@
-from . import color
+from . import units
+from . import colors
+from . import parser
 
 
 class Choices:
@@ -10,20 +12,35 @@ class Choices:
         self.integer = integer
         self.color = color
 
-    def is_valid(self, value):
-        if hasattr(value, 'px'):
-            if self.length:
-                return True
-            if self.percentage and value.suffix == '%':
-                return True
-            return False
-        if isinstance(value, int) and (self.length or self.integer):
-            return True
-        if self.color and (hasattr(value, 'rgb') or value in color.NAMED_COLOR):
-            return True
-        if value in self.constants:
-            return True
-        return False
+    def validate(self, value):
+        if self.length or self.percentage:
+            try:
+                val = parser.units(value)
+                if self.length:
+                    return val
+                elif self.percentage and isinstance(val, units.Percent):
+                    return val
+            except ValueError:
+                pass
+        if self.integer:
+            try:
+                return int(value)
+            except (ValueError, TypeError):
+                pass
+        if self.color:
+            try:
+                return parser.color(value)
+            except ValueError:
+                pass
+        try:
+            if value == 'none':
+                value = None
+            if value in self.constants:
+                return value
+        except TypeError:
+            pass
+
+        raise ValueError()
 
     def __str__(self):
         choices = [str(c).lower().replace('_', '-') for c in self.constants]

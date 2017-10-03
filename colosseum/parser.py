@@ -1,12 +1,21 @@
-from .color import NAMED_COLOR, hsl, rgb
-from .units import Unit, pt
+from .colors import Color, NAMED_COLOR, hsl, rgb
+from .units import Unit, px
 
 
 def units(value):
+    """Parse a unit value
+
+    Accepts:
+    * An already converted instance of unit
+    * An integer (interpreted as pixels)
+    * A float (interpreted as pixels)
+    * A string with a known unit suffix
+    * A string containing an float (interpreted as pixels)
+    """
     if isinstance(value, Unit):
         return value
     elif isinstance(value, (int, float)):
-        return value * pt
+        return value * px
     elif isinstance(value, str):
         for suffix, unit in Unit.UNITS:
             if value.endswith(suffix):
@@ -16,7 +25,7 @@ def units(value):
                     pass
 
         try:
-            return float(value) * pt
+            return float(value) * px
         except ValueError:
             pass
 
@@ -24,6 +33,22 @@ def units(value):
 
 
 def color(value):
+    """Parse a color from a value.
+
+    Accepts:
+    * rgb() instances
+    * hsl() instances
+    * '#RGB'
+    * '#RGBA'
+    * '#RRGGBB'
+    * '#RRGGBBAA'
+    * 'rgb(0, 0, 0)'
+    * 'rgba(0, 0, 0, 0.0)'
+    * 'hsl(0, 0%, 0%)'
+    * 'hsla(0, 0%, 0%, 0.0)'
+    * A named color
+    """
+
     if isinstance(value, (rgb, hsl)):
         return value
 
