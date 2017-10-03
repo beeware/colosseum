@@ -1,11 +1,14 @@
+from . import color
+
 
 class Choices:
     "A class to define allowable data types for a property"
-    def __init__(self, *constants, length=False, percentage=False, integer=False):
+    def __init__(self, *constants, length=False, percentage=False, integer=False, color=False):
         self.constants = set(constants)
         self.length = length
         self.percentage = percentage
         self.integer = integer
+        self.color = color
 
     def is_valid(self, value):
         if hasattr(value, 'px'):
@@ -15,6 +18,8 @@ class Choices:
                 return True
             return False
         if isinstance(value, int) and (self.length or self.integer):
+            return True
+        if self.color and (hasattr(value, 'rgb') or value in color.NAMED_COLOR):
             return True
         if value in self.constants:
             return True
@@ -28,6 +33,8 @@ class Choices:
             choices.append("<percentage>")
         if self.integer:
             choices.append("<integer>")
+        if self.color:
+            choices.append("<color>")
         return ", ".join(sorted(choices))
 
 
@@ -36,6 +43,8 @@ class Choices:
 ######################################################################
 
 AUTO = 'auto'
+
+TRANSPARENT = 'transparent'
 
 ######################################################################
 # Margins
@@ -81,6 +90,8 @@ BORDER_STYLE_CHOICES = Choices(
     INSET,
     OUTSET,
 )
+
+BORDER_COLOR_CHOICES = Choices(TRANSPARENT, color=True)
 
 ######################################################################
 # Display

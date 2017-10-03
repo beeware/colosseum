@@ -1,6 +1,7 @@
 from unittest import TestCase
 
 from colosseum import engine as css_engine
+from colosseum.color import NAMED_COLOR
 from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
@@ -21,6 +22,8 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 20 * px
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = NAMED_COLOR['rebeccapurple']
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
@@ -47,6 +50,8 @@ class PropertyChoiceTests(TestCase):
         obj.prop = 10
         obj.prop = 20 * px
         obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = NAMED_COLOR['rebeccapurple']
         with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
@@ -76,6 +81,8 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 20 * px
         obj.prop = 30 * percent
         with self.assertRaises(ValueError):
+            obj.prop = NAMED_COLOR['rebeccapurple']
+        with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
@@ -104,6 +111,8 @@ class PropertyChoiceTests(TestCase):
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
         with self.assertRaises(ValueError):
+            obj.prop = NAMED_COLOR['rebeccapurple']
+        with self.assertRaises(ValueError):
             obj.prop = 'a'
         with self.assertRaises(ValueError):
             obj.prop = 'b'
@@ -120,6 +129,36 @@ class PropertyChoiceTests(TestCase):
                 "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <integer>"
             )
 
+    def test_allow_color(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(color=True))
+
+        obj = MyObject()
+
+        with self.assertRaises(ValueError):
+            obj.prop = 10
+        with self.assertRaises(ValueError):
+            obj.prop = 20 * px
+        with self.assertRaises(ValueError):
+            obj.prop = 30 * percent
+        obj.prop = NAMED_COLOR['rebeccapurple']
+        with self.assertRaises(ValueError):
+            obj.prop = 'a'
+        with self.assertRaises(ValueError):
+            obj.prop = 'b'
+        with self.assertRaises(ValueError):
+            obj.prop = None
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <color>"
+            )
+
     def test_values(self):
         class MyObject:
             prop = validated_property('prop', choices=Choices('a', 'b', None))
@@ -132,6 +171,8 @@ class PropertyChoiceTests(TestCase):
             obj.prop = 20 * px
         with self.assertRaises(ValueError):
             obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = NAMED_COLOR['rebeccapurple']
         obj.prop = 'a'
         obj.prop = 'b'
         obj.prop = None
@@ -149,7 +190,7 @@ class PropertyChoiceTests(TestCase):
     def test_all_choices(self):
         class MyObject:
             prop = validated_property('prop', choices=Choices(
-                'a', 'b', None, integer=True, length=True, percentage=True
+                'a', 'b', None, integer=True, length=True, percentage=True, color=True
             ))
 
         obj = MyObject()
@@ -157,6 +198,7 @@ class PropertyChoiceTests(TestCase):
         obj.prop = 10
         obj.prop = 20 * px
         obj.prop = 30 * percent
+        obj.prop = NAMED_COLOR['rebeccapurple']
         obj.prop = 'a'
         obj.prop = 'b'
 
@@ -168,7 +210,7 @@ class PropertyChoiceTests(TestCase):
             self.assertEqual(
                 str(v),
                 "Invalid value 'invalid' for CSS property 'prop'; "
-                "Valid values are: <integer>, <length>, <percentage>, a, b, none"
+                "Valid values are: <color>, <integer>, <length>, <percentage>, a, b, none"
             )
 
 

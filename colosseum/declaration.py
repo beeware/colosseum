@@ -1,10 +1,10 @@
 from . import engine as css_engine
 from .constants import (
-    AUTO, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES,
-    CLEAR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, FLOAT_CHOICES, INLINE,
-    LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL,
-    PADDING_CHOICES, POSITION_CHOICES, SIZE_CHOICES, STATIC,
-    UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES,
+    AUTO, BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
+    BOX_OFFSET_CHOICES, CLEAR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
+    FLOAT_CHOICES, INLINE, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
+    MIN_SIZE_CHOICES, NORMAL, PADDING_CHOICES, POSITION_CHOICES, SIZE_CHOICES,
+    STATIC, UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES,
 )
 from .units import PixelUnit
 
@@ -128,11 +128,11 @@ class CSS:
     border_width = directional_property('border%s_width', initial=0)
 
     # 8.5.2 Border color
-    # border_top_color
-    # border_right_color
-    # border_bottom_color
-    # border_left_color
-    # border_color
+    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES, initial=0)
+    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES, initial=0)
+    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES, initial=0)
+    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES, initial=0)
+    border_color = directional_property('border%s_color', initial=0)
 
     # 8.5.3 Border style
     border_top_style = validated_property('border_top_style', choices=BORDER_STYLE_CHOICES, initial=None)
