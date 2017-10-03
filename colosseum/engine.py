@@ -88,10 +88,25 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.margin_bottom = calculate_size(node.style.margin_bottom, vertical)
     node.layout.margin_left = calculate_size(node.style.margin_left, horizontal)
 
-    node.layout.border_top_width = calculate_size(node.style.border_top_width, horizontal)
-    node.layout.border_right_width = calculate_size(node.style.border_right_width, vertical)
-    node.layout.border_bottom_width = calculate_size(node.style.border_bottom_width, horizontal)
-    node.layout.border_left_width = calculate_size(node.style.border_left_width, vertical)
+    if node.style.border_top_style is None:
+        node.layout.border_top_width = 0
+    else:
+        node.layout.border_top_width = calculate_size(node.style.border_top_width, horizontal)
+
+    if node.style.border_right_style is None:
+        node.layout.border_right_width = 0
+    else:
+        node.layout.border_right_width = calculate_size(node.style.border_right_width, vertical)
+
+    if node.style.border_bottom_style is None:
+        node.layout.border_bttom_width = 0
+    else:
+        node.layout.border_bottom_width = calculate_size(node.style.border_bottom_width, horizontal)
+
+    if node.style.border_left_style is None:
+        node.layout.border_left_width = 0
+    else:
+        node.layout.border_left_width = calculate_size(node.style.border_left_width, vertical)
 
     node.layout.padding_top = calculate_size(node.style.padding_top, horizontal)
     node.layout.padding_right = calculate_size(node.style.padding_right, vertical)
@@ -144,9 +159,9 @@ def calculate_width_and_margins(node, context):
             else:  # 10.3.9
                 calculate_inline_block_non_replaced_normal_flow_width(node, context)
         else:
-            raise Exception("Unknown normal flow width calculation")
+            raise Exception("Unknown normal flow width calculation")  # pragma: no cover
     else:
-        raise Exception("Unknown width calculation")
+        raise Exception("Unknown width calculation")  # pragma: no cover
 
 
 def calculate_inline_non_replaced_width(node, context):
@@ -170,14 +185,14 @@ def calculate_inline_replaced_width(node, context):
         node.layout.margin_right = 0
 
     if node.style.width is AUTO:
-        width = None
+        content_width = None
         if node.style.height is AUTO:
             if node.intrinsic.width is not None:  # P2
-                width = node.intrinsic.width
-            elif node.intrinsic.height is not None:  # P3
-                width = node.intrinsic.height * node.intrinsic.ratio
+                content_width = node.intrinsic.width
+            elif node.intrinsic.height is not None and node.intrinsic.ratio is not None:  # P3
+                content_width = round(node.intrinsic.height * node.intrinsic.ratio)
             elif node.intrinsic.ratio is not None:  # P4
-                width = (
+                content_width = (
                     context['size']
                     - node.layout.margin_left
                     - node.layout.border_left_width
@@ -187,25 +202,26 @@ def calculate_inline_replaced_width(node, context):
                     - node.layout.margin_right
                 )
 
-        if width is None:
+        if content_width is None:
             if node.intrinsic.width is not None:  # P5
-                width = node.intrinsic.width
+                content_width = node.intrinsic.width
             else:  # P6
-                width = 300
-
-        node.layout.content_width = width
+                content_width = 300
     else:
-        node.layout.content_width = node.style.width.px(**context)
+        content_width = node.style.width.px(**context)
+
+    node.layout.content_width = content_width
+    node.layout.content_left = node.layout.margin_left + node.layout.border_left_width + node.layout.padding_left
 
 
 def calculate_block_non_replaced_normal_flow_width(node, context):
     "Implements S10.3.3"
     if node.style.width is not AUTO:  # P2
-        node_width = node.style.width.px(**context)
+        content_width = node.style.width.px(**context)
         size = (
             node.layout.border_left_width
             + node.layout.padding_left
-            + node_width
+            + content_width
             + node.layout.padding_right
             + node.layout.border_right_width
         )
@@ -228,22 +244,20 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
                 - node.layout.margin_left
                 - node.layout.border_left_width
                 - node.layout.padding_left
-                - node_width
+                - content_width
                 - node.layout.padding_right
                 - node.layout.border_right_width
             )
-            node.layout.content_width = node_width
         else:
             node.layout.margin_left = (
                 context['size']
                 - node.layout.border_left_width
                 - node.layout.padding_left
-                - node_width
+                - content_width
                 - node.layout.padding_right
                 - node.layout.border_right_width
                 - node.layout.margin_right
             )
-            node.layout.content_width = node_width
 
     elif (node.layout.margin_left is AUTO
             and node.style.width is not AUTO
@@ -252,17 +266,16 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
             context['size']
             - node.layout.border_left_width
             - node.layout.padding_left
-            - node_width
+            - content_width
             - node.layout.padding_right
             - node.layout.border_right_width
             - node.layout.margin_right
         )
-        node.layout.content_width = node_width
 
     elif (node.layout.margin_left is not AUTO
             and node.style.width is AUTO
             and node.layout.margin_right is not AUTO):  # P4
-        node.layout.content_width = (
+        content_width = (
             context['size']
             - node.layout.margin_left
             - node.layout.border_left_width
@@ -280,11 +293,10 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
             - node.layout.margin_left
             - node.layout.border_left_width
             - node.layout.padding_left
-            - node_width
+            - content_width
             - node.layout.padding_right
             - node.layout.border_right_width
         )
-        node.layout.content_width = node_width
 
     elif node.style.width is AUTO:  # P5
         if node.layout.margin_left is AUTO:
@@ -292,7 +304,7 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
         if node.layout.margin_right is AUTO:
             node.layout.margin_right = 0
 
-        node.layout.content_width = (
+        content_width = (
             context['size']
             - node.layout.margin_left
             - node.layout.border_left_width
@@ -307,52 +319,53 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
             context['size']
             - node.layout.border_left_width
             - node.layout.padding_left
-            - node_width
+            - content_width
             - node.layout.padding_right
             - node.layout.border_right_width
         )
         node.layout.margin_left = avail_margin // 2
         node.layout.margin_right = avail_margin // 2
 
-        node.layout.content_width = node_width
-        node.layout.content_left = node.layout.margin_left + node.layout.border_left_width + node.layout.padding_left
     else:
-        raise Exception('Unknown S10.3.3 layout case')
+        raise Exception('Unknown S10.3.3 layout case')  # pragma: no cover
+
+    node.layout.content_width = content_width
+    node.layout.content_left = node.layout.margin_left + node.layout.border_left_width + node.layout.padding_left
 
 
 def calculate_block_replaced_normal_flow_width(node, context):
     "Implements S10.3.4"
-    raise NotImplementedError("Section 10.3.4")
+    raise NotImplementedError("Section 10.3.4")  # pragma: no cover
 
 
 def calculate_floating_non_replaced_width(node, context):
     "Implements S10.3.5"
-    raise NotImplementedError("Section 10.3.5")
+    raise NotImplementedError("Section 10.3.5")  # pragma: no cover
 
 
 def calculate_floating_replaced_width(node, context):
     "Implements S10.3.6"
-    raise NotImplementedError("Section 10.3.6")
+    raise NotImplementedError("Section 10.3.6")  # pragma: no cover
 
 
 def calculate_absolute_position_non_replaced_width(node, context):
     "Implements S10.3.7"
-    raise NotImplementedError("Section 10.3.7")
+    raise NotImplementedError("Section 10.3.7")  # pragma: no cover
 
 
 def calculate_absolute_position_replaced_width(node, context):
     "Implements S10.3.8"
-    raise NotImplementedError("Section 10.3.8")
+    raise NotImplementedError("Section 10.3.8")  # pragma: no cover
 
 
 def calculate_inline_block_non_replaced_normal_flow_width(node, context):
     "Implements S10.3.9"
-    raise NotImplementedError("Section 10.3.9")
+    raise NotImplementedError("Section 10.3.9")  # pragma: no cover
 
 
 def calculate_inline_block_replaced_normal_flow_width(node, context):
     "Implements S10.3.10"
-    raise NotImplementedError("Section 10.3.10")
+    raise NotImplementedError("Section 10.3.10")  # pragma: no cover
 
 
 ###########################################################################
@@ -387,19 +400,38 @@ def calculate_height_and_margins(node, context):
             else:  # 10.6.9
                 calculate_inline_block_non_replaced_normal_flow_height(node, context)
         else:
-            raise Exception("Unknown normal flow width calculation")
+            raise Exception("Unknown normal flow height calculation")  # pragma: no cover
     else:
-        raise Exception("Unknown width calculation")
+        raise Exception("Unknown height calculation")  # pragma: no cover
 
 
 def calculate_inline_non_replaced_height(node, context):
     "Implements S10.6.1"
-    raise NotImplementedError("Section 10.6.1")
+    node.layout.content_height = node.intrinsic.height
+    node.layout.content_top = node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
 
 
 def calculate_inline_replaced_height(node, context):
     "Implements S10.6.2"
-    raise NotImplementedError("Section 10.6.2")
+    if node.layout.margin_top is AUTO:  # P1
+        node.layout.margin_top = 0
+
+    if node.layout.margin_bottom is AUTO:  # P1
+        node.layout.margin_bottom = 0
+
+    if node.style.width is AUTO and node.style.height is AUTO and node.intrinsic.height is not None:  # P2
+        content_height = node.intrinsic.height
+    elif node.style.height is AUTO and node.intrinsic.ratio:  # P3
+        content_height = node.layout.content_width * node.intrinsic.ratio
+    elif node.style.height is AUTO and node.intrinsic.height:  # P4
+        content_height = node.intrinsic.height
+    elif node.style.height is AUTO:  # P5
+        content_height = min(node.layout.content_width // 2, 150)
+    else:
+        content_height = node.style.height
+
+    node.layout.content_height = content_height
+    node.layout.content_top = node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
 
 
 def calculate_block_non_replaced_normal_flow_height(node, context):
@@ -410,43 +442,56 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
     if node.layout.margin_bottom is AUTO:  # P2
         node.layout.margin_bottom = 0
 
-    if node.style.height is AUTO:
-        raise NotImplementedError("Section 10.6.3 P2 (AUTO HEIGHT)")
+    if node.style.height is AUTO:  # P3
+        # if node.children and node.has_inline_formatting_content: # P4.1
+        #     content_height = bottom edge of last line box
+        # elif node.children and node.children[-1] non collapsing with bottom margin:
+        #     content_height = bottom edge of bottom margin
+        # elif node.children and node.children[-1] top margin non collapsing with bottom margin:
+        #     content_height = bottom border edge of bottom margin
+        # else:
+        #     content_height = 0
+        if node.children:
+            raise NotImplementedError("Section 10.6.3 P2 (AUTO HEIGHT WITH CHILDREN)")
+        else:
+            content_height = 0
     else:
-        node.layout.content_height = node.style.height.px(**context)
-        node.layout.content_top = node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
+        content_height = node.style.height.px(**context)
+
+    node.layout.content_height = content_height
+    node.layout.content_top = node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
 
 
 def calculate_block_replaced_normal_flow_height(node, context):
     "Implements S10.6.4"
-    raise NotImplementedError("Section 10.6.4")
+    raise NotImplementedError("Section 10.6.4")  # pragma: no cover
 
 
 def calculate_floating_non_replaced_height(node, context):
     "Implements S10.6.5"
-    raise NotImplementedError("Section 10.6.5")
+    raise NotImplementedError("Section 10.6.5")  # pragma: no cover
 
 
 def calculate_floating_replaced_height(node, context):
     "Implements S10.6.6"
-    raise NotImplementedError("Section 10.6.6")
+    raise NotImplementedError("Section 10.6.6")  # pragma: no cover
 
 
 def calculate_absolute_position_non_replaced_height(node, context):
     "Implements S10.6.7"
-    raise NotImplementedError("Section 10.6.7")
+    raise NotImplementedError("Section 10.6.7")  # pragma: no cover
 
 
 def calculate_absolute_position_replaced_height(node, context):
     "Implements S10.6.8"
-    raise NotImplementedError("Section 10.6.8")
+    raise NotImplementedError("Section 10.6.8")  # pragma: no cover
 
 
 def calculate_inline_block_non_replaced_normal_flow_height(node, context):
     "Implements S10.6.9"
-    raise NotImplementedError("Section 10.6.9")
+    raise NotImplementedError("Section 10.6.9")  # pragma: no cover
 
 
 def calculate_inline_block_replaced_normal_flow_height(node, context):
     "Implements S10.6.10"
-    raise NotImplementedError("Section 10.6.10")
+    raise NotImplementedError("Section 10.6.10")  # pragma: no cover

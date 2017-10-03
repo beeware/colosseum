@@ -1,8 +1,8 @@
 from . import engine as css_engine
 from .constants import (
-    AUTO, BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES,
-    DIRECTION_CHOICES, DISPLAY_CHOICES, FLOAT_CHOICES, INLINE, LTR,
-    MARGIN_CHOICES, MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL,
+    AUTO, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES,
+    CLEAR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, FLOAT_CHOICES, INLINE,
+    LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL,
     PADDING_CHOICES, POSITION_CHOICES, SIZE_CHOICES, STATIC,
     UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES,
 )
@@ -52,7 +52,7 @@ def directional_property(name, initial=0):
         )
 
     def setter(self, value):
-        try:
+        if isinstance(value, tuple):
             if len(value) == 4:
                 setattr(self, name % '_top', value[0])
                 setattr(self, name % '_right', value[1])
@@ -75,7 +75,7 @@ def directional_property(name, initial=0):
                 setattr(self, name % '_left', value[0])
             else:
                 raise ValueError("Invalid value for '%s'; value must be an number, or a 1-4 tuple." % (name % ''))
-        except TypeError:
+        else:
             setattr(self, name % '_top', value)
             setattr(self, name % '_right', value)
             setattr(self, name % '_bottom', value)
@@ -135,11 +135,11 @@ class CSS:
     # border_color
 
     # 8.5.3 Border style
-    # border_top_style
-    # border_right_style
-    # border_bottom_style
-    # border_left_style
-    # border_style
+    border_top_style = validated_property('border_top_style', choices=BORDER_STYLE_CHOICES, initial=None)
+    border_right_style = validated_property('border_right_style', choices=BORDER_STYLE_CHOICES, initial=None)
+    border_bottom_style = validated_property('border_bottom_style', choices=BORDER_STYLE_CHOICES, initial=None)
+    border_left_style = validated_property('border_left_style', choices=BORDER_STYLE_CHOICES, initial=None)
+    border_style = directional_property('border%s_style', initial=None)
 
     # 8.5.4 Border shorthand properties
     # border_top

@@ -1,3 +1,5 @@
+from unittest import TestCase
+
 from colosseum.constants import MEDIUM, THICK, THIN
 from colosseum.declaration import CSS
 from colosseum.dimensions import Box, Size
@@ -37,3 +39,11 @@ def layout_summary(node):
         ]
 
     return layout
+
+
+class LayoutTestCase(TestCase):
+    def setUp(self):
+        self.display = Display(dpi=96, width=640, height=480)
+
+    def assertLayout(self, node, layout):
+        self.assertEqual(layout_summary(node), layout)
