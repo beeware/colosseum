@@ -17,8 +17,8 @@ Colosseum
 .. image:: https://img.shields.io/pypi/l/colosseum.svg
     :target: https://github.com/pybee/colosseum/blob/master/LICENSE
 
-.. image:: https://travis-ci.org/pybee/colosseum.svg?branch=master
-    :target: https://travis-ci.org/pybee/colosseum
+.. image:: https://beekeeper.herokuapp.com/projects/pybee/colosseum/shield
+    :target: https://beekeeper.herokuapp.com/projects/pybee/colosseum
 
 .. image:: https://badges.gitter.im/pybee/general.svg
     :target: https://gitter.im/pybee/general
@@ -27,27 +27,6 @@ An independent implementation of the CSS layout algorithm. This
 implementation is completely standalone - it isn't dependent on
 a browser, and can be run over any box-like set of objects that
 need to be laid out on a page (either physical or virtual)
-
-At present, the implementation is partial; only **portions** of
-the box and flexbox section of the specification are defined:
-
-==========================================================================================  =======================================================================================
-Name                                                                                        Value
-==========================================================================================  =======================================================================================
-width, height                                                                               positive number
-min_width, min_height                                                                       positive number
-max_width, max_height                                                                       positive number
-left, right, top, bottom                                                                    number
-margin, margin_left, margin_right, margin_top, margin_bottom                                number
-padding, padding_left, padding_right, padding_top, padding_bottom                           positive number
-border_width, border_left_width, border_right_width, border_top_width, border_bottom_width  positive number
-flex_direction                                                                              ``"column"``, ``"row"``
-justify_content                                                                             ``"flex-start"``, ``"center"``, ``"flex-end"``, ``"space-between"``, ``"space-around"``
-align_items, align_self                                                                     ``"flex-start"``, ``"center"``, ``"flex-end"``, ``"stretch"``
-flex                                                                                        positive number
-flex_wrap                                                                                   ``"wrap"``, ``"nowrap"``
-position                                                                                    ``"relative"``, ``"absolute"``
-==========================================================================================  =======================================================================================
 
 Quickstart
 ----------
@@ -205,11 +184,3 @@ want to contribute code, please `fork the code`_ and `submit a pull request`_.
 .. _log them on Github: https://github.com/pybee/colosseum/issues
 .. _fork the code: https://github.com/pybee/colosseum
 .. _submit a pull request: https://github.com/pybee/colosseum/pulls
-
-Acknowledgements
-----------------
-
-The algorithm and test suite for this library is a language port of
-`CSS-layout`_ project, open-sourced by Facebook.
-
-.. _CSS-layout: https://github.com/facebook/css-layout
