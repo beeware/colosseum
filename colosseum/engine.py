@@ -1,7 +1,8 @@
 from .constants import (
-    ABSOLUTE, AUTO, BLOCK, INLINE, INLINE_BLOCK, LIST_ITEM, LTR, MEDIUM, TABLE,
-    THICK, THIN,
+    ABSOLUTE, AUTO, BLOCK, FIXED, INLINE, INLINE_BLOCK, LIST_ITEM, LTR,
+    MEDIUM, RELATIVE, TABLE, TABLE_CAPTION, TABLE_CELL, THICK, THIN,
 )
+from .dimensions import Box
 
 
 def is_block_level_element(node):
@@ -10,6 +11,25 @@ def is_block_level_element(node):
         node.style.display is BLOCK
         or node.style.display is LIST_ITEM
         or node.style.display is TABLE
+    )
+
+def is_block_container(node):
+    # 9.2.1 P2
+    return (
+        node.style.display is BLOCK
+        or node.style.display is LIST_ITEM
+        or node.style.display is INLINE_BLOCK
+        or node.style.display is TABLE_CELL
+        or node.style.display is TABLE_CAPTION  # 9.4.1 P1
+    ) and not node.intrinsic.is_replaced
+
+
+def is_inline_level_element(node):
+    # 9.2.2 P1
+    return (
+        node.style.display is INLINE
+        or node.style.display is INLINE_TABLE
+        or node.style.display is INLINE_BLOCK
     )
 
 
@@ -21,20 +41,28 @@ def is_inline_element(node):
     return node.style.display is INLINE
 
 
-def is_floating_element(node):
+def is_float_positioned_element(node):
     return node.style.float_ is not None
 
 
 def is_absolute_positioned_element(node):
-    return node.style.position is ABSOLUTE
+    return (
+        node.style.position is ABSOLUTE
+        or node.style.position is FIXED
+    )
 
 
-def is_replaced_element(node):
-    return node.intrinsic.is_replaced
+def establishes_inline_formatting_context(node):
+    if is_block_container(node):
+        for child in node.children:
+            if is_block_level_element(child):
+                return False
+        return True
+    else:
+        return False
 
-
-def in_normal_flow(node):
-    return True  # FIXME
+def establishes_table_formatting_context(node):
+    return False  # TODO
 
 
 class Viewport:
@@ -51,25 +79,51 @@ def layout(display, node):
     layout_box(display, node, containing_block, containing_block, font)
 
 
-def block_contain(nodes):
+class AnonymousBlockBox:
+    def __init__(self):
+        self.children = []
+
+    def append(self, child):
+        self.children.append(child)
+
+
+class AnonymousInlineBox:
+    def __init__(self):
+        self.children = []
+
+    def append(self, child):
+        self.children.append(child)
+
+
+def anonymize(nodes):
     anon_block = None
     containers = []
     for node in nodes:
-        if node.style.display is BLOCK:
+        if is_block_level_element(node):
             if anon_block:
                 containers.append(anon_block)
                 anon_block = None
             containers.append(node)
         else:
-            if anon_block:
-                anon_block.append(node)
-            else:
-                anon_block = [node]
+            if anon_block is None:
+                anon_block = AnonymousBlockBox()
+            anon_block.append(node)
 
     return containers
 
 
 def layout_box(display, node, containing_block, viewport, font):
+    # If the node shouldn't be displayed, remove the layout box.
+    if node.style.display is None:
+        node.layout = None
+        return
+    else:
+        # Make sure the node *has* a display box. If it does,
+        # reset it to a neutral state.
+        if node.layout is None:
+            node.layout = Box(node)
+        else:
+            node.layout.reset()
 
     # Copy margin, border and padding attributes to the layout
     horizontal = {
@@ -113,8 +167,51 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.padding_bottom = calculate_size(node.style.padding_bottom, horizontal)
     node.layout.padding_left = calculate_size(node.style.padding_left, vertical)
 
+    # Section 10.3 - evaluate height and margins
     calculate_width_and_margins(node, horizontal)
+
+    if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
+        raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
+    elif node.style.float_ is not None:
+        raise NotImplementedError("Section 9.5 - Floats")  # pragma: no cover
+    else:  # Section 9.4 - Normal flow
+        if establishes_inline_formatting_context(node):
+            # Section 9.4.2 - Inline formatting context
+            pass
+        elif establishes_table_formatting_context(node):
+            # Section 17 - Table formatting context
+            raise NotImplementedError("Section 17")  # pragma: no cover
+        else:
+            # Section 9.4.1 - Block formatting context
+            children = anonymize(node.children)
+            offset_top = 0
+            margin = 0
+            for child in children:
+                layout_box(display, child, containing_block, viewport, font)
+
+                # The top offset of this element is influenced by the
+                # collapsed margin. If this element has a bigger margin
+                # than the previous one, then the margin box is laid out
+                # where it is; if the previous element had a bigger margin,
+                # we need to offset down by the difference.
+                offset_top += max(margin, child.layout.margin_top) - child.layout.margin_top
+
+                # Set the origin of the child, relative to this node.
+                child.layout.origin_left = 0
+                child.layout.origin_top = offset_top
+
+                # Increase the offset by the height of the box,
+                # and record the margin so it can be collapsed with the
+                # next element
+                offset_top += child.layout.border_box_height
+                margin = child.layout.margin_bottom
+
+    # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
+
+    # If position is relative, adjust the position.
+    if node.style.position is RELATIVE:
+        raise NotImplementedError("Section 9.4.2 - relative positioning")  # pragma: no cover
 
 
 def calculate_size(value, context):
@@ -132,36 +229,34 @@ def calculate_size(value, context):
 ###########################################################################
 def calculate_width_and_margins(node, context):
     "Implements S10.3"
-    if is_floating_element(node):
-        if is_replaced_element(node):  # 10.3.6
+    if is_float_positioned_element(node):
+        if node.intrinsic.is_replaced:  # 10.3.6
             calculate_floating_replaced_width(node, context)
         else:  # 10.3.5
             calculate_floating_non_replaced_width(node, context)
     elif is_absolute_positioned_element(node):
-        if is_replaced_element(node):  # 10.3.8
+        if node.intrinsic.is_replaced:  # 10.3.8
             calculate_absolute_position_replaced_width(node, context)
         else:  # 10.3.7
             calculate_absolute_position_non_replaced_width(node, context)
     elif is_inline_element(node):
-        if is_replaced_element(node):  # 10.3.2
+        if node.intrinsic.is_replaced:  # 10.3.2
             calculate_inline_replaced_width(node, context)
         else:  # 10.3.1
             calculate_inline_non_replaced_width(node, context)
-    elif in_normal_flow(node):
+    else:  # Normal flow
         if is_block_level_element(node):
-            if is_replaced_element(node):  # 10.3.4
+            if node.intrinsic.is_replaced:  # 10.3.4
                 calculate_block_replaced_normal_flow_width(node, context)
             else:  # 10.3.3
                 calculate_block_non_replaced_normal_flow_width(node, context)
         elif is_inline_block_element(node):
-            if is_replaced_element(node):  # 10.3.10
+            if node.intrinsic.is_replaced:  # 10.3.10
                 calculate_inline_block_replaced_normal_flow_width(node, context)
             else:  # 10.3.9
                 calculate_inline_block_non_replaced_normal_flow_width(node, context)
         else:
             raise Exception("Unknown normal flow width calculation")  # pragma: no cover
-    else:
-        raise Exception("Unknown width calculation")  # pragma: no cover
 
 
 def calculate_inline_non_replaced_width(node, context):
@@ -373,36 +468,34 @@ def calculate_inline_block_replaced_normal_flow_width(node, context):
 ###########################################################################
 def calculate_height_and_margins(node, context):
     "Implements S10.6"
-    if is_floating_element(node):
-        if is_replaced_element(node):  # 10.6.6
+    if is_float_positioned_element(node):
+        if node.intrinsic.is_replaced:  # 10.6.6
             calculate_floating_replaced_height(node, context)
         else:  # 10.6.5
             calculate_floating_non_replaced_height(node, context)
     elif is_absolute_positioned_element(node):
-        if is_replaced_element(node):  # 10.6.8
+        if node.intrinsic.is_replaced:  # 10.6.8
             calculate_absolute_position_replaced_height(node, context)
         else:  # 10.6.7
             calculate_absolute_position_non_replaced_height(node, context)
     elif is_inline_element(node):
-        if is_replaced_element(node):  # 10.6.2
+        if node.intrinsic.is_replaced:  # 10.6.2
             calculate_inline_replaced_height(node, context)
         else:  # 10.6.1
             calculate_inline_non_replaced_height(node, context)
-    elif in_normal_flow(node):
+    else:  # Normal flow
         if is_block_level_element(node):
-            if is_replaced_element(node):  # 10.6.4
+            if node.intrinsic.is_replaced:  # 10.6.4
                 calculate_block_replaced_normal_flow_height(node, context)
             else:  # 10.6.3
                 calculate_block_non_replaced_normal_flow_height(node, context)
         elif is_inline_block_element(node):
-            if is_replaced_element(node):  # 10.6.10
+            if node.intrinsic.is_replaced:  # 10.6.10
                 calculate_inline_block_replaced_normal_flow_height(node, context)
             else:  # 10.6.9
                 calculate_inline_block_non_replaced_normal_flow_height(node, context)
         else:
             raise Exception("Unknown normal flow height calculation")  # pragma: no cover
-    else:
-        raise Exception("Unknown height calculation")  # pragma: no cover
 
 
 def calculate_inline_non_replaced_height(node, context):
@@ -446,13 +539,11 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
         # if node.children and node.has_inline_formatting_content: # P4.1
         #     content_height = bottom edge of last line box
         # elif node.children and node.children[-1] non collapsing with bottom margin:
-        #     content_height = bottom edge of bottom margin
+        if node.children and node.children[-1]:
+            last_child = node.children[-1]
+            content_height = last_child.layout.origin_top + last_child.layout.margin_box_height
         # elif node.children and node.children[-1] top margin non collapsing with bottom margin:
         #     content_height = bottom border edge of bottom margin
-        # else:
-        #     content_height = 0
-        if node.children:
-            raise NotImplementedError("Section 10.6.3 P2 (AUTO HEIGHT WITH CHILDREN)")
         else:
             content_height = 0
     else:

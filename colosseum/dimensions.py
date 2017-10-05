@@ -97,9 +97,6 @@ class Box:
 
     Stored properties
     ~~~~~~~~~~~~~~~~~
-    displayed: The node is included in rendering. A value of False indicates
-        the node is not part of the rendered document; it takes up no space,
-        and is not visible.
     visible: The node is included in rendering, and is visible. A value of
         False indicates the node takes up space, but is not rendered.
 
@@ -174,10 +171,25 @@ class Box:
     """
     def __init__(self, node):
         self.node = node
+        self.reset()
 
+    def __repr__(self):
+        return '<Box (%sx%s @ %s,%s)>' % (
+            self._content_width, self._content_height,
+            self.absolute_content_left, self.absolute_content_top
+        )
+
+    # def __eq__(self, value):
+    #     return all([
+    #         self._width == value._width,
+    #         self._height == value._height,
+    #         self._absolute_margin_top == value._absolute_margin_top,
+    #         self._absolute_margin_left == value._absolute_margin_left
+    #     ])
+
+    def reset(self):
         # Some properties describing whether this node exists in
         # layout *at all*.
-        self.displayed = True
         self.visible = True
 
         # Set the core properties directly;
@@ -221,27 +233,6 @@ class Box:
         # absolute positions.
         self.origin_top = 0
         self.origin_left = 0
-
-    def __repr__(self):
-        return '<Box (%sx%s @ %s,%s)>' % (
-            self._content_width, self._content_height,
-            self.absolute_content_left, self.absolute_content_top
-        )
-
-    # def __eq__(self, value):
-    #     return all([
-    #         self._width == value._width,
-    #         self._height == value._height,
-    #         self._absolute_margin_top == value._absolute_margin_top,
-    #         self._absolute_margin_left == value._absolute_margin_left
-    #     ])
-
-    # def reset(self):
-    #     self._dirty = True
-    #     self._width = None
-    #     self._height = None
-    #     self._top = 0
-    #     self._left = 0
 
     ######################################################################
     # Core properties

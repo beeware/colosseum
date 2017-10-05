@@ -28,15 +28,18 @@ class TestNode:
 
 
 def layout_summary(node):
-    layout = {
-        'position': (node.layout.absolute_content_left, node.layout.absolute_content_top),
-        'size': (node.layout.content_width, node.layout.content_height),
-    }
-    if node.children:
-        layout['children'] = [
-            layout_summary(child)
-            for child in node.children
-        ]
+    if node.layout:
+        layout = {
+            'position': (node.layout.absolute_content_left, node.layout.absolute_content_top),
+            'size': (node.layout.content_width, node.layout.content_height),
+        }
+        if node.children:
+            layout['children'] = [
+                layout_summary(child)
+                for child in node.children
+            ]
+    else:
+        layout = 'NOT DISPLAYED'
 
     return layout
 
