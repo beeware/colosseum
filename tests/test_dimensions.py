@@ -1,11 +1,15 @@
 from unittest import TestCase
 
+from colosseum.dimensions import Box
 from .utils import TestNode
 
 
 class SizeTests(TestCase):
     def setUp(self):
+        self.maxDiff = None
+
         self.node = TestNode()
+        self.node.layout = Box(self.node)
         # Mark the layout as "in calculation"
         self.node.layout.dirty = None
 
@@ -170,7 +174,10 @@ class SizeTests(TestCase):
 
 class BoxTests(TestCase):
     def setUp(self):
+        self.maxDiff = None
+
         self.node = TestNode()
+        self.node.layout = Box(self.node)
         self.node.layout.content_width = 10
         self.node.layout.content_height = 16
 
@@ -193,7 +200,7 @@ class BoxTests(TestCase):
     def assertLayout(self, box, expected):
         actual = {}
         if 'origin' in expected:
-            actual['origin'] = (box.origin_left, box.origin_top)
+            actual['origin'] = (box._origin_left, box._origin_top)
 
         if 'size' in expected:
             actual['size'] = {}
@@ -287,8 +294,8 @@ class BoxTests(TestCase):
         self.assertEqual(gc2, self.grandchild1_2.layout.dirty)
 
     def test_repr(self):
-        self.node.layout.origin_top = 1
-        self.node.layout.origin_left = 2
+        self.node.layout._origin_top = 1
+        self.node.layout._origin_left = 2
         self.assertEqual(repr(self.node.layout), "<Box (10x16 @ 2,1)>")
 
     def test_initial(self):
@@ -525,112 +532,7 @@ class BoxTests(TestCase):
         # All the nodes have been marked dirty
         self.assertDirty(True, True, True, True, True)
 
-    def test_set_origin_top(self):
-        self.node.layout.origin_top = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 5),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 10, 16, 0)},
-                'absolute': {'content': (5, 10, 21, 0)},
-            }
-        )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Set the layout back to calculation
-        self.node.layout.dirty = None
-
-        # Set the origin_top to the same value
-        self.node.layout.origin_top = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 5),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 10, 16, 0)},
-                'absolute': {'content': (5, 10, 21, 0)},
-            }
-        )
-
-        # Dirty state has not changed.
-        self.assertDirty(None, None, None, None, None)
-
-        # Set the origin_top to a new value
-        self.node.layout.origin_top = 7
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 7),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 10, 16, 0)},
-                'absolute': {'content': (7, 10, 23, 0)},
-            }
-        )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-    def test_set_origin_left(self):
-        self.node.layout.origin_left = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (5, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 10, 16, 0)},
-                'absolute': {'content': (0, 15, 16, 5)},
-            }
-        )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Set the layout back to calculation
-        self.node.layout.dirty = None
-
-        # Set the origin_left to the same value
-        self.node.layout.origin_left = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (5, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 10, 16, 0)},
-                'absolute': {'content': (0, 15, 16, 5)},
-            }
-        )
-
-        # Dirty state has not changed.
-        self.assertDirty(None, None, None, None, None)
-
-        # Set the origin_left to a new value
-        self.node.layout.origin_left = 7
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (7, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 10, 16, 0)},
-                'absolute': {'content': (0, 17, 16, 7)},
-            }
-        )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
     def test_descendent_offsets(self):
-        self.node.layout.origin_top = 5
-        self.node.layout.origin_left = 6
-
         self.node.layout.content_top = 7
         self.node.layout.content_left = 8
 
@@ -643,30 +545,30 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (6, 5),
+                'origin': (0, 0),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (7, 18, 23, 8)},
-                'absolute': {'content': (12, 24, 28, 14)},
+                'absolute': {'content': (7, 18, 23, 8)},
             }
         )
 
         self.assertLayout(
             self.child1.layout,
             {
-                'origin': (14, 12),
+                'origin': (8, 7),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (9, 20, 25, 10)},
-                'absolute': {'content': (21, 34, 37, 24)},
+                'absolute': {'content': (16, 28, 32, 18)},
             }
         )
 
         self.assertLayout(
             self.grandchild1_1.layout,
             {
-                'origin': (24, 21),
+                'origin': (18, 16),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (11, 22, 27, 12)},
-                'absolute': {'content': (32, 46, 48, 36)},
+                'absolute': {'content': (27, 40, 43, 30)},
             }
         )
 
@@ -684,30 +586,30 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (6, 5),
+                'origin': (0, 0),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (7, 18, 23, 8)},
-                'absolute': {'content': (12, 24, 28, 14)},
+                'absolute': {'content': (7, 18, 23, 8)},
             }
         )
 
         self.assertLayout(
             self.child1.layout,
             {
-                'origin': (14, 12),
+                'origin': (8, 7),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (9, 20, 25, 10)},
-                'absolute': {'content': (21, 34, 37, 24)},
+                'absolute': {'content': (16, 28, 32, 18)},
             }
         )
 
         self.assertLayout(
             self.grandchild1_1.layout,
             {
-                'origin': (24, 21),
+                'origin': (18, 16),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (13, 24, 29, 14)},
-                'absolute': {'content': (34, 48, 50, 38)},
+                'absolute': {'content': (29, 42, 45, 32)},
             }
         )
 
@@ -722,30 +624,30 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (6, 5),
+                'origin': (0, 0),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (7, 18, 23, 8)},
-                'absolute': {'content': (12, 24, 28, 14)},
+                'absolute': {'content': (7, 18, 23, 8)},
             }
         )
 
         self.assertLayout(
             self.child1.layout,
             {
-                'origin': (14, 12),
+                'origin': (8, 7),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (15, 26, 31, 16)},
-                'absolute': {'content': (27, 40, 43, 30)},
+                'absolute': {'content': (22, 34, 38, 24)},
             }
         )
 
         self.assertLayout(
             self.grandchild1_1.layout,
             {
-                'origin': (30, 27),
+                'origin': (24, 22),
                 'size': {'content': (10, 16)},
                 'relative': {'content': (13, 24, 29, 14)},
-                'absolute': {'content': (40, 54, 56, 44)},
+                'absolute': {'content': (35, 48, 51, 38)},
             }
         )
 
@@ -753,9 +655,8 @@ class BoxTests(TestCase):
         self.assertDirty(False, True, False, True, True)
 
     def test_margins_and_borders(self):
-        self.maxDiff = None
-        self.node.layout.origin_top = 100
-        self.node.layout.origin_left = 200
+        self.node.layout._origin_top = 100
+        self.node.layout._origin_left = 200
 
         self.node.layout.content_top = 50
         self.node.layout.content_left = 75

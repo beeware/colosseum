@@ -59,7 +59,7 @@ def establishes_inline_formatting_context(node):
                 return False
         return True
     else:
-        return False
+        return True
 
 def establishes_table_formatting_context(node):
     return False  # TODO
@@ -78,6 +78,9 @@ def layout(display, node):
     # 10.1 1
     layout_box(display, node, containing_block, containing_block, font)
 
+    # The margin on the root element must be displayed, move the
+    # default content position so that it is.
+    node.layout.content_top += node.layout.margin_top
 
 class AnonymousBlockBox:
     def __init__(self):
@@ -185,26 +188,35 @@ def layout_box(display, node, containing_block, viewport, font):
             # Section 9.4.1 - Block formatting context
             children = anonymize(node.children)
             offset_top = 0
-            margin = 0
+            margin = None
+
             for child in children:
-                layout_box(display, child, containing_block, viewport, font)
+                layout_box(display, child, node, viewport, font)
+                # If this is the first child, merge the computed margin of
+                # the child with the parent box.
+                # If there *is* no parent box, then the margin is applied as-is.
+                # Otherwise, collapse the bottom margin of the previous element
+                # with the top margin of this element, and offset by the result.
+                if margin is None:
+                    node.layout.margin_top = max(node.layout.margin_top, child.layout.margin_top)
+                else:
+                    offset_top += max(margin, child.layout.margin_top)
 
-                # The top offset of this element is influenced by the
-                # collapsed margin. If this element has a bigger margin
-                # than the previous one, then the margin box is laid out
-                # where it is; if the previous element had a bigger margin,
-                # we need to offset down by the difference.
-                offset_top += max(margin, child.layout.margin_top) - child.layout.margin_top
+                # The child's box is offset from the left by the margin width
+                child.layout.content_left += node.layout.margin_left
 
-                # Set the origin of the child, relative to this node.
-                child.layout.origin_left = 0
-                child.layout.origin_top = offset_top
+                # Set the top of the child, relative to the parent.
+                child.layout.content_top = offset_top
 
                 # Increase the offset by the height of the box,
                 # and record the margin so it can be collapsed with the
                 # next element
                 offset_top += child.layout.border_box_height
                 margin = child.layout.margin_bottom
+
+            # Merge the margin of the last child with
+            # the margin of the last child.
+            node.layout.margin_bottom = max(node.layout.margin_bottom, margin)
 
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
@@ -541,7 +553,7 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
         # elif node.children and node.children[-1] non collapsing with bottom margin:
         if node.children and node.children[-1]:
             last_child = node.children[-1]
-            content_height = last_child.layout.origin_top + last_child.layout.margin_box_height
+            content_height = last_child.layout.border_box_bottom
         # elif node.children and node.children[-1] top margin non collapsing with bottom margin:
         #     content_height = bottom border edge of bottom margin
         else:
@@ -550,7 +562,7 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
         content_height = node.style.height.px(**context)
 
     node.layout.content_height = content_height
-    node.layout.content_top = node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
+    node.layout.content_top = node.layout.border_top_width + node.layout.padding_top
 
 
 def calculate_block_replaced_normal_flow_height(node, context):

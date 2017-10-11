@@ -21,7 +21,12 @@ class Display:
 
 class TestNode:
     def __init__(self, style=None, children=None):
-        self.children = children if children is not None else []
+        self.parent = None
+        self.children = []
+        if children:
+            for child in children:
+                self.children.append(child)
+                child.parent = self
         self.intrinsic = Size(self)
         self.layout = Box(self)
         self.style = style.copy(self) if style else CSS
@@ -46,6 +51,7 @@ def layout_summary(node):
 
 class LayoutTestCase(TestCase):
     def setUp(self):
+        self.maxDiff = None
         self.display = Display(dpi=96, width=640, height=480)
 
     def assertLayout(self, node, layout):
