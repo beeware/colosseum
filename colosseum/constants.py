@@ -35,8 +35,9 @@ class Choices:
         try:
             if value == 'none':
                 value = None
-            if value in self.constants:
-                return value
+            for const in self.constants:
+                if value == const:
+                    return const
         except TypeError:
             pass
 

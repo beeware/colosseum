@@ -243,6 +243,23 @@ class PropertyChoiceTests(TestCase):
                 "Valid values are: <color>, <integer>, <length>, <percentage>, a, b, none"
             )
 
+    def test_string_symbol(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=None)
+
+        obj = MyObject()
+
+        # Set a symbolic value using the string value of the symbol
+        # We can't just use the string directly, though - that would
+        # get optimized by the compiler. So we create a string and
+        # transform it into the value we want.
+        val = 'AUTO'
+        obj.prop = val.lower()
+
+        # Both equality and instance checking should work.
+        self.assertEqual(obj.prop, AUTO)
+        self.assertIs(obj.prop, AUTO)
+
 
 class CssDeclarationTests(TestCase):
     def test_engine(self):

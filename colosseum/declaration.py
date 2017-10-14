@@ -161,7 +161,7 @@ class CSS:
     right = validated_property('right', choices=BOX_OFFSET_CHOICES, initial=AUTO)
 
     # 9.5.1 Positioning the float
-    float_ = validated_property('float_', choices=FLOAT_CHOICES, initial=None)
+    float = validated_property('float', choices=FLOAT_CHOICES, initial=None)
     # 9.5.2 Controlling flow next to floats
     clear = validated_property('clear', choices=CLEAR_CHOICES, initial=None)
 

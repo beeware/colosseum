@@ -42,7 +42,7 @@ def is_inline_element(node):
 
 
 def is_float_positioned_element(node):
-    return node.style.float_ is not None
+    return node.style.float is not None
 
 
 def is_absolute_positioned_element(node):
@@ -175,7 +175,7 @@ def layout_box(display, node, containing_block, viewport, font):
 
     if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
         raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
-    elif node.style.float_ is not None:
+    elif node.style.float is not None:
         raise NotImplementedError("Section 9.5 - Floats")  # pragma: no cover
     else:  # Section 9.4 - Normal flow
         if establishes_inline_formatting_context(node):
