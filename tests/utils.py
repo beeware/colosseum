@@ -45,10 +45,15 @@ def build_document(data):
 
     return node
 
+
 def clean_layout(layout):
     clean = {
-        'position': (round(layout['position'][0]), round(layout['position'][1])),
-        'size': (round(layout['size'][0]), round(layout['size'][1])),
+        'position': (
+            int(round(layout['position'][0])), int(round(layout['position'][1]))
+        ),
+        'size': (
+            int(round(layout['size'][0])), int(round(layout['size'][1]))
+        ),
     }
     if 'children' in layout:
         clean['children'] = [
@@ -56,6 +61,7 @@ def clean_layout(layout):
             for child in layout['children']
         ]
     return clean
+
 
 def layout_summary(node):
     if node.layout:
@@ -85,8 +91,8 @@ class LayoutTestCase(TestCase):
 
 class W3CTestCase(LayoutTestCase):
     @classmethod
-    def find_tests(cls, filename, group):
-        dirname = os.path.dirname(filename)
+    def find_tests(cls, test_filename, group):
+        dirname = os.path.dirname(test_filename)
         data_dir = os.path.join(dirname, 'data')
         ref_dir = os.path.join(dirname, 'ref')
 
@@ -103,24 +109,18 @@ class W3CTestCase(LayoutTestCase):
             not_implemented = set()
 
         # Closure for building test cases for a given input file.
-        def make_test(data_filename):
-            test_name = 'test_' + os.path.splitext(data_filename)[0].replace('-', '_')
+        def make_test(test_dir, filename):
+            css_test_name = os.path.splitext(filename)[0]
+            css_test_module = os.path.basename(os.path.dirname(test_dir))
+            if css_test_module == 'CSS2':
+                css_test_module = 'css21'
+            test_name = 'test_' + css_test_name.replace('-', '_')
 
-            with open(os.path.join(data_dir, data_filename)) as f:
+            with open(os.path.join(data_dir, filename)) as f:
                 input_data = json.load(f)
 
-            # If the file has a reference file, use it;
-            # otherwise it is it's own reference.
-            if input_data['matches']:
-                ref_filename = os.path.splitext(input_data['matches'])[0] + '.json'
-            else:
-                ref_filename = data_filename
-
-            try:
-                with open(os.path.join(ref_dir, ref_filename)) as f:
-                    reference = json.load(f)
-            except IOError:
-                reference = {'error': 'REFERENCE DATA IS MISSING'}
+            with open(os.path.join(ref_dir, filename)) as f:
+                reference = json.load(f)
 
             # The actual test method. Builds a document, lays it out,
             # and checks against the reference rendering.
@@ -132,20 +132,25 @@ class W3CTestCase(LayoutTestCase):
                 self.assertLayout(root, clean_layout(reference))
 
             # Annotate the method with any helper text.
+            doc = []
             if input_data['assert']:
-                if input_data['help']:
-                    test_method.__doc__ = "{}\n\n{}".format(
-                        input_data['assert'],
-                        '\n'.join('See {}'.format(h) for h in input_data['help'])
-                    )
-                else:
-                    test_method.__doc__ = input_data['assert']
+                doc.append(input_data['assert'])
             else:
-                if input_data['help']:
-                    test_method.__doc__ = "Test {}\n\n{}".format(
-                        os.path.splitext(data_filename)[0].replace('-', '_'),
-                        '\n'.join('See {}'.format(h) for h in input_data['help'])
-                    )
+                doc.append('Test ' + os.path.splitext(filename)[0].replace('-', '_'))
+
+            doc.append('')
+            if input_data['help']:
+                doc.append('\n'.join('See {}'.format(h) for h in input_data['help']))
+
+            doc.append('')
+            doc.append(
+                'Test: http://test.csswg.org/harness/test/{}_dev/single/{}/'.format(
+                    css_test_module,
+                    css_test_name
+                )
+            )
+
+            test_method.__doc__ = '\n'.join(doc)
 
             # If the method is on the known not_implemented list,
             # decorate the method.
@@ -157,9 +162,14 @@ class W3CTestCase(LayoutTestCase):
         # Find all the data files, and build a test case for each test group
         # that is represented there.
         tests = {}
-        for data_filename in os.listdir(data_dir):
-            if data_filename.startswith(group):
-                test_name, test_method = make_test(data_filename)
+        for filename in os.listdir(data_dir):
+            if group.endswith('-'):
+                found = '-'.join(filename.split('-')[:-1]) == group[:-1]
+            else:
+                found = filename == group
+            if found:
+
+                test_name, test_method = make_test(dirname, filename)
                 tests[test_name] = test_method
 
         return tests

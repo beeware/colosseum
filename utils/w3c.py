@@ -23,13 +23,9 @@ class Loader(NSObject):
     @objc_method
     def run_(self, info) -> None:
         try:
-            filename = next(self.filenames)
+            filename = os.path.abspath(next(self.filenames))
 
-            with open(filename) as f:
-                payload = f.read()
-
-            # self.webview.set_content(filename, payload)
-            self.webview.url = 'file://' + os.path.abspath(filename)
+            self.webview.url = 'file://' + filename
             print("Inspecting {}...".format(filename))
 
             evaluator = Evaluator.alloc().init()
@@ -55,25 +51,33 @@ class Evaluator(NSObject):
     def run_(self, info) -> None:
         try:
             result = self.webview.evaluate(INSPECT)
+            # print(result)
             result = json.loads(result)
             example = os.path.splitext(os.path.basename(self.filename))[0]
 
             test_dir = os.path.join(self.output, 'web_platform', self.path.replace('-', '_'))
 
-            newdirs = []
-            dirname = test_dir
-            while not os.path.exists(dirname):
-                newdirs.append(dirname)
-                dirname = os.path.dirname(dirname)
+            # If a document has "matches" or "assert" metadata,
+            # it's a test document; otherwise, it's a reference.
+            # We can ignore reference files. They often don't have
+            # the same document structure as the base document,
+            # so they're not helpful for a DOM comparison.
+            if 'matches' in result or 'assert' in result:
+                newdirs = []
+                dirname = test_dir
+                while not os.path.exists(dirname):
+                    newdirs.append(dirname)
+                    dirname = os.path.dirname(dirname)
 
-            newdirs.reverse()
-            for newdir in newdirs:
-                print("Creating directory {}...".format(newdir))
-                os.mkdir(newdir)
-                with open(os.path.join(newdir, '__init__.py'), 'w'):
-                    pass
+                newdirs.reverse()
+                for newdir in newdirs:
+                    print("Creating directory {}...".format(newdir))
+                    os.mkdir(newdir)
+                    with open(os.path.join(newdir, '__init__.py'), 'w'):
+                        pass
 
-            if 'test_case' in result:
+                # Output the test case data
+
                 # If the last part of the filename is of the pattern
                 # -001 or -001a, then the group name drops that part.
                 parts = example.rsplit('-')
@@ -123,7 +127,7 @@ class Evaluator(NSObject):
                             'matches': result.get('matches', None),
                         }, indent=4))
 
-            if 'reference' in result:
+                # Output reference rendering data
                 test_refdir = os.path.join(test_dir, 'ref')
                 # Create data/ref directory
                 try:
@@ -171,7 +175,14 @@ class W3CTestExtractor(toga.App):
         loader.filenames = iter(filenames)
         loader.path = self.path
         loader.output = self.output
-        loader.run(None)
+
+        NSTimer.scheduledTimerWithTimeInterval(
+            0.5,
+            target=loader,
+            selector=SEL('run:'),
+            userInfo=None,
+            repeats=False
+        )
 
         # Show the main window
         self.main_window.show()

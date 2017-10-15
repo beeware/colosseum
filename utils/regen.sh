@@ -48,7 +48,7 @@ python w3c.py ../../../web-platform-tests css-flexbox-1/interactive ../tests
 python w3c.py ../../../web-platform-tests css-flexbox-1/order ../tests
 
 
-python w3c.py ../../../web-platform-tests css-grid-1 ../tests
+# python w3c.py ../../../web-platform-tests css-grid-1 ../tests
 python w3c.py ../../../web-platform-tests css-grid-1/abspos ../tests
 python w3c.py ../../../web-platform-tests css-grid-1/alignment ../tests
 python w3c.py ../../../web-platform-tests css-grid-1/grid-definition ../tests

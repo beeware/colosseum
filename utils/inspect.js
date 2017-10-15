@@ -1,5 +1,4 @@
 function dump_test_case(node) {
-    var i, child
     var style = window.getComputedStyle(node)
     var defaultStyles = {
         // 8. Box model #######################################################
@@ -198,9 +197,8 @@ function dump_test_case(node) {
     // Inspect children as well.
     if (node.childElementCount > 0) {
         result['children'] = []
-        for (i = 0; i < node.childElementCount; i++) {
-            child = node.children[i];
-            result['children'].push(dump_test_case(child))
+        for (var i = 0; i < node.childElementCount; i++) {
+            result['children'].push(dump_test_case(node.children[i]))
         }
     }
 
@@ -208,39 +206,39 @@ function dump_test_case(node) {
 }
 
 function dump_reference(node) {
-    var i, child
     var position = node.getBoundingClientRect()
 
     var result = {
-        'position': [position.top, position.left],
-        'size': [position.width, position.height]
+        'position': [position.left, position.top],
+        'size': [position.width, position.height],
+        'tag': node.tagName
     }
 
     if (node.childElementCount > 0) {
         result['children'] = []
-        for (i = 0; i < node.childElementCount; i++) {
-            child = node.children[i];
-            result['children'].push(dump_reference(child))
+        for (var i = 0; i < node.childElementCount; i++) {
+            result['children'].push(dump_reference(node.children[i]))
         }
     }
     return result
-}
-
-var n, node
-var result = {
-    'help': [],
 }
 
 /*******************************************************
  * Mainline
  *******************************************************/
 
+var result = {
+    'help': [],
+    'test_case': dump_test_case(document.body),
+    'reference': dump_reference(document.body)
+}
+
 // Read the document metadata, looking for key elements:
 //   <link rel='match' href="A test file that shows passing content">
 //   <link ref='help' href="The URL of the relevant sections of the spec">
 //   <meta name='assert' content='The description of what the test asserts'
-for (n = 0; n < document.head.childElementCount; n++) {
-    node = document.head.children[n]
+for (var n = 0; n < document.head.childElementCount; n++) {
+    var node = document.head.children[n]
     if (node.tagName.toLowerCase() === 'link' && node.getAttribute('rel') === 'match') {
         result.matches = node.getAttribute('href')
     } else if (node.tagName.toLowerCase() === 'link' && node.getAttribute('rel') === 'help') {
@@ -248,23 +246,6 @@ for (n = 0; n < document.head.childElementCount; n++) {
     } else if (node.tagName.toLowerCase() === 'meta' && node.getAttribute('name') === 'assert') {
         result.assert = node.getAttribute('content')
     }
-}
-
-if (result.matches) {
-    // If the document has a 'matches' clause, it's a test. The reference
-    //    output is the linked document. It may also have an 'assert'
-    //    clause, but isn't required to.
-    result.test_case = dump_test_case(document.body)
-} else if (result.assert) {
-    // If the document has an 'assert' clause, but no 'matches' clause,
-    //    it's a test that is it's own reference output.
-    result.test_case = dump_test_case(document.body)
-    result.reference = dump_reference(document.body)
-} else {
-    // There's no 'assert' *or* 'matches' clause; this is a
-    // reference file.
-
-    result.reference = dump_reference(document.body)
 }
 
 JSON.stringify(result)
