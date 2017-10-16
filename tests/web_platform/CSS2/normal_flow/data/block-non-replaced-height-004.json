@@ -1,0 +1,73 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "192px",
+                                    "position": "relative",
+                                    "width": "96px",
+                                    "display": "block"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "192px",
+                            "position": "relative",
+                            "width": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "width": "96px",
+                            "position": "absolute",
+                            "height": "192px",
+                            "left": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "192px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "242px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
+    "assert": "The 'height' is the 'height' of the child block box when a block-level non-replaced element is in normal flow and 'overflow' does not compute to 'visible'."
+}

@@ -206,12 +206,67 @@ function dump_test_case(node) {
 }
 
 function dump_reference(node) {
+    var style = window.getComputedStyle(node)
     var position = node.getBoundingClientRect()
-
     var result = {
-        'position': [position.left, position.top],
-        'size': [position.width, position.height],
-        'tag': node.tagName
+        'content': {
+            'position': [
+                position.left + parseInt(style.borderLeftWidth) + parseInt(style.paddingLeft),
+                position.top + parseInt(style.borderTopWidth) + parseInt(style.paddingTop)
+            ],
+            'size': [
+                position.width
+                    - parseInt(style.borderLeftWidth) - parseInt(style.borderRightWidth)
+                    - parseInt(style.paddingLeft) - parseInt(style.paddingRight),
+                position.height
+                    - parseInt(style.borderTopWidth) - parseInt(style.borderBottomWidth)
+                    - parseInt(style.paddingTop) - parseInt(style.paddingBottom)
+            ]
+        },
+        'padding': [
+            parseInt(style.paddingTop),
+            parseInt(style.paddingRight),
+            parseInt(style.paddingBottom),
+            parseInt(style.paddingRight)
+        ],
+        'padding_box': {
+            'position': [
+                position.left + parseInt(style.borderLeftWidth),
+                position.top + parseInt(style.borderTopWidth)
+            ],
+            'size': [
+                position.width - parseInt(style.borderLeftWidth) - parseInt(style.borderRightWidth),
+                position.height - parseInt(style.borderTopWidth) - parseInt(style.borderBottomWidth)
+            ]
+        },
+        'border': [
+            parseInt(style.borderTopWidth),
+            parseInt(style.borderRightWidth),
+            parseInt(style.borderBottomWidth),
+            parseInt(style.borderRightWidth)
+        ],
+        'border_box': {
+            'position': [position.left, position.top],
+            'size': [position.width, position.height]
+        },
+        'margin': [
+            parseInt(style.marginTop),
+            parseInt(style.marginRight),
+            parseInt(style.marginBottom),
+            parseInt(style.marginRight)
+        ],
+        'margin_box': {
+            'position': [
+                position.left - parseInt(style.marginLeft),
+                position.top - parseInt(style.marginTop)
+            ],
+            'size': [
+                position.width + parseInt(style.marginLeft) + parseInt(style.marginRight),
+                position.height + parseInt(style.marginTop) + parseInt(style.marginBottom)
+            ]
+        },
+        'tag': node.tagName,
+        'id': node.id
     }
 
     if (node.childElementCount > 0) {

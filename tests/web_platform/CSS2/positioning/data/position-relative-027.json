@@ -1,0 +1,47 @@
+{
+    "matches": "position-relative-027-ref.xht",
+    "assert": "Relatively positioned element with auto positioning appear as though they were positioned in flow.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "position": "relative"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "480px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "52px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}

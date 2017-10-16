@@ -1,0 +1,77 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "height": "200px",
+                    "float": "left",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "width": "200px",
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "min_height": "200px",
+                    "display": "block"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "clear": "left",
+                    "top": "-200px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "height": "200px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "position": "relative",
+                    "width": "200px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "486px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "max-height-107-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ],
+    "assert": "'min-height' specifies a fixed minimum used height. If the element requires an horizontal scrollbar, then the horizontal scrollbar height should be subtracted from the height of its containing block so that the resulting used height continues to honor the declared min-height."
+}

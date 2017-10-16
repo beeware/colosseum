@@ -1,0 +1,47 @@
+{
+    "assert": "Checks that we correctly handle when a flex item\nbecomes absolutely positioned",
+    "help": [
+        "https://drafts.csswg.org/css-flexbox/#abspos-items"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "left": "0px",
+                            "width": "500px",
+                            "height": "200px",
+                            "right": "0px",
+                            "bottom": "0px",
+                            "display": "block",
+                            "top": "0px",
+                            "position": "absolute"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "200px",
+                    "width": "500px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px",
+            "height": "200px",
+            "margin_right": "8px",
+            "display": "block"
+        }
+    },
+    "matches": null
+}

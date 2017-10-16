@@ -1,0 +1,51 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "114px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "margin_top": "96px",
+                    "display": "block",
+                    "height": "0px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "624px",
+                            "display": "block",
+                            "height": "0px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Glyphs bleed out of the box when 'line-height' is less than the content height and the height of the box is not increased.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "line-height-bleed-001-ref.xht"
+}

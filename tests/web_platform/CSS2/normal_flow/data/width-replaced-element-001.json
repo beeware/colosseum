@@ -1,0 +1,62 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "15px",
+                            "position": "relative",
+                            "width": "15px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "width": "96px",
+                            "position": "absolute",
+                            "height": "96px",
+                            "left": "24px",
+                            "display": "block"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "style": {
+                    "height": "15px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "49px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
+    "assert": "Replaced elements width may be scaled by the user agent when the value of the property is not 'auto'."
+}

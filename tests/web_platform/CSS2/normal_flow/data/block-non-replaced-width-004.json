@@ -1,0 +1,91 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "direction": "rtl",
+                                    "border_left_style": "solid",
+                                    "height": "30px",
+                                    "position": "relative",
+                                    "padding_left": "10px",
+                                    "display": "block",
+                                    "margin_left": "10px",
+                                    "border_right_width": "10px",
+                                    "border_right_style": "solid",
+                                    "border_right_color": "rgb(255, 165, 0)",
+                                    "padding_right": "10px",
+                                    "width": "100px",
+                                    "margin_right": "10px",
+                                    "border_left_width": "10px",
+                                    "border_left_color": "rgb(255, 165, 0)"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "direction": "rtl",
+                            "height": "30px",
+                            "position": "relative",
+                            "width": "100px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "height": "30px",
+                            "position": "absolute",
+                            "width": "150px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "direction": "rtl",
+                    "height": "30px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "64px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "block-non-replaced-width-004-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
+    ],
+    "assert": "When direction is right-to-left, the specified value of 'margin-left' is ignored in an over-constrained situation and the 'margin-left' value is calculated so as to make the equality true."
+}

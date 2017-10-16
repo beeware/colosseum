@@ -1,0 +1,50 @@
+{
+    "matches": "positioning-float-002-ref.xht",
+    "assert": "Floating a box will first lay out the box then shift it to the right.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "height": "20px",
+                            "width": "102.640625px",
+                            "float": "right",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "height": "20px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "54px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme"
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "border_right_color": "rgb(255, 255, 255)",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "border_left_color": "rgb(255, 255, 255)"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {
+                            "padding_bottom": "160px"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "height": "16px",
+                    "width": "160px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "16px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "blocks-018-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/box.html#padding-properties"
+    ],
+    "assert": "Bottom padding on inline elements has no effect on layout."
+}

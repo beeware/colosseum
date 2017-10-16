@@ -1,0 +1,56 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "width": "1000px",
+                            "max_width": "100px",
+                            "display": "none"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
+    "assert": "Max-Width can be declared onto 'display: none' elements but since 'display: none' declaration on an element does not generate a CSS box, then it won't have a rendering effect nor a visual formatting repercussion."
+}

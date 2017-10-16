@@ -1,0 +1,80 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "54px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "54px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "96px",
+                    "position": "relative",
+                    "display": "block",
+                    "height": "0px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "0px",
+                            "position": "absolute",
+                            "width": "96px",
+                            "left": "0px",
+                            "display": "block",
+                            "height": "115.1875px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "position": "absolute",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "width": "96px",
+                            "left": "96px",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "display": "block",
+                            "height": "110px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "top": "0px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "0px",
+                            "position": "absolute",
+                            "width": "96px",
+                            "left": "192px",
+                            "display": "block",
+                            "height": "96px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The 'line-height' property sets a minimum minus one number value.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": null
+}

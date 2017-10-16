@@ -1,0 +1,117 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#direction",
+        "http://www.w3.org/TR/CSS21/generate.html#list-style",
+        "http://www.w3.org/TR/CSS21/text.html#alignment-prop"
+    ],
+    "assert": "direction:rtl should apply to nested ordered lists, putting bullets  on the right and offset leftwards",
+    "test_case": {
+        "style": {
+            "height": "108px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "padding_right": "40px",
+                    "height": "108px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "direction": "rtl",
+                    "width": "584px"
+                },
+                "tag": "ol",
+                "children": [
+                    {
+                        "style": {
+                            "display": "list-item",
+                            "width": "520px",
+                            "padding_left": "32px",
+                            "height": "18px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "display": "list-item",
+                            "width": "520px",
+                            "padding_left": "32px",
+                            "height": "18px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "display": "list-item",
+                            "width": "520px",
+                            "padding_left": "32px",
+                            "height": "72px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "li",
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "54px",
+                                    "display": "block",
+                                    "padding_right": "40px",
+                                    "direction": "rtl",
+                                    "width": "480px"
+                                },
+                                "tag": "ol",
+                                "children": [
+                                    {
+                                        "style": {
+                                            "display": "list-item",
+                                            "width": "416px",
+                                            "padding_left": "32px",
+                                            "height": "18px",
+                                            "direction": "rtl",
+                                            "padding_right": "32px"
+                                        },
+                                        "tag": "li"
+                                    },
+                                    {
+                                        "style": {
+                                            "display": "list-item",
+                                            "width": "416px",
+                                            "padding_left": "32px",
+                                            "height": "18px",
+                                            "direction": "rtl",
+                                            "padding_right": "32px"
+                                        },
+                                        "tag": "li"
+                                    },
+                                    {
+                                        "style": {
+                                            "display": "list-item",
+                                            "width": "416px",
+                                            "padding_left": "32px",
+                                            "height": "18px",
+                                            "direction": "rtl",
+                                            "padding_right": "32px"
+                                        },
+                                        "tag": "li"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": null
+}

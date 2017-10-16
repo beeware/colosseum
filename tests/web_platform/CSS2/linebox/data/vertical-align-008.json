@@ -1,0 +1,94 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "150px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "position": "relative",
+                    "display": "block",
+                    "height": "116px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "position": "relative",
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "width": "624px",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "display": "block",
+                            "height": "116px",
+                            "border_left_color": "rgb(255, 0, 0)"
+                        },
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "border_bottom_color": "rgb(255, 0, 0)",
+                                    "border_top_color": "rgb(255, 0, 0)",
+                                    "border_right_color": "rgb(255, 0, 0)",
+                                    "border_left_color": "rgb(255, 0, 0)"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "0px",
+                            "position": "absolute",
+                            "display": "block",
+                            "height": "20px",
+                            "width": "14.453125px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "96px",
+                            "position": "absolute",
+                            "width": "14.453125px",
+                            "left": "20px",
+                            "display": "block",
+                            "height": "20px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The 'vertical-align' property sets a positive nominal length value in pixels.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "vertical-align-007-ref.xht"
+}

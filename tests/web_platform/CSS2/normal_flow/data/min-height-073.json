@@ -1,0 +1,66 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "position": "relative",
+                            "width": "100px",
+                            "min_height": "100px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "border_top_style": "solid",
+                            "height": "0px",
+                            "position": "absolute",
+                            "border_top_width": "100px",
+                            "width": "100px",
+                            "left": "104px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "100px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "height-072-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
+    "assert": "The 'min-height' property sets a positive nominal length value in 'em' units."
+}

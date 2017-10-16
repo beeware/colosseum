@@ -1,0 +1,86 @@
+{
+    "matches": "relpos-calcs-001-ref.xht",
+    "assert": "For a relatively positioned element in an LTR       containing block, if neither 'left' nor 'right' is 'auto', used value of       'right' is minus the value of 'left'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "120px",
+                    "margin_right": "504px",
+                    "direction": "rtl",
+                    "display": "block",
+                    "margin_bottom": "-120px",
+                    "height": "120px"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "relative",
+                                    "right": "50%",
+                                    "width": "80px",
+                                    "direction": "rtl",
+                                    "display": "block",
+                                    "height": "120px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "right": "50%",
+                            "width": "80px",
+                            "direction": "rtl",
+                            "display": "block",
+                            "left": "50%",
+                            "unicode_bidi": "embed",
+                            "height": "120px"
+                        }
+                    }
+                ],
+                "style": {
+                    "height": "120px",
+                    "width": "80px",
+                    "margin_right": "544px",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "154px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}

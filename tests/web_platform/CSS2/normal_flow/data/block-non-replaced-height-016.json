@@ -1,0 +1,73 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "top": "96px",
+                                    "position": "relative",
+                                    "width": "96px",
+                                    "height": "96px",
+                                    "display": "block"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "96px",
+                            "width": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "width": "96px",
+                            "position": "absolute",
+                            "height": "96px",
+                            "left": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "146px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
+    "assert": "A relative positioned child elements' offset is not considered when sizing the 'height' of a block-level non-replaced element is in normal flow."
+}

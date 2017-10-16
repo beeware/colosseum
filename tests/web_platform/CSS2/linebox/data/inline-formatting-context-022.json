@@ -1,0 +1,75 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "158px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "margin_top": "40px",
+                    "width": "130px",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "display": "block",
+                    "height": "100px",
+                    "border_left_color": "rgb(0, 0, 255)"
+                },
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_left_style": "solid",
+                            "padding_top": "20px",
+                            "padding_left": "20px",
+                            "border_right_width": "10px",
+                            "border_top_style": "solid",
+                            "border_right_style": "solid",
+                            "border_left_width": "10px",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "margin_top": "20px",
+                            "margin_bottom": "20px",
+                            "border_bottom_width": "10px",
+                            "padding_right": "20px",
+                            "padding_bottom": "20px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "10px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Margins, borders and padding have no visual effect when inline boxes are split.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "matches": "inline-formatting-context-022-ref.xht"
+}

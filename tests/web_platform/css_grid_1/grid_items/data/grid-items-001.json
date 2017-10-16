@@ -1,0 +1,131 @@
+{
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-items"
+    ],
+    "assert": "Checks that grid container children become grid items, and text that is directly contained inside the grid is wrapped in an anonymous grid item.",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "height": "134px",
+            "display": "block",
+            "margin_right": "8px"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "width": "624px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "tag": "STRONG",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "100px",
+                    "height": "100px",
+                    "z_index": "-1",
+                    "display": "block",
+                    "position": "absolute"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "width": "624px",
+                    "height": "50px",
+                    "display": "grid",
+                    "border_top_color": "rgb(0, 128, 0)"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "width": "13.90625px",
+                            "height": "25px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "width": "13.90625px",
+                            "height": "25px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "min_width": "auto"
+                        }
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "width": "624px",
+                    "height": "50px",
+                    "display": "grid",
+                    "border_top_color": "rgb(0, 128, 0)"
+                },
+                "children": [
+                    {
+                        "tag": "SPAN",
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "width": "30.546875px",
+                            "height": "25px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "SPAN",
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "width": "30.546875px",
+                            "height": "25px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "min_width": "auto"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "matches": "absolute-non-replaced-width-002-ref.xht",
+    "assert": "When 'right' and 'width' are 'auto' and 'left' is not 'auto', then the width is shrink-to-fit and then solve for 'right'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    },
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "72.21875px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "height": "100px",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "left": "100px",
+                            "border_bottom_color": "rgb(0, 0, 255)"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "200px",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "200px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "258px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ]
+}

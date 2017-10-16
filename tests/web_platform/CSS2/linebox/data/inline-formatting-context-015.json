@@ -1,0 +1,70 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "88px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "36px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "200px",
+                    "display": "block",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "float": "left",
+                            "border_right_width": "5px",
+                            "border_left_style": "solid",
+                            "border_right_style": "solid",
+                            "height": "20px",
+                            "border_left_width": "5px",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_top_width": "5px",
+                            "width": "100px",
+                            "border_bottom_width": "5px",
+                            "border_top_style": "solid",
+                            "border_bottom_style": "solid",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "display": "block",
+                            "border_left_color": "rgb(0, 0, 255)"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "200px",
+                            "display": "block",
+                            "height": "36px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Line boxes adjust for floated elements.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "matches": "inline-formatting-context-015-ref.xht"
+}

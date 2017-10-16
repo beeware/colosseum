@@ -1,0 +1,63 @@
+{
+    "test_case": {
+        "style": {
+            "display": "block",
+            "width": "520px",
+            "height": "10000px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "display": "none"
+                },
+                "tag": "script"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "width": "100px",
+                    "height": "100px",
+                    "top": "0px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "right": "0px",
+                    "width": "100px",
+                    "height": "100px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "width": "100px",
+                    "height": "100px",
+                    "bottom": "0px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "left": "0px",
+                    "width": "100px",
+                    "height": "100px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "assert": "If there is no such ancestor, the containing block is the initial containing block.",
+    "matches": "abspos-containing-block-initial-001-ref.xht"
+}

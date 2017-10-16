@@ -1,0 +1,77 @@
+{
+    "matches": "ref-filled-green-100px-square-image.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
+    ],
+    "assert": "Checks that minimum size for grid items is the specified size for height (regardless the content size) and the transferred size for width of the image (even when content size is smaller).",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "height": "44px",
+            "display": "block",
+            "margin_right": "8px"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "width": "624px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "tag": "STRONG",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "100px",
+                    "height": "100px",
+                    "z_index": "-1",
+                    "display": "block",
+                    "position": "absolute"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "10px",
+                    "height": "10px",
+                    "display": "grid"
+                },
+                "children": [
+                    {
+                        "tag": "IMG",
+                        "style": {
+                            "width": "100px",
+                            "height": "50px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "IMG",
+                        "style": {
+                            "width": "100px",
+                            "height": "50px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

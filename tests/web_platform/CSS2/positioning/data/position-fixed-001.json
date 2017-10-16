@@ -1,0 +1,67 @@
+{
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "Fixed positioned elements do not impact later siblings.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "fixed",
+                            "height": "100px",
+                            "width": "100px",
+                            "z_index": "0",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "624px",
+                    "height": "100px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "134px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ]
+}

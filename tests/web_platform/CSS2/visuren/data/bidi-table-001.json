@@ -1,0 +1,191 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/tables.html#table-layout",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ],
+    "assert": "direction:rtl on table should reverse order of table cells",
+    "test_case": {
+        "style": {
+            "height": "90px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "table",
+                    "width": "150px",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "margin_bottom": "16px",
+                    "height": "20px",
+                    "direction": "rtl",
+                    "border_left_color": "rgb(128, 128, 128)"
+                },
+                "tag": "table",
+                "children": [
+                    {
+                        "style": {
+                            "display": "table-row",
+                            "width": "150px",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "height": "20px",
+                            "direction": "rtl",
+                            "border_left_color": "rgb(128, 128, 128)"
+                        },
+                        "tag": "tr",
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_right_color": "rgb(0, 0, 128)",
+                                    "padding_left": "1px",
+                                    "padding_right": "1px",
+                                    "border_left_color": "rgb(0, 0, 128)",
+                                    "padding_top": "1px",
+                                    "padding_bottom": "1px",
+                                    "border_bottom_color": "rgb(0, 0, 128)",
+                                    "height": "18px",
+                                    "direction": "rtl",
+                                    "border_top_color": "rgb(0, 0, 128)"
+                                },
+                                "tag": "td"
+                            },
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_right_color": "rgb(255, 0, 255)",
+                                    "padding_left": "1px",
+                                    "padding_right": "1px",
+                                    "border_left_color": "rgb(255, 0, 255)",
+                                    "padding_top": "1px",
+                                    "padding_bottom": "1px",
+                                    "border_bottom_color": "rgb(255, 0, 255)",
+                                    "height": "18px",
+                                    "direction": "rtl",
+                                    "border_top_color": "rgb(255, 0, 255)"
+                                },
+                                "tag": "td"
+                            },
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_right_color": "rgb(0, 255, 255)",
+                                    "padding_left": "1px",
+                                    "padding_right": "1px",
+                                    "border_left_color": "rgb(0, 255, 255)",
+                                    "padding_top": "1px",
+                                    "padding_bottom": "1px",
+                                    "border_bottom_color": "rgb(0, 255, 255)",
+                                    "height": "18px",
+                                    "direction": "rtl",
+                                    "border_top_color": "rgb(0, 255, 255)"
+                                },
+                                "tag": "td"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "display": "table",
+                    "width": "150px",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "margin_bottom": "16px",
+                    "height": "20px",
+                    "border_left_color": "rgb(128, 128, 128)"
+                },
+                "tag": "table",
+                "children": [
+                    {
+                        "style": {
+                            "display": "table-row",
+                            "width": "150px",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "height": "20px",
+                            "border_left_color": "rgb(128, 128, 128)"
+                        },
+                        "tag": "tr",
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(0, 255, 255)",
+                                    "border_top_color": "rgb(0, 255, 255)",
+                                    "padding_top": "1px",
+                                    "border_right_color": "rgb(0, 255, 255)",
+                                    "padding_bottom": "1px",
+                                    "padding_left": "1px",
+                                    "border_left_color": "rgb(0, 255, 255)",
+                                    "height": "18px",
+                                    "padding_right": "1px"
+                                },
+                                "tag": "td"
+                            },
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(255, 0, 255)",
+                                    "border_top_color": "rgb(255, 0, 255)",
+                                    "padding_top": "1px",
+                                    "border_right_color": "rgb(255, 0, 255)",
+                                    "padding_bottom": "1px",
+                                    "padding_left": "1px",
+                                    "border_left_color": "rgb(255, 0, 255)",
+                                    "height": "18px",
+                                    "padding_right": "1px"
+                                },
+                                "tag": "td"
+                            },
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(0, 0, 128)",
+                                    "border_top_color": "rgb(0, 0, 128)",
+                                    "padding_top": "1px",
+                                    "border_right_color": "rgb(0, 0, 128)",
+                                    "padding_bottom": "1px",
+                                    "padding_left": "1px",
+                                    "border_left_color": "rgb(0, 0, 128)",
+                                    "height": "18px",
+                                    "padding_right": "1px"
+                                },
+                                "tag": "td"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": null
+}

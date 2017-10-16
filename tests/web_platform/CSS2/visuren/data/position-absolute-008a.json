@@ -1,0 +1,65 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo"
+    ],
+    "assert": "Float is computed to 'none' when 'position: absolute' is specified.",
+    "test_case": {
+        "style": {
+            "height": "134px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p",
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "position": "relative",
+                    "width": "624px",
+                    "height": "100px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "position": "absolute",
+                            "width": "100px",
+                            "height": "100px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "width": "100px",
+                            "height": "100px"
+                        },
+                        "tag": "div"
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

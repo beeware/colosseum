@@ -1,0 +1,71 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "200px",
+                    "position": "absolute",
+                    "width": "200px",
+                    "display": "block"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "max_width": "100px",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "height": "64px",
+                    "float": "left",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "width": "100px",
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "70px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "max-width-105-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#floats",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
+    "assert": "'max-width' specifies a fixed maximum used width. If the used width is greater than max-width, then the computed value of max-width is used as the computed value for width. A floated box should not become wider than its declared max-width."
+}

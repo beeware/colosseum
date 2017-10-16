@@ -1,0 +1,73 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "300px",
+                                    "width": "600px"
+                                },
+                                "tag": "svg:rect"
+                            }
+                        ],
+                        "style": {
+                            "height": "300px",
+                            "width": "300px"
+                        },
+                        "tag": "svg:svg"
+                    },
+                    {
+                        "style": {
+                            "bottom": "300px",
+                            "height": "300px",
+                            "position": "relative",
+                            "width": "300px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "300px",
+                    "width": "600px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "334px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../positioning/absolute-replaced-width-003c-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
+    ],
+    "assert": "If an inline-block replaced element (like the svg element in this test) has no intrinsic width and no intrinsic ratio, then the used value of 'width' becomes 300px."
+}

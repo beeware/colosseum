@@ -1,0 +1,68 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "0px",
+                                    "width": "96px",
+                                    "display": "block"
+                                },
+                                "tag": "span"
+                            },
+                            {
+                                "style": {
+                                    "height": "0px",
+                                    "width": "96px",
+                                    "display": "block"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {
+                            "height": "96px",
+                            "width": "96px",
+                            "display": "inline-block"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "height": "100px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-black-96px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
+    "assert": "The 'height' property applies to elements with 'display' set to 'inline-block'."
+}

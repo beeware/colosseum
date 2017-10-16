@@ -1,0 +1,49 @@
+{
+    "matches": "abspos-containing-block-001-ref.xht",
+    "assert": null,
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "absolute",
+                    "height": "480px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "bottom": "0px",
+                    "left": "0px",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "right": "0px",
+                    "width": "640px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "display": "block",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "top": "0px"
+                }
+            }
+        ],
+        "style": {
+            "width": "424px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ]
+}

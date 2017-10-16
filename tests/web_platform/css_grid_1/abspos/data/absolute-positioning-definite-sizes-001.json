@@ -1,0 +1,74 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "height": "0px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "200px",
+                            "height": "50px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "200px",
+                            "height": "150px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "border_right_color": "rgb(204, 204, 204)",
+                    "left": "50px",
+                    "border_top_width": "7px",
+                    "border_bottom_color": "rgb(204, 204, 204)",
+                    "border_top_style": "solid",
+                    "border_right_style": "solid",
+                    "border_left_color": "rgb(204, 204, 204)",
+                    "height": "200px",
+                    "border_left_width": "7px",
+                    "border_left_style": "solid",
+                    "border_right_width": "7px",
+                    "border_bottom_width": "7px",
+                    "display": "grid",
+                    "border_top_color": "rgb(204, 204, 204)",
+                    "border_bottom_style": "solid",
+                    "position": "absolute",
+                    "width": "200px",
+                    "top": "50px"
+                },
+                "tag": "DIV"
+            }
+        ],
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "width": "624px",
+            "height": "0px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "Items should extend to fill the width of the absolutely positioned grid container.",
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
+}

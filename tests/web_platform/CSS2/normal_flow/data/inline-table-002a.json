@@ -1,0 +1,52 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "18px",
+                                    "width": "23.109375px",
+                                    "display": "block"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {
+                            "height": "36px",
+                            "width": "23.109375px",
+                            "display": "inline-table"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "36px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "inline-table-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/tables.html#table-display",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The baseline of an 'inline-table' is the baseline of the first row of the table."
+}

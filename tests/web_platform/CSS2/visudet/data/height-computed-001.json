@@ -1,0 +1,71 @@
+{
+    "assert": "If the resulting height is smaller than 'min-height', the rules above are applied again, but this time using the value of 'min-height' as the computed value for 'height'. Note: These steps do not affect the real computed value of 'height'.",
+    "matches": "height-computed-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS22/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS22/changes.html#s.10.7"
+    ],
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "height": "188px",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_top": "14px",
+                    "height": "34px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "14px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "margin_top": "14px",
+                    "height": "140px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "14px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "140px",
+                            "display": "inline-block",
+                            "min_height": "140px",
+                            "width": "140px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "70px",
+                                    "display": "inline-block",
+                                    "width": "70px"
+                                },
+                                "tag": "span"
+                            },
+                            {
+                                "style": {
+                                    "height": "70px",
+                                    "display": "inline-block",
+                                    "width": "70px"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "tag": "span"
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
+        "tag": "body"
+    }
+}

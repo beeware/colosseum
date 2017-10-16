@@ -1,0 +1,69 @@
+{
+    "matches": "absolute-non-replaced-max-height-007-ref.xht",
+    "assert": "The height is based on the overall height of the content, 'margin-top', 'auto' is set to '0' and solve for 'top', when 'top' and 'height' are both 'auto' and 'bottom' is not 'auto'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "100px",
+                            "height": "50px",
+                            "display": "block",
+                            "top": "50px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "50px",
+                            "display": "block",
+                            "bottom": "300px",
+                            "height": "50px",
+                            "max_height": "50px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "100px",
+                    "height": "400px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "434px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ]
+}

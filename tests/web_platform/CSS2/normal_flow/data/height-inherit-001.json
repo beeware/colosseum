@@ -1,0 +1,73 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "style": {
+                                            "height": "100px",
+                                            "width": "100px",
+                                            "display": "block"
+                                        },
+                                        "tag": "span"
+                                    }
+                                ],
+                                "style": {},
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {
+                            "height": "100px",
+                            "width": "100px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
+        "http://www.w3.org/TR/css-cascade-3/#inherit",
+        "http://www.w3.org/TR/css-cascade-4/#inherit"
+    ],
+    "assert": "The computed height is inherited, even if     the 'height' property does not apply."
+}

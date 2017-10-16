@@ -1,0 +1,62 @@
+{
+    "matches": "absolute-replaced-height-001-ref.xht",
+    "assert": "If the height, top, bottom and vertical margins of an absolute positioned inline replaced element are all 'auto', then its use value is determined for inline replaced element, its 'top' is given by its static position and both 'margin-top' and 'margin-bottom' used values are '0'. In this test, the 'height' and 'width' of the inline replaced element are 'auto' and the element also has an intrinsic height, so the intrinsic height and the intrinsic width become the used values.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "width": "15px",
+                            "height": "15px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "width": "96px",
+                    "height": "15px",
+                    "border_top_width": "3px",
+                    "border_bottom_style": "solid",
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "border_bottom_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "55px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ]
+}

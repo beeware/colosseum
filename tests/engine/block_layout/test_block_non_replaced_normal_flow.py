@@ -13,7 +13,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (640, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (640, 10)},
+                'padding_box': {'position': (0, 0), 'size': (640, 10)},
+                'content': {'position': (0, 0), 'size': (640, 10)},
+            }
+        )
 
     def test_left_margin(self):
         root = TestNode(
@@ -22,7 +30,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (640, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (640, 10)},
+                'padding_box': {'position': (0, 0), 'size': (640, 10)},
+                'content': {'position': (0, 0), 'size': (640, 10)},
+            }
+        )
 
     def test_right_margin(self):
         root = TestNode(
@@ -31,7 +47,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (640, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (640, 10)},
+                'padding_box': {'position': (0, 0), 'size': (640, 10)},
+                'content': {'position': (0, 0), 'size': (640, 10)},
+            }
+        )
 
     def test_left_and_right_margin(self):
         root = TestNode(
@@ -40,7 +64,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (640, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (640, 10)},
+                'padding_box': {'position': (0, 0), 'size': (640, 10)},
+                'content': {'position': (0, 0), 'size': (640, 10)},
+            }
+        )
 
     def test_width(self):
         root = TestNode(
@@ -49,7 +81,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (50, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (50, 10)},
+                'padding_box': {'position': (0, 0), 'size': (50, 10)},
+                'content': {'position': (0, 0), 'size': (50, 10)},
+            }
+        )
 
     def test_width_auto_left_margin(self):
         root = TestNode(
@@ -58,7 +98,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (590, 0), 'size': (50, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (590, 0), 'size': (50, 10)},
+                'padding_box': {'position': (590, 0), 'size': (50, 10)},
+                'content': {'position': (590, 0), 'size': (50, 10)},
+            }
+        )
 
     def test_width_auto_right_margin(self):
         root = TestNode(
@@ -67,7 +115,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (50, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (50, 10)},
+                'padding_box': {'position': (0, 0), 'size': (50, 10)},
+                'content': {'position': (0, 0), 'size': (50, 10)},
+            }
+        )
 
     def test_width_auto_left_and_right_margin(self):
         root = TestNode(
@@ -76,7 +132,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (295, 0), 'size': (50, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (295, 0), 'size': (50, 10)},
+                'padding_box': {'position': (295, 0), 'size': (50, 10)},
+                'content': {'position': (295, 0), 'size': (50, 10)},
+            }
+        )
 
     def test_width_fixed_left_and_right_margin(self):
         root = TestNode(
@@ -85,7 +149,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (30, 0), 'size': (50, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (30, 0), 'size': (50, 10)},
+                'padding_box': {'position': (30, 0), 'size': (50, 10)},
+                'content': {'position': (30, 0), 'size': (50, 10)},
+            }
+        )
 
     def test_width_fixed_left_and_right_margin_rtl(self):
         root = TestNode(
@@ -97,7 +169,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (550, 0), 'size': (50, 10)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (550, 0), 'size': (50, 10)},
+                'padding_box': {'position': (550, 0), 'size': (50, 10)},
+                'content': {'position': (550, 0), 'size': (50, 10)},
+            }
+        )
 
     def test_width_exceeds_parent(self):
         root = TestNode(
@@ -110,7 +190,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (180, 180), 'size': (500, 20)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 380)},
+                'border_box': {'position': (70, 70), 'size': (720, 240)},
+                'padding_box': {'position': (130, 130), 'size': (600, 120)},
+                'content': {'position': (180, 180), 'size': (500, 20)},
+            }
+        )
 
     def test_width_exceeds_parent_auto_left_and_right_margins(self):
         root = TestNode(
@@ -123,7 +211,15 @@ class WidthTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (110, 110), 'size': (500, 20)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 240)},
+                'border_box': {'position': (0, 0), 'size': (720, 240)},
+                'padding_box': {'position': (60, 60), 'size': (600, 120)},
+                'content': {'position': (110, 110), 'size': (500, 20)},
+            }
+        )
 
 
 class HeightTests(LayoutTestCase):
@@ -134,7 +230,15 @@ class HeightTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (10, 0)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 0)},
+                'border_box': {'position': (0, 0), 'size': (10, 0)},
+                'padding_box': {'position': (0, 0), 'size': (10, 0)},
+                'content': {'position': (0, 0), 'size': (10, 0)},
+            }
+        )
 
     def test_height(self):
         root = TestNode(
@@ -143,7 +247,15 @@ class HeightTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (10, 50)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 50)},
+                'border_box': {'position': (0, 0), 'size': (10, 50)},
+                'padding_box': {'position': (0, 0), 'size': (10, 50)},
+                'content': {'position': (0, 0), 'size': (10, 50)},
+            }
+        )
 
     def test_height_auto_top_margin(self):
         root = TestNode(
@@ -152,7 +264,15 @@ class HeightTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (10, 50)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 50)},
+                'border_box': {'position': (0, 0), 'size': (10, 50)},
+                'padding_box': {'position': (0, 0), 'size': (10, 50)},
+                'content': {'position': (0, 0), 'size': (10, 50)},
+            }
+        )
 
     def test_height_auto_bottom_margin(self):
         root = TestNode(
@@ -161,4 +281,12 @@ class HeightTests(LayoutTestCase):
 
         layout(self.display, root)
 
-        self.assertLayout(root, {'position': (0, 0), 'size': (10, 50)})
+        self.assertLayout(
+            root,
+            {
+                'margin_box': {'position': (0, 0), 'size': (640, 50)},
+                'border_box': {'position': (0, 0), 'size': (10, 50)},
+                'padding_box': {'position': (0, 0), 'size': (10, 50)},
+                'content': {'position': (0, 0), 'size': (10, 50)},
+            }
+        )

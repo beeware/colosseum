@@ -1,0 +1,57 @@
+{
+    "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes",
+    "help": [
+        "https://drafts.csswg.org/css-flexbox/#definite-sizes"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "800px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "100px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "800px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "500px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "left": "0px",
+                    "width": "600px",
+                    "height": "800px",
+                    "right": "0px",
+                    "bottom": "0px",
+                    "display": "flex",
+                    "top": "0px",
+                    "position": "absolute"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "width": "600px",
+            "margin_left": "8px",
+            "height": "800px",
+            "margin_right": "8px",
+            "position": "relative",
+            "display": "block"
+        }
+    },
+    "matches": "percentage-widths-001-ref.html"
+}

@@ -1,0 +1,68 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "style": {
+                                            "height": "96px",
+                                            "width": "96px"
+                                        },
+                                        "tag": "img"
+                                    }
+                                ],
+                                "style": {
+                                    "height": "100px",
+                                    "width": "624px",
+                                    "display": "block"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "100px",
+                            "width": "624px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "34px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-black-96px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
+    "assert": "This test checks that an height percentage is calculated with respect to the height of the generated box's containing block only if and only when such containing block's height is specified explicitly (i.e., it depends on content height; its specified height is not 'auto'). In this test, the div#parent has an 'auto' height; therefore the height percentage specified on div#child is treated as 'auto' and so the image should be rendered (entirely visible) inside that div#child. Note that div#grandparent's initial overflow value is 'visible'."
+}

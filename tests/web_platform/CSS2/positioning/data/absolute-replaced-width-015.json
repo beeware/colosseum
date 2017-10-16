@@ -1,0 +1,71 @@
+{
+    "matches": "absolute-replaced-width-015-ref.xht",
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on absolutely positioned inline replaced element becomes a used value of '0'. If both 'left' and 'right' have the value 'auto' and if the 'direction' property of the element establishing the static-position containing block is 'rtl', then set 'right' to the static position. The intrinsic width is also used if 'height' and 'width' are 'auto'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "height": "15px",
+                            "width": "15px",
+                            "direction": "rtl",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "margin_top": "15px",
+                            "height": "15px",
+                            "width": "15px",
+                            "direction": "rtl",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "192px",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "192px",
+                    "border_right_style": "solid",
+                    "direction": "rtl",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "250px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ]
+}

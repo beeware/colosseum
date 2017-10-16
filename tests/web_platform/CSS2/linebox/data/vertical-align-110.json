@@ -1,0 +1,79 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "54px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "position": "relative",
+                    "display": "block",
+                    "height": "20px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "624px",
+                            "position": "relative",
+                            "display": "block",
+                            "height": "20px"
+                        },
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "border_bottom_color": "rgb(255, 0, 0)",
+                                    "border_top_color": "rgb(255, 0, 0)",
+                                    "border_right_color": "rgb(255, 0, 0)",
+                                    "border_left_color": "rgb(255, 0, 0)"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "0px",
+                            "position": "absolute",
+                            "display": "block",
+                            "height": "20px",
+                            "width": "14.453125px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The 'vertical-align' property sets a zero length value  with no units.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "vertical-align-004-ref.xht"
+}

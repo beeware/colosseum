@@ -1,0 +1,62 @@
+{
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "height": "18px",
+                    "float": "left",
+                    "width": "200px",
+                    "display": "block"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "margin_bottom": "32px",
+                            "border_left_style": "solid",
+                            "border_top_color": "rgba(0, 0, 0, 0)",
+                            "width": "304px",
+                            "border_bottom_color": "rgba(0, 0, 0, 0)",
+                            "border_top_style": "solid",
+                            "height": "18px",
+                            "border_top_width": "2px",
+                            "border_bottom_width": "2px",
+                            "min_width": "auto",
+                            "margin_left": "32px",
+                            "min_height": "auto",
+                            "border_bottom_style": "solid",
+                            "border_right_style": "solid",
+                            "border_left_width": "2px",
+                            "border_right_color": "rgba(0, 0, 0, 0)",
+                            "display": "block",
+                            "margin_right": "32px",
+                            "border_right_width": "2px",
+                            "border_left_color": "rgba(0, 0, 0, 0)"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "margin_left": "-200px",
+                    "height": "54px",
+                    "width": "200px",
+                    "display": "flex"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "height": "54px",
+            "width": "640px",
+            "display": "block"
+        }
+    },
+    "matches": "flexbox_flex-formatting-interop-ref.html"
+}

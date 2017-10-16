@@ -1,0 +1,49 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS22/visuren.html#inline-formatting",
+        "http://www.w3.org/TR/CSS22/changes.html#s.9.4.2"
+    ],
+    "assert": "An inline formatting context is established by a block container box that contains no block-level boxes. In an inline formatting context, boxes are laid out horizontally, one after the other, beginning at the top of a containing block.",
+    "test_case": {
+        "style": {
+            "height": "18px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "width": "624px",
+                    "min_width": "400px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "tag": "div"
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": "inline-formatting-context-001-ref.xht"
+}

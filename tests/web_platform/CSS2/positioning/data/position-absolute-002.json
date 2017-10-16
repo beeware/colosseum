@@ -1,0 +1,62 @@
+{
+    "matches": "position-absolute-002-ref.xht",
+    "assert": "Absolutely positioned elements can be sized and positioned using 'top', 'right', 'bottom' and 'left' properties.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "right": "0px",
+                            "width": "96px",
+                            "display": "block",
+                            "bottom": "0px",
+                            "left": "96px",
+                            "height": "96px",
+                            "top": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "192px",
+                    "height": "192px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "226px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "matches": null,
+    "assert": "Fixed positioned elements can be sized and positioned using 'top', 'right', 'bottom' and 'left' properties.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "fixed",
+                            "right": "0px",
+                            "width": "544px",
+                            "display": "block",
+                            "bottom": "0px",
+                            "left": "96px",
+                            "z_index": "0",
+                            "height": "384px",
+                            "top": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "192px",
+                    "height": "192px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "244px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ]
+}

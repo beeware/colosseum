@@ -1,0 +1,66 @@
+{
+    "matches": "abspos-028-ref.xht",
+    "assert": "The static position is calculated as if clear     had been none.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "height": "64px",
+                            "width": "16px",
+                            "float": "left",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "96px",
+                            "height": "16px",
+                            "display": "block",
+                            "clear": "both"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "96px",
+                    "height": "16px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "50px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ]
+}

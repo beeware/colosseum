@@ -1,0 +1,66 @@
+{
+    "matches": "left-offset-percentage-001-ref.xht",
+    "assert": "Percentage offset values for the 'left' property are based off the width of the containing block.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "50px",
+                            "display": "block",
+                            "left": "50%",
+                            "height": "50px",
+                            "top": "0px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "150px",
+                    "padding_right": "25px",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "padding_bottom": "25px",
+                    "width": "50px",
+                    "border_right_style": "solid",
+                    "border_top_width": "3px",
+                    "padding_left": "25px",
+                    "border_left_style": "solid",
+                    "border_left_width": "3px",
+                    "padding_top": "25px",
+                    "border_bottom_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "240px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

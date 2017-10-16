@@ -1,0 +1,60 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ],
+    "assert": "bidi-override should be applied when specified on list item",
+    "test_case": {
+        "style": {
+            "height": "52px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "width": "560px",
+                    "margin_left": "32px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "margin_right": "32px"
+                },
+                "tag": "ul",
+                "children": [
+                    {
+                        "style": {
+                            "height": "18px",
+                            "display": "list-item",
+                            "unicode_bidi": "bidi-override",
+                            "width": "496px",
+                            "margin_left": "32px",
+                            "margin_bottom": "16px",
+                            "margin_top": "16px",
+                            "direction": "rtl",
+                            "margin_right": "32px"
+                        },
+                        "tag": "li"
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": null
+}

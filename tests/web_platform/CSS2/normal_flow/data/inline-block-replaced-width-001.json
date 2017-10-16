@@ -1,0 +1,65 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "15px",
+                            "width": "15px",
+                            "display": "inline-block"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "15px",
+                            "width": "15px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "192px",
+                    "border_top_style": "solid",
+                    "border_right_width": "3px",
+                    "border_right_style": "solid",
+                    "border_top_width": "3px",
+                    "width": "192px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_left_width": "3px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "250px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "inline-block-replaced-width-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
+    ],
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on inline-block replaced elements becomes a used value of '0'. The intrinsic width is also used if 'height' and 'width' are 'auto'."
+}

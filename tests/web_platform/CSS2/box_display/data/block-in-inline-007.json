@@ -1,0 +1,155 @@
+{
+    "matches": "block-in-inline-007-ref.xht",
+    "assert": "When an inline box contains block boxes,     the inline box is broken around the blocks.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "235px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "table",
+                "style": {
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "display": "table",
+                    "height": "201px",
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "width": "25.625px"
+                },
+                "children": [
+                    {
+                        "tag": "tr",
+                        "style": {
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "display": "table-row",
+                            "height": "197px",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "width": "25.625px"
+                        },
+                        "children": [
+                            {
+                                "tag": "td",
+                                "style": {
+                                    "padding_top": "1px",
+                                    "padding_right": "1px",
+                                    "display": "table-cell",
+                                    "padding_left": "1px",
+                                    "padding_bottom": "1px",
+                                    "height": "195px",
+                                    "width": "7.8125px"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "div",
+                                        "style": {
+                                            "height": "169px",
+                                            "margin_top": "13px",
+                                            "display": "block",
+                                            "margin_bottom": "13px",
+                                            "width": "7.8125px"
+                                        },
+                                        "children": [
+                                            {
+                                                "tag": "div",
+                                                "style": {},
+                                                "children": [
+                                                    {
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "height": "13px",
+                                                            "margin_top": "13px",
+                                                            "display": "block",
+                                                            "margin_bottom": "13px",
+                                                            "width": "7.8125px"
+                                                        }
+                                                    },
+                                                    {
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "height": "13px",
+                                                            "margin_top": "13px",
+                                                            "display": "block",
+                                                            "margin_bottom": "13px",
+                                                            "width": "7.8125px"
+                                                        }
+                                                    },
+                                                    {
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "height": "13px",
+                                                            "margin_top": "13px",
+                                                            "display": "block",
+                                                            "margin_bottom": "13px",
+                                                            "width": "7.8125px"
+                                                        }
+                                                    },
+                                                    {
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "height": "13px",
+                                                            "margin_top": "13px",
+                                                            "display": "block",
+                                                            "margin_bottom": "13px",
+                                                            "width": "7.8125px"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "td",
+                                "style": {
+                                    "padding_top": "1px",
+                                    "padding_right": "1px",
+                                    "display": "table-cell",
+                                    "padding_left": "1px",
+                                    "padding_bottom": "1px",
+                                    "height": "195px",
+                                    "width": "7.8125px"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "pre",
+                                        "style": {
+                                            "height": "169px",
+                                            "margin_top": "13px",
+                                            "display": "block",
+                                            "margin_bottom": "13px",
+                                            "width": "7.8125px"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ]
+}

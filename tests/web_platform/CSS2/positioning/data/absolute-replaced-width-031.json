@@ -1,0 +1,83 @@
+{
+    "matches": "absolute-replaced-width-024-ref.xht",
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on absolutely positioned inline replaced element becomes a used value of '0'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "svg:svg",
+                        "children": [
+                            {
+                                "tag": "svg:rect",
+                                "style": {
+                                    "width": "200px",
+                                    "direction": "rtl",
+                                    "height": "100px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "absolute",
+                            "width": "300px",
+                            "direction": "rtl",
+                            "display": "block",
+                            "left": "88px",
+                            "height": "100px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "200px",
+                            "direction": "rtl",
+                            "display": "block",
+                            "margin_left": "88px",
+                            "margin_top": "100px",
+                            "height": "100px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "absolute",
+                    "height": "288px",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "288px",
+                    "border_right_style": "solid",
+                    "direction": "rtl",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "36px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ]
+}

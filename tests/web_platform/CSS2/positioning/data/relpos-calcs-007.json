@@ -1,0 +1,79 @@
+{
+    "matches": "relpos-calcs-001-ref.xht",
+    "assert": "For a relatively positioned element, if       neither 'top' nor 'bottom' is 'auto', used value of 'bottom' is minus the       value of 'top'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "relative",
+                                    "bottom": "50%",
+                                    "width": "120px",
+                                    "height": "80px",
+                                    "display": "block"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "width": "120px",
+                            "display": "block",
+                            "bottom": "50%",
+                            "height": "80px",
+                            "top": "50%"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "120px",
+                    "height": "80px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "margin_top": "-80px",
+                    "width": "120px",
+                    "height": "120px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "154px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}

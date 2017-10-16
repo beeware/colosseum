@@ -1,0 +1,68 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "width": "50px",
+                            "float": "left",
+                            "height": "50px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "96px",
+                                    "width": "96px",
+                                    "display": "block"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "50px",
+                            "width": "50px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "200px",
+                    "width": "200px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "234px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
+    "assert": "A new block formatting context is established when overflow is set to 'auto'."
+}

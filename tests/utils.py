@@ -46,28 +46,25 @@ def build_document(data):
     return node
 
 
-def clean_layout(layout):
-    clean = {
-        'position': (
-            int(round(layout['position'][0])), int(round(layout['position'][1]))
-        ),
-        'size': (
-            int(round(layout['size'][0])), int(round(layout['size'][1]))
-        ),
-    }
-    if 'children' in layout:
-        clean['children'] = [
-            clean_layout(child)
-            for child in layout['children']
-        ]
-    return clean
-
-
 def layout_summary(node):
     if node.layout:
         layout = {
-            'position': (node.layout.absolute_content_left, node.layout.absolute_content_top),
-            'size': (node.layout.content_width, node.layout.content_height),
+            'content': {
+                'position': (node.layout.absolute_content_left, node.layout.absolute_content_top),
+                'size': (node.layout.content_width, node.layout.content_height),
+            },
+            'padding_box': {
+                'position': (node.layout.absolute_padding_box_left, node.layout.absolute_padding_box_top),
+                'size': (node.layout.padding_box_width, node.layout.padding_box_height),
+            },
+            'border_box': {
+                'position': (node.layout.absolute_border_box_left, node.layout.absolute_border_box_top),
+                'size': (node.layout.border_box_width, node.layout.border_box_height),
+            },
+            'margin_box': {
+                'position': (node.layout.absolute_margin_box_left, node.layout.absolute_margin_box_top),
+                'size': (node.layout.margin_box_width, node.layout.margin_box_height),
+            }
         }
         if node.children:
             layout['children'] = [
@@ -80,13 +77,64 @@ def layout_summary(node):
     return layout
 
 
+def clean_reference(reference):
+    cleaned = {
+        key: {
+            'position': (reference[key]['position'][0], reference[key]['position'][1]),
+            'size': (reference[key]['size'][0], reference[key]['size'][1]),
+        }
+        for key in ['content', 'padding_box', 'border_box', 'margin_box']
+    }
+
+    if 'children' in reference:
+        cleaned['children'] = [
+            clean_reference(child)
+            for child in reference['children']
+        ]
+
+    return cleaned
+
+
+def output_layout(layout, depth=1):
+    return (
+        '  ' * depth
+        + '* {n[content][size][0]}x{n[content][size][1]}'
+          ' @ ({n[content][position][0]}, {n[content][position][1]})'
+          '\n'.format(n=layout)
+        # + '  ' * depth
+        # + '  {n[padding_box][size][0]}x{n[padding_box][size][1]}'
+        #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
+        #   '\n'.format(n=layout)
+        # + '  ' * depth
+        # + '  {n[border_box][size][0]}x{n[border_box][size][1]}'
+        #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
+        #   '\n'.format(n=layout)
+        # + '  ' * depth
+        # + '  {n[margin_box][size][0]}x{n[margin_box][size][1]}'
+        #   ' @ ({n[margin_box][position][0]}, {n[margin_box][position][1]})'
+        #   '\n'.format(n=layout)
+        + ''.join(
+                output_layout(child, depth=depth + 1)
+                for child in layout.get('children', [])
+            )
+        + ('\n' if layout.get('children', None) and depth > 1 else '')
+    )
+
+
 class LayoutTestCase(TestCase):
     def setUp(self):
         self.maxDiff = None
         self.display = Display(dpi=96, width=640, height=480)
 
-    def assertLayout(self, node, layout):
-        self.assertEqual(layout_summary(node), layout)
+    def assertLayout(self, node, reference):
+        self.assertEqual(
+            layout_summary(node),
+            reference,
+            '\nExpected:\n{}Actual:\n{}'.format(
+                output_layout(reference),
+                output_layout(layout_summary(node))
+            )
+        )
 
 
 class W3CTestCase(LayoutTestCase):
@@ -129,7 +177,7 @@ class W3CTestCase(LayoutTestCase):
 
                 layout(self.display, root)
 
-                self.assertLayout(root, clean_layout(reference))
+                self.assertLayout(root, clean_reference(reference))
 
             # Annotate the method with any helper text.
             doc = []

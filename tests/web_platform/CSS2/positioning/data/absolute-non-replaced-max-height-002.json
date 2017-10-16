@@ -1,0 +1,67 @@
+{
+    "matches": "absolute-non-replaced-max-height-002-ref.xht",
+    "assert": "When 'top', 'height', and 'bottom' of an absolutely positioned element are 'auto', then set 'top' to the static position and make 'height' based on the content; such height may be constrained by a given 'max-height' value.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "right": "0px",
+                            "width": "25px",
+                            "display": "block",
+                            "height": "50px",
+                            "max_height": "50px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "200px",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "200px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "240px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "48px",
+                                    "width": "48px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            },
+                            {
+                                "style": {
+                                    "height": "48px",
+                                    "width": "48px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "48px",
+                            "width": "96px",
+                            "display": "table-row"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "48px",
+                                    "width": "48px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            },
+                            {
+                                "style": {
+                                    "height": "48px",
+                                    "width": "48px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "48px",
+                            "width": "96px",
+                            "display": "table-row"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "96px",
+                    "max_height": "96px",
+                    "width": "96px",
+                    "display": "table"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-black-96px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
+    "assert": "The 'max-height' property applies to elements with 'display' set to 'table'."
+}

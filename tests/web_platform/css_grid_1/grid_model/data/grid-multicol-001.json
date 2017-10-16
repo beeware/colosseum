@@ -1,0 +1,78 @@
+{
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "height": "134px",
+            "display": "block",
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px"
+                },
+                "children": [
+                    {
+                        "tag": "STRONG",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "100px",
+                    "z_index": "-1",
+                    "position": "absolute",
+                    "height": "100px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "624px",
+                    "height": "100px",
+                    "display": "grid"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "50px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "50px",
+                            "display": "block"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "This test checks that 'column-*' properties in the Multicol module are ignored in grid items when applied to a grid container.",
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-multicol/#the-number-and-width-of-columns"
+    ]
+}

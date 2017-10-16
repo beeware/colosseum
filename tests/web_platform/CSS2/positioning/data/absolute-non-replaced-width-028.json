@@ -1,0 +1,67 @@
+{
+    "matches": null,
+    "assert": "This test checks interaction of percentage height of an inline replaced element with its parent having scrollbars and with the parent's width determined by 'shrink-to-fit' width algorithm. In this test, the image height should be 100px minus scrollbar height since space taken up by generated scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. Then the width of parent should be (used image height == 100px minus scrollbar) * (intrinsic ratio == 5width:1height).",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "500px",
+                            "height": "100px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "absolute",
+                    "width": "500px",
+                    "height": "100px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "70px"
+        }
+    },
+    "help": [
+        "https://www.w3.org/TR/CSS21/visufx.html#overflow",
+        "https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
+        "https://www.w3.org/TR/CSS21/visudet.html#float-width"
+    ]
+}

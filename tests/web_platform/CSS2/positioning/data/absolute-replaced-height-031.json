@@ -1,0 +1,68 @@
+{
+    "matches": "absolute-replaced-height-010-ref.xht",
+    "assert": "The 'height' is the used width divided by the intrinsic ratio when an absolutely positioned replaced element has an intrinsic ratio, 'height' is set to 'auto', with over-constrained values solves for 'bottom'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "96px",
+                            "width": "96px",
+                            "display": "block",
+                            "margin_top": "48px",
+                            "margin_bottom": "48px",
+                            "height": "96px",
+                            "top": "48px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "96px",
+                            "display": "block",
+                            "left": "96px",
+                            "height": "96px",
+                            "top": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block",
+                    "height": "0px",
+                    "border_top_width": "3px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "37px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "The 'right' property, for relative positioning, specifies the offset of the box itself from its normal in-flow position, from the position it would have had if it had been static.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "relative",
+                            "right": "100px",
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "height": "104px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "138px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

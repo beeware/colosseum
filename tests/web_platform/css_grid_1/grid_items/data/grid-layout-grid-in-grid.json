@@ -1,0 +1,131 @@
+{
+    "matches": "../reference/grid-layout-grid-in-grid-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid/#grid-items"
+    ],
+    "assert": "the nested grid should behave the same as reference.",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "width": "640px",
+            "height": "200px",
+            "display": "block"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "margin_left": "10px",
+                    "margin_top": "10px",
+                    "margin_bottom": "10px",
+                    "width": "620px",
+                    "height": "40px",
+                    "display": "block",
+                    "margin_right": "10px"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "150px",
+                    "height": "150px",
+                    "display": "grid"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "50px",
+                            "height": "100px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "50px",
+                                    "height": "100px",
+                                    "display": "block"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "grid",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "50px",
+                                    "height": "50px",
+                                    "display": "block",
+                                    "min_height": "auto",
+                                    "min_width": "auto"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "DIV",
+                                        "style": {
+                                            "width": "50px",
+                                            "height": "50px",
+                                            "display": "block"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "50px",
+                                    "height": "50px",
+                                    "display": "block",
+                                    "min_height": "auto",
+                                    "min_width": "auto"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "DIV",
+                                        "style": {
+                                            "width": "50px",
+                                            "height": "50px",
+                                            "display": "block"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "100px",
+                            "height": "50px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "100px",
+                                    "height": "50px",
+                                    "display": "block"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

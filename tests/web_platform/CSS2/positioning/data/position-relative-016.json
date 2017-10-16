@@ -1,0 +1,88 @@
+{
+    "matches": "position-relative-016-ref.xht",
+    "assert": "Used value of top equals negative bottom when top is auto and bottom is given. (Computed value of top remains auto.)",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "border_top_style": "solid",
+                    "height": "0px",
+                    "border_right_color": "rgba(0, 0, 0, 0)",
+                    "border_right_width": "1px",
+                    "border_bottom_style": "solid",
+                    "border_top_color": "rgba(0, 0, 0, 0)",
+                    "border_right_style": "solid",
+                    "width": "96px",
+                    "border_left_color": "rgba(0, 0, 0, 0)",
+                    "border_bottom_width": "1px",
+                    "border_left_style": "solid",
+                    "border_left_width": "1px",
+                    "border_bottom_color": "rgba(0, 0, 0, 0)",
+                    "border_top_width": "1px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "margin_top": "96px",
+                    "position": "absolute",
+                    "width": "96px",
+                    "height": "96px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "96px",
+                            "height": "96px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "bottom": "-96px",
+                    "width": "96px",
+                    "height": "96px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "132px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}

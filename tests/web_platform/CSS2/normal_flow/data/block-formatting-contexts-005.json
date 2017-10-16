@@ -1,0 +1,61 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "width": "614px",
+                            "border_left_style": "solid",
+                            "height": "96px",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_left_width": "5px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "width": "619px",
+                    "border_left_style": "solid",
+                    "height": "96px",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "border_left_width": "5px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "block-formatting-contexts-005-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
+    "assert": "When there is no padding or margins on elements the left outer edge of the child box will touch the left edge of the containing block."
+}

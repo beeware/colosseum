@@ -1,0 +1,50 @@
+{
+    "matches": "containing-block-030-ref.xht",
+    "assert": "Content may overflow containing blocks.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "130px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "96px",
+                    "display": "block",
+                    "width": "96px",
+                    "padding_left": "5px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "height": "192px",
+                            "display": "block",
+                            "width": "48px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#containing-block"
+    ]
+}

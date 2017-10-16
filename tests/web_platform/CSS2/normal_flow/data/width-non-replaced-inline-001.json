@@ -1,0 +1,44 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "float": "left",
+                    "border_right_width": "5px",
+                    "border_left_style": "solid",
+                    "width": "279.46875px",
+                    "border_right_style": "solid",
+                    "height": "18px",
+                    "border_left_width": "5px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "width-non-replaced-inline-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
+    "assert": "Content width of a non-replaced inline element is that of the rendered content."
+}

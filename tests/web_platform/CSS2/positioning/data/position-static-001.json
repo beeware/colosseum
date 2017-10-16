@@ -1,0 +1,51 @@
+{
+    "matches": "position-static-001-ref.xht",
+    "assert": "Static positioned elements are not affected by top, right, bottom, left property settings.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "192px",
+                            "height": "20px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "192px",
+                    "height": "192px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "226px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ]
+}

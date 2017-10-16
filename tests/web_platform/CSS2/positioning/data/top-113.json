@@ -1,0 +1,73 @@
+{
+    "matches": "top-113-ref.xht",
+    "assert": "The 'top' property sets a value of 'inherit', inheriting the value from the parent element.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "margin_top": "96px",
+                            "position": "absolute",
+                            "width": "624px",
+                            "height": "96px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "624px",
+                            "display": "block",
+                            "border_bottom_style": "solid",
+                            "height": "0px",
+                            "border_bottom_width": "96px",
+                            "top": "100%"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "-96px",
+                    "height": "96px",
+                    "top": "100%"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

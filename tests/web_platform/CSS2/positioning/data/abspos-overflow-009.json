@@ -1,0 +1,56 @@
+{
+    "matches": "abspos-overflow-006-ref.xht",
+    "assert": null,
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "width": "80px",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "height": "80px",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "margin_left": "80px",
+                    "margin_top": "80px",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "80px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "height": "80px",
+                            "display": "block",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "left": "80px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "top": "80px"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "128px",
+                    "height": "128px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "640px",
+            "height": "208px",
+            "display": "block"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
+    ]
+}

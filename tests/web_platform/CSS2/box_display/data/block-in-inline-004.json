@@ -1,0 +1,54 @@
+{
+    "matches": null,
+    "assert": "A block that splits an inline still inherits     from the inline, even in dynamic cases.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "54px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "height": "54px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)"
+                        },
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "border_top_color": "rgb(0, 0, 255)",
+                                    "display": "block",
+                                    "height": "18px",
+                                    "border_left_color": "rgb(0, 0, 255)",
+                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_right_color": "rgb(0, 0, 255)",
+                                    "width": "624px"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ]
+}

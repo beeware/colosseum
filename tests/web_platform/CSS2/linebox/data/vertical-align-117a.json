@@ -1,0 +1,60 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "224px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "172px"
+                },
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "margin_left": "-40px",
+                            "margin_bottom": "auto",
+                            "margin_right": "-40px",
+                            "margin_top": "auto",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "For inline non-replaced elements (such as the span element in this testcase), the box used for vertical-alignment is the box whose height is the 'line-height' (containing the box's glyphs and the half-leading on each side). 'vertical-align: text-bottom' will align the bottom of such box with the bottom of the parent's content area and not with the bottom of the parent's box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "vertical-align-117a-ref.xht"
+}

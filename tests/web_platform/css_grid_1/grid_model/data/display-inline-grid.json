@@ -1,0 +1,198 @@
+{
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "height": "134px",
+            "display": "block",
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "624px",
+                    "position": "relative",
+                    "height": "100px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "400px",
+                            "height": "100px",
+                            "display": "inline-grid"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "100px",
+                                    "min_width": "auto",
+                                    "min_height": "auto",
+                                    "height": "70px",
+                                    "display": "block"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "300px",
+                                    "min_width": "auto",
+                                    "min_height": "auto",
+                                    "height": "70px",
+                                    "display": "block"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "100px",
+                                    "min_width": "auto",
+                                    "min_height": "auto",
+                                    "height": "30px",
+                                    "display": "block"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "width": "300px",
+                                    "min_width": "auto",
+                                    "min_height": "auto",
+                                    "height": "30px",
+                                    "display": "block"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "SPAN",
+                        "style": {}
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "left": "0px",
+                            "position": "absolute",
+                            "height": "100px",
+                            "display": "block",
+                            "width": "400px",
+                            "top": "0px",
+                            "z_index": "-1"
+                        },
+                        "children": [
+                            {
+                                "tag": "TABLE",
+                                "style": {
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "height": "100px",
+                                    "display": "table",
+                                    "width": "400px",
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "TBODY",
+                                        "style": {
+                                            "border_left_color": "rgb(128, 128, 128)",
+                                            "border_bottom_color": "rgb(128, 128, 128)",
+                                            "height": "100px",
+                                            "display": "table-row-group",
+                                            "width": "400px",
+                                            "border_right_color": "rgb(128, 128, 128)",
+                                            "border_top_color": "rgb(128, 128, 128)"
+                                        },
+                                        "children": [
+                                            {
+                                                "tag": "TR",
+                                                "style": {
+                                                    "border_left_color": "rgb(128, 128, 128)",
+                                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                                    "height": "70px",
+                                                    "display": "table-row",
+                                                    "width": "400px",
+                                                    "border_right_color": "rgb(128, 128, 128)",
+                                                    "border_top_color": "rgb(128, 128, 128)"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "TD",
+                                                        "style": {
+                                                            "width": "100px",
+                                                            "height": "70px",
+                                                            "display": "table-cell"
+                                                        }
+                                                    },
+                                                    {
+                                                        "tag": "TD",
+                                                        "style": {
+                                                            "width": "300px",
+                                                            "height": "70px",
+                                                            "display": "table-cell"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "TR",
+                                                "style": {
+                                                    "border_left_color": "rgb(128, 128, 128)",
+                                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                                    "height": "30px",
+                                                    "display": "table-row",
+                                                    "width": "400px",
+                                                    "border_right_color": "rgb(128, 128, 128)",
+                                                    "border_top_color": "rgb(128, 128, 128)"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "TD",
+                                                        "style": {
+                                                            "width": "100px",
+                                                            "height": "30px",
+                                                            "display": "table-cell"
+                                                        }
+                                                    },
+                                                    {
+                                                        "tag": "TD",
+                                                        "style": {
+                                                            "width": "300px",
+                                                            "height": "30px",
+                                                            "display": "table-cell"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "'display: inline-grid' causes an element to generate an inline-level grid container box.",
+    "matches": "../reference/display-inline-grid-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ]
+}

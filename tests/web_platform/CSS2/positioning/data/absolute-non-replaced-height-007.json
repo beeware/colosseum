@@ -1,0 +1,66 @@
+{
+    "matches": "absolute-non-replaced-height-007-ref.xht",
+    "assert": "Verify that height is based on the overall height of the content, 'margin-top' and 'margin-bottom' when set to 'auto' are solved to '0' and solve for 'top', when 'top' and 'height' are both 'auto' and 'bottom' is not 'auto'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "200px",
+                            "width": "200px",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "height": "100px",
+                            "display": "block",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_bottom_color": "rgb(255, 165, 0)"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "200px",
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "height": "300px",
+                    "display": "block",
+                    "border_right_color": "rgb(255, 165, 0)",
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "border_bottom_color": "rgb(255, 165, 0)"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "334px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ]
+}

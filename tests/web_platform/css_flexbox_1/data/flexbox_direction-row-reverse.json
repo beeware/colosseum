@@ -1,0 +1,73 @@
+{
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-direction-property"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "LI",
+                        "style": {
+                            "min_height": "auto",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "width": "43.328125px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "height": "15px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "display": "list-item"
+                        }
+                    },
+                    {
+                        "tag": "LI",
+                        "style": {
+                            "min_height": "auto",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "width": "43.328125px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "height": "15px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "display": "list-item"
+                        }
+                    },
+                    {
+                        "tag": "LI",
+                        "style": {
+                            "min_height": "auto",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "width": "43.328125px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "height": "15px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "display": "list-item"
+                        }
+                    }
+                ],
+                "tag": "UL",
+                "style": {
+                    "height": "15px",
+                    "width": "130px",
+                    "display": "flex"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "width": "130px",
+            "margin_left": "8px",
+            "height": "15px",
+            "margin_right": "8px",
+            "display": "block"
+        }
+    },
+    "matches": "flexbox_direction-row-reverse-ref.html"
+}

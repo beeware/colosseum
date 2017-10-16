@@ -1,0 +1,81 @@
+{
+    "matches": null,
+    "assert": "The position of a positioned element which inherits its 'top' value from its relatively positioned parent changes when the parent's 'top' value is changed.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "position": "absolute",
+                    "width": "184.171875px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "0px"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "position": "relative",
+                                    "width": "100px",
+                                    "height": "100px",
+                                    "display": "block",
+                                    "top": "50px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "block",
+                            "top": "50px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "absolute",
+                    "width": "100px",
+                    "height": "100px",
+                    "display": "block",
+                    "top": "0px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "position": "relative",
+                    "width": "100px",
+                    "height": "100px",
+                    "display": "block",
+                    "top": "100px"
+                }
+            }
+        ],
+        "style": {
+            "position": "relative",
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "100px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
+        "http://www.w3.org/TR/css-cascade-3/#inherit",
+        "http://www.w3.org/TR/css-cascade-4/#inherit",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position"
+    ]
+}

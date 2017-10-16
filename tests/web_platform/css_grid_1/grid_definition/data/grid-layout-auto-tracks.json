@@ -1,0 +1,79 @@
+{
+    "assert": "the layout should behave the same as reference.",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#track-sizing"
+    ],
+    "matches": "../reference/grid-layout-auto-tracks-ref.html",
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "height": "40px",
+                    "margin_bottom": "10px",
+                    "margin_right": "10px",
+                    "margin_left": "10px",
+                    "display": "block",
+                    "margin_top": "10px",
+                    "width": "620px"
+                },
+                "tag": "P"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "height": "18px",
+                                    "width": "50px"
+                                },
+                                "tag": "DIV"
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "50px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "display": "grid",
+                    "height": "36px",
+                    "width": "100px"
+                },
+                "tag": "DIV"
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "86px",
+            "width": "640px"
+        },
+        "tag": "BODY"
+    }
+}

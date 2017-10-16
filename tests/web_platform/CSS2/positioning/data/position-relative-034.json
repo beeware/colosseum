@@ -1,0 +1,56 @@
+{
+    "matches": null,
+    "assert": "A container with overflow set to auto provides a scrolling mechanism for relatively positioned content.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "position": "relative",
+                            "left": "200px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "width": "200px",
+                    "border_right_style": "solid",
+                    "border_right_width": "3px",
+                    "border_top_width": "3px",
+                    "border_bottom_style": "solid",
+                    "border_left_style": "solid",
+                    "border_left_width": "3px",
+                    "height": "18px",
+                    "border_bottom_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "58px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
+    ]
+}

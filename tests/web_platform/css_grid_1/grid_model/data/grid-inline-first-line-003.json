@@ -1,0 +1,86 @@
+{
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "height": "50px",
+            "display": "block",
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px"
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "height": "50px",
+                    "display": "inline-grid",
+                    "width": "512.6875px",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_top_color": "rgb(255, 0, 0)"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "height": "50px",
+                            "display": "block",
+                            "width": "512.6875px",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "min_height": "auto"
+                        },
+                        "children": [
+                            {
+                                "tag": "P",
+                                "style": {
+                                    "border_left_color": "rgb(255, 0, 0)",
+                                    "border_bottom_color": "rgb(255, 0, 0)",
+                                    "height": "18px",
+                                    "border_top_color": "rgb(255, 0, 0)",
+                                    "width": "512.6875px",
+                                    "border_right_color": "rgb(255, 0, 0)",
+                                    "margin_bottom": "16px",
+                                    "margin_top": "16px",
+                                    "display": "block"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "STRONG",
+                                        "style": {
+                                            "border_right_color": "rgb(255, 0, 0)",
+                                            "border_bottom_color": "rgb(255, 0, 0)",
+                                            "border_left_color": "rgb(255, 0, 0)",
+                                            "border_top_color": "rgb(255, 0, 0)"
+                                        }
+                                    },
+                                    {
+                                        "tag": "STRONG",
+                                        "style": {
+                                            "border_right_color": "rgb(255, 0, 0)",
+                                            "border_bottom_color": "rgb(255, 0, 0)",
+                                            "border_left_color": "rgb(255, 0, 0)",
+                                            "border_top_color": "rgb(255, 0, 0)"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "This test checks that '::first-line' pseudo-element works as expected if it is applied directly to a grid item within an inline grid.",
+    "matches": "../reference/grid-text-green-margin-no-collapse-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-selectors/#first-formatted-line"
+    ]
+}

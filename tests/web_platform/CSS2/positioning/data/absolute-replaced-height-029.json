@@ -1,0 +1,68 @@
+{
+    "matches": "absolute-replaced-height-008-ref.xht",
+    "assert": "An absolutely positioned inline replaced element with over-constrained values solves for 'bottom'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "48px",
+                            "width": "15px",
+                            "display": "block",
+                            "margin_top": "48px",
+                            "margin_bottom": "48px",
+                            "height": "15px",
+                            "top": "48px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "15px",
+                            "display": "block",
+                            "left": "15px",
+                            "height": "15px",
+                            "top": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block",
+                    "height": "15px",
+                    "border_top_width": "3px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "52px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ]
+}

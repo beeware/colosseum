@@ -1,0 +1,78 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "130px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "width": "96px",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "display": "table",
+                    "height": "96px",
+                    "border_left_color": "rgb(0, 0, 255)"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "width": "96px",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "display": "table-row",
+                            "height": "96px",
+                            "border_left_color": "rgb(0, 0, 255)"
+                        },
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_top_color": "rgb(0, 0, 255)",
+                                    "width": "96px",
+                                    "border_right_color": "rgb(0, 0, 255)",
+                                    "display": "table-cell",
+                                    "height": "96px",
+                                    "border_left_color": "rgb(0, 0, 255)"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The 'vertical-align' property does not apply to elements with 'display' set to 'table'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "vertical-align-applies-to-001-ref.xht"
+}

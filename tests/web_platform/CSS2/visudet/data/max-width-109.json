@@ -1,0 +1,49 @@
+{
+    "assert": "For UAs who choose to scale replaced elements, the height of that element (based on it's intrinsic ratio) should be re-calculated based on it's constraining 'max-width' value",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "height": "138px",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "104px",
+                    "display": "block",
+                    "width": "200px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "max_width": "100px",
+                            "height": "100px",
+                            "width": "100px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
+}

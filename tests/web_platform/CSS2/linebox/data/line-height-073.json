@@ -1,0 +1,69 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "154px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "20px",
+                    "position": "relative",
+                    "display": "block",
+                    "height": "120px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "20px",
+                            "position": "relative",
+                            "display": "block",
+                            "height": "120px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "0px",
+                            "position": "absolute",
+                            "width": "20px",
+                            "left": "22px",
+                            "display": "block",
+                            "height": "120px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The 'line-height' property sets a positive nominal length value in 'em' units.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "line-height-072-ref.xht"
+}

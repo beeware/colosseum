@@ -1,0 +1,71 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#direction",
+        "http://www.w3.org/TR/CSS21/generate.html#list-style",
+        "http://www.w3.org/TR/CSS21/text.html#alignment-prop"
+    ],
+    "assert": "direction:rtl should apply to unordered lists, putting bullets on the right",
+    "test_case": {
+        "style": {
+            "height": "54px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "padding_left": "32px",
+                    "width": "560px",
+                    "height": "54px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "direction": "rtl",
+                    "padding_right": "32px"
+                },
+                "tag": "ul",
+                "children": [
+                    {
+                        "style": {
+                            "display": "list-item",
+                            "width": "496px",
+                            "padding_left": "32px",
+                            "height": "18px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "display": "list-item",
+                            "width": "496px",
+                            "padding_left": "32px",
+                            "height": "18px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "display": "list-item",
+                            "width": "496px",
+                            "padding_left": "32px",
+                            "height": "18px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "li"
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": null
+}

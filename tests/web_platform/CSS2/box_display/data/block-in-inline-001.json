@@ -1,0 +1,133 @@
+{
+    "matches": "block-in-inline-001-ref.xht",
+    "assert": "When an inline box contains a block box,     the inline box is broken around the block.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "98px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "table",
+                "style": {
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "display": "table",
+                    "height": "64px",
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "width": "100.65625px"
+                },
+                "children": [
+                    {
+                        "tag": "tr",
+                        "style": {
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "display": "table-row",
+                            "height": "60px",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "width": "100.65625px"
+                        },
+                        "children": [
+                            {
+                                "tag": "td",
+                                "style": {
+                                    "border_left_style": "solid",
+                                    "border_bottom_style": "solid",
+                                    "border_bottom_width": "3px",
+                                    "display": "table-cell",
+                                    "border_top_width": "3px",
+                                    "height": "54px",
+                                    "width": "41.328125px",
+                                    "border_right_width": "3px",
+                                    "border_right_style": "solid",
+                                    "border_left_width": "3px",
+                                    "border_top_style": "solid"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "span",
+                                        "style": {},
+                                        "children": [
+                                            {
+                                                "tag": "span",
+                                                "style": {
+                                                    "height": "18px",
+                                                    "display": "block",
+                                                    "width": "41.328125px"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "td",
+                                "style": {
+                                    "border_left_style": "solid",
+                                    "border_bottom_style": "solid",
+                                    "border_bottom_width": "3px",
+                                    "display": "table-cell",
+                                    "border_top_width": "3px",
+                                    "height": "54px",
+                                    "width": "41.328125px",
+                                    "border_right_width": "3px",
+                                    "border_right_style": "solid",
+                                    "border_left_width": "3px",
+                                    "border_top_style": "solid"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "div",
+                                        "style": {
+                                            "height": "18px",
+                                            "display": "block",
+                                            "width": "41.328125px"
+                                        }
+                                    },
+                                    {
+                                        "tag": "div",
+                                        "style": {
+                                            "height": "18px",
+                                            "display": "block",
+                                            "width": "41.328125px"
+                                        }
+                                    },
+                                    {
+                                        "tag": "div",
+                                        "style": {
+                                            "height": "18px",
+                                            "display": "block",
+                                            "width": "41.328125px"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ]
+}

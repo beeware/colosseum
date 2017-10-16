@@ -1,0 +1,82 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "96px",
+                    "width": "96px",
+                    "display": "block"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "top": "0px",
+                                    "width": "96px",
+                                    "position": "absolute",
+                                    "height": "96px",
+                                    "left": "0px",
+                                    "display": "block"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "top": "0px",
+                            "width": "96px",
+                            "position": "absolute",
+                            "height": "96px",
+                            "padding_right": "48px",
+                            "left": "0px",
+                            "padding_left": "48px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "0px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "max-width-percentage-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
+    "assert": "Absolutely positioned elements whose containing block is based on a block-level element, the percentage is calculated with respect to the width of the padding box of that element."
+}

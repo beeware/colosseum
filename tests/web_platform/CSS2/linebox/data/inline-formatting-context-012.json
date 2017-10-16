@@ -1,0 +1,55 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "70px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "50px",
+                    "display": "block",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {}
+                    },
+                    {
+                        "tag": "span",
+                        "style": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Inline boxes stack vertically when they do not fit within an element horizontally.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "matches": "../generated-content/after-content-display-002-ref.xht"
+}

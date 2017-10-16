@@ -1,0 +1,79 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "border_right_color": "rgb(0, 0, 255)",
+                                    "border_top_color": "rgb(0, 0, 255)",
+                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {
+                            "height": "200px",
+                            "position": "relative",
+                            "width": "200px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "width": "200px",
+                            "position": "absolute",
+                            "height": "200px",
+                            "left": "200px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "200px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "234px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "block-non-replaced-height-005-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
+    "assert": "The 'height' is the distance from the topmost to the bottommost line box when a block-level non-replaced element is in normal flow and 'overflow' computes to 'visible'."
+}

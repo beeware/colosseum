@@ -1,0 +1,67 @@
+{
+    "matches": "right-004-ref.xht",
+    "assert": "The 'right' property sets a positive zero length value in points.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "right": "0px",
+                            "width": "614px",
+                            "border_right_style": "solid",
+                            "border_right_width": "5px",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "direction": "rtl",
+                            "height": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "619px",
+                    "border_right_style": "solid",
+                    "border_right_width": "5px",
+                    "display": "block",
+                    "border_right_color": "rgb(255, 165, 0)",
+                    "direction": "rtl",
+                    "height": "96px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "130px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

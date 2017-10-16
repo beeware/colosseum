@@ -1,0 +1,66 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "134px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "100px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The 'vertical-align' property applies to elements with 'display' set to 'inline'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "vertical-align-applies-to-008-ref.xht"
+}

@@ -1,0 +1,59 @@
+{
+    "matches": "../reference/grid-layout-basic-ref.html",
+    "assert": "the layout should behave the same as reference.",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#free-space"
+    ],
+    "test_case": {
+        "style": {
+            "height": "68px",
+            "display": "block",
+            "width": "640px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_top": "10px",
+                    "height": "40px",
+                    "margin_right": "10px",
+                    "margin_left": "10px",
+                    "margin_bottom": "10px",
+                    "display": "block",
+                    "width": "620px"
+                },
+                "tag": "P"
+            },
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "grid",
+                    "width": "150px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "width": "50px"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    }
+}

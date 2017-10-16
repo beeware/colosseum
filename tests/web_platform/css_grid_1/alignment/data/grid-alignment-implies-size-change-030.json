@@ -1,0 +1,46 @@
+{
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "104px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "width": "200px",
+                    "height": "100px",
+                    "display": "inline-grid",
+                    "position": "relative"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "IMG"
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Changing the grid's justify-items value from 'start' to 'stretch' causes replaced items to grow.",
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#row-align",
+        "https://drafts.csswg.org/css-grid-1/#grid-item-sizing",
+        "https://drafts.csswg.org/css-align-3/#propdef-justify-items",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-start"
+    ]
+}

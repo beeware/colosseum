@@ -1,0 +1,59 @@
+{
+    "matches": "../reference/grid-layout-basic-ref.html",
+    "assert": "the layout should behave the same as reference.",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#common-uses-named-lines"
+    ],
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "height": "40px",
+                    "margin_left": "10px",
+                    "margin_top": "10px",
+                    "display": "block",
+                    "margin_bottom": "10px",
+                    "margin_right": "10px",
+                    "width": "620px"
+                }
+            },
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "display": "block",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "display": "block",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "50px"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "grid",
+                    "height": "18px",
+                    "width": "150px"
+                }
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "68px",
+            "width": "640px"
+        }
+    }
+}

@@ -1,0 +1,279 @@
+{
+    "assert": "This test checks that percentage heights on a flex item correctly resolve against the container.",
+    "help": [
+        "https://drafts.csswg.org/css-flexbox-1/#main-sizing"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "block"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "margin_bottom": "10px",
+                            "min_height": "auto",
+                            "width": "40px",
+                            "height": "40px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "margin_bottom": "20px",
+                            "min_height": "auto",
+                            "width": "40px",
+                            "height": "40px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "20px",
+                            "min_width": "auto",
+                            "max_height": "20%",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "margin_bottom": "10px",
+                            "min_height": "auto",
+                            "width": "40px",
+                            "height": "40px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "margin_bottom": "20px",
+                            "min_height": "auto",
+                            "width": "40px",
+                            "height": "40px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "width": "20px",
+                            "max_width": "20%",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "40px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "40px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "relative",
+                    "display": "flex"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px",
+            "height": "600px",
+            "margin_right": "8px",
+            "display": "block"
+        }
+    },
+    "matches": null
+}

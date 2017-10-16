@@ -1,0 +1,75 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "STRONG"
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "tag": "P"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "position": "absolute",
+                                    "width": "100px",
+                                    "height": "100px",
+                                    "min_height": "auto"
+                                },
+                                "tag": "DIV"
+                            }
+                        ],
+                        "style": {
+                            "width": "200px",
+                            "height": "100px",
+                            "display": "grid"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "200px",
+                    "height": "200px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "display": "none"
+                },
+                "tag": "SCRIPT"
+            }
+        ],
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "width": "624px",
+            "height": "234px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "This test checks that a grid item which becomes an absolutelly positioned children of a grid.",
+    "matches": "../../reference/ref-filled-green-200px-square.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
+}

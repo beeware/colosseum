@@ -1,0 +1,104 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "margin_top": "16px",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "height": "36px",
+                    "display": "block"
+                },
+                "tag": "P"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "position": "absolute",
+                                    "width": "37.5px",
+                                    "height": "37.5px",
+                                    "min_height": "auto"
+                                },
+                                "tag": "DIV"
+                            }
+                        ],
+                        "style": {
+                            "width": "50px",
+                            "height": "50px",
+                            "display": "grid"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "width": "100px",
+                    "position": "relative",
+                    "margin_bottom": "25px",
+                    "height": "100px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "position": "absolute",
+                                    "width": "37.5px",
+                                    "height": "37.5px",
+                                    "min_height": "auto"
+                                },
+                                "tag": "DIV"
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "width": "50px",
+                            "height": "50px",
+                            "display": "grid"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "width": "100px",
+                    "position": "relative",
+                    "margin_bottom": "25px",
+                    "height": "100px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "display": "none"
+                },
+                "tag": "SCRIPT"
+            }
+        ],
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "width": "624px",
+            "height": "277px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "This test checks that absolutelly positioned children of a grid are properly sized when the containing block switches between the grid container and a grid ancestor.",
+    "matches": "absolute-positioning-changing-containing-block-001-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
+}

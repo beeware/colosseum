@@ -1,0 +1,71 @@
+{
+    "assert": "Checks that minimum width for flex items is the min-content size if it's smaller than the specified size.",
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#min-size-auto"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "100px",
+                    "z_index": "-1",
+                    "width": "100px",
+                    "position": "absolute",
+                    "display": "block"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "width": "46.328125px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "height": "100px",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "height": "100px",
+                    "width": "10px",
+                    "display": "flex"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px",
+            "height": "134px",
+            "margin_right": "8px",
+            "display": "block"
+        }
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

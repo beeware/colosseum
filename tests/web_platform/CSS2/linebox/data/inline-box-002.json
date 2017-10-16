@@ -1,0 +1,59 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "244px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "36px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "192px",
+                    "position": "relative",
+                    "display": "block",
+                    "height": "192px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "192px",
+                            "position": "relative"
+                        },
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "width": "192px",
+                                    "display": "block",
+                                    "height": "18px"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Block boxes within inline boxes are also affected by relative positioning on the inline box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "matches": "inline-box-002-ref.xht"
+}

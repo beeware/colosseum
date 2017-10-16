@@ -1,0 +1,70 @@
+{
+    "matches": "absolute-non-replaced-height-003-ref.xht",
+    "assert": "When 'top', 'bottom' and 'height' are all are not 'auto', 'margin-top' is 'auto' and 'margin-bottom' is not 'auto'. Then 'margin-top' becomes the remainder of the height of the containing box.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "48px",
+                            "width": "288px",
+                            "display": "block",
+                            "max_height": "96px",
+                            "margin_top": "48px",
+                            "margin_bottom": "48px",
+                            "height": "96px",
+                            "top": "48px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "288px",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "288px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "328px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ]
+}

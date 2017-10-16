@@ -1,0 +1,59 @@
+{
+    "matches": "position-relative-035-ref.xht",
+    "assert": "Relative positioned content keeps its normal flow size including line breaks and the space originally reserved for it.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "80px",
+                            "height": "60px",
+                            "display": "block",
+                            "top": "16px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "80px",
+                            "height": "20px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "80px",
+                    "height": "80px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "114px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
+    ]
+}

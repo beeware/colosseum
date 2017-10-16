@@ -1,0 +1,80 @@
+{
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "254px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "width": "250px",
+                    "height": "250px",
+                    "display": "inline-grid",
+                    "position": "relative"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "width": "20px",
+                            "display": "block",
+                            "height": "110px",
+                            "padding_bottom": "10px",
+                            "min_width": "auto",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "width": "110px",
+                            "height": "48.34375px",
+                            "padding_left": "20px",
+                            "display": "block",
+                            "min_width": "auto",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "48.34375px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "width": "110px",
+                            "display": "block",
+                            "padding_left": "10px",
+                            "height": "110px",
+                            "padding_bottom": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The stretched grid items along the column and/or row axis include their defined padding-box.",
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#alignment",
+        "https://drafts.csswg.org/css-align-3/#propdef-align-self",
+        "https://drafts.csswg.org/css-align-3/#propdef-justify-self",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
+        "https://drafts.csswg.org/css-align/#valdef-align-self-stretch"
+    ]
+}

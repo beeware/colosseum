@@ -1,0 +1,62 @@
+{
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest inline-block ancestor box.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "138px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "padding_top": "20px",
+                    "padding_right": "20px",
+                    "display": "inline-block",
+                    "padding_left": "20px",
+                    "padding_bottom": "20px",
+                    "height": "60px",
+                    "width": "60px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "display": "block",
+                            "height": "100px",
+                            "position": "relative",
+                            "top": "-20px",
+                            "width": "100px",
+                            "left": "-20px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ]
+}

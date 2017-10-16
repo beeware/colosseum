@@ -1,0 +1,110 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "margin_top": "16px",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "tag": "P"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "left": "10px",
+                            "display": "block",
+                            "right": "5px",
+                            "position": "absolute",
+                            "width": "555px",
+                            "height": "61.78125px",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "left": "10px",
+                            "display": "block",
+                            "right": "5px",
+                            "position": "absolute",
+                            "width": "555px",
+                            "height": "79.546875px",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "left": "10px",
+                            "display": "block",
+                            "right": "5px",
+                            "position": "absolute",
+                            "width": "555px",
+                            "height": "67.984375px",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "left": "10px",
+                            "display": "block",
+                            "right": "5px",
+                            "position": "absolute",
+                            "width": "555px",
+                            "height": "75.109375px",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "padding_left": "5px",
+                    "border_top_width": "9px",
+                    "margin_left": "4px",
+                    "border_left_style": "solid",
+                    "border_top_style": "solid",
+                    "margin_right": "2px",
+                    "border_right_style": "solid",
+                    "height": "400px",
+                    "padding_top": "20px",
+                    "border_left_width": "6px",
+                    "margin_top": "1px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "12px",
+                    "padding_right": "15px",
+                    "border_bottom_style": "solid",
+                    "margin_bottom": "3px",
+                    "display": "grid",
+                    "width": "550px",
+                    "position": "relative",
+                    "padding_bottom": "10px"
+                },
+                "tag": "DIV"
+            }
+        ],
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "width": "624px",
+            "height": "485px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "Checks that absolutely positioned orthogonal grid items are properly placed and sized when they have specific 'left' and 'right' offsets and a static block position (top/bottom are 'auto').",
+    "matches": "orthogonal-positioned-grid-items-013-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid/#abspos"
+    ]
+}

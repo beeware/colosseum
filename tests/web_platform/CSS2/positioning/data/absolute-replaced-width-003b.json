@@ -1,0 +1,74 @@
+{
+    "matches": "absolute-replaced-width-003b-ref.xht",
+    "assert": "If an absolutely positioned inline replaced element (like the svg element in this test) has no intrinsic height and no intrinsic ratio, then the used value of 'height' becomes 150px. Then, if both left and right values are 'auto' and the 'direction' property of the element establishing the static-position containing block is 'ltr', then set 'left' to the static position. If 'left' or 'right' are 'auto' (like in this test), then replace any 'auto' on 'margin-left' or 'margin-right' with '0'. If at this point there is an 'auto' left (like in this test: right is 'auto'), solve the equation for that value.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "svg:svg",
+                        "children": [
+                            {
+                                "tag": "svg:rect",
+                                "style": {
+                                    "width": "600px",
+                                    "height": "300px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "absolute",
+                            "width": "150px",
+                            "height": "150px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "150px",
+                            "height": "150px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "300px",
+                    "height": "300px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "334px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ]
+}

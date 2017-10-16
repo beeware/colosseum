@@ -1,0 +1,69 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "30px",
+                                    "width": "150px",
+                                    "display": "block"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {},
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "height": "30px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "height": "30px",
+                    "width": "150px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "94px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "block-non-replaced-width-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/generate.html#list-style"
+    ],
+    "assert": "The computed width is inherited, even if the         'width' property does not apply."
+}

@@ -1,0 +1,91 @@
+{
+    "assert": "In vertical Japanese, for example, a row flexbox lays out its contents from top to bottom.",
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flow-order"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px",
+                    "display": "block"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "height": "100px",
+                                    "min_height": "auto",
+                                    "min_width": "auto",
+                                    "width": "100px",
+                                    "display": "block"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "height": "100px",
+                                    "min_height": "auto",
+                                    "min_width": "auto",
+                                    "width": "100px",
+                                    "display": "block"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "height": "100px",
+                                    "min_height": "auto",
+                                    "min_width": "auto",
+                                    "width": "100px",
+                                    "display": "block"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "height": "100px",
+                                    "min_height": "auto",
+                                    "min_width": "auto",
+                                    "width": "100px",
+                                    "display": "block"
+                                }
+                            }
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "height": "200px",
+                            "width": "200px",
+                            "display": "flex"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "height": "200px",
+                    "width": "624px",
+                    "display": "block"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px",
+            "height": "234px",
+            "margin_right": "8px",
+            "display": "block"
+        }
+    },
+    "matches": "reference/flexbox_writing_mode_vertical_lays_out_contents_from_top_to_bottom-ref.html"
+}

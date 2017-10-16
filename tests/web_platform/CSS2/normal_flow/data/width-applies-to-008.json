@@ -1,0 +1,42 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {},
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
+    "assert": "The 'width' property does not apply to elements with 'display' set to 'inline'."
+}

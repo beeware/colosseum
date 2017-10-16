@@ -1,0 +1,71 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "style": {
+                                            "height": "18px",
+                                            "width": "96px",
+                                            "display": "table-cell"
+                                        },
+                                        "tag": "div"
+                                    }
+                                ],
+                                "style": {
+                                    "height": "18px",
+                                    "width": "96px",
+                                    "display": "table-row"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "height": "18px",
+                            "max_height": "96px",
+                            "width": "96px",
+                            "display": "table-footer-group"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "18px",
+                    "width": "96px",
+                    "display": "table"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "52px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
+    "assert": "The 'max-height' property applies to elements with 'display' set to 'table-footer-group'."
+}

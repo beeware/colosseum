@@ -1,0 +1,50 @@
+{
+    "matches": "position-relative-014-ref.xht",
+    "assert": "Computed values are zero when both 'top' and 'bottom' are set to 'auto'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "96px",
+                            "height": "96px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "96px",
+                    "height": "192px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "226px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}

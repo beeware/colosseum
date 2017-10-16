@@ -1,0 +1,102 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/text.html#alignment-prop",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction",
+        "http://www.w3.org/TR/CSS21/generate.html#list-style"
+    ],
+    "assert": "text-align: justify should apply to unordered lists in rtl context without affecting their rtlness",
+    "test_case": {
+        "style": {
+            "height": "320px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "direction": "rtl",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "direction": "rtl",
+                    "height": "36px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "border_top_width": "1px",
+                    "border_top_style": "solid",
+                    "border_right_width": "1px",
+                    "border_bottom_width": "1px",
+                    "border_bottom_style": "solid",
+                    "border_left_style": "solid",
+                    "border_right_style": "solid",
+                    "border_left_width": "1px",
+                    "height": "266px",
+                    "direction": "rtl",
+                    "width": "224px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "padding_left": "32px",
+                            "width": "160px",
+                            "height": "234px",
+                            "margin_bottom": "16px",
+                            "margin_top": "16px",
+                            "direction": "rtl",
+                            "padding_right": "32px"
+                        },
+                        "tag": "ul",
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "list-item",
+                                    "width": "96px",
+                                    "padding_left": "32px",
+                                    "height": "72px",
+                                    "direction": "rtl",
+                                    "padding_right": "32px"
+                                },
+                                "tag": "li"
+                            },
+                            {
+                                "style": {
+                                    "display": "list-item",
+                                    "width": "96px",
+                                    "padding_left": "32px",
+                                    "height": "90px",
+                                    "direction": "rtl",
+                                    "padding_right": "32px"
+                                },
+                                "tag": "li"
+                            },
+                            {
+                                "style": {
+                                    "display": "list-item",
+                                    "width": "96px",
+                                    "padding_left": "32px",
+                                    "height": "72px",
+                                    "direction": "rtl",
+                                    "padding_right": "32px"
+                                },
+                                "tag": "li"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": null
+}

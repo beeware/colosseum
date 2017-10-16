@@ -1,0 +1,78 @@
+{
+    "matches": "relpos-calcs-001-ref.xht",
+    "assert": "For a relatively positioned element, if 'left'       is 'auto', its used value is minus the value of 'right'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "margin_bottom": "-120px",
+                    "width": "120px",
+                    "height": "120px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "relative",
+                                    "width": "120px",
+                                    "height": "120px",
+                                    "display": "block"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "right": "-50%",
+                            "width": "120px",
+                            "height": "120px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "120px",
+                    "height": "120px",
+                    "display": "block",
+                    "margin_left": "-60px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "154px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}

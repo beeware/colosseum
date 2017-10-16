@@ -1,0 +1,84 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ],
+    "assert": "bidi-override should be applied to table-cell content when specified on the cell",
+    "test_case": {
+        "style": {
+            "height": "92px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "table",
+                    "width": "28.203125px",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "height": "24px",
+                    "border_left_color": "rgb(128, 128, 128)"
+                },
+                "tag": "table",
+                "children": [
+                    {
+                        "style": {
+                            "display": "table-row",
+                            "width": "28.203125px",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "height": "20px",
+                            "border_left_color": "rgb(128, 128, 128)"
+                        },
+                        "tag": "tr",
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "unicode_bidi": "bidi-override",
+                                    "padding_right": "1px",
+                                    "padding_top": "1px",
+                                    "width": "22.203125px",
+                                    "padding_bottom": "1px",
+                                    "height": "18px",
+                                    "direction": "rtl",
+                                    "padding_left": "1px"
+                                },
+                                "tag": "td"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            }
+        ]
+    },
+    "matches": null
+}

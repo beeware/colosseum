@@ -1,0 +1,91 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
+        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
+        "http://www.w3.org/TR/css-cascade-3/#inherit",
+        "http://www.w3.org/TR/css-cascade-4/#inherit",
+        "http://www.w3.org/TR/CSS21/syndata.html#length-units"
+    ],
+    "assert": "Absolutely positioned boxes can be dimensioned and positioned solely by setting offset 'top', 'right', 'bottom' and 'left' property values with percentage unit and then with inherit keyword. 'inherit' on a offset property makes such offset property take the same computed value as the offset property of the nearest positioned ancestor; in the case of a percentage value - like in this testcase - , the computed value is the specified percentage value of such nearest positioned ancestor.",
+    "test_case": {
+        "style": {
+            "height": "356px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "40px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p",
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "br"
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "position": "relative",
+                    "width": "400px",
+                    "height": "300px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "position": "absolute",
+                            "right": "20%",
+                            "top": "30%",
+                            "bottom": "10%",
+                            "height": "180px",
+                            "left": "15%",
+                            "width": "260px"
+                        },
+                        "tag": "div",
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "position": "absolute",
+                                    "right": "20%",
+                                    "top": "30%",
+                                    "bottom": "10%",
+                                    "height": "108px",
+                                    "left": "15%",
+                                    "width": "169px"
+                                },
+                                "tag": "div"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "position": "absolute",
+                    "width": "169px",
+                    "top": "216px",
+                    "height": "108px",
+                    "left": "107px"
+                },
+                "tag": "div"
+            }
+        ]
+    },
+    "matches": "position-absolute-percentage-inherit-001-ref.xht"
+}

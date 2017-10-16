@@ -1,0 +1,79 @@
+{
+    "matches": "absolute-replaced-width-041-ref.xht",
+    "assert": "Percentage widths are evaluated against the containing block's width.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "right": "48px",
+                            "width": "96px",
+                            "display": "block",
+                            "margin_left": "24px",
+                            "left": "24px",
+                            "height": "96px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "96px",
+                            "margin_right": "48px",
+                            "display": "block",
+                            "margin_left": "48px",
+                            "margin_top": "96px",
+                            "height": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "288px",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "192px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "346px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ]
+}

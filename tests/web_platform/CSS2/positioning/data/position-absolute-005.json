@@ -1,0 +1,67 @@
+{
+    "matches": null,
+    "assert": "An absolutely positioned box does not establish a new containing block for fixed positioned descendants.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "96px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "fixed",
+                                    "width": "96px",
+                                    "display": "block",
+                                    "left": "0px",
+                                    "z_index": "0",
+                                    "height": "96px",
+                                    "top": "0px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "absolute",
+                            "width": "96px",
+                            "display": "block",
+                            "left": "288px",
+                            "height": "96px",
+                            "top": "288px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "624px",
+                    "height": "0px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "18px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
+    ]
+}

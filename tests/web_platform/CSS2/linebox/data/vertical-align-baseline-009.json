@@ -1,0 +1,60 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "71px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                }
+            },
+            {
+                "tag": "table",
+                "style": {
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "width": "173.328125px",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "display": "table",
+                    "height": "37px",
+                    "border_left_color": "rgb(128, 128, 128)"
+                },
+                "children": [
+                    {
+                        "tag": "caption",
+                        "style": {
+                            "width": "173.328125px",
+                            "display": "table-caption",
+                            "height": "37px"
+                        },
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {}
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "The baseline of a table caption element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "vertical-align-baseline-007-ref.xht"
+}

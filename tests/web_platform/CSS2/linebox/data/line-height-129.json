@@ -1,0 +1,55 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "34px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "0px"
+                },
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "100px",
+                            "margin_bottom": "-100px",
+                            "height": "100px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "This test checks the height determination of a line box when such line box is made of a single inline replaced element. In this test, we verify that the margin box of an inline replaced element does indeed determine the line box height. div {line-height: 0px} rule only determines the minimum of the line box height.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

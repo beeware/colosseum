@@ -1,0 +1,65 @@
+{
+    "matches": "left-031-ref.xht",
+    "assert": "The 'left' property sets a nominal length value in picas.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "width": "96px",
+                            "border_left_style": "solid",
+                            "display": "block",
+                            "margin_left": "-112px",
+                            "border_left_width": "16px",
+                            "left": "96px",
+                            "height": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "96px",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "display": "block",
+                    "border_left_style": "solid",
+                    "border_left_width": "16px",
+                    "height": "96px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "130px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

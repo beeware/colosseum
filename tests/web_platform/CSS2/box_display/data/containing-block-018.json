@@ -1,0 +1,178 @@
+{
+    "matches": null,
+    "assert": "The containing block of an absolutely positioned block-level element is formed by the padding edge of its nearest (closest) positioned ancestor element.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "276px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "border_left_style": "solid",
+                    "border_top_color": "rgb(192, 192, 192)",
+                    "border_bottom_width": "3px",
+                    "border_top_width": "3px",
+                    "padding_bottom": "100px",
+                    "border_bottom_color": "rgb(192, 192, 192)",
+                    "margin_bottom": "20px",
+                    "border_right_style": "solid",
+                    "height": "36px",
+                    "border_left_width": "3px",
+                    "border_top_style": "solid",
+                    "padding_top": "100px",
+                    "border_bottom_style": "solid",
+                    "padding_right": "100px",
+                    "display": "block",
+                    "padding_left": "100px",
+                    "border_left_color": "rgb(192, 192, 192)",
+                    "border_right_width": "3px",
+                    "border_right_color": "rgb(192, 192, 192)",
+                    "width": "450px",
+                    "direction": "rtl"
+                },
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "border_left_style": "solid",
+                            "border_top_color": "rgb(192, 192, 192)",
+                            "border_bottom_width": "5px",
+                            "border_top_width": "5px",
+                            "position": "relative",
+                            "padding_bottom": "50px",
+                            "border_bottom_color": "rgb(192, 192, 192)",
+                            "border_right_style": "solid",
+                            "border_left_width": "5px",
+                            "border_top_style": "solid",
+                            "padding_top": "50px",
+                            "border_bottom_style": "solid",
+                            "padding_right": "50px",
+                            "padding_left": "50px",
+                            "border_left_color": "rgb(192, 192, 192)",
+                            "border_right_width": "5px",
+                            "border_right_color": "rgb(192, 192, 192)",
+                            "direction": "rtl"
+                        },
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "border_bottom_color": "rgb(192, 192, 192)",
+                                    "border_top_color": "rgb(192, 192, 192)",
+                                    "border_right_color": "rgb(192, 192, 192)",
+                                    "direction": "rtl",
+                                    "border_left_color": "rgb(192, 192, 192)"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "span",
+                                        "style": {
+                                            "border_top_color": "rgb(255, 0, 0)",
+                                            "margin_left": "20px",
+                                            "border_top_width": "30px",
+                                            "padding_bottom": "20px",
+                                            "border_bottom_color": "rgb(192, 192, 192)",
+                                            "border_top_style": "solid",
+                                            "padding_top": "20px",
+                                            "margin_right": "-50px",
+                                            "padding_right": "15px",
+                                            "padding_left": "15px",
+                                            "border_left_color": "rgb(192, 192, 192)",
+                                            "border_right_color": "rgb(192, 192, 192)",
+                                            "direction": "rtl"
+                                        }
+                                    },
+                                    {
+                                        "tag": "br",
+                                        "style": {
+                                            "border_bottom_color": "rgb(192, 192, 192)",
+                                            "border_top_color": "rgb(192, 192, 192)",
+                                            "border_right_color": "rgb(192, 192, 192)",
+                                            "direction": "rtl",
+                                            "border_left_color": "rgb(192, 192, 192)"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "display": "block",
+                                    "left": "0px",
+                                    "bottom": "0px",
+                                    "position": "absolute",
+                                    "height": "30px",
+                                    "width": "30px",
+                                    "direction": "rtl"
+                                }
+                            },
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "height": "30px",
+                                    "display": "block",
+                                    "right": "0px",
+                                    "position": "absolute",
+                                    "top": "0px",
+                                    "width": "30px",
+                                    "direction": "rtl"
+                                }
+                            },
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "border_bottom_color": "rgb(192, 192, 192)",
+                                    "border_top_color": "rgb(192, 192, 192)",
+                                    "border_right_color": "rgb(192, 192, 192)",
+                                    "direction": "rtl",
+                                    "border_left_color": "rgb(192, 192, 192)"
+                                },
+                                "children": [
+                                    {
+                                        "tag": "span",
+                                        "style": {
+                                            "border_top_color": "rgb(192, 192, 192)",
+                                            "border_bottom_width": "30px",
+                                            "border_bottom_style": "solid",
+                                            "padding_bottom": "20px",
+                                            "border_bottom_color": "rgb(255, 0, 0)",
+                                            "padding_top": "20px",
+                                            "margin_right": "20px",
+                                            "padding_right": "15px",
+                                            "padding_left": "15px",
+                                            "border_left_color": "rgb(192, 192, 192)",
+                                            "margin_left": "-50px",
+                                            "border_right_color": "rgb(192, 192, 192)",
+                                            "direction": "rtl"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ]
+}

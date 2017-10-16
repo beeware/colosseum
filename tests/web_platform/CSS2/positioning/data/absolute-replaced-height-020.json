@@ -1,0 +1,75 @@
+{
+    "matches": "absolute-replaced-height-013-ref.xht",
+    "assert": "An absolutely positioned replaced element with percentage intrinsic height resolves based on the containing block when the replaced element is absolutely positioned.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "svg:svg",
+                        "children": [
+                            {
+                                "tag": "svg:rect",
+                                "style": {
+                                    "width": "200px",
+                                    "height": "100px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "position": "absolute",
+                            "width": "300px",
+                            "display": "block",
+                            "bottom": "96px",
+                            "height": "96px",
+                            "top": "96px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "width": "200px",
+                            "display": "block",
+                            "left": "200px",
+                            "height": "96px",
+                            "top": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block",
+                    "height": "192px",
+                    "border_top_width": "3px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "247px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ]
+}

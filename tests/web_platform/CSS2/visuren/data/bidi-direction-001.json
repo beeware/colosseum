@@ -1,0 +1,54 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-direction",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ],
+    "assert": "direction:rtl on body should inherit to paragraphs",
+    "test_case": {
+        "style": {
+            "height": "86px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "direction": "rtl",
+            "margin_right": "8px"
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "direction": "rtl",
+                    "height": "18px"
+                },
+                "tag": "p"
+            }
+        ]
+    },
+    "matches": null
+}

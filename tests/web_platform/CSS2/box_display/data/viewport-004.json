@@ -1,0 +1,61 @@
+{
+    "matches": null,
+    "assert": "User agents may render more than one canvas.",
+    "test_case": {
+        "tag": "frameset",
+        "style": {
+            "height": "480px",
+            "display": "block",
+            "width": "640px"
+        },
+        "children": [
+            {
+                "tag": "frame",
+                "style": {
+                    "height": "480px",
+                    "display": "block",
+                    "width": "317px"
+                }
+            },
+            {
+                "tag": "frame",
+                "style": {
+                    "height": "480px",
+                    "display": "block",
+                    "width": "317px"
+                }
+            },
+            {
+                "tag": "noframes",
+                "style": {
+                    "display": "none"
+                },
+                "children": [
+                    {
+                        "tag": "body",
+                        "style": {
+                            "margin_right": "8px",
+                            "margin_top": "8px",
+                            "margin_left": "8px",
+                            "display": "block",
+                            "margin_bottom": "8px"
+                        },
+                        "children": [
+                            {
+                                "tag": "p",
+                                "style": {
+                                    "margin_top": "16px",
+                                    "display": "block",
+                                    "margin_bottom": "16px"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#viewport"
+    ]
+}

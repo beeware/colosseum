@@ -1,0 +1,70 @@
+{
+    "matches": "absolute-non-replaced-width-025-ref.xht",
+    "assert": "When 'width' is computed according to the equation and rules of section 10.3.7 and when such computed 'width' is greater than 'max-width', then the equation and rules of section 10.3.7 are applied again but this time assuming the computed 'max-width' value. Then all three properties ('width', 'left' and 'right') are not 'auto' and both 'margin-left' and 'margin-right' are 'auto': in which case, the horizontal margins get equal values of available, remaining horizontal space.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    },
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "position": "absolute",
+                    "right": "8px",
+                    "width": "100px",
+                    "margin_right": "262px",
+                    "display": "block",
+                    "margin_left": "262px",
+                    "left": "8px",
+                    "height": "100px",
+                    "max_width": "100px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "width": "100px",
+                    "margin_right": "262px",
+                    "height": "100px",
+                    "margin_left": "262px",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "134px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "assert": "the subgrid layout should behave the same as reference.",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#repeat-notation"
+    ],
+    "matches": "../reference/grid-layout-repeat-notation-ref.html",
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "height": "40px",
+                    "margin_bottom": "10px",
+                    "margin_right": "10px",
+                    "margin_left": "10px",
+                    "display": "block",
+                    "margin_top": "10px",
+                    "width": "620px"
+                },
+                "tag": "P"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "height": "18px",
+                            "min_height": "auto",
+                            "width": "50px"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "style": {
+                    "display": "grid",
+                    "height": "18px",
+                    "width": "450px"
+                },
+                "tag": "DIV"
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "68px",
+            "width": "640px"
+        },
+        "tag": "BODY"
+    }
+}

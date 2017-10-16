@@ -1,0 +1,47 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "96px",
+                    "width": "0px",
+                    "max_width": "0px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
+    "assert": "The 'max-width' property sets a zero length value with no units."
+}

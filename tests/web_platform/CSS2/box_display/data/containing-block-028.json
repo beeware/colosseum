@@ -1,0 +1,53 @@
+{
+    "matches": "containing-block-028-ref.xht",
+    "assert": "Principal block boxes establish a containing block for descendant boxes.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "18px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "96px",
+                    "display": "block",
+                    "width": "96px",
+                    "position": "absolute"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "24px",
+                            "display": "block",
+                            "bottom": "0px",
+                            "right": "0px",
+                            "position": "absolute",
+                            "height": "24px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
+    ]
+}

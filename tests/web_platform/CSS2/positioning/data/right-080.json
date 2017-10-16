@@ -1,0 +1,67 @@
+{
+    "matches": "right-079-ref.xht",
+    "assert": "The 'right' property sets a positive nominal length value in 'em' units.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "right": "120px",
+                            "width": "724px",
+                            "border_right_style": "solid",
+                            "margin_right": "-140px",
+                            "display": "block",
+                            "border_right_width": "20px",
+                            "direction": "rtl",
+                            "height": "96px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "604px",
+                    "border_right_style": "solid",
+                    "border_right_width": "20px",
+                    "display": "block",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "direction": "rtl",
+                    "height": "96px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "130px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

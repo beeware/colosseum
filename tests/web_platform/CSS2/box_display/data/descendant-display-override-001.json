@@ -1,0 +1,54 @@
+{
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "Descendant elements cannot override the parent's setting of the 'display' property when set to 'none'.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "18px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "display": "none"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "height": "96px",
+                            "display": "block",
+                            "width": "96px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ]
+}

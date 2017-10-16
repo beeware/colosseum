@@ -1,0 +1,53 @@
+{
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "height": "76px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "200px",
+                    "border_bottom_width": "3px",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_right_width": "3px",
+                    "border_left_style": "solid",
+                    "border_right_style": "solid",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Inline boxes are split onto additional lines if the line box does not fit within the width.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "matches": null
+}

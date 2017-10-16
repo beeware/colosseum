@@ -1,0 +1,76 @@
+{
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "254px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "width": "250px",
+                    "height": "250px",
+                    "display": "inline-grid",
+                    "position": "relative"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "125px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "125px",
+                            "height": "48.34375px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "48.34375px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "125px",
+                            "height": "125px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Grid items with 'stretch' value for align-self and/or justify-self are stretched along the column and/or row axis respectively; they will be sized as fit-content otherwise.",
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#alignment",
+        "https://drafts.csswg.org/css-align-3/#propdef-align-self",
+        "https://drafts.csswg.org/css-align-3/#propdef-justify-self",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
+        "https://drafts.csswg.org/css-align/#valdef-align-self-stretch"
+    ]
+}

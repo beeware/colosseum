@@ -1,0 +1,77 @@
+{
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#visibility-collapse"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "P",
+                        "style": {
+                            "margin_bottom": "32px",
+                            "min_height": "auto",
+                            "margin_top": "32px",
+                            "width": "39.984375px",
+                            "margin_left": "32px",
+                            "height": "18px",
+                            "margin_right": "32px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "P",
+                        "style": {
+                            "margin_bottom": "32px",
+                            "min_height": "auto",
+                            "margin_top": "32px",
+                            "width": "34.375px",
+                            "margin_left": "32px",
+                            "height": "18px",
+                            "margin_right": "32px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "P",
+                        "style": {
+                            "margin_bottom": "32px",
+                            "min_height": "auto",
+                            "margin_top": "32px",
+                            "width": "39.984375px",
+                            "margin_left": "32px",
+                            "height": "18px",
+                            "margin_right": "32px",
+                            "min_width": "auto",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "width": "638px",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "border_left_width": "1px",
+                    "height": "82px",
+                    "border_top_width": "1px",
+                    "border_top_style": "solid",
+                    "border_bottom_width": "1px",
+                    "border_right_width": "1px",
+                    "display": "flex"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "height": "84px",
+            "width": "640px",
+            "display": "block"
+        }
+    },
+    "matches": "flexbox_visibility-collapse-ref.html"
+}

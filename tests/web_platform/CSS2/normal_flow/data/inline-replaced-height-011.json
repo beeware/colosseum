@@ -1,0 +1,66 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "width": "100px",
+                    "position": "absolute",
+                    "z_index": "-1",
+                    "height": "100px",
+                    "display": "block"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "width": "100px",
+                            "min_width": "100px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "style": {
+                    "height": "104px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "138px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
+    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'min-width' value) and based its intrinsic ratio when it has an intrinsic ratio."
+}

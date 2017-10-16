@@ -1,0 +1,47 @@
+{
+    "matches": null,
+    "assert": "The 'left' property applies to elements with a display of inline.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "position": "absolute",
+                    "width": "69.328125px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "height": "96px",
+                    "display": "block",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "left": "0px",
+                    "border_bottom_color": "rgb(0, 128, 0)"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "18px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

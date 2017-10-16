@@ -1,0 +1,95 @@
+{
+    "matches": "absolute-replaced-height-011-ref.xht",
+    "assert": "For an absolutely positioned inline-block replaced element, the 'height' is set to the largest rectangle that has a 2:1 ratio that is not greater than 150px and has a 'width' not greater than the device width. And with over-constrained values element solves for 'bottom'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "iframe",
+                        "style": {
+                            "border_top_style": "solid",
+                            "position": "absolute",
+                            "height": "150px",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_right_width": "3px",
+                            "border_bottom_style": "solid",
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "margin_bottom": "48px",
+                            "bottom": "96px",
+                            "top": "48px",
+                            "margin_top": "48px",
+                            "width": "300px",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "border_bottom_width": "3px",
+                            "border_right_style": "solid",
+                            "border_left_style": "solid",
+                            "border_left_width": "3px",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_top_width": "3px",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_top_style": "solid",
+                            "position": "absolute",
+                            "height": "150px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_right_width": "3px",
+                            "border_bottom_style": "solid",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "top": "96px",
+                            "border_right_style": "solid",
+                            "width": "300px",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_bottom_width": "3px",
+                            "border_left_style": "solid",
+                            "border_left_width": "3px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_width": "3px",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "624px",
+                    "height": "0px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "18px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ]
+}

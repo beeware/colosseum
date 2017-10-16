@@ -1,0 +1,77 @@
+{
+    "matches": "absolute-non-replaced-height-006-ref.xht",
+    "assert": "The 'bottom' value is ignored and the equation solves for the bottom value, when the values for 'top', 'bottom', 'height', 'margin-top', 'margin-bottom' add up to more than the containing blocks height.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "50px",
+                            "width": "150px",
+                            "display": "block",
+                            "margin_top": "50px",
+                            "margin_bottom": "50px",
+                            "height": "150px",
+                            "top": "50px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "width": "150px",
+                            "display": "block",
+                            "margin_top": "50px",
+                            "margin_bottom": "50px",
+                            "left": "50%",
+                            "height": "150px",
+                            "top": "50px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "height": "300px",
+                    "border_left_style": "solid",
+                    "border_right_width": "10px",
+                    "border_bottom_style": "solid",
+                    "width": "300px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "10px",
+                    "border_left_width": "10px",
+                    "border_top_width": "10px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "372px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ]
+}

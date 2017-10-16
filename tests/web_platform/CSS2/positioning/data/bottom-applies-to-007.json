@@ -1,0 +1,63 @@
+{
+    "matches": "bottom-applies-to-001-ref.xht",
+    "assert": "The 'bottom' property applies to elements with a display of 'table-cell'.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "absolute",
+                                    "bottom": "0px",
+                                    "width": "100px",
+                                    "height": "100px",
+                                    "display": "block"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "width": "1px",
+                            "height": "0px",
+                            "display": "table-row"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "1px",
+                    "height": "0px",
+                    "display": "table"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "34px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

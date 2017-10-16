@@ -1,0 +1,26 @@
+{
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
+    ],
+    "test_case": {
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "-320px",
+                    "width": "111.09375px",
+                    "display": "inline-flex"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "height": "18px",
+            "width": "640px",
+            "display": "block"
+        }
+    },
+    "matches": "flexbox_inline-ref.html"
+}

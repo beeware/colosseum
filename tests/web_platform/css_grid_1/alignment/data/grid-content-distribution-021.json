@@ -1,0 +1,103 @@
+{
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "234px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "P",
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "STRONG"
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "z_index": "-1",
+                    "height": "200px",
+                    "display": "block",
+                    "position": "absolute",
+                    "width": "200px"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "top": "0px",
+                            "left": "0px",
+                            "display": "block",
+                            "width": "95px",
+                            "height": "95px",
+                            "position": "absolute"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "top": "105px",
+                            "left": "105px",
+                            "display": "block",
+                            "width": "95px",
+                            "height": "95px",
+                            "position": "absolute"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "width": "200px",
+                    "height": "200px",
+                    "display": "grid"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "95px",
+                            "height": "95px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_width": "auto",
+                            "width": "95px",
+                            "height": "95px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            }
+        ]
+    },
+    "assert": "Content Distribution properties with 'stretch' value render correcly.",
+    "matches": "../../reference/ref-filled-green-200px-square.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#grid-align",
+        "https://drafts.csswg.org/css-align-3/#content-distribution",
+        "https://drafts.csswg.org/css-align-3/#valdef-align-content-stretch"
+    ]
+}

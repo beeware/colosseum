@@ -1,0 +1,48 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "32px",
+                            "width": "32px",
+                            "display": "inline-table"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "height": "32px",
+                    "width": "32px",
+                    "display": "block"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "32px",
+                    "margin_top": "-32px",
+                    "height": "32px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "32px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "inline-table-zorder-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/zindex.html#painting-order"
+    ],
+    "assert": null
+}

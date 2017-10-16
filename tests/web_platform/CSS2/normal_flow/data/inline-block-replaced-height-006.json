@@ -1,0 +1,77 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "100px",
+                                    "width": "200px"
+                                },
+                                "tag": "svg:rect"
+                            }
+                        ],
+                        "style": {
+                            "height": "96px",
+                            "position": "absolute",
+                            "width": "300px",
+                            "display": "block"
+                        },
+                        "tag": "svg:svg"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "width": "200px",
+                            "position": "absolute",
+                            "height": "96px",
+                            "left": "200px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "192px",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "226px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "block-replaced-height-006-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ],
+    "assert": "An inline-block replaced element with a percentage height resolves based on the containing block when the replaced element is absolutely positioned."
+}

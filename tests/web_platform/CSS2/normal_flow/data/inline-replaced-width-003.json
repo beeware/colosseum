@@ -1,0 +1,73 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "100px",
+                                    "width": "200px"
+                                },
+                                "tag": "svg:rect"
+                            }
+                        ],
+                        "style": {
+                            "height": "100px",
+                            "width": "300px"
+                        },
+                        "tag": "svg:svg"
+                    },
+                    {
+                        "style": {
+                            "height": "100px",
+                            "width": "200px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "288px",
+                    "border_top_style": "solid",
+                    "border_right_width": "3px",
+                    "border_right_style": "solid",
+                    "border_top_width": "3px",
+                    "width": "288px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_left_width": "3px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "346px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "inline-replaced-width-003-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ],
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on inline replaced elements becomes a used value of '0'."
+}

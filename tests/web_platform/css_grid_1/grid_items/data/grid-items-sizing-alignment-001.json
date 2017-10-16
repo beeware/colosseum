@@ -1,0 +1,140 @@
+{
+    "matches": "grid-items-sizing-alignment-001-ref.html",
+    "help": [
+        "https://www.w3.org/TR/css-grid-1/#grid-item-sizing"
+    ],
+    "assert": "Checks how alignment properties affect the size of the non-replaced vs replaced grid items.",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "height": "434px",
+            "display": "block",
+            "margin_right": "8px"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "width": "624px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "width": "624px",
+                    "height": "400px",
+                    "display": "grid"
+                },
+                "children": [
+                    {
+                        "tag": "BUTTON",
+                        "style": {
+                            "padding_top": "2px",
+                            "padding_right": "6px",
+                            "margin_left": "2px",
+                            "border_left_width": "2px",
+                            "border_left_color": "rgb(192, 192, 192)",
+                            "border_right_width": "2px",
+                            "width": "196px",
+                            "margin_bottom": "2px",
+                            "padding_bottom": "3px",
+                            "margin_right": "2px",
+                            "border_right_style": "outset",
+                            "border_right_color": "rgb(192, 192, 192)",
+                            "border_left_style": "outset",
+                            "margin_top": "2px",
+                            "height": "196px",
+                            "padding_left": "6px",
+                            "display": "block",
+                            "min_height": "15px"
+                        }
+                    },
+                    {
+                        "tag": "BUTTON",
+                        "style": {
+                            "padding_top": "2px",
+                            "padding_right": "6px",
+                            "margin_left": "2px",
+                            "border_left_width": "2px",
+                            "border_left_color": "rgb(192, 192, 192)",
+                            "border_right_width": "2px",
+                            "width": "196px",
+                            "margin_bottom": "2px",
+                            "padding_bottom": "3px",
+                            "margin_right": "2px",
+                            "border_right_style": "outset",
+                            "border_right_color": "rgb(192, 192, 192)",
+                            "border_left_style": "outset",
+                            "margin_top": "2px",
+                            "height": "196px",
+                            "padding_left": "6px",
+                            "display": "block",
+                            "min_height": "15px"
+                        }
+                    },
+                    {
+                        "tag": "BUTTON",
+                        "style": {
+                            "padding_top": "2px",
+                            "padding_right": "6px",
+                            "margin_left": "2px",
+                            "border_left_width": "2px",
+                            "border_left_color": "rgb(192, 192, 192)",
+                            "border_right_width": "2px",
+                            "width": "93.484375px",
+                            "margin_bottom": "2px",
+                            "padding_bottom": "3px",
+                            "margin_right": "2px",
+                            "border_right_style": "outset",
+                            "border_right_color": "rgb(192, 192, 192)",
+                            "border_left_style": "outset",
+                            "margin_top": "2px",
+                            "height": "18px",
+                            "padding_left": "6px",
+                            "display": "block",
+                            "min_height": "15px"
+                        }
+                    },
+                    {
+                        "tag": "IMG",
+                        "style": {
+                            "width": "200px",
+                            "height": "200px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "IMG",
+                        "style": {
+                            "width": "200px",
+                            "height": "200px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "IMG",
+                        "style": {
+                            "width": "50px",
+                            "height": "50px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

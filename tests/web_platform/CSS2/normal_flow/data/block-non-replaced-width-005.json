@@ -1,0 +1,51 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "width": "640px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "40px",
+                            "width": "640px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "40px",
+                    "width": "640px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "height": "74px",
+            "width": "640px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": "block-non-replaced-width-005-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
+    ],
+    "assert": "If 'width' is set to 'auto' and no other 'auto' values are set, then the 'width' is the width of the containing block."
+}

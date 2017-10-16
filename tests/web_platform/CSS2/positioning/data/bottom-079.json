@@ -1,0 +1,65 @@
+{
+    "matches": "bottom-079-ref.xht",
+    "assert": "The 'bottom' property sets a nominal length value in 'em' units.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_top_style": "solid",
+                            "position": "relative",
+                            "width": "624px",
+                            "display": "block",
+                            "margin_top": "100px",
+                            "bottom": "120px",
+                            "height": "0px",
+                            "border_top_width": "20px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "width": "624px",
+                    "display": "block",
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "height": "120px",
+                    "border_top_width": "20px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "174px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "18px",
+                            "width": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "border_top_style": "solid",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "height": "18px",
+                    "border_top_width": "3px",
+                    "width": "96px",
+                    "border_bottom_width": "3px",
+                    "border_bottom_style": "solid",
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "74px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
+        },
+        "tag": "body"
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
+    "assert": "The margin top and bottom used values are '0' for block-level non-replaced elements in normal flow when 'overflow' does not compute to 'visible' and margin top and bottom both are 'auto'."
+}

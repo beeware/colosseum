@@ -1,0 +1,46 @@
+{
+    "matches": null,
+    "assert": "Display set to 'inline' applies the correct rendering behavior for the 'a' element.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "52px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "tag": "a",
+                        "style": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ]
+}

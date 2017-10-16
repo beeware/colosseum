@@ -1,0 +1,55 @@
+{
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "If the element's position is 'static', the containing block is formed by the content edge of the nearest block-level ancestor box.",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "134px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "100px",
+                    "display": "block",
+                    "width": "100px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "height": "100px",
+                            "display": "block",
+                            "width": "100px"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ]
+}

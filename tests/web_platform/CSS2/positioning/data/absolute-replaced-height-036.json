@@ -1,0 +1,120 @@
+{
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "If 'top' and 'bottom' are specified on an     absolutely-positioned replaced element, then any remaining space is     split amongst the 'auto' vertical margins.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "width": "15px",
+                            "display": "block",
+                            "margin_top": "15px",
+                            "margin_bottom": "15px",
+                            "left": "0px",
+                            "height": "15px",
+                            "top": "0px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "width": "15px",
+                            "display": "block",
+                            "margin_top": "30px",
+                            "left": "15px",
+                            "height": "15px",
+                            "top": "0px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "right": "0px",
+                            "width": "15px",
+                            "display": "block",
+                            "bottom": "0px",
+                            "margin_bottom": "30px",
+                            "height": "15px",
+                            "top": "0px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "30px",
+                            "border_right_style": "solid",
+                            "border_right_width": "15px",
+                            "display": "block",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "height": "15px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "30px",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "display": "block",
+                            "border_left_style": "solid",
+                            "border_left_width": "15px",
+                            "height": "15px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "15px",
+                            "margin_right": "15px",
+                            "height": "15px",
+                            "display": "block",
+                            "margin_left": "15px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "width": "45px",
+                    "height": "45px",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "79px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#clipping"
+    ]
+}

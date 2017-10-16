@@ -1,0 +1,65 @@
+{
+    "matches": "block-in-inline-008-ref.xht",
+    "assert": null,
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "height": "194px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "80px",
+                    "display": "block",
+                    "width": "80px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "height": "80px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {},
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "top": "-80px",
+                                    "display": "block",
+                                    "width": "80px",
+                                    "height": "80px",
+                                    "position": "relative"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "Relatively positioned element dimensions are not changed with top/bottom applied. If 'top' is 'auto' and if 'bottom' is '100px', then top's used value becomes the negative of bottom. If both 'top' and 'bottom' are specified (like for #div3 in this test), then 'bottom' is ignored and the used value of 'bottom' becomes minus the value of 'top').",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "position": "relative",
+                    "width": "100px",
+                    "height": "100px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "position": "relative",
+                    "bottom": "100px",
+                    "width": "100px",
+                    "height": "100px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "position": "relative",
+                    "width": "100px",
+                    "display": "block",
+                    "bottom": "0px",
+                    "height": "100px",
+                    "top": "-200px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "334px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ]
+}
