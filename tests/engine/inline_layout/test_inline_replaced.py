@@ -1,5 +1,3 @@
-from unittest import expectedFailure
-
 from colosseum.constants import AUTO, INLINE
 from colosseum.declaration import CSS
 from colosseum.engine import layout
@@ -106,7 +104,6 @@ class WidthTests(LayoutTestCase):
             }
         )
 
-    @expectedFailure
     def test_height_and_intrinsic_width(self):
         root = TestNode(
             style=CSS(display=INLINE, height=30)
@@ -205,7 +202,6 @@ class HeightTests(LayoutTestCase):
             }
         )
 
-    @expectedFailure
     def test_width_and_height(self):
         root = TestNode(
             style=CSS(display=INLINE, width=50, height=30)

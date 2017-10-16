@@ -535,7 +535,7 @@ def calculate_inline_replaced_height(node, context):
     elif node.style.height is AUTO:  # P5
         content_height = min(node.layout.content_width // 2, 150)
     else:
-        content_height = node.style.height
+        content_height = node.style.height.px(**context)
 
     node.layout.content_height = content_height
     node.layout.content_top += node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
