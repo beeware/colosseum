@@ -8,7 +8,6 @@ from ...utils import LayoutTestCase, TestNode
 
 
 class ChildLayoutTests(LayoutTestCase):
-    @expectedFailure
     def test_simple_vertical(self):
         child1 = TestNode(
             style=CSS(display=BLOCK, height=10),
@@ -57,7 +56,6 @@ class ChildLayoutTests(LayoutTestCase):
             }
         )
 
-    @expectedFailure
     def test_collapsed_margins(self):
         child1 = TestNode(
             style=CSS(display=BLOCK, height=10, margin=10),

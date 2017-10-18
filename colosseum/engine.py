@@ -75,12 +75,25 @@ class Viewport:
 def layout(display, node):
     containing_block = Viewport(display, node)
     font = None  # FIXME - default font
+
+    node.layout.reset()
+
     # 10.1 1
     layout_box(display, node, containing_block, containing_block, font)
 
-    # The margin on the root element must be displayed, move the
-    # default content position so that it is.
-    node.layout.content_top += node.layout.margin_top
+    # The full collapsed extent of the top margin on the root element
+    # must be displayed, so move the default content position so that it is.
+    node.layout.content_top += node.layout.collapse_top
+
+    # The final content height of the root element is fitted
+    # to the the display.
+    node.layout.content_height = (
+        display.content_height
+        - node.layout.content_top
+        - node.layout.padding_bottom
+        - node.layout.border_bottom_width
+        - node.layout.collapse_bottom
+    )
 
 
 class AnonymousBlockBox:
@@ -122,12 +135,9 @@ def layout_box(display, node, containing_block, viewport, font):
         node.layout = None
         return
     else:
-        # Make sure the node *has* a display box. If it does,
-        # reset it to a neutral state.
+        # Make sure the node *has* a display box.
         if node.layout is None:
             node.layout = Box(node)
-        else:
-            node.layout.reset()
 
     # Copy margin, border and padding attributes to the layout
     horizontal = {
@@ -145,6 +155,12 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.margin_right = calculate_size(node.style.margin_right, horizontal)
     node.layout.margin_bottom = calculate_size(node.style.margin_bottom, vertical)
     node.layout.margin_left = calculate_size(node.style.margin_left, horizontal)
+
+    # By default, the collapsed extent is the same as the margin.
+    node.layout.collapse_top = node.layout.margin_top
+    node.layout.collapse_right = node.layout.margin_right
+    node.layout.collapse_bottom = node.layout.margin_bottom
+    node.layout.collapse_left = node.layout.margin_left
 
     if node.style.border_top_style is None:
         node.layout.border_top_width = 0
@@ -199,8 +215,7 @@ def layout_box(display, node, containing_block, viewport, font):
                 # Otherwise, collapse the bottom margin of the previous element
                 # with the top margin of this element, and offset by the result.
                 if margin is None:
-                    if child.layout.margin_box_top < node.layout.margin_box_top:
-                        node.layout.content_top = child.layout.margin_top - node.layout.margin_top
+                    node.layout.collapse_top = max(child.layout.margin_top, node.layout.margin_top)
                 else:
                     offset_top += max(margin, child.layout.margin_top)
 
@@ -209,16 +224,15 @@ def layout_box(display, node, containing_block, viewport, font):
 
                 # Offest the top of the child, relative to the parent.
                 child.layout.content_top += offset_top
-
                 # Increase the offset by the height of the box,
                 # and record the margin so it can be collapsed with the
                 # next element
                 offset_top += child.layout.border_box_height
-                margin = child.layout.margin_bottom
+                margin = child.layout.collapse_bottom
 
             # Merge the margin of the last child with
             # the margin of the last child.
-            node.layout.margin_bottom = max(node.layout.margin_bottom, margin)
+            node.layout.collapse_bottom = max(node.layout.collapse_bottom, margin)
 
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)

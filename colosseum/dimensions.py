@@ -171,7 +171,7 @@ class Box:
     """
     def __init__(self, node):
         self.node = node
-        self.reset()
+        self._reset()
 
     def __repr__(self):
         return '<Box (%sx%s @ %s,%s)>' % (
@@ -187,7 +187,7 @@ class Box:
     #         self._absolute_margin_left == value._absolute_margin_left
     #     ])
 
-    def reset(self):
+    def _reset(self):
         # Some properties describing whether this node exists in
         # layout *at all*.
         self.visible = True
@@ -234,6 +234,12 @@ class Box:
         self._origin_top = 0
         self._origin_left = 0
 
+    def reset(self):
+        self._reset()
+        for child in self.node.children:
+            if child.layout:
+                child.layout.reset()
+
     ######################################################################
     # Origin handling
     ######################################################################
@@ -247,7 +253,8 @@ class Box:
         if value != self.__origin_top:
             self.__origin_top = value
             for child in self.node.children:
-                child.layout._origin_top = self.absolute_content_top
+                if child.layout:
+                    child.layout._origin_top = self.absolute_content_top
             self._dirty = True
 
     @property
@@ -259,7 +266,8 @@ class Box:
         if value != self.__origin_left:
             self.__origin_left = value
             for child in self.node.children:
-                child.layout._origin_left = self.absolute_content_left
+                if child.layout:
+                    child.layout._origin_left = self.absolute_content_left
             self._dirty = True
 
     ######################################################################
@@ -296,7 +304,8 @@ class Box:
         if value != self._content_top:
             self._content_top = value
             for child in self.node.children:
-                child.layout._origin_top = self.absolute_content_top
+                if child.layout:
+                    child.layout._origin_top = self.absolute_content_top
             self._dirty = True
 
     @property
@@ -308,7 +317,8 @@ class Box:
         if value != self._content_left:
             self._content_left = value
             for child in self.node.children:
-                child.layout._origin_left = self.absolute_content_left
+                if child.layout:
+                    child.layout._origin_left = self.absolute_content_left
             self._dirty = True
 
     @property
@@ -701,4 +711,5 @@ class Box:
         if value != self._dirty:
             self._dirty = value
             for child in self.node.children:
-                child.layout.dirty = value
+                if child.layout:
+                    child.layout.dirty = value
