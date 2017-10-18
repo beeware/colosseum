@@ -156,12 +156,6 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.margin_bottom = calculate_size(node.style.margin_bottom, vertical)
     node.layout.margin_left = calculate_size(node.style.margin_left, horizontal)
 
-    # By default, the collapsed extent is the same as the margin.
-    node.layout.collapse_top = node.layout.margin_top
-    node.layout.collapse_right = node.layout.margin_right
-    node.layout.collapse_bottom = node.layout.margin_bottom
-    node.layout.collapse_left = node.layout.margin_left
-
     if node.style.border_top_style is None:
         node.layout.border_top_width = 0
     else:
@@ -190,6 +184,9 @@ def layout_box(display, node, containing_block, viewport, font):
     # Section 10.3 - evaluate height and margins
     calculate_width_and_margins(node, horizontal)
 
+    # When laying out the children, we need to track the extent of the bottom margin.
+    bottom_margin = None
+
     if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
         raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
     elif node.style.float is not None:
@@ -197,7 +194,8 @@ def layout_box(display, node, containing_block, viewport, font):
     else:  # Section 9.4 - Normal flow
         if establishes_inline_formatting_context(node):
             # Section 9.4.2 - Inline formatting context
-            pass
+            for child in node.children:
+                layout_box(display, child, node, viewport, font)
         elif establishes_table_formatting_context(node):
             # Section 17 - Table formatting context
             raise NotImplementedError("Section 17")  # pragma: no cover
@@ -205,7 +203,6 @@ def layout_box(display, node, containing_block, viewport, font):
             # Section 9.4.1 - Block formatting context
             children = anonymize(node.children)
             offset_top = 0
-            margin = None
             for child in children:
                 layout_box(display, child, node, viewport, font)
                 # If this is the first child, check if the first child's margin box
@@ -214,10 +211,10 @@ def layout_box(display, node, containing_block, viewport, font):
                 # by that amount.
                 # Otherwise, collapse the bottom margin of the previous element
                 # with the top margin of this element, and offset by the result.
-                if margin is None:
+                if bottom_margin is None:
                     node.layout.collapse_top = max(child.layout.margin_top, node.layout.margin_top)
                 else:
-                    offset_top += max(margin, child.layout.margin_top)
+                    offset_top += max(bottom_margin, child.layout.margin_top)
 
                 # The child's box is offset from the left by the margin width
                 child.layout.content_left += node.layout.margin_left
@@ -228,14 +225,15 @@ def layout_box(display, node, containing_block, viewport, font):
                 # and record the margin so it can be collapsed with the
                 # next element
                 offset_top += child.layout.border_box_height
-                margin = child.layout.collapse_bottom
-
-            # Merge the margin of the last child with
-            # the margin of the last child.
-            node.layout.collapse_bottom = max(node.layout.collapse_bottom, margin)
+                bottom_margin = child.layout.margin_bottom
 
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
+
+    # Merge the margin of the last child with
+    # the margin of the last child.
+    if bottom_margin is not None:
+        node.layout.collapse_bottom = max(node.layout.collapse_bottom, bottom_margin)
 
     # If position is relative, adjust the position.
     if node.style.position is RELATIVE:

@@ -1,20 +1,19 @@
 from colosseum.constants import BLOCK, MEDIUM, SOLID, THICK, THIN
 from colosseum.declaration import CSS
-from colosseum.engine import layout
 
 from ..utils import LayoutTestCase, TestNode
 
 
 class UABorderSizes(LayoutTestCase):
     def test_thin_border(self):
-        root = TestNode(
+        node = TestNode(
             style=CSS(display=BLOCK, border_style=SOLID, border_width=THIN, width=50, height=30)
         )
 
-        layout(self.display, root)
+        self.layout_node(node)
 
         self.assertLayout(
-            root,
+            node,
             {
                 'margin_box': {'position': (0, 0), 'size': (640, 32)},
                 'border_box': {'position': (0, 0), 'size': (52, 32)},
@@ -24,14 +23,14 @@ class UABorderSizes(LayoutTestCase):
         )
 
     def test_medium_border(self):
-        root = TestNode(
+        node = TestNode(
             style=CSS(display=BLOCK, border_style=SOLID, border_width=MEDIUM, width=50, height=30)
         )
 
-        layout(self.display, root)
+        self.layout_node(node)
 
         self.assertLayout(
-            root,
+            node,
             {
                 'margin_box': {'position': (0, 0), 'size': (640, 40)},
                 'border_box': {'position': (0, 0), 'size': (60, 40)},
@@ -41,14 +40,14 @@ class UABorderSizes(LayoutTestCase):
         )
 
     def test_thick_border(self):
-        root = TestNode(
+        node = TestNode(
             style=CSS(display=BLOCK, border_style=SOLID, border_width=THICK, width=50, height=30)
         )
 
-        layout(self.display, root)
+        self.layout_node(node)
 
         self.assertLayout(
-            root,
+            node,
             {
                 'margin_box': {'position': (0, 0), 'size': (640, 50)},
                 'border_box': {'position': (0, 0), 'size': (70, 50)},

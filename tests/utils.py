@@ -2,7 +2,7 @@ import json
 import os
 from unittest import TestCase, expectedFailure
 
-from colosseum.constants import MEDIUM, THICK, THIN
+from colosseum.constants import BLOCK, MEDIUM, THICK, THIN
 from colosseum.declaration import CSS
 from colosseum.dimensions import Box, Size
 from colosseum.engine import layout
@@ -125,6 +125,10 @@ class LayoutTestCase(TestCase):
     def setUp(self):
         self.maxDiff = None
         self.display = Display(dpi=96, width=640, height=480)
+
+    def layout_node(self, node):
+        root = TestNode(style=CSS(display=BLOCK), children=[node])
+        layout(self.display, root)
 
     def assertLayout(self, node, reference):
         self.assertEqual(

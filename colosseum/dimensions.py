@@ -113,6 +113,11 @@ class Box:
     margin_bottom: The bottom margin of the box
     margin_left: The left margin of the box
 
+    collapse_top: The top-most extent of the collapsed margin box.
+    collapse_right: The right-most extent of the collapsed margin box.
+    collapse_bottom: The bottom-most extent of the collapsed margin box.
+    collapse_left: The left-most extent of the collapsed margin box.
+
     padding_top: The top padding of the box
     padding_right: The right padding of the box
     padding_bottom: The bottom padding of the box
@@ -214,6 +219,12 @@ class Box:
         self._margin_bottom = 0
         self._margin_left = 0
 
+        # Collapse extents of the box
+        self._collapse_top = 0
+        self._collapse_right = 0
+        self._collapse_bottom = 0
+        self._collapse_left = 0
+
         # Border of the box
         self._border_top_width = 0
         self._border_right_width = 0
@@ -282,7 +293,6 @@ class Box:
     def content_width(self, value):
         if value != self._content_width:
             self._content_width = value
-
             self.dirty = True
 
     @property
@@ -329,6 +339,7 @@ class Box:
     def margin_top(self, value):
         if value != self._margin_top:
             self._margin_top = value
+            self._collapse_top = value
             self.dirty = True
 
     @property
@@ -339,6 +350,7 @@ class Box:
     def margin_right(self, value):
         if value != self._margin_right:
             self._margin_right = value
+            self._collapse_right = value
             self.dirty = True
 
     @property
@@ -349,6 +361,7 @@ class Box:
     def margin_bottom(self, value):
         if value != self._margin_bottom:
             self._margin_bottom = value
+            self._collapse_bottom = value
             self.dirty = True
 
     @property
@@ -359,7 +372,44 @@ class Box:
     def margin_left(self, value):
         if value != self._margin_left:
             self._margin_left = value
+            self._collapse_left = value
             self.dirty = True
+
+    @property
+    def collapse_top(self):
+        return self._collapse_top
+
+    @collapse_top.setter
+    def collapse_top(self, value):
+        if isinstance(value, int) and value > self._collapse_top:
+            self._collapse_top = value
+
+    @property
+    def collapse_right(self):
+        return self._collapse_right
+
+    @collapse_right.setter
+    def collapse_right(self, value):
+        if isinstance(value, int) and value > self._collapse_right:
+            self._collapse_right = value
+
+    @property
+    def collapse_bottom(self):
+        return self._collapse_bottom
+
+    @collapse_bottom.setter
+    def collapse_bottom(self, value):
+        if isinstance(value, int) and value > self._collapse_bottom:
+            self._collapse_bottom = value
+
+    @property
+    def collapse_left(self):
+        return self._collapse_left
+
+    @collapse_left.setter
+    def collapse_left(self, value):
+        if isinstance(value, int) and value > self._collapse_left:
+            self._collapse_left = value
 
     @property
     def border_top_width(self):
