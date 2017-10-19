@@ -89,9 +89,7 @@ def layout(display, node):
     # to the the display.
     node.layout.content_height = (
         display.content_height
-        - node.layout.content_top
-        - node.layout.padding_bottom
-        - node.layout.border_bottom_width
+        - node.layout.collapse_top
         - node.layout.collapse_bottom
     )
 
@@ -184,9 +182,6 @@ def layout_box(display, node, containing_block, viewport, font):
     # Section 10.3 - evaluate height and margins
     calculate_width_and_margins(node, horizontal)
 
-    # When laying out the children, we need to track the extent of the bottom margin.
-    bottom_margin = None
-
     if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
         raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
     elif node.style.float is not None:
@@ -203,6 +198,8 @@ def layout_box(display, node, containing_block, viewport, font):
             # Section 9.4.1 - Block formatting context
             children = anonymize(node.children)
             offset_top = 0
+            bottom_margin = None
+
             for child in children:
                 layout_box(display, child, node, viewport, font)
                 # If this is the first child, check if the first child's margin box
@@ -212,28 +209,21 @@ def layout_box(display, node, containing_block, viewport, font):
                 # Otherwise, collapse the bottom margin of the previous element
                 # with the top margin of this element, and offset by the result.
                 if bottom_margin is None:
-                    node.layout.collapse_top = max(child.layout.margin_top, node.layout.margin_top)
+                    node.layout.collapse_top = child.layout.collapse_top
                 else:
                     offset_top += max(bottom_margin, child.layout.margin_top)
 
-                # The child's box is offset from the left by the margin width
-                child.layout.content_left += node.layout.margin_left
-
                 # Offest the top of the child, relative to the parent.
                 child.layout.content_top += offset_top
+
                 # Increase the offset by the height of the box,
                 # and record the margin so it can be collapsed with the
                 # next element
                 offset_top += child.layout.border_box_height
-                bottom_margin = child.layout.margin_bottom
+                bottom_margin = child.layout.collapse_bottom
 
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
-
-    # Merge the margin of the last child with
-    # the margin of the last child.
-    if bottom_margin is not None:
-        node.layout.collapse_bottom = max(node.layout.collapse_bottom, bottom_margin)
 
     # If position is relative, adjust the position.
     if node.style.position is RELATIVE:
@@ -568,6 +558,11 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
         if node.children and node.children[-1]:
             last_child = node.children[-1]
             content_height = last_child.layout.border_box_bottom
+
+            # Merge the margin of the last child with
+            # the margin of the last child.
+            node.layout.collapse_bottom = last_child.layout.collapse_bottom
+
         # elif node.children and node.children[-1] top margin non collapsing with bottom margin:
         #     content_height = bottom border edge of bottom margin
         else:

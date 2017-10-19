@@ -104,9 +104,7 @@ class ChildLayoutTests(LayoutTestCase):
             }
         )
 
-    @expectedFailure
     def test_collapse_outside_parent(self):
-        # This shouldn't pass... if it ever starts failing, the raw
         grandchild1 = TestNode(
             style=CSS(display=BLOCK, height=10, margin=50),
         )
@@ -158,7 +156,6 @@ class ChildLayoutTests(LayoutTestCase):
             }
         )
 
-    @expectedFailure
     def test_overflow_outside_parent(self):
         grandchild1 = TestNode(
             style=CSS(display=BLOCK, height=10, margin=50),
