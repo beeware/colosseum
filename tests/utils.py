@@ -2,7 +2,7 @@ import json
 import os
 from unittest import TestCase, expectedFailure
 
-from colosseum.constants import BLOCK, MEDIUM, THICK, THIN
+from colosseum.constants import BLOCK, HTML4, MEDIUM, THICK, THIN
 from colosseum.declaration import CSS
 from colosseum.dimensions import Box, Size
 from colosseum.engine import layout
@@ -179,7 +179,7 @@ class W3CTestCase(LayoutTestCase):
             def test_method(self):
                 root = build_document(input_data['test_case'])
 
-                layout(self.display, root)
+                layout(self.display, root, standard=HTML4)
 
                 self.assertLayout(root, clean_reference(reference))
 

@@ -1,6 +1,6 @@
 from .constants import (
-    ABSOLUTE, AUTO, BLOCK, FIXED, INLINE, INLINE_BLOCK, LIST_ITEM, LTR,
-    MEDIUM, RELATIVE, TABLE, TABLE_CAPTION, TABLE_CELL, THICK, THIN,
+    ABSOLUTE, AUTO, BLOCK, FIXED, HTML5, INLINE, INLINE_BLOCK, LIST_ITEM,
+    LTR, MEDIUM, RELATIVE, TABLE, TABLE_CAPTION, TABLE_CELL, THICK, THIN,
 )
 from .dimensions import Box
 
@@ -72,7 +72,7 @@ class Viewport:
         self.layout = self.display
 
 
-def layout(display, node):
+def layout(display, node, standard=HTML5):
     containing_block = Viewport(display, node)
     font = None  # FIXME - default font
 
@@ -85,13 +85,16 @@ def layout(display, node):
     # must be displayed, so move the default content position so that it is.
     node.layout.content_top += node.layout.collapse_top
 
-    # The final content height of the root element is fitted
+    # In HTML5, the final content height of the root element is fitted
     # to the the display.
-    node.layout.content_height = (
-        display.content_height
-        - node.layout.collapse_top
-        - node.layout.collapse_bottom
-    )
+    # FIXME: Find the actual line in the standard that causes this.
+    # It might be in the HTML5 spec, rather than the CSS spec.
+    if standard is HTML5:
+        node.layout.content_height = (
+            display.content_height
+            - node.layout.collapse_top
+            - node.layout.collapse_bottom
+        )
 
 
 class AnonymousBlockBox:
