@@ -89,7 +89,6 @@ Colosseum is part of the `BeeWare suite`_. You can talk to the community through
 .. _@pybeeware on Twitter: https://twitter.com/pybeeware
 .. _pybee/general on Gitter: https://gitter.im/pybee/general
 
-
 .. toctree::
    :maxdepth: 2
    :hidden:

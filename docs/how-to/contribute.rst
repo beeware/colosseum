@@ -24,20 +24,6 @@ start coding::
     $ cd colosseum
     $ pip install -e .
 
-In order to test the capabilities of Colosseum, the test suite contains
-an Objective-C library with some known classes. To run the test suite,
-you'll need to compile this library::
-
-    $ make
-
-This will produce `tests/objc/libcolosseumharness.dylib`.
-
-In order for Colosseum to find this file, it will need to be on your
-dynamic library path. You can set this by setting an environment
-variable::
-
-    $ export DYLD_LIBRARY_PATH=$(pwd)/tests/objc
-
 You can then run the test suite::
 
     $ python setup.py test

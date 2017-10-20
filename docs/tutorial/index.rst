@@ -11,4 +11,3 @@ These tutorials are step-by step guides for using Colosseum.
    :titlesonly:
 
    tutorial-1
-
