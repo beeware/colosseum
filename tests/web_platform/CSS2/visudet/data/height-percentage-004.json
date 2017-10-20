@@ -1,54 +1,54 @@
 {
     "assert": "If the resulting height is smaller than 'min-height', the rules above are applied again, but this time using the value of 'min-height' as the computed value for 'height'. Note: These steps do not affect the real computed value of 'height'.",
-    "matches": "height-percentage-004-ref.xht",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "height": "36px",
+            "display": "block"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "512px",
+                    "margin_right": "112px",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "624px",
+                    "height": "0px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "top": "0px",
+                            "width": "53.78125px",
+                            "position": "absolute",
+                            "right": "0px",
+                            "height": "480px",
+                            "display": "block"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     "help": [
         "http://www.w3.org/TR/CSS22/visudet.html#the-height-property",
         "http://www.w3.org/TR/CSS22/changes.html#s.10.7"
     ],
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "height": "36px",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
-        "children": [
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "margin_right": "112px",
-                    "display": "block",
-                    "width": "512px",
-                    "height": "36px",
-                    "margin_bottom": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "0px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "position": "absolute",
-                            "display": "block",
-                            "top": "0px",
-                            "width": "53.78125px",
-                            "height": "480px",
-                            "right": "0px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "tag": "div"
-            }
-        ],
-        "tag": "body"
-    }
+    "matches": "height-percentage-004-ref.xht"
 }

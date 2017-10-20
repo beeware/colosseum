@@ -1,23 +1,39 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "114px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "80px",
+                    "display": "block",
+                    "width": "100px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
@@ -30,36 +46,20 @@
                     },
                     {
                         "style": {
-                            "width": "100px",
-                            "margin_top": "40px",
                             "height": "20px",
-                            "display": "block"
+                            "margin_top": "40px",
+                            "display": "block",
+                            "width": "100px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "80px",
-                    "width": "100px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "114px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-formatting-contexts-004-ref.xht",
+    "assert": "Margins collapse between adjacent block boxes in a block formatting context.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ],
-    "assert": "Margins collapse between adjacent block boxes in a block formatting context."
+    ]
 }

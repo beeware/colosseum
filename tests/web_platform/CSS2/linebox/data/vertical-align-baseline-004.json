@@ -1,60 +1,56 @@
 {
+    "assert": "The 'vertical-align' property aligns an empty 'inline-block' elements' bottom margin edge with the baseline.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "165px"
-        },
         "children": [
             {
                 "tag": "p",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
                     "margin_top": "16px",
+                    "display": "block",
                     "margin_bottom": "16px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 }
             },
             {
                 "tag": "div",
-                "style": {
-                    "width": "288px",
-                    "display": "block",
-                    "height": "113px"
-                },
                 "children": [
                     {
                         "tag": "span",
-                        "style": {
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_left_color": "rgb(255, 255, 255)"
-                        },
                         "children": [
                             {
                                 "tag": "span",
                                 "style": {
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "position": "relative",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "width": "96px",
-                                    "border_right_color": "rgb(255, 255, 255)",
-                                    "display": "inline-block",
                                     "height": "96px",
                                     "border_left_color": "rgb(255, 255, 255)",
-                                    "top": "19.200000762939453px"
+                                    "border_right_color": "rgb(255, 255, 255)",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "width": "96px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "position": "relative",
+                                    "top": "19.200000762939453px",
+                                    "display": "inline-block"
                                 }
                             }
-                        ]
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)"
+                        }
                     }
-                ]
+                ],
+                "style": {
+                    "width": "288px",
+                    "display": "block",
+                    "height": "115px"
+                }
             },
             {
                 "tag": "div",
@@ -64,12 +60,16 @@
                     "height": "18px"
                 }
             }
-        ]
+        ],
+        "style": {
+            "height": "167px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": "The 'vertical-align' property aligns an empty 'inline-block' elements' bottom margin edge with the baseline.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
     "matches": null
 }

@@ -1,51 +1,51 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "96px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "96px",
+                            "display": "block",
                             "width": "96px",
-                            "max_width": "96px",
-                            "display": "block"
+                            "max_width": "96px"
                         },
                         "tag": "span"
                     }
-                ],
-                "style": {
-                    "height": "96px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-filled-black-96px-square.xht",
+    "assert": "The 'max-width' property applies to elements with 'display' set to 'block'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
-    "assert": "The 'max-width' property applies to elements with 'display' set to 'block'."
+    ]
 }

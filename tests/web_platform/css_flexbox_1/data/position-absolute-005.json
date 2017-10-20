@@ -1,4 +1,5 @@
 {
+    "matches": "position-absolute-005-ref.html",
     "assert": "Checks that we correctly handle overflow: auto in\nabspos nodes in flexbox",
     "help": [
         "https://drafts.csswg.org/css-flexbox/#abspos-items"
@@ -9,10 +10,10 @@
                 "tag": "P",
                 "style": {
                     "height": "18px",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
                     "width": "400px",
-                    "display": "block"
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px"
                 }
             },
             {
@@ -64,74 +65,74 @@
                                                                 ],
                                                                 "tag": "DIV",
                                                                 "style": {
-                                                                    "height": "144px",
                                                                     "width": "400px",
-                                                                    "display": "block"
+                                                                    "display": "block",
+                                                                    "height": "144px"
                                                                 }
                                                             },
                                                             {
                                                                 "tag": "DIV",
                                                                 "style": {
-                                                                    "left": "0px",
-                                                                    "width": "400px",
-                                                                    "height": "10px",
                                                                     "right": "0px",
                                                                     "top": "0px",
-                                                                    "position": "absolute",
-                                                                    "display": "block"
+                                                                    "width": "400px",
+                                                                    "display": "block",
+                                                                    "height": "10px",
+                                                                    "left": "0px",
+                                                                    "position": "absolute"
                                                                 }
                                                             }
                                                         ],
                                                         "tag": "DIV",
                                                         "style": {
-                                                            "height": "144px",
                                                             "width": "400px",
-                                                            "display": "block"
+                                                            "display": "block",
+                                                            "height": "144px"
                                                         }
                                                     }
                                                 ],
                                                 "tag": "DIV",
                                                 "style": {
-                                                    "height": "144px",
                                                     "width": "400px",
-                                                    "display": "block"
+                                                    "display": "block",
+                                                    "height": "144px"
                                                 }
                                             }
                                         ],
                                         "tag": "DIV",
                                         "style": {
-                                            "height": "100px",
                                             "width": "400px",
-                                            "position": "relative",
-                                            "display": "block"
+                                            "display": "block",
+                                            "height": "100px",
+                                            "position": "relative"
                                         }
                                     }
                                 ],
                                 "tag": "DIV",
                                 "style": {
-                                    "height": "100px",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "400px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "height": "100px",
+                                    "min_width": "auto",
+                                    "min_height": "auto"
                                 }
                             }
                         ],
                         "tag": "DIV",
                         "style": {
-                            "height": "100px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "400px",
-                            "display": "flex"
+                            "display": "flex",
+                            "height": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "height": "100px",
                     "width": "400px",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "100px"
                 }
             },
             {
@@ -143,14 +144,13 @@
         ],
         "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "width": "400px",
             "margin_left": "8px",
-            "height": "300px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "display": "block"
+            "width": "400px",
+            "display": "block",
+            "height": "300px",
+            "margin_top": "8px"
         }
-    },
-    "matches": "position-absolute-005-ref.html"
+    }
 }

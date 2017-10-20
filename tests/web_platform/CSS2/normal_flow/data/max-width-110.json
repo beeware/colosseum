@@ -1,23 +1,40 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "100px",
+                    "display": "block",
+                    "width": "100px",
+                    "float": "left"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
@@ -27,31 +44,14 @@
                         },
                         "tag": "img"
                     }
-                ],
-                "style": {
-                    "width": "100px",
-                    "float": "left",
-                    "height": "100px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "If 'height' and 'width' both have computed values of 'auto' and the element also has an intrinsic width, then such intrinsic width is the used value of 'width'. If 'width' of a floating, non-replaced element computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
-    "assert": "If 'height' and 'width' both have computed values of 'auto' and the element also has an intrinsic width, then such intrinsic width is the used value of 'width'. If 'width' of a floating, non-replaced element computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation."
+    ]
 }

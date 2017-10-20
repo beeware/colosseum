@@ -1,38 +1,38 @@
 {
-    "matches": null,
     "assert": "Root elements may treat non-static positions as 'static'.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "379.625px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "script",
-                "style": {
-                    "display": "none"
-                }
-            }
-        ],
-        "style": {
-            "width": "379.625px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "52px"
-        }
-    },
+    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "52px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "379.625px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "379.625px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "none"
+                },
+                "tag": "script"
+            }
+        ],
+        "tag": "body"
+    }
 }

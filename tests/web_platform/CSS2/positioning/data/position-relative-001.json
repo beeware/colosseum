@@ -1,62 +1,62 @@
 {
-    "matches": "position-relative-001-ref.xht",
     "assert": "Relatively positioned elements lay out in normal flow.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "span",
-                        "style": {
-                            "position": "relative"
-                        }
-                    },
-                    {
-                        "tag": "span",
-                        "style": {}
-                    },
-                    {
-                        "tag": "span",
-                        "style": {
-                            "position": "relative"
-                        }
-                    },
-                    {
-                        "tag": "span",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "52px"
-        }
-    },
+    "matches": "position-relative-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "52px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "relative"
+                        },
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "tag": "span"
+                    },
+                    {
+                        "style": {
+                            "position": "relative"
+                        },
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

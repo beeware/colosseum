@@ -1,70 +1,70 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "0px",
+                    "width": "100px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "left": "120px",
+                            "height": "96px",
+                            "right": "120px",
+                            "width": "-140px",
+                            "display": "block",
+                            "position": "absolute"
+                        },
+                        "tag": "div",
                         "children": [
                             {
                                 "style": {
                                     "height": "96px",
+                                    "display": "block",
                                     "width": "0px",
-                                    "min_width": "200%",
-                                    "display": "block"
+                                    "min_width": "200%"
                                 },
                                 "tag": "div"
                             }
-                        ],
-                        "style": {
-                            "width": "-140px",
-                            "position": "absolute",
-                            "height": "96px",
-                            "right": "120px",
-                            "left": "120px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "0px",
-                    "position": "relative",
-                    "width": "100px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "If the containing block's width is negative, the used value is zero.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
-    "assert": "If the containing block's width is negative, the used value is zero."
+    ]
 }

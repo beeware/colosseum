@@ -1,25 +1,53 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "66px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "32px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "border_top_style": "solid",
+                            "border_bottom_style": "solid",
+                            "height": "0px",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_top_width": "16px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "display": "block",
+                            "width": "624px",
+                            "border_bottom_width": "16px"
+                        },
+                        "tag": "div",
                         "children": [
                             {
                                 "style": {
@@ -30,43 +58,15 @@
                                 },
                                 "tag": "div"
                             }
-                        ],
-                        "style": {
-                            "border_top_style": "solid",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "border_top_width": "16px",
-                            "width": "624px",
-                            "border_bottom_width": "16px",
-                            "border_bottom_style": "solid",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "32px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "66px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "height-114-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ],
-    "assert": null
+    ]
 }

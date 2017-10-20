@@ -1,109 +1,104 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#direction",
-        "http://www.w3.org/TR/CSS21/generate.html#list-style",
-        "http://www.w3.org/TR/CSS21/text.html#alignment-prop"
-    ],
     "assert": "direction:rtl should apply to nested ordered lists, putting bullets  on the right and offset leftwards",
     "test_case": {
-        "style": {
-            "height": "108px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "108px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "ol",
                 "style": {
-                    "display": "block",
                     "padding_right": "40px",
-                    "height": "108px",
                     "margin_bottom": "16px",
+                    "height": "108px",
                     "margin_top": "16px",
                     "direction": "rtl",
-                    "width": "584px"
+                    "width": "584px",
+                    "display": "block"
                 },
-                "tag": "ol",
                 "children": [
                     {
+                        "tag": "li",
                         "style": {
-                            "display": "list-item",
-                            "width": "520px",
+                            "padding_right": "32px",
                             "padding_left": "32px",
                             "height": "18px",
                             "direction": "rtl",
-                            "padding_right": "32px"
-                        },
-                        "tag": "li"
+                            "display": "list-item",
+                            "width": "520px"
+                        }
                     },
                     {
+                        "tag": "li",
                         "style": {
-                            "display": "list-item",
-                            "width": "520px",
+                            "padding_right": "32px",
                             "padding_left": "32px",
                             "height": "18px",
                             "direction": "rtl",
-                            "padding_right": "32px"
-                        },
-                        "tag": "li"
+                            "display": "list-item",
+                            "width": "520px"
+                        }
                     },
                     {
+                        "tag": "li",
                         "style": {
-                            "display": "list-item",
-                            "width": "520px",
+                            "padding_right": "32px",
                             "padding_left": "32px",
                             "height": "72px",
                             "direction": "rtl",
-                            "padding_right": "32px"
+                            "display": "list-item",
+                            "width": "520px"
                         },
-                        "tag": "li",
                         "children": [
                             {
-                                "style": {
-                                    "height": "54px",
-                                    "display": "block",
-                                    "padding_right": "40px",
-                                    "direction": "rtl",
-                                    "width": "480px"
-                                },
                                 "tag": "ol",
+                                "style": {
+                                    "padding_right": "40px",
+                                    "width": "480px",
+                                    "display": "block",
+                                    "direction": "rtl",
+                                    "height": "54px"
+                                },
                                 "children": [
                                     {
+                                        "tag": "li",
                                         "style": {
-                                            "display": "list-item",
-                                            "width": "416px",
+                                            "padding_right": "32px",
                                             "padding_left": "32px",
                                             "height": "18px",
                                             "direction": "rtl",
-                                            "padding_right": "32px"
-                                        },
-                                        "tag": "li"
+                                            "display": "list-item",
+                                            "width": "416px"
+                                        }
                                     },
                                     {
+                                        "tag": "li",
                                         "style": {
-                                            "display": "list-item",
-                                            "width": "416px",
+                                            "padding_right": "32px",
                                             "padding_left": "32px",
                                             "height": "18px",
                                             "direction": "rtl",
-                                            "padding_right": "32px"
-                                        },
-                                        "tag": "li"
+                                            "display": "list-item",
+                                            "width": "416px"
+                                        }
                                     },
                                     {
+                                        "tag": "li",
                                         "style": {
-                                            "display": "list-item",
-                                            "width": "416px",
+                                            "padding_right": "32px",
                                             "padding_left": "32px",
                                             "height": "18px",
                                             "direction": "rtl",
-                                            "padding_right": "32px"
-                                        },
-                                        "tag": "li"
+                                            "display": "list-item",
+                                            "width": "416px"
+                                        }
                                     }
                                 ]
                             }
@@ -113,5 +108,10 @@
             }
         ]
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#direction",
+        "http://www.w3.org/TR/CSS21/generate.html#list-style",
+        "http://www.w3.org/TR/CSS21/text.html#alignment-prop"
+    ]
 }

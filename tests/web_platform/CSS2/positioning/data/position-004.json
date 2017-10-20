@@ -1,80 +1,80 @@
 {
-    "matches": null,
     "assert": "The 'position' property applies the value 'fixed' and places the element out of flow of the document and locks it to a specific point on the viewport.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "3070px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "54px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "position": "fixed",
-                                    "width": "77.53125px",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "height": "18px",
-                                    "display": "block",
-                                    "border_right_color": "rgb(255, 255, 255)",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "left": "96px",
-                                    "z_index": "0",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "top": "168px"
-                                }
-                            }
-                        ],
-                        "style": {
-                            "border_top_style": "solid",
-                            "height": "0px",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_right_width": "3px",
-                            "border_bottom_style": "solid",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "border_right_style": "solid",
-                            "width": "618px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_bottom_width": "3px",
-                            "border_left_style": "solid",
-                            "border_left_width": "3px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_width": "3px",
-                            "display": "block"
-                        }
-                    }
-                ],
                 "style": {
                     "width": "624px",
                     "height": "3000px",
                     "display": "block"
-                }
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "0px",
+                            "display": "block",
+                            "border_top_width": "3px",
+                            "border_left_width": "3px",
+                            "border_right_style": "solid",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_left_style": "solid",
+                            "border_bottom_style": "solid",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_bottom_width": "3px",
+                            "width": "618px",
+                            "border_top_style": "solid",
+                            "border_right_width": "3px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "border_right_color": "rgb(255, 255, 255)",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "display": "block",
+                                    "top": "168px",
+                                    "position": "fixed",
+                                    "width": "77.53125px",
+                                    "height": "18px",
+                                    "z_index": "0",
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "left": "96px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "3070px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
-        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+        "tag": "body"
+    }
 }

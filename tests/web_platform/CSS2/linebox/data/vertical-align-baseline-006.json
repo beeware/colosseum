@@ -1,37 +1,27 @@
 {
+    "assert": "The baseline of an inline element is aligned with the baseline of its child inline-block when 'vertical-align: baseline' is specified on the child.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "71px"
-        },
         "children": [
             {
                 "tag": "p",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
                     "margin_top": "16px",
+                    "display": "block",
                     "margin_bottom": "16px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 }
             },
             {
                 "tag": "div",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "37px"
-                },
                 "children": [
                     {
                         "tag": "span",
-                        "style": {},
                         "children": [
                             {
                                 "tag": "span",
@@ -41,16 +31,26 @@
                                     "height": "37px"
                                 }
                             }
-                        ]
+                        ],
+                        "style": {}
                     }
-                ]
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "37px"
+                }
             }
-        ]
+        ],
+        "style": {
+            "height": "71px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": "The baseline of an inline element is aligned with the baseline of its child inline-block when 'vertical-align: baseline' is specified on the child.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
     "matches": null
 }

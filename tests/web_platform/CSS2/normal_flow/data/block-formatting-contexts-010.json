@@ -1,75 +1,75 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "244px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "210px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "border_top_style": "solid",
+                            "border_left_style": "solid",
+                            "border_right_width": "3px",
+                            "height": "200px",
+                            "border_top_width": "3px",
+                            "width": "200px",
+                            "border_left_width": "3px",
+                            "display": "inline-block",
+                            "border_right_style": "solid",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "3px"
+                        },
+                        "tag": "span",
                         "children": [
                             {
                                 "style": {
                                     "height": "50px",
-                                    "width": "200px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "width": "200px"
                                 },
                                 "tag": "span"
                             },
                             {
                                 "style": {
                                     "height": "50px",
-                                    "width": "200px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "width": "200px"
                                 },
                                 "tag": "span"
                             }
-                        ],
-                        "style": {
-                            "height": "200px",
-                            "border_top_style": "solid",
-                            "border_right_width": "3px",
-                            "border_right_style": "solid",
-                            "border_top_width": "3px",
-                            "width": "200px",
-                            "border_bottom_width": "3px",
-                            "border_left_style": "solid",
-                            "border_bottom_style": "solid",
-                            "border_left_width": "3px",
-                            "display": "inline-block"
-                        },
-                        "tag": "span"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "210px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "244px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-formatting-contexts-008-ref.xht",
+    "assert": "Elements defined as inline-blocks establish a new block formatting context.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ],
-    "assert": "Elements defined as inline-blocks establish a new block formatting context."
+    ]
 }

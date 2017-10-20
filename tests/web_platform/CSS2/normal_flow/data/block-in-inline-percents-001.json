@@ -1,43 +1,43 @@
 {
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "100px",
-                            "border_top_style": "solid",
-                            "border_right_width": "10px",
-                            "border_right_style": "solid",
-                            "border_top_width": "10px",
-                            "width": "604px",
-                            "border_bottom_width": "10px",
-                            "border_left_style": "solid",
-                            "border_bottom_style": "solid",
-                            "border_left_width": "10px",
-                            "display": "block"
-                        },
-                        "tag": "span"
-                    }
-                ],
-                "style": {},
-                "tag": "span"
-            }
-        ],
         "style": {
             "margin_left": "8px",
             "margin_bottom": "8px",
             "height": "200px",
-            "width": "624px",
             "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
         },
-        "tag": "body"
+        "tag": "body",
+        "children": [
+            {
+                "style": {},
+                "tag": "span",
+                "children": [
+                    {
+                        "style": {
+                            "border_top_style": "solid",
+                            "border_left_style": "solid",
+                            "border_right_width": "10px",
+                            "height": "100px",
+                            "border_top_width": "10px",
+                            "width": "604px",
+                            "border_left_width": "10px",
+                            "display": "block",
+                            "border_right_style": "solid",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "10px"
+                        },
+                        "tag": "span"
+                    }
+                ]
+            }
+        ]
     },
     "matches": "block-in-inline-percents-001-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
-    "assert": null
+    ]
 }

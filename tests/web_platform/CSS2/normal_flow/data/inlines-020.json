@@ -1,51 +1,51 @@
 {
     "test_case": {
+        "style": {
+            "height": "40px",
+            "display": "block",
+            "width": "640px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
-                    "border_left_style": "solid",
                     "border_left_width": "20px",
-                    "border_left_color": "rgb(0, 128, 0)"
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_left_style": "solid"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "height": "20px",
-                    "width": "80px",
-                    "border_left_color": "rgb(255, 255, 0)",
+                    "display": "block",
                     "border_top_color": "rgb(255, 255, 0)",
-                    "display": "block"
+                    "height": "20px",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "width": "80px",
+                    "border_right_color": "rgb(255, 255, 0)"
                 },
                 "tag": "p"
             },
             {
                 "style": {
-                    "top": "20px",
-                    "border_right_color": "rgb(0, 128, 0)",
+                    "display": "block",
+                    "border_top_color": "rgb(0, 128, 0)",
                     "height": "20px",
                     "border_bottom_color": "rgb(0, 128, 0)",
+                    "top": "20px",
+                    "border_left_color": "rgb(0, 128, 0)",
                     "position": "absolute",
                     "width": "590.078125px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "display": "block"
+                    "border_right_color": "rgb(0, 128, 0)"
                 },
                 "tag": "p"
             }
-        ],
-        "style": {
-            "height": "40px",
-            "width": "640px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inlines-020-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ],
-    "assert": null
+    ]
 }

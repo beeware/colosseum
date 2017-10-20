@@ -1,4 +1,5 @@
 {
+    "matches": null,
     "assert": "Checks that we correctly position abspos children\nwith different alignments and dynamic changes",
     "help": [
         "https://drafts.csswg.org/css-flexbox/#abspos-items"
@@ -8,9 +9,9 @@
             {
                 "tag": "DIV",
                 "style": {
-                    "height": "0px",
                     "width": "640px",
-                    "display": "block"
+                    "display": "block",
+                    "height": "0px"
                 }
             },
             {
@@ -18,27 +19,27 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "min_width": "auto",
-                            "left": "20px",
-                            "width": "20px",
-                            "height": "20px",
                             "top": "20px",
-                            "position": "absolute",
-                            "display": "block"
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "left": "20px",
+                            "min_height": "auto",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "width": "100px",
                     "margin_left": "10px",
-                    "height": "101px",
+                    "margin_bottom": "10px",
                     "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "101px",
+                    "margin_top": "10px",
+                    "position": "relative"
                 }
             },
             {
@@ -46,58 +47,58 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "20px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
                             "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "20px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "min_width": "auto",
-                            "left": "5px",
-                            "width": "20px",
-                            "height": "20px",
                             "top": "5px",
-                            "position": "absolute",
-                            "display": "block"
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "left": "5px",
+                            "min_height": "auto",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "width": "100px",
                     "margin_left": "10px",
-                    "height": "100px",
+                    "margin_bottom": "10px",
                     "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "100px",
+                    "margin_top": "10px",
+                    "position": "relative"
                 }
             },
             {
@@ -107,66 +108,66 @@
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "height": "20px",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "20px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_width": "auto",
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "width": "20px",
-                                    "height": "20px",
-                                    "display": "block",
                                     "min_width": "auto",
+                                    "width": "20px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_height": "auto",
                                     "position": "absolute"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "height": "20px",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "20px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_width": "auto",
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
                                     "min_width": "auto",
-                                    "left": "5px",
-                                    "width": "20px",
-                                    "height": "20px",
                                     "top": "5px",
-                                    "position": "absolute",
-                                    "display": "block"
+                                    "width": "20px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "left": "5px",
+                                    "min_height": "auto",
+                                    "position": "absolute"
                                 }
                             }
                         ],
                         "tag": "DIV",
                         "style": {
-                            "margin_bottom": "10px",
-                            "margin_top": "10px",
-                            "width": "100px",
                             "margin_left": "10px",
-                            "height": "100px",
+                            "margin_bottom": "10px",
                             "margin_right": "10px",
-                            "display": "flex"
+                            "width": "100px",
+                            "display": "flex",
+                            "height": "100px",
+                            "margin_top": "10px"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "height": "100px",
                     "width": "640px",
-                    "position": "relative",
-                    "display": "block"
+                    "display": "block",
+                    "height": "100px",
+                    "position": "relative"
                 }
             },
             {
@@ -174,63 +175,63 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "direction": "rtl",
+                            "display": "block",
                             "width": "20px",
-                            "height": "20px",
                             "min_width": "auto",
-                            "display": "block"
+                            "height": "20px",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "direction": "rtl",
-                            "width": "20px",
-                            "height": "20px",
                             "display": "block",
+                            "width": "20px",
                             "min_width": "auto",
+                            "height": "20px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "direction": "rtl",
+                            "display": "block",
                             "width": "20px",
-                            "height": "20px",
                             "min_width": "auto",
-                            "display": "block"
+                            "height": "20px",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "direction": "rtl",
                             "min_width": "auto",
-                            "left": "5px",
-                            "width": "20px",
-                            "height": "20px",
                             "top": "5px",
-                            "position": "absolute",
-                            "display": "block"
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "left": "5px",
+                            "min_height": "auto",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
+                    "margin_left": "10px",
                     "margin_bottom": "10px",
                     "direction": "rtl",
-                    "margin_top": "10px",
-                    "width": "100px",
-                    "margin_left": "10px",
-                    "height": "100px",
                     "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "100px",
+                    "margin_top": "10px",
+                    "position": "relative"
                 }
             },
             {
@@ -240,211 +241,162 @@
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "height": "20px",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "90px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_width": "auto",
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "width": "20px",
-                                    "height": "20px",
-                                    "display": "block",
                                     "min_width": "auto",
+                                    "width": "20px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_height": "auto",
                                     "position": "absolute"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "height": "20px",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "20px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_width": "auto",
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "width": "20px",
-                                    "height": "20px",
-                                    "display": "block",
                                     "min_width": "auto",
+                                    "width": "20px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_height": "auto",
                                     "position": "absolute"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "height": "20px",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "20px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_width": "auto",
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "width": "20px",
-                                    "height": "20px",
-                                    "display": "block",
                                     "min_width": "auto",
+                                    "width": "20px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "min_height": "auto",
                                     "position": "absolute"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
                                     "min_width": "auto",
-                                    "left": "5px",
-                                    "width": "20px",
-                                    "height": "20px",
                                     "top": "5px",
-                                    "position": "absolute",
-                                    "display": "block"
+                                    "width": "20px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "left": "5px",
+                                    "min_height": "auto",
+                                    "position": "absolute"
                                 }
                             }
                         ],
                         "tag": "DIV",
                         "style": {
-                            "margin_bottom": "10px",
-                            "margin_top": "10px",
-                            "width": "100px",
                             "margin_left": "10px",
-                            "height": "100px",
+                            "margin_bottom": "10px",
                             "margin_right": "10px",
-                            "display": "flex"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "height": "100px",
-                    "width": "640px",
-                    "position": "relative",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "margin_bottom": "40px",
-                            "min_height": "auto",
-                            "margin_top": "40px",
-                            "width": "20px",
-                            "margin_left": "40px",
-                            "height": "20px",
-                            "margin_right": "40px",
-                            "min_width": "auto",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "position": "absolute"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "position": "absolute"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "left": "5px",
-                            "width": "20px",
-                            "height": "20px",
-                            "top": "5px",
-                            "position": "absolute",
-                            "display": "block"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "width": "100px",
-                    "margin_left": "10px",
-                    "height": "100px",
-                    "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "style": {
+                            "width": "100px",
+                            "display": "flex",
                             "height": "100px",
-                            "min_height": "auto",
+                            "margin_top": "10px"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "width": "640px",
+                    "display": "block",
+                    "height": "100px",
+                    "position": "relative"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "margin_left": "40px",
                             "min_width": "auto",
+                            "margin_bottom": "40px",
+                            "margin_right": "40px",
                             "width": "20px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "20px",
+                            "margin_top": "40px",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "0px",
-                            "display": "block",
                             "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "min_width": "auto",
-                            "left": "5px",
                             "width": "20px",
-                            "height": "0px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
+                            "position": "absolute"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
                             "top": "5px",
-                            "position": "absolute",
-                            "display": "block"
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "left": "5px",
+                            "min_height": "auto",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "width": "100px",
                     "margin_left": "10px",
-                    "height": "100px",
+                    "margin_bottom": "10px",
                     "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "100px",
+                    "margin_top": "10px",
+                    "position": "relative"
                 }
             },
             {
@@ -452,77 +404,48 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "100px",
                             "min_width": "auto",
-                            "width": "100px",
-                            "display": "block"
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
                             "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "0px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
                             "min_width": "auto",
-                            "width": "50px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
+                            "top": "5px",
                             "width": "20px",
-                            "height": "20px",
                             "display": "block",
-                            "min_width": "auto",
-                            "position": "absolute"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "height": "20px",
+                            "height": "0px",
+                            "left": "5px",
                             "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "50px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
-                            "min_width": "auto",
                             "position": "absolute"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "width": "100px",
                     "margin_left": "10px",
-                    "height": "100px",
+                    "margin_bottom": "10px",
                     "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "100px",
+                    "margin_top": "10px",
+                    "position": "relative"
                 }
             },
             {
@@ -530,77 +453,155 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
                             "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "50px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
                             "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "20px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "50px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "width": "20px",
-                            "height": "20px",
-                            "display": "block",
                             "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
                             "position": "absolute"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "width": "100px",
                     "margin_left": "10px",
-                    "height": "100px",
+                    "margin_bottom": "10px",
                     "margin_right": "10px",
-                    "position": "relative",
-                    "display": "flex"
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "100px",
+                    "margin_top": "10px",
+                    "position": "relative"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "100px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
+                            "position": "absolute"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "50px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
+                            "position": "absolute"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "50px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_width": "auto",
+                            "min_height": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "width": "20px",
+                            "display": "block",
+                            "height": "20px",
+                            "min_height": "auto",
+                            "position": "absolute"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "margin_left": "10px",
+                    "margin_bottom": "10px",
+                    "margin_right": "10px",
+                    "width": "100px",
+                    "display": "flex",
+                    "height": "100px",
+                    "margin_top": "10px",
+                    "position": "relative"
                 }
             },
             {
@@ -612,10 +613,9 @@
         ],
         "tag": "BODY",
         "style": {
-            "height": "981px",
             "width": "640px",
-            "display": "block"
+            "display": "block",
+            "height": "981px"
         }
-    },
-    "matches": null
+    }
 }

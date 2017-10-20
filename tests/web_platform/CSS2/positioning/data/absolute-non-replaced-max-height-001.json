@@ -1,55 +1,55 @@
 {
-    "matches": null,
     "assert": "The calculation of static position is based on initial containing block when there is a fixed positioned element.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
     "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "width": "640px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "fixed",
-                            "height": "48px",
-                            "display": "block",
-                            "z_index": "0",
-                            "width": "96px",
-                            "max_height": "48px"
-                        }
-                    }
-                ],
-                "style": {
-                    "border_top_style": "solid",
-                    "position": "absolute",
-                    "height": "192px",
-                    "border_left_style": "solid",
-                    "border_right_width": "3px",
-                    "border_bottom_style": "solid",
-                    "width": "192px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
-                    "border_top_width": "3px",
-                    "display": "block"
-                }
-            }
-        ],
         "style": {
             "width": "640px",
             "height": "18px",
             "display": "block"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ]
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "640px",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "192px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "border_right_style": "solid",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px",
+                    "width": "192px",
+                    "border_top_style": "solid",
+                    "position": "absolute",
+                    "border_right_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "max_height": "48px",
+                            "height": "48px",
+                            "display": "block",
+                            "position": "fixed",
+                            "width": "96px",
+                            "z_index": "0"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

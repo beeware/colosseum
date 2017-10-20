@@ -1,66 +1,66 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "322px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "288px",
+                    "width": "624px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "288px",
-                            "position": "relative",
                             "width": "96px",
-                            "min_height": "288px",
-                            "display": "block"
+                            "display": "block",
+                            "position": "relative",
+                            "min_height": "288px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "top": "0px",
                             "border_top_style": "solid",
+                            "left": "100px",
                             "height": "0px",
-                            "position": "absolute",
                             "border_top_width": "288px",
                             "width": "96px",
-                            "left": "100px",
-                            "display": "block"
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "288px",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "322px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "height-061-ref.xht",
+    "assert": "The 'min-height' property sets a nominal length value in inches.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
-    "assert": "The 'min-height' property sets a nominal length value in inches."
+    ]
 }

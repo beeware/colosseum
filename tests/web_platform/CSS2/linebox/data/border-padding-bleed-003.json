@@ -1,71 +1,71 @@
 {
+    "assert": "Although margins, borders and padding of inline non-replaced elements do not enter into the line box calculation, they are still rendered around inline boxes. This means that if the height specified by 'line-height' (40px in this testcase) is equal to the content height (40px in this testcase) of contained boxes, then background-color of padding-top area and border-top may 'bleed' into the adjoining preceding line box. Since line boxes are rendered in document order, this causes border-top of 2nd line box (the span element in this testcase) to be painted over border-bottom and padding-bottom of inline boxes of previous line and, in this testcase, over the 1st line box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "114px"
-        },
         "children": [
             {
                 "tag": "p",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "18px"
-                },
                 "children": [
                     {
                         "tag": "strong",
                         "style": {}
                     }
-                ]
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "width": "624px"
+                }
             },
             {
                 "tag": "div",
-                "style": {
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "border_top_color": "rgb(255, 0, 0)",
-                    "width": "624px",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "display": "block",
-                    "height": "80px",
-                    "border_left_color": "rgb(255, 0, 0)"
-                },
                 "children": [
                     {
                         "tag": "br",
                         "style": {
                             "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_top_color": "rgb(255, 0, 0)",
+                            "border_left_color": "rgb(255, 0, 0)",
                             "border_right_color": "rgb(255, 0, 0)",
-                            "border_left_color": "rgb(255, 0, 0)"
+                            "border_top_color": "rgb(255, 0, 0)"
                         }
                     },
                     {
                         "tag": "span",
                         "style": {
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_right_color": "rgb(0, 128, 0)",
                             "border_bottom_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)",
-                            "border_top_width": "40px",
                             "border_top_style": "solid",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)"
+                            "border_top_width": "40px"
                         }
                     }
-                ]
+                ],
+                "style": {
+                    "height": "80px",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "width": "624px",
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "display": "block"
+                }
             }
-        ]
+        ],
+        "style": {
+            "height": "114px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": "Although margins, borders and padding of inline non-replaced elements do not enter into the line box calculation, they are still rendered around inline boxes. This means that if the height specified by 'line-height' (40px in this testcase) is equal to the content height (40px in this testcase) of contained boxes, then background-color of padding-top area and border-top may 'bleed' into the adjoining preceding line box. Since line boxes are rendered in document order, this causes border-top of 2nd line box (the span element in this testcase) to be painted over border-bottom and padding-bottom of inline boxes of previous line and, in this testcase, over the 1st line box.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
     "matches": "border-padding-bleed-001-ref.xht"
 }

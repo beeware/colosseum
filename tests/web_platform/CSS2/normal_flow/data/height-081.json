@@ -1,46 +1,46 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "34px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
                 "style": {
                     "height": "0px",
-                    "width": "624px",
-                    "display": "block"
+                    "display": "block",
+                    "width": "624px"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "34px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "height-067-ref.xht",
+    "assert": "The 'height' property sets a negative zero length value in 'ex' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ],
-    "assert": "The 'height' property sets a negative zero length value in 'ex' units."
+    ]
 }

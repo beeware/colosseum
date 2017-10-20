@@ -1,79 +1,79 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
     "assert": "If 'width' is auto and 'left' and 'right' are not 'auto', then set 'auto' values for 'margin-left' and 'margin-right' to 0 and then solve for 'width'; the tentative width may be later constrained by max-width in which case, the algorithm must be re-entered. If 'height' is 'auto' and 'top' and 'bottom' are not 'auto', then 'auto' values for 'margin-top' and 'margin-bottom' are set to 0 and solve for 'height'; the tentative height may be later constrained by max-height in which case, the algorithm must be re-entered.",
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "134px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "33px",
-                            "display": "block",
-                            "left": "33px",
-                            "height": "33px",
-                            "top": "33px"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "height": "34px",
-                            "margin_top": "33px",
-                            "margin_left": "33px",
-                            "bottom": "0px",
-                            "margin_bottom": "33px",
-                            "max_width": "34px",
-                            "left": "0px",
-                            "right": "0px",
-                            "width": "34px",
-                            "margin_right": "33px",
-                            "display": "block",
-                            "max_height": "34px",
-                            "top": "0px"
-                        }
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
                     "position": "relative",
                     "width": "100px",
                     "height": "100px",
                     "display": "block"
-                }
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "33px",
+                            "display": "block",
+                            "left": "33px",
+                            "position": "absolute",
+                            "width": "33px",
+                            "top": "33px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "height": "34px",
+                            "display": "block",
+                            "left": "0px",
+                            "margin_right": "33px",
+                            "margin_top": "33px",
+                            "position": "absolute",
+                            "margin_bottom": "33px",
+                            "top": "0px",
+                            "max_width": "34px",
+                            "right": "0px",
+                            "max_height": "34px",
+                            "bottom": "0px",
+                            "width": "34px",
+                            "margin_left": "33px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "134px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ]
+        "tag": "body"
+    }
 }

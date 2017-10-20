@@ -1,67 +1,67 @@
 {
-    "matches": "right-031-ref.xht",
     "assert": "The 'right' property sets a positive nominal length value in picas.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "relative",
-                            "right": "96px",
-                            "width": "704px",
-                            "border_right_style": "solid",
-                            "margin_right": "-112px",
-                            "display": "block",
-                            "border_right_width": "16px",
-                            "direction": "rtl",
-                            "height": "96px"
-                        }
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "width": "608px",
-                    "border_right_style": "solid",
-                    "border_right_width": "16px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "direction": "rtl",
-                    "height": "96px"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "130px"
-        }
-    },
+    "matches": "right-031-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "130px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "direction": "rtl",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "height": "96px",
+                    "display": "block",
+                    "position": "relative",
+                    "width": "608px",
+                    "border_right_style": "solid",
+                    "border_right_width": "16px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "right": "96px",
+                            "direction": "rtl",
+                            "height": "96px",
+                            "display": "block",
+                            "margin_right": "-112px",
+                            "position": "relative",
+                            "width": "704px",
+                            "border_right_style": "solid",
+                            "border_right_width": "16px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

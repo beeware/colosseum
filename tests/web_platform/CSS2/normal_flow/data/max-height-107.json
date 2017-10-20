@@ -1,71 +1,71 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "486px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "36px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "36px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
                 "style": {
                     "max_height": "200px",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "height": "200px",
-                    "width": "200px",
-                    "border_left_color": "rgb(255, 0, 0)",
+                    "display": "block",
                     "border_top_color": "rgb(255, 0, 0)",
-                    "display": "block"
+                    "height": "200px",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "width": "200px",
+                    "border_right_color": "rgb(255, 0, 0)"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "top": "-200px",
-                    "position": "relative",
-                    "width": "200px",
                     "height": "200px",
-                    "display": "block"
+                    "width": "200px",
+                    "top": "-200px",
+                    "display": "block",
+                    "position": "relative"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "486px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "max-height-107-ref.xht",
+    "assert": "Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars.",
     "help": [
         "http://www.w3.org/TR/CSS21/visufx.html#overflow",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
-    "assert": "Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars."
+    ]
 }

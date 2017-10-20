@@ -1,49 +1,49 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS22/visuren.html#inline-formatting",
-        "http://www.w3.org/TR/CSS22/changes.html#s.9.4.2"
-    ],
     "assert": "An inline formatting context is established by a block container box that contains no block-level boxes. In an inline formatting context, boxes are laid out horizontally, one after the other, beginning at the top of a containing block.",
     "test_case": {
-        "style": {
-            "height": "18px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "div",
                 "style": {
-                    "height": "18px",
+                    "min_width": "400px",
                     "display": "block",
                     "width": "624px",
-                    "min_width": "400px"
+                    "height": "18px"
                 },
-                "tag": "div",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "div"
+                        "tag": "div",
+                        "style": {}
                     },
                     {
-                        "style": {},
-                        "tag": "div"
+                        "tag": "div",
+                        "style": {}
                     },
                     {
-                        "style": {},
-                        "tag": "div"
+                        "tag": "div",
+                        "style": {}
                     },
                     {
-                        "style": {},
-                        "tag": "div"
+                        "tag": "div",
+                        "style": {}
                     }
                 ]
             }
         ]
     },
-    "matches": "inline-formatting-context-001-ref.xht"
+    "matches": "inline-formatting-context-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS22/visuren.html#inline-formatting",
+        "http://www.w3.org/TR/CSS22/changes.html#s.9.4.2"
+    ]
 }

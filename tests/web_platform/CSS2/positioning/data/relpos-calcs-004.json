@@ -1,83 +1,83 @@
 {
-    "matches": "relpos-calcs-001-ref.xht",
     "assert": "For a relatively positioned element, if 'right'       is 'auto', its used value is minus the value of 'left'.",
+    "matches": "relpos-calcs-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "154px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "margin_bottom": "-120px",
-                    "width": "120px",
-                    "margin_right": "504px",
-                    "height": "120px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "div",
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "margin_bottom": "-120px",
+                    "height": "120px",
+                    "display": "block",
+                    "margin_right": "504px",
+                    "width": "120px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "height": "120px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "564px",
+                    "width": "120px",
+                    "direction": "rtl",
+                    "display": "block",
+                    "margin_left": "-60px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "120px",
+                            "unicode_bidi": "embed",
+                            "left": "50%",
+                            "width": "120px",
+                            "position": "relative",
+                            "display": "block"
+                        },
                         "children": [
                             {
-                                "tag": "div",
                                 "style": {
                                     "position": "relative",
                                     "width": "120px",
                                     "height": "120px",
                                     "display": "block"
-                                }
+                                },
+                                "tag": "div"
                             }
                         ],
-                        "style": {
-                            "position": "relative",
-                            "width": "120px",
-                            "display": "block",
-                            "left": "50%",
-                            "unicode_bidi": "embed",
-                            "height": "120px"
-                        }
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "width": "120px",
-                    "margin_right": "564px",
-                    "direction": "rtl",
-                    "display": "block",
-                    "margin_left": "-60px",
-                    "unicode_bidi": "embed",
-                    "height": "120px"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "154px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ]
+        "tag": "body"
+    }
 }

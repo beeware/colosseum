@@ -1,62 +1,62 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "49px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "15px",
+                    "width": "624px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "15px",
-                            "position": "relative",
                             "width": "15px",
-                            "display": "block"
+                            "display": "block",
+                            "position": "relative"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "top": "0px",
-                            "width": "96px",
-                            "position": "absolute",
-                            "height": "96px",
                             "left": "24px",
-                            "display": "block"
+                            "height": "96px",
+                            "width": "96px",
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "img"
                     }
-                ],
-                "style": {
-                    "height": "15px",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "49px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": null,
+    "assert": "Replaced elements width may be scaled by the user agent when the value of the property is not 'auto'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
-    "assert": "Replaced elements width may be scaled by the user agent when the value of the property is not 'auto'."
+    ]
 }

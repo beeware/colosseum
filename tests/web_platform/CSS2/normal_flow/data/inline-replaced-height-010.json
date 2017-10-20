@@ -1,23 +1,41 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "104px",
+                    "z_index": "-1",
+                    "display": "block",
+                    "position": "absolute",
+                    "width": "100px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
@@ -27,40 +45,22 @@
                         },
                         "tag": "img"
                     }
-                ],
-                "style": {
-                    "width": "100px",
-                    "position": "absolute",
-                    "z_index": "-1",
-                    "height": "104px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             },
             {
                 "style": {
                     "height": "100px",
-                    "width": "100px",
-                    "display": "block"
+                    "display": "block",
+                    "width": "100px"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "134px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'max-width' value) and based its intrinsic ratio when it has an intrinsic ratio.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
-    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'max-width' value) and based its intrinsic ratio when it has an intrinsic ratio."
+    ]
 }

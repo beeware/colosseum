@@ -1,76 +1,76 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "226px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "192px",
+                    "width": "192px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "96px",
-                            "position": "absolute",
                             "width": "96px",
-                            "display": "block"
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
                             "height": "192px",
-                            "width": "192px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "192px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "top": "0px",
-                            "width": "96px",
-                            "position": "absolute",
-                            "height": "96px",
                             "left": "96px",
-                            "display": "block"
+                            "height": "96px",
+                            "width": "96px",
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "192px",
-                    "position": "relative",
-                    "width": "192px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "226px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "height-percentage-001-ref.xht",
+    "assert": "The 'height' of the containing block of an absolutely positioned element is independent of the size of the element itself.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ],
-    "assert": "The 'height' of the containing block of an absolutely positioned element is independent of the size of the element itself."
+    ]
 }

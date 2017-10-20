@@ -1,52 +1,52 @@
 {
-    "matches": "bottom-offset-001-ref.xht",
     "assert": "The 'top' property, when using an absolute length value (not percentage) for relative positioning, specifies the offset of the box itself.",
+    "matches": "bottom-offset-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "130px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "width": "96px",
+                    "height": "96px",
+                    "display": "block"
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
                             "position": "relative",
                             "width": "48px",
                             "height": "48px",
                             "display": "block",
                             "top": "48px"
-                        }
+                        },
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "width": "96px",
-                    "height": "96px",
-                    "display": "block"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "130px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+        "tag": "body"
+    }
 }

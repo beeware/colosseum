@@ -1,68 +1,68 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "226px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "192px",
+                    "width": "624px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "192px",
                             "max_height": "50%",
-                            "width": "96px",
-                            "display": "block"
+                            "height": "192px",
+                            "display": "block",
+                            "width": "96px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "top": "0px",
-                            "width": "96px",
-                            "position": "absolute",
-                            "height": "192px",
                             "left": "96px",
-                            "display": "block"
+                            "height": "192px",
+                            "width": "96px",
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "192px",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "226px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "max-height-percentage-002-ref.xht",
+    "assert": "When the 'height' of the containing block (#div1) of an element (#div2) is not specified (or if such height has the value 'auto') and the element is not absolutely positioned, then a percentage value of 'max-height' on such element is treated as '0' for 'min-height' and 'none' for 'max-height'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
-    "assert": "When the 'height' of the containing block (#div1) of an element (#div2) is not specified (or if such height has the value 'auto') and the element is not absolutely positioned, then a percentage value of 'max-height' on such element is treated as '0' for 'min-height' and 'none' for 'max-height'."
+    ]
 }

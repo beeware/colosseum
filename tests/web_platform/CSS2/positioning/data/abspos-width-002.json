@@ -1,77 +1,77 @@
 {
-    "matches": "../reference/ref-if-there-is-no-red.xht",
     "assert": null,
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "18px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "div",
-                        "style": {
-                            "width": "0px",
-                            "height": "32px",
-                            "display": "block"
-                        }
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
                     "position": "absolute",
                     "width": "0px",
                     "height": "32px",
                     "display": "block",
                     "top": "64px"
-                }
-            },
-            {
-                "tag": "div",
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
                             "width": "0px",
                             "height": "32px",
                             "display": "block"
-                        }
+                        },
+                        "tag": "div"
                     }
                 ],
+                "tag": "div"
+            },
+            {
                 "style": {
                     "position": "absolute",
                     "width": "0px",
                     "height": "32px",
                     "display": "block",
                     "top": "128px"
-                }
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "0px",
+                            "height": "32px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "18px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
-    ]
+        "tag": "body"
+    }
 }

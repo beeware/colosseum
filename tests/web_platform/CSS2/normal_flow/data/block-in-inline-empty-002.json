@@ -1,46 +1,46 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "direction": "rtl",
+            "height": "36px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_top_width": "5px",
+                    "direction": "rtl",
+                    "padding_right": "10px",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_bottom_width": "5px"
+                },
+                "tag": "span",
                 "children": [
                     {
                         "style": {
-                            "direction": "rtl",
                             "height": "18px",
                             "width": "624px",
-                            "display": "block"
+                            "display": "block",
+                            "direction": "rtl"
                         },
                         "tag": "span"
                     }
-                ],
-                "style": {
-                    "direction": "rtl",
-                    "border_top_style": "solid",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_top_width": "5px",
-                    "border_bottom_width": "5px",
-                    "padding_right": "10px",
-                    "border_bottom_style": "solid",
-                    "border_top_color": "rgb(0, 0, 255)"
-                },
-                "tag": "span"
+                ]
             }
-        ],
-        "style": {
-            "direction": "rtl",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "36px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-in-inline-empty-002-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
-    "assert": null
+    ]
 }

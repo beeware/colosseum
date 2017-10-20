@@ -1,41 +1,41 @@
 {
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "style": {
-                                    "height": "18px",
-                                    "width": "624px",
-                                    "display": "block"
-                                },
-                                "tag": "span"
-                            }
-                        ],
-                        "style": {},
-                        "tag": "span"
-                    }
-                ],
-                "style": {},
-                "tag": "span"
-            }
-        ],
         "style": {
             "margin_left": "8px",
             "margin_bottom": "8px",
             "height": "54px",
-            "width": "624px",
             "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
         },
-        "tag": "body"
+        "tag": "body",
+        "children": [
+            {
+                "style": {},
+                "tag": "span",
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "span",
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "18px",
+                                    "display": "block",
+                                    "width": "624px"
+                                },
+                                "tag": "span"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     "matches": "block-in-inline-nested-001-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
-    "assert": null
+    ]
 }

@@ -1,71 +1,71 @@
 {
-    "matches": "top-applies-to-001-ref.xht",
     "assert": "The 'top' property applies to elements with a display of 'table-caption'.",
+    "matches": "top-applies-to-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "34px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "144px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "144px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "width": "1px",
+                    "height": "0px",
+                    "display": "table"
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
                             "position": "absolute",
                             "width": "96px",
                             "height": "96px",
                             "display": "block",
                             "top": "0px"
-                        }
+                        },
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "width": "1px",
-                                    "height": "0px",
-                                    "display": "table-cell"
-                                }
-                            }
-                        ],
                         "style": {
                             "width": "1px",
                             "height": "0px",
                             "display": "table-row"
-                        }
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "width": "1px",
+                                    "height": "0px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "width": "1px",
-                    "height": "0px",
-                    "display": "table"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "34px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
-        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+        "tag": "body"
+    }
 }

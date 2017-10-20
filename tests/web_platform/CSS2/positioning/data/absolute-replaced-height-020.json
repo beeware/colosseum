@@ -1,75 +1,75 @@
 {
-    "matches": "absolute-replaced-height-013-ref.xht",
     "assert": "An absolutely positioned replaced element with percentage intrinsic height resolves based on the containing block when the replaced element is absolutely positioned.",
+    "matches": "absolute-replaced-height-013-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "247px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "36px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "height": "192px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid"
+                },
                 "children": [
                     {
-                        "tag": "svg:svg",
+                        "style": {
+                            "height": "96px",
+                            "display": "block",
+                            "width": "300px",
+                            "position": "absolute",
+                            "bottom": "96px",
+                            "top": "96px"
+                        },
                         "children": [
                             {
-                                "tag": "svg:rect",
                                 "style": {
                                     "width": "200px",
                                     "height": "100px"
-                                }
+                                },
+                                "tag": "svg:rect"
                             }
                         ],
-                        "style": {
-                            "position": "absolute",
-                            "width": "300px",
-                            "display": "block",
-                            "bottom": "96px",
-                            "height": "96px",
-                            "top": "96px"
-                        }
+                        "tag": "svg:svg"
                     },
                     {
-                        "tag": "div",
                         "style": {
-                            "position": "absolute",
-                            "width": "200px",
+                            "height": "96px",
                             "display": "block",
                             "left": "200px",
-                            "height": "96px",
+                            "position": "absolute",
+                            "width": "200px",
                             "top": "96px"
-                        }
+                        },
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "border_top_style": "solid",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block",
-                    "height": "192px",
-                    "border_top_width": "3px"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "247px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
-    ]
+        "tag": "body"
+    }
 }

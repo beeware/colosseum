@@ -1,53 +1,53 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "234px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "200px",
+                    "display": "block",
+                    "width": "200px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_right_color": "rgb(0, 128, 128)",
-                            "padding_left": "20px",
-                            "border_bottom_color": "rgb(0, 128, 128)",
                             "border_left_style": "solid",
                             "border_top_color": "rgb(0, 128, 128)",
+                            "padding_left": "20px",
+                            "border_bottom_color": "rgb(0, 128, 128)",
                             "border_left_width": "20px",
-                            "border_left_color": "rgb(0, 128, 128)"
+                            "border_left_color": "rgb(0, 128, 128)",
+                            "border_right_color": "rgb(0, 128, 128)"
                         },
                         "tag": "span"
                     }
-                ],
-                "style": {
-                    "height": "80px",
-                    "width": "200px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "114px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inlines-017-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ],
-    "assert": null
+    ]
 }

@@ -1,73 +1,73 @@
 {
-    "matches": "absolute-non-replaced-height-002-ref.xht",
     "assert": "When direction is left-to-right and 'left', 'width' and 'right' are 'auto', the width becomes shrink-to-fit and then solve for 'right'.",
+    "matches": "absolute-non-replaced-height-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "258px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    },
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "36px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "72.21875px",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "height": "100px",
-                            "display": "block",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)"
-                        }
+                        "style": {},
+                        "tag": "strong"
+                    },
+                    {
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
+                    "height": "200px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "border_right_style": "solid",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px",
+                    "width": "200px",
                     "border_top_style": "solid",
                     "position": "relative",
-                    "height": "200px",
-                    "border_left_style": "solid",
-                    "border_right_width": "3px",
-                    "border_bottom_style": "solid",
-                    "width": "200px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
-                    "border_top_width": "3px",
-                    "display": "block"
-                }
+                    "border_right_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "display": "block",
+                            "position": "absolute",
+                            "width": "100px",
+                            "height": "100px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "258px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
-    ]
+        "tag": "body"
+    }
 }

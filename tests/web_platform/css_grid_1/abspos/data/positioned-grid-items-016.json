@@ -1,110 +1,110 @@
 {
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "width": "624px",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "tag": "P"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "min_width": "auto",
-                            "top": "15px",
-                            "bottom": "20px",
-                            "display": "block",
-                            "position": "absolute",
-                            "width": "61.78125px",
-                            "height": "115px",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "min_width": "auto",
-                            "top": "15px",
-                            "bottom": "20px",
-                            "display": "block",
-                            "position": "absolute",
-                            "width": "79.546875px",
-                            "height": "115px",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "min_width": "auto",
-                            "top": "15px",
-                            "bottom": "20px",
-                            "display": "block",
-                            "position": "absolute",
-                            "width": "67.984375px",
-                            "height": "65px",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "min_width": "auto",
-                            "top": "15px",
-                            "bottom": "20px",
-                            "display": "block",
-                            "position": "absolute",
-                            "width": "75.109375px",
-                            "height": "65px",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    }
-                ],
-                "style": {
-                    "padding_left": "5px",
-                    "border_top_width": "9px",
-                    "margin_left": "4px",
-                    "border_left_style": "solid",
-                    "border_top_style": "solid",
-                    "margin_right": "2px",
-                    "border_right_style": "solid",
-                    "height": "400px",
-                    "padding_top": "20px",
-                    "border_left_width": "6px",
-                    "margin_top": "1px",
-                    "border_right_width": "3px",
-                    "border_bottom_width": "12px",
-                    "padding_right": "15px",
-                    "border_bottom_style": "solid",
-                    "margin_bottom": "3px",
-                    "display": "grid",
-                    "width": "550px",
-                    "position": "relative",
-                    "padding_bottom": "10px"
-                },
-                "tag": "DIV"
-            }
-        ],
-        "style": {
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "width": "624px",
-            "height": "485px"
-        },
-        "tag": "BODY"
-    },
     "assert": "Checks that absolutely positioned grid items are properly placed and sized when they have specific 'top' and 'bottom' offsets and a static inline position (left/right are 'auto').",
     "matches": "positioned-grid-items-016-ref.html",
     "help": [
         "https://drafts.csswg.org/css-grid/#abspos"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "height": "485px",
+            "width": "624px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_right": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "height": "18px"
+                },
+                "tag": "P"
+            },
+            {
+                "style": {
+                    "margin_top": "1px",
+                    "display": "grid",
+                    "padding_left": "5px",
+                    "padding_top": "20px",
+                    "border_top_width": "9px",
+                    "padding_right": "15px",
+                    "width": "550px",
+                    "height": "400px",
+                    "margin_left": "4px",
+                    "border_left_style": "solid",
+                    "position": "relative",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "12px",
+                    "border_left_width": "6px",
+                    "border_bottom_style": "solid",
+                    "margin_bottom": "3px",
+                    "border_right_style": "solid",
+                    "margin_right": "2px",
+                    "border_top_style": "solid",
+                    "padding_bottom": "10px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "61.78125px",
+                            "position": "absolute",
+                            "height": "115px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "top": "15px",
+                            "min_width": "auto",
+                            "bottom": "20px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "width": "79.546875px",
+                            "position": "absolute",
+                            "height": "115px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "top": "15px",
+                            "min_width": "auto",
+                            "bottom": "20px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "width": "67.984375px",
+                            "position": "absolute",
+                            "height": "65px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "top": "15px",
+                            "min_width": "auto",
+                            "bottom": "20px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "width": "75.109375px",
+                            "position": "absolute",
+                            "height": "65px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "top": "15px",
+                            "min_width": "auto",
+                            "bottom": "20px"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    }
 }

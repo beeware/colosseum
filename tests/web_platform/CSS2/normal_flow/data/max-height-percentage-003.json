@@ -1,59 +1,59 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "34px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "0px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "18px",
+                            "display": "block",
+                            "width": "624px"
+                        },
+                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "0px",
                                     "max_height": "100%",
+                                    "height": "0px",
                                     "width": "0px"
                                 },
                                 "tag": "img"
                             }
-                        ],
-                        "style": {
-                            "height": "18px",
-                            "width": "624px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "0px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "34px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-filled-black-96px-square.xht",
+    "assert": "This test checks that a max-height percentage is calculated with respect to the height of the generated box's containing block only if and only when such containing block's height is specified explicitly (i.e., it depends on content height; its specified height is not 'auto'). In this test, the div#child has an 'auto' height; therefore the max-height percentage is treated as 'none' and so the image should be rendered (entirely visible) inside that div#child. Note that div#parent's initial overflow value is 'visible'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
-    "assert": "This test checks that a max-height percentage is calculated with respect to the height of the generated box's containing block only if and only when such containing block's height is specified explicitly (i.e., it depends on content height; its specified height is not 'auto'). In this test, the div#child has an 'auto' height; therefore the max-height percentage is treated as 'none' and so the image should be rendered (entirely visible) inside that div#child. Note that div#parent's initial overflow value is 'visible'."
+    ]
 }

@@ -1,50 +1,50 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "146px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "0px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "width": "96px",
-                            "float": "left",
                             "height": "96px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "96px",
+                            "float": "left"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "0px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "146px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": null,
+    "assert": "A floated child element is not considered when sizing the 'height' of a block-level non-replaced element is in normal flow.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ],
-    "assert": "A floated child element is not considered when sizing the 'height' of a block-level non-replaced element is in normal flow."
+    ]
 }

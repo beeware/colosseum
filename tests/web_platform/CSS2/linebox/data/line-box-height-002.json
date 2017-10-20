@@ -1,34 +1,24 @@
 {
+    "assert": "The 'line-height' property doe not set the height for inline replaced elements. The height of the replaced element sets the line-height'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "134px"
-        },
         "children": [
             {
                 "tag": "p",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
                     "margin_top": "16px",
+                    "display": "block",
                     "margin_bottom": "16px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 }
             },
             {
                 "tag": "div",
-                "style": {
-                    "width": "624px",
-                    "position": "relative",
-                    "display": "block",
-                    "height": "100px"
-                },
                 "children": [
                     {
                         "tag": "img",
@@ -40,22 +30,32 @@
                     {
                         "tag": "div",
                         "style": {
-                            "top": "0px",
+                            "height": "96px",
                             "position": "absolute",
                             "width": "96px",
-                            "left": "96px",
                             "display": "block",
-                            "height": "96px"
+                            "top": "0px",
+                            "left": "96px"
                         }
                     }
-                ]
+                ],
+                "style": {
+                    "position": "relative",
+                    "display": "block",
+                    "height": "100px",
+                    "width": "624px"
+                }
             }
-        ]
+        ],
+        "style": {
+            "height": "134px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": "The 'line-height' property doe not set the height for inline replaced elements. The height of the replaced element sets the line-height'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
     "matches": "line-box-height-002-ref.xht"
 }

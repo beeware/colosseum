@@ -1,47 +1,47 @@
 {
-    "matches": "abspos-containing-block-001-ref.xht",
     "assert": null,
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)"
-                        }
-                    }
-                ],
-                "style": {
-                    "position": "absolute",
-                    "right": "0px",
-                    "width": "640px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "480px",
-                    "display": "block",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "top": "0px"
-                }
-            }
-        ],
-        "style": {
-            "width": "440px",
-            "margin_right": "100px",
-            "display": "block",
-            "margin_left": "100px",
-            "margin_top": "100px",
-            "margin_bottom": "100px",
-            "height": "0px"
-        }
-    },
+    "matches": "abspos-containing-block-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "0px",
+            "display": "block",
+            "margin_right": "100px",
+            "margin_top": "100px",
+            "margin_bottom": "100px",
+            "width": "440px",
+            "margin_left": "100px"
+        },
+        "children": [
+            {
+                "style": {
+                    "right": "0px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "display": "block",
+                    "top": "0px",
+                    "position": "absolute",
+                    "width": "640px",
+                    "height": "480px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)"
+                        },
+                        "tag": "strong"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

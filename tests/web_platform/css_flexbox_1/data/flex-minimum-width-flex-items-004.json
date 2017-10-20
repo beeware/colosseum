@@ -1,4 +1,5 @@
 {
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "assert": "Checks that minimum width for flex items is the min-content size (which corresponds to the image size).",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#min-size-auto"
@@ -15,20 +16,20 @@
                 "tag": "p",
                 "style": {
                     "height": "18px",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
                     "width": "624px",
-                    "display": "block"
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px"
                 }
             },
             {
                 "tag": "div",
                 "style": {
                     "height": "100px",
-                    "z_index": "-1",
                     "width": "100px",
-                    "position": "absolute",
-                    "display": "block"
+                    "display": "block",
+                    "z_index": "-1",
+                    "position": "absolute"
                 }
             },
             {
@@ -36,32 +37,31 @@
                     {
                         "tag": "img",
                         "style": {
-                            "height": "100px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "height": "100px",
                     "width": "10px",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "100px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "width": "624px",
             "margin_left": "8px",
-            "height": "134px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "display": "block"
+            "width": "624px",
+            "display": "block",
+            "height": "134px",
+            "margin_top": "8px"
         }
-    },
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    }
 }

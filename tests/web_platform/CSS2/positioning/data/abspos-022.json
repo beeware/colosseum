@@ -1,94 +1,94 @@
 {
-    "matches": "abspos-013-ref.xht",
     "assert": null,
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "margin_bottom": "14px",
-                                    "width": "576px",
-                                    "height": "0px",
-                                    "display": "block"
-                                }
-                            }
-                        ],
-                        "style": {
-                            "width": "576px",
-                            "margin_right": "20px",
-                            "display": "block",
-                            "margin_left": "20px",
-                            "margin_top": "-4px",
-                            "margin_bottom": "-4px",
-                            "height": "0px"
-                        }
-                    }
-                ],
-                "style": {
-                    "width": "616px",
-                    "margin_right": "2px",
-                    "display": "block",
-                    "margin_left": "2px",
-                    "margin_top": "2px",
-                    "margin_bottom": "2px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "position": "fixed",
-                    "width": "320px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "height": "64px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "z_index": "0",
-                    "border_bottom_color": "rgb(255, 255, 255)"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "width": "320px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "height": "64px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "width": "520px",
-                    "margin_right": "50px",
-                    "display": "block",
-                    "margin_left": "50px",
-                    "margin_top": "50px",
-                    "margin_bottom": "50px",
-                    "height": "0px"
-                }
-            }
-        ],
-        "style": {
-            "width": "620px",
-            "margin_right": "10px",
-            "height": "64px",
-            "display": "block",
-            "margin_left": "10px"
-        }
-    },
+    "matches": "abspos-013-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/box.html#collapsing-margins"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "620px",
+            "height": "64px",
+            "display": "block",
+            "margin_right": "10px",
+            "margin_left": "10px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "0px",
+                    "display": "block",
+                    "margin_right": "2px",
+                    "margin_top": "2px",
+                    "margin_bottom": "2px",
+                    "width": "616px",
+                    "margin_left": "2px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "0px",
+                            "display": "block",
+                            "margin_right": "20px",
+                            "margin_top": "-4px",
+                            "margin_bottom": "-4px",
+                            "width": "576px",
+                            "margin_left": "20px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "margin_bottom": "14px",
+                                    "height": "0px",
+                                    "display": "block",
+                                    "width": "576px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "display": "block",
+                    "position": "fixed",
+                    "width": "320px",
+                    "height": "64px",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "z_index": "0"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "width": "320px",
+                    "height": "64px",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "border_top_color": "rgb(255, 255, 0)"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "display": "block",
+                    "margin_right": "50px",
+                    "margin_top": "50px",
+                    "margin_bottom": "50px",
+                    "width": "520px",
+                    "margin_left": "50px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

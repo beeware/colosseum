@@ -1,58 +1,37 @@
 {
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "64px"
-        },
         "children": [
             {
                 "tag": "p",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
                     "margin_top": "16px",
+                    "display": "block",
                     "margin_bottom": "16px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 }
             },
             {
                 "tag": "div",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "30px"
-                },
                 "children": [
                     {
                         "tag": "div",
-                        "style": {
-                            "width": "624px",
-                            "display": "block",
-                            "height": "30px"
-                        },
                         "children": [
                             {
                                 "tag": "div",
-                                "style": {
-                                    "padding_top": "10px",
-                                    "width": "200px",
-                                    "display": "block",
-                                    "height": "20px"
-                                },
                                 "children": [
                                     {
                                         "tag": "span",
                                         "style": {
                                             "border_bottom_color": "rgb(255, 0, 0)",
-                                            "border_top_color": "rgb(255, 0, 0)",
+                                            "border_left_color": "rgb(255, 0, 0)",
                                             "border_right_color": "rgb(255, 0, 0)",
-                                            "border_left_color": "rgb(255, 0, 0)"
+                                            "border_top_color": "rgb(255, 0, 0)"
                                         }
                                     },
                                     {
@@ -60,22 +39,43 @@
                                         "style": {
                                             "padding_top": "10px",
                                             "border_bottom_color": "rgb(255, 255, 255)",
-                                            "border_top_color": "rgb(255, 255, 255)",
                                             "border_right_color": "rgb(255, 255, 255)",
+                                            "border_top_color": "rgb(255, 255, 255)",
                                             "border_left_color": "rgb(255, 255, 255)"
                                         }
                                     }
-                                ]
+                                ],
+                                "style": {
+                                    "padding_top": "10px",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "width": "200px"
+                                }
                             }
-                        ]
+                        ],
+                        "style": {
+                            "width": "624px",
+                            "display": "block",
+                            "height": "30px"
+                        }
                     }
-                ]
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "30px"
+                }
             }
-        ]
+        ],
+        "style": {
+            "height": "64px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
-    ],
     "matches": "line-height-125-ref.xht"
 }

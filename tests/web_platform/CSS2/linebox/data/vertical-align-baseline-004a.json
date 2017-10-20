@@ -1,66 +1,66 @@
 {
+    "assert": "The baseline of an 'inline-block' that has no in-flow line boxes is at its bottom margin edge. The bottom margin edge of an 'inline-block' that has no inflow line boxes will 'sit' on the baseline, will be located on the baseline of such 'inline-block'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "264px"
-        },
         "children": [
             {
                 "tag": "p",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "40px"
-                },
                 "children": [
                     {
                         "tag": "br",
                         "style": {}
                     }
-                ]
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "height": "40px",
+                    "width": "624px"
+                }
             },
             {
                 "tag": "div",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "208px"
-                },
                 "children": [
                     {
                         "tag": "div",
                         "style": {
-                            "width": "100px",
                             "display": "inline-block",
                             "margin_bottom": "99px",
-                            "height": "100px"
+                            "height": "100px",
+                            "width": "100px"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "top": "72px",
                             "position": "absolute",
                             "display": "block",
                             "height": "250px",
+                            "top": "72px",
                             "width": "55px"
                         }
                     }
-                ]
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "209px"
+                }
             }
-        ]
+        ],
+        "style": {
+            "height": "265px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": "The baseline of an 'inline-block' that has no in-flow line boxes is at its bottom margin edge. The bottom margin edge of an 'inline-block' that has no inflow line boxes will 'sit' on the baseline, will be located on the baseline of such 'inline-block'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
     "matches": "vertical-align-baseline-004a-ref.xht"
 }

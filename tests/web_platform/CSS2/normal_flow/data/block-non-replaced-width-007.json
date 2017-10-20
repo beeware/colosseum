@@ -1,81 +1,81 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "258px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "36px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "36px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "height": "200px",
+                    "border_top_width": "3px",
+                    "width": "200px",
+                    "border_left_width": "3px",
+                    "display": "block",
+                    "border_right_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_top_style": "solid",
-                            "border_left_style": "solid",
-                            "height": "100px",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "display": "block",
-                            "margin_left": "50px",
                             "border_right_width": "25px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_right_style": "solid",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "width": "50px",
-                            "border_bottom_style": "solid",
-                            "margin_right": "50px",
+                            "height": "100px",
+                            "border_left_style": "solid",
                             "border_left_width": "25px",
-                            "border_left_color": "rgb(255, 165, 0)"
+                            "display": "block",
+                            "width": "50px",
+                            "border_top_style": "solid",
+                            "margin_left": "50px",
+                            "border_bottom_style": "solid",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_right_style": "solid",
+                            "margin_right": "50px",
+                            "border_right_color": "rgb(255, 165, 0)"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "height": "100px",
-                            "width": "200px",
-                            "border_left_color": "rgb(0, 0, 255)",
+                            "display": "block",
                             "border_top_color": "rgb(0, 0, 255)",
-                            "display": "block"
+                            "height": "100px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "width": "200px",
+                            "border_right_color": "rgb(0, 0, 255)"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "200px",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px",
-                    "border_right_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "200px",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_left_width": "3px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "258px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-non-replaced-width-007-ref.xht",
+    "assert": "When 'margin-left' and 'margin-right' are set to 'auto' and the element has a 'width', then the box will be centered within the edges of its containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
-    ],
-    "assert": "When 'margin-left' and 'margin-right' are set to 'auto' and the element has a 'width', then the box will be centered within the edges of its containing block."
+    ]
 }

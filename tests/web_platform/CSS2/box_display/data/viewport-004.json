@@ -1,61 +1,61 @@
 {
-    "matches": null,
     "assert": "User agents may render more than one canvas.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#viewport"
+    ],
     "test_case": {
-        "tag": "frameset",
-        "style": {
-            "height": "480px",
-            "display": "block",
-            "width": "640px"
-        },
         "children": [
             {
-                "tag": "frame",
                 "style": {
-                    "height": "480px",
                     "display": "block",
-                    "width": "317px"
-                }
+                    "width": "317px",
+                    "height": "480px"
+                },
+                "tag": "frame"
             },
             {
-                "tag": "frame",
                 "style": {
-                    "height": "480px",
                     "display": "block",
-                    "width": "317px"
-                }
+                    "width": "317px",
+                    "height": "480px"
+                },
+                "tag": "frame"
             },
             {
-                "tag": "noframes",
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "margin_bottom": "16px",
+                                    "display": "block",
+                                    "margin_top": "16px"
+                                },
+                                "tag": "p"
+                            }
+                        ],
+                        "style": {
+                            "margin_bottom": "8px",
+                            "display": "block",
+                            "margin_top": "8px",
+                            "margin_left": "8px",
+                            "margin_right": "8px"
+                        },
+                        "tag": "body"
+                    }
+                ],
                 "style": {
                     "display": "none"
                 },
-                "children": [
-                    {
-                        "tag": "body",
-                        "style": {
-                            "margin_right": "8px",
-                            "margin_top": "8px",
-                            "margin_left": "8px",
-                            "display": "block",
-                            "margin_bottom": "8px"
-                        },
-                        "children": [
-                            {
-                                "tag": "p",
-                                "style": {
-                                    "margin_top": "16px",
-                                    "display": "block",
-                                    "margin_bottom": "16px"
-                                }
-                            }
-                        ]
-                    }
-                ]
+                "tag": "noframes"
             }
-        ]
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#viewport"
-    ]
+        ],
+        "style": {
+            "display": "block",
+            "width": "640px",
+            "height": "480px"
+        },
+        "tag": "frameset"
+    }
 }

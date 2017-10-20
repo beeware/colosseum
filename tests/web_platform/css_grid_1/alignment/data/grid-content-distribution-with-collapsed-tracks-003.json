@@ -1,100 +1,100 @@
 {
+    "matches": "../../reference/ref-filled-green-200px-square.html",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "234px"
-        },
-        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "P",
                 "children": [
                     {
                         "style": {},
                         "tag": "STRONG"
                     }
-                ]
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "P"
             },
             {
+                "children": [
+                    {
+                        "style": {
+                            "left": "40px",
+                            "width": "20px",
+                            "position": "absolute",
+                            "height": "20px",
+                            "display": "block",
+                            "top": "40px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "left": "140px",
+                            "width": "20px",
+                            "position": "absolute",
+                            "height": "20px",
+                            "display": "block",
+                            "top": "140px"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
                 "style": {
-                    "z_index": "-1",
-                    "height": "200px",
-                    "display": "block",
                     "position": "absolute",
+                    "z_index": "-1",
+                    "display": "block",
+                    "height": "200px",
                     "width": "200px"
                 },
-                "tag": "DIV",
-                "children": [
-                    {
-                        "style": {
-                            "top": "40px",
-                            "left": "40px",
-                            "display": "block",
-                            "width": "20px",
-                            "height": "20px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "top": "140px",
-                            "left": "140px",
-                            "display": "block",
-                            "width": "20px",
-                            "height": "20px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
-                    }
-                ]
+                "tag": "DIV"
             },
             {
-                "style": {
-                    "width": "200px",
-                    "height": "200px",
-                    "display": "grid"
-                },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "20px",
                             "height": "20px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "20px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "20px",
                             "height": "20px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "20px"
                         },
                         "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "height": "200px",
+                    "display": "grid",
+                    "width": "200px"
+                },
+                "tag": "DIV"
             }
-        ]
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "height": "234px",
+            "display": "block"
+        },
+        "tag": "BODY"
     },
     "assert": "Content Distribution alignment ignore collapsed grid tracks and render correctly with a value of 'space-around'.",
-    "matches": "../../reference/ref-filled-green-200px-square.html",
     "help": [
         "https://drafts.csswg.org/css-grid-1/#grid-align",
         "https://drafts.csswg.org/css-grid-1/#collapsed-track",

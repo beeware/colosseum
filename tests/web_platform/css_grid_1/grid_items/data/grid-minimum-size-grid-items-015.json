@@ -1,77 +1,77 @@
 {
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
-    ],
-    "assert": "Checks that automatic minimum size is not clamped if the grid item if it spans some not fixed grid tracks.",
     "test_case": {
-        "tag": "BODY",
-        "style": {
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "height": "134px",
-            "display": "block",
-            "margin_right": "8px"
-        },
         "children": [
             {
-                "tag": "P",
-                "style": {
-                    "width": "624px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "display": "block"
-                },
                 "children": [
                     {
-                        "tag": "STRONG",
-                        "style": {}
+                        "style": {},
+                        "tag": "STRONG"
                     }
-                ]
+                ],
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                },
+                "tag": "P"
             },
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "100px",
                     "height": "100px",
                     "z_index": "-1",
                     "display": "block",
-                    "position": "absolute"
-                }
+                    "position": "absolute",
+                    "width": "100px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
-                "style": {
-                    "width": "624px",
-                    "height": "100px",
-                    "display": "grid"
-                },
                 "children": [
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "100px",
+                                    "display": "block",
+                                    "width": "100px"
+                                },
+                                "tag": "DIV"
+                            }
+                        ],
                         "style": {
-                            "width": "100px",
                             "height": "100px",
                             "display": "block",
                             "min_height": "auto",
-                            "min_width": "auto"
+                            "min_width": "auto",
+                            "width": "100px"
                         },
-                        "children": [
-                            {
-                                "tag": "DIV",
-                                "style": {
-                                    "width": "100px",
-                                    "height": "100px",
-                                    "display": "block"
-                                }
-                            }
-                        ]
+                        "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "height": "100px",
+                    "display": "grid",
+                    "width": "624px"
+                },
+                "tag": "DIV"
             }
-        ]
-    }
+        ],
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "height": "134px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "BODY"
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "assert": "Checks that automatic minimum size is not clamped if the grid item if it spans some not fixed grid tracks."
 }

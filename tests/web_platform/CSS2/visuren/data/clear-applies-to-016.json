@@ -1,123 +1,120 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#flow-control"
-    ],
     "assert": "The 'clear' property apply to elements with a display of 'table' and is applied to the table wrapper box and not on the table box. In this test, the table wrapper box has a table caption placed before the table box.",
     "test_case": {
-        "style": {
-            "height": "168px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "168px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
                     "display": "block",
-                    "width": "320px",
-                    "height": "40px",
                     "margin_bottom": "16px",
+                    "height": "40px",
                     "margin_top": "16px",
+                    "width": "320px",
                     "float": "left"
                 },
-                "tag": "p",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     }
                 ]
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "table",
-                    "clear": "both",
+                    "height": "96px",
                     "width": "96px",
-                    "height": "96px"
+                    "clear": "both"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "display": "table-caption",
-                            "width": "96px",
                             "border_top_color": "rgb(0, 0, 255)",
+                            "display": "table-caption",
                             "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
                             "height": "48px",
-                            "border_left_color": "rgb(0, 0, 255)"
-                        },
-                        "tag": "div"
+                            "width": "96px",
+                            "border_bottom_color": "rgb(0, 0, 255)"
+                        }
                     },
                     {
+                        "tag": "div",
                         "style": {
                             "display": "table-row",
                             "width": "96px",
                             "height": "24px"
                         },
-                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "display": "table-cell",
-                                    "width": "48px",
                                     "border_top_color": "rgb(0, 0, 255)",
+                                    "display": "table-cell",
                                     "border_right_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)",
                                     "height": "24px",
-                                    "border_left_color": "rgb(0, 0, 255)"
-                                },
-                                "tag": "div"
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(0, 0, 255)"
+                                }
                             },
                             {
+                                "tag": "div",
                                 "style": {
-                                    "display": "table-cell",
-                                    "width": "48px",
                                     "border_top_color": "rgb(0, 0, 255)",
+                                    "display": "table-cell",
                                     "border_right_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)",
                                     "height": "24px",
-                                    "border_left_color": "rgb(0, 0, 255)"
-                                },
-                                "tag": "div"
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(0, 0, 255)"
+                                }
                             }
                         ]
                     },
                     {
+                        "tag": "div",
                         "style": {
                             "display": "table-row",
                             "width": "96px",
                             "height": "24px"
                         },
-                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "display": "table-cell",
-                                    "width": "48px",
                                     "border_top_color": "rgb(0, 0, 255)",
+                                    "display": "table-cell",
                                     "border_right_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)",
                                     "height": "24px",
-                                    "border_left_color": "rgb(0, 0, 255)"
-                                },
-                                "tag": "div"
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(0, 0, 255)"
+                                }
                             },
                             {
+                                "tag": "div",
                                 "style": {
-                                    "display": "table-cell",
-                                    "width": "48px",
                                     "border_top_color": "rgb(0, 0, 255)",
+                                    "display": "table-cell",
                                     "border_right_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)",
                                     "height": "24px",
-                                    "border_left_color": "rgb(0, 0, 255)"
-                                },
-                                "tag": "div"
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(0, 0, 255)"
+                                }
                             }
                         ]
                     }
@@ -125,5 +122,8 @@
             }
         ]
     },
-    "matches": "../floats-clear/clear-applies-to-009-ref.xht"
+    "matches": "../floats-clear/clear-applies-to-009-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#flow-control"
+    ]
 }

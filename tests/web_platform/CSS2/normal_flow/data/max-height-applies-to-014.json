@@ -1,95 +1,95 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "max_height": "96px",
+                    "height": "96px",
+                    "display": "inline-table",
+                    "width": "96px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "48px",
+                            "display": "table-row",
+                            "width": "96px"
+                        },
+                        "tag": "div",
                         "children": [
                             {
                                 "style": {
                                     "height": "48px",
-                                    "width": "48px",
-                                    "display": "table-cell"
+                                    "display": "table-cell",
+                                    "width": "48px"
                                 },
                                 "tag": "div"
                             },
                             {
                                 "style": {
                                     "height": "48px",
-                                    "width": "48px",
-                                    "display": "table-cell"
+                                    "display": "table-cell",
+                                    "width": "48px"
                                 },
                                 "tag": "div"
                             }
-                        ],
-                        "style": {
-                            "height": "48px",
-                            "width": "96px",
-                            "display": "table-row"
-                        },
-                        "tag": "div"
+                        ]
                     },
                     {
+                        "style": {
+                            "height": "48px",
+                            "display": "table-row",
+                            "width": "96px"
+                        },
+                        "tag": "div",
                         "children": [
                             {
                                 "style": {
                                     "height": "48px",
-                                    "width": "48px",
-                                    "display": "table-cell"
+                                    "display": "table-cell",
+                                    "width": "48px"
                                 },
                                 "tag": "div"
                             },
                             {
                                 "style": {
                                     "height": "48px",
-                                    "width": "48px",
-                                    "display": "table-cell"
+                                    "display": "table-cell",
+                                    "width": "48px"
                                 },
                                 "tag": "div"
                             }
-                        ],
-                        "style": {
-                            "height": "48px",
-                            "width": "96px",
-                            "display": "table-row"
-                        },
-                        "tag": "div"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "96px",
-                    "max_height": "96px",
-                    "width": "96px",
-                    "display": "inline-table"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-filled-black-96px-square.xht",
+    "assert": "The 'max-height' property applies to elements with 'display' set to 'inline-table'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
-    "assert": "The 'max-height' property applies to elements with 'display' set to 'inline-table'."
+    ]
 }

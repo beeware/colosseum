@@ -1,78 +1,78 @@
 {
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "77px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "18px"
-                }
-            },
-            {
-                "tag": "table",
-                "style": {
-                    "border_bottom_color": "rgb(128, 128, 128)",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "width": "179.328125px",
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "display": "table",
-                    "height": "43px",
-                    "border_left_color": "rgb(128, 128, 128)"
-                },
-                "children": [
-                    {
-                        "tag": "tr",
-                        "style": {
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "width": "179.328125px",
-                            "border_right_color": "rgb(128, 128, 128)",
-                            "display": "table-row",
-                            "height": "39px",
-                            "border_left_color": "rgb(128, 128, 128)"
-                        },
-                        "children": [
-                            {
-                                "tag": "td",
-                                "style": {
-                                    "width": "173.328125px",
-                                    "padding_left": "1px",
-                                    "padding_top": "1px",
-                                    "padding_bottom": "1px",
-                                    "padding_right": "1px",
-                                    "display": "table-cell",
-                                    "height": "37px"
-                                },
-                                "children": [
-                                    {
-                                        "tag": "span",
-                                        "style": {}
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
     "assert": "The baseline of a table cell element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "table",
+                "children": [
+                    {
+                        "tag": "tr",
+                        "children": [
+                            {
+                                "tag": "td",
+                                "children": [
+                                    {
+                                        "tag": "span",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "padding_top": "1px",
+                                    "display": "table-cell",
+                                    "padding_left": "1px",
+                                    "padding_right": "1px",
+                                    "height": "37px",
+                                    "padding_bottom": "1px",
+                                    "width": "173.328125px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "height": "39px",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "width": "179.328125px",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "display": "table-row"
+                        }
+                    }
+                ],
+                "style": {
+                    "height": "43px",
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "width": "179.328125px",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "display": "table"
+                }
+            }
+        ],
+        "style": {
+            "height": "77px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
+    },
     "matches": "vertical-align-baseline-008-ref.xht"
 }

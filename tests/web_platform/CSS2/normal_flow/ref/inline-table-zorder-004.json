@@ -1,30 +1,126 @@
 {
-    "border": [
+    "id": "",
+    "tag": "body",
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            26
+        ]
+    },
+    "content": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            26
+        ]
+    },
+    "padding": [
         0,
         0,
         0,
         0
     ],
-    "margin": [
-        8,
-        8,
-        8,
-        8
-    ],
-    "tag": "body",
-    "border_box": {
-        "size": [
-            624,
-            26
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "id": "",
     "children": [
         {
+            "id": "before",
+            "tag": "div",
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    16
+                ]
+            },
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    16
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "children": [
+                {
+                    "id": "",
+                    "tag": "span",
+                    "border_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            16,
+                            18
+                        ]
+                    },
+                    "content": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            16,
+                            18
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            16,
+                            18
+                        ]
+                    },
+                    "margin_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            16,
+                            18
+                        ]
+                    }
+                }
+            ],
             "border": [
                 0,
                 0,
@@ -37,24 +133,90 @@
                 -16,
                 0
             ],
-            "tag": "div",
-            "border_box": {
-                "size": [
-                    624,
-                    16
-                ],
+            "padding_box": {
                 "position": [
                     8,
                     8
+                ],
+                "size": [
+                    624,
+                    16
                 ]
             },
-            "id": "before",
+            "margin_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            }
+        },
+        {
+            "id": "test",
+            "tag": "div",
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    26
+                ]
+            },
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    26
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
             "children": [
                 {
+                    "id": "",
+                    "tag": "span",
+                    "border_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            16,
+                            26
+                        ]
+                    },
+                    "content": {
+                        "position": [
+                            8,
+                            12
+                        ],
+                        "size": [
+                            16,
+                            18
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
                     "border": [
+                        4,
                         0,
-                        0,
-                        0,
+                        4,
                         0
                     ],
                     "margin": [
@@ -63,94 +225,28 @@
                         0,
                         0
                     ],
-                    "tag": "span",
-                    "border_box": {
-                        "size": [
-                            16,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "id": "",
                     "padding_box": {
+                        "position": [
+                            8,
+                            12
+                        ],
                         "size": [
                             16,
                             18
-                        ],
-                        "position": [
-                            8,
-                            8
                         ]
                     },
                     "margin_box": {
-                        "size": [
-                            16,
-                            18
-                        ],
                         "position": [
                             8,
                             8
-                        ]
-                    },
-                    "content": {
+                        ],
                         "size": [
                             16,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
+                            26
                         ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
+                    }
                 }
             ],
-            "padding_box": {
-                "size": [
-                    624,
-                    16
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "margin_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "content": {
-                "size": [
-                    624,
-                    16
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ]
-        },
-        {
             "border": [
                 0,
                 0,
@@ -163,154 +259,58 @@
                 0,
                 0
             ],
-            "tag": "div",
-            "border_box": {
-                "size": [
-                    624,
-                    26
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "id": "test",
-            "children": [
-                {
-                    "border": [
-                        4,
-                        0,
-                        4,
-                        0
-                    ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "span",
-                    "border_box": {
-                        "size": [
-                            16,
-                            26
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "id": "",
-                    "padding_box": {
-                        "size": [
-                            16,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            12
-                        ]
-                    },
-                    "margin_box": {
-                        "size": [
-                            16,
-                            26
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            16,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            12
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ],
             "padding_box": {
-                "size": [
-                    624,
-                    26
-                ],
                 "position": [
                     8,
                     8
+                ],
+                "size": [
+                    624,
+                    26
                 ]
             },
             "margin_box": {
-                "size": [
-                    624,
-                    26
-                ],
                 "position": [
                     8,
                     8
-                ]
-            },
-            "content": {
+                ],
                 "size": [
                     624,
                     26
-                ],
-                "position": [
-                    8,
-                    8
                 ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ]
+            }
         }
     ],
-    "padding_box": {
-        "size": [
-            624,
-            26
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "margin_box": {
-        "size": [
-            640,
-            42
-        ],
-        "position": [
-            0,
-            0
-        ]
-    },
-    "content": {
-        "size": [
-            624,
-            26
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "padding": [
+    "border": [
         0,
         0,
         0,
         0
-    ]
+    ],
+    "margin": [
+        8,
+        8,
+        8,
+        8
+    ],
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            26
+        ]
+    },
+    "margin_box": {
+        "position": [
+            0,
+            0
+        ],
+        "size": [
+            640,
+            42
+        ]
+    }
 }

@@ -1,42 +1,42 @@
 {
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "18px",
-                            "width": "8px",
-                            "display": "inline-table"
-                        },
-                        "tag": "span"
-                    }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            }
-        ],
         "style": {
             "margin_left": "8px",
             "margin_bottom": "8px",
             "height": "18px",
-            "width": "624px",
             "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
         },
-        "tag": "body"
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
+                "children": [
+                    {
+                        "style": {
+                            "height": "18px",
+                            "display": "inline-table",
+                            "width": "8px"
+                        },
+                        "tag": "span"
+                    }
+                ]
+            }
+        ]
     },
     "matches": "inline-table-003-ref.xht",
+    "assert": "The baseline of an 'inline-table' is the baseline of the first row of the table.",
     "help": [
         "http://www.w3.org/TR/CSS21/tables.html#table-display",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The baseline of an 'inline-table' is the baseline of the first row of the table."
+    ]
 }

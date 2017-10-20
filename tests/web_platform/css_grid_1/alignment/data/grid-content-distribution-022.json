@@ -1,142 +1,142 @@
 {
+    "matches": "../../reference/ref-filled-green-300px-square.html",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "334px"
-        },
-        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "P",
                 "children": [
                     {
                         "style": {},
                         "tag": "STRONG"
                     }
-                ]
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "P"
             },
             {
+                "children": [
+                    {
+                        "style": {
+                            "left": "100px",
+                            "width": "100px",
+                            "position": "absolute",
+                            "height": "100px",
+                            "display": "block",
+                            "top": "0px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "left": "200px",
+                            "width": "100px",
+                            "position": "absolute",
+                            "height": "100px",
+                            "display": "block",
+                            "top": "0px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "left": "0px",
+                            "width": "100px",
+                            "position": "absolute",
+                            "height": "100px",
+                            "display": "block",
+                            "top": "100px"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "left": "0px",
+                            "width": "100px",
+                            "position": "absolute",
+                            "height": "100px",
+                            "display": "block",
+                            "top": "200px"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
                 "style": {
-                    "z_index": "-1",
-                    "height": "300px",
-                    "display": "block",
                     "position": "absolute",
+                    "z_index": "-1",
+                    "display": "block",
+                    "height": "300px",
                     "width": "300px"
                 },
-                "tag": "DIV",
-                "children": [
-                    {
-                        "style": {
-                            "top": "0px",
-                            "left": "100px",
-                            "display": "block",
-                            "width": "100px",
-                            "height": "100px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "top": "0px",
-                            "left": "200px",
-                            "display": "block",
-                            "width": "100px",
-                            "height": "100px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "top": "100px",
-                            "left": "0px",
-                            "display": "block",
-                            "width": "100px",
-                            "height": "100px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "top": "200px",
-                            "left": "0px",
-                            "display": "block",
-                            "width": "100px",
-                            "height": "100px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
-                    }
-                ]
+                "tag": "DIV"
             },
             {
-                "style": {
-                    "width": "300px",
-                    "height": "300px",
-                    "display": "grid"
-                },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "100px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "100px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "100px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "100px"
                         },
                         "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "height": "300px",
+                    "display": "grid",
+                    "width": "300px"
+                },
+                "tag": "DIV"
             }
-        ]
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "height": "334px",
+            "display": "block"
+        },
+        "tag": "BODY"
     },
     "assert": "Content Distribution properties with 'stretch' value render correcly.",
-    "matches": "../../reference/ref-filled-green-300px-square.html",
     "help": [
         "https://drafts.csswg.org/css-grid-1/#grid-align",
         "https://drafts.csswg.org/css-align-3/#content-distribution",

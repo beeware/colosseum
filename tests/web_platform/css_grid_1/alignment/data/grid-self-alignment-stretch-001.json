@@ -1,78 +1,54 @@
 {
+    "matches": null,
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "250px"
-        },
-        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "width": "250px",
-                    "height": "250px",
-                    "display": "inline-grid",
-                    "position": "relative"
-                },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "10px",
+                            "min_height": "auto",
+                            "min_width": "auto",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "100px"
                         },
                         "tag": "DIV"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "tag": "BR"
+                            },
+                            {
+                                "style": {},
+                                "tag": "BR"
+                            },
+                            {
+                                "style": {},
+                                "tag": "BR"
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "width": "38.609375px",
                             "height": "150px",
-                            "display": "block",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV",
-                        "children": [
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            }
-                        ]
-                    },
-                    {
-                        "style": {
+                            "min_height": "auto",
                             "min_width": "auto",
-                            "width": "33.890625px",
-                            "height": "10px",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "60px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
+                            "height": "10px",
+                            "min_height": "auto",
                             "min_width": "auto",
-                            "width": "150px",
-                            "height": "100px",
                             "display": "block",
-                            "min_height": "auto"
+                            "width": "60px"
                         },
-                        "tag": "DIV",
+                        "tag": "DIV"
+                    },
+                    {
                         "children": [
                             {
                                 "style": {},
@@ -86,14 +62,38 @@
                                 "style": {},
                                 "tag": "BR"
                             }
-                        ]
+                        ],
+                        "style": {
+                            "height": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "display": "block",
+                            "width": "150px"
+                        },
+                        "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "position": "relative",
+                    "height": "250px",
+                    "display": "inline-grid",
+                    "width": "250px"
+                },
+                "tag": "DIV"
             }
-        ]
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "height": "250px",
+            "display": "block"
+        },
+        "tag": "BODY"
     },
     "assert": "Grid items with 'stretch' value for align-self and/or justify-self are stretched along the column and/or row axis respectively; they will be sized as fit-content otherwise.",
-    "matches": null,
     "help": [
         "https://drafts.csswg.org/css-grid-1/#alignment",
         "https://drafts.csswg.org/css-align-3/#propdef-align-self",

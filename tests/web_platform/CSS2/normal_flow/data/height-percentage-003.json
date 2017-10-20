@@ -1,32 +1,32 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "height-percentage-003-ref.xht",
+    "assert": "A percentage 'height' on the root element is relative to the initial containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ],
-    "assert": "A percentage 'height' on the root element is relative to the initial containing block."
+    ]
 }

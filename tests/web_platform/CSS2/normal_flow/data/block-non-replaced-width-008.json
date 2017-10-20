@@ -1,63 +1,63 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "234px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "border_right_width": "200px",
+                    "height": "200px",
+                    "padding_right": "200px",
+                    "width": "0px",
+                    "display": "block",
+                    "border_right_style": "solid",
+                    "border_right_color": "rgb(255, 0, 0)"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "height": "200px",
-                            "border_right_style": "solid",
-                            "width": "200px",
-                            "margin_right": "-400px",
                             "border_right_width": "200px",
-                            "display": "block"
+                            "height": "200px",
+                            "width": "200px",
+                            "display": "block",
+                            "border_right_style": "solid",
+                            "margin_right": "-400px",
+                            "border_right_color": "rgb(0, 128, 0)"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "height": "200px",
-                    "border_right_style": "solid",
-                    "width": "0px",
-                    "padding_right": "200px",
-                    "border_right_width": "200px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "234px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": null,
+    "assert": "If 'width' is set to 'auto', any other 'auto' values become '0' and the determination of 'width' proceeds from the following equality: 'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = width of containing block",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
-    ],
-    "assert": "If 'width' is set to 'auto', any other 'auto' values become '0' and the determination of 'width' proceeds from the following equality: 'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = width of containing block"
+    ]
 }

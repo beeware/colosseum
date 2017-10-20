@@ -1,57 +1,57 @@
 {
+    "assert": "This test checks that grid's margin (body) do not collapse with the marings of the grid item (a paragraph).",
+    "matches": "../reference/grid-text-green-margin-no-collapse-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ],
     "test_case": {
         "tag": "BODY",
         "style": {
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "height": "50px",
             "display": "grid",
-            "width": "624px",
+            "margin_left": "8px",
+            "margin_top": "8px",
             "margin_bottom": "8px",
-            "margin_top": "8px"
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "50px"
         },
         "children": [
             {
                 "tag": "P",
                 "style": {
+                    "display": "block",
+                    "border_right_color": "rgb(0, 128, 0)",
                     "min_width": "auto",
                     "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
                     "border_bottom_color": "rgb(0, 128, 0)",
                     "height": "18px",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "width": "624px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "margin_bottom": "16px",
-                    "min_height": "auto",
-                    "margin_top": "16px",
-                    "display": "block"
+                    "min_height": "auto"
                 },
                 "children": [
                     {
                         "tag": "STRONG",
                         "style": {
+                            "border_left_color": "rgb(0, 128, 0)",
                             "border_right_color": "rgb(0, 128, 0)",
                             "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)"
                         }
                     },
                     {
                         "tag": "STRONG",
                         "style": {
+                            "border_left_color": "rgb(0, 128, 0)",
                             "border_right_color": "rgb(0, 128, 0)",
                             "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)"
                         }
                     }
                 ]
             }
         ]
-    },
-    "assert": "This test checks that grid's margin (body) do not collapse with the marings of the grid item (a paragraph).",
-    "matches": "../reference/grid-text-green-margin-no-collapse-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers"
-    ]
+    }
 }

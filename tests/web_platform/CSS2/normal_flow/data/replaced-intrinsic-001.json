@@ -1,41 +1,53 @@
 {
     "test_case": {
+        "style": {
+            "height": "244px",
+            "display": "block",
+            "width": "150px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
                     "height": "90px",
-                    "width": "150px",
-                    "display": "block"
+                    "display": "block",
+                    "width": "150px"
                 },
                 "tag": "p"
             },
             {
                 "style": {
-                    "border_top_style": "solid",
-                    "margin_bottom": "-2px",
-                    "border_left_style": "solid",
+                    "border_right_width": "2px",
                     "height": "150px",
                     "border_bottom_width": "2px",
                     "position": "absolute",
-                    "margin_top": "-2px",
-                    "border_top_color": "rgb(0, 255, 0)",
-                    "display": "block",
-                    "margin_left": "-2px",
-                    "border_right_width": "2px",
-                    "border_bottom_color": "rgb(0, 255, 0)",
-                    "border_right_style": "solid",
-                    "border_top_width": "2px",
-                    "border_right_color": "rgb(0, 255, 0)",
-                    "width": "150px",
-                    "z_index": "-1",
-                    "border_bottom_style": "solid",
-                    "margin_right": "-2px",
+                    "border_left_style": "solid",
                     "border_left_width": "2px",
-                    "border_left_color": "rgb(0, 255, 0)"
+                    "margin_top": "-2px",
+                    "display": "block",
+                    "width": "150px",
+                    "border_top_style": "solid",
+                    "margin_left": "-2px",
+                    "border_bottom_style": "solid",
+                    "margin_bottom": "-2px",
+                    "border_top_color": "rgb(0, 255, 0)",
+                    "border_top_width": "2px",
+                    "z_index": "-1",
+                    "border_bottom_color": "rgb(0, 255, 0)",
+                    "border_left_color": "rgb(0, 255, 0)",
+                    "border_right_style": "solid",
+                    "margin_right": "-2px",
+                    "border_right_color": "rgb(0, 255, 0)"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "154px",
+                    "display": "block",
+                    "width": "150px"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {
@@ -44,25 +56,13 @@
                         },
                         "tag": "object"
                     }
-                ],
-                "style": {
-                    "height": "154px",
-                    "width": "150px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             }
-        ],
-        "style": {
-            "height": "244px",
-            "width": "150px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "replaced-intrinsic-001-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
-    "assert": null
+    ]
 }

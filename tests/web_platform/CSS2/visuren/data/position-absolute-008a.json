@@ -1,65 +1,65 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo"
-    ],
     "assert": "Float is computed to 'none' when 'position: absolute' is specified.",
     "test_case": {
-        "style": {
-            "height": "134px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
+                    "width": "624px",
+                    "height": "18px"
                 },
-                "tag": "p",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     }
                 ]
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "position": "relative",
                     "width": "624px",
                     "height": "100px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "position": "absolute",
                             "width": "100px",
                             "height": "100px"
-                        },
-                        "tag": "div"
+                        }
                     },
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "width": "100px",
                             "height": "100px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ]
             }
         ]
     },
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo"
+    ]
 }

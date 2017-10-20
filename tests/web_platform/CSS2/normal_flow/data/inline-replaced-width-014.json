@@ -1,25 +1,49 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "250px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "100px",
+                    "display": "block",
+                    "width": "300px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "100px",
+                            "width": "600px",
+                            "margin_top": "16px",
+                            "margin_bottom": "16px",
+                            "display": "block"
+                        },
+                        "tag": "p",
                         "children": [
                             {
                                 "style": {
@@ -28,27 +52,28 @@
                                 },
                                 "tag": "img"
                             }
-                        ],
-                        "style": {
-                            "width": "600px",
-                            "margin_top": "16px",
-                            "height": "100px",
-                            "margin_bottom": "16px",
-                            "display": "block"
-                        },
-                        "tag": "p"
+                        ]
                     }
-                ],
+                ]
+            },
+            {
                 "style": {
                     "height": "100px",
                     "width": "300px",
-                    "display": "block"
+                    "display": "block",
+                    "position": "relative"
                 },
-                "tag": "div"
-            },
-            {
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "100px",
+                            "width": "600px",
+                            "margin_top": "16px",
+                            "margin_bottom": "16px",
+                            "display": "block"
+                        },
+                        "tag": "p",
                         "children": [
                             {
                                 "style": {
@@ -59,49 +84,24 @@
                             },
                             {
                                 "style": {
-                                    "top": "0px",
-                                    "width": "300px",
-                                    "position": "absolute",
-                                    "height": "100px",
                                     "left": "0px",
-                                    "display": "block"
+                                    "height": "100px",
+                                    "width": "300px",
+                                    "top": "0px",
+                                    "display": "block",
+                                    "position": "absolute"
                                 },
                                 "tag": "span"
                             }
-                        ],
-                        "style": {
-                            "width": "600px",
-                            "margin_top": "16px",
-                            "height": "100px",
-                            "margin_bottom": "16px",
-                            "display": "block"
-                        },
-                        "tag": "p"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "100px",
-                    "position": "relative",
-                    "width": "300px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "250px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inline-replaced-width-014-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
-    "assert": null
+    ]
 }

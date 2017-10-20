@@ -1,43 +1,43 @@
 {
-    "matches": null,
     "assert": "The 'top' property applies to elements with a display of list-item.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "36px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "616px",
+            "margin_left": "16px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "144px",
                     "margin_bottom": "16px",
                     "width": "616px",
                     "height": "36px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "144px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
                 "style": {
                     "position": "absolute",
                     "width": "96px",
                     "height": "96px",
                     "display": "list-item",
                     "top": "0px"
-                }
+                },
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "616px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "16px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "36px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
-        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+        "tag": "body"
+    }
 }

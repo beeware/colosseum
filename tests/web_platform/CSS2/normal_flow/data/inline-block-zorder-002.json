@@ -1,58 +1,58 @@
 {
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "style": {
-                                    "height": "16px",
-                                    "width": "32px",
-                                    "display": "block"
-                                },
-                                "tag": "span"
-                            }
-                        ],
-                        "style": {
-                            "height": "16px",
-                            "width": "32px",
-                            "display": "inline-block"
-                        },
-                        "tag": "span"
-                    }
-                ],
-                "style": {
-                    "height": "16px",
-                    "width": "32px",
-                    "display": "block"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "width": "32px",
-                    "margin_top": "-16px",
-                    "height": "16px",
-                    "display": "block"
-                },
-                "tag": "div"
-            }
-        ],
         "style": {
             "margin_left": "8px",
             "margin_bottom": "8px",
             "height": "16px",
-            "width": "624px",
             "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
         },
-        "tag": "body"
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "16px",
+                    "display": "block",
+                    "width": "32px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "height": "16px",
+                            "display": "inline-block",
+                            "width": "32px"
+                        },
+                        "tag": "span",
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "16px",
+                                    "display": "block",
+                                    "width": "32px"
+                                },
+                                "tag": "span"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "height": "16px",
+                    "margin_top": "-16px",
+                    "display": "block",
+                    "width": "32px"
+                },
+                "tag": "div"
+            }
+        ]
     },
     "matches": "inline-block-zorder-001-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/zindex.html#painting-order"
-    ],
-    "assert": null
+    ]
 }

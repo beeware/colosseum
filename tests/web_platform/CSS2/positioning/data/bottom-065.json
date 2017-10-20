@@ -1,65 +1,65 @@
 {
-    "matches": "../reference/ref-no-vert-space-between.xht",
     "assert": "The 'bottom' property sets a zero length value in inches.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "border_top_style": "solid",
-                            "position": "relative",
-                            "width": "624px",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "bottom": "0px",
-                            "height": "0px",
-                            "border_top_width": "5px"
-                        }
-                    }
-                ],
-                "style": {
-                    "border_top_style": "solid",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "height": "5px",
-                    "border_top_width": "5px"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "44px"
-        }
-    },
+    "matches": "../reference/ref-no-vert-space-between.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "44px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "5px",
+                    "display": "block",
+                    "border_top_width": "5px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid",
+                    "border_top_color": "rgb(0, 0, 255)"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "0px",
+                            "display": "block",
+                            "border_top_width": "5px",
+                            "width": "624px",
+                            "position": "relative",
+                            "bottom": "0px",
+                            "border_top_style": "solid",
+                            "border_top_color": "rgb(255, 165, 0)"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

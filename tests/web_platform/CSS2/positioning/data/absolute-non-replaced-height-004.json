@@ -1,69 +1,69 @@
 {
-    "matches": "absolute-non-replaced-height-003-ref.xht",
     "assert": "When 'top', 'bottom', 'height' and 'margin-bottom' of an absolutely positioned, non-replaced element are all not 'auto' while its 'margin-top' is 'auto', then 'margin-top' becomes the remainder of the height of its containing block.",
+    "matches": "absolute-non-replaced-height-003-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "328px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "bottom": "48px",
-                            "width": "288px",
-                            "display": "block",
-                            "margin_top": "48px",
-                            "margin_bottom": "48px",
-                            "height": "96px",
-                            "top": "48px"
-                        }
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
+                    "height": "288px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "border_right_style": "solid",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px",
+                    "width": "288px",
                     "border_top_style": "solid",
                     "position": "relative",
-                    "height": "288px",
-                    "border_left_style": "solid",
-                    "border_right_width": "3px",
-                    "border_bottom_style": "solid",
-                    "width": "288px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
-                    "border_top_width": "3px",
-                    "display": "block"
-                }
+                    "border_right_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "96px",
+                            "display": "block",
+                            "margin_top": "48px",
+                            "position": "absolute",
+                            "margin_bottom": "48px",
+                            "width": "288px",
+                            "bottom": "48px",
+                            "top": "48px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "328px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ]
+        "tag": "body"
+    }
 }

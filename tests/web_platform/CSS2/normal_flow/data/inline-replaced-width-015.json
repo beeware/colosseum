@@ -1,34 +1,65 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "250px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "100px",
+                    "width": "300px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "50px",
+                            "display": "block",
+                            "width": "300px"
+                        },
+                        "tag": "div",
                         "children": [
                             {
+                                "style": {
+                                    "height": "50px",
+                                    "width": "375px",
+                                    "margin_top": "16px",
+                                    "margin_bottom": "16px",
+                                    "display": "block"
+                                },
+                                "tag": "p",
                                 "children": [
                                     {
                                         "style": {
-                                            "width": "100px",
-                                            "float": "left",
                                             "height": "50px",
-                                            "display": "block"
+                                            "display": "block",
+                                            "width": "100px",
+                                            "float": "left"
                                         },
                                         "tag": "img"
                                     },
@@ -39,45 +70,45 @@
                                         },
                                         "tag": "img"
                                     }
-                                ],
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "height": "100px",
+                    "width": "300px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "height": "50px",
+                            "display": "block",
+                            "width": "300px"
+                        },
+                        "tag": "div",
+                        "children": [
+                            {
                                 "style": {
+                                    "height": "50px",
                                     "width": "375px",
                                     "margin_top": "16px",
-                                    "height": "50px",
                                     "margin_bottom": "16px",
                                     "display": "block"
                                 },
-                                "tag": "p"
-                            }
-                        ],
-                        "style": {
-                            "height": "50px",
-                            "width": "300px",
-                            "display": "block"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "height": "100px",
-                    "position": "relative",
-                    "width": "300px",
-                    "display": "block"
-                },
-                "tag": "div"
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
+                                "tag": "p",
                                 "children": [
                                     {
                                         "style": {
-                                            "width": "100px",
-                                            "float": "left",
                                             "height": "50px",
-                                            "display": "block"
+                                            "display": "block",
+                                            "width": "100px",
+                                            "float": "left"
                                         },
                                         "tag": "img"
                                     },
@@ -91,56 +122,25 @@
                                     {
                                         "style": {
                                             "bottom": "0px",
-                                            "width": "300px",
-                                            "position": "absolute",
                                             "height": "50px",
                                             "left": "0px",
-                                            "display": "block"
+                                            "width": "300px",
+                                            "display": "block",
+                                            "position": "absolute"
                                         },
                                         "tag": "span"
                                     }
-                                ],
-                                "style": {
-                                    "width": "375px",
-                                    "margin_top": "16px",
-                                    "height": "50px",
-                                    "margin_bottom": "16px",
-                                    "display": "block"
-                                },
-                                "tag": "p"
+                                ]
                             }
-                        ],
-                        "style": {
-                            "height": "50px",
-                            "width": "300px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "100px",
-                    "position": "relative",
-                    "width": "300px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "250px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inline-replaced-width-014-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
-    "assert": null
+    ]
 }

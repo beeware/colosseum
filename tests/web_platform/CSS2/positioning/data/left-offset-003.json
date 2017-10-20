@@ -1,74 +1,74 @@
 {
-    "matches": "left-offset-003-ref.xht",
     "assert": "The 'left' property, for absolute positioning, specifies the offset of the element in relation to the containing block's left edge. In this test, the containing block of the absolutely positioned element is formed by the padding box of its nearest (closest) non-inline positioned ancestor element.",
+    "matches": "left-offset-003-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "136px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "height": "96px",
+                    "padding_left": "24px",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "border_right_style": "solid",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "width": "96px",
+                    "border_bottom_width": "3px",
+                    "display": "block",
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "border_right_width": "3px"
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
                             "position": "absolute",
                             "width": "48px",
-                            "left": "72px",
                             "height": "48px",
-                            "display": "block"
-                        }
+                            "display": "block",
+                            "left": "72px"
+                        },
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
                         "style": {
                             "width": "96px",
                             "height": "96px",
                             "display": "block"
-                        }
+                        },
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "border_top_style": "solid",
-                    "position": "relative",
-                    "height": "96px",
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "border_right_width": "3px",
-                    "border_bottom_style": "solid",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "border_right_style": "solid",
-                    "width": "96px",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "border_bottom_width": "3px",
-                    "padding_left": "24px",
-                    "border_left_style": "solid",
-                    "border_left_width": "3px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_top_width": "3px",
-                    "display": "block"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "136px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+        "tag": "body"
+    }
 }

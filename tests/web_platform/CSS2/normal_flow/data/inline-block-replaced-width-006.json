@@ -1,65 +1,65 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "346px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "36px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "36px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "height": "288px",
+                    "border_top_width": "3px",
+                    "width": "192px",
+                    "border_left_width": "3px",
+                    "display": "block",
+                    "border_right_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "96px",
-                            "width": "96px",
-                            "display": "inline-block"
+                            "display": "inline-block",
+                            "width": "96px"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
                             "height": "96px",
-                            "width": "96px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "96px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "288px",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px",
-                    "border_right_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "192px",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_left_width": "3px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "346px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inline-block-replaced-width-006-ref.xht",
+    "assert": "Percentage intrinsic widths are evaluated against the containing block's width.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
-    ],
-    "assert": "Percentage intrinsic widths are evaluated against the containing block's width."
+    ]
 }

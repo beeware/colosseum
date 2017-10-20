@@ -1,59 +1,59 @@
 {
-    "matches": "../reference/grid-layout-basic-ref.html",
     "assert": "the layout should behave the same as reference.",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#free-space"
-    ],
+    "matches": "../reference/grid-layout-basic-ref.html",
     "test_case": {
-        "style": {
-            "height": "68px",
-            "display": "block",
-            "width": "640px"
-        },
         "children": [
             {
+                "tag": "P",
                 "style": {
+                    "margin_bottom": "10px",
                     "margin_top": "10px",
                     "height": "40px",
-                    "margin_right": "10px",
+                    "width": "620px",
                     "margin_left": "10px",
-                    "margin_bottom": "10px",
                     "display": "block",
-                    "width": "620px"
-                },
-                "tag": "P"
+                    "margin_right": "10px"
+                }
             },
             {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "display": "block",
+                            "width": "100px",
+                            "min_height": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "display": "block",
+                            "width": "50px",
+                            "min_height": "auto"
+                        }
+                    }
+                ],
+                "tag": "DIV",
                 "style": {
                     "height": "18px",
                     "display": "grid",
                     "width": "150px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "min_width": "auto",
-                            "height": "18px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "width": "100px"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "min_width": "auto",
-                            "height": "18px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "width": "50px"
-                        },
-                        "tag": "DIV"
-                    }
-                ],
-                "tag": "DIV"
+                }
             }
         ],
-        "tag": "BODY"
-    }
+        "tag": "BODY",
+        "style": {
+            "height": "68px",
+            "display": "block",
+            "width": "640px"
+        }
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#free-space"
+    ]
 }

@@ -1,62 +1,62 @@
 {
-    "matches": "right-offset-percentage-001-ref.xht",
     "assert": "Percentage offset values for the 'right' property are based off the width of the containing block.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "right": "50%",
-                            "width": "50px",
-                            "display": "block",
-                            "margin_left": "50px",
-                            "height": "50px"
-                        }
-                    }
-                ],
-                "style": {
-                    "border_top_style": "solid",
-                    "position": "relative",
-                    "height": "200px",
-                    "border_left_style": "solid",
-                    "border_right_width": "3px",
-                    "border_bottom_style": "solid",
-                    "width": "100px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
-                    "border_top_width": "3px",
-                    "display": "block"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "240px"
-        }
-    },
+    "matches": "right-offset-percentage-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "240px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "200px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "border_right_style": "solid",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px",
+                    "width": "100px",
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "border_right_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "right": "50%",
+                            "height": "50px",
+                            "display": "block",
+                            "position": "absolute",
+                            "width": "50px",
+                            "margin_left": "50px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

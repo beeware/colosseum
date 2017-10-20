@@ -1,79 +1,79 @@
 {
-    "matches": "absolute-replaced-width-036-ref.xht",
     "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on absolutely positioned inline replaced element becomes a used value of '0'. The intrinsic width is also used if 'height' and 'width' are 'auto'.",
+    "matches": "absolute-replaced-width-036-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "250px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "36px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "img",
-                        "style": {
-                            "position": "absolute",
-                            "right": "48px",
-                            "width": "96px",
-                            "display": "block",
-                            "margin_left": "24px",
-                            "left": "24px",
-                            "height": "96px"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "width": "96px",
-                            "margin_right": "48px",
-                            "display": "block",
-                            "margin_left": "48px",
-                            "margin_top": "96px",
-                            "height": "96px"
-                        }
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
+                    "height": "192px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "border_right_style": "solid",
+                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px",
+                    "width": "192px",
                     "border_top_style": "solid",
                     "position": "relative",
-                    "height": "192px",
-                    "border_left_style": "solid",
-                    "border_right_width": "3px",
-                    "border_bottom_style": "solid",
-                    "width": "192px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
-                    "border_top_width": "3px",
-                    "display": "block"
-                }
+                    "border_right_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "right": "48px",
+                            "height": "96px",
+                            "display": "block",
+                            "left": "24px",
+                            "position": "absolute",
+                            "width": "96px",
+                            "margin_left": "24px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "96px",
+                            "display": "block",
+                            "margin_right": "48px",
+                            "margin_top": "96px",
+                            "width": "96px",
+                            "margin_left": "48px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "250px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
-    ]
+        "tag": "body"
+    }
 }

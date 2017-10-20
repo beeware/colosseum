@@ -1,70 +1,75 @@
 {
+    "assert": "This test checks that 'grid' and 'inline-grid' values for 'display' property are supported so that DOM methods, specifically getComputedValue(), and its associated CSS2Properties interface, can fetch such 'display' values.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ],
     "test_case": {
         "tag": "BODY",
         "style": {
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "height": "36px",
             "display": "block",
-            "width": "624px",
+            "margin_left": "8px",
+            "margin_top": "8px",
             "margin_bottom": "8px",
-            "margin_top": "8px"
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "36px"
         },
         "children": [
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "block",
                     "width": "624px",
-                    "height": "0px",
-                    "display": "block"
+                    "height": "0px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "grid",
                     "width": "624px",
-                    "height": "0px",
-                    "display": "grid"
+                    "height": "0px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "inline-grid",
                     "width": "0px",
-                    "height": "0px",
-                    "display": "inline-grid"
+                    "height": "0px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "grid",
                     "width": "624px",
-                    "height": "0px",
-                    "display": "grid"
+                    "height": "0px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "inline-grid",
                     "width": "0px",
-                    "height": "0px",
-                    "display": "inline-grid"
+                    "height": "0px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "block",
                     "width": "624px",
-                    "height": "0px",
-                    "display": "block"
+                    "height": "0px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "block",
                     "width": "624px",
-                    "height": "0px",
-                    "display": "block"
+                    "height": "0px"
                 }
             },
             {
@@ -74,10 +79,5 @@
                 }
             }
         ]
-    },
-    "assert": "This test checks that 'grid' and 'inline-grid' values for 'display' property are supported so that DOM methods, specifically getComputedValue(), and its associated CSS2Properties interface, can fetch such 'display' values.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers"
-    ]
+    }
 }

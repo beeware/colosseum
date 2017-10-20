@@ -1,4 +1,5 @@
 {
+    "matches": null,
     "assert": "Checks that we correctly handle when a flex item\nbecomes absolutely positioned",
     "help": [
         "https://drafts.csswg.org/css-flexbox/#abspos-items"
@@ -10,38 +11,37 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
                             "min_width": "auto",
-                            "left": "0px",
-                            "width": "500px",
-                            "height": "200px",
                             "right": "0px",
-                            "bottom": "0px",
-                            "display": "block",
+                            "position": "absolute",
                             "top": "0px",
-                            "position": "absolute"
+                            "width": "500px",
+                            "display": "block",
+                            "height": "200px",
+                            "bottom": "0px",
+                            "min_height": "auto",
+                            "left": "0px"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "height": "200px",
                     "width": "500px",
-                    "position": "relative",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "200px",
+                    "position": "relative"
                 }
             }
         ],
         "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "width": "624px",
             "margin_left": "8px",
-            "height": "200px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "display": "block"
+            "width": "624px",
+            "display": "block",
+            "height": "200px",
+            "margin_top": "8px"
         }
-    },
-    "matches": null
+    }
 }

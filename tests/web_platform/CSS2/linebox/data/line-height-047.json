@@ -1,83 +1,83 @@
 {
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "40px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "18px"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "width": "20px",
-                    "position": "relative",
-                    "display": "block",
-                    "height": "6px"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "width": "20px",
-                            "position": "relative",
-                            "display": "block",
-                            "height": "6px"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "top": "-8px",
-                            "position": "absolute",
-                            "width": "20px",
-                            "left": "22px",
-                            "display": "block",
-                            "height": "23.765625px"
-                        },
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "width": "20px",
-                                    "position": "relative",
-                                    "display": "block",
-                                    "height": "20px"
-                                }
-                            },
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "width": "20px",
-                                    "position": "relative",
-                                    "display": "block",
-                                    "height": "3.765625px"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
     "assert": "The 'line-height' property sets a minimum plus one length value in millimeters.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "position": "relative",
+                            "display": "block",
+                            "height": "6px",
+                            "width": "20px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "relative",
+                                    "display": "block",
+                                    "height": "20px",
+                                    "width": "20px"
+                                }
+                            },
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "position": "relative",
+                                    "display": "block",
+                                    "height": "3.765625px",
+                                    "width": "20px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "height": "23.765625px",
+                            "position": "absolute",
+                            "width": "20px",
+                            "display": "block",
+                            "top": "-8px",
+                            "left": "22px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "display": "block",
+                    "height": "6px",
+                    "width": "20px"
+                }
+            }
+        ],
+        "style": {
+            "height": "40px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
+    },
     "matches": null
 }

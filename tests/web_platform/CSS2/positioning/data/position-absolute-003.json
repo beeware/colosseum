@@ -1,67 +1,67 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
     "assert": "Absolute positioned elements are taken out of the normal flow when they have explicit offsets.",
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "134px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "div",
-                        "style": {
-                            "width": "100px",
-                            "height": "100px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "100px",
-                            "display": "block",
-                            "left": "0px",
-                            "height": "100px",
-                            "top": "0px"
-                        }
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
                     "position": "relative",
                     "width": "200px",
                     "height": "100px",
                     "display": "block"
-                }
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "height": "100px",
+                            "display": "block",
+                            "left": "0px",
+                            "position": "absolute",
+                            "width": "100px",
+                            "top": "0px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "134px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
-    ]
+        "tag": "body"
+    }
 }

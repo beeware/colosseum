@@ -1,52 +1,66 @@
 {
+    "assert": "This test checks that a grid item which becomes an absolutelly positioned children of a grid.",
+    "matches": "../../reference/ref-filled-green-200px-square.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ],
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "height": "234px",
+            "width": "624px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_right": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "height": "18px"
+                },
                 "children": [
                     {
                         "style": {},
                         "tag": "STRONG"
                     }
                 ],
-                "style": {
-                    "margin_top": "16px",
-                    "width": "624px",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "display": "block"
-                },
                 "tag": "P"
             },
             {
+                "style": {
+                    "width": "200px",
+                    "position": "relative",
+                    "display": "block",
+                    "height": "200px"
+                },
                 "children": [
                     {
+                        "style": {
+                            "width": "200px",
+                            "display": "grid",
+                            "height": "100px"
+                        },
                         "children": [
                             {
                                 "style": {
-                                    "min_width": "auto",
-                                    "display": "block",
-                                    "position": "absolute",
                                     "width": "100px",
+                                    "position": "absolute",
                                     "height": "100px",
-                                    "min_height": "auto"
+                                    "min_height": "auto",
+                                    "display": "block",
+                                    "min_width": "auto"
                                 },
                                 "tag": "DIV"
                             }
                         ],
-                        "style": {
-                            "width": "200px",
-                            "height": "100px",
-                            "display": "grid"
-                        },
                         "tag": "DIV"
                     }
                 ],
-                "style": {
-                    "position": "relative",
-                    "width": "200px",
-                    "height": "200px",
-                    "display": "block"
-                },
                 "tag": "DIV"
             },
             {
@@ -56,20 +70,6 @@
                 "tag": "SCRIPT"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "width": "624px",
-            "height": "234px"
-        },
         "tag": "BODY"
-    },
-    "assert": "This test checks that a grid item which becomes an absolutelly positioned children of a grid.",
-    "matches": "../../reference/ref-filled-green-200px-square.html",
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ]
+    }
 }

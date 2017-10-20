@@ -1,54 +1,54 @@
 {
-    "matches": "abspos-overflow-004-ref.xht",
     "assert": null,
+    "matches": "abspos-overflow-004-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
+    ],
     "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "div",
-                "style": {
-                    "width": "160px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "height": "18px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "160px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "height": "18px",
-                            "display": "block",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "left": "0px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "top": "0px"
-                        }
-                    }
-                ],
-                "style": {
-                    "width": "128px",
-                    "height": "128px",
-                    "display": "block"
-                }
-            }
-        ],
         "style": {
             "width": "640px",
             "height": "146px",
             "display": "block"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
-    ]
+        },
+        "children": [
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "width": "160px",
+                    "height": "18px",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "border_top_color": "rgb(255, 255, 0)"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "128px",
+                    "height": "128px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "top": "0px",
+                            "position": "absolute",
+                            "width": "160px",
+                            "height": "18px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "left": "0px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

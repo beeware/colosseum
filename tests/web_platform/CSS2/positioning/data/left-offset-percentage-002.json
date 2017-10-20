@@ -1,90 +1,90 @@
 {
-    "matches": "left-offset-percentage-002-ref.xht",
     "assert": "'left: inherit' makes the left property take the same computed value as the left property for the element's parent; in the case of a percentage value, the computed value is the specified percentage value. 'left: [percentage]' refers to width of containing block.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "100px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "height": "100px",
-                            "display": "block",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "left": "300px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "top": "100px"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "position": "absolute",
-                                    "width": "100px",
-                                    "display": "block",
-                                    "left": "50%",
-                                    "height": "100px",
-                                    "top": "0px"
-                                }
-                            }
-                        ],
-                        "style": {
-                            "position": "absolute",
-                            "width": "0px",
-                            "display": "block",
-                            "left": "50%",
-                            "height": "0px",
-                            "top": "25%"
-                        }
-                    }
-                ],
-                "style": {
-                    "position": "absolute",
-                    "width": "600px",
-                    "height": "400px",
-                    "display": "block"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "18px"
-        }
-    },
+    "matches": "left-offset-percentage-002-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
         "http://www.w3.org/TR/css-cascade-3/#inherit",
         "http://www.w3.org/TR/css-cascade-4/#inherit",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "18px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "position": "absolute",
+                    "width": "600px",
+                    "height": "400px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "top": "100px",
+                            "position": "absolute",
+                            "width": "100px",
+                            "height": "100px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "left": "300px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "height": "0px",
+                            "display": "block",
+                            "left": "50%",
+                            "position": "absolute",
+                            "width": "0px",
+                            "top": "25%"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "100px",
+                                    "display": "block",
+                                    "left": "50%",
+                                    "position": "absolute",
+                                    "width": "100px",
+                                    "top": "0px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

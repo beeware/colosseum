@@ -1,81 +1,86 @@
 {
+    "assert": "'display: inline-grid' causes an element to generate an inline-level grid container box.",
+    "matches": "../reference/display-inline-grid-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ],
     "test_case": {
         "tag": "BODY",
         "style": {
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "height": "134px",
             "display": "block",
-            "width": "624px",
+            "margin_left": "8px",
+            "margin_top": "8px",
             "margin_bottom": "8px",
-            "margin_top": "8px"
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "134px"
         },
         "children": [
             {
                 "tag": "P",
                 "style": {
-                    "width": "624px",
                     "display": "block",
-                    "margin_top": "16px",
+                    "width": "624px",
                     "height": "18px",
+                    "margin_top": "16px",
                     "margin_bottom": "16px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "block",
                     "width": "624px",
                     "position": "relative",
-                    "height": "100px",
-                    "display": "block"
+                    "height": "100px"
                 },
                 "children": [
                     {
                         "tag": "DIV",
                         "style": {
+                            "display": "inline-grid",
                             "width": "400px",
-                            "height": "100px",
-                            "display": "inline-grid"
+                            "height": "100px"
                         },
                         "children": [
                             {
                                 "tag": "DIV",
                                 "style": {
+                                    "display": "block",
+                                    "min_width": "auto",
                                     "width": "100px",
-                                    "min_width": "auto",
-                                    "min_height": "auto",
                                     "height": "70px",
-                                    "display": "block"
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
+                                    "display": "block",
+                                    "min_width": "auto",
                                     "width": "300px",
-                                    "min_width": "auto",
-                                    "min_height": "auto",
                                     "height": "70px",
-                                    "display": "block"
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
+                                    "display": "block",
+                                    "min_width": "auto",
                                     "width": "100px",
-                                    "min_width": "auto",
-                                    "min_height": "auto",
                                     "height": "30px",
-                                    "display": "block"
+                                    "min_height": "auto"
                                 }
                             },
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "width": "300px",
+                                    "display": "block",
                                     "min_width": "auto",
-                                    "min_height": "auto",
+                                    "width": "300px",
                                     "height": "30px",
-                                    "display": "block"
+                                    "min_height": "auto"
                                 }
                             }
                         ]
@@ -87,65 +92,65 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "left": "0px",
-                            "position": "absolute",
-                            "height": "100px",
                             "display": "block",
-                            "width": "400px",
+                            "height": "100px",
                             "top": "0px",
-                            "z_index": "-1"
+                            "z_index": "-1",
+                            "width": "400px",
+                            "position": "absolute",
+                            "left": "0px"
                         },
                         "children": [
                             {
                                 "tag": "TABLE",
                                 "style": {
-                                    "border_left_color": "rgb(128, 128, 128)",
-                                    "border_bottom_color": "rgb(128, 128, 128)",
-                                    "height": "100px",
                                     "display": "table",
-                                    "width": "400px",
                                     "border_right_color": "rgb(128, 128, 128)",
-                                    "border_top_color": "rgb(128, 128, 128)"
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)",
+                                    "width": "400px",
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "height": "100px"
                                 },
                                 "children": [
                                     {
                                         "tag": "TBODY",
                                         "style": {
-                                            "border_left_color": "rgb(128, 128, 128)",
-                                            "border_bottom_color": "rgb(128, 128, 128)",
-                                            "height": "100px",
                                             "display": "table-row-group",
-                                            "width": "400px",
                                             "border_right_color": "rgb(128, 128, 128)",
-                                            "border_top_color": "rgb(128, 128, 128)"
+                                            "border_left_color": "rgb(128, 128, 128)",
+                                            "border_top_color": "rgb(128, 128, 128)",
+                                            "width": "400px",
+                                            "border_bottom_color": "rgb(128, 128, 128)",
+                                            "height": "100px"
                                         },
                                         "children": [
                                             {
                                                 "tag": "TR",
                                                 "style": {
-                                                    "border_left_color": "rgb(128, 128, 128)",
-                                                    "border_bottom_color": "rgb(128, 128, 128)",
-                                                    "height": "70px",
                                                     "display": "table-row",
-                                                    "width": "400px",
                                                     "border_right_color": "rgb(128, 128, 128)",
-                                                    "border_top_color": "rgb(128, 128, 128)"
+                                                    "border_left_color": "rgb(128, 128, 128)",
+                                                    "border_top_color": "rgb(128, 128, 128)",
+                                                    "width": "400px",
+                                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                                    "height": "70px"
                                                 },
                                                 "children": [
                                                     {
                                                         "tag": "TD",
                                                         "style": {
+                                                            "display": "table-cell",
                                                             "width": "100px",
-                                                            "height": "70px",
-                                                            "display": "table-cell"
+                                                            "height": "70px"
                                                         }
                                                     },
                                                     {
                                                         "tag": "TD",
                                                         "style": {
+                                                            "display": "table-cell",
                                                             "width": "300px",
-                                                            "height": "70px",
-                                                            "display": "table-cell"
+                                                            "height": "70px"
                                                         }
                                                     }
                                                 ]
@@ -153,29 +158,29 @@
                                             {
                                                 "tag": "TR",
                                                 "style": {
-                                                    "border_left_color": "rgb(128, 128, 128)",
-                                                    "border_bottom_color": "rgb(128, 128, 128)",
-                                                    "height": "30px",
                                                     "display": "table-row",
-                                                    "width": "400px",
                                                     "border_right_color": "rgb(128, 128, 128)",
-                                                    "border_top_color": "rgb(128, 128, 128)"
+                                                    "border_left_color": "rgb(128, 128, 128)",
+                                                    "border_top_color": "rgb(128, 128, 128)",
+                                                    "width": "400px",
+                                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                                    "height": "30px"
                                                 },
                                                 "children": [
                                                     {
                                                         "tag": "TD",
                                                         "style": {
+                                                            "display": "table-cell",
                                                             "width": "100px",
-                                                            "height": "30px",
-                                                            "display": "table-cell"
+                                                            "height": "30px"
                                                         }
                                                     },
                                                     {
                                                         "tag": "TD",
                                                         "style": {
+                                                            "display": "table-cell",
                                                             "width": "300px",
-                                                            "height": "30px",
-                                                            "display": "table-cell"
+                                                            "height": "30px"
                                                         }
                                                     }
                                                 ]
@@ -189,10 +194,5 @@
                 ]
             }
         ]
-    },
-    "assert": "'display: inline-grid' causes an element to generate an inline-level grid container box.",
-    "matches": "../reference/display-inline-grid-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers"
-    ]
+    }
 }

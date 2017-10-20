@@ -1,59 +1,59 @@
 {
-    "matches": "abspos-overflow-010-ref.xht",
     "assert": null,
+    "matches": "abspos-overflow-010-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "52px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "display": "block",
+                    "width": "624px",
+                    "height": "18px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)"
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "display": "block",
                             "position": "absolute",
                             "width": "0px",
-                            "border_left_color": "rgb(0, 128, 0)",
                             "height": "0px",
-                            "display": "block",
-                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)",
-                            "z_index": "-1",
-                            "border_bottom_color": "rgb(0, 128, 0)"
-                        }
+                            "z_index": "-1"
+                        },
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "width": "624px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "18px",
-                    "display": "block",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "52px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
-    ]
+        "tag": "body"
+    }
 }

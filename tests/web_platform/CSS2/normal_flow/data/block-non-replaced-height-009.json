@@ -1,93 +1,93 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "226px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "192px",
+                    "width": "624px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "border_top_style": "solid",
+                            "border_bottom_style": "solid",
+                            "height": "144px",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_top_width": "24px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "display": "block",
+                            "width": "96px",
+                            "border_bottom_width": "24px"
+                        },
+                        "tag": "div",
                         "children": [
                             {
                                 "style": {
                                     "border_top_style": "solid",
                                     "height": "24px",
-                                    "border_top_width": "24px",
-                                    "width": "96px",
-                                    "margin_top": "24px",
                                     "border_top_color": "rgb(0, 0, 255)",
-                                    "display": "block"
+                                    "border_top_width": "24px",
+                                    "margin_top": "24px",
+                                    "display": "block",
+                                    "width": "96px"
                                 },
                                 "tag": "div"
                             },
                             {
                                 "style": {
-                                    "width": "96px",
-                                    "margin_bottom": "24px",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
-                                    "height": "24px",
-                                    "border_bottom_width": "24px",
                                     "border_bottom_style": "solid",
-                                    "display": "block"
+                                    "margin_bottom": "24px",
+                                    "border_bottom_width": "24px",
+                                    "height": "24px",
+                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "display": "block",
+                                    "width": "96px"
                                 },
                                 "tag": "div"
                             }
-                        ],
-                        "style": {
-                            "border_top_style": "solid",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "height": "144px",
-                            "border_top_width": "24px",
-                            "width": "96px",
-                            "border_bottom_width": "24px",
-                            "border_bottom_style": "solid",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                        ]
                     },
                     {
                         "style": {
-                            "top": "0px",
-                            "width": "96px",
-                            "position": "absolute",
-                            "height": "192px",
                             "left": "96px",
-                            "display": "block"
+                            "height": "192px",
+                            "width": "96px",
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "192px",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "226px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": null,
+    "assert": "When a block-level non-replaced element is in normal flow, 'overflow' computes to 'visible', the 'height' is 'auto' and top and bottom margins do not collapse. The 'height' is the distance from the top of the topmost margin edge of the content to the bottom edge of the bottom (possibly collapsed) margin of its last in-flow child, if the child's bottom margin does not collapse with the element's bottom margin.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ],
-    "assert": "When a block-level non-replaced element is in normal flow, 'overflow' computes to 'visible', the 'height' is 'auto' and top and bottom margins do not collapse. The 'height' is the distance from the top of the topmost margin edge of the content to the bottom edge of the bottom (possibly collapsed) margin of its last in-flow child, if the child's bottom margin does not collapse with the element's bottom margin."
+    ]
 }

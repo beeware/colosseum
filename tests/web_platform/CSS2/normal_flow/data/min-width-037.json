@@ -1,46 +1,46 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
                 "style": {
                     "height": "96px",
-                    "width": "0px",
-                    "display": "block"
+                    "display": "block",
+                    "width": "0px"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "The 'min-width' property sets a negative zero length value in centimeters.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
-    "assert": "The 'min-width' property sets a negative zero length value in centimeters."
+    ]
 }

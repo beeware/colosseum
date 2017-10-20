@@ -1,19 +1,48 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "346px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "36px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "36px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "height": "288px",
+                    "border_top_width": "3px",
+                    "width": "288px",
+                    "border_left_width": "3px",
+                    "display": "block",
+                    "border_right_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "50px",
+                            "width": "300px"
+                        },
+                        "tag": "svg:svg",
                         "children": [
                             {
                                 "style": {
@@ -22,52 +51,23 @@
                                 },
                                 "tag": "svg:rect"
                             }
-                        ],
-                        "style": {
-                            "height": "50px",
-                            "width": "300px"
-                        },
-                        "tag": "svg:svg"
+                        ]
                     },
                     {
                         "style": {
                             "height": "50px",
-                            "width": "200px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "200px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "288px",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px",
-                    "border_right_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "288px",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_left_width": "3px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "346px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inline-replaced-width-002-ref.xht",
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on inline replaced elements becomes a used value of '0'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
-    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on inline replaced elements becomes a used value of '0'."
+    ]
 }

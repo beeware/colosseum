@@ -1,68 +1,68 @@
 {
-    "matches": "absolute-non-replaced-height-007-ref.xht",
     "assert": "The 'height' is the used width divided by the intrinsic ratio when an absolutely positioned inline replaced element has an intrinsic ratio, 'height' is set to 'auto' and 'width' is specified.",
+    "matches": "absolute-non-replaced-height-007-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "18px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
                 "children": [
                     {
-                        "tag": "img",
-                        "style": {
-                            "position": "absolute",
-                            "width": "100px",
-                            "height": "100px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "100px",
-                            "display": "block",
-                            "left": "100px",
-                            "height": "100px",
-                            "top": "0px"
-                        }
+                        "style": {},
+                        "tag": "strong"
                     }
                 ],
+                "tag": "p"
+            },
+            {
                 "style": {
                     "position": "relative",
                     "width": "624px",
                     "height": "0px",
                     "display": "block"
-                }
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "block"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "100px",
+                            "display": "block",
+                            "left": "100px",
+                            "position": "absolute",
+                            "width": "100px",
+                            "top": "0px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "18px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
-    ]
+        "tag": "body"
+    }
 }

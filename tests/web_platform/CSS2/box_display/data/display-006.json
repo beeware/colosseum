@@ -1,74 +1,74 @@
 {
-    "matches": "display-001-ref.xht",
     "assert": "The property 'display' set to 'table' behaves in layout as a table.",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "52px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "height": "18px",
-                    "display": "table",
-                    "width": "129.3125px"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "height": "18px",
-                            "display": "table-row",
-                            "width": "129.3125px"
-                        },
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "height": "18px",
-                                    "display": "table-cell",
-                                    "width": "66.65625px"
-                                }
-                            },
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "height": "18px",
-                                    "display": "table-cell",
-                                    "width": "62.65625px"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
+    "matches": "display-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "66.65625px",
+                                    "height": "18px"
+                                },
+                                "tag": "div"
+                            },
+                            {
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "62.65625px",
+                                    "height": "18px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "display": "table-row",
+                            "width": "129.3125px",
+                            "height": "18px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "display": "table",
+                    "width": "129.3125px",
+                    "height": "18px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "52px",
+            "width": "624px"
+        },
+        "tag": "body"
+    }
 }

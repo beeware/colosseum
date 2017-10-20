@@ -1,63 +1,63 @@
 {
     "test_case": {
+        "style": {
+            "height": "74px",
+            "display": "block",
+            "width": "640px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "640px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "640px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "40px",
+                    "display": "block",
+                    "width": "640px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_top_style": "solid",
-                            "border_left_style": "solid",
+                            "border_right_width": "10px",
                             "height": "20px",
                             "border_bottom_width": "10px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "display": "block",
-                            "border_right_color": "rgb(0, 128, 0)",
                             "border_left_width": "10px",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_right_style": "solid",
-                            "border_top_width": "10px",
+                            "display": "block",
                             "width": "620px",
+                            "border_top_style": "solid",
+                            "border_left_style": "solid",
                             "border_bottom_style": "solid",
-                            "border_right_width": "10px",
-                            "border_left_color": "rgb(0, 128, 0)"
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_top_width": "10px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_right_style": "solid",
+                            "border_right_color": "rgb(0, 128, 0)"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "40px",
-                    "width": "640px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "height": "74px",
-            "width": "640px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-non-replaced-width-005-ref.xht",
+    "assert": "If 'width' is set to 'auto', any other 'auto' values become '0' and the 'width' is computed based on remaining space which includes any negative width.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
-    ],
-    "assert": "If 'width' is set to 'auto', any other 'auto' values become '0' and the 'width' is computed based on remaining space which includes any negative width."
+    ]
 }

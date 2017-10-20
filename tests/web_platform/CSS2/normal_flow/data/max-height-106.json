@@ -1,11 +1,21 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "70px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "36px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "36px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
@@ -13,9 +23,9 @@
             },
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
@@ -24,33 +34,23 @@
             {
                 "style": {
                     "max_height": "200px",
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "height": "200px",
-                    "float": "left",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "width": "144.4375px",
+                    "display": "block",
                     "border_top_color": "rgb(0, 0, 255)",
-                    "display": "block"
+                    "float": "left",
+                    "height": "200px",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "width": "200px",
+                    "border_right_color": "rgb(0, 0, 255)"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "70px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": null,
+    "assert": "",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
         "http://www.w3.org/TR/CSS21/visuren.html#floats"
-    ],
-    "assert": ""
+    ]
 }

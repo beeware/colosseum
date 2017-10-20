@@ -1,53 +1,53 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
-        "http://www.w3.org/TR/CSS21/visuren.html#direction"
-    ],
     "assert": "bidi-override should be applied to inline-level descendants but not block-level descendants",
     "test_case": {
-        "style": {
-            "height": "70px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "70px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "div",
                 "style": {
-                    "display": "block",
                     "unicode_bidi": "bidi-override",
+                    "display": "block",
                     "width": "624px",
                     "direction": "rtl",
                     "height": "36px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "width": "624px",
                             "direction": "rtl",
                             "height": "18px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ]
             }
         ]
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ]
 }

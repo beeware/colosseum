@@ -1,61 +1,61 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
-        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
-        "http://www.w3.org/TR/css-cascade-3/#inherit",
-        "http://www.w3.org/TR/css-cascade-4/#inherit"
-    ],
     "assert": "When using the 'inherit' reserved keyword value, the property takes the same specified value as the property for the element's parent, even in cases where such property does not apply. This test covers the case where the parent has absolute value lengths for left and top.",
     "test_case": {
-        "style": {
-            "height": "134px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "134px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
+                    "width": "624px",
+                    "height": "18px"
                 },
-                "tag": "p",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     }
                 ]
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "width": "100px",
                     "height": "100px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "position": "relative",
-                            "width": "50px",
-                            "top": "50px",
+                            "left": "50px",
                             "height": "50px",
-                            "left": "50px"
-                        },
-                        "tag": "div"
+                            "width": "50px",
+                            "top": "50px"
+                        }
                     }
                 ]
             }
         ]
     },
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
+        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
+        "http://www.w3.org/TR/css-cascade-3/#inherit",
+        "http://www.w3.org/TR/css-cascade-4/#inherit"
+    ]
 }

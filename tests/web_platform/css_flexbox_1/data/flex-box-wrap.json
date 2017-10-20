@@ -1,4 +1,5 @@
 {
+    "matches": "reference/flex-box-wrap-ref.html",
     "assert": "the test passes if you see green box.",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"
@@ -9,10 +10,10 @@
                 "tag": "P",
                 "style": {
                     "height": "18px",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
                     "width": "624px",
-                    "display": "block"
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px"
                 }
             },
             {
@@ -20,57 +21,56 @@
                     {
                         "tag": "LI",
                         "style": {
-                            "height": "100px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "120px",
-                            "display": "list-item"
+                            "display": "list-item",
+                            "height": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "LI",
                         "style": {
-                            "height": "100px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "120px",
-                            "display": "list-item"
+                            "display": "list-item",
+                            "height": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "LI",
                         "style": {
-                            "min_height": "auto",
                             "min_width": "auto",
-                            "left": "0px",
-                            "width": "120px",
-                            "height": "100px",
-                            "z_index": "-1",
                             "top": "100px",
-                            "position": "absolute",
-                            "display": "list-item"
+                            "height": "100px",
+                            "width": "120px",
+                            "display": "list-item",
+                            "z_index": "-1",
+                            "left": "0px",
+                            "min_height": "auto",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "UL",
                 "style": {
-                    "height": "200px",
                     "width": "200px",
-                    "position": "relative",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "200px",
+                    "position": "relative"
                 }
             }
         ],
         "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "width": "624px",
             "margin_left": "8px",
-            "height": "234px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "display": "block"
+            "width": "624px",
+            "display": "block",
+            "height": "234px",
+            "margin_top": "8px"
         }
-    },
-    "matches": "reference/flex-box-wrap-ref.html"
+    }
 }

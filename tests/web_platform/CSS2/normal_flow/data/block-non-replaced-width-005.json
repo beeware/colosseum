@@ -1,51 +1,51 @@
 {
     "test_case": {
+        "style": {
+            "height": "74px",
+            "display": "block",
+            "width": "640px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "640px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "640px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "40px",
+                    "display": "block",
+                    "width": "640px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "40px",
-                            "width": "640px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "640px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "40px",
-                    "width": "640px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "height": "74px",
-            "width": "640px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-non-replaced-width-005-ref.xht",
+    "assert": "If 'width' is set to 'auto' and no other 'auto' values are set, then the 'width' is the width of the containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
-    ],
-    "assert": "If 'width' is set to 'auto' and no other 'auto' values are set, then the 'width' is the width of the containing block."
+    ]
 }

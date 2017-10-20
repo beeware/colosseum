@@ -1,146 +1,146 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ],
     "assert": "'top: [percentage]' for a relatively positioned box refers to height of its containing block. If the height of the containing block is not specified explicitly (i.e., it depends on content height), and this element is not absolutely positioned, then the percentage height value computes to 'auto'.",
     "test_case": {
-        "style": {
-            "height": "506px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "506px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
+                    "width": "624px",
+                    "height": "18px"
                 },
-                "tag": "p",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     },
                     {
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     }
                 ]
             },
             {
+                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "position": "relative",
                     "border_top_color": "rgb(255, 255, 255)",
+                    "display": "block",
                     "border_right_color": "rgb(255, 255, 255)",
-                    "width": "100px",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "top": "50%",
+                    "position": "relative",
+                    "border_left_color": "rgb(255, 255, 255)",
                     "height": "100px",
-                    "border_left_color": "rgb(255, 255, 255)"
-                },
-                "tag": "div"
+                    "top": "50%",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "width": "100px"
+                }
             },
             {
+                "tag": "div",
                 "style": {
-                    "height": "100px",
                     "display": "block",
                     "position": "relative",
                     "width": "100px",
-                    "top": "-100px"
-                },
-                "tag": "div"
+                    "top": "-100px",
+                    "height": "100px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             }
         ]
     },
-    "matches": "top-115-ref.xht"
+    "matches": "top-115-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ]
 }

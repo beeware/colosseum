@@ -1,4 +1,5 @@
 {
+    "matches": "percentage-widths-001-ref.html",
     "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes",
     "help": [
         "https://drafts.csswg.org/css-flexbox/#definite-sizes"
@@ -10,48 +11,47 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "800px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "800px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "800px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "500px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "800px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "left": "0px",
-                    "width": "600px",
-                    "height": "800px",
                     "right": "0px",
-                    "bottom": "0px",
-                    "display": "flex",
+                    "position": "absolute",
                     "top": "0px",
-                    "position": "absolute"
+                    "width": "600px",
+                    "display": "flex",
+                    "height": "800px",
+                    "bottom": "0px",
+                    "left": "0px"
                 }
             }
         ],
         "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "width": "600px",
             "margin_left": "8px",
-            "height": "800px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "position": "relative",
-            "display": "block"
+            "width": "600px",
+            "display": "block",
+            "height": "800px",
+            "margin_top": "8px",
+            "position": "relative"
         }
-    },
-    "matches": "percentage-widths-001-ref.html"
+    }
 }

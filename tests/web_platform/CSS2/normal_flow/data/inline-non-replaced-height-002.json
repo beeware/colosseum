@@ -1,71 +1,71 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "209px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "150px",
+                    "width": "624px",
+                    "margin_top": "41px",
+                    "display": "block",
+                    "position": "relative"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
                             "padding_top": "50px",
                             "border_top_color": "rgb(0, 0, 255)",
                             "padding_bottom": "50px",
-                            "border_left_color": "rgb(0, 0, 255)"
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_right_color": "rgb(0, 0, 255)"
                         },
                         "tag": "span"
                     },
                     {
                         "style": {
-                            "top": "-25px",
-                            "width": "100px",
-                            "position": "absolute",
-                            "height": "200px",
                             "left": "100px",
-                            "display": "block"
+                            "height": "200px",
+                            "width": "100px",
+                            "top": "-25px",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "position": "relative",
-                    "margin_top": "41px",
-                    "height": "150px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "209px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "inline-non-replaced-height-002-ref.xht",
+    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-non-replaced"
-    ],
-    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'."
+    ]
 }

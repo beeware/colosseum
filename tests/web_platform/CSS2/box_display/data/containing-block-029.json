@@ -1,51 +1,51 @@
 {
-    "matches": "containing-block-029-ref.xht",
     "assert": "Principal block boxes establish a containing block for generated content.",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "36px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "height": "36px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "height": "96px",
-                    "display": "block",
-                    "width": "96px",
-                    "position": "absolute"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px",
-                            "position": "absolute"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
+    "matches": "containing-block-029-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "36px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "display": "block",
+                            "width": "96px",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "position": "absolute",
+                    "display": "block",
+                    "width": "96px",
+                    "height": "96px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "36px",
+            "width": "624px"
+        },
+        "tag": "body"
+    }
 }

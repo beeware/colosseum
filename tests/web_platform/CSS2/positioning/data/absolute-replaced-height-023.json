@@ -1,68 +1,68 @@
 {
-    "matches": "absolute-replaced-height-008-ref.xht",
     "assert": "The 'height' is the intrinsic height when an absolutely positioned inline replaced element with an intrinsic height has a 'height', 'width' computed as 'auto' and 'top', 'bottom' are not 'auto'.",
+    "matches": "absolute-replaced-height-008-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "37px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "img",
-                        "style": {
-                            "position": "absolute",
-                            "bottom": "96px",
-                            "width": "15px",
-                            "display": "block",
-                            "margin_top": "48px",
-                            "margin_bottom": "-207px",
-                            "height": "15px",
-                            "top": "48px"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "15px",
-                            "display": "block",
-                            "left": "15px",
-                            "height": "15px",
-                            "top": "96px"
-                        }
-                    }
-                ],
                 "style": {
-                    "border_top_style": "solid",
+                    "height": "0px",
+                    "display": "block",
+                    "border_top_width": "3px",
                     "position": "relative",
                     "width": "624px",
-                    "display": "block",
-                    "height": "0px",
-                    "border_top_width": "3px"
-                }
+                    "border_top_style": "solid"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "15px",
+                            "display": "block",
+                            "margin_top": "48px",
+                            "position": "absolute",
+                            "margin_bottom": "-207px",
+                            "width": "15px",
+                            "bottom": "96px",
+                            "top": "48px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "15px",
+                            "display": "block",
+                            "left": "15px",
+                            "position": "absolute",
+                            "width": "15px",
+                            "top": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "37px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
-    ]
+        "tag": "body"
+    }
 }

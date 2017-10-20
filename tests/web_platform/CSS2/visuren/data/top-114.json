@@ -1,84 +1,78 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
-        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
-        "http://www.w3.org/TR/css-cascade-3/#inherit",
-        "http://www.w3.org/TR/css-cascade-4/#inherit"
-    ],
     "assert": "'top: inherit' makes the top property take the same computed value as the top property for the element's parent; in the case of a percentage value, the computed value is the specified percentage value. 'top: [percentage]' refers to height of containing block.",
     "test_case": {
-        "style": {
-            "height": "434px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "434px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
+                    "width": "624px",
+                    "height": "18px"
                 },
-                "tag": "p",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     }
                 ]
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "position": "relative",
                     "width": "600px",
                     "height": "400px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "display": "block",
-                            "position": "relative",
                             "border_top_color": "rgb(255, 255, 255)",
+                            "display": "block",
                             "border_right_color": "rgb(255, 255, 255)",
-                            "width": "100px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "top": "50px",
-                            "height": "100px",
+                            "position": "relative",
                             "left": "300px",
-                            "border_left_color": "rgb(255, 255, 255)"
-                        },
-                        "tag": "div"
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "height": "100px",
+                            "top": "50px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "width": "100px"
+                        }
                     },
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "position": "relative",
-                            "width": "100px",
-                            "top": "-12.5%",
+                            "left": "50%",
                             "height": "0px",
-                            "left": "50%"
+                            "width": "100px",
+                            "top": "-12.5%"
                         },
-                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
                                     "display": "block",
                                     "position": "relative",
-                                    "width": "100px",
-                                    "top": "-12.5%",
+                                    "left": "0px",
                                     "height": "100px",
-                                    "left": "0px"
-                                },
-                                "tag": "div"
+                                    "width": "100px",
+                                    "top": "-12.5%"
+                                }
                             }
                         ]
                     }
@@ -86,5 +80,11 @@
             }
         ]
     },
-    "matches": "top-114-ref.xht"
+    "matches": "top-114-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
+        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
+        "http://www.w3.org/TR/css-cascade-3/#inherit",
+        "http://www.w3.org/TR/css-cascade-4/#inherit"
+    ]
 }

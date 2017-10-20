@@ -1,84 +1,84 @@
 {
-    "matches": "abspos-width-005-ref.xht",
     "assert": null,
+    "matches": "abspos-width-005-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "166px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "36px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "border_top_style": "solid",
-                            "position": "absolute",
-                            "height": "18px",
-                            "padding_right": "16px",
-                            "border_right_width": "1px",
-                            "border_left_color": "rgb(0, 255, 255)",
-                            "border_bottom_style": "solid",
-                            "border_top_color": "rgb(0, 255, 255)",
-                            "max_width": "48px",
-                            "padding_bottom": "16px",
-                            "border_right_style": "solid",
-                            "width": "48px",
-                            "border_right_color": "rgb(0, 255, 255)",
-                            "border_top_width": "1px",
-                            "padding_left": "16px",
-                            "border_left_style": "solid",
-                            "border_left_width": "1px",
-                            "padding_top": "16px",
-                            "border_bottom_color": "rgb(0, 255, 255)",
-                            "border_bottom_width": "1px",
-                            "display": "block"
-                        }
-                    }
-                ],
                 "style": {
-                    "border_top_style": "solid",
-                    "position": "relative",
                     "height": "80px",
-                    "padding_right": "16px",
-                    "border_right_width": "1px",
+                    "padding_left": "16px",
+                    "border_top_width": "1px",
+                    "border_left_width": "1px",
+                    "border_right_style": "solid",
+                    "padding_top": "16px",
+                    "border_top_color": "rgb(255, 0, 255)",
                     "border_left_color": "rgb(255, 0, 255)",
                     "border_bottom_style": "solid",
-                    "border_top_color": "rgb(255, 0, 255)",
-                    "padding_bottom": "16px",
-                    "border_right_style": "solid",
-                    "width": "160px",
                     "border_right_color": "rgb(255, 0, 255)",
-                    "border_top_width": "1px",
-                    "padding_left": "16px",
-                    "border_left_style": "solid",
-                    "border_left_width": "1px",
-                    "padding_top": "16px",
                     "border_bottom_color": "rgb(255, 0, 255)",
+                    "border_left_style": "solid",
+                    "padding_bottom": "16px",
+                    "width": "160px",
                     "border_bottom_width": "1px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "padding_right": "16px",
+                    "border_top_style": "solid",
+                    "position": "relative",
+                    "border_right_width": "1px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "18px",
+                            "padding_left": "16px",
+                            "border_top_width": "1px",
+                            "border_left_width": "1px",
+                            "border_right_style": "solid",
+                            "padding_top": "16px",
+                            "border_top_color": "rgb(0, 255, 255)",
+                            "border_left_color": "rgb(0, 255, 255)",
+                            "max_width": "48px",
+                            "border_bottom_style": "solid",
+                            "border_right_color": "rgb(0, 255, 255)",
+                            "border_bottom_color": "rgb(0, 255, 255)",
+                            "border_left_style": "solid",
+                            "padding_bottom": "16px",
+                            "width": "48px",
+                            "border_bottom_width": "1px",
+                            "display": "block",
+                            "padding_right": "16px",
+                            "border_top_style": "solid",
+                            "position": "absolute",
+                            "border_right_width": "1px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "166px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
-    ]
+        "tag": "body"
+    }
 }

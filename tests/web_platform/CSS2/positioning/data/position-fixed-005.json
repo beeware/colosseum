@@ -1,68 +1,68 @@
 {
-    "matches": null,
     "assert": "Fixed position elements cannot be paginated.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
     "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "padding_left": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "padding_top": "16px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "p",
-                "style": {
-                    "padding_left": "16px",
-                    "width": "624px",
-                    "height": "36px",
-                    "padding_top": "16px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "width": "481.4375px",
-                            "height": "480px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "span",
-                        "style": {
-                            "border_top_color": "rgb(255, 0, 0)",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "border_bottom_color": "rgb(255, 0, 0)"
-                        }
-                    }
-                ],
-                "style": {
-                    "position": "fixed",
-                    "width": "481.4375px",
-                    "display": "block",
-                    "z_index": "0",
-                    "height": "480px",
-                    "top": "80px"
-                }
-            }
-        ],
         "style": {
             "width": "640px",
             "height": "480px",
             "display": "block"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
-        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "18px",
+                    "padding_left": "16px",
+                    "padding_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "height": "36px",
+                    "padding_left": "16px",
+                    "padding_top": "16px",
+                    "width": "624px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "480px",
+                    "display": "block",
+                    "position": "fixed",
+                    "width": "481.4375px",
+                    "top": "80px",
+                    "z_index": "0"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "481.4375px",
+                            "height": "480px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "border_top_color": "rgb(255, 0, 0)"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

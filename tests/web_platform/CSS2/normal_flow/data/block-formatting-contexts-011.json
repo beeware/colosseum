@@ -1,23 +1,39 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "70px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
                 "tag": "p"
             },
             {
+                "style": {
+                    "height": "36px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
                             "height": "18px",
-                            "width": "100px",
-                            "display": "table-cell"
+                            "display": "table-cell",
+                            "width": "100px"
                         },
                         "tag": "span"
                     },
@@ -25,29 +41,13 @@
                         "style": {},
                         "tag": "span"
                     }
-                ],
-                "style": {
-                    "height": "36px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "70px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-formatting-contexts-011-ref.xht",
+    "assert": "Elements defined as table-cell elements establish a new block formatting context.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ],
-    "assert": "Elements defined as table-cell elements establish a new block formatting context."
+    ]
 }

@@ -1,74 +1,74 @@
 {
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "18px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "18px"
-                },
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "0px"
-                },
-                "children": [
-                    {
-                        "tag": "span",
-                        "style": {
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "position": "absolute",
-                            "border_top_color": "rgb(255, 0, 0)",
-                            "width": "401.203125px",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "display": "block",
-                            "height": "110px",
-                            "border_left_color": "rgb(255, 0, 0)"
-                        }
-                    },
-                    {
-                        "tag": "span",
-                        "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "position": "absolute",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "width": "401.203125px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "display": "block",
-                            "height": "110px",
-                            "border_left_color": "rgb(0, 128, 0)"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
     "assert": "The 'vertical-align' property value 'sub' has no effect on the font-size of an element's text.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "strong",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "height": "110px",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "width": "401.203125px",
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "position": "absolute",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "span",
+                        "style": {
+                            "height": "110px",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "width": "401.203125px",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "position": "absolute",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "0px"
+                }
+            }
+        ],
+        "style": {
+            "height": "18px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
+    },
     "matches": "vertical-align-sub-001-ref.xht"
 }

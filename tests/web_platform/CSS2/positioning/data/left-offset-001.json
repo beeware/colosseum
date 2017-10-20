@@ -1,53 +1,53 @@
 {
-    "matches": "left-offset-001-ref.xht",
     "assert": "Absolute positioned elements with a left offset, offsets the elements left margin edge from the left edge of the elements containing block.",
+    "matches": "left-offset-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "134px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "absolute",
-                            "width": "50px",
-                            "left": "50px",
-                            "height": "50px",
-                            "display": "block"
-                        }
-                    }
-                ],
                 "style": {
                     "position": "relative",
                     "width": "100px",
                     "height": "100px",
                     "display": "block"
-                }
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "width": "50px",
+                            "height": "50px",
+                            "display": "block",
+                            "left": "50px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "134px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+        "tag": "body"
+    }
 }

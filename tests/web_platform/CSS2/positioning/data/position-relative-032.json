@@ -1,54 +1,54 @@
 {
-    "matches": "position-relative-032-ref.xht",
     "assert": "Offsetting a box with relative positioning has no effect on the boxes which follow.",
+    "matches": "position-relative-032-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "90px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "54px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "span",
-                        "children": [
-                            {
-                                "tag": "span",
-                                "style": {
-                                    "position": "relative",
-                                    "top": "25px"
-                                }
-                            }
-                        ],
-                        "style": {}
-                    }
-                ],
                 "style": {
                     "width": "624px",
                     "height": "20px",
                     "display": "block"
-                }
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {
+                                    "position": "relative",
+                                    "top": "25px"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "90px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
-    ]
+        "tag": "body"
+    }
 }

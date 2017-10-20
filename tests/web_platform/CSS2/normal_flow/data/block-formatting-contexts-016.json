@@ -1,64 +1,64 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "234px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "200px",
+                    "display": "block",
+                    "width": "200px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "width": "100px",
-                            "float": "left",
                             "height": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "100px",
+                            "float": "left"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
                             "height": "100px",
-                            "width": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "100px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "200px",
-                    "width": "200px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "234px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "Overflow set to 'visible' does not establish a new block formatting context.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ],
-    "assert": "Overflow set to 'visible' does not establish a new block formatting context."
+    ]
 }

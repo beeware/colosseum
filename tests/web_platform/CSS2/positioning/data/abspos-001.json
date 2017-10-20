@@ -1,48 +1,48 @@
 {
-    "matches": "abspos-001-ref.xht",
     "assert": null,
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "div",
-                "style": {
-                    "margin_bottom": "32px",
-                    "width": "608px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "position": "absolute",
-                    "height": "16px",
-                    "width": "160px",
-                    "z_index": "1",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "width": "160px",
-                    "height": "16px",
-                    "display": "block"
-                }
-            }
-        ],
-        "style": {
-            "width": "608px",
-            "padding_right": "16px",
-            "display": "block",
-            "padding_left": "16px",
-            "padding_bottom": "16px",
-            "padding_top": "16px",
-            "height": "66px"
-        }
-    },
+    "matches": "abspos-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "66px",
+            "display": "block",
+            "padding_bottom": "16px",
+            "width": "608px",
+            "padding_left": "16px",
+            "padding_right": "16px",
+            "padding_top": "16px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "32px",
+                    "height": "18px",
+                    "display": "block",
+                    "width": "608px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "position": "absolute",
+                    "width": "160px",
+                    "height": "16px",
+                    "display": "block",
+                    "z_index": "1"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "160px",
+                    "height": "16px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

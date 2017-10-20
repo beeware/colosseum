@@ -1,69 +1,69 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "94px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "30px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {},
+                        "tag": "span",
                         "children": [
                             {
                                 "style": {
                                     "height": "30px",
-                                    "width": "150px",
-                                    "display": "block"
+                                    "display": "block",
+                                    "width": "150px"
                                 },
                                 "tag": "span"
                             }
-                        ],
-                        "style": {},
-                        "tag": "span"
+                        ]
                     }
-                ],
-                "style": {
-                    "height": "30px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             },
             {
                 "style": {
                     "height": "30px",
-                    "width": "150px",
-                    "display": "block"
+                    "display": "block",
+                    "width": "150px"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "94px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-non-replaced-width-001-ref.xht",
+    "assert": "The computed width is inherited, even if the         'width' property does not apply.",
     "help": [
         "http://www.w3.org/TR/CSS21/generate.html#list-style"
-    ],
-    "assert": "The computed width is inherited, even if the         'width' property does not apply."
+    ]
 }

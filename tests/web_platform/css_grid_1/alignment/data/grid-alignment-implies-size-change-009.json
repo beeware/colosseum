@@ -1,34 +1,10 @@
 {
+    "matches": null,
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "80px"
-        },
-        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "width": "100px",
-                    "height": "80px",
-                    "display": "inline-grid",
-                    "position": "relative"
-                },
-                "tag": "DIV",
                 "children": [
                     {
-                        "style": {
-                            "min_width": "auto",
-                            "width": "100px",
-                            "height": "80px",
-                            "display": "block",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -42,14 +18,38 @@
                                 "style": {},
                                 "tag": "BR"
                             }
-                        ]
+                        ],
+                        "style": {
+                            "height": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "display": "block",
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "position": "relative",
+                    "height": "80px",
+                    "display": "inline-grid",
+                    "width": "100px"
+                },
+                "tag": "DIV"
             }
-        ]
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "height": "100px",
+            "display": "block"
+        },
+        "tag": "BODY"
     },
     "assert": "Changing the grid item's align-items value from 'start' to 'normal' causes non-replaced items to shrink.",
-    "matches": null,
     "help": [
         "https://drafts.csswg.org/css-grid-1/#column-align",
         "https://drafts.csswg.org/css-grid-1/#grid-item-sizing",

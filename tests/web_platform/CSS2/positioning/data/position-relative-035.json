@@ -1,59 +1,59 @@
 {
-    "matches": "position-relative-035-ref.xht",
     "assert": "Relative positioned content keeps its normal flow size including line breaks and the space originally reserved for it.",
+    "matches": "position-relative-035-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "114px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "width": "80px",
+                    "height": "80px",
+                    "display": "block"
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
                             "position": "relative",
                             "width": "80px",
                             "height": "60px",
                             "display": "block",
                             "top": "16px"
-                        }
+                        },
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
                         "style": {
                             "width": "80px",
                             "height": "20px",
                             "display": "block"
-                        }
+                        },
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "width": "80px",
-                    "height": "80px",
-                    "display": "block"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "114px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
-    ]
+        "tag": "body"
+    }
 }

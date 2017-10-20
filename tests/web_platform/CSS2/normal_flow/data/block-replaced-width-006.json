@@ -1,7 +1,25 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "358px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
@@ -11,71 +29,53 @@
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "36px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "border_right_width": "3px",
+                    "height": "300px",
+                    "border_top_width": "3px",
+                    "width": "200px",
+                    "border_left_width": "3px",
+                    "display": "block",
+                    "border_right_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "3px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "width": "100px",
                             "height": "100px",
                             "margin_left": "50px",
-                            "margin_right": "50px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "100px",
+                            "margin_right": "50px"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "height": "100px",
-                            "width": "200px",
-                            "border_left_color": "rgb(255, 165, 0)",
+                            "display": "block",
                             "border_top_color": "rgb(255, 165, 0)",
-                            "display": "block"
+                            "height": "100px",
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "width": "200px",
+                            "border_right_color": "rgb(255, 165, 0)"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "300px",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px",
-                    "border_right_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "200px",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_left_width": "3px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "358px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-replaced-width-006-ref.xht",
+    "assert": "Percentage intrinsic widths are evaluated against the containing block's width.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#block-replaced-width"
-    ],
-    "assert": "Percentage intrinsic widths are evaluated against the containing block's width."
+    ]
 }

@@ -1,44 +1,44 @@
 {
-    "matches": null,
     "assert": "Zero width absolute positioned elements still affects scrolling mechanism even though they are out of flow of the content.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "36px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "36px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
                 "style": {
                     "position": "absolute",
                     "width": "0px",
                     "height": "2000px",
                     "display": "block",
                     "top": "0px"
-                }
+                },
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "36px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property",
-        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+        "tag": "body"
+    }
 }

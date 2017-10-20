@@ -1,72 +1,72 @@
 {
-    "matches": "top-019-ref.xht",
     "assert": "The 'top' property sets a positive nominal length value in millimeters.",
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "margin_top": "96px",
-                            "position": "absolute",
-                            "width": "624px",
-                            "height": "96px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "relative",
-                            "width": "624px",
-                            "display": "block",
-                            "border_bottom_style": "solid",
-                            "height": "0px",
-                            "border_bottom_width": "96px",
-                            "top": "96px"
-                        }
-                    }
-                ],
-                "style": {
-                    "margin_top": "-96px",
-                    "position": "relative",
-                    "width": "624px",
-                    "height": "96px",
-                    "display": "block"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "34px"
-        }
-    },
+    "matches": "top-019-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "height": "34px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "position": "relative",
+                    "width": "624px",
+                    "height": "96px",
+                    "display": "block",
+                    "margin_top": "-96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "width": "624px",
+                            "height": "96px",
+                            "display": "block",
+                            "margin_top": "96px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "border_bottom_style": "solid",
+                            "height": "0px",
+                            "display": "block",
+                            "border_bottom_width": "96px",
+                            "width": "624px",
+                            "position": "relative",
+                            "top": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    }
 }

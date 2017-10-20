@@ -1,76 +1,76 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
     "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest table cell ancestor box.",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "134px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "height": "100px",
-                    "display": "table",
-                    "width": "100px"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "height": "100px",
-                            "display": "table-row",
-                            "width": "100px"
-                        },
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "height": "100px",
-                                    "display": "table-cell",
-                                    "width": "100px"
-                                },
-                                "children": [
-                                    {
-                                        "tag": "div",
-                                        "style": {
-                                            "height": "100px",
-                                            "display": "block",
-                                            "width": "100px",
-                                            "position": "relative"
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "style": {
+                                            "position": "relative",
+                                            "display": "block",
+                                            "width": "100px",
+                                            "height": "100px"
+                                        },
+                                        "tag": "div"
+                                    }
+                                ],
+                                "style": {
+                                    "display": "table-cell",
+                                    "width": "100px",
+                                    "height": "100px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "display": "table-row",
+                            "width": "100px",
+                            "height": "100px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "display": "table",
+                    "width": "100px",
+                    "height": "100px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "134px",
+            "width": "624px"
+        },
+        "tag": "body"
+    }
 }

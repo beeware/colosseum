@@ -1,90 +1,90 @@
 {
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    },
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    },
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "54px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        },
-                        "tag": "img"
-                    }
-                ],
-                "style": {
-                    "height": "98px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "tag": "div"
-            }
-        ],
         "style": {
             "margin_left": "8px",
             "margin_bottom": "8px",
             "height": "168px",
-            "width": "624px",
             "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
         },
-        "tag": "body"
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "54px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    },
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    },
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "height": "98px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "height": "94px",
+                            "width": "93.59375px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "94px",
+                            "width": "93.59375px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "94px",
+                            "width": "93.59375px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "94px",
+                            "width": "93.59375px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "height": "94px",
+                            "width": "93.59375px"
+                        },
+                        "tag": "img"
+                    }
+                ]
+            }
+        ]
     },
     "matches": null,
+    "assert": "When 'height: 1%' (or any other percentage) applies to an inline replaced element and when the height of its containing block is not specified explicitly (i.e., it depends on content height), then such height computes to 'auto'. Then, if such inline replaced element has an intrinsic ratio and its used width is known or resolved, then the used value of 'height' is determined by the equation (used width) / (intrinsic ratio).",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
-    "assert": "When 'height: 1%' (or any other percentage) applies to an inline replaced element and when the height of its containing block is not specified explicitly (i.e., it depends on content height), then such height computes to 'auto'. Then, if such inline replaced element has an intrinsic ratio and its used width is known or resolved, then the used value of 'height' is determined by the equation (used width) / (intrinsic ratio)."
+    ]
 }

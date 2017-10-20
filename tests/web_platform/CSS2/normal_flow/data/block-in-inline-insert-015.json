@@ -1,7 +1,28 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "90px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "border_right_width": "2px",
+                    "border_top_width": "2px",
+                    "border_left_width": "2px",
+                    "border_right_style": "solid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "2px"
+                },
+                "tag": "div",
                 "children": [
                     {
                         "style": {
@@ -12,39 +33,18 @@
                     {
                         "style": {
                             "height": "18px",
-                            "width": "624px",
-                            "display": "block"
+                            "display": "block",
+                            "width": "624px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "border_top_style": "solid",
-                    "border_right_width": "2px",
-                    "border_right_style": "solid",
-                    "border_top_width": "2px",
-                    "border_bottom_width": "2px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_left_width": "2px"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "90px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "block-in-inline-insert-015-nosplit-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
-    "assert": null
+    ]
 }

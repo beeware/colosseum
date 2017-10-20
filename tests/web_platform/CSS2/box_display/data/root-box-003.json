@@ -1,35 +1,35 @@
 {
-    "matches": "root-box-003-ref.xht",
     "assert": null,
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "border_left_color": "rgb(255, 255, 0)",
-            "margin_right": "8px",
-            "border_bottom_color": "rgb(255, 255, 0)",
-            "margin_bottom": "8px",
-            "border_right_color": "rgb(255, 255, 0)",
-            "border_top_color": "rgb(255, 255, 0)"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "margin_bottom": "16px",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "margin_top": "16px"
-                }
-            }
-        ]
-    },
+    "matches": "root-box-003-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "margin_top": "16px",
+                    "border_right_color": "rgb(255, 255, 0)"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "display": "block",
+            "border_top_color": "rgb(255, 255, 0)",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "border_bottom_color": "rgb(255, 255, 0)",
+            "border_left_color": "rgb(255, 255, 0)",
+            "margin_top": "8px",
+            "border_right_color": "rgb(255, 255, 0)"
+        },
+        "tag": "body"
+    }
 }

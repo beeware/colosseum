@@ -1,62 +1,62 @@
 {
-    "matches": "right-offset-001-ref.xht",
     "assert": "The 'right' property, for absolute positioning, specifies the offset of the element in relation to the containing block's right edge. The containing block of an absolutely positioned element is formed by the padding box of its nearest (closest) positioned ancestor element.",
+    "matches": "right-offset-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "134px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "18px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "tag": "p"
             },
             {
-                "tag": "div",
+                "style": {
+                    "position": "relative",
+                    "width": "100px",
+                    "height": "100px",
+                    "padding_right": "25px",
+                    "display": "block"
+                },
                 "children": [
                     {
-                        "tag": "div",
                         "style": {
                             "position": "absolute",
                             "right": "75px",
-                            "width": "50px",
                             "height": "50px",
-                            "display": "block"
-                        }
+                            "display": "block",
+                            "width": "50px"
+                        },
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
                         "style": {
                             "width": "100px",
                             "height": "100px",
                             "display": "block"
-                        }
+                        },
+                        "tag": "div"
                     }
                 ],
-                "style": {
-                    "position": "relative",
-                    "width": "100px",
-                    "padding_right": "25px",
-                    "height": "100px",
-                    "display": "block"
-                }
+                "tag": "div"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "134px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+        "tag": "body"
+    }
 }

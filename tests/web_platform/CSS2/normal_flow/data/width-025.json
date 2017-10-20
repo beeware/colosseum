@@ -1,11 +1,21 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "130px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
                 "style": {
+                    "height": "18px",
                     "width": "624px",
                     "margin_top": "16px",
-                    "height": "18px",
                     "margin_bottom": "16px",
                     "display": "block"
                 },
@@ -14,27 +24,17 @@
             {
                 "style": {
                     "height": "96px",
-                    "width": "16px",
-                    "display": "block"
+                    "display": "block",
+                    "width": "16px"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "max-width-025-ref.xht",
+    "assert": "The 'width' property sets a minimum plus one length value in picas.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
         "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
-    "assert": "The 'width' property sets a minimum plus one length value in picas."
+    ]
 }

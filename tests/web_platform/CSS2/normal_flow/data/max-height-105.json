@@ -1,61 +1,61 @@
 {
     "test_case": {
-        "children": [
-            {
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "36px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "200px",
-                            "width": "200px",
-                            "display": "block"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "height": "200px",
-                    "max_height": "400px",
-                    "width": "200px",
-                    "display": "block"
-                },
-                "tag": "div"
-            }
-        ],
         "style": {
             "margin_left": "8px",
             "margin_bottom": "8px",
             "height": "286px",
-            "width": "624px",
             "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
         },
-        "tag": "body"
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "max_height": "400px",
+                    "height": "200px",
+                    "display": "block",
+                    "width": "200px"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "height": "200px",
+                            "display": "block",
+                            "width": "200px"
+                        },
+                        "tag": "div"
+                    }
+                ]
+            }
+        ]
     },
     "matches": null,
+    "assert": "The 'max-height' property can restrain the used value of height when the used value of height is greater than the declared max-height and not when it is less than the declared max-height and not when it does not exceed the declared max-height.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
         "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ],
-    "assert": "The 'max-height' property can restrain the used value of height when the used value of height is greater than the declared max-height and not when it is less than the declared max-height and not when it does not exceed the declared max-height."
+    ]
 }

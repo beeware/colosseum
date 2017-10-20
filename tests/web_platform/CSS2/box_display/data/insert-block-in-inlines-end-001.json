@@ -1,109 +1,109 @@
 {
-    "matches": "insert-block-in-inlines-end-001-ref.xht",
     "assert": null,
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "178px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "margin_top": "20px",
-                    "margin_left": "20px",
-                    "display": "block",
-                    "margin_right": "20px",
-                    "height": "60px",
-                    "margin_bottom": "20px",
-                    "width": "584px"
-                },
-                "children": [
-                    {
-                        "tag": "span",
-                        "style": {}
-                    },
-                    {
-                        "tag": "span",
-                        "style": {}
-                    },
-                    {
-                        "tag": "span",
-                        "style": {}
-                    },
-                    {
-                        "tag": "div",
-                        "style": {
-                            "border_left_style": "solid",
-                            "width": "564px",
-                            "margin_top": "20px",
-                            "display": "block",
-                            "height": "20px",
-                            "border_left_color": "rgb(255, 255, 0)",
-                            "border_right_width": "10px",
-                            "margin_bottom": "20px",
-                            "border_right_style": "solid",
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "border_left_width": "10px"
-                        }
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "margin_top": "20px",
-                    "margin_left": "20px",
-                    "display": "block",
-                    "margin_right": "20px",
-                    "height": "60px",
-                    "margin_bottom": "20px",
-                    "width": "584px"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "border_left_style": "solid",
-                            "width": "564px",
-                            "margin_top": "20px",
-                            "display": "block",
-                            "height": "20px",
-                            "border_left_color": "rgb(255, 255, 0)",
-                            "border_right_width": "10px",
-                            "margin_bottom": "20px",
-                            "border_right_style": "solid",
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "border_left_width": "10px"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
+    "matches": "insert-block-in-inlines-end-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "tag": "span"
+                    },
+                    {
+                        "style": {
+                            "margin_bottom": "20px",
+                            "border_right_style": "solid",
+                            "display": "block",
+                            "margin_top": "20px",
+                            "width": "564px",
+                            "border_left_width": "10px",
+                            "border_left_style": "solid",
+                            "height": "20px",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_right_color": "rgb(255, 255, 0)",
+                            "border_right_width": "10px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "20px",
+                    "display": "block",
+                    "margin_top": "20px",
+                    "margin_left": "20px",
+                    "margin_right": "20px",
+                    "height": "80px",
+                    "width": "584px"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "margin_bottom": "20px",
+                            "border_right_style": "solid",
+                            "display": "block",
+                            "margin_top": "20px",
+                            "width": "564px",
+                            "border_left_width": "10px",
+                            "border_left_style": "solid",
+                            "height": "20px",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_right_color": "rgb(255, 255, 0)",
+                            "border_right_width": "10px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "20px",
+                    "display": "block",
+                    "margin_top": "20px",
+                    "margin_left": "20px",
+                    "margin_right": "20px",
+                    "height": "80px",
+                    "width": "584px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "218px",
+            "width": "624px"
+        },
+        "tag": "body"
+    }
 }

@@ -1,23 +1,28 @@
 {
+    "assert": null,
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ],
     "test_case": {
         "tag": "BODY",
         "style": {
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "height": "134px",
             "display": "block",
-            "width": "624px",
+            "margin_left": "8px",
+            "margin_top": "8px",
             "margin_bottom": "8px",
-            "margin_top": "8px"
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "134px"
         },
         "children": [
             {
                 "tag": "P",
                 "style": {
-                    "width": "624px",
                     "display": "block",
-                    "margin_top": "16px",
+                    "width": "624px",
                     "height": "18px",
+                    "margin_top": "16px",
                     "margin_bottom": "16px"
                 },
                 "children": [
@@ -30,35 +35,30 @@
             {
                 "tag": "DIV",
                 "style": {
-                    "width": "100px",
+                    "display": "block",
                     "z_index": "-1",
+                    "width": "100px",
                     "position": "absolute",
-                    "height": "100px",
-                    "display": "block"
+                    "height": "100px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "block",
                     "width": "50px",
-                    "float": "left",
                     "height": "100px",
-                    "display": "block"
+                    "float": "left"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "display": "grid",
                     "width": "50px",
-                    "height": "100px",
-                    "display": "grid"
+                    "height": "100px"
                 }
             }
         ]
-    },
-    "assert": null,
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers"
-    ]
+    }
 }

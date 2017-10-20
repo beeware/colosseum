@@ -1,86 +1,86 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
-        "http://www.w3.org/TR/CSS21/visuren.html#direction"
-    ],
     "assert": "bidi-override should not be applied to table cell content when specified on table",
     "test_case": {
-        "style": {
-            "height": "92px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "92px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "table",
                 "style": {
-                    "display": "table",
-                    "width": "28.203125px",
                     "unicode_bidi": "bidi-override",
                     "border_top_color": "rgb(128, 128, 128)",
+                    "display": "table",
                     "border_right_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_left_color": "rgb(128, 128, 128)",
                     "height": "24px",
                     "direction": "rtl",
-                    "border_left_color": "rgb(128, 128, 128)"
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "width": "28.203125px"
                 },
-                "tag": "table",
                 "children": [
                     {
+                        "tag": "tr",
                         "style": {
-                            "display": "table-row",
-                            "width": "28.203125px",
                             "border_top_color": "rgb(128, 128, 128)",
+                            "display": "table-row",
                             "border_right_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)",
                             "height": "20px",
                             "direction": "rtl",
-                            "border_left_color": "rgb(128, 128, 128)"
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "width": "28.203125px"
                         },
-                        "tag": "tr",
                         "children": [
                             {
+                                "tag": "td",
                                 "style": {
-                                    "display": "table-cell",
-                                    "padding_right": "1px",
-                                    "padding_top": "1px",
-                                    "width": "22.203125px",
                                     "padding_bottom": "1px",
+                                    "display": "table-cell",
+                                    "padding_left": "1px",
                                     "height": "18px",
                                     "direction": "rtl",
-                                    "padding_left": "1px"
-                                },
-                                "tag": "td"
+                                    "padding_top": "1px",
+                                    "width": "22.203125px",
+                                    "padding_right": "1px"
+                                }
                             }
                         ]
                     }
                 ]
             },
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             }
         ]
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ]
 }

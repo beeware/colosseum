@@ -1,58 +1,58 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "230px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
                 "style": {
                     "height": "96px",
+                    "display": "block",
                     "width": "120px",
-                    "max_width": "120px",
-                    "display": "block"
+                    "max_width": "120px"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "width": "504px",
                     "border_left_style": "solid",
                     "height": "96px",
-                    "margin_top": "4px",
                     "border_left_width": "120px",
-                    "display": "block"
+                    "margin_top": "4px",
+                    "display": "block",
+                    "width": "504px"
                 },
                 "tag": "div"
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "230px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "max-width-072-ref.xht",
+    "assert": "The 'max-width' property sets a positive nominal length value in 'em' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
-    "assert": "The 'max-width' property sets a positive nominal length value in 'em' units."
+    ]
 }

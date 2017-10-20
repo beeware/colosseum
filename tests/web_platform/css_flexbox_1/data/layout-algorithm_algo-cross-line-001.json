@@ -1,4 +1,5 @@
 {
+    "matches": "reference/layout-algorithm_algo-cross-line-001-ref.html",
     "assert": "This test checks that correct height is applied if overflow: scroll is set",
     "help": [
         "https://www.w3.org/TR/css-flexbox-1/#algo-cross-line"
@@ -15,10 +16,10 @@
                 "tag": "P",
                 "style": {
                     "height": "18px",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
                     "width": "624px",
-                    "display": "block"
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px"
                 }
             },
             {
@@ -26,42 +27,41 @@
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "200px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "200px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "height": "200px",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "display": "block"
+                            "display": "block",
+                            "height": "200px",
+                            "min_width": "auto",
+                            "min_height": "auto"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
-                    "height": "200px",
                     "width": "200px",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "200px"
                 }
             }
         ],
         "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "width": "624px",
             "margin_left": "8px",
-            "height": "234px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "display": "block"
+            "width": "624px",
+            "display": "block",
+            "height": "234px",
+            "margin_top": "8px"
         }
-    },
-    "matches": "reference/layout-algorithm_algo-cross-line-001-ref.html"
+    }
 }

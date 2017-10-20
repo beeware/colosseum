@@ -1,95 +1,91 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS22/visuren.html#z-index",
-        "http://www.w3.org/TR/CSS22/changes.html#s.9.9.1"
-    ],
     "assert": "auto The stack level of the generated box in the current stacking context is 0. If the box has 'position: fixed' or if it is the root, it also establishes a new stacking context.",
     "test_case": {
-        "style": {
-            "height": "18px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        },
         "tag": "body",
+        "style": {
+            "margin_right": "8px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "tag": "p",
                 "style": {
-                    "height": "18px",
+                    "margin_top": "16px",
                     "display": "block",
                     "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
+                    "width": "624px",
+                    "height": "18px"
+                }
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "position": "absolute",
-                    "width": "80px",
-                    "top": "48px",
+                    "left": "16px",
                     "height": "32px",
-                    "left": "16px"
+                    "width": "80px",
+                    "top": "48px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "position": "absolute",
                             "width": "80px",
                             "height": "32px"
                         },
-                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "height": "32px",
                                     "display": "block",
                                     "position": "absolute",
                                     "width": "80px",
-                                    "z_index": "-1"
-                                },
-                                "tag": "div"
+                                    "z_index": "-1",
+                                    "height": "32px"
+                                }
                             }
                         ]
                     }
                 ]
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "position": "fixed",
-                    "width": "80px",
                     "z_index": "0",
-                    "top": "48px",
+                    "left": "160px",
                     "height": "32px",
-                    "left": "160px"
+                    "top": "48px",
+                    "width": "80px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "position": "absolute",
                             "width": "80px",
                             "height": "32px"
                         },
-                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "height": "32px",
                                     "display": "block",
                                     "position": "absolute",
                                     "width": "80px",
-                                    "z_index": "-1"
-                                },
-                                "tag": "div"
+                                    "z_index": "-1",
+                                    "height": "32px"
+                                }
                             }
                         ]
                     }
@@ -97,5 +93,9 @@
             }
         ]
     },
-    "matches": "fixed-pos-stacking-001-ref.xht"
+    "matches": "fixed-pos-stacking-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS22/visuren.html#z-index",
+        "http://www.w3.org/TR/CSS22/changes.html#s.9.9.1"
+    ]
 }

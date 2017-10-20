@@ -1,50 +1,50 @@
 {
-    "matches": "abspos-025-ref.xht",
     "assert": null,
+    "matches": "abspos-025-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
     "test_case": {
-        "tag": "body",
+        "style": {
+            "height": "20px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    },
-                    {
-                        "tag": "img",
-                        "style": {
-                            "position": "absolute",
-                            "right": "0px",
-                            "width": "15px",
-                            "display": "block",
-                            "bottom": "0px",
-                            "left": "64px",
-                            "height": "15px",
-                            "top": "64px"
-                        }
-                    }
-                ],
                 "style": {
-                    "margin_top": "16px",
                     "margin_bottom": "16px",
                     "width": "624px",
                     "height": "20px",
-                    "display": "block"
-                }
+                    "display": "block",
+                    "margin_top": "16px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "strong"
+                    },
+                    {
+                        "style": {
+                            "right": "0px",
+                            "height": "15px",
+                            "display": "block",
+                            "left": "64px",
+                            "width": "15px",
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "top": "64px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "tag": "p"
             }
         ],
-        "style": {
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "20px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
-    ]
+        "tag": "body"
+    }
 }

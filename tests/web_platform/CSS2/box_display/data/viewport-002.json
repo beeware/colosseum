@@ -1,40 +1,40 @@
 {
-    "matches": null,
     "assert": "Scrolling mechanism should be available when canvas is larger than viewport.",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "2036px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "height": "18px",
-                    "margin_top": "2000px",
-                    "display": "block",
-                    "width": "624px"
-                }
-            }
-        ]
-    },
+    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#viewport"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "height": "18px"
+                },
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "2000px",
+                    "height": "18px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "2036px",
+            "width": "624px"
+        },
+        "tag": "body"
+    }
 }

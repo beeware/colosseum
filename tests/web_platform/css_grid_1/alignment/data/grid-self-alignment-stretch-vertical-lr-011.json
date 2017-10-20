@@ -1,91 +1,91 @@
 {
+    "matches": null,
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "254px"
-        },
-        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "width": "250px",
-                    "height": "250px",
-                    "display": "inline-grid",
-                    "position": "relative"
-                },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "border_top_style": "solid",
-                            "width": "20px",
-                            "border_left_style": "solid",
-                            "display": "block",
-                            "height": "110px",
-                            "border_right_style": "solid",
-                            "border_bottom_style": "solid",
                             "border_bottom_width": "10px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
                             "border_top_style": "solid",
-                            "width": "110px",
-                            "height": "48.34375px",
-                            "display": "block",
-                            "border_right_width": "20px",
+                            "border_right_style": "solid",
                             "border_left_style": "solid",
                             "border_bottom_style": "solid",
-                            "border_right_style": "solid",
-                            "min_width": "auto",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_top_style": "solid",
-                            "width": "20px",
-                            "height": "48.34375px",
-                            "display": "block",
-                            "border_left_style": "solid",
-                            "border_bottom_style": "solid",
-                            "border_right_style": "solid",
-                            "min_width": "auto",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_top_style": "solid",
-                            "width": "110px",
-                            "border_left_style": "solid",
-                            "display": "block",
-                            "border_right_width": "10px",
                             "height": "110px",
+                            "min_height": "auto",
+                            "width": "20px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "border_top_style": "solid",
                             "border_right_style": "solid",
+                            "border_left_style": "solid",
                             "border_bottom_style": "solid",
+                            "height": "80px",
+                            "width": "110px",
+                            "border_right_width": "20px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "border_top_style": "solid",
+                            "border_right_style": "solid",
+                            "border_left_style": "solid",
+                            "border_bottom_style": "solid",
+                            "height": "80px",
+                            "width": "20px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
                             "border_bottom_width": "20px",
                             "min_width": "auto",
-                            "min_height": "auto"
+                            "border_top_style": "solid",
+                            "border_left_style": "solid",
+                            "border_right_style": "solid",
+                            "border_bottom_style": "solid",
+                            "height": "110px",
+                            "min_height": "auto",
+                            "width": "110px",
+                            "border_right_width": "10px",
+                            "display": "block"
                         },
                         "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "position": "relative",
+                    "height": "250px",
+                    "display": "inline-grid",
+                    "width": "250px"
+                },
+                "tag": "DIV"
             }
-        ]
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "height": "254px",
+            "display": "block"
+        },
+        "tag": "BODY"
     },
     "assert": "The stretched grid items along the column and/or row axis respect their defined margin-box's boundaries.",
-    "matches": null,
     "help": [
         "https://drafts.csswg.org/css-grid-1/#alignment",
         "https://drafts.csswg.org/css-align-3/#propdef-align-self",

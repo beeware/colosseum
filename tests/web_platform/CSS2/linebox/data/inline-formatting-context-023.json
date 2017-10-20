@@ -1,46 +1,26 @@
 {
+    "assert": "Additional inline boxes can be created for the bidirectional text.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
     "test_case": {
         "tag": "body",
-        "style": {
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "display": "block",
-            "height": "64px"
-        },
         "children": [
             {
                 "tag": "p",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
                     "margin_top": "16px",
+                    "display": "block",
                     "margin_bottom": "16px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 }
             },
             {
                 "tag": "div",
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "30px"
-                },
                 "children": [
                     {
                         "tag": "span",
-                        "style": {
-                            "margin_left": "1px",
-                            "margin_bottom": "1px",
-                            "margin_right": "1px",
-                            "padding_right": "1px",
-                            "padding_top": "1px",
-                            "margin_top": "1px",
-                            "padding_bottom": "1px",
-                            "padding_left": "1px"
-                        },
                         "children": [
                             {
                                 "tag": "span",
@@ -49,15 +29,35 @@
                                     "unicode_bidi": "bidi-override"
                                 }
                             }
-                        ]
+                        ],
+                        "style": {
+                            "padding_top": "1px",
+                            "padding_left": "1px",
+                            "padding_right": "1px",
+                            "padding_bottom": "1px",
+                            "margin_top": "1px",
+                            "margin_left": "1px",
+                            "margin_bottom": "1px",
+                            "margin_right": "1px"
+                        }
                     }
-                ]
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "30px"
+                }
             }
-        ]
+        ],
+        "style": {
+            "height": "64px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "margin_right": "8px"
+        }
     },
-    "assert": "Additional inline boxes can be created for the bidirectional text.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
     "matches": "inline-formatting-context-023-ref.xht"
 }

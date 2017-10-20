@@ -1,71 +1,71 @@
 {
     "assert": "If this tentative height is greater than 'max-height', the rules above are applied again, but this time using the value of 'max-height' as the computed value for 'height'. [...] Note: These steps do not affect the real computed value of 'height'.",
-    "matches": "height-computed-002-ref.xht",
+    "test_case": {
+        "tag": "body",
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "height": "105px",
+            "display": "block"
+        },
+        "children": [
+            {
+                "tag": "p",
+                "style": {
+                    "margin_bottom": "14px",
+                    "width": "624px",
+                    "margin_top": "14px",
+                    "height": "17px",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "p",
+                "style": {
+                    "margin_bottom": "14px",
+                    "width": "624px",
+                    "margin_top": "14px",
+                    "height": "74px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "tag": "span",
+                        "style": {
+                            "max_height": "40px",
+                            "width": "140px",
+                            "height": "40px",
+                            "display": "inline-block"
+                        },
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "width": "70px",
+                                    "height": "70px",
+                                    "display": "inline-block"
+                                }
+                            },
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "width": "70px",
+                                    "height": "70px",
+                                    "display": "inline-block"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     "help": [
         "http://www.w3.org/TR/CSS22/visudet.html#min-max-heights",
         "http://www.w3.org/TR/CSS22/changes.html#s.10.7"
     ],
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "height": "105px",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
-        "children": [
-            {
-                "style": {
-                    "margin_top": "14px",
-                    "height": "17px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_bottom": "14px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "margin_top": "14px",
-                    "height": "74px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_bottom": "14px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "height": "40px",
-                            "display": "inline-block",
-                            "width": "140px",
-                            "max_height": "40px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "height": "70px",
-                                    "display": "inline-block",
-                                    "width": "70px"
-                                },
-                                "tag": "span"
-                            },
-                            {
-                                "style": {
-                                    "height": "70px",
-                                    "display": "inline-block",
-                                    "width": "70px"
-                                },
-                                "tag": "span"
-                            }
-                        ],
-                        "tag": "span"
-                    }
-                ],
-                "tag": "p"
-            }
-        ],
-        "tag": "body"
-    }
+    "matches": "height-computed-002-ref.xht"
 }

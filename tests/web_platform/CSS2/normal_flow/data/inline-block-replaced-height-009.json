@@ -1,25 +1,46 @@
 {
     "test_case": {
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "334px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
                         "style": {},
                         "tag": "strong"
                     }
-                ],
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
+                ]
             },
             {
+                "style": {
+                    "height": "300px",
+                    "display": "block",
+                    "width": "300px"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "height": "150px",
+                            "width": "150px"
+                        },
+                        "tag": "svg:svg",
                         "children": [
                             {
                                 "style": {
@@ -28,46 +49,25 @@
                                 },
                                 "tag": "svg:rect"
                             }
-                        ],
-                        "style": {
-                            "height": "150px",
-                            "width": "150px"
-                        },
-                        "tag": "svg:svg"
+                        ]
                     },
                     {
                         "style": {
-                            "bottom": "150px",
                             "height": "150px",
+                            "bottom": "150px",
+                            "display": "block",
                             "position": "relative",
-                            "width": "150px",
-                            "display": "block"
+                            "width": "150px"
                         },
                         "tag": "div"
                     }
-                ],
-                "style": {
-                    "height": "300px",
-                    "width": "300px",
-                    "display": "block"
-                },
-                "tag": "div"
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "334px",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "body"
+        ]
     },
     "matches": "../positioning/absolute-replaced-width-003b-ref.xht",
+    "assert": "If an inline-block replaced element (like the svg element in this test) has no intrinsic height and no intrinsic ratio, then the used value of 'height' becomes 150px.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
-    "assert": "If an inline-block replaced element (like the svg element in this test) has no intrinsic height and no intrinsic ratio, then the used value of 'height' becomes 150px."
+    ]
 }
