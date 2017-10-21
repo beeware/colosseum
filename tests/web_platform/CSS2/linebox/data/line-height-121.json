@@ -1,0 +1,61 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "ppp",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "120px",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "40px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "display": "block",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_right_color": "rgb(0, 128, 0)"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "120px",
+                    "height": "20px"
+                }
+            },
+            {
+                "text": "\"p\" is like an underscore in Ahem.",
+                "style": {}
+            },
+            {
+                "text": "the result will be that if the line-height is 0, then the\n       container will be visible as the test will be height:0 and the\n       text will overflow the test with a small green line, leaving\n       the red of the container visible. otherwise, line-height is\n       1, the test block will grow to be bigger than the\n       container, overflowing it, and hiding the red.",
+                "style": {}
+            },
+            {
+                "text": "see ../001.html",
+                "style": {}
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "20px"
+        }
+    },
+    "matches": "line-height-121-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
+    "assert": null
+}

@@ -1,0 +1,61 @@
+{
+    "assert": "The 'bottom' property applies to elements with a display of inline-block.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "display": "block",
+                            "bottom": "0px",
+                            "position": "absolute",
+                            "width": "100px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "height": "50px",
+                                    "width": "100px"
+                                },
+                                "tag": "span"
+                            },
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "height": "50px",
+                                    "width": "100px"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "bottom-applies-to-001-ref.xht"
+}

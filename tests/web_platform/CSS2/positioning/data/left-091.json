@@ -1,0 +1,49 @@
+{
+    "assert": "The 'left' property sets a nominal length value in 'ex' units.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "border_left_width": "96px",
+                    "border_left_style": "solid",
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "96px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "margin_left": "-192px",
+                            "border_left_width": "96px",
+                            "border_left_style": "solid",
+                            "left": "96px",
+                            "position": "relative",
+                            "width": "96px",
+                            "display": "block",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "../reference/ref-black-96px-square-no-red.xht"
+}

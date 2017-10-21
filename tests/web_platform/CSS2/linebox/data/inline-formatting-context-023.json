@@ -1,0 +1,67 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            },
+                            {
+                                "tag": "span",
+                                "children": [
+                                    {
+                                        "text": "txeT relliF",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "unicode_bidi": "bidi-override",
+                                    "direction": "rtl"
+                                }
+                            },
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "padding_left": "1px",
+                            "margin_bottom": "1px",
+                            "margin_top": "1px",
+                            "margin_left": "1px",
+                            "padding_right": "1px",
+                            "margin_right": "1px",
+                            "padding_bottom": "1px",
+                            "padding_top": "1px"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "height": "30px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "30px"
+        }
+    },
+    "matches": "inline-formatting-context-023-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "Additional inline boxes can be created for the bidirectional text."
+}

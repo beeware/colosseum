@@ -1,0 +1,68 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "First line"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "style": {},
+                                        "text": "Second line"
+                                    }
+                                ],
+                                "style": {
+                                    "display": "block",
+                                    "height": "18px",
+                                    "width": "624px"
+                                },
+                                "tag": "span"
+                            }
+                        ],
+                        "style": {
+                            "border_right_style": "solid",
+                            "border_left_style": "solid",
+                            "border_left_width": "5px",
+                            "border_top_width": "5px",
+                            "border_top_style": "solid",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_bottom_style": "solid",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_right_width": "5px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_bottom_width": "5px"
+                        },
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "text": "Third line, yes"
+                    }
+                ],
+                "style": {},
+                "tag": "span"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "54px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": null,
+    "matches": "block-in-inline-nested-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ]
+}

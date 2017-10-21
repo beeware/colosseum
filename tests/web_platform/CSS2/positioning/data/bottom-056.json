@@ -1,0 +1,48 @@
+{
+    "assert": "The 'bottom' property sets a positive nominal length value in millimeters.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid",
+                    "display": "block",
+                    "border_top_width": "96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "0px",
+                            "position": "relative",
+                            "width": "624px",
+                            "border_top_style": "solid",
+                            "bottom": "96px",
+                            "border_top_width": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "bottom-019-ref.xht"
+}

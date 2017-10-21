@@ -1,0 +1,26 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [],
+                "tag": "div",
+                "style": {}
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "0px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "White space is collapsed according to the 'white-space' property and does not generate an anonymous inline box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous"
+    ],
+    "matches": "../reference/ref-if-there-is-no-red.xht"
+}

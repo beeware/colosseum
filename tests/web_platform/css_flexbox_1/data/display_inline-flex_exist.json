@@ -1,0 +1,49 @@
+{
+    "assert": "Check if the web engine can identify the display value inline-flex.",
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "18px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "0px",
+                    "display": "inline-flex"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "display": "none"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "var t = async_test(document.title, {timeout:500});\n        t.step(function () {\n            assert_equals(window.getComputedStyle(document.querySelector('div#test')).display, \"inline-flex\", \"Display value is\");\n        });\n        t.done();"
+                    }
+                ],
+                "tag": "SCRIPT"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
+    ],
+    "matches": null
+}

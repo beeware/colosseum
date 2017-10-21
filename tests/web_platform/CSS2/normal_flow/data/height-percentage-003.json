@@ -1,0 +1,38 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if a blue line is in the middle of the page."
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "A percentage 'height' on the root element is relative to the initial containing block.",
+    "matches": "height-percentage-003-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ]
+}

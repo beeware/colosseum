@@ -1,0 +1,85 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "LLLLL",
+                        "style": {}
+                    },
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "p",
+                                "children": [
+                                    {
+                                        "text": "ABCDE",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "width": "101.6875px",
+                                    "display": "block",
+                                    "margin_bottom": "30px",
+                                    "margin_top": "30px",
+                                    "height": "36px"
+                                }
+                            },
+                            {
+                                "tag": "p",
+                                "children": [
+                                    {
+                                        "text": "LLLLL",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "width": "101.6875px",
+                                    "display": "block",
+                                    "margin_bottom": "30px",
+                                    "margin_top": "30px",
+                                    "height": "36px"
+                                }
+                            }
+                        ],
+                        "style": {
+                            "width": "101.6875px",
+                            "margin_bottom": "9px",
+                            "margin_top": "9px",
+                            "padding_bottom": "21px",
+                            "display": "inline-block",
+                            "padding_top": "21px",
+                            "height": "162px"
+                        }
+                    },
+                    {
+                        "text": "LLLLL",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "height": "222px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "222px"
+        }
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The baseline of an (anonymous) inline element is aligned with the baseline of the last line box of an 'inline-block' in the normal flow as 'vertical-align: baseline' is by default applied. In such case, the vertical padding and vertical margin have no influence on the position of the baseline line of an 'inline-block'."
+}

@@ -1,0 +1,76 @@
+{
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X XXX",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "XX XXX",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "200px",
+                            "height": "100px"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "inline-grid",
+                    "position": "relative",
+                    "width": "200px",
+                    "height": "100px"
+                }
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px"
+        }
+    },
+    "matches": null,
+    "assert": "Changing the grid item's justify-items value from 'normal' to 'stretch' causes no effect on non-replaced items.",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#row-align",
+        "https://drafts.csswg.org/css-grid-1/#grid-item-sizing",
+        "https://drafts.csswg.org/css-align-3/#propdef-justify-items",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-normal"
+    ]
+}

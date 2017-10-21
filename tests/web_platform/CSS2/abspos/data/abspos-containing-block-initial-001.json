@@ -1,0 +1,69 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "assert": "If there is no such ancestor, the containing block is the initial containing block.",
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "window.scrollTo(0,50);"
+                    }
+                ],
+                "tag": "script",
+                "style": {
+                    "display": "none"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "100px",
+                    "display": "block",
+                    "position": "absolute",
+                    "height": "100px",
+                    "top": "0px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "100px",
+                    "display": "block",
+                    "position": "absolute",
+                    "height": "100px",
+                    "right": "0px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "bottom": "0px",
+                    "display": "block",
+                    "width": "100px",
+                    "position": "absolute",
+                    "height": "100px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "100px",
+                    "display": "block",
+                    "left": "0px",
+                    "position": "absolute",
+                    "height": "100px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "width": "520px",
+            "display": "block",
+            "height": "10000px"
+        }
+    },
+    "matches": "abspos-containing-block-initial-001-ref.xht"
+}

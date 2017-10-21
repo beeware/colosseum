@@ -1,0 +1,53 @@
+{
+    "assert": "The 'right' property, for absolute positioning, specifies the offset of the element in relation to the containing block's right edge. The containing block of an absolutely positioned element is formed by the padding box of its nearest (closest) positioned ancestor element.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "100px",
+                    "position": "relative",
+                    "width": "100px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "100px",
+                            "position": "relative",
+                            "width": "100px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "height": "50px",
+                            "position": "absolute",
+                            "width": "50px",
+                            "display": "block",
+                            "right": "50px",
+                            "top": "0px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "right-offset-001-ref.xht"
+}

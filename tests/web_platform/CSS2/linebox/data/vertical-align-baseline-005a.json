@@ -1,0 +1,64 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "XXX XXX XXX",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "inline-block",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "height": "100px",
+                            "margin_bottom": "99px",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "width": "100px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "position": "absolute",
+                            "display": "block",
+                            "top": "72px",
+                            "width": "55px",
+                            "height": "250px"
+                        }
+                    },
+                    {
+                        "text": "pppppppp",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "height": "199px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "199px"
+        }
+    },
+    "matches": "vertical-align-baseline-004a-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The baseline of an 'inline-block' whose 'overflow' property has a computed value other than 'visible' is located at its bottom margin edge."
+}

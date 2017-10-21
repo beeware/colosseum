@@ -1,0 +1,96 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "PASS"
+                    }
+                ],
+                "style": {
+                    "height": "64px",
+                    "display": "block",
+                    "top": "100px",
+                    "width": "153.625px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ],
+                "style": {
+                    "height": "64px",
+                    "display": "block",
+                    "top": "164px",
+                    "width": "153.625px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "1px",
+                            "width": "1px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {},
+                        "text": "this should generate a line box 64px high"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "XXXX"
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "height": "64px",
+                            "width": "153.625px",
+                            "float": "left"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "this will overlap the PASS if it ends up on the previous line, otherwise it will overlap the fail"
+                    }
+                ],
+                "style": {
+                    "height": "128px",
+                    "display": "block",
+                    "top": "100px",
+                    "width": "0px",
+                    "position": "absolute"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": null,
+    "matches": "inlines-013-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
+        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
+    ]
+}

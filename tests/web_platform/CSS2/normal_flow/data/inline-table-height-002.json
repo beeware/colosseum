@@ -1,0 +1,39 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "test"
+                    }
+                ],
+                "style": {
+                    "height": "80px",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "width": "22.21875px",
+                    "display": "inline-table"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "80px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "it is a rectangular block that participates in an inline formatting context).",
+    "matches": "inline-table-height-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/tables.html#table-display"
+    ]
+}

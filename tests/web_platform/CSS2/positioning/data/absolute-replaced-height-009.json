@@ -1,0 +1,55 @@
+{
+    "assert": "The 'height' is the intrinsic height when an absolutely positioned replaced element with an intrinsic height has 'height', 'width' and 'bottom' computed as 'auto'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "3px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "0px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "top": "96px",
+                            "height": "15px",
+                            "position": "absolute",
+                            "width": "15px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "left": "15px",
+                            "width": "15px",
+                            "display": "block",
+                            "top": "96px",
+                            "height": "15px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ],
+    "matches": "absolute-replaced-height-008-ref.xht"
+}

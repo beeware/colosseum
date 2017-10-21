@@ -1,0 +1,63 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            },
+                            {
+                                "tag": "div",
+                                "children": [
+                                    {
+                                        "text": "Filler Text",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "display": "block",
+                                    "width": "192px",
+                                    "height": "18px"
+                                }
+                            },
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "top": "192px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "display": "block",
+                    "width": "192px",
+                    "height": "192px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "192px"
+        }
+    },
+    "matches": "inline-box-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": "Block boxes within inline boxes are also affected by relative positioning on the inline box."
+}

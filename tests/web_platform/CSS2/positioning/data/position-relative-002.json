@@ -1,0 +1,65 @@
+{
+    "assert": "Element following relatively positioned element show up in normal flow as if the relatively positioned element were not offset.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "22px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "22px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "relative",
+                            "left": "0px",
+                            "width": "200px",
+                            "display": "block",
+                            "top": "24px",
+                            "height": "2px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "top": "25px",
+                            "position": "relative"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "a"
+                            }
+                        ],
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "b"
+                            }
+                        ],
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
+    "matches": null
+}

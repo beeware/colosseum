@@ -1,0 +1,151 @@
+{
+    "matches": null,
+    "test_case": {
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "108px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "direction": "rtl",
+                    "margin_bottom": "16px",
+                    "width": "584px",
+                    "height": "108px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "padding_right": "40px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "width": "520px",
+                            "height": "18px",
+                            "display": "list-item",
+                            "padding_left": "32px",
+                            "padding_right": "32px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "This list has three items"
+                            }
+                        ],
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "width": "520px",
+                            "height": "18px",
+                            "display": "list-item",
+                            "padding_left": "32px",
+                            "padding_right": "32px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "And should be right-aligned"
+                            }
+                        ],
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "width": "520px",
+                            "height": "72px",
+                            "display": "list-item",
+                            "padding_left": "32px",
+                            "padding_right": "32px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "With numbers to the right"
+                            },
+                            {
+                                "style": {
+                                    "height": "54px",
+                                    "direction": "rtl",
+                                    "display": "block",
+                                    "padding_right": "40px",
+                                    "width": "480px"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "direction": "rtl",
+                                            "width": "416px",
+                                            "height": "18px",
+                                            "display": "list-item",
+                                            "padding_left": "32px",
+                                            "padding_right": "32px"
+                                        },
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "This list should be indented from the right"
+                                            }
+                                        ],
+                                        "tag": "li"
+                                    },
+                                    {
+                                        "style": {
+                                            "direction": "rtl",
+                                            "width": "416px",
+                                            "height": "18px",
+                                            "display": "list-item",
+                                            "padding_left": "32px",
+                                            "padding_right": "32px"
+                                        },
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "And should be right-aligned"
+                                            }
+                                        ],
+                                        "tag": "li"
+                                    },
+                                    {
+                                        "style": {
+                                            "direction": "rtl",
+                                            "width": "416px",
+                                            "height": "18px",
+                                            "display": "list-item",
+                                            "padding_left": "32px",
+                                            "padding_right": "32px"
+                                        },
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "With numbers to the right"
+                                            }
+                                        ],
+                                        "tag": "li"
+                                    }
+                                ],
+                                "tag": "ol"
+                            }
+                        ],
+                        "tag": "li"
+                    }
+                ],
+                "tag": "ol"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#direction",
+        "http://www.w3.org/TR/CSS21/generate.html#list-style",
+        "http://www.w3.org/TR/CSS21/text.html#alignment-prop"
+    ],
+    "assert": "direction:rtl should apply to nested ordered lists, putting bullets  on the right and offset leftwards"
+}

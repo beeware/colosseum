@@ -1,0 +1,51 @@
+{
+    "assert": "Absolute positioned elements are taken out of the normal flow when they have explicit offsets.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "100px",
+                    "position": "relative",
+                    "width": "200px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "100px",
+                            "width": "100px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "left": "0px",
+                            "width": "100px",
+                            "display": "block",
+                            "top": "0px",
+                            "height": "100px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
+    ],
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

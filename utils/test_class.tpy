@@ -1,0 +1,5 @@
+from .{depth}.utils import W3CTestCase
+
+class {classname}(W3CTestCase):
+    vars().update(W3CTestCase.find_tests(__file__, '{group}'))
+

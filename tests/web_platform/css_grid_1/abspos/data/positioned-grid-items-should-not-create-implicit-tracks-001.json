@@ -1,0 +1,96 @@
+{
+    "assert": "This test checks that positioned items shouldn't create implicit tracks on the grid.",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "300px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "grid",
+                    "position": "relative",
+                    "height": "300px",
+                    "width": "400px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "height": "300px",
+                            "position": "absolute",
+                            "width": "400px",
+                            "min_width": "auto"
+                        },
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "50px",
+                            "width": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "50px",
+                            "width": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "50px",
+                            "width": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "50px",
+                            "width": "100px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
+}

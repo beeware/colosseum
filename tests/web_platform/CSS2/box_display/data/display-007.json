@@ -1,0 +1,84 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "text": "Filler text",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "Filler",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div",
+                                        "style": {
+                                            "display": "table-cell",
+                                            "height": "18px",
+                                            "width": "38.671875px"
+                                        }
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "text",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div",
+                                        "style": {
+                                            "display": "table-cell",
+                                            "height": "18px",
+                                            "width": "24px"
+                                        }
+                                    }
+                                ],
+                                "tag": "div",
+                                "style": {
+                                    "display": "table-row",
+                                    "height": "18px",
+                                    "width": "62.671875px"
+                                }
+                            }
+                        ],
+                        "tag": "div",
+                        "style": {
+                            "display": "inline-table",
+                            "height": "18px",
+                            "width": "62.671875px"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "18px",
+                    "width": "624px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "18px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "The property 'display' set to 'inline-table' behaves in layout as an inline table.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "matches": "display-001-ref.xht"
+}

@@ -1,0 +1,61 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "30px",
+                            "min_height": "auto",
+                            "height": "30px",
+                            "display": "block",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "30px",
+                            "min_height": "auto",
+                            "height": "60px",
+                            "display": "block",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "width": "60px",
+                            "min_height": "auto",
+                            "height": "30px",
+                            "display": "block",
+                            "min_width": "auto"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "width": "624px",
+                    "height": "60px",
+                    "display": "grid"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "height": "60px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "display": "block"
+        }
+    },
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#auto-tracks"
+    ],
+    "matches": "../reference/grid-support-grid-auto-columns-rows-001-ref.html"
+}

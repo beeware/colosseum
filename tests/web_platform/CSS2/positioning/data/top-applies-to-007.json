@@ -1,0 +1,53 @@
+{
+    "assert": "The 'top' property applies to elements with a display of 'table-cell'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "table",
+                    "height": "0px",
+                    "width": "1px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "table-row",
+                            "height": "0px",
+                            "width": "1px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "top": "0px",
+                                    "height": "96px",
+                                    "position": "absolute",
+                                    "width": "96px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "top-applies-to-001-ref.xht"
+}

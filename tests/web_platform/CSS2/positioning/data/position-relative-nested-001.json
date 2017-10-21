@@ -1,0 +1,53 @@
+{
+    "assert": "Equal 50% positive and negative positioning can vertically center objects.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "300px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "300px",
+                    "width": "200px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "top": "50%",
+                            "height": "100px",
+                            "position": "relative",
+                            "width": "200px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "top": "-50%",
+                                    "height": "150px",
+                                    "position": "relative",
+                                    "width": "200px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme"
+    ],
+    "matches": "position-relative-nested-001-ref.xht"
+}

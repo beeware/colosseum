@@ -1,0 +1,77 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_bottom_color": "rgb(255, 255, 255)"
+                                }
+                            },
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "624px",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "height": "80px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "624px",
+                            "left": "0px",
+                            "height": "80px",
+                            "position": "absolute",
+                            "display": "block",
+                            "top": "0px",
+                            "z_index": "-1"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "display": "block",
+                    "width": "624px",
+                    "height": "80px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "80px"
+        }
+    },
+    "matches": "empty-inline-003-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
+    "assert": "The line-height of an empty inline element influences the height of a line containing it with some other content"
+}

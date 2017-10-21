@@ -1,0 +1,46 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "display": "block",
+                            "top": "-20px",
+                            "width": "100px",
+                            "left": "-20px",
+                            "height": "100px",
+                            "position": "relative"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "inline-block",
+                    "padding_top": "20px",
+                    "height": "60px",
+                    "padding_right": "20px",
+                    "padding_left": "20px",
+                    "padding_bottom": "20px",
+                    "width": "60px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "104px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest inline-block ancestor box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

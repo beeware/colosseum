@@ -1,0 +1,64 @@
+{
+    "assert": null,
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "20px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "20px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if there is a green square and"
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "no red"
+                            }
+                        ],
+                        "tag": "strong"
+                    },
+                    {
+                        "style": {},
+                        "text": "."
+                    },
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "left": "64px",
+                            "right": "0px",
+                            "display": "block",
+                            "width": "15px",
+                            "top": "64px",
+                            "bottom": "0px",
+                            "height": "15px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
+    "matches": "abspos-025-ref.xht"
+}

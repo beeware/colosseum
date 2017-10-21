@@ -1,0 +1,94 @@
+{
+    "matches": "anonymous-boxes-001b-ref.xht",
+    "test_case": {
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "200px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "z_index": "-1",
+                    "top": "122px",
+                    "position": "absolute",
+                    "width": "624px",
+                    "height": "100px",
+                    "left": "8px",
+                    "display": "block",
+                    "right": "8px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "width": "624px",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "height": "200px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Some"
+                    },
+                    {
+                        "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "width": "624px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "height": "100px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "text"
+                    },
+                    {
+                        "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "margin_bottom": "40px",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "width": "624px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "height": "50px",
+                            "margin_top": "40px",
+                            "display": "block"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "More text"
+                            }
+                        ],
+                        "tag": "p"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {},
+                "text": "For example, if the child of the anonymous block box inside the DIV\n  above needs to know the height of its containing block to resolve a\n  percentage height, then it will use the height of the containing\n  block formed by the DIV, not of the anonymous block box."
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level",
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
+    "assert": "Anonymous block boxes are ignored when resolving percentage values that would refer to it: the closest non-anonymous ancestor box is used instead."
+}

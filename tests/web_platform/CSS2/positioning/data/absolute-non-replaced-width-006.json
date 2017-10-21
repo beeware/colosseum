@@ -1,0 +1,63 @@
+{
+    "assert": "When direction is left-to-right and 'left', 'width', 'margin-left' and 'right' are not 'auto', solve for 'margin-right'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "206px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "relative",
+                    "width": "200px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "200px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "position": "absolute",
+                            "width": "100px",
+                            "right": "100px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "margin_left": "50px",
+                            "height": "100px",
+                            "left": "50px",
+                            "margin_right": "-100px",
+                            "display": "block"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "X"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
+    "matches": "absolute-non-replaced-width-002-ref.xht"
+}

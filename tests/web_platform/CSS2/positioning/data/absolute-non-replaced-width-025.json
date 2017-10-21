@@ -1,0 +1,56 @@
+{
+    "assert": "When 'width' is computed according to the equation and rules of section 10.3.7 and when such computed 'width' is greater than 'max-width', then the equation and rules of section 10.3.7 are applied again but this time assuming the computed 'max-width' value. Then all three properties ('width', 'left' and 'right') are not 'auto' and both 'margin-left' and 'margin-right' are 'auto': in which case, the horizontal margins get equal values of available, remaining horizontal space.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "max_width": "100px",
+                    "margin_left": "262px",
+                    "position": "absolute",
+                    "left": "8px",
+                    "margin_right": "262px",
+                    "width": "100px",
+                    "display": "block",
+                    "right": "8px",
+                    "height": "100px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "margin_left": "262px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "height": "100px",
+                    "margin_right": "262px",
+                    "display": "block",
+                    "width": "100px",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
+    "matches": "absolute-non-replaced-width-025-ref.xht"
+}

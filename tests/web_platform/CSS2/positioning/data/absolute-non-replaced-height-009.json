@@ -1,0 +1,52 @@
+{
+    "assert": "The 'height' is based on the content height, 'auto' values for 'margin-top' and 'margin-bottom' are set to '0' when 'height' and 'bottom' are 'auto' and 'top' is not 'auto'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "position": "relative",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "height": "100px",
+                            "position": "absolute",
+                            "width": "200px",
+                            "display": "block",
+                            "top": "25px",
+                            "border_bottom_color": "rgb(255, 165, 0)"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "X"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
+    "matches": "absolute-non-replaced-height-009-ref.xht"
+}

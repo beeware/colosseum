@@ -1,0 +1,132 @@
+{
+    "assert": "Checks that absolutely positioned grid items are properly placed and sized when they have specific 'left, 'right', 'top' and 'bottom' offsets.",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "451px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "margin_top": "1px",
+                    "padding_bottom": "10px",
+                    "height": "400px",
+                    "margin_left": "4px",
+                    "border_left_style": "solid",
+                    "margin_right": "2px",
+                    "margin_bottom": "3px",
+                    "border_right_style": "solid",
+                    "display": "grid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "12px",
+                    "border_left_width": "6px",
+                    "width": "550px",
+                    "border_top_width": "9px",
+                    "border_right_width": "3px",
+                    "padding_top": "20px",
+                    "position": "relative",
+                    "border_top_style": "solid",
+                    "padding_right": "15px",
+                    "padding_left": "5px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "150px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "left": "0px",
+                            "right": "0px",
+                            "position": "absolute",
+                            "top": "0px",
+                            "bottom": "0px",
+                            "width": "200px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "First item"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "150px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "left": "0px",
+                            "right": "0px",
+                            "position": "absolute",
+                            "top": "0px",
+                            "bottom": "0px",
+                            "width": "300px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Second item"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "left": "0px",
+                            "right": "0px",
+                            "position": "absolute",
+                            "top": "0px",
+                            "bottom": "0px",
+                            "width": "200px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Third item"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "height": "100px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "left": "0px",
+                            "right": "0px",
+                            "position": "absolute",
+                            "top": "0px",
+                            "bottom": "0px",
+                            "width": "300px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Fourth item"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": "positioned-grid-items-009-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid/#abspos"
+    ]
+}

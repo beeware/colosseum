@@ -1,0 +1,66 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "display": "block",
+                                    "direction": "rtl",
+                                    "position": "absolute",
+                                    "width": "96px",
+                                    "height": "96px"
+                                }
+                            }
+                        ],
+                        "tag": "span",
+                        "style": {
+                            "display": "block",
+                            "direction": "rtl",
+                            "width": "0px",
+                            "height": "0px"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "border_right_width": "3px",
+                    "border_left_style": "solid",
+                    "border_left_width": "3px",
+                    "padding_left": "96px",
+                    "height": "0px",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "width": "0px",
+                    "padding_top": "96px",
+                    "border_top_width": "3px",
+                    "border_bottom_width": "3px",
+                    "z_index": "0",
+                    "padding_right": "96px",
+                    "border_top_style": "solid",
+                    "padding_bottom": "96px",
+                    "position": "fixed"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "0px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest positioned ancestor.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "matches": "containing-block-020-ref.xht"
+}

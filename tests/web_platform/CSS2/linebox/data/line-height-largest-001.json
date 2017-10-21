@@ -1,0 +1,52 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler",
+                                "style": {}
+                            }
+                        ],
+                        "style": {}
+                    },
+                    {
+                        "tag": "span",
+                        "children": [
+                            {
+                                "text": "Text",
+                                "style": {}
+                            }
+                        ],
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "height": "110px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "110px"
+        }
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'line-height' value may use the largest font size when there is more than one font size."
+}

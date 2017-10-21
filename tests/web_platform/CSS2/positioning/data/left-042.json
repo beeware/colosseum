@@ -1,0 +1,49 @@
+{
+    "assert": "The 'left' property sets a positive zero length value in centimeters.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "border_left_width": "5px",
+                    "border_left_style": "solid",
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "619px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_left_width": "5px",
+                            "border_left_style": "solid",
+                            "left": "0px",
+                            "position": "relative",
+                            "width": "614px",
+                            "display": "block",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "left-004-ref.xht"
+}

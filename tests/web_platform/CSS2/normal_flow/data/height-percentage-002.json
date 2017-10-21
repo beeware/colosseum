@@ -1,0 +1,52 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Text sample"
+                    },
+                    {
+                        "style": {
+                            "height": "0px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "width": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "height": "18px",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "width": "96px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "A percentage height is computed to 'auto' when the element is not absolutely positioned and there is no 'height' explicitly set on the containing block (or when the containing block's height is set to 'auto').",
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "text": "In this test, the short vertical blue line represents the tallest\n  inline box present in the line box. And its presence contribute\n  to demonstrate that the line box height is not necessarly given\n  by the height of its tallest inline box.",
+                "style": {}
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "20px",
+                            "height": "20px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "20px",
+                            "height": "20px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "5px",
+                            "height": "35px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "20px",
+                            "height": "20px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "20px",
+                            "height": "20px"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "height": "50px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "50px"
+        }
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height",
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "The line box height is given by the distance between the uppermost box top and the lowermost box bottom. The line box height is not necessarly given by the height of the tallest inline box contained in the line box."
+}

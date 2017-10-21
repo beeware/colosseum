@@ -1,0 +1,50 @@
+{
+    "assert": "The static position is calculated as if clear     had been none.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "16px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "16px",
+                    "width": "96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "64px",
+                            "float": "left",
+                            "width": "16px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "clear": "both",
+                            "height": "16px",
+                            "position": "absolute",
+                            "width": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
+    "matches": "abspos-028-ref.xht"
+}

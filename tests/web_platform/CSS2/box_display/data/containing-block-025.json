@@ -1,0 +1,61 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "text": "PREREQUISITE: Switch to paged media view.",
+                        "style": {}
+                    }
+                ],
+                "tag": "p",
+                "style": {
+                    "display": "block",
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "text": "Test passes if there is no box below, or there is a box on page 1, or there is a box on a following page.",
+                        "style": {}
+                    }
+                ],
+                "tag": "p",
+                "style": {
+                    "display": "block",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "margin_top": "16px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "70px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "An absolutely positioned element positioned beyond the boundaries of the page being laid out can be omitted, rendered on the current page or on a following page.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "matches": null
+}

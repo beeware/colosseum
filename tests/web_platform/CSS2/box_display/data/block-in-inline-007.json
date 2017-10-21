@@ -1,0 +1,187 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "text": "A",
+                                                        "style": {}
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "text": "B",
+                                                                "style": {}
+                                                            }
+                                                        ],
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "display": "block",
+                                                            "height": "13px",
+                                                            "width": "7.8125px",
+                                                            "margin_bottom": "13px",
+                                                            "margin_top": "13px"
+                                                        }
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "text": "C",
+                                                                "style": {}
+                                                            }
+                                                        ],
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "display": "block",
+                                                            "height": "13px",
+                                                            "width": "7.8125px",
+                                                            "margin_bottom": "13px",
+                                                            "margin_top": "13px"
+                                                        }
+                                                    },
+                                                    {
+                                                        "text": "D",
+                                                        "style": {}
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "text": "E",
+                                                                "style": {}
+                                                            }
+                                                        ],
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "display": "block",
+                                                            "height": "13px",
+                                                            "width": "7.8125px",
+                                                            "margin_bottom": "13px",
+                                                            "margin_top": "13px"
+                                                        }
+                                                    },
+                                                    {
+                                                        "text": "F",
+                                                        "style": {}
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "text": "G",
+                                                                "style": {}
+                                                            }
+                                                        ],
+                                                        "tag": "div",
+                                                        "style": {
+                                                            "display": "block",
+                                                            "height": "13px",
+                                                            "width": "7.8125px",
+                                                            "margin_bottom": "13px",
+                                                            "margin_top": "13px"
+                                                        }
+                                                    }
+                                                ],
+                                                "tag": "div",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div",
+                                        "style": {
+                                            "display": "block",
+                                            "height": "169px",
+                                            "width": "7.8125px",
+                                            "margin_bottom": "13px",
+                                            "margin_top": "13px"
+                                        }
+                                    }
+                                ],
+                                "tag": "td",
+                                "style": {
+                                    "display": "table-cell",
+                                    "padding_top": "1px",
+                                    "height": "195px",
+                                    "padding_right": "1px",
+                                    "padding_left": "1px",
+                                    "padding_bottom": "1px",
+                                    "width": "7.8125px"
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "text": "A\n\nB\n\nC\n\nD\n\nE\n\nF\n\nG",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "pre",
+                                        "style": {
+                                            "display": "block",
+                                            "height": "169px",
+                                            "width": "7.8125px",
+                                            "margin_bottom": "13px",
+                                            "margin_top": "13px"
+                                        }
+                                    }
+                                ],
+                                "tag": "td",
+                                "style": {
+                                    "display": "table-cell",
+                                    "padding_top": "1px",
+                                    "height": "195px",
+                                    "padding_right": "1px",
+                                    "padding_left": "1px",
+                                    "padding_bottom": "1px",
+                                    "width": "7.8125px"
+                                }
+                            }
+                        ],
+                        "tag": "tr",
+                        "style": {
+                            "display": "table-row",
+                            "width": "25.625px",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "height": "197px",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)"
+                        }
+                    }
+                ],
+                "tag": "table",
+                "style": {
+                    "display": "table",
+                    "width": "25.625px",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "height": "201px",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_left_color": "rgb(128, 128, 128)"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "201px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "When an inline box contains block boxes,     the inline box is broken around the blocks.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "matches": "block-in-inline-007-ref.xht"
+}

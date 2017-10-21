@@ -1,0 +1,73 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {
+                            "border_right_style": "solid",
+                            "border_left_style": "solid",
+                            "border_left_width": "3px",
+                            "border_top_width": "3px",
+                            "border_top_style": "solid",
+                            "width": "300px",
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "border_bottom_style": "solid",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_right_width": "3px",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "height": "150px",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_bottom_width": "3px"
+                        },
+                        "tag": "iframe"
+                    },
+                    {
+                        "style": {
+                            "top": "0px",
+                            "border_right_style": "solid",
+                            "border_left_style": "solid",
+                            "border_left_width": "3px",
+                            "border_top_width": "3px",
+                            "border_top_style": "solid",
+                            "position": "absolute",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_style": "solid",
+                            "width": "300px",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_right_width": "3px",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "height": "150px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_bottom_width": "3px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "height": "160px",
+                    "width": "624px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "160px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "For inline replaced elements the 'height' is set to the largest rectangle that has a 2:1 ratio that is not greater than 150px and has a 'width' not greater than the device width.",
+    "matches": "block-replaced-height-004-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
+}

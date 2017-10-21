@@ -1,0 +1,49 @@
+{
+    "assert": "The 'top' property sets a positive zero length value in points.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "10px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "height": "5px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid",
+                    "display": "block",
+                    "border_top_width": "5px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "height": "0px",
+                            "position": "relative",
+                            "width": "624px",
+                            "border_top_style": "solid",
+                            "top": "0px",
+                            "display": "block",
+                            "border_top_width": "5px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "../reference/ref-no-vert-space-between.xht"
+}

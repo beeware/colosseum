@@ -1,0 +1,69 @@
+{
+    "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes",
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "600px",
+            "height": "800px",
+            "margin_bottom": "8px",
+            "position": "relative",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "left": "0px",
+                    "height": "800px",
+                    "width": "600px",
+                    "right": "0px",
+                    "top": "0px",
+                    "bottom": "0px",
+                    "display": "flex",
+                    "position": "absolute"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "800px",
+                            "min_width": "auto",
+                            "width": "100px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Tests that percentage widths get resolved correctly when the flexbox is"
+                            }
+                        ],
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "height": "800px",
+                            "min_width": "auto",
+                            "width": "500px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "absolutely positioned without an explicit width. You should see no red."
+                            }
+                        ],
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "help": [
+        "https://drafts.csswg.org/css-flexbox/#definite-sizes"
+    ],
+    "matches": "percentage-widths-001-ref.html"
+}

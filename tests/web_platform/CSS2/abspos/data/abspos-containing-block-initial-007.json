@@ -1,0 +1,30 @@
+{
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "assert": "If there is no such ancestor, the containing block is the initial containing block.",
+    "test_case": {
+        "children": [],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "border_top_color": "rgb(255, 165, 0)",
+            "border_bottom_color": "rgb(255, 165, 0)",
+            "border_top_style": "solid",
+            "width": "0px",
+            "border_right_width": "10px",
+            "bottom": "0px",
+            "border_left_color": "rgb(255, 165, 0)",
+            "border_right_style": "solid",
+            "border_right_color": "rgb(255, 165, 0)",
+            "border_left_style": "solid",
+            "border_bottom_width": "10px",
+            "border_left_width": "10px",
+            "border_top_width": "10px",
+            "position": "absolute",
+            "height": "30px",
+            "border_bottom_style": "solid"
+        }
+    },
+    "matches": "abspos-containing-block-initial-007-ref.xht"
+}

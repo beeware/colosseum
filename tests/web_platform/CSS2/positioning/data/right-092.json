@@ -1,0 +1,51 @@
+{
+    "assert": "The 'right' property sets a positive nominal length value in 'ex' units.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_right_style": "solid",
+                    "position": "relative",
+                    "direction": "rtl",
+                    "display": "block",
+                    "width": "528px",
+                    "height": "96px",
+                    "border_right_width": "96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "border_right_style": "solid",
+                            "position": "relative",
+                            "margin_right": "-192px",
+                            "width": "624px",
+                            "display": "block",
+                            "right": "96px",
+                            "height": "96px",
+                            "border_right_width": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "right-019-ref.xht"
+}

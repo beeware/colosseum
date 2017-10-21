@@ -1,0 +1,110 @@
+{
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-selectors/#first-formatted-line"
+    ],
+    "assert": "This test checks that '::first-line' pseudo-element is ignored in grid items when applied to a grid container ancestors.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "50px",
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "50px",
+                    "width": "624px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "display": "grid",
+                    "border_right_color": "rgb(0, 128, 0)"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "min_width": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "50px",
+                            "width": "624px",
+                            "min_height": "auto",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 128, 0)"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "margin_top": "16px",
+                                    "border_bottom_color": "rgb(0, 128, 0)",
+                                    "border_top_color": "rgb(0, 128, 0)",
+                                    "margin_bottom": "16px",
+                                    "height": "18px",
+                                    "width": "624px",
+                                    "display": "block",
+                                    "border_left_color": "rgb(0, 128, 0)",
+                                    "border_right_color": "rgb(0, 128, 0)"
+                                },
+                                "children": [
+                                    {
+                                        "style": {},
+                                        "text": "This text should be"
+                                    },
+                                    {
+                                        "style": {
+                                            "border_bottom_color": "rgb(0, 128, 0)",
+                                            "border_top_color": "rgb(0, 128, 0)",
+                                            "border_left_color": "rgb(0, 128, 0)",
+                                            "border_right_color": "rgb(0, 128, 0)"
+                                        },
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "green"
+                                            }
+                                        ],
+                                        "tag": "STRONG"
+                                    },
+                                    {
+                                        "style": {},
+                                        "text": "and body and paragraph margins should"
+                                    },
+                                    {
+                                        "style": {
+                                            "border_bottom_color": "rgb(0, 128, 0)",
+                                            "border_top_color": "rgb(0, 128, 0)",
+                                            "border_left_color": "rgb(0, 128, 0)",
+                                            "border_right_color": "rgb(0, 128, 0)"
+                                        },
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "not collapse"
+                                            }
+                                        ],
+                                        "tag": "STRONG"
+                                    },
+                                    {
+                                        "style": {},
+                                        "text": "."
+                                    }
+                                ],
+                                "tag": "P"
+                            }
+                        ],
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "matches": "../reference/grid-text-green-margin-no-collapse-ref.html"
+}

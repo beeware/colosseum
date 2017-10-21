@@ -1,0 +1,55 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "80px",
+                    "width": "80px"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "tag": "div",
+                                "style": {
+                                    "display": "block",
+                                    "top": "-80px",
+                                    "position": "relative",
+                                    "width": "80px",
+                                    "height": "80px"
+                                }
+                            }
+                        ],
+                        "tag": "div",
+                        "style": {}
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "80px",
+                    "width": "624px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "160px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "matches": "block-in-inline-008-ref.xht"
+}

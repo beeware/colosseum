@@ -1,0 +1,65 @@
+{
+    "assert": "The 'right' property sets a value of 'inherit'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "width": "480px",
+                    "height": "96px",
+                    "position": "relative",
+                    "direction": "rtl"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "position": "relative",
+                            "border_right_style": "solid",
+                            "margin_right": "-192px",
+                            "width": "96px",
+                            "direction": "rtl",
+                            "display": "block",
+                            "right": "100%",
+                            "height": "96px",
+                            "border_right_width": "96px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "direction": "rtl",
+                                    "border_right_style": "solid",
+                                    "position": "relative",
+                                    "margin_right": "-192px",
+                                    "width": "192px",
+                                    "display": "block",
+                                    "right": "100%",
+                                    "height": "96px",
+                                    "border_right_width": "96px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "right-103-ref.xht"
+}

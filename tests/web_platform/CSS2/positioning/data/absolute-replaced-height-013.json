@@ -1,0 +1,64 @@
+{
+    "assert": "An absolutely positioned replaced element with percentage intrinsic height resolves based on the containing block when the replaced element is absolutely positioned.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "195px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "192px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "top": "96px",
+                            "height": "96px",
+                            "position": "absolute",
+                            "width": "300px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "100px",
+                                    "width": "200px"
+                                },
+                                "tag": "svg:rect"
+                            }
+                        ],
+                        "tag": "svg:svg"
+                    },
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "left": "200px",
+                            "width": "200px",
+                            "display": "block",
+                            "top": "96px",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ],
+    "matches": "absolute-replaced-height-013-ref.xht"
+}

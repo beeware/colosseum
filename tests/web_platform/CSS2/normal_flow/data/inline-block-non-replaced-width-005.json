@@ -1,0 +1,86 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test does not apply to such user agent."
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if there is a filled green rectangle with inactive scrollbars and"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "no red"
+                            }
+                        ],
+                        "style": {},
+                        "tag": "strong"
+                    },
+                    {
+                        "style": {},
+                        "text": "."
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "width": "500px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "style": {
+                    "display": "inline-block",
+                    "height": "100px",
+                    "width": "500px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "186px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "This test checks interaction of percentage height of an inline replaced element with its parent having scrollbars and with the parent's width determined by 'shrink-to-fit' width algorithm. In this test, the image height should be 100px minus scrollbar height since space taken up by generated scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. Then the width of parent should be (used image height == 100px minus scrollbar) * (intrinsic ratio == 5width:1height).",
+    "matches": null,
+    "help": [
+        "https://www.w3.org/TR/CSS21/visufx.html#overflow",
+        "https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
+        "https://www.w3.org/TR/CSS21/visudet.html#float-width"
+    ]
+}

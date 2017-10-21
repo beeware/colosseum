@@ -1,0 +1,75 @@
+{
+    "matches": "position-absolute-percentage-inherit-001-ref.xht",
+    "test_case": {
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "300px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "300px",
+                    "display": "block",
+                    "position": "relative",
+                    "width": "400px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "180px",
+                            "top": "30%",
+                            "position": "absolute",
+                            "width": "260px",
+                            "bottom": "10%",
+                            "left": "15%",
+                            "display": "block",
+                            "right": "20%"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "108px",
+                                    "top": "30%",
+                                    "position": "absolute",
+                                    "width": "169px",
+                                    "bottom": "10%",
+                                    "left": "15%",
+                                    "display": "block",
+                                    "right": "20%"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "top": "216px",
+                    "position": "absolute",
+                    "width": "169px",
+                    "height": "108px",
+                    "left": "107px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props",
+        "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
+        "http://www.w3.org/TR/css-cascade-3/#inherit",
+        "http://www.w3.org/TR/css-cascade-4/#inherit",
+        "http://www.w3.org/TR/CSS21/syndata.html#length-units"
+    ],
+    "assert": "Absolutely positioned boxes can be dimensioned and positioned solely by setting offset 'top', 'right', 'bottom' and 'left' property values with percentage unit and then with inherit keyword. 'inherit' on a offset property makes such offset property take the same computed value as the offset property of the nearest positioned ancestor; in the case of a percentage value - like in this testcase - , the computed value is the specified percentage value of such nearest positioned ancestor."
+}

@@ -1,0 +1,54 @@
+{
+    "assert": "The height is based on the overall height of the content, 'margin-top', 'auto' is set to '0' and solve for 'top', when 'top' and 'height' are both 'auto' and 'bottom' is not 'auto'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "400px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "400px",
+                    "position": "relative",
+                    "width": "100px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "top": "50px",
+                            "height": "50px",
+                            "position": "relative",
+                            "width": "100px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "height": "50px",
+                            "position": "absolute",
+                            "width": "50px",
+                            "max_height": "50px",
+                            "display": "block",
+                            "bottom": "300px"
+                        },
+                        "children": [],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
+    "matches": "absolute-non-replaced-max-height-007-ref.xht"
+}

@@ -1,0 +1,123 @@
+{
+    "assert": null,
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {},
+                "text": "both should shrink wrap to 0, and 100% of 0 is 0."
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "top": "64px",
+                    "height": "36px",
+                    "position": "absolute",
+                    "width": "5px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "height": "36px",
+                            "width": "5px",
+                            "display": "table",
+                            "border_bottom_color": "rgb(128, 128, 128)"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)",
+                                    "height": "32px",
+                                    "width": "5px",
+                                    "display": "table-row",
+                                    "border_bottom_color": "rgb(128, 128, 128)"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "display": "table-cell",
+                                            "height": "32px",
+                                            "width": "1px"
+                                        },
+                                        "children": [],
+                                        "tag": "td"
+                                    }
+                                ],
+                                "tag": "tr"
+                            }
+                        ],
+                        "tag": "table"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "top": "128px",
+                    "height": "36px",
+                    "position": "absolute",
+                    "width": "5px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "height": "36px",
+                            "width": "5px",
+                            "display": "table",
+                            "border_bottom_color": "rgb(128, 128, 128)"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)",
+                                    "height": "32px",
+                                    "width": "5px",
+                                    "display": "table-row",
+                                    "border_bottom_color": "rgb(128, 128, 128)"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "display": "table-cell",
+                                            "height": "32px",
+                                            "width": "1px"
+                                        },
+                                        "children": [],
+                                        "tag": "td"
+                                    }
+                                ],
+                                "tag": "tr"
+                            }
+                        ],
+                        "tag": "table"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
+    "matches": "../reference/ref-if-there-is-no-red.xht"
+}

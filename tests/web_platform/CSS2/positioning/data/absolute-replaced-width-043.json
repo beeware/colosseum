@@ -1,0 +1,65 @@
+{
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on absolutely positioned inline replaced element becomes a used value of '0'. The intrinsic width is also used if 'height' and 'width' are 'auto'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "198px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "relative",
+                    "direction": "rtl",
+                    "width": "192px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "192px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "absolute",
+                            "left": "48px",
+                            "direction": "rtl",
+                            "width": "96px",
+                            "display": "block",
+                            "right": "48px",
+                            "height": "96px"
+                        },
+                        "tag": "img"
+                    },
+                    {
+                        "style": {
+                            "margin_top": "96px",
+                            "height": "96px",
+                            "direction": "rtl",
+                            "width": "96px",
+                            "display": "block",
+                            "margin_right": "48px",
+                            "margin_left": "48px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ],
+    "matches": "absolute-replaced-width-036-ref.xht"
+}

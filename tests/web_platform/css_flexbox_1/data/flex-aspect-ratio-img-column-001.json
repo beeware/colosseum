@@ -1,0 +1,49 @@
+{
+    "assert": null,
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "10px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "100px",
+                    "z_index": "-1",
+                    "width": "100px",
+                    "display": "block",
+                    "position": "absolute"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "10px",
+                    "width": "624px",
+                    "display": "flex"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "width": "100px",
+                            "display": "block"
+                        },
+                        "tag": "IMG"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "help": [
+        "https://drafts.csswg.org/css-flexbox-1/#hypothetical-main-size"
+    ],
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

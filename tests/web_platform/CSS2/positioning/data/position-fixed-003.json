@@ -1,0 +1,51 @@
+{
+    "assert": "Elements that are set to 'position: fixed' are fixed with respect to the viewport.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "6000px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "24px",
+                    "position": "fixed",
+                    "width": "66.875px",
+                    "z_index": "0",
+                    "display": "block",
+                    "top": "48px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Filler Text"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "margin_top": "10px",
+                    "height": "6000px",
+                    "margin_bottom": "10px",
+                    "margin_right": "10px",
+                    "display": "block",
+                    "width": "604px",
+                    "margin_left": "10px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
+    "matches": null
+}

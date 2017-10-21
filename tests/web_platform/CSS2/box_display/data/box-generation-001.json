@@ -1,0 +1,70 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "text": "Block box",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "div",
+                        "style": {
+                            "display": "block",
+                            "height": "18px",
+                            "width": "96px"
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Inline box",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Float",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span",
+                        "style": {
+                            "display": "block",
+                            "height": "18px",
+                            "width": "48px",
+                            "float": "left"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "36px",
+                    "width": "624px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "36px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "Block boxes can reside within a principal block box established by a block-level element; inline boxes are outside of the principal block box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
+    ],
+    "matches": "box-generation-001-ref.xht"
+}

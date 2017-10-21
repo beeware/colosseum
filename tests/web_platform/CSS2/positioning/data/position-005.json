@@ -1,0 +1,66 @@
+{
+    "assert": "The 'position' property applies the value 'inherit' and inherits the 'position' value from its parent element.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "position": "absolute",
+                    "border_bottom_width": "3px",
+                    "width": "0px",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "border_right_color": "rgb(255, 165, 0)",
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "border_left_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "0px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "left": "96px",
+                            "position": "absolute",
+                            "width": "45.328125px",
+                            "display": "block",
+                            "top": "96px",
+                            "height": "36px",
+                            "border_bottom_color": "rgb(255, 255, 255)"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Text sample"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
+    "matches": null
+}

@@ -1,0 +1,61 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "X"
+                            }
+                        ],
+                        "style": {
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "padding_bottom": "50px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "padding_top": "50px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)"
+                        },
+                        "tag": "span"
+                    },
+                    {
+                        "style": {
+                            "top": "-25px",
+                            "position": "absolute",
+                            "left": "100px",
+                            "height": "200px",
+                            "display": "block",
+                            "width": "100px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "41px",
+                    "height": "150px",
+                    "width": "624px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "150px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'.",
+    "matches": "inline-non-replaced-height-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-non-replaced"
+    ]
+}

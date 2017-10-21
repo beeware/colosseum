@@ -1,0 +1,48 @@
+{
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ],
+    "assert": null,
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "position": "absolute",
+                    "display": "block",
+                    "height": "100px",
+                    "width": "100px",
+                    "z_index": "-1"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "100px",
+                    "float": "left",
+                    "display": "block",
+                    "width": "50px"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "100px",
+                    "display": "grid",
+                    "width": "50px"
+                },
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
+}

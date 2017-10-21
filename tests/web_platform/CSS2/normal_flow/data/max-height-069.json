@@ -1,0 +1,41 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "max_height": "20px",
+                    "display": "block",
+                    "height": "20px",
+                    "width": "624px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "height": "20px",
+                    "display": "block",
+                    "width": "624px",
+                    "bottom": "20px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "40px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "The 'max-height' property sets a minimum plus one length value in 'em' units.",
+    "matches": "max-height-069-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
+}

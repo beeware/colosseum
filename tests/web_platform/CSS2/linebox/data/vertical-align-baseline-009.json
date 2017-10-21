@@ -1,0 +1,60 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "table",
+                "children": [
+                    {
+                        "tag": "caption",
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            },
+                            {
+                                "tag": "span",
+                                "children": [
+                                    {
+                                        "text": "XXXXX",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "table-caption",
+                            "width": "173.328125px",
+                            "height": "37px"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "173.328125px",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "height": "37px",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "display": "table",
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "37px"
+        }
+    },
+    "matches": "vertical-align-baseline-007-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The baseline of a table caption element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child."
+}

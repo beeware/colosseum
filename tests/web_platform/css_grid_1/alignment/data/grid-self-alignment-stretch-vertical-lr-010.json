@@ -1,0 +1,104 @@
+{
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "margin_bottom": "10px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "110px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "110px",
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "margin_right": "20px",
+                            "height": "80px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "80px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "height": "110px",
+                            "margin_bottom": "20px",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "margin_right": "10px",
+                            "width": "110px"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "inline-grid",
+                    "position": "relative",
+                    "width": "250px",
+                    "height": "250px"
+                }
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "254px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px"
+        }
+    },
+    "matches": null,
+    "assert": "The stretched grid items along the column and/or row axis respect their defined margin-box's boundaries.",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#alignment",
+        "https://drafts.csswg.org/css-align-3/#propdef-align-self",
+        "https://drafts.csswg.org/css-align-3/#propdef-justify-self",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
+        "https://drafts.csswg.org/css-align/#valdef-align-self-stretch"
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "span",
+                                "style": {
+                                    "width": "96px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "height": "96px",
+                                    "position": "relative",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "display": "inline-block",
+                                    "top": "19.200000762939453px",
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)"
+                                }
+                            },
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "288px",
+                    "height": "115px"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "XXX",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "288px",
+                    "height": "18px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "133px"
+        }
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'vertical-align' property aligns an empty 'inline-block' elements' bottom margin edge with the baseline."
+}

@@ -1,0 +1,40 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "display": "block",
+                            "height": "192px",
+                            "width": "48px"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "96px",
+                    "padding_left": "5px",
+                    "width": "96px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "96px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "Content may overflow containing blocks.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#containing-block"
+    ],
+    "matches": "containing-block-030-ref.xht"
+}

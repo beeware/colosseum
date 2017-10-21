@@ -1,0 +1,33 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "display": "table-cell",
+                    "height": "100px",
+                    "width": "100px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "display": "table-cell",
+                    "height": "100px",
+                    "width": "100px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "table-row",
+            "height": "100px",
+            "width": "200px"
+        }
+    },
+    "assert": "HTML elements can be set to other display     property values - like sub-table elements just like in this testcase -     in order to behave like another element.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "matches": "root-box-002-ref.xht"
+}

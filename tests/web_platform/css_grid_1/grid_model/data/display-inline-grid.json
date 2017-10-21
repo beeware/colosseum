@@ -1,0 +1,242 @@
+{
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ],
+    "assert": "'display: inline-grid' causes an element to generate an inline-level grid container box.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "width": "624px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "position": "relative",
+                    "display": "block",
+                    "height": "100px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "display": "inline-grid",
+                            "width": "400px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "height": "70px",
+                                    "width": "100px",
+                                    "min_height": "auto"
+                                },
+                                "children": [
+                                    {
+                                        "style": {},
+                                        "text": "cell1"
+                                    }
+                                ],
+                                "tag": "DIV"
+                            },
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "height": "70px",
+                                    "width": "300px",
+                                    "min_height": "auto"
+                                },
+                                "children": [
+                                    {
+                                        "style": {},
+                                        "text": "cell2"
+                                    }
+                                ],
+                                "tag": "DIV"
+                            },
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "height": "30px",
+                                    "width": "100px",
+                                    "min_height": "auto"
+                                },
+                                "children": [
+                                    {
+                                        "style": {},
+                                        "text": "cell3"
+                                    }
+                                ],
+                                "tag": "DIV"
+                            },
+                            {
+                                "style": {
+                                    "min_width": "auto",
+                                    "display": "block",
+                                    "height": "30px",
+                                    "width": "300px",
+                                    "min_height": "auto"
+                                },
+                                "children": [
+                                    {
+                                        "style": {},
+                                        "text": "cell4"
+                                    }
+                                ],
+                                "tag": "DIV"
+                            }
+                        ],
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Inline"
+                            }
+                        ],
+                        "tag": "SPAN"
+                    },
+                    {
+                        "style": {
+                            "left": "0px",
+                            "z_index": "-1",
+                            "height": "100px",
+                            "width": "400px",
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)",
+                                    "height": "100px",
+                                    "width": "400px",
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "display": "table",
+                                    "border_right_color": "rgb(128, 128, 128)"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "border_bottom_color": "rgb(128, 128, 128)",
+                                            "border_top_color": "rgb(128, 128, 128)",
+                                            "height": "100px",
+                                            "width": "400px",
+                                            "border_left_color": "rgb(128, 128, 128)",
+                                            "display": "table-row-group",
+                                            "border_right_color": "rgb(128, 128, 128)"
+                                        },
+                                        "children": [
+                                            {
+                                                "style": {
+                                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                                    "border_top_color": "rgb(128, 128, 128)",
+                                                    "height": "70px",
+                                                    "width": "400px",
+                                                    "border_left_color": "rgb(128, 128, 128)",
+                                                    "display": "table-row",
+                                                    "border_right_color": "rgb(128, 128, 128)"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "style": {
+                                                            "height": "70px",
+                                                            "display": "table-cell",
+                                                            "width": "100px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "style": {},
+                                                                "text": "cell1"
+                                                            }
+                                                        ],
+                                                        "tag": "TD"
+                                                    },
+                                                    {
+                                                        "style": {
+                                                            "height": "70px",
+                                                            "display": "table-cell",
+                                                            "width": "300px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "style": {},
+                                                                "text": "cell2"
+                                                            }
+                                                        ],
+                                                        "tag": "TD"
+                                                    }
+                                                ],
+                                                "tag": "TR"
+                                            },
+                                            {
+                                                "style": {
+                                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                                    "border_top_color": "rgb(128, 128, 128)",
+                                                    "height": "30px",
+                                                    "width": "400px",
+                                                    "border_left_color": "rgb(128, 128, 128)",
+                                                    "display": "table-row",
+                                                    "border_right_color": "rgb(128, 128, 128)"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "style": {
+                                                            "height": "30px",
+                                                            "display": "table-cell",
+                                                            "width": "100px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "style": {},
+                                                                "text": "cell3"
+                                                            }
+                                                        ],
+                                                        "tag": "TD"
+                                                    },
+                                                    {
+                                                        "style": {
+                                                            "height": "30px",
+                                                            "display": "table-cell",
+                                                            "width": "300px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "style": {},
+                                                                "text": "cell4"
+                                                            }
+                                                        ],
+                                                        "tag": "TD"
+                                                    }
+                                                ],
+                                                "tag": "TR"
+                                            }
+                                        ],
+                                        "tag": "TBODY"
+                                    }
+                                ],
+                                "tag": "TABLE"
+                            }
+                        ],
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "matches": "../reference/display-inline-grid-ref.html"
+}

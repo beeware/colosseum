@@ -1,0 +1,47 @@
+{
+    "assert": "The calculation of static position for a fixed positioned element when top, right, bottom, and left are all 'auto' is based off the containing block not the initial containing block.",
+    "test_case": {
+        "style": {
+            "display": "block",
+            "height": "0px",
+            "width": "640px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "absolute",
+                    "width": "288px",
+                    "top": "96px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "192px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "z_index": "0",
+                            "display": "block",
+                            "height": "96px",
+                            "position": "fixed",
+                            "width": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
+    "matches": null
+}

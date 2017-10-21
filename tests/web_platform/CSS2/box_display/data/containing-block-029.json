@@ -1,0 +1,41 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "display": "block",
+                            "height": "96px",
+                            "position": "absolute",
+                            "width": "96px"
+                        }
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "96px",
+                    "position": "absolute",
+                    "width": "96px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "0px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "Principal block boxes establish a containing block for generated content.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
+    ],
+    "matches": "containing-block-029-ref.xht"
+}

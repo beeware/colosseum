@@ -1,0 +1,67 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {},
+                "text": "If 'min-height' is supported on 'table-header-group' then a square will be visible."
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "style": {
+                                            "display": "table-cell",
+                                            "height": "0px",
+                                            "min_height": "96px",
+                                            "width": "96px"
+                                        },
+                                        "tag": "div"
+                                    }
+                                ],
+                                "style": {
+                                    "display": "table-row",
+                                    "height": "0px",
+                                    "min_height": "96px",
+                                    "width": "96px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "display": "table-header-group",
+                            "height": "0px",
+                            "min_height": "96px",
+                            "width": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "display": "table",
+                    "height": "0px",
+                    "width": "96px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "The 'min-height' property applies to elements with 'display' set to 'table-header-group'.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
+}

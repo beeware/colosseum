@@ -1,0 +1,35 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "40px",
+                            "width": "640px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "height": "40px",
+                    "width": "640px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "40px",
+            "width": "640px"
+        },
+        "tag": "body"
+    },
+    "assert": "If 'width' is set to 'auto' and no other 'auto' values are set, then the 'width' is the width of the containing block.",
+    "matches": "block-non-replaced-width-005-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
+    ]
+}

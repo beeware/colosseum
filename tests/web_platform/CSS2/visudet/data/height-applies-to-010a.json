@@ -1,0 +1,103 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "PASS"
+                    }
+                ],
+                "style": {
+                    "width": "584px",
+                    "margin_left": "40px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "display": "list-item",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "0px"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "PASS"
+                            }
+                        ],
+                        "style": {
+                            "width": "584px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "display": "list-item",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "0px"
+                        },
+                        "tag": "li"
+                    }
+                ],
+                "style": {
+                    "height": "0px",
+                    "margin_top": "48px",
+                    "padding_left": "40px",
+                    "display": "block",
+                    "width": "584px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "ul"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "PASS"
+                            }
+                        ],
+                        "style": {
+                            "width": "584px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "display": "list-item",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "0px"
+                        },
+                        "tag": "li"
+                    }
+                ],
+                "style": {
+                    "height": "0px",
+                    "margin_top": "48px",
+                    "padding_left": "40px",
+                    "display": "block",
+                    "width": "584px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "ul"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "height": "96px",
+            "width": "624px",
+            "display": "block",
+            "margin_bottom": "8px"
+        },
+        "tag": "body"
+    },
+    "matches": "height-applies-to-010a-ref.xht",
+    "assert": "If height of content exceeds the set height of a block-level non-replaced element in normal flow (like a list-item element such as in this test), then the content should overflow according to the 'overflow' property.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ]
+}

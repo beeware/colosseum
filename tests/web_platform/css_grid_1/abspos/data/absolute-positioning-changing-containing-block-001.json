@@ -1,0 +1,116 @@
+{
+    "assert": "This test checks that absolutelly positioned children of a grid are properly sized when the containing block switches between the grid container and a grid ancestor.",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "277px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "tag": "P",
+                "style": {
+                    "margin_top": "16px",
+                    "display": "block",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "The test PASS if you see an orange box inside a purple box on top and a small orange box inside a light blue box inside a purple box on bottom."
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "position": "relative",
+                    "height": "100px",
+                    "width": "100px",
+                    "margin_bottom": "25px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "grid",
+                            "height": "50px",
+                            "width": "50px"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "min_height": "auto",
+                                    "height": "37.5px",
+                                    "position": "absolute",
+                                    "width": "37.5px",
+                                    "min_width": "auto"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "position": "relative",
+                    "height": "100px",
+                    "width": "100px",
+                    "margin_bottom": "25px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "grid",
+                            "position": "relative",
+                            "height": "50px",
+                            "width": "50px"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "min_height": "auto",
+                                    "height": "37.5px",
+                                    "position": "absolute",
+                                    "width": "37.5px",
+                                    "min_width": "auto"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "SCRIPT",
+                "style": {
+                    "display": "none"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "window.requestAnimationFrame(() => {\n    document.getElementById(\"grid-as-cb\").style.position = \"initial\";\n    document.getElementById(\"grid-as-parent\").style.position = \"relative\";\n    document.body.offsetLeft;\n    document.documentElement.classList.remove('reftest-wait');\n  });"
+                    }
+                ]
+            }
+        ]
+    },
+    "matches": "absolute-positioning-changing-containing-block-001-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
+}

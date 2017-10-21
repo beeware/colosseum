@@ -1,0 +1,72 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL (absolute positioning not supported)"
+                    }
+                ],
+                "style": {
+                    "border_left_style": "solid",
+                    "border_right_style": "solid",
+                    "margin_right": "-2px",
+                    "margin_bottom": "-2px",
+                    "z_index": "-1",
+                    "border_left_width": "2px",
+                    "border_top_width": "2px",
+                    "border_top_style": "solid",
+                    "position": "absolute",
+                    "border_top_color": "rgb(0, 255, 0)",
+                    "margin_left": "-2px",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_right_color": "rgb(0, 255, 0)",
+                    "height": "150px",
+                    "border_right_width": "2px",
+                    "border_left_color": "rgb(0, 255, 0)",
+                    "margin_top": "-2px",
+                    "border_bottom_color": "rgb(0, 255, 0)",
+                    "width": "150px",
+                    "border_bottom_width": "2px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "FAIL (SVG not supported)"
+                            }
+                        ],
+                        "style": {
+                            "height": "150px",
+                            "width": "300px"
+                        },
+                        "tag": "object"
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "height": "154px",
+                    "width": "150px"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "154px",
+            "width": "150px"
+        },
+        "tag": "body"
+    },
+    "assert": null,
+    "matches": "replaced-intrinsic-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ]
+}

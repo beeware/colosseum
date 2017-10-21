@@ -1,0 +1,54 @@
+{
+    "assert": null,
+    "test_case": {
+        "style": {
+            "padding_left": "16px",
+            "padding_right": "16px",
+            "height": "66px",
+            "width": "608px",
+            "padding_bottom": "16px",
+            "padding_top": "16px",
+            "display": "block"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "18px",
+                    "margin_bottom": "32px",
+                    "width": "608px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if there is a green stripe and no red."
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "z_index": "1",
+                    "display": "block",
+                    "height": "16px",
+                    "position": "absolute",
+                    "width": "160px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "height": "16px",
+                    "width": "160px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
+    ],
+    "matches": "abspos-001-ref.xht"
+}

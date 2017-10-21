@@ -1,0 +1,53 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            },
+                            {
+                                "tag": "br",
+                                "style": {}
+                            },
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_width": "96px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_bottom_style": "solid"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "height": "96px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "96px"
+        }
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "Line-height can be different from the content area so there is space above and below."
+}

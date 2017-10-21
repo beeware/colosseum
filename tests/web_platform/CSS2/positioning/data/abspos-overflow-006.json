@@ -1,0 +1,68 @@
+{
+    "assert": null,
+    "test_case": {
+        "style": {
+            "display": "block",
+            "height": "208px",
+            "width": "640px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "margin_top": "80px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "height": "80px",
+                    "width": "80px",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "margin_left": "80px",
+                    "border_bottom_color": "rgb(255, 255, 0)"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "display": "block",
+                    "height": "128px",
+                    "width": "128px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "left": "80px",
+                            "position": "absolute",
+                            "width": "80px",
+                            "display": "block",
+                            "top": "80px",
+                            "height": "80px",
+                            "border_bottom_color": "rgb(255, 255, 255)"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "PASS"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
+    ],
+    "matches": "abspos-overflow-006-ref.xht"
+}

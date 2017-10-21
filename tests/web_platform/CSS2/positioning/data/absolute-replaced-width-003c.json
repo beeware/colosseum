@@ -1,0 +1,58 @@
+{
+    "assert": "If an absolutely positioned inline replaced element (like the svg element in this test) has no intrinsic width and no intrinsic ratio, then the used value of 'width' becomes 300px. Then, if both left and right values are 'auto' and the 'direction' property of the element establishing the static-position containing block is 'ltr', then set 'left' to the static position. If 'left' or 'right' are 'auto' (like in this test), then replace any 'auto' on 'margin-left' or 'margin-right' with '0'. If at this point there is an 'auto' left (like in this test: right is 'auto'), solve the equation for that value.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "300px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "300px",
+                    "width": "600px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "300px",
+                            "position": "absolute",
+                            "width": "300px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "300px",
+                                    "width": "600px"
+                                },
+                                "tag": "svg:rect"
+                            }
+                        ],
+                        "tag": "svg:svg"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "300px",
+                            "position": "absolute",
+                            "width": "300px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ],
+    "matches": "absolute-replaced-width-003c-ref.xht"
+}

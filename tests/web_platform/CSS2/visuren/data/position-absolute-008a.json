@@ -1,0 +1,49 @@
+{
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "test_case": {
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "100px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "100px",
+                    "display": "block",
+                    "position": "relative",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "display": "block",
+                            "position": "absolute",
+                            "width": "100px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "height": "100px",
+                            "display": "block",
+                            "width": "100px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo"
+    ],
+    "assert": "Float is computed to 'none' when 'position: absolute' is specified."
+}

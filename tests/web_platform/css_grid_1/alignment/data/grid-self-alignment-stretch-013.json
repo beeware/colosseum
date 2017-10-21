@@ -1,0 +1,100 @@
+{
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "125px",
+                            "height": "80px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "125px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "20px",
+                            "height": "80px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "min_width": "auto",
+                            "width": "125px",
+                            "height": "125px"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "inline-grid",
+                    "position": "relative",
+                    "width": "250px",
+                    "height": "250px"
+                }
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "254px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px"
+        }
+    },
+    "matches": null,
+    "assert": "Orthogonal grid items with 'stretch' value for align-self and/or justify-self are stretched along the column and/or row axis respectively; they will be sized as fit-content otherwise.",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#alignment",
+        "https://drafts.csswg.org/css-align-3/#propdef-align-self",
+        "https://drafts.csswg.org/css-align-3/#propdef-justify-self",
+        "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
+        "https://drafts.csswg.org/css-align/#valdef-align-self-stretch"
+    ]
+}

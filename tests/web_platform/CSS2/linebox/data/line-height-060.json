@@ -1,0 +1,59 @@
+{
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "X X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "position": "relative",
+                            "display": "block",
+                            "width": "20px",
+                            "height": "0px"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "20px",
+                            "left": "22px",
+                            "height": "20px",
+                            "position": "absolute",
+                            "display": "block",
+                            "top": "-10px"
+                        }
+                    }
+                ],
+                "style": {
+                    "position": "relative",
+                    "display": "block",
+                    "width": "20px",
+                    "height": "0px"
+                }
+            }
+        ],
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "0px"
+        }
+    },
+    "matches": "line-height-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'line-height' property sets a positive zero length value in inches."
+}

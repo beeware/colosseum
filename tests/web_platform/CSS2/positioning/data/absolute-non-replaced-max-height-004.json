@@ -1,0 +1,54 @@
+{
+    "assert": "When 'top', 'bottom' and 'height' are all are not 'auto', 'margin-top' is 'auto' and 'margin-bottom' is not 'auto'. Then 'margin-top' becomes the remainder of the height of the containing box.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "294px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "relative",
+                    "width": "288px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "288px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "margin_top": "48px",
+                            "position": "absolute",
+                            "margin_bottom": "48px",
+                            "width": "288px",
+                            "max_height": "96px",
+                            "display": "block",
+                            "top": "48px",
+                            "bottom": "48px",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
+    "matches": "absolute-non-replaced-height-003-ref.xht"
+}

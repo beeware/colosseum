@@ -1,0 +1,67 @@
+{
+    "assert": "For a relatively positioned element, if 'right'       is 'auto', its used value is minus the value of 'left'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "120px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "width": "120px",
+                    "height": "120px",
+                    "margin_bottom": "-120px",
+                    "margin_right": "504px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "unicode_bidi": "embed",
+                    "margin_left": "-60px",
+                    "height": "120px",
+                    "direction": "rtl",
+                    "width": "120px",
+                    "display": "block",
+                    "margin_right": "564px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "position": "relative",
+                            "left": "50%",
+                            "width": "120px",
+                            "display": "block",
+                            "height": "120px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "height": "120px",
+                                    "position": "relative",
+                                    "width": "120px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
+    "matches": "relpos-calcs-001-ref.xht"
+}

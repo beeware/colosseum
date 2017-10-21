@@ -1,0 +1,41 @@
+{
+    "assert": "Relatively positioned element dimensions are not changed with bottom applied.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "top": "96px",
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "96px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "height": "96px",
+                    "display": "block",
+                    "bottom": "96px",
+                    "position": "relative",
+                    "width": "96px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
+    "matches": "position-relative-014-ref.xht"
+}

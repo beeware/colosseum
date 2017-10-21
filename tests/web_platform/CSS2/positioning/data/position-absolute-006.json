@@ -1,0 +1,54 @@
+{
+    "assert": "An absolutely positioned box establishes a new containing block for absolutely positioned children.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "192px",
+                    "position": "relative",
+                    "width": "192px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "96px",
+                            "display": "block",
+                            "left": "96px",
+                            "position": "absolute",
+                            "width": "96px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "display": "block",
+                                    "top": "96px",
+                                    "height": "96px",
+                                    "position": "relative",
+                                    "width": "96px"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
+    ],
+    "matches": "position-absolute-004-ref.xht"
+}

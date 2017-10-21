@@ -1,0 +1,76 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent."
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if there is a blue square with scrollbars."
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "X"
+                    }
+                ],
+                "style": {
+                    "height": "200px",
+                    "max_width": "200px",
+                    "float": "left",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "max_height": "200px",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "width": "200px",
+                    "display": "block"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "70px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
+        "tag": "body"
+    },
+    "assert": "Space taken up by the horizontal and vertical scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. In this test, assuming that the width of vertical scrollbar is 19px and assuming that the height of horizontal scrollbar is 19px, then the dimensions of the painted green area should be 181px by 181px. The height of horizontal scrollbar and the width of vertical scrollbar are entirely user-settable in most graphical user agents.",
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
+        "http://www.w3.org/TR/CSS21/visuren.html#floats"
+    ]
+}

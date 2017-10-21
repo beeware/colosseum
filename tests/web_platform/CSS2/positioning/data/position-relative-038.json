@@ -1,0 +1,52 @@
+{
+    "assert": "Relative positioning with left and right values and over-constrained situations when direction is right-to-left.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "102px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "3px",
+                    "direction": "rtl",
+                    "width": "192px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "96px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "relative",
+                            "left": "192px",
+                            "direction": "rtl",
+                            "width": "96px",
+                            "display": "block",
+                            "right": "96px",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
+    "matches": "position-relative-038-ref.xht"
+}

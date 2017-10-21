@@ -1,0 +1,63 @@
+{
+    "test_case": {
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "20px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_left_style": "solid"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ],
+                "style": {
+                    "height": "20px",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "width": "80px",
+                    "display": "block"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if this sentence is green and has a small green square above it."
+                    }
+                ],
+                "style": {
+                    "top": "20px",
+                    "width": "590.078125px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "height": "20px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "position": "absolute",
+                    "display": "block"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "display": "block",
+            "height": "40px",
+            "width": "640px"
+        },
+        "tag": "body"
+    },
+    "assert": null,
+    "matches": "inlines-020-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
+    ]
+}

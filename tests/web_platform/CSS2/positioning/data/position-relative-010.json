@@ -1,0 +1,44 @@
+{
+    "assert": "If the 'direction' property of the containing block is 'rtl', the value of 'right' wins and 'left' becomes negative 'right'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "width": "192px",
+                    "height": "96px",
+                    "direction": "rtl"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "position": "relative",
+                            "left": "96px",
+                            "direction": "rtl",
+                            "width": "96px",
+                            "display": "block",
+                            "right": "96px",
+                            "height": "96px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
+    "matches": "position-relative-005-ref.xht"
+}

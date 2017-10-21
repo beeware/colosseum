@@ -1,0 +1,49 @@
+{
+    "assert": "Test that we compute the correct aspect-ratio based cross size when a width is specified",
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "100px",
+                    "z_index": "-1",
+                    "width": "100px",
+                    "display": "block",
+                    "position": "absolute"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "100px",
+                    "width": "10px",
+                    "display": "flex"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px",
+                            "width": "100px",
+                            "display": "block"
+                        },
+                        "tag": "IMG"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "help": [
+        "https://drafts.csswg.org/css-flexbox-1/#algo-cross-item"
+    ],
+    "matches": "../reference/ref-filled-green-100px-square.xht"
+}

@@ -1,0 +1,70 @@
+{
+    "assert": "For a relatively positioned element in an LTR       containing block, if neither 'left' nor 'right' is 'auto', used value of       'right' is minus the value of 'left'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "120px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "120px",
+                    "margin_bottom": "-120px",
+                    "width": "120px",
+                    "display": "block",
+                    "direction": "rtl",
+                    "margin_right": "504px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "unicode_bidi": "embed",
+                    "display": "block",
+                    "width": "80px",
+                    "height": "120px",
+                    "margin_right": "544px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "position": "relative",
+                            "left": "50%",
+                            "direction": "rtl",
+                            "width": "80px",
+                            "display": "block",
+                            "right": "50%",
+                            "height": "120px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "right": "50%",
+                                    "height": "120px",
+                                    "position": "relative",
+                                    "width": "80px",
+                                    "display": "block",
+                                    "direction": "rtl"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
+    "matches": "relpos-calcs-001-ref.xht"
+}

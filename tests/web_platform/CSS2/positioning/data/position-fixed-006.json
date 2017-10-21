@@ -1,0 +1,38 @@
+{
+    "assert": "Root elements may treat non-static positions as 'static'.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "18px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "32px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "none"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "var el = document.getElementById('test');\n            document.body.appendChild(document.createTextNode(window.getComputedStyle(el, null).position));"
+                    }
+                ],
+                "tag": "script"
+            },
+            {
+                "style": {},
+                "text": "fixed"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
+    "matches": null
+}

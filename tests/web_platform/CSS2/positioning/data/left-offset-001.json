@@ -1,0 +1,43 @@
+{
+    "assert": "Absolute positioned elements with a left offset, offsets the elements left margin edge from the left edge of the elements containing block.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "block",
+                    "height": "100px",
+                    "position": "relative",
+                    "width": "100px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "50px",
+                            "display": "block",
+                            "left": "50px",
+                            "position": "absolute",
+                            "width": "50px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "matches": "left-offset-001-ref.xht"
+}

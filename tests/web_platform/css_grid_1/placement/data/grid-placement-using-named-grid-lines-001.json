@@ -1,0 +1,83 @@
+{
+    "test_case": {
+        "style": {
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "104px",
+            "width": "624px"
+        },
+        "children": [
+            {
+                "style": {
+                    "display": "inline-grid",
+                    "height": "100px",
+                    "width": "100px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "height": "50px",
+                            "width": "25px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "height": "100px",
+                            "width": "25px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "height": "100px",
+                            "width": "25px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "height": "100px",
+                            "width": "25px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "height": "50px",
+                            "width": "25px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
+            }
+        ],
+        "tag": "BODY"
+    },
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#line-placement",
+        "http://www.w3.org/TR/css-grid-1/#grid-placement-slot",
+        "http://www.w3.org/TR/css-grid-1/#named-grid-area"
+    ],
+    "assert": "Line placement algorithm selects the first matching column when using a grid line name associated to several columns and no integer is specified within the custom-ident."
+}
