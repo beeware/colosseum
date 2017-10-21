@@ -245,7 +245,9 @@ def calculate_size(value, context):
     if value is THIN or value is MEDIUM or value is THICK:
         return context['display'].fixed_size(value)
     if value == 0:
-        return value
+        # This will also catch 0px, so we need to return 0 literally
+        # to ensure that the calulated size is either an integer or AUTO
+        return 0
     return value.px(**context)
 
 
