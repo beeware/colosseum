@@ -204,9 +204,6 @@ class BoxTests(TestCase):
 
         if 'size' in expected:
             actual['size'] = {}
-            if 'margin' in expected['size']:
-                actual['size']['margin'] = (box.margin_box_width, box.margin_box_height)
-
             if 'border' in expected['size']:
                 actual['size']['border'] = (box.border_box_width, box.border_box_height)
 
@@ -218,14 +215,6 @@ class BoxTests(TestCase):
 
         if 'relative' in expected:
             actual['relative'] = {}
-            if 'margin' in expected['relative']:
-                actual['relative']['margin'] = (
-                    box.margin_box_top,
-                    box.margin_box_right,
-                    box.margin_box_bottom,
-                    box.margin_box_left,
-                )
-
             if 'border' in expected['relative']:
                 actual['relative']['border'] = (
                     box.border_box_top,
@@ -252,14 +241,6 @@ class BoxTests(TestCase):
 
         if 'absolute' in expected:
             actual['absolute'] = {}
-            if 'margin' in expected['absolute']:
-                actual['absolute']['margin'] = (
-                    box.absolute_margin_box_top,
-                    box.absolute_margin_box_right,
-                    box.absolute_margin_box_bottom,
-                    box.absolute_margin_box_left,
-                )
-
             if 'border' in expected['absolute']:
                 actual['absolute']['border'] = (
                     box.absolute_border_box_top,
@@ -308,19 +289,16 @@ class BoxTests(TestCase):
                     'content': (10, 16),
                     'padding': (10, 16),
                     'border': (10, 16),
-                    'margin': (10, 16),
                 },
                 'relative': {
                     'content': (0, 10, 16, 0),
                     'padding': (0, 10, 16, 0),
                     'border': (0, 10, 16, 0),
-                    'margin': (0, 10, 16, 0),
                 },
                 'absolute': {
                     'content': (0, 10, 16, 0),
                     'padding': (0, 10, 16, 0),
                     'border': (0, 10, 16, 0),
-                    'margin': (0, 10, 16, 0),
                 }
             }
         )
@@ -669,19 +647,16 @@ class BoxTests(TestCase):
                     'content': (10, 16),
                     'padding': (10, 16),
                     'border': (10, 16),
-                    'margin': (10, 16),
                 },
                 'relative': {
                     'content': (50, 85, 66, 75),
                     'padding': (50, 85, 66, 75),
                     'border': (50, 85, 66, 75),
-                    'margin': (50, 85, 66, 75),
                 },
                 'absolute': {
                     'content': (150, 285, 166, 275),
                     'padding': (150, 285, 166, 275),
                     'border': (150, 285, 166, 275),
-                    'margin': (150, 285, 166, 275),
                 },
             }
         )
@@ -700,19 +675,17 @@ class BoxTests(TestCase):
                     'content': (10, 16),
                     'padding': (10, 16),
                     'border': (10, 16),
-                    'margin': (16, 20),
                 },
                 'relative': {
                     'content': (50, 85, 66, 75),
                     'padding': (50, 85, 66, 75),
                     'border': (50, 85, 66, 75),
-                    'margin': (49, 87, 69, 71),
                 },
                 'absolute': {
                     'content': (150, 285, 166, 275),
                     'padding': (150, 285, 166, 275),
                     'border': (150, 285, 166, 275),
-                    'margin': (149, 287, 169, 271),
+
                 },
             }
         )
@@ -731,19 +704,16 @@ class BoxTests(TestCase):
                     'content': (10, 16),
                     'padding': (10, 16),
                     'border': (24, 28),
-                    'margin': (30, 32),
                 },
                 'relative': {
                     'content': (50, 85, 66, 75),
                     'padding': (50, 85, 66, 75),
                     'border': (45, 91, 73, 67),
-                    'margin': (44, 93, 76, 63),
                 },
                 'absolute': {
                     'content': (150, 285, 166, 275),
                     'padding': (150, 285, 166, 275),
                     'border': (145, 291, 173, 267),
-                    'margin': (144, 293, 176, 263),
                 },
             }
         )
@@ -762,19 +732,16 @@ class BoxTests(TestCase):
                     'content': (10, 16),
                     'padding': (32, 36),
                     'border': (46, 48),
-                    'margin': (52, 52),
                 },
                 'relative': {
                     'content': (50, 85, 66, 75),
                     'padding': (41, 95, 77, 63),
                     'border': (36, 101, 84, 55),
-                    'margin': (35, 103, 87, 51),
                 },
                 'absolute': {
                     'content': (150, 285, 166, 275),
                     'padding': (141, 295, 177, 263),
                     'border': (136, 301, 184, 255),
-                    'margin': (135, 303, 187, 251),
                 },
             }
         )
@@ -829,15 +796,6 @@ class BoxTests(TestCase):
             self.node.layout.border_box_bottom
         )
 
-        self.assertEqual(
-            self.node.layout.margin_box_left + self.node.layout.margin_box_width,
-            self.node.layout.margin_box_right
-        )
-        self.assertEqual(
-            self.node.layout.margin_box_top + self.node.layout.margin_box_height,
-            self.node.layout.margin_box_bottom
-        )
-
     def test_absolute_equalities(self):
         # Move the box around and set some borders.
         self.node.layout.origin_top = 100
@@ -886,13 +844,4 @@ class BoxTests(TestCase):
         self.assertEqual(
             self.node.layout.absolute_border_box_top + self.node.layout.border_box_height,
             self.node.layout.absolute_border_box_bottom
-        )
-
-        self.assertEqual(
-            self.node.layout.absolute_margin_box_left + self.node.layout.margin_box_width,
-            self.node.layout.absolute_margin_box_right
-        )
-        self.assertEqual(
-            self.node.layout.absolute_margin_box_top + self.node.layout.margin_box_height,
-            self.node.layout.absolute_margin_box_bottom
         )

@@ -73,10 +73,6 @@ def layout_summary(node):
                 'position': (node.layout.absolute_border_box_left, node.layout.absolute_border_box_top),
                 'size': (node.layout.border_box_width, node.layout.border_box_height),
             },
-            'margin_box': {
-                'position': (node.layout.absolute_margin_box_left, node.layout.absolute_margin_box_top),
-                'size': (node.layout.margin_box_width, node.layout.margin_box_height),
-            }
         }
         children = []
         for child in node.children:
@@ -100,7 +96,7 @@ def clean_reference(reference):
                 'position': (reference[key]['position'][0], reference[key]['position'][1]),
                 'size': (reference[key]['size'][0], reference[key]['size'][1]),
             }
-            for key in ['content', 'padding_box', 'border_box', 'margin_box']
+            for key in ['content', 'padding_box', 'border_box']
         }
 
         children = []

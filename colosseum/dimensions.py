@@ -130,18 +130,6 @@ class Box:
 
     Computed properties
     ~~~~~~~~~~~~~~~~~~~
-
-    margin_box_width: The width of the margin box.
-    margin_box_height: The height of the margin box.
-    margin_box_top: The position of the top of the margin box, relative to the block container.
-    margin_box_right: The position of the right of the margin box, relative to the block container.
-    margin_box_bottom: The position of the bottom of the margin box, relative to the block container.
-    margin_box_left: The position of the left of the margin box, relative to the block container.
-    absolute_margin_box_top: The absolute position of the top of the margin box.
-    absolute_margin_box_right: The absolute position of the right of the margin box.
-    absolute_margin_box_bottom: The absolute position of the bottom of the margin box.
-    absolute_margin_box_left: The absolute position of the left of the margin box.
-
     border_box_width: The width of the border box.
     border_box_height: The height of the border box.
     border_box_top: The position of the top of the border box, relative to the block container.
@@ -490,99 +478,6 @@ class Box:
         if value != self._padding_left:
             self._padding_left = value
             self.dirty = True
-
-    ######################################################################
-    # Margin box dimensions
-    ######################################################################
-    @property
-    def margin_box_top(self):
-        return self._content_top - self._padding_top - self._border_top_width - self._margin_top
-
-    @property
-    def margin_box_right(self):
-        return (
-            self._content_left
-            + self._content_width
-            + self._padding_right
-            + self._border_right_width
-            + self._margin_right
-        )
-
-    @property
-    def margin_box_bottom(self):
-        return (
-            self._content_top
-            + self._content_height
-            + self._padding_bottom
-            + self._border_bottom_width
-            + self._margin_bottom
-        )
-
-    @property
-    def margin_box_left(self):
-        return self._content_left - self._padding_left - self._border_left_width - self._margin_left
-
-    @property
-    def margin_box_width(self):
-        return (
-            self._margin_left
-            + self._border_left_width
-            + self._padding_left
-            + self._content_width
-            + self._padding_right
-            + self._border_right_width
-            + self._margin_right
-        )
-
-    @property
-    def margin_box_height(self):
-        return (
-            self._margin_top
-            + self._border_top_width
-            + self._padding_top
-            + self._content_height
-            + self._padding_bottom
-            + self._border_bottom_width
-            + self._margin_bottom
-        )
-
-    @property
-    def absolute_margin_box_top(self):
-        return (
-            self.__origin_top + self._content_top
-            - self._padding_top
-            - self._border_top_width
-            - self._margin_top
-        )
-
-    @property
-    def absolute_margin_box_right(self):
-        return (
-            self.__origin_left + self._content_left
-            + self._content_width
-            + self._padding_right
-            + self._border_right_width
-            + self._margin_right
-        )
-
-    @property
-    def absolute_margin_box_bottom(self):
-        return (
-            self.__origin_top + self._content_top
-            + self._content_height
-            + self._padding_bottom
-            + self._border_bottom_width
-            + self._margin_bottom
-        )
-
-    @property
-    def absolute_margin_box_left(self):
-        return (
-            self.__origin_left + self._content_left
-            - self._padding_left
-            - self._border_left_width
-            - self._margin_left
-        )
 
     ######################################################################
     # Border box dimensions

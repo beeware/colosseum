@@ -17,7 +17,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (50, 10)},
                 'border_box': {'position': (0, 0), 'size': (50, 10)},
                 'padding_box': {'position': (0, 0), 'size': (50, 10)},
                 'content': {'position': (0, 0), 'size': (50, 10)},
@@ -36,7 +35,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (50, 10)},
                 'border_box': {'position': (0, 0), 'size': (50, 10)},
                 'padding_box': {'position': (0, 0), 'size': (50, 10)},
                 'content': {'position': (0, 0), 'size': (50, 10)},
@@ -55,7 +53,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (50, 10)},
                 'border_box': {'position': (0, 0), 'size': (50, 10)},
                 'padding_box': {'position': (0, 0), 'size': (50, 10)},
                 'content': {'position': (0, 0), 'size': (50, 10)},

@@ -15,7 +15,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (0, 0), 'size': (640, 10)},
                 'padding_box': {'position': (0, 0), 'size': (640, 10)},
                 'content': {'position': (0, 0), 'size': (640, 10)},
@@ -32,7 +31,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (0, 0), 'size': (640, 10)},
                 'padding_box': {'position': (0, 0), 'size': (640, 10)},
                 'content': {'position': (0, 0), 'size': (640, 10)},
@@ -49,7 +47,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (0, 0), 'size': (640, 10)},
                 'padding_box': {'position': (0, 0), 'size': (640, 10)},
                 'content': {'position': (0, 0), 'size': (640, 10)},
@@ -66,7 +63,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (0, 0), 'size': (640, 10)},
                 'padding_box': {'position': (0, 0), 'size': (640, 10)},
                 'content': {'position': (0, 0), 'size': (640, 10)},
@@ -83,7 +79,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (0, 0), 'size': (50, 10)},
                 'padding_box': {'position': (0, 0), 'size': (50, 10)},
                 'content': {'position': (0, 0), 'size': (50, 10)},
@@ -100,7 +95,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (590, 0), 'size': (50, 10)},
                 'padding_box': {'position': (590, 0), 'size': (50, 10)},
                 'content': {'position': (590, 0), 'size': (50, 10)},
@@ -117,7 +111,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (0, 0), 'size': (50, 10)},
                 'padding_box': {'position': (0, 0), 'size': (50, 10)},
                 'content': {'position': (0, 0), 'size': (50, 10)},
@@ -134,7 +127,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (295, 0), 'size': (50, 10)},
                 'padding_box': {'position': (295, 0), 'size': (50, 10)},
                 'content': {'position': (295, 0), 'size': (50, 10)},
@@ -151,7 +143,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (30, 0), 'size': (50, 10)},
                 'padding_box': {'position': (30, 0), 'size': (50, 10)},
                 'content': {'position': (30, 0), 'size': (50, 10)},
@@ -171,7 +162,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 10)},
                 'border_box': {'position': (550, 0), 'size': (50, 10)},
                 'padding_box': {'position': (550, 0), 'size': (50, 10)},
                 'content': {'position': (550, 0), 'size': (50, 10)},
@@ -192,7 +182,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 380)},
                 'border_box': {'position': (70, 70), 'size': (720, 240)},
                 'padding_box': {'position': (130, 130), 'size': (600, 120)},
                 'content': {'position': (180, 180), 'size': (500, 20)},
@@ -213,7 +202,6 @@ class WidthTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 240)},
                 'border_box': {'position': (0, 0), 'size': (720, 240)},
                 'padding_box': {'position': (60, 60), 'size': (600, 120)},
                 'content': {'position': (110, 110), 'size': (500, 20)},
@@ -232,7 +220,6 @@ class HeightTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 0)},
                 'border_box': {'position': (0, 0), 'size': (10, 0)},
                 'padding_box': {'position': (0, 0), 'size': (10, 0)},
                 'content': {'position': (0, 0), 'size': (10, 0)},
@@ -249,7 +236,6 @@ class HeightTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 50)},
                 'border_box': {'position': (0, 0), 'size': (10, 50)},
                 'padding_box': {'position': (0, 0), 'size': (10, 50)},
                 'content': {'position': (0, 0), 'size': (10, 50)},
@@ -266,7 +252,6 @@ class HeightTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 50)},
                 'border_box': {'position': (0, 0), 'size': (10, 50)},
                 'padding_box': {'position': (0, 0), 'size': (10, 50)},
                 'content': {'position': (0, 0), 'size': (10, 50)},
@@ -283,7 +268,6 @@ class HeightTests(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 50)},
                 'border_box': {'position': (0, 0), 'size': (10, 50)},
                 'padding_box': {'position': (0, 0), 'size': (10, 50)},
                 'content': {'position': (0, 0), 'size': (10, 50)},

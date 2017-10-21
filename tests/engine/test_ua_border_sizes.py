@@ -15,7 +15,6 @@ class UABorderSizes(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 32)},
                 'border_box': {'position': (0, 0), 'size': (52, 32)},
                 'padding_box': {'position': (1, 1), 'size': (50, 30)},
                 'content': {'position': (1, 1), 'size': (50, 30)},
@@ -32,7 +31,6 @@ class UABorderSizes(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 40)},
                 'border_box': {'position': (0, 0), 'size': (60, 40)},
                 'padding_box': {'position': (5, 5), 'size': (50, 30)},
                 'content': {'position': (5, 5), 'size': (50, 30)},
@@ -49,7 +47,6 @@ class UABorderSizes(LayoutTestCase):
         self.assertLayout(
             node,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 50)},
                 'border_box': {'position': (0, 0), 'size': (70, 50)},
                 'padding_box': {'position': (10, 10), 'size': (50, 30)},
                 'content': {'position': (10, 10), 'size': (50, 30)},

@@ -29,25 +29,21 @@ class ChildLayoutTests(LayoutTestCase):
         self.assertLayout(
             root,
             {
-                'margin_box': {'position': (0, 0), 'size': (640, 480)},
                 'border_box': {'position': (0, 0), 'size': (640, 480)},
                 'padding_box': {'position': (0, 0), 'size': (640, 480)},
                 'content': {'position': (0, 0), 'size': (640, 480)},
                 'children': [
                     {
-                        'margin_box': {'position': (0, 0), 'size': (640, 10)},
                         'border_box': {'position': (0, 0), 'size': (640, 10)},
                         'padding_box': {'position': (0, 0), 'size': (640, 10)},
                         'content': {'position': (0, 0), 'size': (640, 10)},
                     },
                     {
-                        'margin_box': {'position': (0, 10), 'size': (640, 10)},
                         'border_box': {'position': (0, 10), 'size': (640, 10)},
                         'padding_box': {'position': (0, 10), 'size': (640, 10)},
                         'content': {'position': (0, 10), 'size': (640, 10)},
                     },
                     {
-                        'margin_box': {'position': (0, 20), 'size': (640, 10)},
                         'border_box': {'position': (0, 20), 'size': (640, 10)},
                         'padding_box': {'position': (0, 20), 'size': (640, 10)},
                         'content': {'position': (0, 20), 'size': (640, 10)},
@@ -77,25 +73,21 @@ class ChildLayoutTests(LayoutTestCase):
         self.assertLayout(
             root,
             {
-                'margin_box': {'position': (0, 10), 'size': (640, 450)},
                 'border_box': {'position': (0, 10), 'size': (640, 450)},
                 'padding_box': {'position': (0, 10), 'size': (640, 450)},
                 'content': {'position': (0, 10), 'size': (640, 450)},
                 'children': [
                     {
-                        'margin_box': {'position': (0, 0), 'size': (640, 30)},
                         'border_box': {'position': (10, 10), 'size': (620, 10)},
                         'padding_box': {'position': (10, 10), 'size': (620, 10)},
                         'content': {'position': (10, 10), 'size': (620, 10)},
                     },
                     {
-                        'margin_box': {'position': (0, 20), 'size': (640, 70)},
                         'border_box': {'position': (30, 50), 'size': (580, 10)},
                         'padding_box': {'position': (30, 50), 'size': (580, 10)},
                         'content': {'position': (30, 50), 'size': (580, 10)},
                     },
                     {
-                        'margin_box': {'position': (0, 70), 'size': (640, 50)},
                         'border_box': {'position': (20, 90), 'size': (600, 10)},
                         'padding_box': {'position': (20, 90), 'size': (600, 10)},
                         'content': {'position': (20, 90), 'size': (600, 10)},
@@ -127,25 +119,21 @@ class ChildLayoutTests(LayoutTestCase):
         self.assertLayout(
             root,
             {
-                'margin_box': {'size': (640, 390), 'position': (0, 50)},
                 'border_box': {'size': (640, 390), 'position': (0, 50)},
                 'padding_box': {'size': (640, 390), 'position': (0, 50)},
                 'content': {'size': (640, 390), 'position': (0, 50)},
                 'children': [
                     {
-                        'margin_box': {'size': (640, 90), 'position': (0, 40)},
                         'border_box': {'size': (620, 70), 'position': (10, 50)},
                         'padding_box': {'size': (620, 70), 'position': (10, 50)},
                         'content': {'size': (620, 70), 'position': (10, 50)},
                         'children': [
                             {
-                                'margin_box': {'size': (620, 110), 'position': (10, 0)},
                                 'border_box': {'size': (520, 10), 'position': (60, 50)},
                                 'padding_box': {'size': (520, 10), 'position': (60, 50)},
                                 'content': {'size': (520, 10), 'position': (60, 50)},
                             },
                             {
-                                'margin_box': {'size': (620, 90), 'position': (10, 70)},
                                 'border_box': {'size': (540, 10), 'position': (50, 110)},
                                 'padding_box': {'size': (540, 10), 'position': (50, 110)},
                                 'content': {'size': (540, 10), 'position': (50, 110)},
@@ -179,25 +167,21 @@ class ChildLayoutTests(LayoutTestCase):
         self.assertLayout(
             root,
             {
-                'margin_box': {'size': (640, 420), 'position': (0, 50)},
                 'border_box': {'size': (640, 420), 'position': (0, 50)},
                 'padding_box': {'size': (640, 420), 'position': (0, 50)},
                 'content': {'size': (640, 420), 'position': (0, 50)},
                 'children': [
                     {
-                        'margin_box': {'size': (640, 30), 'position': (0, 40)},
                         'border_box': {'size': (620, 10), 'position': (10, 50)},
                         'padding_box': {'size': (620, 10), 'position': (10, 50)},
                         'content': {'size': (620, 10), 'position': (10, 50)},
                         'children': [
                             {
-                                'margin_box': {'size': (620, 110), 'position': (10, 0)},
                                 'border_box': {'size': (520, 10), 'position': (60, 50)},
                                 'padding_box': {'size': (520, 10), 'position': (60, 50)},
                                 'content': {'size': (520, 10), 'position': (60, 50)},
                             },
                             {
-                                'margin_box': {'size': (620, 90), 'position': (10, 70)},
                                 'border_box': {'size': (540, 10), 'position': (50, 110)},
                                 'padding_box': {'size': (540, 10), 'position': (50, 110)},
                                 'content': {'size': (540, 10), 'position': (50, 110)},
