@@ -281,6 +281,8 @@ def calculate_width_and_margins(node, context):
             else:  # 10.3.9
                 calculate_inline_block_non_replaced_normal_flow_width(node, context)
         else:
+            # This branch should never execute.
+            # If it does, we've missed something along the way.
             raise Exception("Unknown normal flow width calculation")  # pragma: no cover
 
 
@@ -447,6 +449,8 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
         node.layout.margin_right = avail_margin // 2
 
     else:
+        # This branch should never execute.
+        # If it does, we've missed something along the way.
         raise Exception('Unknown S10.3.3 layout case')  # pragma: no cover
 
     node.layout.content_width = content_width
@@ -520,6 +524,8 @@ def calculate_height_and_margins(node, context):
             else:  # 10.6.9
                 calculate_inline_block_non_replaced_normal_flow_height(node, context)
         else:
+            # This branch should never execute.
+            # If it does, we've missed something along the way.
             raise Exception("Unknown normal flow height calculation")  # pragma: no cover
 
 
