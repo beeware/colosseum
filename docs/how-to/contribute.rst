@@ -4,25 +4,23 @@
 How to contribute to Colosseum
 ==============================
 
-If you experience problems with Colosseum, please `log them on GitHub`_.
-However, if you want to contribute code, please `fork the code`_ and
-`submit a pull request`_. This guide will help walk you through the process
-of contributing your first fix to Colosseum.
-
-.. _log them on Github: https://github.com/pybee/colosseum/issues
-.. _fork the code: https://github.com/pybee/colosseum
-.. _submit a pull request: https://github.com/pybee/colosseum/pulls
+This guide will help walk you through the process of contributing your first
+contribution to Colosseum.
 
 Set up your development environment
 ===================================
 
-The recommended way of setting up your development environment for Colosseum
-is to install a virtual environment, install the required dependencies and
-start coding::
+Go to the `Colosseum repository on GitHub <https://github.com/pybee/colosseum>`__,
+and fork the repository into your own Github account.
 
+Then, you need to set up your development environment. To work on Colosseum, you'll need Python 3.4+ installed on your computer. Create a virtual environment, and clone your Colosseum
+fork::
+
+    $ mkdir beeware
+    $ cd beeware
     $ python3 -m venv venv
     $ source venv/bin/activate.sh
-    $ git clone git@github.com:pybee/colosseum.git
+    $ git clone git@github.com:<your github username>/colosseum.git
     $ cd colosseum
 
 You can then run the test suite::
