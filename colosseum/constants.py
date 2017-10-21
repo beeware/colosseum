@@ -32,14 +32,11 @@ class Choices:
                 return parser.color(value)
             except ValueError:
                 pass
-        try:
-            if value == 'none':
-                value = None
-            for const in self.constants:
-                if value == const:
-                    return const
-        except TypeError:
-            pass
+        if value == 'none':
+            value = None
+        for const in self.constants:
+            if value == const:
+                return const
 
         raise ValueError()
 
