@@ -31,24 +31,24 @@ need to be laid out on a page (either physical or virtual)
 Tutorial
 --------
 
-Want to jump in and get started? We have a `hands-on tutorial for beginners <>`__.
+Want to jump in and get started? We have a `hands-on tutorial for beginners <docs/tutorial>`__.
 
 How-to guides
 -------------
 
 Looking for guidance on how to solve a specific problems? We have `how-to
-guides and recipes <>`__ for common problems and tasks, including how to
+guides and recipes <docs/how-to>`__ for common problems and tasks, including how to
 contribute.
 
 Reference
 ---------
 
-Just want the raw technical details? Here's our `Technical reference <>`__.
+Just want the raw technical details? Here's our `Technical reference <docs/reference>`__.
 
 Background
 ----------
 
-Looking for explanations and discussion of key topics and concepts? Our `background <>`__ guides may help.
+Looking for explanations and discussion of key topics and concepts? Our `background <docs/background>`__ guides may help.
 
 
 Community
