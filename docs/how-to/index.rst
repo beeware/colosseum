@@ -10,5 +10,5 @@ How-to guides are recipes that take the user through steps in key subjects. They
    :maxdepth: 1
    :glob:
 
-   Get started <get-started>
-   Contribute to Toga <contribute>
+   get-started
+   contribute

@@ -155,13 +155,14 @@ class LayoutTestCase(TestCase):
         root = TestNode(style=CSS(display=BLOCK), children=[node])
         layout(self.display, root)
 
-    def assertLayout(self, node, reference):
+    def assertLayout(self, node, reference, extra=''):
         self.assertEqual(
             layout_summary(node),
             reference,
-            '\nExpected:\n{}Actual:\n{}'.format(
+            '\n\nExpected:\n{}Actual:\n{}{}'.format(
                 output_layout(reference),
-                output_layout(layout_summary(node))
+                output_layout(layout_summary(node)),
+                extra
             )
         )
 
@@ -174,28 +175,41 @@ class W3CTestCase(LayoutTestCase):
         ref_dir = os.path.join(dirname, 'ref')
 
         # Read the not_implemented file.
+        expected_failures = set()
         not_implemented_file = os.path.join(dirname, 'not_implemented')
         try:
             with open(not_implemented_file) as f:
-                not_implemented = set(
+                expected_failures.update({
                     'test_' + line.strip().replace('-', '_')
                     for line in f
                     if line.strip()
-                )
+                })
         except IOError:
-            not_implemented = set()
+            pass
 
-        # Read the ignore file.
-        ignore_file = os.path.join(dirname, 'ignore')
+        not_compliant = os.path.join(dirname, 'not_compliant')
         try:
-            with open(ignore_file) as f:
-                ignore = set(
+            with open(not_compliant) as f:
+                expected_failures.update({
                     'test_' + line.strip().replace('-', '_')
                     for line in f
                     if line.strip()
-                )
+                })
         except IOError:
-            ignore = set()
+            pass
+
+        # Read the not_valid test file.
+        ignore = set()
+        not_valid_file = os.path.join(dirname, 'not_valid')
+        try:
+            with open(not_valid_file) as f:
+                ignore.update({
+                    'test_' + line.strip().replace('-', '_')
+                    for line in f
+                    if line.strip()
+                })
+        except IOError:
+            pass
 
         # Closure for building test cases for a given input file.
         def make_test(test_dir, filename):
@@ -211,6 +225,18 @@ class W3CTestCase(LayoutTestCase):
             with open(os.path.join(ref_dir, filename)) as f:
                 reference = json.load(f)
 
+            extra = []
+            if input_data['help']:
+                extra.append('\n'.join('See {}'.format(h) for h in input_data['help']))
+                extra.append('')
+
+            extra.append(
+                'Test: http://test.csswg.org/harness/test/{}_dev/single/{}/'.format(
+                    css_test_module,
+                    css_test_name
+                )
+            )
+
             # The actual test method. Builds a document, lays it out,
             # and checks against the reference rendering.
             def test_method(self):
@@ -218,7 +244,11 @@ class W3CTestCase(LayoutTestCase):
 
                 layout(self.display, root, standard=HTML4)
 
-                self.assertLayout(root, clean_reference(reference))
+                self.assertLayout(
+                    root,
+                    clean_reference(reference),
+                    '\n' + '\n'.join(extra)
+                )
 
             # Annotate the method with any helper text.
             doc = []
@@ -228,22 +258,13 @@ class W3CTestCase(LayoutTestCase):
                 doc.append('Test ' + os.path.splitext(filename)[0].replace('-', '_'))
 
             doc.append('')
-            if input_data['help']:
-                doc.append('\n'.join('See {}'.format(h) for h in input_data['help']))
-
-            doc.append('')
-            doc.append(
-                'Test: http://test.csswg.org/harness/test/{}_dev/single/{}/'.format(
-                    css_test_module,
-                    css_test_name
-                )
-            )
+            doc.extend(extra)
 
             test_method.__doc__ = '\n'.join(doc)
 
-            # If the method is on the known not_implemented list,
+            # If the method is on the expected_failures list,
             # decorate the method.
-            if test_name in not_implemented:
+            if test_name in expected_failures:
                 test_method = expectedFailure(test_method)
 
             return test_name, test_method
