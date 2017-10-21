@@ -330,6 +330,12 @@ can now pick another test, and work on your second pull request!
 
 However, if the test passes, the next step is to try and fix it.
 
+.. note::
+
+    If you're a newcomer to Colosseum, and the test you've chosen involves
+    rendering text, you might want pick another test. The easiest tests to
+    work on will involve the positioning of boxes on a page.
+
 The raw test
 ------------
 
