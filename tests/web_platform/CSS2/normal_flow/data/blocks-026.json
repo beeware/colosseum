@@ -1,69 +1,69 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "0px"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "312px",
                             "display": "block",
-                            "height": "300px"
+                            "height": "300px",
+                            "width": "312px"
                         },
                         "tag": "p"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px"
+                },
                 "tag": "div"
             },
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "0px"
-                },
                 "children": [
                     {
                         "style": {
-                            "display": "block",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_bottom_style": "solid",
-                            "width": "312px",
-                            "border_top_width": "100px",
-                            "border_bottom_width": "100px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_top_style": "solid",
                             "border_right_style": "solid",
-                            "border_left_width": "100px",
                             "border_left_style": "solid",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "height": "300px",
+                            "border_left_width": "100px",
+                            "border_top_width": "100px",
+                            "border_top_style": "solid",
+                            "width": "312px",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_style": "solid",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 128, 0)",
                             "border_right_width": "100px",
-                            "border_right_color": "rgb(0, 128, 0)"
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "height": "300px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_bottom_width": "100px"
                         },
                         "tag": "input"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "blocks-026-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

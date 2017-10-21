@@ -1,59 +1,59 @@
 {
+    "matches": null,
+    "test_case": {
+        "style": {
+            "direction": "rtl",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "0px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "direction": "rtl",
+                    "position": "fixed",
+                    "width": "40.890625px",
+                    "height": "18px",
+                    "display": "block",
+                    "z_index": "0"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "!Right"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "position": "fixed",
+                    "width": "562.9375px",
+                    "height": "18px",
+                    "margin_top": "32px",
+                    "display": "block",
+                    "z_index": "0"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "The word above should be right-aligned on the page and end with an exclamation mark."
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
+        "tag": "body"
+    },
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
         "http://www.w3.org/TR/CSS21/visuren.html#direction",
         "http://www.w3.org/TR/CSS21/text.html#alignment-prop"
     ],
-    "assert": "Default horizontal position of position:fixed block should be right in rtl context, and ancestor direction should still be applied inside the block taken out of normal flow",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "direction": "rtl",
-            "height": "0px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block"
-        },
-        "children": [
-            {
-                "tag": "div",
-                "style": {
-                    "position": "fixed",
-                    "z_index": "0",
-                    "height": "18px",
-                    "width": "40.890625px",
-                    "direction": "rtl",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "text": "!Right",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "32px",
-                    "z_index": "0",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "width": "562.9375px",
-                    "position": "fixed",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "text": "The word above should be right-aligned on the page and end with an exclamation mark.",
-                        "style": {}
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": null
+    "assert": "Default horizontal position of position:fixed block should be right in rtl context, and ancestor direction should still be applied inside the block taken out of normal flow"
 }

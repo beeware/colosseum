@@ -1,60 +1,60 @@
 {
+    "matches": "right-offset-position-fixed-001-ref.xht",
+    "test_case": {
+        "style": {
+            "direction": "rtl",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "0px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "direction": "rtl",
+                    "position": "relative",
+                    "width": "312px",
+                    "height": "0px",
+                    "display": "block",
+                    "right": "50%"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "position": "fixed",
+                            "width": "100px",
+                            "height": "100px",
+                            "display": "block",
+                            "z_index": "0"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "direction": "rtl",
+                    "position": "absolute",
+                    "width": "100px",
+                    "height": "100px",
+                    "display": "block",
+                    "right": "50%"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props",
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
         "https://drafts.csswg.org/css2/visuren.html#position-props",
         "https://drafts.csswg.org/css2/visudet.html#abs-non-replaced-width"
     ],
-    "assert": "The 'right' box offset property, for fixed positioning, when set to 'auto' specifies the offset of the box from its 'static-position containing block'. Here, in this test, the 'static-position containing block' is #shifted-column and the containing block for #red is established by the viewport.",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "direction": "rtl",
-            "height": "0px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block"
-        },
-        "children": [
-            {
-                "tag": "div",
-                "style": {
-                    "position": "relative",
-                    "height": "0px",
-                    "right": "50%",
-                    "width": "312px",
-                    "direction": "rtl",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "position": "fixed",
-                            "z_index": "0",
-                            "height": "100px",
-                            "width": "100px",
-                            "direction": "rtl",
-                            "display": "block"
-                        }
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "position": "absolute",
-                    "height": "100px",
-                    "right": "50%",
-                    "width": "100px",
-                    "direction": "rtl",
-                    "display": "block"
-                }
-            }
-        ]
-    },
-    "matches": "right-offset-position-fixed-001-ref.xht"
+    "assert": "The 'right' box offset property, for fixed positioning, when set to 'auto' specifies the offset of the box from its 'static-position containing block'. Here, in this test, the 'static-position containing block' is #shifted-column and the containing block for #red is established by the viewport."
 }

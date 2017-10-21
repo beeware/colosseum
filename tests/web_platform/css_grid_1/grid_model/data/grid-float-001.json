@@ -1,62 +1,62 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
+    ],
+    "assert": null,
     "test_case": {
         "style": {
-            "height": "100px",
+            "margin_top": "8px",
             "margin_bottom": "8px",
+            "height": "100px",
+            "width": "624px",
             "margin_right": "8px",
             "display": "block",
-            "margin_top": "8px",
-            "width": "624px",
             "margin_left": "8px"
         },
-        "tag": "BODY",
         "children": [
             {
                 "style": {
-                    "height": "100px",
                     "position": "absolute",
                     "display": "block",
-                    "z_index": "-1",
-                    "width": "100px"
+                    "height": "100px",
+                    "width": "100px",
+                    "z_index": "-1"
                 },
                 "tag": "DIV"
             },
             {
                 "style": {
                     "height": "100px",
-                    "width": "624px",
-                    "display": "grid"
+                    "display": "grid",
+                    "width": "624px"
                 },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
+                            "min_width": "auto",
+                            "display": "block",
                             "height": "50px",
                             "width": "100px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto"
+                            "min_height": "auto"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
+                            "min_width": "auto",
+                            "display": "block",
                             "height": "50px",
                             "width": "100px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto"
+                            "min_height": "auto"
                         },
                         "tag": "DIV"
                     }
-                ]
+                ],
+                "tag": "DIV"
             }
-        ]
+        ],
+        "tag": "BODY"
     },
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers",
-        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
-    ],
-    "assert": null,
     "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

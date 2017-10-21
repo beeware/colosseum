@@ -1,49 +1,49 @@
 {
-    "matches": "../reference/grid-layout-basic-ref.html",
     "test_case": {
         "style": {
-            "width": "640px",
+            "display": "block",
             "height": "18px",
-            "display": "block"
+            "width": "640px"
         },
-        "tag": "BODY",
         "children": [
             {
                 "style": {
-                    "width": "150px",
+                    "display": "grid",
                     "height": "18px",
-                    "display": "grid"
+                    "width": "150px"
                 },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "width": "100px",
-                            "min_width": "auto",
-                            "height": "18px",
+                            "display": "block",
                             "min_height": "auto",
-                            "display": "block"
+                            "height": "18px",
+                            "width": "100px",
+                            "min_width": "auto"
                         },
-                        "tag": "DIV",
-                        "children": []
+                        "children": [],
+                        "tag": "DIV"
                     },
                     {
                         "style": {
-                            "width": "50px",
-                            "min_width": "auto",
-                            "height": "18px",
+                            "display": "block",
                             "min_height": "auto",
-                            "display": "block"
+                            "height": "18px",
+                            "width": "50px",
+                            "min_width": "auto"
                         },
-                        "tag": "DIV",
-                        "children": []
+                        "children": [],
+                        "tag": "DIV"
                     }
-                ]
+                ],
+                "tag": "DIV"
             }
-        ]
+        ],
+        "tag": "BODY"
     },
-    "assert": "the layout should behave the same as reference.",
+    "matches": "../reference/grid-layout-basic-ref.html",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-span"
-    ]
+    ],
+    "assert": "the layout should behave the same as reference."
 }

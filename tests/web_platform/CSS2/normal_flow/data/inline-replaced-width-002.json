@@ -1,63 +1,63 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "294px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_right_style": "solid",
-                    "width": "288px",
-                    "border_top_width": "3px",
-                    "border_left_width": "3px",
-                    "height": "288px",
-                    "border_left_style": "solid",
-                    "display": "block",
-                    "border_bottom_width": "3px",
-                    "border_right_width": "3px",
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "300px",
-                            "height": "50px"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "200px",
-                                    "height": "100px"
+                                    "height": "100px",
+                                    "width": "200px"
                                 },
                                 "tag": "svg:rect"
                             }
                         ],
+                        "style": {
+                            "height": "50px",
+                            "width": "300px"
+                        },
                         "tag": "svg:svg"
                     },
                     {
                         "style": {
-                            "width": "200px",
                             "display": "block",
-                            "height": "50px"
+                            "height": "50px",
+                            "width": "200px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "288px",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "border_left_width": "3px",
+                    "border_right_width": "3px",
+                    "border_top_width": "3px",
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "width": "288px",
+                    "border_bottom_width": "3px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "294px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on inline replaced elements becomes a used value of '0'.",
     "matches": "inline-replaced-width-002-ref.xht",
-    "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on inline replaced elements becomes a used value of '0'."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ]
 }

@@ -1,69 +1,69 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-flexbox/#definite-sizes"
-    ],
-    "matches": "percentage-heights-002-ref.html",
+    "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes",
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "800px",
+            "height": "600px",
+            "margin_bottom": "8px",
+            "position": "relative",
+            "display": "block",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "left": "0px",
+                    "height": "600px",
+                    "width": "800px",
+                    "right": "0px",
+                    "top": "0px",
+                    "bottom": "0px",
+                    "display": "flex",
+                    "position": "absolute"
+                },
                 "children": [
                     {
+                        "style": {
+                            "height": "120px",
+                            "min_width": "auto",
+                            "width": "800px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "Tests that percentage heights get resolved correctly when the flexbox is",
-                                "style": {}
+                                "style": {},
+                                "text": "Tests that percentage heights get resolved correctly when the flexbox is"
                             }
                         ],
-                        "style": {
-                            "width": "800px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "120px",
-                            "display": "block"
-                        },
                         "tag": "DIV"
                     },
                     {
+                        "style": {
+                            "height": "480px",
+                            "min_width": "auto",
+                            "width": "800px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "absolutely positioned without an explicit height. You should see no red.",
-                                "style": {}
+                                "style": {},
+                                "text": "absolutely positioned without an explicit height. You should see no red."
                             }
                         ],
-                        "style": {
-                            "width": "800px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "480px",
-                            "display": "block"
-                        },
                         "tag": "DIV"
                     }
                 ],
-                "style": {
-                    "width": "800px",
-                    "top": "0px",
-                    "height": "600px",
-                    "bottom": "0px",
-                    "right": "0px",
-                    "position": "absolute",
-                    "display": "flex",
-                    "left": "0px"
-                },
                 "tag": "DIV"
             }
         ],
-        "style": {
-            "width": "800px",
-            "margin_left": "8px",
-            "height": "600px",
-            "margin_right": "8px",
-            "display": "block",
-            "position": "relative",
-            "margin_top": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "BODY"
     },
-    "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes"
+    "help": [
+        "https://drafts.csswg.org/css-flexbox/#definite-sizes"
+    ],
+    "matches": "percentage-heights-002-ref.html"
 }

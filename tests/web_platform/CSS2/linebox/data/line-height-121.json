@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
-    ],
-    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
@@ -19,18 +15,18 @@
                         ],
                         "style": {
                             "width": "120px",
+                            "border_top_color": "rgb(0, 128, 0)",
                             "height": "40px",
                             "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
                             "display": "block",
+                            "border_left_color": "rgb(0, 128, 0)",
                             "border_right_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
                 "style": {
-                    "width": "120px",
                     "display": "block",
+                    "width": "120px",
                     "height": "20px"
                 }
             },
@@ -50,12 +46,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "20px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "20px"
         }
     },
-    "matches": "line-height-121-ref.xht"
+    "matches": "line-height-121-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
+    "assert": null
 }

@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "If 'text-align' is set to 'justify' the user agent may stretch spaces and/or words.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -22,20 +18,20 @@
                             }
                         ],
                         "style": {
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
                             "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)"
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
                 "style": {
                     "width": "320px",
+                    "border_top_color": "rgb(255, 165, 0)",
                     "height": "32px",
                     "border_bottom_color": "rgb(255, 165, 0)",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "border_left_color": "rgb(255, 165, 0)",
                     "display": "block",
+                    "border_left_color": "rgb(255, 165, 0)",
                     "border_right_color": "rgb(255, 165, 0)"
                 }
             }
@@ -43,12 +39,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "32px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "32px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "If 'text-align' is set to 'justify' the user agent may stretch spaces and/or words."
 }

@@ -6,63 +6,63 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "The text of all 3 sentences should become green when you hover over any text."
+                                "text": "The text of all 3 sentences should become green when you hover over any text.",
+                                "style": {}
                             },
                             {
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "The text of all 3 sentences should become green when you hover over any text."
+                                        "text": "The text of all 3 sentences should become green when you hover over any text.",
+                                        "style": {}
                                     }
                                 ],
+                                "tag": "div",
                                 "style": {
                                     "display": "block",
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "height": "18px",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "border_top_color": "rgb(0, 0, 255)",
                                     "width": "624px",
-                                    "border_bottom_color": "rgb(0, 0, 255)"
-                                },
-                                "tag": "div"
+                                    "border_bottom_color": "rgb(0, 0, 255)",
+                                    "border_top_color": "rgb(0, 0, 255)",
+                                    "height": "18px",
+                                    "border_right_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)"
+                                }
                             },
                             {
-                                "style": {},
-                                "text": "The text of all 3 sentences should become green when you hover over any text."
+                                "text": "The text of all 3 sentences should become green when you hover over any text.",
+                                "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
                             "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)"
-                        },
-                        "tag": "div"
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "54px",
                     "width": "624px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "54px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "54px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": null,
+    "assert": "A block that splits an inline still inherits     from the inline, even in dynamic cases.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
     ],
-    "assert": "A block that splits an inline still inherits     from the inline, even in dynamic cases."
+    "matches": null
 }

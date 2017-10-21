@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property sets a positive zero length value  with no units.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -22,17 +17,17 @@
                                     }
                                 ],
                                 "style": {
-                                    "border_bottom_color": "rgb(255, 0, 0)",
-                                    "border_top_color": "rgb(255, 0, 0)",
                                     "border_left_color": "rgb(255, 0, 0)",
-                                    "border_right_color": "rgb(255, 0, 0)"
+                                    "border_right_color": "rgb(255, 0, 0)",
+                                    "border_top_color": "rgb(255, 0, 0)",
+                                    "border_bottom_color": "rgb(255, 0, 0)"
                                 }
                             }
                         ],
                         "style": {
                             "position": "relative",
-                            "width": "624px",
                             "display": "block",
+                            "width": "624px",
                             "height": "20px"
                         }
                     },
@@ -46,17 +41,17 @@
                         ],
                         "style": {
                             "position": "absolute",
-                            "width": "20px",
                             "display": "block",
                             "top": "0px",
+                            "width": "20px",
                             "height": "20px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "20px"
                 }
             }
@@ -64,12 +59,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "20px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "20px"
         }
     },
-    "matches": "vertical-align-004-ref.xht"
+    "matches": "vertical-align-004-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'vertical-align' property sets a positive zero length value  with no units."
 }

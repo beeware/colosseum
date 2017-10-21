@@ -6,60 +6,60 @@
                     {
                         "children": [
                             {
+                                "tag": "span",
                                 "style": {
                                     "display": "block",
+                                    "direction": "rtl",
                                     "position": "absolute",
                                     "width": "96px",
-                                    "direction": "rtl",
                                     "height": "96px"
-                                },
-                                "tag": "span"
+                                }
                             }
                         ],
+                        "tag": "span",
                         "style": {
                             "display": "block",
-                            "width": "0px",
                             "direction": "rtl",
+                            "width": "0px",
                             "height": "0px"
-                        },
-                        "tag": "span"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "border_left_width": "3px",
-                    "border_left_style": "solid",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px",
                     "display": "block",
-                    "padding_right": "96px",
-                    "border_top_width": "3px",
-                    "height": "0px",
-                    "position": "absolute",
+                    "border_right_width": "3px",
+                    "border_left_style": "solid",
+                    "border_left_width": "3px",
                     "padding_left": "96px",
+                    "height": "0px",
+                    "border_bottom_style": "solid",
                     "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "padding_top": "96px",
-                    "padding_bottom": "96px",
                     "width": "0px",
-                    "border_bottom_style": "solid"
-                },
-                "tag": "div"
+                    "padding_top": "96px",
+                    "border_top_width": "3px",
+                    "border_bottom_width": "3px",
+                    "padding_right": "96px",
+                    "border_top_style": "solid",
+                    "padding_bottom": "96px",
+                    "position": "absolute"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "0px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "0px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "containing-block-020-ref.xht",
+    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest (closest) positioned ancestor.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
-    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest (closest) positioned ancestor."
+    "matches": "containing-block-020-ref.xht"
 }

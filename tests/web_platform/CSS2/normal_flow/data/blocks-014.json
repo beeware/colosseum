@@ -1,63 +1,63 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "32px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "display": "block",
-                    "width": "80px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "height": "16px",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "border_right_color": "rgb(0, 0, 255)"
-                },
                 "children": [
                     {
                         "style": {
                             "display": "block",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_style": "solid",
-                            "border_left_width": "32px",
-                            "width": "16px",
-                            "border_left_style": "solid",
-                            "border_bottom_color": "rgb(0, 0, 255)",
                             "height": "16px",
-                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_right_style": "solid",
+                            "border_left_style": "solid",
                             "border_right_color": "rgb(0, 0, 255)",
-                            "border_right_width": "32px"
+                            "border_left_width": "32px",
+                            "border_right_width": "32px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "width": "16px",
+                            "border_top_color": "rgb(0, 0, 255)"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "16px",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "width": "80px",
+                    "display": "block"
+                },
                 "tag": "div"
             },
             {
                 "style": {
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "display": "block",
-                    "width": "80px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
                     "height": "16px",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "border_bottom_color": "rgb(0, 0, 255)",
                     "border_top_color": "rgb(0, 0, 255)",
-                    "border_right_color": "rgb(0, 0, 255)"
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "width": "80px",
+                    "display": "block"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "32px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "blocks-014-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

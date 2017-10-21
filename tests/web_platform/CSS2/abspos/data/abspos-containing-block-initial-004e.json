@@ -4,23 +4,23 @@
     ],
     "assert": "If there is no such ancestor, the containing block is the initial containing block.",
     "test_case": {
-        "tag": "body",
         "children": [],
+        "tag": "body",
         "style": {
-            "border_top_width": "10px",
-            "left": "100px",
-            "height": "100px",
-            "border_bottom_width": "10px",
             "display": "block",
             "border_right_width": "10px",
-            "top": "100px",
-            "position": "absolute",
             "border_top_style": "solid",
-            "border_left_width": "10px",
-            "border_left_style": "solid",
-            "border_right_style": "solid",
+            "left": "100px",
             "width": "100px",
-            "border_bottom_style": "solid"
+            "border_right_style": "solid",
+            "border_bottom_style": "solid",
+            "border_bottom_width": "10px",
+            "border_left_style": "solid",
+            "border_left_width": "10px",
+            "border_top_width": "10px",
+            "position": "absolute",
+            "height": "100px",
+            "top": "100px"
         }
     },
     "matches": "abspos-containing-block-initial-004-ref.xht"

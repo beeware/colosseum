@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "Line-height can be different from the content area so space is above and below.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -18,16 +14,16 @@
                             }
                         ],
                         "style": {
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
                             "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)"
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_bottom_color": "rgb(255, 165, 0)"
                         }
                     }
                 ],
                 "style": {
-                    "width": "200px",
                     "display": "block",
+                    "width": "200px",
                     "height": "200px"
                 }
             }
@@ -35,12 +31,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "200px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "200px"
         }
     },
-    "matches": "leading-001-ref.xht"
+    "matches": "leading-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "Line-height can be different from the content area so space is above and below."
 }

@@ -2,116 +2,116 @@
     "assert": "Checks that absolutely positioned orthogonal grid items are properly placed and sized when they have a specific 'bottom' offset and a static inline position (left/right are 'auto').",
     "test_case": {
         "tag": "BODY",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "451px",
+            "width": "624px"
+        },
         "children": [
             {
                 "tag": "DIV",
+                "style": {
+                    "margin_top": "1px",
+                    "padding_bottom": "10px",
+                    "height": "400px",
+                    "margin_left": "4px",
+                    "border_left_style": "solid",
+                    "margin_right": "2px",
+                    "margin_bottom": "3px",
+                    "border_right_style": "solid",
+                    "display": "grid",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "12px",
+                    "border_left_width": "6px",
+                    "width": "550px",
+                    "border_top_width": "9px",
+                    "border_right_width": "3px",
+                    "padding_top": "20px",
+                    "position": "relative",
+                    "border_top_style": "solid",
+                    "padding_right": "15px",
+                    "padding_left": "5px"
+                },
                 "children": [
                     {
                         "tag": "DIV",
-                        "children": [
-                            {
-                                "text": "First item",
-                                "style": {}
-                            }
-                        ],
                         "style": {
-                            "position": "absolute",
+                            "display": "block",
+                            "min_height": "auto",
+                            "width": "18px",
                             "height": "61.78125px",
-                            "min_height": "auto",
-                            "bottom": "0px",
-                            "display": "block",
+                            "position": "absolute",
                             "min_width": "auto",
-                            "width": "18px"
-                        }
+                            "bottom": "0px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "First item"
+                            }
+                        ]
                     },
                     {
                         "tag": "DIV",
-                        "children": [
-                            {
-                                "text": "Second item",
-                                "style": {}
-                            }
-                        ],
                         "style": {
-                            "position": "absolute",
+                            "display": "block",
+                            "min_height": "auto",
+                            "width": "18px",
                             "height": "79.546875px",
-                            "min_height": "auto",
-                            "bottom": "0px",
-                            "display": "block",
+                            "position": "absolute",
                             "min_width": "auto",
-                            "width": "18px"
-                        }
+                            "bottom": "0px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Second item"
+                            }
+                        ]
                     },
                     {
                         "tag": "DIV",
-                        "children": [
-                            {
-                                "text": "Third item",
-                                "style": {}
-                            }
-                        ],
                         "style": {
-                            "position": "absolute",
+                            "display": "block",
+                            "min_height": "auto",
+                            "width": "18px",
                             "height": "67.984375px",
-                            "min_height": "auto",
-                            "bottom": "0px",
-                            "display": "block",
+                            "position": "absolute",
                             "min_width": "auto",
-                            "width": "18px"
-                        }
+                            "bottom": "0px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Third item"
+                            }
+                        ]
                     },
                     {
                         "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "min_height": "auto",
+                            "width": "18px",
+                            "height": "75.109375px",
+                            "position": "absolute",
+                            "min_width": "auto",
+                            "bottom": "0px"
+                        },
                         "children": [
                             {
-                                "text": "Fourth item",
-                                "style": {}
+                                "style": {},
+                                "text": "Fourth item"
                             }
-                        ],
-                        "style": {
-                            "position": "absolute",
-                            "height": "75.109375px",
-                            "min_height": "auto",
-                            "bottom": "0px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "18px"
-                        }
+                        ]
                     }
-                ],
-                "style": {
-                    "padding_right": "15px",
-                    "margin_left": "4px",
-                    "position": "relative",
-                    "border_left_width": "6px",
-                    "margin_right": "2px",
-                    "border_right_style": "solid",
-                    "display": "grid",
-                    "margin_bottom": "3px",
-                    "border_right_width": "3px",
-                    "width": "550px",
-                    "border_top_style": "solid",
-                    "height": "400px",
-                    "border_left_style": "solid",
-                    "padding_left": "5px",
-                    "padding_top": "20px",
-                    "border_top_width": "9px",
-                    "padding_bottom": "10px",
-                    "margin_top": "1px",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "12px"
-                }
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "451px",
-            "display": "block",
-            "margin_bottom": "8px",
-            "margin_top": "8px"
-        }
+        ]
     },
     "matches": "orthogonal-positioned-grid-items-006-ref.html",
     "help": [

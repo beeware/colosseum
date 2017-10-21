@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'line-height' property applies to elements with 'display' set to 'list-item'.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -14,8 +9,8 @@
                         "tag": "span",
                         "children": [],
                         "style": {
-                            "width": "96px",
                             "display": "list-item",
+                            "width": "96px",
                             "height": "192px"
                         }
                     },
@@ -33,8 +28,8 @@
                 ],
                 "style": {
                     "position": "relative",
-                    "width": "608px",
                     "display": "block",
+                    "width": "608px",
                     "height": "192px",
                     "margin_left": "16px"
                 }
@@ -43,12 +38,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "192px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "192px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'line-height' property applies to elements with 'display' set to 'list-item'."
 }

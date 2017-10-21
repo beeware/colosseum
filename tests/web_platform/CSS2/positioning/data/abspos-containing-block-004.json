@@ -1,61 +1,61 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "100px",
+            "height": "0px",
+            "margin_bottom": "100px",
+            "margin_right": "100px",
+            "display": "block",
+            "width": "440px",
+            "margin_left": "100px"
+        },
         "children": [
             {
+                "style": {
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "480px",
+                    "position": "absolute",
+                    "right": "0px",
+                    "display": "block",
+                    "width": "640px",
+                    "top": "0px",
+                    "border_bottom_color": "rgb(0, 128, 0)"
+                },
                 "children": [
                     {
-                        "text": "Test passes if there is",
-                        "style": {}
+                        "style": {},
+                        "text": "Test passes if there is"
                     },
                     {
-                        "children": [
-                            {
-                                "text": "no red",
-                                "style": {}
-                            }
-                        ],
                         "style": {
                             "border_right_color": "rgb(0, 128, 0)",
                             "border_left_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)",
                             "border_bottom_color": "rgb(0, 128, 0)"
                         },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "no red"
+                            }
+                        ],
                         "tag": "strong"
                     },
                     {
-                        "text": ".",
-                        "style": {}
+                        "style": {},
+                        "text": "."
                     }
                 ],
-                "style": {
-                    "top": "0px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "480px",
-                    "right": "0px",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "display": "block",
-                    "width": "640px",
-                    "position": "absolute"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "100px",
-            "height": "0px",
-            "margin_right": "100px",
-            "width": "440px",
-            "display": "block",
-            "margin_left": "100px",
-            "margin_bottom": "100px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
     "matches": "abspos-containing-block-001-ref.xht"
 }

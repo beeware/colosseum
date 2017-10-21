@@ -4,38 +4,38 @@
             {
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
-                            "padding_top": "5px",
                             "height": "48px",
+                            "padding_top": "5px",
                             "width": "192px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "padding_top": "5px",
                     "height": "96px",
+                    "padding_top": "5px",
                     "width": "96px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "101px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "101px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "containing-block-027-ref.xht",
+    "assert": "Content may overflow containing blocks.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#containing-block"
     ],
-    "assert": "Content may overflow containing blocks."
+    "matches": "containing-block-027-ref.xht"
 }

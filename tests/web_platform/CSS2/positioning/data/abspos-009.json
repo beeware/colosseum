@@ -1,47 +1,47 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "position": "relative",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px",
+            "height": "16px"
+        },
         "children": [
             {
                 "style": {
-                    "right": "0px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "height": "16px",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
                     "border_right_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "height": "16px",
+                    "position": "absolute",
+                    "right": "0px",
                     "display": "block",
                     "width": "160px",
-                    "position": "absolute"
+                    "border_bottom_color": "rgb(255, 255, 255)"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "height": "16px",
-                    "display": "block",
                     "border_right_color": "rgb(255, 0, 0)",
-                    "border_right_width": "160px",
+                    "height": "16px",
                     "border_right_style": "solid",
-                    "width": "464px"
+                    "width": "464px",
+                    "display": "block",
+                    "border_right_width": "160px"
                 },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "16px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "position": "relative",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
+    ],
     "matches": "abspos-009-ref.xht"
 }

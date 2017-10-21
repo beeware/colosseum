@@ -1,274 +1,210 @@
 {
-    "border": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "tag": "BODY",
     "children": [
         {
+            "children": [
+                {
+                    "text": "\n  "
+                },
+                {
+                    "children": [
+                        {
+                            "text": "\n  Tests that percentage heights get resolved correctly when the flexbox is\n  "
+                        }
+                    ],
+                    "content": {
+                        "size": [
+                            800,
+                            120
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "tag": "DIV",
+                    "padding_box": {
+                        "size": [
+                            800,
+                            120
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "size": [
+                            800,
+                            120
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "id": "top-bar",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "text": "\n  "
+                },
+                {
+                    "children": [
+                        {
+                            "text": "\n  absolutely positioned without an explicit height. You should see no red.\n  "
+                        }
+                    ],
+                    "content": {
+                        "size": [
+                            800,
+                            480
+                        ],
+                        "position": [
+                            8,
+                            128
+                        ]
+                    },
+                    "tag": "DIV",
+                    "padding_box": {
+                        "size": [
+                            800,
+                            480
+                        ],
+                        "position": [
+                            8,
+                            128
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "size": [
+                            800,
+                            480
+                        ],
+                        "position": [
+                            8,
+                            128
+                        ]
+                    },
+                    "id": "content",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "text": "\n"
+                }
+            ],
+            "content": {
+                "size": [
+                    800,
+                    600
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "tag": "DIV",
+            "padding_box": {
+                "size": [
+                    800,
+                    600
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "tag": "DIV",
-            "children": [
-                {
-                    "text": "\n  "
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "DIV",
-                    "children": [
-                        {
-                            "text": "\n  Tests that percentage heights get resolved correctly when the flexbox is\n  "
-                        }
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    },
-                    "margin_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    },
-                    "id": "top-bar",
-                    "content": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    }
-                },
-                {
-                    "text": "\n  "
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "DIV",
-                    "children": [
-                        {
-                            "text": "\n  absolutely positioned without an explicit height. You should see no red.\n  "
-                        }
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    },
-                    "margin_box": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    },
-                    "id": "content",
-                    "content": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    }
-                },
-                {
-                    "text": "\n"
-                }
-            ],
-            "padding_box": {
-                "position": [
-                    8,
-                    8
-                ],
+            "border_box": {
                 "size": [
                     800,
                     600
-                ]
-            },
-            "margin_box": {
+                ],
                 "position": [
                     8,
                     8
-                ],
-                "size": [
-                    800,
-                    600
                 ]
             },
+            "id": "container",
             "padding": [
                 0,
                 0,
                 0,
                 0
-            ],
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "border_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    800,
-                    600
-                ]
-            },
-            "id": "container",
-            "content": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    800,
-                    600
-                ]
-            }
+            ]
         },
         {
             "text": "\n\n\n"
         }
     ],
-    "padding_box": {
-        "position": [
-            8,
-            8
-        ],
+    "content": {
         "size": [
             800,
             600
-        ]
-    },
-    "margin_box": {
-        "position": [
-            0,
-            0
         ],
-        "size": [
-            816,
-            616
+        "position": [
+            8,
+            8
         ]
     },
-    "padding": [
+    "tag": "BODY",
+    "padding_box": {
+        "size": [
+            800,
+            600
+        ],
+        "position": [
+            8,
+            8
+        ]
+    },
+    "border": [
         0,
         0,
         0,
         0
     ],
-    "margin": [
-        8,
-        8,
-        8,
-        8
-    ],
     "border_box": {
-        "position": [
-            8,
-            8
-        ],
         "size": [
             800,
             600
+        ],
+        "position": [
+            8,
+            8
         ]
     },
     "id": "",
-    "content": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            800,
-            600
-        ]
-    }
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

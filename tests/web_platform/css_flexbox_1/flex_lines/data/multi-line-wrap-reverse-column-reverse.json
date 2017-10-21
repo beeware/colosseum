@@ -1,136 +1,136 @@
 {
-    "assert": "This test check that a flex container reverse-wraps blocks multiline in column-reverse direction.",
+    "matches": "multi-line-wrap-reverse-column-reverse-ref.html",
     "test_case": {
-        "tag": "BODY",
+        "style": {
+            "width": "640px",
+            "height": "300px",
+            "display": "block"
+        },
         "children": [
             {
-                "tag": "DIV",
+                "style": {
+                    "width": "640px",
+                    "height": "300px",
+                    "display": "flex"
+                },
                 "children": [
                     {
-                        "tag": "P",
+                        "style": {
+                            "height": "290px",
+                            "display": "block",
+                            "margin_top": "10px",
+                            "min_height": "auto",
+                            "margin_right": "10px",
+                            "width": "203.328125px",
+                            "min_width": "auto"
+                        },
                         "children": [
                             {
-                                "text": "3-1",
-                                "style": {}
+                                "style": {},
+                                "text": "3-1"
                             }
                         ],
-                        "style": {
-                            "min_width": "auto",
-                            "display": "block",
-                            "margin_right": "10px",
-                            "min_height": "auto",
-                            "width": "203.328125px",
-                            "margin_top": "10px",
-                            "height": "290px"
-                        }
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
+                        "style": {
+                            "height": "140px",
+                            "display": "block",
+                            "margin_top": "10px",
+                            "min_height": "auto",
+                            "margin_right": "10px",
+                            "width": "203.328125px",
+                            "min_width": "auto"
+                        },
                         "children": [
                             {
-                                "text": "2-2",
-                                "style": {}
+                                "style": {},
+                                "text": "2-2"
                             }
                         ],
-                        "style": {
-                            "min_width": "auto",
-                            "display": "block",
-                            "margin_right": "10px",
-                            "min_height": "auto",
-                            "width": "203.328125px",
-                            "margin_top": "10px",
-                            "height": "140px"
-                        }
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
+                        "style": {
+                            "height": "140px",
+                            "display": "block",
+                            "margin_top": "10px",
+                            "min_height": "auto",
+                            "margin_right": "10px",
+                            "width": "203.328125px",
+                            "min_width": "auto"
+                        },
                         "children": [
                             {
-                                "text": "2-1",
-                                "style": {}
+                                "style": {},
+                                "text": "2-1"
                             }
                         ],
-                        "style": {
-                            "min_width": "auto",
-                            "display": "block",
-                            "margin_right": "10px",
-                            "min_height": "auto",
-                            "width": "203.328125px",
-                            "margin_top": "10px",
-                            "height": "140px"
-                        }
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
+                        "style": {
+                            "height": "90px",
+                            "display": "block",
+                            "margin_top": "10px",
+                            "min_height": "auto",
+                            "margin_right": "10px",
+                            "width": "203.328125px",
+                            "min_width": "auto"
+                        },
                         "children": [
                             {
-                                "text": "1-3",
-                                "style": {}
+                                "style": {},
+                                "text": "1-3"
                             }
                         ],
-                        "style": {
-                            "min_width": "auto",
-                            "display": "block",
-                            "margin_right": "10px",
-                            "min_height": "auto",
-                            "width": "203.328125px",
-                            "margin_top": "10px",
-                            "height": "90px"
-                        }
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
+                        "style": {
+                            "height": "90px",
+                            "display": "block",
+                            "margin_top": "10px",
+                            "min_height": "auto",
+                            "margin_right": "10px",
+                            "width": "203.328125px",
+                            "min_width": "auto"
+                        },
                         "children": [
                             {
-                                "text": "1-2",
-                                "style": {}
+                                "style": {},
+                                "text": "1-2"
                             }
                         ],
-                        "style": {
-                            "min_width": "auto",
-                            "display": "block",
-                            "margin_right": "10px",
-                            "min_height": "auto",
-                            "width": "203.328125px",
-                            "margin_top": "10px",
-                            "height": "90px"
-                        }
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
+                        "style": {
+                            "height": "90px",
+                            "display": "block",
+                            "margin_top": "10px",
+                            "min_height": "auto",
+                            "margin_right": "10px",
+                            "width": "203.328125px",
+                            "min_width": "auto"
+                        },
                         "children": [
                             {
-                                "text": "1-1",
-                                "style": {}
+                                "style": {},
+                                "text": "1-1"
                             }
                         ],
-                        "style": {
-                            "min_width": "auto",
-                            "display": "block",
-                            "margin_right": "10px",
-                            "min_height": "auto",
-                            "width": "203.328125px",
-                            "margin_top": "10px",
-                            "height": "90px"
-                        }
+                        "tag": "P"
                     }
                 ],
-                "style": {
-                    "display": "flex",
-                    "height": "300px",
-                    "width": "640px"
-                }
+                "tag": "DIV"
             }
         ],
-        "style": {
-            "display": "block",
-            "height": "300px",
-            "width": "640px"
-        }
+        "tag": "BODY"
     },
-    "matches": "multi-line-wrap-reverse-column-reverse-ref.html",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property",
         "http://www.w3.org/TR/css-flexbox-1/#flex-direction-property"
-    ]
+    ],
+    "assert": "This test check that a flex container reverse-wraps blocks multiline in column-reverse direction."
 }

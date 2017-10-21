@@ -1,28 +1,28 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
     "test_case": {
-        "style": {
-            "width": "150px",
-            "display": "block",
-            "height": "0px"
-        },
         "children": [
             {
                 "style": {
-                    "width": "150px",
-                    "display": "block",
                     "top": "20px",
-                    "height": "150px",
+                    "position": "absolute",
                     "left": "0px",
-                    "position": "absolute"
+                    "height": "150px",
+                    "display": "block",
+                    "width": "150px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "display": "block",
+            "height": "0px",
+            "width": "150px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "replaced-intrinsic-002-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ]
 }

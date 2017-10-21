@@ -1,9 +1,15 @@
 {
     "assert": "If the 'direction' property of the containing block is 'ltr', the value of 'left' wins and 'right' becomes negative 'left'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
                 "style": {
@@ -15,27 +21,21 @@
             },
             {
                 "style": {
-                    "top": "-96px",
-                    "height": "96px",
+                    "position": "relative",
+                    "left": "96px",
                     "right": "96px",
                     "display": "block",
-                    "left": "96px",
                     "width": "96px",
-                    "position": "relative"
+                    "top": "-96px",
+                    "height": "96px"
                 },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "192px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
     "matches": "position-relative-005-ref.xht"
 }

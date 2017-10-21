@@ -1,48 +1,48 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "192px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "192px",
-                    "display": "block",
-                    "height": "192px"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "96px",
                             "display": "block",
+                            "height": "96px",
                             "max_width": "50%",
-                            "height": "96px"
+                            "width": "96px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "width": "96px",
                             "display": "block",
-                            "height": "96px"
+                            "height": "96px",
+                            "width": "96px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "192px",
+                    "width": "192px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "192px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The percentage is calculated in relation to the containing block.",
     "matches": "max-width-percentage-001-ref.xht",
-    "assert": "The percentage is calculated in relation to the containing block."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

@@ -1,33 +1,33 @@
 {
     "assert": "The 'bottom' property applies to elements with a display of list-item.",
+    "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "616px",
+            "margin_left": "16px"
+        },
+        "children": [
+            {
+                "style": {
+                    "height": "96px",
+                    "display": "list-item",
+                    "bottom": "0px",
+                    "position": "absolute",
+                    "width": "96px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
         "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
     ],
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "display": "list-item",
-                    "height": "96px",
-                    "bottom": "0px",
-                    "width": "96px",
-                    "position": "absolute"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_top": "8px",
-            "height": "0px",
-            "margin_right": "8px",
-            "width": "616px",
-            "display": "block",
-            "margin_left": "16px",
-            "margin_bottom": "8px"
-        },
-        "tag": "body"
-    },
     "matches": null
 }

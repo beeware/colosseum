@@ -1,66 +1,66 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "96px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "width": "96px",
                     "display": "block",
-                    "height": "96px"
+                    "height": "96px",
+                    "width": "96px"
                 },
                 "tag": "div"
             },
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "0px",
-                    "position": "relative"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "96px",
-                            "display": "block",
-                            "padding_left": "48px",
-                            "padding_right": "48px",
-                            "top": "0px",
-                            "height": "96px",
-                            "left": "0px",
-                            "position": "absolute"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "96px",
-                                    "display": "block",
                                     "top": "0px",
-                                    "height": "96px",
+                                    "position": "absolute",
                                     "left": "0px",
-                                    "position": "absolute"
+                                    "height": "96px",
+                                    "display": "block",
+                                    "width": "96px"
                                 },
                                 "tag": "div"
                             }
                         ],
+                        "style": {
+                            "padding_left": "48px",
+                            "top": "0px",
+                            "padding_right": "48px",
+                            "width": "96px",
+                            "left": "0px",
+                            "height": "96px",
+                            "display": "block",
+                            "position": "absolute"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Absolutely positioned elements whose containing block is based on a block-level element, the percentage is calculated with respect to the width of the padding box of that element.",
     "matches": "max-width-percentage-001-ref.xht",
-    "assert": "Absolutely positioned elements whose containing block is based on a block-level element, the percentage is calculated with respect to the width of the padding box of that element."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

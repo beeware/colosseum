@@ -1,11 +1,23 @@
 {
     "assert": "Relatively positioned element with 'left' set to 'auto' and 'right' set to a value appears at expected offset.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "margin_left": "96px",
+                    "display": "block",
+                    "height": "96px",
+                    "width": "96px"
+                },
                 "children": [
                     {
                         "style": {
@@ -17,35 +29,23 @@
                     },
                     {
                         "style": {
-                            "right": "96px",
                             "height": "96px",
-                            "top": "-96px",
-                            "display": "block",
+                            "position": "relative",
                             "width": "96px",
-                            "position": "relative"
+                            "display": "block",
+                            "right": "96px",
+                            "top": "-96px"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "display": "block",
-                    "height": "96px",
-                    "margin_left": "96px",
-                    "width": "96px"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "96px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
     "matches": "position-relative-005-ref.xht"
 }

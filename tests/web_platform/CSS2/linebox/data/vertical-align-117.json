@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property sets the keyword 'text-bottom'.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -25,10 +20,10 @@
                                             }
                                         ],
                                         "style": {
-                                            "border_bottom_color": "rgb(255, 0, 0)",
-                                            "border_top_color": "rgb(255, 0, 0)",
                                             "border_left_color": "rgb(255, 0, 0)",
-                                            "border_right_color": "rgb(255, 0, 0)"
+                                            "border_right_color": "rgb(255, 0, 0)",
+                                            "border_top_color": "rgb(255, 0, 0)",
+                                            "border_bottom_color": "rgb(255, 0, 0)"
                                         }
                                     },
                                     {
@@ -40,8 +35,8 @@
                             }
                         ],
                         "style": {
-                            "width": "624px",
                             "display": "block",
+                            "width": "624px",
                             "height": "144px"
                         }
                     },
@@ -55,17 +50,17 @@
                         ],
                         "style": {
                             "position": "absolute",
-                            "width": "48px",
                             "display": "block",
                             "top": "96px",
+                            "width": "48px",
                             "height": "48px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "144px"
                 }
             }
@@ -73,12 +68,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "144px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "144px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'vertical-align' property sets the keyword 'text-bottom'."
 }

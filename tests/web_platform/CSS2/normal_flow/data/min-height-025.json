@@ -1,41 +1,41 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "32px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "width": "624px",
                     "display": "block",
-                    "height": "16px"
+                    "height": "16px",
+                    "width": "624px"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "16px",
-                    "bottom": "16px",
                     "min_height": "16px",
-                    "position": "relative"
+                    "height": "16px",
+                    "position": "relative",
+                    "bottom": "16px",
+                    "display": "block",
+                    "width": "624px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "32px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'min-height' property sets a minimum plus one length value in picas.",
     "matches": "max-height-025-ref.xht",
-    "assert": "The 'min-height' property sets a minimum plus one length value in picas."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

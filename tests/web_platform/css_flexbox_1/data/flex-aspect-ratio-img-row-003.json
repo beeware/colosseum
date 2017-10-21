@@ -1,49 +1,49 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-flexbox-1/#algo-cross-item"
-    ],
-    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "Test that we compute the correct aspect-ratio based cross size when a flex-basis is specified",
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "200px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
         "children": [
             {
                 "style": {
-                    "width": "100px",
-                    "position": "absolute",
-                    "z_index": "-1",
                     "height": "100px",
-                    "display": "block"
+                    "z_index": "-1",
+                    "width": "100px",
+                    "display": "block",
+                    "position": "absolute"
                 },
                 "tag": "DIV"
             },
             {
+                "style": {
+                    "height": "200px",
+                    "width": "10px",
+                    "display": "flex"
+                },
                 "children": [
                     {
                         "style": {
-                            "width": "100px",
                             "height": "200px",
+                            "width": "100px",
                             "display": "block"
                         },
                         "tag": "IMG"
                     }
                 ],
-                "style": {
-                    "width": "10px",
-                    "height": "200px",
-                    "display": "flex"
-                },
                 "tag": "DIV"
             }
         ],
-        "style": {
-            "margin_left": "8px",
-            "height": "200px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "BODY"
     },
-    "assert": "Test that we compute the correct aspect-ratio based cross size when a flex-basis is specified"
+    "help": [
+        "https://drafts.csswg.org/css-flexbox-1/#algo-cross-item"
+    ],
+    "matches": "../reference/ref-filled-green-100px-square.xht"
 }

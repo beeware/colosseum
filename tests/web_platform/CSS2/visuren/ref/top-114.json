@@ -1,26 +1,11 @@
 {
-    "tag": "body",
-    "content": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            400
-        ]
-    },
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
     "padding_box": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            400
-        ]
-    },
-    "border_box": {
         "position": [
             8,
             8
@@ -38,28 +23,13 @@
             "text": "\n\n  "
         },
         {
-            "tag": "div",
-            "content": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    600,
-                    400
-                ]
-            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
             "padding_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    600,
-                    400
-                ]
-            },
-            "border_box": {
                 "position": [
                     8,
                     8
@@ -74,28 +44,13 @@
                     "text": "\n    "
                 },
                 {
-                    "tag": "div",
-                    "content": {
-                        "position": [
-                            308,
-                            58
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
                     "padding_box": {
-                        "position": [
-                            308,
-                            58
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
-                    "border_box": {
                         "position": [
                             308,
                             58
@@ -110,25 +65,14 @@
                             "text": "test FAILED"
                         }
                     ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
+                    "tag": "div",
                     "border": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "margin_box": {
+                    "content": {
                         "position": [
                             308,
                             58
@@ -138,34 +82,29 @@
                             100
                         ]
                     },
-                    "id": "red-rel-pos-overlapped"
+                    "id": "red-rel-pos-overlapped",
+                    "border_box": {
+                        "position": [
+                            308,
+                            58
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    }
                 },
                 {
                     "text": "\n    "
                 },
                 {
-                    "tag": "div",
-                    "content": {
-                        "position": [
-                            308,
-                            58
-                        ],
-                        "size": [
-                            100,
-                            0
-                        ]
-                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
                     "padding_box": {
-                        "position": [
-                            308,
-                            58
-                        ],
-                        "size": [
-                            100,
-                            0
-                        ]
-                    },
-                    "border_box": {
                         "position": [
                             308,
                             58
@@ -180,17 +119,12 @@
                             "text": "\n      "
                         },
                         {
-                            "tag": "div",
-                            "content": {
-                                "position": [
-                                    308,
-                                    58
-                                ],
-                                "size": [
-                                    100,
-                                    100
-                                ]
-                            },
+                            "padding": [
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
                             "padding_box": {
                                 "position": [
                                     308,
@@ -201,6 +135,24 @@
                                     100
                                 ]
                             },
+                            "tag": "div",
+                            "border": [
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "content": {
+                                "position": [
+                                    308,
+                                    58
+                                ],
+                                "size": [
+                                    100,
+                                    100
+                                ]
+                            },
+                            "id": "green-child-rel-pos-inherit-overlapping",
                             "border_box": {
                                 "position": [
                                     308,
@@ -210,60 +162,20 @@
                                     100,
                                     100
                                 ]
-                            },
-                            "padding": [
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
-                            "border": [
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
-                            "margin": [
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
-                            "margin_box": {
-                                "position": [
-                                    308,
-                                    58
-                                ],
-                                "size": [
-                                    100,
-                                    100
-                                ]
-                            },
-                            "id": "green-child-rel-pos-inherit-overlapping"
+                            }
                         },
                         {
                             "text": "\n    "
                         }
                     ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
+                    "tag": "div",
                     "border": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "margin_box": {
+                    "content": {
                         "position": [
                             308,
                             58
@@ -273,31 +185,30 @@
                             0
                         ]
                     },
-                    "id": "parent-rel-pos"
+                    "id": "parent-rel-pos",
+                    "border_box": {
+                        "position": [
+                            308,
+                            58
+                        ],
+                        "size": [
+                            100,
+                            0
+                        ]
+                    }
                 },
                 {
                     "text": "\n  "
                 }
             ],
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
+            "tag": "div",
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "margin_box": {
+            "content": {
                 "position": [
                     8,
                     8
@@ -307,39 +218,48 @@
                     400
                 ]
             },
-            "id": "grand-parent-rel-pos"
+            "id": "grand-parent-rel-pos",
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    600,
+                    400
+                ]
+            }
         },
         {
             "text": "\n\n "
         }
     ],
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "body",
     "border": [
         0,
         0,
         0,
         0
     ],
-    "margin": [
-        8,
-        8,
-        8,
-        8
-    ],
-    "margin_box": {
+    "content": {
         "position": [
-            0,
-            0
+            8,
+            8
         ],
         "size": [
-            640,
-            416
+            624,
+            400
         ]
     },
-    "id": ""
+    "id": "",
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            400
+        ]
+    }
 }

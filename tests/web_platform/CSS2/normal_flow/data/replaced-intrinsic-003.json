@@ -1,75 +1,75 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "235px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "100px",
-                    "display": "block",
-                    "height": "200px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "100px",
-                            "display": "block",
-                            "margin_top": "16px",
-                            "margin_bottom": "16px",
-                            "height": "200px"
-                        },
                         "children": [
                             {
-                                "style": {
-                                    "width": "100px",
-                                    "display": "block",
-                                    "margin_right": "-100px",
-                                    "padding_right": "100px",
-                                    "height": "200px"
-                                },
                                 "children": [
                                     {
-                                        "text": "FAIL (SVG not supported)",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "FAIL (SVG not supported)"
                                     }
                                 ],
+                                "style": {
+                                    "display": "block",
+                                    "height": "200px",
+                                    "margin_right": "-100px",
+                                    "width": "100px",
+                                    "padding_right": "100px"
+                                },
                                 "tag": "object"
                             }
                         ],
+                        "style": {
+                            "display": "block",
+                            "margin_top": "16px",
+                            "height": "200px",
+                            "width": "100px",
+                            "margin_bottom": "16px"
+                        },
                         "tag": "p"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "200px",
+                    "width": "100px"
+                },
                 "tag": "div"
             },
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "19px"
-                },
                 "children": [
                     {
-                        "text": "Test passes if there is a complete unbroken yin-yang symbol (\u262f) above.",
-                        "style": {}
+                        "style": {},
+                        "text": "Test passes if there is a complete unbroken yin-yang symbol (\u262f) above."
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "19px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
                 "tag": "p"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "235px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "replaced-intrinsic-003-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ]
 }

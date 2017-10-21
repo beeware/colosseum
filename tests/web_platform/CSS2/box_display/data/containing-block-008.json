@@ -6,65 +6,65 @@
                     {
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "position": "absolute",
-                                    "top": "0px",
-                                    "height": "96px",
                                     "display": "block",
+                                    "top": "0px",
+                                    "width": "96px",
                                     "right": "0px",
-                                    "width": "96px"
-                                },
-                                "tag": "div"
+                                    "height": "96px",
+                                    "position": "absolute"
+                                }
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "margin_top": "50px",
-                            "margin_right": "50px",
-                            "height": "96px",
                             "display": "block",
+                            "margin_right": "50px",
                             "margin_bottom": "50px",
-                            "margin_left": "50px",
-                            "width": "96px"
-                        },
-                        "tag": "div"
+                            "margin_top": "50px",
+                            "height": "96px",
+                            "width": "96px",
+                            "margin_left": "50px"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "margin_top": "50px",
-                    "margin_left": "50px",
-                    "margin_right": "50px",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px",
                     "display": "block",
+                    "top": "0px",
+                    "border_right_width": "3px",
                     "margin_bottom": "50px",
-                    "border_top_width": "3px",
+                    "border_left_width": "3px",
                     "border_left_style": "solid",
                     "height": "196px",
-                    "border_left_width": "3px",
-                    "position": "absolute",
-                    "top": "0px",
+                    "border_bottom_style": "solid",
                     "border_right_style": "solid",
-                    "border_bottom_width": "3px",
+                    "margin_left": "50px",
                     "width": "196px",
-                    "border_bottom_style": "solid"
-                },
-                "tag": "div"
+                    "margin_right": "50px",
+                    "border_top_width": "3px",
+                    "border_bottom_width": "3px",
+                    "margin_top": "50px",
+                    "position": "absolute",
+                    "border_top_style": "solid"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "0px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "0px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "containing-block-008-ref.xht",
+    "assert": "If the element has 'position: absolute', the containing block is established by the nearest positioned ancestor.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
-    "assert": "If the element has 'position: absolute', the containing block is established by the nearest positioned ancestor."
+    "matches": "containing-block-008-ref.xht"
 }

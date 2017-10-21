@@ -1,140 +1,140 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
-    "assert": "Box offsets (bottom, left, right, top) for an absolutely positioned box refers to the padding box of its nearest positioned ancestor; such padding box forms and acts as the containing block of the absolutely positioned box.",
+    "matches": null,
     "test_case": {
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "300px",
             "margin_bottom": "8px",
             "width": "624px",
-            "margin_left": "8px",
-            "display": "block"
+            "margin_right": "8px",
+            "height": "300px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
         },
         "children": [
             {
-                "tag": "div",
                 "style": {
-                    "margin_left": "100px",
-                    "height": "100px",
-                    "border_left_style": "solid",
-                    "padding_bottom": "50px",
-                    "border_top_width": "50px",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "border_top_style": "solid",
-                    "border_bottom_width": "50px",
                     "padding_left": "50px",
-                    "border_left_width": "50px",
+                    "padding_bottom": "50px",
                     "border_bottom_style": "solid",
-                    "width": "100px",
-                    "position": "relative",
-                    "padding_right": "50px",
-                    "padding_top": "50px",
+                    "border_left_color": "rgb(255, 165, 0)",
                     "border_top_color": "rgb(255, 165, 0)",
+                    "border_top_style": "solid",
+                    "margin_left": "100px",
+                    "width": "100px",
+                    "height": "100px",
+                    "padding_right": "50px",
+                    "border_top_width": "50px",
                     "border_right_width": "50px",
-                    "border_right_style": "solid",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "border_left_style": "solid",
+                    "padding_top": "50px",
+                    "border_left_width": "50px",
                     "border_right_color": "rgb(255, 165, 0)",
-                    "display": "block"
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "border_bottom_width": "50px",
+                    "position": "relative"
                 },
                 "children": [
                     {
-                        "tag": "img",
                         "style": {
                             "height": "100px",
                             "width": "100px"
-                        }
+                        },
+                        "tag": "img"
                     },
                     {
-                        "tag": "div",
                         "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "position": "absolute",
+                            "width": "25px",
                             "top": "0px",
-                            "left": "0px",
-                            "position": "absolute",
-                            "height": "25px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "width": "25px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "border_right_color": "rgb(255, 255, 255)",
+                            "height": "25px",
+                            "left": "0px",
                             "display": "block"
                         },
                         "children": [
                             {
-                                "text": "TL",
-                                "style": {}
+                                "style": {},
+                                "text": "TL"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
                         "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "position": "absolute",
+                            "width": "25px",
                             "top": "0px",
-                            "position": "absolute",
-                            "height": "25px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "width": "25px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "border_right_color": "rgb(255, 255, 255)",
-                            "right": "0px",
-                            "display": "block"
+                            "height": "25px",
+                            "display": "block",
+                            "right": "0px"
                         },
                         "children": [
                             {
-                                "text": "TR",
-                                "style": {}
+                                "style": {},
+                                "text": "TR"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
                         "style": {
+                            "height": "25px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "position": "absolute",
+                            "width": "25px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "bottom": "0px",
                             "left": "0px",
-                            "position": "absolute",
-                            "height": "25px",
-                            "width": "25px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "bottom": "0px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "border_right_color": "rgb(255, 255, 255)",
                             "display": "block"
                         },
                         "children": [
                             {
-                                "text": "BL",
-                                "style": {}
+                                "style": {},
+                                "text": "BL"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
-                        "tag": "div",
                         "style": {
-                            "width": "25px",
-                            "position": "absolute",
                             "height": "25px",
                             "border_bottom_color": "rgb(255, 255, 255)",
-                            "bottom": "0px",
                             "border_left_color": "rgb(255, 255, 255)",
                             "border_top_color": "rgb(255, 255, 255)",
+                            "position": "absolute",
+                            "width": "25px",
                             "border_right_color": "rgb(255, 255, 255)",
-                            "right": "0px",
-                            "display": "block"
+                            "bottom": "0px",
+                            "display": "block",
+                            "right": "0px"
                         },
                         "children": [
                             {
-                                "text": "BR",
-                                "style": {}
+                                "style": {},
+                                "text": "BR"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
-    "matches": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
+    "assert": "Box offsets (bottom, left, right, top) for an absolutely positioned box refers to the padding box of its nearest positioned ancestor; such padding box forms and acts as the containing block of the absolutely positioned box."
 }

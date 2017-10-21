@@ -1,51 +1,51 @@
 {
     "assert": "The 'right' property sets a positive nominal length value in picas.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_right_style": "solid",
+                    "position": "relative",
+                    "direction": "rtl",
+                    "display": "block",
+                    "width": "608px",
+                    "height": "96px",
+                    "border_right_width": "16px"
+                },
                 "children": [
                     {
                         "style": {
-                            "right": "96px",
-                            "height": "96px",
+                            "direction": "rtl",
+                            "border_right_style": "solid",
+                            "position": "relative",
                             "margin_right": "-112px",
                             "width": "704px",
                             "display": "block",
-                            "border_right_width": "16px",
-                            "direction": "rtl",
-                            "border_right_style": "solid",
-                            "position": "relative"
+                            "right": "96px",
+                            "height": "96px",
+                            "border_right_width": "16px"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "height": "96px",
-                    "width": "608px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "border_right_width": "16px",
-                    "direction": "rtl",
-                    "border_right_style": "solid",
-                    "position": "relative"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "96px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "matches": "right-031-ref.xht"
 }

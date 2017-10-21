@@ -1,24 +1,5 @@
 {
-    "border_box": {
-        "size": [
-            624,
-            60
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "margin_box": {
-        "size": [
-            640,
-            76
-        ],
-        "position": [
-            0,
-            0
-        ]
-    },
+    "tag": "BODY",
     "children": [
         {
             "text": "\n      "
@@ -27,116 +8,14 @@
             "text": "\n        "
         },
         {
-            "border_box": {
-                "size": [
-                    624,
-                    60
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "margin_box": {
-                "size": [
-                    624,
-                    60
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
+            "tag": "DIV",
             "children": [
                 {
                     "text": "\n            "
                 },
                 {
-                    "border_box": {
-                        "size": [
-                            30,
-                            30
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "margin_box": {
-                        "size": [
-                            30,
-                            30
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "size": [
-                            30,
-                            30
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
+                    "tag": "DIV",
                     "id": "first-column-first-row",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "content": {
-                        "size": [
-                            30,
-                            30
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "tag": "DIV",
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                },
-                {
-                    "text": "\n            "
-                },
-                {
-                    "border_box": {
-                        "size": [
-                            30,
-                            60
-                        ],
-                        "position": [
-                            68,
-                            8
-                        ]
-                    },
-                    "margin_box": {
-                        "size": [
-                            30,
-                            60
-                        ],
-                        "position": [
-                            68,
-                            8
-                        ]
-                    },
                     "border": [
                         0,
                         0,
@@ -146,21 +25,53 @@
                     "padding_box": {
                         "size": [
                             30,
-                            60
+                            30
                         ],
                         "position": [
-                            68,
+                            8,
                             8
                         ]
                     },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "size": [
+                            30,
+                            30
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            30,
+                            30
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    }
+                },
+                {
+                    "text": "\n            "
+                },
+                {
+                    "tag": "DIV",
                     "id": "third-column-first-and-second-rows",
-                    "margin": [
+                    "border": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "content": {
+                    "padding_box": {
                         "size": [
                             30,
                             60
@@ -170,38 +81,39 @@
                             8
                         ]
                     },
-                    "tag": "DIV",
                     "padding": [
                         0,
                         0,
                         0,
                         0
-                    ]
+                    ],
+                    "border_box": {
+                        "size": [
+                            30,
+                            60
+                        ],
+                        "position": [
+                            68,
+                            8
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            30,
+                            60
+                        ],
+                        "position": [
+                            68,
+                            8
+                        ]
+                    }
                 },
                 {
                     "text": "\n            "
                 },
                 {
-                    "border_box": {
-                        "size": [
-                            60,
-                            30
-                        ],
-                        "position": [
-                            8,
-                            38
-                        ]
-                    },
-                    "margin_box": {
-                        "size": [
-                            60,
-                            30
-                        ],
-                        "position": [
-                            8,
-                            38
-                        ]
-                    },
+                    "tag": "DIV",
+                    "id": "first-and-second-columns-second-row",
                     "border": [
                         0,
                         0,
@@ -218,14 +130,13 @@
                             38
                         ]
                     },
-                    "id": "first-and-second-columns-second-row",
-                    "margin": [
+                    "padding": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "content": {
+                    "border_box": {
                         "size": [
                             60,
                             30
@@ -235,18 +146,22 @@
                             38
                         ]
                     },
-                    "tag": "DIV",
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
+                    "content": {
+                        "size": [
+                            60,
+                            30
+                        ],
+                        "position": [
+                            8,
+                            38
+                        ]
+                    }
                 },
                 {
                     "text": "\n        "
                 }
             ],
+            "id": "grid",
             "border": [
                 0,
                 0,
@@ -263,14 +178,13 @@
                     8
                 ]
             },
-            "id": "grid",
-            "margin": [
+            "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "border_box": {
                 "size": [
                     624,
                     60
@@ -280,18 +194,22 @@
                     8
                 ]
             },
-            "tag": "DIV",
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ]
+            "content": {
+                "size": [
+                    624,
+                    60
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            }
         },
         {
             "text": "\n    \n\n"
         }
     ],
+    "id": "",
     "border": [
         0,
         0,
@@ -308,14 +226,13 @@
             8
         ]
     },
-    "id": "",
-    "margin": [
-        8,
-        8,
-        8,
-        8
+    "padding": [
+        0,
+        0,
+        0,
+        0
     ],
-    "content": {
+    "border_box": {
         "size": [
             624,
             60
@@ -325,11 +242,14 @@
             8
         ]
     },
-    "tag": "BODY",
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ]
+    "content": {
+        "size": [
+            624,
+            60
+        ],
+        "position": [
+            8,
+            8
+        ]
+    }
 }

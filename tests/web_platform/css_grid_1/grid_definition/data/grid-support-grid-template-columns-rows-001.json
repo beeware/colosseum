@@ -1,22 +1,20 @@
 {
-    "assert": "This test checks that 'grid-template-columns' and 'grid-template-rows' properties are supported in a grid. So you can use the different syntax options to define the trak list.",
-    "matches": null,
     "test_case": {
         "children": [
             {
                 "tag": "DIV",
                 "style": {
+                    "width": "624px",
                     "height": "0px",
-                    "display": "block",
-                    "width": "624px"
+                    "display": "block"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
+                    "width": "800px",
                     "height": "600px",
-                    "display": "grid",
-                    "width": "800px"
+                    "display": "grid"
                 }
             },
             {
@@ -24,32 +22,32 @@
                     {
                         "children": [
                             {
-                                "text": "GRID ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "GRID ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "min_width": "auto",
+                            "width": "90px",
                             "height": "10px",
                             "display": "block",
-                            "width": "90px",
                             "min_height": "auto"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
+                    "width": "800px",
                     "height": "600px",
-                    "display": "grid",
-                    "width": "800px"
+                    "display": "grid"
                 }
             },
             {
                 "children": [
                     {
-                        "text": "// Single values.\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"none\", \"none\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"none\", \"none\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"auto\", \"auto\", \"0px\", \"0px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"auto\", \"auto\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"500px\", \"300px\", \"500px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"500px\", \"300px\", \"500px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"40em\", \"20em\", \"400px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"40em\", \"20em\", \"400px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"25%\", \"50%\", \"200px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"25%\", \"50%\", \"200px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"calc(200px + 10%)\", \"calc(25% + 50px)\", \"280px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"calc(200px + 10%)\", \"calc(25% + 50px)\", \"280px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"1fr\", \"1fr\", \"800px\", \"600px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"1fr\", \"1fr\", \"800px\", \"600px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"max-content\", \"max-content\", \"0px\", \"0px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"max-content\", \"max-content\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"min-content\", \"min-content\", \"0px\", \"0px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"min-content\", \"min-content\", \"40px\", \"20px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(200px, 400px)\", \"minmax(50px, 100px)\", \"400px\", \"100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(200px, 400px)\", \"minmax(50px, 100px)\", \"400px\", \"100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(calc(10% + 200px), calc(800px - 20%))\", \"minmax(calc(20% + 50px), calc(600px - 10%))\", \"640px\", \"540px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(calc(10% + 200px), calc(800px - 20%))\", \"minmax(calc(20% + 50px), calc(600px - 10%))\", \"640px\", \"540px\");\n\n  // Multiple values.\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"500px 200px 50px\", \"100px 300px\", \"500px 200px 50px\", \"100px 300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"500px 200px 50px\", \"100px 300px\", \"500px 200px 50px\", \"100px 300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"40em 100px 15%\", \"50px 20em 10%\", \"400px 100px 120px\", \"50px 200px 60px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"40em 100px 15%\", \"50px 20em 10%\", \"400px 100px 120px\", \"50px 200px 60px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"200px 1fr\", \"1fr 100px\", \"200px 600px\", \"500px 100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"200px 1fr\", \"1fr 100px\", \"200px 600px\", \"500px 100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"auto 1fr\", \"auto 1fr\", \"0px 800px\", \"0px 600px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"auto 1fr\", \"auto 1fr\", \"90px 710px\", \"10px 590px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"1fr 3fr\", \"2fr 1fr\", \"200px 600px\", \"400px 200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"1fr 3fr\", \"2fr 1fr\", \"200px 600px\", \"400px 200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(25px, 75px) 750px\", \"minmax(50px, 150px) 500px\", \"50px 750px\", \"100px 500px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(25px, 75px) 750px\", \"minmax(50px, 150px) 500px\", \"50px 750px\", \"100px 500px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"min-content 1fr calc(20px + 10%) minmax(30em, 50em)\", \"min-content 1fr calc(10% + 40px) minmax(3em, 5em)\", \"0px 200px 100px 500px\", \"0px 450px 100px 50px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"min-content 1fr calc(20px + 10%) minmax(30em, 50em)\", \"min-content 1fr  calc(10% + 40px) minmax(3em, 5em)\", \"40px 160px 100px 500px\", \"20px 430px 100px 50px\");\n\n  // Reset values.\n  document.getElementById(\"emptyGrid\").style.gridTemplateColumns = \"\";\n  document.getElementById(\"emptyGrid\").style.gridTemplateRows = \"\";\n  document.getElementById(\"grid\").style.gridTemplateColumns = \"\";\n  document.getElementById(\"grid\").style.gridTemplateRows = \"\";\n\n  // Wrong values.\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"foo\", \"bar\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"foo\", \"bar\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"auto none\", \"none auto\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"auto none\", \"none auto\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"100px, 200px\", \"300px, 400px\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"100px, 200px\", \"300px, 400px\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(100px, 200px, 300px)\", \"minmax(100px, 200px, 300px)\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(100px, 200px, 300px)\", \"minmax(100px, 200px, 300px)\", \"90px\", \"10px\");",
-                        "style": {}
+                        "style": {},
+                        "text": "// Single values.\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"none\", \"none\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"none\", \"none\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"auto\", \"auto\", \"0px\", \"0px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"auto\", \"auto\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"500px\", \"300px\", \"500px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"500px\", \"300px\", \"500px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"40em\", \"20em\", \"400px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"40em\", \"20em\", \"400px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"25%\", \"50%\", \"200px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"25%\", \"50%\", \"200px\", \"300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"calc(200px + 10%)\", \"calc(25% + 50px)\", \"280px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"calc(200px + 10%)\", \"calc(25% + 50px)\", \"280px\", \"200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"1fr\", \"1fr\", \"800px\", \"600px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"1fr\", \"1fr\", \"800px\", \"600px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"max-content\", \"max-content\", \"0px\", \"0px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"max-content\", \"max-content\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"min-content\", \"min-content\", \"0px\", \"0px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"min-content\", \"min-content\", \"40px\", \"20px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(200px, 400px)\", \"minmax(50px, 100px)\", \"400px\", \"100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(200px, 400px)\", \"minmax(50px, 100px)\", \"400px\", \"100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(calc(10% + 200px), calc(800px - 20%))\", \"minmax(calc(20% + 50px), calc(600px - 10%))\", \"640px\", \"540px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(calc(10% + 200px), calc(800px - 20%))\", \"minmax(calc(20% + 50px), calc(600px - 10%))\", \"640px\", \"540px\");\n\n  // Multiple values.\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"500px 200px 50px\", \"100px 300px\", \"500px 200px 50px\", \"100px 300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"500px 200px 50px\", \"100px 300px\", \"500px 200px 50px\", \"100px 300px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"40em 100px 15%\", \"50px 20em 10%\", \"400px 100px 120px\", \"50px 200px 60px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"40em 100px 15%\", \"50px 20em 10%\", \"400px 100px 120px\", \"50px 200px 60px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"200px 1fr\", \"1fr 100px\", \"200px 600px\", \"500px 100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"200px 1fr\", \"1fr 100px\", \"200px 600px\", \"500px 100px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"auto 1fr\", \"auto 1fr\", \"0px 800px\", \"0px 600px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"auto 1fr\", \"auto 1fr\", \"90px 710px\", \"10px 590px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"1fr 3fr\", \"2fr 1fr\", \"200px 600px\", \"400px 200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"1fr 3fr\", \"2fr 1fr\", \"200px 600px\", \"400px 200px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(25px, 75px) 750px\", \"minmax(50px, 150px) 500px\", \"50px 750px\", \"100px 500px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(25px, 75px) 750px\", \"minmax(50px, 150px) 500px\", \"50px 750px\", \"100px 500px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"min-content 1fr calc(20px + 10%) minmax(30em, 50em)\", \"min-content 1fr calc(10% + 40px) minmax(3em, 5em)\", \"0px 200px 100px 500px\", \"0px 450px 100px 50px\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"min-content 1fr calc(20px + 10%) minmax(30em, 50em)\", \"min-content 1fr  calc(10% + 40px) minmax(3em, 5em)\", \"40px 160px 100px 500px\", \"20px 430px 100px 50px\");\n\n  // Reset values.\n  document.getElementById(\"emptyGrid\").style.gridTemplateColumns = \"\";\n  document.getElementById(\"emptyGrid\").style.gridTemplateRows = \"\";\n  document.getElementById(\"grid\").style.gridTemplateColumns = \"\";\n  document.getElementById(\"grid\").style.gridTemplateRows = \"\";\n\n  // Wrong values.\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"foo\", \"bar\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"foo\", \"bar\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"auto none\", \"none auto\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"auto none\", \"none auto\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"100px, 200px\", \"300px, 400px\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"100px, 200px\", \"300px, 400px\", \"90px\", \"10px\");\n  TestingUtils.testGridTemplateColumnsRows(\"emptyGrid\", \"minmax(100px, 200px, 300px)\", \"minmax(100px, 200px, 300px)\", \"none\", \"none\");\n  TestingUtils.testGridTemplateColumnsRows(\"grid\", \"minmax(100px, 200px, 300px)\", \"minmax(100px, 200px, 300px)\", \"90px\", \"10px\");"
                     }
                 ],
                 "tag": "SCRIPT",
@@ -60,16 +58,18 @@
         ],
         "tag": "BODY",
         "style": {
-            "margin_left": "8px",
-            "display": "block",
             "width": "624px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
             "margin_top": "8px",
             "height": "1200px",
-            "margin_right": "8px",
-            "margin_bottom": "8px"
+            "margin_left": "8px"
         }
     },
+    "matches": null,
     "help": [
         "http://www.w3.org/TR/css-grid-1/#track-sizing"
-    ]
+    ],
+    "assert": "This test checks that 'grid-template-columns' and 'grid-template-rows' properties are supported in a grid. So you can use the different syntax options to define the trak list."
 }

@@ -2,6 +2,15 @@
     "assert": "Items should extend to fill the width of the absolutely positioned grid container.",
     "test_case": {
         "tag": "BODY",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "width": "624px"
+        },
         "children": [
             {
                 "tag": "DIV",
@@ -13,71 +22,62 @@
             },
             {
                 "tag": "DIV",
+                "style": {
+                    "display": "grid",
+                    "top": "50px",
+                    "border_bottom_width": "7px",
+                    "border_bottom_color": "rgb(204, 204, 204)",
+                    "height": "200px",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "border_right_color": "rgb(204, 204, 204)",
+                    "left": "50px",
+                    "border_left_width": "7px",
+                    "border_top_width": "7px",
+                    "border_top_color": "rgb(204, 204, 204)",
+                    "border_right_width": "7px",
+                    "border_left_style": "solid",
+                    "position": "absolute",
+                    "border_top_style": "solid",
+                    "width": "200px",
+                    "border_left_color": "rgb(204, 204, 204)"
+                },
                 "children": [
                     {
                         "tag": "DIV",
-                        "children": [
-                            {
-                                "text": "XXX X",
-                                "style": {}
-                            }
-                        ],
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
+                            "height": "50px",
                             "width": "200px",
                             "min_height": "auto",
-                            "height": "50px"
-                        }
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "XXX X"
+                            }
+                        ]
                     },
                     {
                         "tag": "DIV",
-                        "children": [
-                            {
-                                "text": "XX XXX XX",
-                                "style": {}
-                            }
-                        ],
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
+                            "height": "150px",
                             "width": "200px",
                             "min_height": "auto",
-                            "height": "150px"
-                        }
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "XX XXX XX"
+                            }
+                        ]
                     }
-                ],
-                "style": {
-                    "border_right_style": "solid",
-                    "position": "absolute",
-                    "border_left_color": "rgb(204, 204, 204)",
-                    "border_top_width": "7px",
-                    "border_right_width": "7px",
-                    "width": "200px",
-                    "border_top_style": "solid",
-                    "border_bottom_color": "rgb(204, 204, 204)",
-                    "display": "grid",
-                    "border_left_style": "solid",
-                    "border_top_color": "rgb(204, 204, 204)",
-                    "height": "200px",
-                    "border_right_color": "rgb(204, 204, 204)",
-                    "border_left_width": "7px",
-                    "top": "50px",
-                    "left": "50px",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "7px"
-                }
+                ]
             }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "0px",
-            "display": "block",
-            "margin_bottom": "8px",
-            "margin_top": "8px"
-        }
+        ]
     },
     "matches": null,
     "help": [

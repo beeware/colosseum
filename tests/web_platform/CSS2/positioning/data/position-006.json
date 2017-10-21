@@ -1,37 +1,37 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/syndata.html#parsing-errors"
-    ],
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "text": "The test has passed if you see this as the 2nd sentence.",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_bottom": "16px"
-                },
-                "tag": "p"
-            }
-        ],
         "style": {
             "margin_top": "8px",
             "height": "18px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "children": [
+            {
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "The test has passed if you see this as the 2nd sentence."
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/syndata.html#parsing-errors"
+    ],
     "matches": "position-006-ref.xht"
 }

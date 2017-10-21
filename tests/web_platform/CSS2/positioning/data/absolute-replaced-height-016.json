@@ -1,56 +1,56 @@
 {
     "assert": "The 'height' is the intrinsic height when an absolutely positioned inline replaced element has an intrinsic height and its height is specified as 'auto', 'width' is specified 'auto' and 'top', 'bottom' are not 'auto'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "3px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "height": "0px",
+                    "position": "relative",
+                    "width": "624px",
+                    "border_top_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
                 "children": [
                     {
                         "style": {
-                            "top": "96px",
                             "height": "15px",
-                            "display": "block",
                             "position": "absolute",
-                            "bottom": "96px",
-                            "width": "15px"
+                            "width": "15px",
+                            "display": "block",
+                            "top": "96px",
+                            "bottom": "96px"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
-                            "top": "96px",
-                            "height": "15px",
-                            "display": "block",
+                            "position": "absolute",
                             "left": "15px",
                             "width": "15px",
-                            "position": "absolute"
+                            "display": "block",
+                            "top": "96px",
+                            "height": "15px"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "height": "0px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_top_style": "solid",
-                    "width": "624px",
-                    "position": "relative"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "3px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
+    ],
     "matches": "absolute-replaced-height-008-ref.xht"
 }

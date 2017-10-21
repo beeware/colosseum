@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "Line boxes adjust for floated elements.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -12,22 +8,22 @@
                     {
                         "tag": "div",
                         "style": {
-                            "border_bottom_width": "5px",
-                            "border_left_width": "5px",
                             "display": "block",
-                            "border_top_style": "solid",
                             "border_right_width": "5px",
-                            "border_bottom_style": "solid",
-                            "width": "100px",
-                            "border_left_style": "solid",
-                            "float": "left",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_width": "5px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
                             "border_top_color": "rgb(0, 0, 255)",
+                            "width": "100px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_style": "solid",
                             "border_left_color": "rgb(0, 0, 255)",
                             "border_right_style": "solid",
-                            "height": "20px"
+                            "border_left_width": "5px",
+                            "border_left_style": "solid",
+                            "float": "left",
+                            "height": "20px",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "5px",
+                            "border_bottom_width": "5px",
+                            "border_right_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
@@ -39,15 +35,15 @@
                             }
                         ],
                         "style": {
-                            "width": "200px",
                             "display": "block",
+                            "width": "200px",
                             "height": "36px"
                         }
                     }
                 ],
                 "style": {
-                    "width": "200px",
                     "display": "block",
+                    "width": "200px",
                     "height": "36px"
                 }
             }
@@ -55,12 +51,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "36px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "36px"
         }
     },
-    "matches": "inline-formatting-context-015-ref.xht"
+    "matches": "inline-formatting-context-015-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "Line boxes adjust for floated elements."
 }

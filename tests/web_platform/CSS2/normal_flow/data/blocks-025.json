@@ -1,192 +1,192 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
     "test_case": {
-        "style": {
-            "width": "608px",
-            "display": "block",
-            "height": "88px",
-            "margin_left": "16px"
-        },
         "children": [
             {
-                "style": {
-                    "border_right_style": "solid",
-                    "width": "80px",
-                    "border_top_width": "4px",
-                    "border_left_width": "4px",
-                    "height": "80px",
-                    "border_left_style": "solid",
-                    "display": "table",
-                    "border_bottom_width": "4px",
-                    "border_right_width": "4px",
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "80px",
-                            "display": "table-row-group",
-                            "height": "80px"
-                        },
                         "children": [
                             {
-                                "style": {
-                                    "width": "80px",
-                                    "display": "table-row",
-                                    "height": "80px"
-                                },
                                 "children": [
                                     {
-                                        "style": {
-                                            "width": "80px",
-                                            "display": "table-cell",
-                                            "height": "80px"
-                                        },
                                         "children": [
                                             {
                                                 "style": {
-                                                    "width": "80px",
                                                     "display": "block",
-                                                    "height": "80px"
+                                                    "height": "80px",
+                                                    "width": "80px"
                                                 },
                                                 "tag": "div"
                                             },
                                             {
                                                 "style": {
-                                                    "width": "16px",
                                                     "display": "block",
-                                                    "height": "0px"
+                                                    "height": "0px",
+                                                    "width": "16px"
                                                 },
                                                 "tag": "div"
                                             }
                                         ],
+                                        "style": {
+                                            "display": "table-cell",
+                                            "height": "80px",
+                                            "width": "80px"
+                                        },
                                         "tag": "td"
                                     }
                                 ],
+                                "style": {
+                                    "display": "table-row",
+                                    "height": "80px",
+                                    "width": "80px"
+                                },
                                 "tag": "tr"
                             }
                         ],
+                        "style": {
+                            "display": "table-row-group",
+                            "height": "80px",
+                            "width": "80px"
+                        },
                         "tag": "tbody"
                     }
                 ],
+                "style": {
+                    "height": "80px",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "display": "table",
+                    "border_left_width": "4px",
+                    "border_right_width": "4px",
+                    "border_top_width": "4px",
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "width": "80px",
+                    "border_bottom_width": "4px"
+                },
                 "tag": "table"
             },
             {
-                "style": {
-                    "display": "block",
-                    "width": "80px",
-                    "border_bottom_style": "solid",
-                    "border_top_width": "4px",
-                    "border_bottom_width": "4px",
-                    "border_top_style": "solid",
-                    "border_left_style": "solid",
-                    "border_right_style": "solid",
-                    "border_left_width": "4px",
-                    "float": "left",
-                    "height": "80px",
-                    "border_right_width": "4px"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "80px",
                             "display": "block",
-                            "height": "80px"
+                            "height": "80px",
+                            "width": "80px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "width": "16px",
                             "display": "block",
-                            "height": "0px"
+                            "height": "0px",
+                            "width": "16px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "border_right_style": "solid",
+                    "float": "left",
+                    "border_left_width": "4px",
+                    "border_top_width": "4px",
+                    "border_top_style": "solid",
+                    "width": "80px",
+                    "border_bottom_style": "solid",
+                    "border_right_width": "4px",
+                    "display": "block",
+                    "height": "80px",
+                    "border_left_style": "solid",
+                    "border_bottom_width": "4px"
+                },
                 "tag": "div"
             },
             {
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "80px",
+                            "width": "80px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "0px",
+                            "width": "16px"
+                        },
+                        "tag": "div"
+                    }
+                ],
                 "style": {
-                    "display": "block",
-                    "width": "80px",
-                    "border_bottom_style": "solid",
+                    "top": "64px",
+                    "border_right_style": "solid",
+                    "z_index": "0",
+                    "border_left_width": "4px",
                     "border_top_width": "4px",
-                    "border_bottom_width": "4px",
-                    "left": "120px",
                     "border_top_style": "solid",
                     "position": "fixed",
-                    "z_index": "0",
-                    "border_right_style": "solid",
-                    "border_left_width": "4px",
-                    "top": "64px",
-                    "border_left_style": "solid",
+                    "border_bottom_style": "solid",
+                    "width": "80px",
+                    "left": "120px",
+                    "border_right_width": "4px",
+                    "display": "block",
                     "height": "80px",
-                    "border_right_width": "4px"
+                    "border_left_style": "solid",
+                    "border_bottom_width": "4px"
                 },
-                "children": [
-                    {
-                        "style": {
-                            "width": "80px",
-                            "display": "block",
-                            "height": "80px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "width": "16px",
-                            "display": "block",
-                            "height": "0px"
-                        },
-                        "tag": "div"
-                    }
-                ],
                 "tag": "div"
             },
             {
-                "style": {
-                    "display": "block",
-                    "width": "80px",
-                    "border_bottom_style": "solid",
-                    "border_top_width": "4px",
-                    "border_bottom_width": "4px",
-                    "left": "120px",
-                    "border_top_style": "solid",
-                    "position": "absolute",
-                    "border_right_style": "solid",
-                    "border_left_width": "4px",
-                    "top": "152px",
-                    "border_left_style": "solid",
-                    "height": "80px",
-                    "border_right_width": "4px"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "80px",
                             "display": "block",
-                            "height": "80px"
+                            "height": "80px",
+                            "width": "80px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "width": "16px",
                             "display": "block",
-                            "height": "0px"
+                            "height": "0px",
+                            "width": "16px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "top": "152px",
+                    "border_right_style": "solid",
+                    "border_left_width": "4px",
+                    "border_top_width": "4px",
+                    "border_top_style": "solid",
+                    "position": "absolute",
+                    "border_bottom_style": "solid",
+                    "width": "80px",
+                    "left": "120px",
+                    "border_right_width": "4px",
+                    "display": "block",
+                    "height": "80px",
+                    "border_left_style": "solid",
+                    "border_bottom_width": "4px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "height": "88px",
+            "display": "block",
+            "margin_left": "16px",
+            "width": "608px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "blocks-025-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

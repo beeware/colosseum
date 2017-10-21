@@ -1,97 +1,97 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "486px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "36px"
-                },
                 "children": [
                     {
-                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent.",
-                        "style": {}
+                        "style": {},
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent."
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
                 "tag": "p"
             },
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "18px"
-                },
                 "children": [
                     {
-                        "text": "Test passes if there is a green square and",
-                        "style": {}
+                        "style": {},
+                        "text": "Test passes if there is a green square and"
                     },
                     {
-                        "style": {},
                         "children": [
                             {
-                                "text": "no red",
-                                "style": {}
+                                "style": {},
+                                "text": "no red"
                             }
                         ],
+                        "style": {},
                         "tag": "strong"
                     },
                     {
-                        "text": ".",
-                        "style": {}
+                        "style": {},
+                        "text": "."
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
                 "tag": "p"
             },
             {
-                "style": {
-                    "border_left_color": "rgb(255, 0, 0)",
-                    "display": "block",
-                    "width": "200px",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "height": "200px",
-                    "border_top_color": "rgb(255, 0, 0)",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "min_height": "200px"
-                },
                 "children": [
                     {
-                        "text": "XXX",
-                        "style": {}
+                        "style": {},
+                        "text": "XXX"
                     }
                 ],
+                "style": {
+                    "min_height": "200px",
+                    "height": "200px",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "width": "200px",
+                    "display": "block"
+                },
                 "tag": "div"
             },
             {
                 "style": {
-                    "width": "200px",
                     "height": "200px",
                     "display": "block",
                     "top": "-200px",
+                    "width": "200px",
                     "position": "relative"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "486px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars.",
     "matches": "max-height-107-ref.xht",
-    "assert": "Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ]
 }

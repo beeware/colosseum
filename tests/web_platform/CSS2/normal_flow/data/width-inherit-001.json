@@ -1,53 +1,53 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/generate.html#list-style"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "60px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "30px"
-                },
                 "children": [
                     {
-                        "style": {},
                         "children": [
                             {
                                 "style": {
-                                    "width": "150px",
                                     "display": "block",
-                                    "height": "30px"
+                                    "height": "30px",
+                                    "width": "150px"
                                 },
                                 "tag": "span"
                             }
                         ],
+                        "style": {},
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "30px",
+                    "width": "624px"
+                },
                 "tag": "div"
             },
             {
                 "style": {
-                    "width": "150px",
                     "display": "block",
-                    "height": "30px"
+                    "height": "30px",
+                    "width": "150px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "60px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The computed width is inherited, even if the         'width' property does not apply.",
     "matches": "block-non-replaced-width-001-ref.xht",
-    "assert": "The computed width is inherited, even if the         'width' property does not apply."
+    "help": [
+        "http://www.w3.org/TR/CSS21/generate.html#list-style"
+    ]
 }

@@ -1,89 +1,89 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
-    ],
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "text": "FAIL ____",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "32px",
-                    "height": "32px",
-                    "display": "block",
-                    "margin_bottom": "32px",
-                    "width": "172.828125px",
-                    "position": "absolute"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "text": "#___ P___",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "32px",
-                    "height": "32px",
-                    "display": "block",
-                    "margin_bottom": "32px",
-                    "width": "172.828125px",
-                    "position": "absolute"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "text": "_##_ _A__",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "32px",
-                    "height": "32px",
-                    "display": "block",
-                    "margin_bottom": "32px",
-                    "width": "172.828125px",
-                    "position": "absolute"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "text": "___# __SS",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "32px",
-                    "height": "32px",
-                    "display": "block",
-                    "margin_bottom": "32px",
-                    "width": "172.828125px",
-                    "position": "absolute"
-                },
-                "tag": "p"
-            }
-        ],
         "style": {
             "margin_top": "8px",
             "height": "0px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "children": [
+            {
+                "style": {
+                    "margin_top": "32px",
+                    "position": "absolute",
+                    "margin_bottom": "32px",
+                    "width": "172.828125px",
+                    "display": "block",
+                    "height": "32px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL ____"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "margin_top": "32px",
+                    "position": "absolute",
+                    "margin_bottom": "32px",
+                    "width": "172.828125px",
+                    "display": "block",
+                    "height": "32px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "#___ P___"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "margin_top": "32px",
+                    "position": "absolute",
+                    "margin_bottom": "32px",
+                    "width": "172.828125px",
+                    "display": "block",
+                    "height": "32px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "_##_ _A__"
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "margin_top": "32px",
+                    "position": "absolute",
+                    "margin_bottom": "32px",
+                    "width": "172.828125px",
+                    "display": "block",
+                    "height": "32px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "___# __SS"
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
+    ],
     "matches": "abspos-011-ref.xht"
 }

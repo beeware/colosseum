@@ -1,20 +1,41 @@
 {
     "assert": "The intrinsic width is used if 'height' and 'width' are 'auto'. Computed value of 'auto' for 'margin-left' or margin-right' on absolutely positioned inline replaced element becomes a used value of '0'. If at this point there is an 'auto' left (like right as in this test), solve the equation for that value.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "198px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "relative",
+                    "direction": "rtl",
+                    "width": "192px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "192px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
-                            "display": "block",
+                            "position": "absolute",
                             "left": "96px",
-                            "direction": "rtl",
                             "width": "96px",
-                            "position": "absolute"
+                            "display": "block",
+                            "direction": "rtl",
+                            "height": "96px"
                         },
                         "tag": "img"
                     },
@@ -22,42 +43,21 @@
                         "style": {
                             "margin_top": "96px",
                             "height": "96px",
+                            "width": "96px",
                             "display": "block",
                             "direction": "rtl",
-                            "margin_left": "96px",
-                            "width": "96px"
+                            "margin_left": "96px"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "border_left_width": "3px",
-                    "border_bottom_style": "solid",
-                    "direction": "rtl",
-                    "border_right_style": "solid",
-                    "width": "192px",
-                    "border_bottom_width": "3px",
-                    "height": "192px",
-                    "display": "block",
-                    "border_right_width": "3px",
-                    "border_top_width": "3px",
-                    "border_top_style": "solid",
-                    "border_left_style": "solid",
-                    "position": "relative"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "198px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-width"
+    ],
     "matches": "absolute-replaced-width-022-ref.xht"
 }

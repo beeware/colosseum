@@ -1,52 +1,52 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "direction": "rtl",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "36px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "direction": "rtl",
-                    "border_top_width": "5px",
-                    "border_bottom_style": "solid",
-                    "padding_right": "10px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_bottom_width": "5px",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "border_top_style": "solid"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "624px",
-                            "direction": "rtl",
-                            "display": "block",
-                            "height": "18px"
-                        },
                         "children": [
                             {
-                                "text": "x",
-                                "style": {}
+                                "style": {},
+                                "text": "x"
                             }
                         ],
+                        "style": {
+                            "direction": "rtl",
+                            "display": "block",
+                            "height": "18px",
+                            "width": "624px"
+                        },
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "direction": "rtl",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "padding_right": "10px",
+                    "border_top_width": "5px",
+                    "border_bottom_width": "5px",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_top_color": "rgb(0, 0, 255)"
+                },
                 "tag": "span"
             }
         ],
+        "style": {
+            "direction": "rtl",
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "36px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "block-in-inline-empty-002-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ]
 }

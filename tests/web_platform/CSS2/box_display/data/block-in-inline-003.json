@@ -8,57 +8,57 @@
                             {
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "There should be no red."
+                                        "text": "There should be no red.",
+                                        "style": {}
                                     }
                                 ],
+                                "tag": "div",
                                 "style": {
                                     "display": "block",
-                                    "border_right_color": "rgb(0, 128, 0)",
-                                    "height": "18px",
-                                    "border_left_color": "rgb(0, 128, 0)",
-                                    "border_top_color": "rgb(0, 128, 0)",
                                     "width": "624px",
-                                    "border_bottom_color": "rgb(0, 128, 0)"
-                                },
-                                "tag": "div"
+                                    "border_bottom_color": "rgb(0, 128, 0)",
+                                    "border_top_color": "rgb(0, 128, 0)",
+                                    "height": "18px",
+                                    "border_right_color": "rgb(0, 128, 0)",
+                                    "border_left_color": "rgb(0, 128, 0)"
+                                }
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "border_top_color": "rgb(255, 0, 0)",
                             "border_right_color": "rgb(255, 0, 0)",
-                            "border_bottom_color": "rgb(255, 0, 0)"
-                        },
-                        "tag": "div"
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_top_color": "rgb(255, 0, 0)"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "height": "18px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
                     "width": "624px",
-                    "border_bottom_color": "rgb(0, 128, 0)"
-                },
-                "tag": "div"
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "18px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "18px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "18px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "block-in-inline-003-ref.xht",
+    "assert": "When an inline box contains a block box,     the inline box is broken around the box and its pieces, if empty,     will not show any background.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
     ],
-    "assert": "When an inline box contains a block box,     the inline box is broken around the box and its pieces, if empty,     will not show any background."
+    "matches": "block-in-inline-003-ref.xht"
 }

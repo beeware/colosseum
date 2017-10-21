@@ -1,59 +1,59 @@
 {
     "assert": "If 'top', 'height', 'bottom', 'margin-top' and 'margin-bottom' are all auto, then set 'top' to the static position, then the height is based on the content, then 'margin-top' and 'margin-bottom' are set to 0 and then solve for 'bottom'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ],
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "text": "X",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "height": "100px",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "display": "block",
-                            "width": "100px",
-                            "position": "absolute"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "border_left_width": "3px",
-                    "border_bottom_style": "solid",
-                    "width": "200px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "height": "200px",
-                    "display": "block",
-                    "border_right_width": "3px",
-                    "border_top_width": "3px",
-                    "border_top_style": "solid",
-                    "border_left_style": "solid",
-                    "position": "relative"
-                },
-                "tag": "div"
-            }
-        ],
         "style": {
             "margin_top": "8px",
             "height": "206px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "children": [
+            {
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "relative",
+                    "width": "200px",
+                    "border_right_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "200px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "height": "100px",
+                            "position": "absolute",
+                            "width": "100px",
+                            "display": "block",
+                            "border_bottom_color": "rgb(0, 0, 255)"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "X"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
     "matches": "absolute-non-replaced-height-002-ref.xht"
 }

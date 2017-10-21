@@ -1,56 +1,56 @@
 {
     "assert": "The 'top' property sets a nominal length value in percentages.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "96px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "height": "96px",
+                    "margin_top": "-96px",
+                    "display": "block",
+                    "position": "relative",
+                    "width": "624px"
+                },
                 "children": [
                     {
                         "style": {
                             "height": "96px",
                             "margin_top": "96px",
+                            "display": "block",
                             "position": "absolute",
-                            "width": "624px",
-                            "display": "block"
+                            "width": "624px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
                             "border_bottom_width": "96px",
-                            "top": "100%",
                             "height": "0px",
-                            "display": "block",
-                            "border_bottom_style": "solid",
+                            "position": "relative",
                             "width": "624px",
-                            "position": "relative"
+                            "border_bottom_style": "solid",
+                            "display": "block",
+                            "top": "100%"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "height": "96px",
-                    "margin_top": "-96px",
-                    "position": "relative",
-                    "width": "624px",
-                    "display": "block"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "96px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "matches": "top-019-ref.xht"
 }

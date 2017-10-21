@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "Margins, borders and padding have no visual effect when inline boxes are split.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -18,48 +14,52 @@
                             }
                         ],
                         "style": {
-                            "border_bottom_width": "10px",
-                            "border_left_width": "10px",
-                            "border_bottom_style": "solid",
-                            "border_right_style": "solid",
-                            "margin_top": "20px",
                             "border_right_width": "10px",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "padding_bottom": "20px",
+                            "padding_right": "20px",
+                            "border_right_color": "rgb(0, 0, 255)",
                             "border_top_style": "solid",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "padding_top": "20px",
+                            "border_left_width": "10px",
                             "border_left_style": "solid",
                             "margin_bottom": "20px",
-                            "padding_right": "20px",
+                            "margin_top": "20px",
+                            "border_bottom_style": "solid",
+                            "border_right_style": "solid",
                             "padding_left": "20px",
                             "border_top_width": "10px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "padding_bottom": "20px",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "padding_top": "20px"
+                            "border_bottom_width": "10px",
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
                 "style": {
-                    "width": "130px",
-                    "height": "100px",
                     "display": "block",
-                    "border_bottom_color": "rgb(0, 0, 255)",
                     "border_top_color": "rgb(0, 0, 255)",
-                    "border_left_color": "rgb(0, 0, 255)",
                     "margin_top": "40px",
-                    "border_right_color": "rgb(0, 0, 255)"
+                    "width": "130px",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "height": "100px"
                 }
             }
         ],
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "100px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "100px"
         }
     },
-    "matches": "inline-formatting-context-022-ref.xht"
+    "matches": "inline-formatting-context-022-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "Margins, borders and padding have no visual effect when inline boxes are split."
 }

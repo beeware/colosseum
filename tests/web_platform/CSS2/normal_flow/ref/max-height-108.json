@@ -1,4 +1,22 @@
 {
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "padding_box": {
+        "position": [
+            8,
+            16
+        ],
+        "size": [
+            624,
+            304
+        ]
+    },
+    "tag": "body",
+    "id": "",
     "border": [
         0,
         0,
@@ -10,6 +28,24 @@
             "text": "\n\n  "
         },
         {
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "padding_box": {
+                "position": [
+                    8,
+                    16
+                ],
+                "size": [
+                    624,
+                    36
+                ]
+            },
+            "tag": "p",
+            "id": "",
             "border": [
                 0,
                 0,
@@ -21,65 +57,49 @@
                     "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent."
                 }
             ],
-            "margin": [
-                16,
-                0,
-                16,
-                0
-            ],
-            "padding_box": {
-                "size": [
-                    624,
-                    36
-                ],
+            "border_box": {
                 "position": [
                     8,
                     16
+                ],
+                "size": [
+                    624,
+                    36
                 ]
             },
+            "content": {
+                "position": [
+                    8,
+                    16
+                ],
+                "size": [
+                    624,
+                    36
+                ]
+            }
+        },
+        {
+            "text": "\n\n  "
+        },
+        {
             "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "border_box": {
-                "size": [
-                    624,
-                    36
-                ],
+            "padding_box": {
                 "position": [
                     8,
-                    16
-                ]
-            },
-            "content": {
-                "size": [
-                    624,
-                    36
-                ],
-                "position": [
-                    8,
-                    16
-                ]
-            },
-            "id": "",
-            "margin_box": {
-                "size": [
-                    624,
                     68
                 ],
-                "position": [
-                    8,
-                    0
+                "size": [
+                    624,
+                    36
                 ]
             },
-            "tag": "p"
-        },
-        {
-            "text": "\n\n  "
-        },
-        {
+            "tag": "p",
+            "id": "",
             "border": [
                 0,
                 0,
@@ -91,65 +111,49 @@
                     "text": "Test passes if there is a wide green rectangle across the page; such green rectangle should have inactive scrollbars. There should be no wide red rectangle."
                 }
             ],
-            "margin": [
-                16,
-                0,
-                16,
-                0
-            ],
-            "padding_box": {
-                "size": [
-                    624,
-                    36
-                ],
+            "border_box": {
                 "position": [
                     8,
                     68
+                ],
+                "size": [
+                    624,
+                    36
                 ]
             },
+            "content": {
+                "position": [
+                    8,
+                    68
+                ],
+                "size": [
+                    624,
+                    36
+                ]
+            }
+        },
+        {
+            "text": "\n\n  "
+        },
+        {
             "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "border_box": {
-                "size": [
-                    624,
-                    36
-                ],
+            "padding_box": {
                 "position": [
                     8,
-                    68
-                ]
-            },
-            "content": {
+                    120
+                ],
                 "size": [
                     624,
-                    36
-                ],
-                "position": [
-                    8,
-                    68
+                    200
                 ]
             },
-            "id": "",
-            "margin_box": {
-                "size": [
-                    624,
-                    68
-                ],
-                "position": [
-                    8,
-                    52
-                ]
-            },
-            "tag": "p"
-        },
-        {
-            "text": "\n\n  "
-        },
-        {
+            "tag": "div",
+            "id": "red-parent",
             "border": [
                 0,
                 0,
@@ -161,6 +165,24 @@
                     "text": "\n    "
                 },
                 {
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding_box": {
+                        "position": [
+                            8,
+                            120
+                        ],
+                        "size": [
+                            624,
+                            200
+                        ]
+                    },
+                    "tag": "div",
+                    "id": "green-child",
                     "border": [
                         0,
                         0,
@@ -172,176 +194,74 @@
                             "text": "X"
                         }
                     ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "size": [
-                            624,
-                            200
-                        ],
-                        "position": [
-                            8,
-                            120
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
                     "border_box": {
-                        "size": [
-                            624,
-                            200
-                        ],
                         "position": [
                             8,
                             120
+                        ],
+                        "size": [
+                            624,
+                            200
                         ]
                     },
                     "content": {
-                        "size": [
-                            624,
-                            200
-                        ],
                         "position": [
                             8,
                             120
-                        ]
-                    },
-                    "id": "green-child",
-                    "margin_box": {
+                        ],
                         "size": [
                             624,
                             200
-                        ],
-                        "position": [
-                            8,
-                            120
                         ]
-                    },
-                    "tag": "div"
+                    }
                 },
                 {
                     "text": "\n  "
                 }
             ],
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "size": [
-                    624,
-                    200
-                ],
-                "position": [
-                    8,
-                    120
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
             "border_box": {
-                "size": [
-                    624,
-                    200
-                ],
                 "position": [
                     8,
                     120
+                ],
+                "size": [
+                    624,
+                    200
                 ]
             },
             "content": {
-                "size": [
-                    624,
-                    200
-                ],
                 "position": [
                     8,
                     120
-                ]
-            },
-            "id": "red-parent",
-            "margin_box": {
+                ],
                 "size": [
                     624,
                     200
-                ],
-                "position": [
-                    8,
-                    120
                 ]
-            },
-            "tag": "div"
+            }
         },
         {
             "text": "\n\n "
         }
     ],
-    "margin": [
-        8,
-        8,
-        8,
-        8
-    ],
-    "padding_box": {
-        "size": [
-            624,
-            304
-        ],
-        "position": [
-            8,
-            16
-        ]
-    },
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
     "border_box": {
-        "size": [
-            624,
-            304
-        ],
         "position": [
             8,
             16
+        ],
+        "size": [
+            624,
+            304
         ]
     },
     "content": {
-        "size": [
-            624,
-            304
-        ],
         "position": [
             8,
             16
-        ]
-    },
-    "id": "",
-    "margin_box": {
-        "size": [
-            640,
-            320
         ],
-        "position": [
-            0,
-            8
+        "size": [
+            624,
+            304
         ]
-    },
-    "tag": "body"
+    }
 }

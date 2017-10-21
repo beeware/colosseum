@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "Inline boxes are laid out horizontally or one after the other starting at the top of the containing block.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -41,29 +37,33 @@
                     }
                 ],
                 "style": {
-                    "width": "600px",
                     "border_left_style": "solid",
-                    "border_bottom_width": "1px",
-                    "border_left_width": "1px",
-                    "border_top_width": "1px",
-                    "border_right_style": "solid",
                     "display": "block",
-                    "height": "18px",
-                    "border_top_style": "solid",
                     "border_right_width": "1px",
-                    "border_bottom_style": "solid"
+                    "border_top_style": "solid",
+                    "height": "18px",
+                    "border_bottom_style": "solid",
+                    "border_top_width": "1px",
+                    "border_bottom_width": "1px",
+                    "border_right_style": "solid",
+                    "width": "600px",
+                    "border_left_width": "1px"
                 }
             }
         ],
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "20px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "20px"
         }
     },
-    "matches": "inline-formatting-context-001-ref.xht"
+    "matches": "inline-formatting-context-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "Inline boxes are laid out horizontally or one after the other starting at the top of the containing block."
 }

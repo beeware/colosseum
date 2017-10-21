@@ -6,12 +6,12 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "Filler text"
+                                "text": "Filler text",
+                                "style": {}
                             }
                         ],
-                        "style": {},
-                        "tag": "caption"
+                        "tag": "caption",
+                        "style": {}
                     },
                     {
                         "children": [
@@ -20,96 +20,96 @@
                                     {
                                         "children": [
                                             {
-                                                "style": {},
-                                                "text": "Filler"
+                                                "text": "Filler",
+                                                "style": {}
                                             }
                                         ],
-                                        "style": {},
-                                        "tag": "th"
+                                        "tag": "th",
+                                        "style": {}
                                     },
                                     {
                                         "children": [
                                             {
-                                                "style": {},
-                                                "text": "text"
+                                                "text": "text",
+                                                "style": {}
                                             }
                                         ],
-                                        "style": {},
-                                        "tag": "td"
+                                        "tag": "td",
+                                        "style": {}
                                     }
                                 ],
+                                "tag": "tr",
                                 "style": {
-                                    "border_left_color": "rgb(128, 128, 128)",
-                                    "border_top_color": "rgb(128, 128, 128)",
                                     "border_right_color": "rgb(128, 128, 128)",
-                                    "border_bottom_color": "rgb(128, 128, 128)"
-                                },
-                                "tag": "tr"
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)"
+                                }
                             },
                             {
                                 "children": [
                                     {
                                         "children": [
                                             {
-                                                "style": {},
-                                                "text": "Filler"
+                                                "text": "Filler",
+                                                "style": {}
                                             }
                                         ],
-                                        "style": {},
-                                        "tag": "th"
+                                        "tag": "th",
+                                        "style": {}
                                     },
                                     {
                                         "children": [
                                             {
-                                                "style": {},
-                                                "text": "text"
+                                                "text": "text",
+                                                "style": {}
                                             }
                                         ],
-                                        "style": {},
-                                        "tag": "td"
+                                        "tag": "td",
+                                        "style": {}
                                     }
                                 ],
+                                "tag": "tr",
                                 "style": {
-                                    "border_left_color": "rgb(128, 128, 128)",
-                                    "border_top_color": "rgb(128, 128, 128)",
                                     "border_right_color": "rgb(128, 128, 128)",
-                                    "border_bottom_color": "rgb(128, 128, 128)"
-                                },
-                                "tag": "tr"
+                                    "border_left_color": "rgb(128, 128, 128)",
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)"
+                                }
                             }
                         ],
+                        "tag": "tbody",
                         "style": {
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "border_top_color": "rgb(128, 128, 128)",
                             "border_right_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)"
-                        },
-                        "tag": "tbody"
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_top_color": "rgb(128, 128, 128)"
+                        }
                     }
                 ],
+                "tag": "table",
                 "style": {
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_top_color": "rgb(128, 128, 128)",
                     "border_right_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)"
-                },
-                "tag": "table"
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_top_color": "rgb(128, 128, 128)"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "18px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "18px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "display-018-ref.xht",
+    "assert": "When an element with its property 'display' set to 'inline', then it makes its box laid out horizontally, beginning at the top of its containing block without beginning on a new line and without requiring to begin on a new line. Elements with 'display' set to 'inline' are laid out horizontally, one after the other, in the line box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
     ],
-    "assert": "When an element with its property 'display' set to 'inline', then it makes its box laid out horizontally, beginning at the top of its containing block without beginning on a new line and without requiring to begin on a new line. Elements with 'display' set to 'inline' are laid out horizontally, one after the other, in the line box."
+    "matches": "display-018-ref.xht"
 }

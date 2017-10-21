@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "A line box is always tall enough to contain all the boxes in the line.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -31,8 +27,8 @@
                     }
                 ],
                 "style": {
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "25px"
                 }
             }
@@ -40,12 +36,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "25px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "25px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "A line box is always tall enough to contain all the boxes in the line."
 }

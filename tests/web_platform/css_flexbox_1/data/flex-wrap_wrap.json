@@ -1,79 +1,79 @@
 {
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"
-    ],
-    "matches": null,
+    "assert": "Check if the display can recognize inline-flex value.",
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "height": "100px",
+                    "width": "120px",
+                    "display": "flex"
+                },
                 "children": [
                     {
+                        "style": {
+                            "height": "50px",
+                            "min_width": "auto",
+                            "width": "50px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "1",
-                                "style": {}
+                                "style": {},
+                                "text": "1"
                             }
                         ],
-                        "style": {
-                            "width": "50px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "50px",
-                            "display": "block"
-                        },
                         "tag": "DIV"
                     },
                     {
+                        "style": {
+                            "height": "50px",
+                            "min_width": "auto",
+                            "width": "50px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "2",
-                                "style": {}
+                                "style": {},
+                                "text": "2"
                             }
                         ],
-                        "style": {
-                            "width": "50px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "50px",
-                            "display": "block"
-                        },
                         "tag": "DIV"
                     },
                     {
+                        "style": {
+                            "height": "50px",
+                            "min_width": "auto",
+                            "width": "50px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "3",
-                                "style": {}
+                                "style": {},
+                                "text": "3"
                             }
                         ],
-                        "style": {
-                            "width": "50px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "50px",
-                            "display": "block"
-                        },
                         "tag": "DIV"
                     }
                 ],
-                "style": {
-                    "width": "120px",
-                    "height": "100px",
-                    "display": "flex"
-                },
                 "tag": "DIV"
             }
         ],
-        "style": {
-            "margin_left": "8px",
-            "height": "100px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "BODY"
     },
-    "assert": "Check if the display can recognize inline-flex value."
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"
+    ],
+    "matches": null
 }

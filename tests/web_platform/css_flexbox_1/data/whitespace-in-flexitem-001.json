@@ -1,83 +1,83 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-flexbox/#flex-items"
-    ],
-    "matches": "whitespace-in-flexitem-001-ref.html",
+    "assert": "Whitespace-only nodes in a flexbox should not\nbe rendered and not influence justify-content, even in the presence of\nwhite-space: pre",
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "72px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "height": "36px",
+                    "width": "624px",
+                    "display": "flex"
+                },
                 "children": [
                     {
                         "style": {
-                            "width": "30px",
-                            "min_width": "auto",
-                            "min_height": "auto",
                             "height": "36px",
-                            "display": "block"
+                            "min_width": "auto",
+                            "width": "30px",
+                            "display": "block",
+                            "min_height": "auto"
                         },
                         "tag": "DIV"
                     }
                 ],
-                "style": {
-                    "width": "624px",
-                    "height": "36px",
-                    "display": "flex"
-                },
                 "tag": "DIV"
             },
             {
+                "style": {
+                    "height": "36px",
+                    "width": "624px",
+                    "display": "flex"
+                },
                 "children": [
                     {
+                        "style": {
+                            "height": "36px",
+                            "min_width": "auto",
+                            "width": "21.328125px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "foo",
-                                "style": {}
+                                "style": {},
+                                "text": "foo"
                             }
                         ],
-                        "style": {
-                            "width": "21.328125px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "36px",
-                            "display": "block"
-                        },
                         "tag": "B"
                     },
                     {
+                        "style": {
+                            "height": "36px",
+                            "min_width": "auto",
+                            "width": "24px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "bar",
-                                "style": {}
+                                "style": {},
+                                "text": "bar"
                             }
                         ],
-                        "style": {
-                            "width": "24px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "36px",
-                            "display": "block"
-                        },
                         "tag": "B"
                     }
                 ],
-                "style": {
-                    "width": "624px",
-                    "height": "36px",
-                    "display": "flex"
-                },
                 "tag": "DIV"
             }
         ],
-        "style": {
-            "margin_left": "8px",
-            "height": "72px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "BODY"
     },
-    "assert": "Whitespace-only nodes in a flexbox should not\nbe rendered and not influence justify-content, even in the presence of\nwhite-space: pre"
+    "help": [
+        "https://drafts.csswg.org/css-flexbox/#flex-items"
+    ],
+    "matches": "whitespace-in-flexitem-001-ref.html"
 }

@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
-    ],
-    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
@@ -31,15 +27,15 @@
                                             }
                                         ],
                                         "style": {
-                                            "width": "160px",
                                             "display": "block",
+                                            "width": "160px",
                                             "height": "48px"
                                         }
                                     }
                                 ],
                                 "style": {
-                                    "width": "160px",
                                     "display": "table-cell",
+                                    "width": "160px",
                                     "height": "48px"
                                 }
                             },
@@ -49,37 +45,37 @@
                                     {
                                         "tag": "div",
                                         "style": {
-                                            "width": "160px",
                                             "display": "block",
+                                            "width": "160px",
                                             "height": "48px"
                                         }
                                     }
                                 ],
                                 "style": {
-                                    "width": "160px",
                                     "display": "table-cell",
+                                    "width": "160px",
                                     "height": "48px"
                                 }
                             }
                         ],
                         "style": {
                             "width": "320px",
+                            "border_top_color": "rgb(128, 128, 128)",
                             "height": "48px",
                             "border_bottom_color": "rgb(128, 128, 128)",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "border_left_color": "rgb(128, 128, 128)",
                             "display": "table-row",
+                            "border_left_color": "rgb(128, 128, 128)",
                             "border_right_color": "rgb(128, 128, 128)"
                         }
                     }
                 ],
                 "style": {
                     "width": "320px",
+                    "border_top_color": "rgb(128, 128, 128)",
                     "height": "48px",
                     "border_bottom_color": "rgb(128, 128, 128)",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "border_left_color": "rgb(128, 128, 128)",
                     "display": "table",
+                    "border_left_color": "rgb(128, 128, 128)",
                     "border_right_color": "rgb(128, 128, 128)"
                 }
             }
@@ -87,12 +83,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "48px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "48px"
         }
     },
-    "matches": "line-height-127-ref.xht"
+    "matches": "line-height-127-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
+    "assert": null
 }

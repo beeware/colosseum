@@ -1,38 +1,38 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "100px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "min_width": "200px",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)"
-                },
                 "children": [
                     {
-                        "text": "A",
-                        "style": {}
+                        "style": {},
+                        "text": "A"
                     }
                 ],
+                "style": {
+                    "min_width": "200px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'min-width' property does not apply to elements with 'display' set to 'inline'.",
     "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "The 'min-width' property does not apply to elements with 'display' set to 'inline'."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

@@ -1,138 +1,138 @@
 {
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-direction"
-    ],
-    "matches": null,
+    "assert": "This test checks that the main axis of the row flex-direction has the same orientation as the inline axis of the current writing mode",
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "36px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "height": "18px",
+                    "width": "48px",
+                    "display": "flex"
+                },
                 "children": [
                     {
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "width": "16px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "A",
-                                "style": {}
+                                "style": {},
+                                "text": "A"
                             }
                         ],
-                        "style": {
-                            "width": "16px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     },
                     {
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "width": "16px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "B",
-                                "style": {}
+                                "style": {},
+                                "text": "B"
                             }
                         ],
-                        "style": {
-                            "width": "16px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     },
                     {
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "width": "16px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "C",
-                                "style": {}
+                                "style": {},
+                                "text": "C"
                             }
                         ],
-                        "style": {
-                            "width": "16px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     }
                 ],
-                "style": {
-                    "width": "48px",
-                    "height": "18px",
-                    "display": "flex"
-                },
                 "tag": "DIV"
             },
             {
+                "style": {
+                    "height": "18px",
+                    "direction": "rtl",
+                    "width": "48px",
+                    "display": "flex"
+                },
                 "children": [
                     {
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "width": "16px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "C",
-                                "style": {}
+                                "style": {},
+                                "text": "C"
                             }
                         ],
-                        "style": {
-                            "width": "16px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     },
                     {
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "width": "16px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "B",
-                                "style": {}
+                                "style": {},
+                                "text": "B"
                             }
                         ],
-                        "style": {
-                            "width": "16px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     },
                     {
+                        "style": {
+                            "height": "18px",
+                            "min_width": "auto",
+                            "width": "16px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "A",
-                                "style": {}
+                                "style": {},
+                                "text": "A"
                             }
                         ],
-                        "style": {
-                            "width": "16px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     }
                 ],
-                "style": {
-                    "width": "48px",
-                    "direction": "rtl",
-                    "height": "18px",
-                    "display": "flex"
-                },
                 "tag": "DIV"
             }
         ],
-        "style": {
-            "margin_left": "8px",
-            "height": "36px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "BODY"
     },
-    "assert": "This test checks that the main axis of the row flex-direction has the same orientation as the inline axis of the current writing mode"
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-direction"
+    ],
+    "matches": null
 }

@@ -1,55 +1,55 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "294px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_right_style": "solid",
-                    "width": "192px",
-                    "border_top_width": "3px",
-                    "border_left_width": "3px",
-                    "height": "288px",
-                    "border_left_style": "solid",
-                    "display": "block",
-                    "border_bottom_width": "3px",
-                    "border_right_width": "3px",
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "96px",
                             "display": "inline-block",
-                            "height": "96px"
+                            "height": "96px",
+                            "width": "96px"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
-                            "width": "96px",
                             "display": "block",
-                            "height": "96px"
+                            "height": "96px",
+                            "width": "96px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "288px",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "border_left_width": "3px",
+                    "border_right_width": "3px",
+                    "border_top_width": "3px",
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "width": "192px",
+                    "border_bottom_width": "3px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "294px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Percentage intrinsic widths are evaluated against the containing block's width.",
     "matches": "inline-block-replaced-width-006-ref.xht",
-    "assert": "Percentage intrinsic widths are evaluated against the containing block's width."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
+    ]
 }

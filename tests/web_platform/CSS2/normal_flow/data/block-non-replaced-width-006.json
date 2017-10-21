@@ -1,47 +1,47 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
-    ],
     "test_case": {
-        "style": {
-            "width": "640px",
-            "display": "block",
-            "height": "40px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "640px",
-                    "display": "block",
-                    "height": "40px"
-                },
                 "children": [
                     {
                         "style": {
-                            "display": "block",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_bottom_style": "solid",
-                            "width": "620px",
-                            "border_top_width": "10px",
-                            "border_bottom_width": "10px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_top_style": "solid",
                             "border_right_style": "solid",
-                            "border_left_width": "10px",
                             "border_left_style": "solid",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "height": "20px",
+                            "border_left_width": "10px",
+                            "border_top_width": "10px",
+                            "border_top_style": "solid",
+                            "width": "620px",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_style": "solid",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 128, 0)",
                             "border_right_width": "10px",
-                            "border_right_color": "rgb(0, 128, 0)"
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "height": "20px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_bottom_width": "10px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "40px",
+                    "width": "640px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "display": "block",
+            "height": "40px",
+            "width": "640px"
+        },
         "tag": "body"
     },
+    "assert": "If 'width' is set to 'auto', any other 'auto' values become '0' and the 'width' is computed based on remaining space which includes any negative width.",
     "matches": "block-non-replaced-width-005-ref.xht",
-    "assert": "If 'width' is set to 'auto', any other 'auto' values become '0' and the 'width' is computed based on remaining space which includes any negative width."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
+    ]
 }

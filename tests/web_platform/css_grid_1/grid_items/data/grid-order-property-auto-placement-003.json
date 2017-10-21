@@ -1,138 +1,138 @@
 {
-    "matches": "../reference/grid-2x2-blue-yellow-lime-magenta.html",
     "assert": null,
     "help": [
         "http://www.w3.org/TR/css-grid-1/#order-property",
         "https://drafts.csswg.org/css-flexbox-1/#order-property"
     ],
     "test_case": {
-        "tag": "BODY",
         "children": [
             {
-                "tag": "P",
                 "children": [
                     {
                         "text": "Blue and yellow squares in the first line; lime and magenta squares in the second line (exactly in this order).",
                         "style": {}
                     }
                 ],
+                "tag": "P",
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
+                    "display": "block",
+                    "height": "36px",
                     "margin_top": "16px",
-                    "display": "block",
-                    "height": "36px"
+                    "width": "624px",
+                    "margin_bottom": "16px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
-                    "position": "absolute",
-                    "z_index": "-1",
-                    "width": "100px",
                     "display": "block",
-                    "height": "100px"
+                    "height": "100px",
+                    "position": "absolute",
+                    "width": "100px",
+                    "z_index": "-1"
                 }
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "L",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 255, 0)",
-                            "border_right_color": "rgb(0, 255, 0)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(0, 255, 0)",
+                            "height": "50px",
+                            "border_right_color": "rgb(0, 255, 0)",
                             "border_top_color": "rgb(0, 255, 0)",
                             "width": "50px",
+                            "border_left_color": "rgb(0, 255, 0)",
                             "min_height": "auto",
-                            "display": "block",
-                            "height": "50px"
+                            "border_bottom_color": "rgb(0, 255, 0)"
                         }
                     },
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "M",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(255, 0, 255)",
-                            "border_right_color": "rgb(255, 0, 255)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(255, 0, 255)",
+                            "height": "50px",
+                            "border_right_color": "rgb(255, 0, 255)",
                             "border_top_color": "rgb(255, 0, 255)",
                             "width": "50px",
+                            "border_left_color": "rgb(255, 0, 255)",
                             "min_height": "auto",
-                            "display": "block",
-                            "height": "50px"
+                            "border_bottom_color": "rgb(255, 0, 255)"
                         }
                     },
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "B",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(0, 0, 255)",
+                            "height": "50px",
+                            "border_right_color": "rgb(0, 0, 255)",
                             "border_top_color": "rgb(0, 0, 255)",
                             "width": "50px",
+                            "border_left_color": "rgb(0, 0, 255)",
                             "min_height": "auto",
-                            "display": "block",
-                            "height": "50px"
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "Y",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "border_right_color": "rgb(255, 255, 0)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(255, 255, 0)",
+                            "height": "50px",
+                            "border_right_color": "rgb(255, 255, 0)",
                             "border_top_color": "rgb(255, 255, 0)",
                             "width": "50px",
+                            "border_left_color": "rgb(255, 255, 0)",
                             "min_height": "auto",
-                            "display": "block",
-                            "height": "50px"
+                            "border_bottom_color": "rgb(255, 255, 0)"
                         }
                     }
                 ],
+                "tag": "DIV",
                 "style": {
-                    "width": "624px",
                     "display": "grid",
+                    "width": "624px",
                     "height": "100px"
                 }
             }
         ],
+        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "152px"
+            "margin_left": "8px",
+            "height": "152px",
+            "width": "624px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
         }
-    }
+    },
+    "matches": "../reference/grid-2x2-blue-yellow-lime-magenta.html"
 }

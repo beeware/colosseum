@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property aligns the last line box of 'inline-block' elements with the baseline.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -26,8 +21,8 @@
                                     }
                                 ],
                                 "style": {
-                                    "width": "80px",
                                     "display": "inline-block",
+                                    "width": "80px",
                                     "height": "108px"
                                 }
                             },
@@ -40,8 +35,8 @@
                     }
                 ],
                 "style": {
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "108px"
                 }
             }
@@ -49,12 +44,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "108px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "108px"
         }
     },
-    "matches": "vertical-align-baseline-003-ref.xht"
+    "matches": "vertical-align-baseline-003-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'vertical-align' property aligns the last line box of 'inline-block' elements with the baseline."
 }

@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property does not apply to elements with 'display' set to 'table-caption'.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -20,11 +15,11 @@
                         ],
                         "style": {
                             "width": "96px",
+                            "border_top_color": "rgb(0, 0, 255)",
                             "height": "96px",
                             "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)",
                             "display": "table-caption",
+                            "border_left_color": "rgb(0, 0, 255)",
                             "border_right_color": "rgb(0, 0, 255)"
                         }
                     },
@@ -35,33 +30,33 @@
                                 "tag": "div",
                                 "style": {
                                     "width": "96px",
+                                    "border_top_color": "rgb(0, 0, 255)",
                                     "height": "96px",
                                     "border_bottom_color": "rgb(0, 0, 255)",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
                                     "display": "table-cell",
+                                    "border_left_color": "rgb(0, 0, 255)",
                                     "border_right_color": "rgb(0, 0, 255)"
                                 }
                             }
                         ],
                         "style": {
                             "width": "96px",
+                            "border_top_color": "rgb(0, 0, 255)",
                             "height": "96px",
                             "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)",
                             "display": "table-row",
+                            "border_left_color": "rgb(0, 0, 255)",
                             "border_right_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
                 "style": {
                     "width": "96px",
+                    "border_top_color": "rgb(0, 0, 255)",
                     "height": "192px",
                     "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "border_left_color": "rgb(0, 0, 255)",
                     "display": "table",
+                    "border_left_color": "rgb(0, 0, 255)",
                     "border_right_color": "rgb(0, 0, 255)"
                 }
             }
@@ -69,12 +64,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "192px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "192px"
         }
     },
-    "matches": "vertical-align-applies-to-001-ref.xht"
+    "matches": "vertical-align-applies-to-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'vertical-align' property does not apply to elements with 'display' set to 'table-caption'."
 }

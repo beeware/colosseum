@@ -1,54 +1,54 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
-    ],
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "text": "This text should be green.",
-                        "style": {}
-                    },
-                    {
-                        "children": [],
-                        "style": {
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "display": "block",
-                            "z_index": "-1",
-                            "width": "0px",
-                            "position": "absolute"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "18px",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ],
         "style": {
             "margin_top": "8px",
             "height": "18px",
+            "margin_bottom": "8px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "children": [
+            {
+                "style": {
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "18px",
+                    "width": "624px",
+                    "display": "block",
+                    "border_bottom_color": "rgb(0, 128, 0)"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "This text should be green."
+                    },
+                    {
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "0px",
+                            "position": "absolute",
+                            "width": "0px",
+                            "z_index": "-1",
+                            "display": "block",
+                            "border_bottom_color": "rgb(0, 128, 0)"
+                        },
+                        "children": [],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
+    ],
     "matches": "abspos-overflow-010-ref.xht"
 }

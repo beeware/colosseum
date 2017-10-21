@@ -1,61 +1,61 @@
 {
-    "assert": "If this tentative height is greater than 'max-height', the rules above are applied again, but this time using the value of 'max-height' as the computed value for 'height'. [...] Note: These steps do not affect the real computed value of 'height'.",
     "test_case": {
-        "style": {
-            "height": "74px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_bottom": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "display": "block",
-                    "width": "624px",
-                    "height": "74px",
-                    "margin_top": "14px",
-                    "margin_bottom": "14px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "140px",
-                            "max_height": "40px",
-                            "display": "inline-block",
-                            "height": "40px"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "70px",
                                     "display": "inline-block",
-                                    "height": "70px"
+                                    "height": "70px",
+                                    "width": "70px"
                                 },
                                 "tag": "span"
                             },
                             {
                                 "style": {
-                                    "width": "70px",
                                     "display": "inline-block",
-                                    "height": "70px"
+                                    "height": "70px",
+                                    "width": "70px"
                                 },
                                 "tag": "span"
                             }
                         ],
+                        "style": {
+                            "display": "inline-block",
+                            "height": "40px",
+                            "max_height": "40px",
+                            "width": "140px"
+                        },
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "width": "624px",
+                    "margin_top": "14px",
+                    "height": "74px",
+                    "margin_bottom": "14px"
+                },
                 "tag": "p"
             }
         ],
+        "style": {
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "height": "74px",
+            "width": "624px",
+            "display": "block",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
     },
+    "matches": "height-computed-002-ref.xht",
+    "assert": "If this tentative height is greater than 'max-height', the rules above are applied again, but this time using the value of 'max-height' as the computed value for 'height'. [...] Note: These steps do not affect the real computed value of 'height'.",
     "help": [
         "http://www.w3.org/TR/CSS22/visudet.html#min-max-heights",
         "http://www.w3.org/TR/CSS22/changes.html#s.10.7"
-    ],
-    "matches": "height-computed-002-ref.xht"
+    ]
 }

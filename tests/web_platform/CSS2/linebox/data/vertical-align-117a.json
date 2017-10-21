@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "For inline non-replaced elements (such as the span element in this testcase), the box used for vertical-alignment is the box whose height is the 'line-height' (containing the box's glyphs and the half-leading on each side). 'vertical-align: text-bottom' will align the bottom of such box with the bottom of the parent's content area and not with the bottom of the parent's box.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -23,13 +19,13 @@
                         ],
                         "style": {
                             "margin_bottom": "auto",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "margin_right": "-40px",
-                            "border_left_color": "rgb(0, 0, 255)",
                             "margin_top": "auto",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "margin_left": "-40px",
+                            "margin_right": "-40px",
                             "border_right_color": "rgb(0, 0, 255)",
-                            "margin_left": "-40px"
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
@@ -38,8 +34,8 @@
                     }
                 ],
                 "style": {
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "175px"
                 }
             }
@@ -47,12 +43,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "175px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "175px"
         }
     },
-    "matches": "vertical-align-117a-ref.xht"
+    "matches": "vertical-align-117a-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "For inline non-replaced elements (such as the span element in this testcase), the box used for vertical-alignment is the box whose height is the 'line-height' (containing the box's glyphs and the half-leading on each side). 'vertical-align: text-bottom' will align the bottom of such box with the bottom of the parent's content area and not with the bottom of the parent's box."
 }

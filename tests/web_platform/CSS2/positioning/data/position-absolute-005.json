@@ -1,57 +1,57 @@
 {
     "assert": "An absolutely positioned box does not establish a new containing block for fixed positioned descendants.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "display": "block",
+                    "height": "0px",
+                    "position": "relative",
+                    "width": "624px"
+                },
                 "children": [
                     {
+                        "style": {
+                            "position": "absolute",
+                            "left": "288px",
+                            "width": "96px",
+                            "display": "block",
+                            "top": "288px",
+                            "height": "96px"
+                        },
                         "children": [
                             {
                                 "style": {
-                                    "top": "0px",
-                                    "height": "96px",
-                                    "display": "block",
-                                    "left": "0px",
                                     "position": "fixed",
+                                    "left": "0px",
                                     "width": "96px",
-                                    "z_index": "0"
+                                    "z_index": "0",
+                                    "display": "block",
+                                    "top": "0px",
+                                    "height": "96px"
                                 },
                                 "tag": "div"
                             }
                         ],
-                        "style": {
-                            "top": "288px",
-                            "height": "96px",
-                            "display": "block",
-                            "left": "288px",
-                            "width": "96px",
-                            "position": "absolute"
-                        },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "display": "block",
-                    "height": "0px",
-                    "width": "624px",
-                    "position": "relative"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "0px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
+    ],
     "matches": null
 }

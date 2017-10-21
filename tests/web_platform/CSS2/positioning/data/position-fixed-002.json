@@ -1,47 +1,47 @@
 {
     "assert": "Fixed positioned elements can be sized and positioned using 'top', 'right', 'bottom' and 'left' properties.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
-        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "display": "block",
+                    "height": "192px",
+                    "position": "relative",
+                    "width": "192px"
+                },
                 "children": [
                     {
                         "style": {
-                            "top": "96px",
-                            "height": "384px",
-                            "width": "544px",
-                            "right": "0px",
-                            "display": "block",
+                            "position": "fixed",
                             "left": "96px",
+                            "right": "0px",
                             "z_index": "0",
+                            "display": "block",
+                            "width": "544px",
+                            "top": "96px",
                             "bottom": "0px",
-                            "position": "fixed"
+                            "height": "384px"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "display": "block",
-                    "height": "192px",
-                    "width": "192px",
-                    "position": "relative"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "192px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
+        "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
+    ],
     "matches": null
 }

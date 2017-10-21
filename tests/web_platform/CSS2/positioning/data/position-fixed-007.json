@@ -1,33 +1,33 @@
 {
     "assert": "Float is computed to 'none' when 'position: fixed' is applied.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
                 "style": {
-                    "top": "0px",
-                    "height": "96px",
-                    "display": "block",
-                    "left": "0px",
                     "position": "fixed",
+                    "left": "0px",
                     "width": "96px",
-                    "z_index": "0"
+                    "z_index": "0",
+                    "display": "block",
+                    "top": "0px",
+                    "height": "96px"
                 },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "0px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
+    ],
     "matches": "position-fixed-007-ref.xht"
 }

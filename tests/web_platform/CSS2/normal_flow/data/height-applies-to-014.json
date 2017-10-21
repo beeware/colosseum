@@ -1,50 +1,50 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "96px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "96px",
-                    "display": "inline-table",
-                    "height": "96px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "96px",
-                            "display": "table-row",
-                            "height": "96px"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "96px",
                                     "display": "table-cell",
-                                    "height": "96px"
+                                    "height": "96px",
+                                    "width": "96px"
                                 },
                                 "tag": "div"
                             }
                         ],
+                        "style": {
+                            "display": "table-row",
+                            "height": "96px",
+                            "width": "96px"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "inline-table",
+                    "height": "96px",
+                    "width": "96px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'height' property applies to elements with 'display' set to 'inline-table'.",
     "matches": "../reference/ref-filled-black-96px-square.xht",
-    "assert": "The 'height' property applies to elements with 'display' set to 'inline-table'."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ]
 }

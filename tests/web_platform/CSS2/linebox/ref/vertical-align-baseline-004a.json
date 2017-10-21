@@ -1,10 +1,5 @@
 {
-    "border": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "id": "",
     "padding_box": {
         "position": [
             8,
@@ -15,22 +10,33 @@
             209
         ]
     },
-    "margin_box": {
-        "position": [
-            0,
-            0
-        ],
-        "size": [
-            640,
-            225
-        ]
-    },
+    "tag": "body",
     "padding": [
         0,
         0,
         0,
         0
     ],
+    "content": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            209
+        ]
+    },
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            209
+        ]
+    },
     "children": [
         {
             "text": "\n\n  "
@@ -39,12 +45,7 @@
             "text": "\n\n  "
         },
         {
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
+            "id": "wrapper",
             "padding_box": {
                 "position": [
                     8,
@@ -55,167 +56,13 @@
                     209
                 ]
             },
-            "margin_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    624,
-                    209
-                ]
-            },
+            "tag": "div",
             "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "children": [
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
-                    "margin_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            199
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "margin": [
-                        0,
-                        0,
-                        99,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
-                    "content": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
-                    "id": "inline-block-without-inflow-line-boxes",
-                    "tag": "div"
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            108,
-                            72
-                        ],
-                        "size": [
-                            55,
-                            250
-                        ]
-                    },
-                    "margin_box": {
-                        "position": [
-                            108,
-                            72
-                        ],
-                        "size": [
-                            55,
-                            250
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            108,
-                            72
-                        ],
-                        "size": [
-                            55,
-                            250
-                        ]
-                    },
-                    "content": {
-                        "position": [
-                            108,
-                            72
-                        ],
-                        "size": [
-                            55,
-                            250
-                        ]
-                    },
-                    "id": "",
-                    "tag": "img"
-                },
-                {
-                    "text": "pppppppp"
-                }
-            ],
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "border_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    624,
-                    209
-                ]
-            },
             "content": {
                 "position": [
                     8,
@@ -226,8 +73,119 @@
                     209
                 ]
             },
-            "id": "wrapper",
-            "tag": "div"
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    209
+                ]
+            },
+            "children": [
+                {
+                    "id": "inline-block-without-inflow-line-boxes",
+                    "padding_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "tag": "div",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "content": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "border_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "id": "",
+                    "padding_box": {
+                        "position": [
+                            108,
+                            72
+                        ],
+                        "size": [
+                            55,
+                            250
+                        ]
+                    },
+                    "tag": "img",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "content": {
+                        "position": [
+                            108,
+                            72
+                        ],
+                        "size": [
+                            55,
+                            250
+                        ]
+                    },
+                    "border_box": {
+                        "position": [
+                            108,
+                            72
+                        ],
+                        "size": [
+                            55,
+                            250
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "text": "pppppppp"
+                }
+            ],
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ]
         },
         {
             "text": "\n\n  "
@@ -239,32 +197,10 @@
             "text": "\n\n "
         }
     ],
-    "margin": [
-        8,
-        8,
-        8,
-        8
-    ],
-    "border_box": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            209
-        ]
-    },
-    "content": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            209
-        ]
-    },
-    "id": "",
-    "tag": "body"
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

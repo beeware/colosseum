@@ -1,71 +1,71 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/tables.html#auto-table-layout"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "54px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "160px",
-                    "display": "block",
-                    "height": "54px"
-                },
                 "children": [
                     {
-                        "text": "x",
-                        "style": {}
+                        "style": {},
+                        "text": "x"
                     },
                     {
-                        "style": {
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "display": "inline-table",
-                            "width": "320px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "height": "18px",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "border_right_color": "rgb(255, 255, 255)"
-                        },
                         "children": [
                             {
-                                "style": {
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "display": "block",
-                                    "width": "320px",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "height": "18px",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
                                 "children": [
                                     {
-                                        "text": "y",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "y"
                                     }
                                 ],
+                                "style": {
+                                    "height": "18px",
+                                    "border_right_color": "rgb(255, 255, 255)",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "width": "320px",
+                                    "display": "block"
+                                },
                                 "tag": "div"
                             }
                         ],
+                        "style": {
+                            "height": "18px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "width": "320px",
+                            "display": "inline-table"
+                        },
                         "tag": "div"
                     },
                     {
-                        "text": "z",
-                        "style": {}
+                        "style": {},
+                        "text": "z"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "54px",
+                    "width": "160px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "54px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "matches": "inline-table-width-002-ref.xht",
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/tables.html#auto-table-layout"
+    ]
 }

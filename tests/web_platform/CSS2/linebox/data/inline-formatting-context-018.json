@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "If 'text-align' is set to 'justify' the user agent does not stretch spaces and/or words when the 'display' property is set to 'inline-table'.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -22,36 +18,40 @@
                             }
                         ],
                         "style": {
-                            "width": "137.734375px",
                             "display": "inline-table",
+                            "width": "137.734375px",
                             "height": "18px"
                         }
                     }
                 ],
                 "style": {
-                    "width": "200px",
                     "border_left_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
-                    "border_top_width": "3px",
-                    "border_right_style": "solid",
                     "display": "block",
-                    "height": "36px",
-                    "border_top_style": "solid",
                     "border_right_width": "3px",
-                    "border_bottom_style": "solid"
+                    "border_top_style": "solid",
+                    "height": "36px",
+                    "border_bottom_style": "solid",
+                    "border_top_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_right_style": "solid",
+                    "width": "200px",
+                    "border_left_width": "3px"
                 }
             }
         ],
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "42px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "42px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "If 'text-align' is set to 'justify' the user agent does not stretch spaces and/or words when the 'display' property is set to 'inline-table'."
 }

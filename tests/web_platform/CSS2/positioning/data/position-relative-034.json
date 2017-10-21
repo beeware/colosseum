@@ -1,52 +1,52 @@
 {
     "assert": "A container with overflow set to auto provides a scrolling mechanism for relatively positioned content.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "24px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_left_style": "solid",
+                    "height": "18px",
+                    "border_right_style": "solid",
+                    "width": "200px",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_right_width": "3px"
+                },
                 "children": [
                     {
-                        "children": [
-                            {
-                                "text": "Filler Text",
-                                "style": {}
-                            }
-                        ],
                         "style": {
                             "left": "200px",
                             "position": "relative"
                         },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Filler Text"
+                            }
+                        ],
                         "tag": "span"
                     }
                 ],
-                "style": {
-                    "border_bottom_width": "3px",
-                    "height": "18px",
-                    "border_left_width": "3px",
-                    "width": "200px",
-                    "border_bottom_style": "solid",
-                    "border_right_width": "3px",
-                    "border_top_width": "3px",
-                    "border_top_style": "solid",
-                    "border_right_style": "solid",
-                    "border_left_style": "solid",
-                    "display": "block"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "24px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
+    ],
     "matches": null
 }

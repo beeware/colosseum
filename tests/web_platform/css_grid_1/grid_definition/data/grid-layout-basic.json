@@ -1,6 +1,4 @@
 {
-    "assert": "the layout should behave the same as reference.",
-    "matches": "../reference/grid-layout-basic-ref.html",
     "test_case": {
         "children": [
             {
@@ -10,9 +8,9 @@
                         "tag": "DIV",
                         "style": {
                             "min_width": "auto",
+                            "width": "100px",
                             "height": "18px",
                             "display": "block",
-                            "width": "100px",
                             "min_height": "auto"
                         }
                     },
@@ -21,29 +19,31 @@
                         "tag": "DIV",
                         "style": {
                             "min_width": "auto",
+                            "width": "50px",
                             "height": "18px",
                             "display": "block",
-                            "width": "50px",
                             "min_height": "auto"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
+                    "width": "150px",
                     "height": "18px",
-                    "display": "grid",
-                    "width": "150px"
+                    "display": "grid"
                 }
             }
         ],
         "tag": "BODY",
         "style": {
+            "width": "640px",
             "height": "18px",
-            "display": "block",
-            "width": "640px"
+            "display": "block"
         }
     },
+    "matches": "../reference/grid-layout-basic-ref.html",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#track-sizing"
-    ]
+    ],
+    "assert": "the layout should behave the same as reference."
 }

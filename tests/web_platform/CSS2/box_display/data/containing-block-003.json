@@ -4,43 +4,43 @@
             {
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "position": "relative",
-                            "top": "-20px",
-                            "height": "100px",
                             "display": "block",
+                            "top": "-20px",
+                            "width": "100px",
                             "left": "-20px",
-                            "width": "100px"
-                        },
-                        "tag": "div"
+                            "height": "100px",
+                            "position": "relative"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "padding_left": "20px",
-                    "height": "60px",
                     "display": "inline-block",
                     "padding_top": "20px",
+                    "height": "60px",
                     "padding_right": "20px",
-                    "width": "60px",
-                    "padding_bottom": "20px"
-                },
-                "tag": "div"
+                    "padding_left": "20px",
+                    "padding_bottom": "20px",
+                    "width": "60px"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "104px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "104px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest inline-block ancestor box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
-    "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest inline-block ancestor box."
+    "matches": "../reference/ref-filled-green-100px-square.xht"
 }

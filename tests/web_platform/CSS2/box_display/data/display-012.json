@@ -4,83 +4,83 @@
             {
                 "children": [
                     {
+                        "tag": "span",
                         "style": {
                             "display": "table-column-group",
                             "height": "0px",
                             "width": "0px"
-                        },
-                        "tag": "span"
+                        }
                     },
                     {
+                        "tag": "span",
                         "style": {
                             "display": "table-column-group",
                             "height": "0px",
                             "width": "0px"
-                        },
-                        "tag": "span"
+                        }
                     },
                     {
                         "children": [
                             {
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "Filler Text"
+                                        "text": "Filler Text",
+                                        "style": {}
                                     }
                                 ],
+                                "tag": "div",
                                 "style": {
                                     "display": "table-cell",
                                     "height": "18px",
                                     "width": "66.875px"
-                                },
-                                "tag": "div"
+                                }
                             },
                             {
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "Filler Text"
+                                        "text": "Filler Text",
+                                        "style": {}
                                     }
                                 ],
+                                "tag": "div",
                                 "style": {
                                     "display": "table-cell",
                                     "height": "18px",
                                     "width": "66.875px"
-                                },
-                                "tag": "div"
+                                }
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "display": "table-row",
                             "height": "18px",
                             "width": "133.75px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "table",
                     "height": "18px",
                     "width": "133.75px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "18px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "18px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "display-012-ref.xht",
+    "assert": "The property 'display' set to 'table-column-group' behaves in layout as a table column group.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
     ],
-    "assert": "The property 'display' set to 'table-column-group' behaves in layout as a table column group."
+    "matches": "display-012-ref.xht"
 }

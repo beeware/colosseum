@@ -1,40 +1,40 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "100px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "100px",
-                    "display": "block",
-                    "height": "100px"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "100px",
-                            "display": "none",
                             "max_height": "100px",
-                            "height": "1000px"
+                            "display": "none",
+                            "height": "1000px",
+                            "width": "100px"
                         },
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "100px",
+                    "width": "100px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Max-Height can be declared onto 'display: none' elements but since 'display: none' declaration on an element does not generate a CSS box, then it won't have a rendering effect nor a visual formatting repercussion.",
     "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "Max-Height can be declared onto 'display: none' elements but since 'display: none' declaration on an element does not generate a CSS box, then it won't have a rendering effect nor a visual formatting repercussion."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

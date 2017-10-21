@@ -1,53 +1,53 @@
 {
     "assert": "The 'right' property, for absolute positioning, specifies the offset of the element in relation to the containing block's right edge. The containing block of an absolutely positioned element is formed by the padding box of its nearest (closest) positioned ancestor element.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "display": "block",
+                    "height": "100px",
+                    "position": "relative",
+                    "width": "100px"
+                },
                 "children": [
                     {
                         "style": {
                             "display": "block",
                             "height": "100px",
-                            "width": "100px",
-                            "position": "relative"
+                            "position": "relative",
+                            "width": "100px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "right": "50px",
                             "height": "50px",
-                            "top": "0px",
-                            "display": "block",
+                            "position": "absolute",
                             "width": "50px",
-                            "position": "absolute"
+                            "display": "block",
+                            "right": "50px",
+                            "top": "0px"
                         },
                         "tag": "div"
                     }
                 ],
-                "style": {
-                    "display": "block",
-                    "height": "100px",
-                    "width": "100px",
-                    "position": "relative"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "100px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "matches": "right-offset-001-ref.xht"
 }

@@ -1,83 +1,83 @@
 {
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "style": {
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "104px",
             "margin_bottom": "8px",
-            "margin_left": "8px"
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "104px",
+            "width": "624px"
         },
-        "tag": "BODY",
         "children": [
             {
                 "style": {
-                    "width": "100px",
+                    "display": "inline-grid",
                     "height": "100px",
-                    "display": "inline-grid"
+                    "width": "100px"
                 },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "width": "25px",
-                            "min_width": "auto",
+                            "display": "block",
+                            "min_height": "auto",
                             "height": "50px",
-                            "min_height": "auto",
-                            "display": "block"
+                            "width": "25px",
+                            "min_width": "auto"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "width": "25px",
-                            "min_width": "auto",
+                            "display": "block",
+                            "min_height": "auto",
                             "height": "100px",
-                            "min_height": "auto",
-                            "display": "block"
+                            "width": "25px",
+                            "min_width": "auto"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "width": "25px",
-                            "min_width": "auto",
+                            "display": "block",
+                            "min_height": "auto",
                             "height": "100px",
-                            "min_height": "auto",
-                            "display": "block"
+                            "width": "25px",
+                            "min_width": "auto"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "width": "25px",
-                            "min_width": "auto",
+                            "display": "block",
+                            "min_height": "auto",
                             "height": "100px",
-                            "min_height": "auto",
-                            "display": "block"
+                            "width": "25px",
+                            "min_width": "auto"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "width": "25px",
-                            "min_width": "auto",
+                            "display": "block",
+                            "min_height": "auto",
                             "height": "50px",
-                            "min_height": "auto",
-                            "display": "block"
+                            "width": "25px",
+                            "min_width": "auto"
                         },
                         "tag": "DIV"
                     }
-                ]
+                ],
+                "tag": "DIV"
             }
-        ]
+        ],
+        "tag": "BODY"
     },
-    "assert": "Line placement algorithm selects the first matching column when using a grid line name associated to several columns and no integer is specified within the custom-ident.",
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#line-placement",
         "http://www.w3.org/TR/css-grid-1/#grid-placement-slot",
         "http://www.w3.org/TR/css-grid-1/#named-grid-area"
-    ]
+    ],
+    "assert": "Line placement algorithm selects the first matching column when using a grid line name associated to several columns and no integer is specified within the custom-ident."
 }

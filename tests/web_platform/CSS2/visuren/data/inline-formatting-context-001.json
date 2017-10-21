@@ -1,89 +1,89 @@
 {
+    "matches": "inline-formatting-context-001-ref.xht",
+    "test_case": {
+        "style": {
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "min_width": "400px",
+                    "height": "18px",
+                    "display": "block",
+                    "width": "624px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Test"
+                            }
+                        ],
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "passes"
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "if"
+                            }
+                        ],
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "all\n    words"
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "are"
+                            }
+                        ],
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "on"
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "one"
+                            }
+                        ],
+                        "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "line."
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
     "help": [
         "http://www.w3.org/TR/CSS22/visuren.html#inline-formatting",
         "http://www.w3.org/TR/CSS22/changes.html#s.9.4.2"
     ],
-    "assert": "An inline formatting context is established by a block container box that contains no block-level boxes. In an inline formatting context, boxes are laid out horizontally, one after the other, beginning at the top of a containing block.",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "18px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block"
-        },
-        "children": [
-            {
-                "tag": "div",
-                "style": {
-                    "min_width": "400px",
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {},
-                        "children": [
-                            {
-                                "text": "Test",
-                                "style": {}
-                            }
-                        ]
-                    },
-                    {
-                        "text": "passes",
-                        "style": {}
-                    },
-                    {
-                        "tag": "div",
-                        "style": {},
-                        "children": [
-                            {
-                                "text": "if",
-                                "style": {}
-                            }
-                        ]
-                    },
-                    {
-                        "text": "all\n    words",
-                        "style": {}
-                    },
-                    {
-                        "tag": "div",
-                        "style": {},
-                        "children": [
-                            {
-                                "text": "are",
-                                "style": {}
-                            }
-                        ]
-                    },
-                    {
-                        "text": "on",
-                        "style": {}
-                    },
-                    {
-                        "tag": "div",
-                        "style": {},
-                        "children": [
-                            {
-                                "text": "one",
-                                "style": {}
-                            }
-                        ]
-                    },
-                    {
-                        "text": "line.",
-                        "style": {}
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "inline-formatting-context-001-ref.xht"
+    "assert": "An inline formatting context is established by a block container box that contains no block-level boxes. In an inline formatting context, boxes are laid out horizontally, one after the other, beginning at the top of a containing block."
 }

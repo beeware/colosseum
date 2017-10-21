@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The baseline of an (anonymous) inline element is aligned with the baseline of the last line box of an 'inline-block' in the normal flow as 'vertical-align: baseline' is by default applied. In such case, the vertical padding and vertical margin have no influence on the position of the baseline line of an 'inline-block'.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -52,11 +48,11 @@
                         "style": {
                             "width": "101.6875px",
                             "margin_bottom": "9px",
-                            "height": "162px",
-                            "display": "inline-block",
-                            "padding_bottom": "21px",
                             "margin_top": "9px",
-                            "padding_top": "21px"
+                            "padding_bottom": "21px",
+                            "display": "inline-block",
+                            "padding_top": "21px",
+                            "height": "162px"
                         }
                     },
                     {
@@ -65,8 +61,8 @@
                     }
                 ],
                 "style": {
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "222px"
                 }
             }
@@ -74,12 +70,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "222px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "222px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The baseline of an (anonymous) inline element is aligned with the baseline of the last line box of an 'inline-block' in the normal flow as 'vertical-align: baseline' is by default applied. In such case, the vertical padding and vertical margin have no influence on the position of the baseline line of an 'inline-block'."
 }

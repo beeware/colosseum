@@ -1,37 +1,37 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "max_height": "0px",
-                    "height": "0px"
-                },
                 "children": [
                     {
-                        "text": "Filler Text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler Text"
                     }
                 ],
+                "style": {
+                    "max_height": "0px",
+                    "display": "block",
+                    "height": "0px",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'max-height' property sets a minimum length value in 'em' units.",
     "matches": "height-067-ref.xht",
-    "assert": "The 'max-height' property sets a minimum length value in 'em' units."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

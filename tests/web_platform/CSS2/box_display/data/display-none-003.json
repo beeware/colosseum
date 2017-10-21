@@ -4,31 +4,31 @@
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "Filler Text"
+                        "text": "Filler Text",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "none",
                     "float": "left"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "height": "0px",
             "display": "block",
+            "margin_right": "8px",
             "margin_bottom": "8px",
-            "margin_left": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_top": "8px",
+            "height": "0px",
+            "width": "624px",
+            "margin_left": "8px"
+        }
     },
-    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "Elements set to 'display: none' do not render even if element is floated.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo"
     ],
-    "assert": "Elements set to 'display: none' do not render even if element is floated."
+    "matches": "../reference/ref-if-there-is-no-red.xht"
 }

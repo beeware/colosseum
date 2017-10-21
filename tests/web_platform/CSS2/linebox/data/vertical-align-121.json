@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
-    ],
-    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
@@ -22,10 +18,10 @@
                             }
                         ],
                         "style": {
-                            "border_bottom_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)",
                             "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)"
+                            "border_right_color": "rgb(0, 0, 128)",
+                            "border_top_color": "rgb(0, 0, 128)",
+                            "border_bottom_color": "rgb(0, 0, 128)"
                         }
                     },
                     {
@@ -34,15 +30,15 @@
                     }
                 ],
                 "style": {
-                    "width": "180px",
-                    "border_bottom_width": "3px",
                     "display": "block",
-                    "border_bottom_color": "rgb(0, 0, 255)",
                     "border_top_color": "rgb(0, 0, 128)",
-                    "border_left_color": "rgb(0, 0, 128)",
+                    "height": "60px",
                     "border_bottom_style": "solid",
                     "border_right_color": "rgb(0, 0, 128)",
-                    "height": "60px"
+                    "width": "180px",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "border_left_color": "rgb(0, 0, 128)",
+                    "border_bottom_width": "3px"
                 }
             },
             {
@@ -61,10 +57,10 @@
                             }
                         ],
                         "style": {
-                            "border_bottom_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)",
                             "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)"
+                            "border_right_color": "rgb(0, 0, 128)",
+                            "border_top_color": "rgb(0, 0, 128)",
+                            "border_bottom_color": "rgb(0, 0, 128)"
                         }
                     },
                     {
@@ -74,11 +70,11 @@
                 ],
                 "style": {
                     "width": "180px",
+                    "border_top_color": "rgb(0, 0, 128)",
                     "height": "60px",
                     "border_bottom_color": "rgb(0, 0, 128)",
-                    "border_top_color": "rgb(0, 0, 128)",
-                    "border_left_color": "rgb(0, 0, 128)",
                     "display": "block",
+                    "border_left_color": "rgb(0, 0, 128)",
                     "border_right_color": "rgb(0, 0, 128)"
                 }
             }
@@ -86,12 +82,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "123px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "123px"
         }
     },
-    "matches": "vertical-align-121-ref.xht"
+    "matches": "vertical-align-121-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
+    "assert": null
 }

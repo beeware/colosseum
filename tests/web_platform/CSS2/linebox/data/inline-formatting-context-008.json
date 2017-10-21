@@ -1,8 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "Inline element width is determined by the containing block.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -19,18 +15,18 @@
                         ],
                         "style": {
                             "width": "200px",
+                            "border_top_color": "rgb(0, 128, 0)",
                             "height": "200px",
                             "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
                             "display": "block",
+                            "border_left_color": "rgb(0, 128, 0)",
                             "border_right_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
                 "style": {
-                    "width": "200px",
                     "display": "block",
+                    "width": "200px",
                     "height": "200px"
                 }
             }
@@ -38,12 +34,16 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "200px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "200px"
         }
     },
-    "matches": "inline-formatting-context-008-ref.xht"
+    "matches": "inline-formatting-context-008-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
+    "assert": "Inline element width is determined by the containing block."
 }

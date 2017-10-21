@@ -1,63 +1,63 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
-    ],
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "text": "FAIL",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "top": "10px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "height": "64px",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "left": "10px",
-                    "z_index": "0",
-                    "width": "320px",
-                    "position": "fixed"
-                },
-                "tag": "div"
-            },
-            {
-                "children": [
-                    {
-                        "text": "This block should be green.",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "height": "64px",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "display": "block",
-                    "z_index": "0",
-                    "width": "320px",
-                    "position": "fixed"
-                },
-                "tag": "div"
-            }
-        ],
         "style": {
             "margin_top": "10px",
             "height": "0px",
+            "margin_bottom": "10px",
             "margin_right": "10px",
-            "width": "620px",
             "display": "block",
-            "margin_left": "10px",
-            "margin_bottom": "10px"
+            "width": "620px",
+            "margin_left": "10px"
         },
+        "children": [
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "left": "10px",
+                    "position": "fixed",
+                    "width": "320px",
+                    "z_index": "0",
+                    "display": "block",
+                    "top": "10px",
+                    "height": "64px",
+                    "border_bottom_color": "rgb(255, 255, 0)"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "height": "64px",
+                    "position": "fixed",
+                    "width": "320px",
+                    "z_index": "0",
+                    "display": "block",
+                    "border_bottom_color": "rgb(255, 255, 255)"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "This block should be green."
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
+    ],
     "matches": "abspos-013-ref.xht"
 }

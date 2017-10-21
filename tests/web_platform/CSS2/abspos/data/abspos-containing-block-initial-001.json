@@ -4,16 +4,15 @@
     ],
     "assert": "If there is no such ancestor, the containing block is the initial containing block.",
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "script",
                 "children": [
                     {
-                        "text": "window.scrollTo(0,50);",
-                        "style": {}
+                        "style": {},
+                        "text": "window.scrollTo(0,50);"
                     }
                 ],
+                "tag": "script",
                 "style": {
                     "display": "none"
                 }
@@ -21,47 +20,48 @@
             {
                 "tag": "div",
                 "style": {
-                    "top": "0px",
-                    "display": "block",
                     "width": "100px",
+                    "display": "block",
+                    "position": "absolute",
                     "height": "100px",
-                    "position": "absolute"
+                    "top": "0px"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
                     "width": "100px",
-                    "right": "0px",
+                    "display": "block",
+                    "position": "absolute",
                     "height": "100px",
-                    "position": "absolute"
+                    "right": "0px"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "width": "100px",
                     "bottom": "0px",
-                    "height": "100px",
-                    "position": "absolute"
+                    "display": "block",
+                    "width": "100px",
+                    "position": "absolute",
+                    "height": "100px"
                 }
             },
             {
                 "tag": "div",
                 "style": {
+                    "width": "100px",
                     "display": "block",
                     "left": "0px",
-                    "height": "100px",
-                    "width": "100px",
-                    "position": "absolute"
+                    "position": "absolute",
+                    "height": "100px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "display": "block",
             "width": "520px",
+            "display": "block",
             "height": "10000px"
         }
     },

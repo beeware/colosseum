@@ -261,22 +261,22 @@ function dump_reference(node) {
                 'position': [position.left, position.top],
                 'size': [position.width, position.height]
             },
-            'margin': [
-                parseInt(style.marginTop),
-                parseInt(style.marginRight),
-                parseInt(style.marginBottom),
-                parseInt(style.marginRight)
-            ],
-            'margin_box': {
-                'position': [
-                    position.left - parseInt(style.marginLeft),
-                    position.top - parseInt(style.marginTop)
-                ],
-                'size': [
-                    position.width + parseInt(style.marginLeft) + parseInt(style.marginRight),
-                    position.height + parseInt(style.marginTop) + parseInt(style.marginBottom)
-                ]
-            },
+            // 'margin': [
+            //     parseInt(style.marginTop),
+            //     parseInt(style.marginRight),
+            //     parseInt(style.marginBottom),
+            //     parseInt(style.marginRight)
+            // ],
+            // 'margin_box': {
+            //     'position': [
+            //         position.left - parseInt(style.marginLeft),
+            //         position.top - parseInt(style.marginTop)
+            //     ],
+            //     'size': [
+            //         position.width + parseInt(style.marginLeft) + parseInt(style.marginRight),
+            //         position.height + parseInt(style.marginTop) + parseInt(style.marginBottom)
+            //     ]
+            // },
             'tag': node.tagName,
             'id': node.id
         }

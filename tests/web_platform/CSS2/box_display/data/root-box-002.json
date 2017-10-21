@@ -2,32 +2,32 @@
     "test_case": {
         "children": [
             {
+                "tag": "div",
                 "style": {
                     "display": "table-cell",
                     "height": "100px",
                     "width": "100px"
-                },
-                "tag": "div"
+                }
             },
             {
+                "tag": "div",
                 "style": {
                     "display": "table-cell",
                     "height": "100px",
                     "width": "100px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
             "display": "table-row",
             "height": "100px",
             "width": "200px"
-        },
-        "tag": "body"
+        }
     },
-    "matches": "root-box-002-ref.xht",
+    "assert": "HTML elements can be set to other display     property values - like sub-table elements just like in this testcase -     in order to behave like another element.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
     ],
-    "assert": "HTML elements can be set to other display     property values - like sub-table elements just like in this testcase -     in order to behave like another element."
+    "matches": "root-box-002-ref.xht"
 }

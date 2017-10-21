@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'line-height' property applies to elements with 'display' set to 'table-caption'.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -17,8 +12,8 @@
                                 "tag": "div",
                                 "children": [],
                                 "style": {
-                                    "width": "96px",
                                     "display": "table-caption",
+                                    "width": "96px",
                                     "height": "192px"
                                 }
                             },
@@ -28,22 +23,22 @@
                                     {
                                         "tag": "div",
                                         "style": {
-                                            "width": "96px",
                                             "display": "table-cell",
+                                            "width": "96px",
                                             "height": "16px"
                                         }
                                     }
                                 ],
                                 "style": {
-                                    "width": "96px",
                                     "display": "table-row",
+                                    "width": "96px",
                                     "height": "16px"
                                 }
                             }
                         ],
                         "style": {
-                            "width": "96px",
                             "display": "table",
+                            "width": "96px",
                             "height": "208px"
                         }
                     },
@@ -61,8 +56,8 @@
                 ],
                 "style": {
                     "position": "relative",
-                    "width": "624px",
                     "display": "block",
+                    "width": "624px",
                     "height": "208px"
                 }
             }
@@ -70,12 +65,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "208px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "208px"
         }
     },
-    "matches": "line-height-applies-to-001-ref.xht"
+    "matches": "line-height-applies-to-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The 'line-height' property applies to elements with 'display' set to 'table-caption'."
 }

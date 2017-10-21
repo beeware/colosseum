@@ -1,83 +1,83 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "304px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "36px"
-                },
                 "children": [
                     {
-                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent.",
-                        "style": {}
+                        "style": {},
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent."
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
                 "tag": "p"
             },
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "height": "36px"
-                },
                 "children": [
                     {
-                        "text": "Test passes if there is a wide green rectangle across the page; such green rectangle should have an active horizontal scrollbar. There should be no wide red rectangle.",
-                        "style": {}
+                        "style": {},
+                        "text": "Test passes if there is a wide green rectangle across the page; such green rectangle should have an active horizontal scrollbar. There should be no wide red rectangle."
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "margin_top": "16px",
+                    "height": "36px",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
                 "tag": "p"
             },
             {
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "max_height": "400px",
-                    "height": "200px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "display": "block",
-                            "width": "624px",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "height": "200px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)"
-                        },
                         "children": [
                             {
-                                "text": "XXXXXXXXXXXXXXX",
-                                "style": {}
+                                "style": {},
+                                "text": "XXXXXXXXXXXXXXX"
                             }
                         ],
+                        "style": {
+                            "height": "200px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "width": "624px",
+                            "display": "block"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "max_height": "400px",
+                    "display": "block",
+                    "height": "200px",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "304px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'max-height' property can restrain the used value of height when the used value of height is greater than the declared max-height.",
     "matches": null,
-    "assert": "The 'max-height' property can restrain the used value of height when the used value of height is greater than the declared max-height."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ]
 }

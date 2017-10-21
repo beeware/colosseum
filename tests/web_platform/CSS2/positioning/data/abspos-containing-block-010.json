@@ -1,133 +1,133 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
     "test_case": {
+        "style": {
+            "border_top_color": "rgb(255, 0, 0)",
+            "width": "544px",
+            "padding_bottom": "16px",
+            "padding_left": "16px",
+            "padding_right": "16px",
+            "height": "148px",
+            "border_top_style": "solid",
+            "border_bottom_color": "rgb(255, 0, 0)",
+            "border_bottom_style": "solid",
+            "display": "block",
+            "margin_top": "16px",
+            "border_left_width": "16px",
+            "margin_bottom": "16px",
+            "border_right_color": "rgb(255, 0, 0)",
+            "padding_top": "16px",
+            "margin_left": "16px",
+            "border_right_width": "16px",
+            "border_bottom_width": "16px",
+            "border_left_color": "rgb(255, 0, 0)",
+            "border_left_style": "solid",
+            "border_right_style": "solid",
+            "margin_right": "16px",
+            "border_top_width": "16px"
+        },
         "children": [
             {
-                "children": [
-                    {
-                        "text": "FAIL",
-                        "style": {}
-                    }
-                ],
                 "style": {
                     "margin_top": "16px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "height": "18px",
                     "border_top_color": "rgb(255, 255, 0)",
-                    "padding_bottom": "16px",
-                    "padding_top": "16px",
-                    "width": "480px",
+                    "margin_bottom": "16px",
                     "padding_left": "16px",
-                    "margin_right": "16px",
+                    "padding_bottom": "16px",
+                    "width": "480px",
+                    "border_left_color": "rgb(255, 255, 0)",
                     "border_bottom_color": "rgb(255, 255, 0)",
                     "border_right_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "margin_bottom": "16px",
                     "margin_left": "16px",
-                    "padding_right": "16px"
+                    "padding_right": "16px",
+                    "height": "18px",
+                    "margin_right": "16px",
+                    "display": "block",
+                    "padding_top": "16px"
                 },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ],
                 "tag": "p"
             },
             {
-                "children": [
-                    {
-                        "text": "This page should be completely green.",
-                        "style": {}
-                    }
-                ],
                 "style": {
                     "margin_top": "16px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "height": "18px",
                     "border_top_color": "rgb(255, 255, 0)",
-                    "padding_bottom": "16px",
-                    "padding_top": "16px",
-                    "width": "480px",
+                    "margin_bottom": "16px",
                     "padding_left": "16px",
-                    "margin_right": "16px",
+                    "padding_bottom": "16px",
+                    "width": "480px",
+                    "border_left_color": "rgb(255, 255, 0)",
                     "border_bottom_color": "rgb(255, 255, 0)",
                     "border_right_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "margin_bottom": "16px",
                     "margin_left": "16px",
-                    "padding_right": "16px"
+                    "padding_right": "16px",
+                    "height": "18px",
+                    "margin_right": "16px",
+                    "display": "block",
+                    "padding_top": "16px"
                 },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "This page should be completely green."
+                    }
+                ],
                 "tag": "p"
             },
             {
+                "style": {
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "left": "0px",
+                    "position": "absolute",
+                    "width": "640px",
+                    "display": "block",
+                    "top": "0px",
+                    "height": "480px",
+                    "border_bottom_color": "rgb(255, 255, 255)"
+                },
                 "children": [
                     {
-                        "text": "Test passes if there is",
-                        "style": {}
+                        "style": {},
+                        "text": "Test passes if there is"
                     },
                     {
-                        "children": [
-                            {
-                                "text": "no red",
-                                "style": {}
-                            }
-                        ],
                         "style": {
                             "border_right_color": "rgb(255, 255, 255)",
                             "border_left_color": "rgb(255, 255, 255)",
                             "border_top_color": "rgb(255, 255, 255)",
                             "border_bottom_color": "rgb(255, 255, 255)"
                         },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "no red"
+                            }
+                        ],
                         "tag": "strong"
                     },
                     {
-                        "text": ".",
-                        "style": {}
+                        "style": {},
+                        "text": "."
                     }
                 ],
-                "style": {
-                    "top": "0px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "height": "480px",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "display": "block",
-                    "left": "0px",
-                    "width": "640px",
-                    "position": "absolute"
-                },
                 "tag": "div"
             },
             {
-                "text": "the <div> element should exactly overlap the <html> element,\n  since they have the same dimensions and the same containing block\n  and the same origin.",
-                "style": {}
+                "style": {},
+                "text": "the <div> element should exactly overlap the <html> element,\n  since they have the same dimensions and the same containing block\n  and the same origin."
             }
         ],
-        "style": {
-            "margin_top": "16px",
-            "border_left_width": "16px",
-            "border_bottom_style": "solid",
-            "padding_bottom": "16px",
-            "width": "544px",
-            "height": "148px",
-            "margin_right": "16px",
-            "border_right_color": "rgb(255, 0, 0)",
-            "border_right_width": "16px",
-            "border_top_width": "16px",
-            "border_top_style": "solid",
-            "margin_left": "16px",
-            "border_left_style": "solid",
-            "padding_right": "16px",
-            "border_left_color": "rgb(255, 0, 0)",
-            "border_top_color": "rgb(255, 0, 0)",
-            "padding_top": "16px",
-            "border_right_style": "solid",
-            "border_bottom_width": "16px",
-            "padding_left": "16px",
-            "border_bottom_color": "rgb(255, 0, 0)",
-            "display": "block",
-            "margin_bottom": "16px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
     "matches": "abspos-containing-block-010-ref.xht"
 }

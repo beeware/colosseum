@@ -1,40 +1,40 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_right_style": "solid",
-                    "float": "left",
-                    "display": "block",
-                    "border_left_width": "5px",
-                    "width": "279.46875px",
-                    "border_left_style": "solid",
-                    "height": "18px",
-                    "border_right_width": "5px"
-                },
                 "children": [
                     {
-                        "text": "Filler Text Filler Text Filler Text Filler Text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler Text Filler Text Filler Text Filler Text"
                     }
                 ],
+                "style": {
+                    "height": "18px",
+                    "border_right_style": "solid",
+                    "float": "left",
+                    "border_left_width": "5px",
+                    "border_right_width": "5px",
+                    "display": "block",
+                    "border_left_style": "solid",
+                    "width": "279.46875px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Content width of a non-replaced inline element is that of the rendered content.",
     "matches": "width-non-replaced-inline-001-ref.xht",
-    "assert": "Content width of a non-replaced inline element is that of the rendered content."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

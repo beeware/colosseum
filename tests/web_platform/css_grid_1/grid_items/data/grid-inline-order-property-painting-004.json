@@ -1,72 +1,72 @@
 {
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "assert": null,
     "help": [
         "http://www.w3.org/TR/css-grid-1/#order-property",
         "https://drafts.csswg.org/css-flexbox-1/#order-property"
     ],
     "test_case": {
-        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "G",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "height": "100px",
+                            "border_right_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)",
                             "width": "100px",
+                            "border_left_color": "rgb(0, 128, 0)",
                             "min_height": "auto",
-                            "display": "block",
-                            "height": "100px"
+                            "border_bottom_color": "rgb(0, 128, 0)"
                         }
                     },
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "R",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_right_color": "rgb(255, 0, 0)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(255, 0, 0)",
+                            "height": "100px",
+                            "border_right_color": "rgb(255, 0, 0)",
                             "border_top_color": "rgb(255, 0, 0)",
                             "width": "100px",
+                            "border_left_color": "rgb(255, 0, 0)",
                             "min_height": "auto",
-                            "display": "block",
-                            "height": "100px"
+                            "border_bottom_color": "rgb(255, 0, 0)"
                         }
                     }
                 ],
+                "tag": "DIV",
                 "style": {
-                    "width": "100px",
                     "display": "inline-grid",
+                    "width": "100px",
                     "height": "100px"
                 }
             }
         ],
+        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "100px"
+            "margin_left": "8px",
+            "height": "100px",
+            "width": "624px",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
         }
-    }
+    },
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

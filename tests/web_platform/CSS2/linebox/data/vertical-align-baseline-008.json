@@ -1,9 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The baseline of a table cell element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "test_case": {
         "tag": "body",
         "children": [
@@ -34,32 +29,32 @@
                                 "style": {
                                     "width": "173.328125px",
                                     "height": "37px",
-                                    "padding_left": "1px",
-                                    "display": "table-cell",
                                     "padding_bottom": "1px",
+                                    "padding_left": "1px",
                                     "padding_right": "1px",
+                                    "display": "table-cell",
                                     "padding_top": "1px"
                                 }
                             }
                         ],
                         "style": {
                             "width": "179.328125px",
+                            "border_top_color": "rgb(128, 128, 128)",
                             "height": "39px",
                             "border_bottom_color": "rgb(128, 128, 128)",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "border_left_color": "rgb(128, 128, 128)",
                             "display": "table-row",
+                            "border_left_color": "rgb(128, 128, 128)",
                             "border_right_color": "rgb(128, 128, 128)"
                         }
                     }
                 ],
                 "style": {
                     "width": "179.328125px",
+                    "border_top_color": "rgb(128, 128, 128)",
                     "height": "43px",
                     "border_bottom_color": "rgb(128, 128, 128)",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "border_left_color": "rgb(128, 128, 128)",
                     "display": "table",
+                    "border_left_color": "rgb(128, 128, 128)",
                     "border_right_color": "rgb(128, 128, 128)"
                 }
             }
@@ -67,12 +62,17 @@
         "style": {
             "width": "624px",
             "margin_bottom": "8px",
-            "height": "43px",
-            "display": "block",
-            "margin_right": "8px",
             "margin_top": "8px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "height": "43px"
         }
     },
-    "matches": "vertical-align-baseline-008-ref.xht"
+    "matches": "vertical-align-baseline-008-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
+    "assert": "The baseline of a table cell element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child."
 }

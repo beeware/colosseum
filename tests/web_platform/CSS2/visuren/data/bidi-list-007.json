@@ -1,90 +1,90 @@
 {
+    "matches": null,
+    "test_case": {
+        "style": {
+            "direction": "rtl",
+            "margin_bottom": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "54px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "direction": "rtl",
+                    "margin_bottom": "16px",
+                    "width": "560px",
+                    "height": "54px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "padding_left": "32px",
+                    "padding_right": "32px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "width": "496px",
+                            "height": "18px",
+                            "display": "list-item",
+                            "padding_left": "32px",
+                            "padding_right": "32px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "This is the first of three items that are centered"
+                            }
+                        ],
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "width": "496px",
+                            "height": "18px",
+                            "display": "list-item",
+                            "padding_left": "32px",
+                            "padding_right": "32px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "And this is the second of the three items that are centered"
+                            }
+                        ],
+                        "tag": "li"
+                    },
+                    {
+                        "style": {
+                            "direction": "rtl",
+                            "width": "496px",
+                            "height": "18px",
+                            "display": "list-item",
+                            "padding_left": "32px",
+                            "padding_right": "32px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "And this is the third and last of the three items"
+                            }
+                        ],
+                        "tag": "li"
+                    }
+                ],
+                "tag": "ul"
+            }
+        ],
+        "tag": "body"
+    },
     "help": [
         "http://www.w3.org/TR/CSS21/text.html#alignment-prop",
         "http://www.w3.org/TR/CSS21/visuren.html#direction",
         "http://www.w3.org/TR/CSS21/generate.html#list-style"
     ],
-    "assert": "text-align: center should apply to unordered lists in rtl context without affecting their rtlness",
-    "test_case": {
-        "tag": "body",
-        "style": {
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "direction": "rtl",
-            "height": "54px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px",
-            "display": "block"
-        },
-        "children": [
-            {
-                "tag": "ul",
-                "style": {
-                    "margin_top": "16px",
-                    "padding_right": "32px",
-                    "padding_left": "32px",
-                    "height": "54px",
-                    "margin_bottom": "16px",
-                    "width": "560px",
-                    "direction": "rtl",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "tag": "li",
-                        "style": {
-                            "direction": "rtl",
-                            "padding_right": "32px",
-                            "padding_left": "32px",
-                            "height": "18px",
-                            "width": "496px",
-                            "display": "list-item"
-                        },
-                        "children": [
-                            {
-                                "text": "This is the first of three items that are centered",
-                                "style": {}
-                            }
-                        ]
-                    },
-                    {
-                        "tag": "li",
-                        "style": {
-                            "direction": "rtl",
-                            "padding_right": "32px",
-                            "padding_left": "32px",
-                            "height": "18px",
-                            "width": "496px",
-                            "display": "list-item"
-                        },
-                        "children": [
-                            {
-                                "text": "And this is the second of the three items that are centered",
-                                "style": {}
-                            }
-                        ]
-                    },
-                    {
-                        "tag": "li",
-                        "style": {
-                            "direction": "rtl",
-                            "padding_right": "32px",
-                            "padding_left": "32px",
-                            "height": "18px",
-                            "width": "496px",
-                            "display": "list-item"
-                        },
-                        "children": [
-                            {
-                                "text": "And this is the third and last of the three items",
-                                "style": {}
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": null
+    "assert": "text-align: center should apply to unordered lists in rtl context without affecting their rtlness"
 }

@@ -1,57 +1,57 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "300px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "width": "300px",
-                    "display": "block",
-                    "height": "300px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "150px",
-                            "height": "150px"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "600px",
-                                    "height": "300px"
+                                    "height": "300px",
+                                    "width": "600px"
                                 },
                                 "tag": "svg:rect"
                             }
                         ],
+                        "style": {
+                            "height": "150px",
+                            "width": "150px"
+                        },
                         "tag": "svg:svg"
                     },
                     {
                         "style": {
-                            "width": "150px",
-                            "display": "block",
-                            "bottom": "150px",
                             "height": "150px",
+                            "display": "block",
+                            "width": "150px",
+                            "bottom": "150px",
                             "position": "relative"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "300px",
+                    "width": "300px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "300px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "If an inline replaced element (like the svg element in this test) has no intrinsic height and no intrinsic ratio, then the used value of 'height' becomes 150px.",
     "matches": "../positioning/absolute-replaced-width-003b-ref.xht",
-    "assert": "If an inline replaced element (like the svg element in this test) has no intrinsic height and no intrinsic ratio, then the used value of 'height' becomes 150px."
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
 }

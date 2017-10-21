@@ -1,89 +1,89 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/text.html#white-space-model",
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ],
     "test_case": {
-        "style": {
-            "width": "624px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "120px",
-            "margin_right": "8px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_left_color": "rgb(0, 255, 255)",
-                    "display": "block",
-                    "margin_top": "40px",
-                    "margin_bottom": "40px",
-                    "height": "40px",
-                    "width": "160px",
-                    "border_bottom_color": "rgb(0, 255, 255)",
-                    "margin_right": "40px",
-                    "border_top_color": "rgb(0, 255, 255)",
-                    "border_right_color": "rgb(0, 255, 255)",
-                    "margin_left": "40px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(0, 255, 255)",
-                            "padding_left": "40px",
-                            "border_top_color": "rgb(0, 255, 255)",
-                            "border_right_color": "rgb(0, 255, 255)",
-                            "border_left_color": "rgb(0, 255, 255)"
-                        },
                         "children": [
                             {
-                                "text": "XX",
-                                "style": {}
+                                "style": {},
+                                "text": "XX"
                             }
                         ],
+                        "style": {
+                            "padding_left": "40px",
+                            "border_bottom_color": "rgb(0, 255, 255)",
+                            "border_right_color": "rgb(0, 255, 255)",
+                            "border_left_color": "rgb(0, 255, 255)",
+                            "border_top_color": "rgb(0, 255, 255)"
+                        },
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "border_left_color": "rgb(0, 255, 255)",
+                    "margin_left": "40px",
+                    "margin_bottom": "40px",
+                    "border_right_color": "rgb(0, 255, 255)",
+                    "display": "block",
+                    "height": "40px",
+                    "border_bottom_color": "rgb(0, 255, 255)",
+                    "margin_top": "40px",
+                    "margin_right": "40px",
+                    "width": "160px",
+                    "border_top_color": "rgb(0, 255, 255)"
+                },
                 "tag": "div"
             },
             {
-                "style": {
-                    "border_left_color": "rgb(0, 255, 255)",
-                    "display": "block",
-                    "margin_top": "40px",
-                    "margin_bottom": "40px",
-                    "height": "40px",
-                    "width": "160px",
-                    "border_bottom_color": "rgb(0, 255, 255)",
-                    "margin_right": "40px",
-                    "border_top_color": "rgb(0, 255, 255)",
-                    "border_right_color": "rgb(0, 255, 255)",
-                    "margin_left": "40px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(0, 255, 255)",
-                            "border_top_color": "rgb(0, 255, 255)",
-                            "border_right_color": "rgb(0, 255, 255)",
-                            "border_left_color": "rgb(0, 255, 255)"
-                        },
                         "children": [
                             {
-                                "text": "XX",
-                                "style": {}
+                                "style": {},
+                                "text": "XX"
                             }
                         ],
+                        "style": {
+                            "border_bottom_color": "rgb(0, 255, 255)",
+                            "border_right_color": "rgb(0, 255, 255)",
+                            "border_left_color": "rgb(0, 255, 255)",
+                            "border_top_color": "rgb(0, 255, 255)"
+                        },
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "border_left_color": "rgb(0, 255, 255)",
+                    "margin_left": "40px",
+                    "margin_bottom": "40px",
+                    "border_right_color": "rgb(0, 255, 255)",
+                    "display": "block",
+                    "height": "40px",
+                    "border_bottom_color": "rgb(0, 255, 255)",
+                    "margin_top": "40px",
+                    "margin_right": "40px",
+                    "width": "160px",
+                    "border_top_color": "rgb(0, 255, 255)"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "height": "120px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "If a space (U+0020) at the beginning of a line     has 'white-space' set to 'normal', then it is removed, even if there's padding.",
     "matches": "inlines-016-ref.xht",
-    "assert": "If a space (U+0020) at the beginning of a line     has 'white-space' set to 'normal', then it is removed, even if there's padding."
+    "help": [
+        "http://www.w3.org/TR/CSS21/text.html#white-space-model",
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
+    ]
 }

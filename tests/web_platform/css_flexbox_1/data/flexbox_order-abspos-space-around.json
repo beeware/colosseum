@@ -1,100 +1,100 @@
 {
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#order-property"
-    ],
-    "matches": "flexbox_order-abspos-space-around-ref.html",
+    "assert": null,
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "height": "130px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_left": "8px"
+        },
         "children": [
             {
+                "style": {
+                    "border_right_width": "1px",
+                    "width": "432px",
+                    "border_bottom_width": "1px",
+                    "border_bottom_style": "solid",
+                    "border_top_width": "1px",
+                    "border_left_style": "solid",
+                    "position": "relative",
+                    "height": "128px",
+                    "border_right_style": "solid",
+                    "border_left_width": "1px",
+                    "display": "flex",
+                    "border_top_style": "solid"
+                },
                 "children": [
                     {
-                        "children": [
-                            {
-                                "text": "damer",
-                                "style": {}
-                            }
-                        ],
                         "style": {
-                            "width": "80px",
-                            "min_width": "auto",
-                            "min_height": "auto",
                             "height": "128px",
-                            "display": "block"
-                        },
-                        "tag": "SPAN"
-                    },
-                    {
-                        "style": {
-                            "min_height": "auto",
-                            "height": "0px",
-                            "right": "0px",
+                            "min_width": "auto",
                             "width": "80px",
-                            "position": "absolute",
                             "display": "block",
-                            "min_width": "auto"
+                            "min_height": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "damer"
+                            }
+                        ],
+                        "tag": "SPAN"
+                    },
+                    {
+                        "style": {
+                            "height": "0px",
+                            "min_width": "auto",
+                            "width": "80px",
+                            "right": "0px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "position": "absolute"
                         },
                         "tag": "SPAN"
                     },
                     {
+                        "style": {
+                            "height": "128px",
+                            "min_width": "auto",
+                            "width": "80px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "damer",
-                                "style": {}
+                                "style": {},
+                                "text": "damer"
                             }
                         ],
-                        "style": {
-                            "width": "80px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "128px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     },
                     {
+                        "style": {
+                            "height": "128px",
+                            "min_width": "auto",
+                            "width": "80px",
+                            "display": "block",
+                            "min_height": "auto"
+                        },
                         "children": [
                             {
-                                "text": "damer",
-                                "style": {}
+                                "style": {},
+                                "text": "damer"
                             }
                         ],
-                        "style": {
-                            "width": "80px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "height": "128px",
-                            "display": "block"
-                        },
                         "tag": "SPAN"
                     }
                 ],
-                "style": {
-                    "border_right_width": "1px",
-                    "height": "128px",
-                    "border_right_style": "solid",
-                    "border_bottom_style": "solid",
-                    "display": "flex",
-                    "border_left_style": "solid",
-                    "border_top_width": "1px",
-                    "border_top_style": "solid",
-                    "border_bottom_width": "1px",
-                    "width": "432px",
-                    "position": "relative",
-                    "border_left_width": "1px"
-                },
                 "tag": "DIV"
             }
         ],
-        "style": {
-            "margin_left": "8px",
-            "height": "130px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_top": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "BODY"
     },
-    "assert": null
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#order-property"
+    ],
+    "matches": "flexbox_order-abspos-space-around-ref.html"
 }

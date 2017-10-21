@@ -1,54 +1,54 @@
 {
     "assert": "Floating a box will first lay out the box then shift it to the left.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme"
-    ],
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "height": "55px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_left": "8px"
+        },
         "children": [
             {
-                "children": [
-                    {
-                        "text": "S",
-                        "style": {}
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "P A",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "display": "block",
-                            "float": "left",
-                            "height": "55px",
-                            "width": "83.609375px"
-                        },
-                        "tag": "span"
-                    },
-                    {
-                        "text": "S",
-                        "style": {}
-                    }
-                ],
                 "style": {
                     "display": "block",
                     "height": "55px",
                     "width": "624px"
                 },
+                "children": [
+                    {
+                        "style": {},
+                        "text": "S"
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "height": "55px",
+                            "float": "left",
+                            "width": "83.609375px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "P A"
+                            }
+                        ],
+                        "tag": "span"
+                    },
+                    {
+                        "style": {},
+                        "text": "S"
+                    }
+                ],
                 "tag": "div"
             }
         ],
-        "style": {
-            "margin_top": "8px",
-            "height": "55px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_bottom": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme"
+    ],
     "matches": "positioning-float-001-ref.xht"
 }

@@ -1,73 +1,73 @@
 {
-    "matches": "../reference/grid-layout-z-order-ref.html",
     "assert": "the layout should behave the same as reference.",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#z-order"
     ],
     "test_case": {
-        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "down",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "min_height": "auto",
-                            "border_right_color": "rgb(255, 255, 255)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(255, 255, 255)",
+                            "z_index": "1",
+                            "border_right_color": "rgb(255, 255, 255)",
                             "border_top_color": "rgb(255, 255, 255)",
                             "width": "100px",
-                            "z_index": "1",
-                            "display": "block",
-                            "height": "18px"
+                            "height": "18px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "min_height": "auto",
+                            "border_bottom_color": "rgb(255, 255, 255)"
                         }
                     },
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "up",
                                 "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "min_height": "auto",
-                            "border_right_color": "rgb(255, 255, 255)",
+                            "display": "block",
                             "min_width": "auto",
-                            "border_left_color": "rgb(255, 255, 255)",
+                            "z_index": "10",
+                            "border_right_color": "rgb(255, 255, 255)",
                             "border_top_color": "rgb(255, 255, 255)",
                             "width": "100px",
-                            "z_index": "10",
-                            "display": "block",
-                            "height": "18px"
+                            "height": "18px",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "min_height": "auto",
+                            "border_bottom_color": "rgb(255, 255, 255)"
                         }
                     }
                 ],
+                "tag": "DIV",
                 "style": {
-                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "display": "grid",
+                    "height": "18px",
                     "border_right_color": "rgb(255, 255, 255)",
-                    "border_left_color": "rgb(255, 255, 255)",
                     "border_top_color": "rgb(255, 255, 255)",
                     "width": "150px",
-                    "display": "grid",
-                    "height": "18px"
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_bottom_color": "rgb(255, 255, 255)"
                 }
             }
         ],
+        "tag": "BODY",
         "style": {
-            "width": "640px",
             "display": "block",
+            "width": "640px",
             "height": "18px"
         }
-    }
+    },
+    "matches": "../reference/grid-layout-z-order-ref.html"
 }
