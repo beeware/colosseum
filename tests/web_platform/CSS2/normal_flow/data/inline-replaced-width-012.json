@@ -1,75 +1,59 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "234px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "200px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "200px",
+                    "width": "600px",
                     "display": "block",
-                    "width": "600px"
+                    "height": "200px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "100px",
                             "width": "600px",
+                            "display": "block",
                             "margin_top": "16px",
                             "margin_bottom": "16px",
-                            "display": "block"
+                            "height": "100px"
                         },
-                        "tag": "p",
                         "children": [
                             {
                                 "style": {
-                                    "height": "100px",
-                                    "display": "block",
+                                    "float": "left",
                                     "width": "100px",
-                                    "float": "left"
+                                    "display": "block",
+                                    "height": "100px"
                                 },
                                 "tag": "img"
                             },
                             {
                                 "style": {
-                                    "height": "100px",
-                                    "width": "600px"
+                                    "width": "600px",
+                                    "height": "100px"
                                 },
                                 "tag": "img"
                             }
-                        ]
+                        ],
+                        "tag": "p"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inline-replaced-width-012-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ]
+    "assert": null
 }

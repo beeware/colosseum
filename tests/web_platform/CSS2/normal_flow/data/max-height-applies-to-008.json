@@ -1,48 +1,38 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "134px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
             {
                 "style": {
                     "max_height": "0px",
                     "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
                     "border_top_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)"
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)"
                 },
+                "children": [
+                    {
+                        "text": "A",
+                        "style": {}
+                    }
+                ],
                 "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "The 'max-height' property does not apply to elements with 'display' set to 'inline'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    "assert": "The 'max-height' property does not apply to elements with 'display' set to 'inline'."
 }

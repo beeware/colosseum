@@ -1,78 +1,96 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
+    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
             {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
-            {
                 "tag": "div",
                 "children": [
                     {
+                        "text": "x",
+                        "style": {}
+                    },
+                    {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 0, 128)",
+                            "border_top_color": "rgb(0, 0, 128)",
                             "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)"
+                            "border_right_color": "rgb(0, 0, 128)"
                         }
+                    },
+                    {
+                        "text": "x",
+                        "style": {}
                     }
                 ],
                 "style": {
+                    "width": "180px",
                     "border_bottom_width": "3px",
-                    "border_left_color": "rgb(0, 0, 128)",
-                    "border_right_color": "rgb(0, 0, 128)",
+                    "display": "block",
                     "border_bottom_color": "rgb(0, 0, 255)",
-                    "height": "60px",
-                    "border_bottom_style": "solid",
                     "border_top_color": "rgb(0, 0, 128)",
-                    "width": "180px",
-                    "display": "block"
+                    "border_left_color": "rgb(0, 0, 128)",
+                    "border_bottom_style": "solid",
+                    "border_right_color": "rgb(0, 0, 128)",
+                    "height": "60px"
                 }
             },
             {
                 "tag": "div",
                 "children": [
                     {
+                        "text": "x",
+                        "style": {}
+                    },
+                    {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 0, 128)",
+                            "border_top_color": "rgb(0, 0, 128)",
                             "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)"
+                            "border_right_color": "rgb(0, 0, 128)"
                         }
+                    },
+                    {
+                        "text": "x",
+                        "style": {}
                     }
                 ],
                 "style": {
-                    "height": "60px",
-                    "border_left_color": "rgb(0, 0, 128)",
-                    "border_right_color": "rgb(0, 0, 128)",
-                    "border_bottom_color": "rgb(0, 0, 128)",
                     "width": "180px",
+                    "height": "60px",
+                    "border_bottom_color": "rgb(0, 0, 128)",
                     "border_top_color": "rgb(0, 0, 128)",
-                    "display": "block"
+                    "border_left_color": "rgb(0, 0, 128)",
+                    "display": "block",
+                    "border_right_color": "rgb(0, 0, 128)"
                 }
             }
         ],
         "style": {
-            "height": "157px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "123px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "vertical-align-121-ref.xht"

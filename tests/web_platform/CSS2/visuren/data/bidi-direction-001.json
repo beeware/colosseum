@@ -1,54 +1,56 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-direction",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ],
     "assert": "direction:rtl on body should inherit to paragraphs",
     "test_case": {
         "tag": "body",
         "style": {
-            "margin_right": "8px",
-            "display": "block",
-            "margin_bottom": "8px",
-            "height": "86px",
             "margin_top": "8px",
+            "margin_right": "8px",
             "direction": "rtl",
+            "height": "52px",
+            "margin_bottom": "8px",
+            "width": "624px",
             "margin_left": "8px",
-            "width": "624px"
+            "display": "block"
         },
         "children": [
             {
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px"
-                }
-            },
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px"
-                }
-            },
-            {
-                "tag": "p",
-                "style": {
-                    "display": "block",
-                    "margin_bottom": "16px",
                     "height": "18px",
                     "margin_top": "16px",
+                    "margin_bottom": "16px",
                     "width": "624px",
-                    "direction": "rtl"
-                }
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "text": "a b c!",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "p",
+                "style": {
+                    "margin_top": "16px",
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "direction": "rtl",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "text": "!a b c",
+                        "style": {}
+                    }
+                ]
             }
         ]
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-direction",
-        "http://www.w3.org/TR/CSS21/visuren.html#direction"
-    ]
+    "matches": null
 }

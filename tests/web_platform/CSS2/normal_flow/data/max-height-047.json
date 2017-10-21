@@ -1,57 +1,41 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "41.53125px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "max_height": "3.7795276641845703px",
-                    "height": "3.765625px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "height": "3.765625px",
-                    "bottom": "3.7795276641845703px",
-                    "display": "block",
-                    "position": "relative",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "max-height-047-ref.xht",
-    "assert": "The 'max-height' property sets a minimum plus one length value in millimeters.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "7.53125px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "max_height": "3.7795276641845703px",
+                    "height": "3.765625px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "bottom": "3.7795276641845703px",
+                    "height": "3.765625px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "max-height-047-ref.xht",
+    "assert": "The 'max-height' property sets a minimum plus one length value in millimeters."
 }

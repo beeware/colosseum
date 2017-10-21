@@ -1,111 +1,137 @@
 {
-    "matches": null,
-    "assert": "This test checks that row-reverse flex-direction swaps the main start and main end directions",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-direction"
     ],
+    "matches": null,
     "test_case": {
         "children": [
             {
-                "tag": "P",
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "text": "A",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "16px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "B",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "16px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "C",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "16px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
+                    }
+                ],
                 "style": {
+                    "width": "48px",
                     "height": "18px",
-                    "width": "624px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
+                    "display": "flex"
+                },
+                "tag": "DIV"
             },
             {
                 "children": [
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "C",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "16px",
-                            "display": "block",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "B",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "16px",
-                            "display": "block",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "A",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "16px",
-                            "display": "block",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "48px",
-                    "display": "flex",
-                    "height": "18px"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "tag": "SPAN",
-                        "style": {
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px",
-                            "min_width": "auto",
-                            "min_height": "auto"
-                        }
-                    },
-                    {
-                        "tag": "SPAN",
-                        "style": {
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px",
-                            "min_width": "auto",
-                            "min_height": "auto"
-                        }
-                    },
-                    {
-                        "tag": "SPAN",
-                        "style": {
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px",
-                            "min_width": "auto",
-                            "min_height": "auto"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "48px",
-                    "display": "flex",
-                    "height": "18px"
-                }
+                    "height": "18px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
+            "height": "36px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "70px",
-            "margin_top": "8px"
-        }
-    }
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "This test checks that row-reverse flex-direction swaps the main start and main end directions"
 }

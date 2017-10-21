@@ -1,66 +1,86 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "186px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "36px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "100px",
-                    "display": "inline-block",
-                    "width": "500px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "height": "100px",
-                            "width": "500px"
-                        },
-                        "tag": "img"
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": null,
-    "assert": "This test checks interaction of percentage height of an inline replaced element with its parent having scrollbars and with the parent's width determined by 'shrink-to-fit' width algorithm. In this test, the image height should be 100px minus scrollbar height since space taken up by generated scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. Then the width of parent should be (used image height == 100px minus scrollbar) * (intrinsic ratio == 5width:1height).",
     "help": [
         "https://www.w3.org/TR/CSS21/visufx.html#overflow",
         "https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
         "https://www.w3.org/TR/CSS21/visudet.html#float-width"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "186px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test does not apply to such user agent.",
+                        "style": {}
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "text": "Test passes if there is a filled green rectangle with inactive scrollbars and",
+                        "style": {}
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "strong"
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "width": "500px",
+                    "display": "inline-block",
+                    "height": "100px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "500px",
+                            "height": "100px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": null,
+    "assert": "This test checks interaction of percentage height of an inline replaced element with its parent having scrollbars and with the parent's width determined by 'shrink-to-fit' width algorithm. In this test, the image height should be 100px minus scrollbar height since space taken up by generated scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. Then the width of parent should be (used image height == 100px minus scrollbar) * (intrinsic ratio == 5width:1height)."
 }

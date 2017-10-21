@@ -1,54 +1,70 @@
 {
     "assert": null,
-    "matches": "abspos-overflow-004-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
     ],
     "test_case": {
-        "style": {
-            "width": "640px",
-            "height": "146px",
-            "display": "block"
-        },
         "children": [
             {
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "width": "160px",
-                    "height": "18px",
                     "border_left_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)"
+                    "height": "18px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "width": "160px"
                 },
                 "tag": "div"
             },
             {
-                "style": {
-                    "width": "128px",
-                    "height": "128px",
-                    "display": "block"
-                },
+                "text": "There should be no scrollbars below.",
+                "style": {}
+            },
+            {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "text": "PASS",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "display": "block",
                             "top": "0px",
-                            "position": "absolute",
-                            "width": "160px",
-                            "height": "18px",
                             "border_left_color": "rgb(255, 255, 255)",
+                            "height": "18px",
                             "border_top_color": "rgb(255, 255, 255)",
-                            "left": "0px"
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "left": "0px",
+                            "width": "160px",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "128px",
+                    "width": "128px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "display": "block",
+            "height": "146px",
+            "width": "640px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "abspos-overflow-004-ref.xht"
 }

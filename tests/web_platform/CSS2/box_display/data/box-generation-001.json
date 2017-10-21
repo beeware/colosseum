@@ -1,62 +1,70 @@
 {
-    "assert": "Block boxes can reside within a principal block box established by a block-level element; inline boxes are outside of the principal block box.",
-    "matches": "box-generation-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
-    ],
     "test_case": {
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "36px"
-                },
-                "tag": "p"
-            },
-            {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Block box"
+                            }
+                        ],
                         "style": {
                             "display": "block",
-                            "width": "96px",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "96px"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Inline box"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Float"
+                            }
+                        ],
                         "style": {
                             "display": "block",
-                            "width": "48px",
                             "float": "left",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "48px"
                         },
                         "tag": "span"
                     }
                 ],
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "36px"
+                    "height": "36px",
+                    "width": "624px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "88px",
+            "height": "36px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "box-generation-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
+    ],
+    "assert": "Block boxes can reside within a principal block box established by a block-level element; inline boxes are outside of the principal block box."
 }

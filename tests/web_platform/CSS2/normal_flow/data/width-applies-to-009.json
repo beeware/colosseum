@@ -1,50 +1,40 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px"
-                        },
-                        "tag": "span"
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "../reference/ref-filled-black-96px-square.xht",
-    "assert": "The 'width' property applies to elements with 'display' set to 'block'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
         "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "96px",
+                            "display": "block",
+                            "height": "96px"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-black-96px-square.xht",
+    "assert": "The 'width' property applies to elements with 'display' set to 'block'."
 }

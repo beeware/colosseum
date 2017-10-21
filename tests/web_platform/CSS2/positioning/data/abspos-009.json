@@ -1,63 +1,47 @@
 {
     "assert": null,
-    "matches": "abspos-009-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
     ],
     "test_case": {
-        "style": {
-            "height": "50px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "position": "relative",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
                     "right": "0px",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "display": "block",
-                    "position": "absolute",
-                    "width": "160px",
-                    "height": "16px",
                     "border_left_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)"
+                    "height": "16px",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "display": "block",
+                    "width": "160px",
+                    "position": "absolute"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "border_right_color": "rgb(255, 0, 0)",
                     "height": "16px",
                     "display": "block",
-                    "width": "464px",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "border_right_width": "160px",
                     "border_right_style": "solid",
-                    "border_right_width": "160px"
+                    "width": "464px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "16px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "position": "relative",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "abspos-009-ref.xht"
 }

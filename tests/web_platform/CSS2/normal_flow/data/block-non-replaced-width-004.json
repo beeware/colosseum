@@ -1,91 +1,75 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "64px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "30px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
                     "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "30px",
                     "direction": "rtl",
                     "display": "block",
-                    "position": "relative",
-                    "width": "624px"
+                    "height": "30px",
+                    "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "30px",
+                            "width": "100px",
                             "direction": "rtl",
                             "display": "block",
-                            "position": "relative",
-                            "width": "100px"
+                            "height": "30px",
+                            "position": "relative"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "border_right_width": "10px",
-                                    "height": "30px",
-                                    "padding_right": "10px",
-                                    "position": "relative",
-                                    "padding_left": "10px",
-                                    "border_left_style": "solid",
-                                    "border_left_width": "10px",
-                                    "display": "block",
-                                    "width": "100px",
-                                    "margin_left": "10px",
-                                    "direction": "rtl",
-                                    "border_left_color": "rgb(255, 165, 0)",
                                     "border_right_style": "solid",
+                                    "border_left_color": "rgb(255, 165, 0)",
+                                    "direction": "rtl",
+                                    "height": "30px",
+                                    "width": "100px",
                                     "margin_right": "10px",
-                                    "border_right_color": "rgb(255, 165, 0)"
+                                    "display": "block",
+                                    "padding_left": "10px",
+                                    "border_left_width": "10px",
+                                    "padding_right": "10px",
+                                    "border_left_style": "solid",
+                                    "position": "relative",
+                                    "border_right_width": "10px",
+                                    "border_right_color": "rgb(255, 165, 0)",
+                                    "margin_left": "10px"
                                 },
                                 "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "30px",
+                            "width": "150px",
                             "direction": "rtl",
                             "display": "block",
-                            "position": "absolute",
-                            "width": "150px"
+                            "height": "30px",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-non-replaced-width-004-ref.xht",
-    "assert": "When direction is right-to-left, the specified value of 'margin-left' is ignored in an over-constrained situation and the 'margin-left' value is calculated so as to make the equality true.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#blockwidth"
-    ]
+    "assert": "When direction is right-to-left, the specified value of 'margin-left' is ignored in an over-constrained situation and the 'margin-left' value is calculated so as to make the equality true."
 }

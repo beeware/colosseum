@@ -1,165 +1,115 @@
 {
-    "border_box": {
-        "size": [
-            624,
-            52
-        ],
-        "position": [
-            8,
-            16
-        ]
-    },
-    "padding_box": {
-        "size": [
-            624,
-            52
-        ],
-        "position": [
-            8,
-            16
-        ]
-    },
     "border": [
         0,
         0,
         0,
         0
     ],
-    "id": "",
-    "margin_box": {
-        "size": [
-            640,
-            68
-        ],
-        "position": [
-            0,
-            8
-        ]
-    },
-    "content": {
-        "size": [
-            624,
-            52
-        ],
-        "position": [
-            8,
-            16
-        ]
-    },
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "BODY",
     "children": [
         {
-            "border_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    16
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    16
-                ]
-            },
+            "text": "\n\t\t"
+        },
+        {
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "id": "",
-            "margin_box": {
+            "tag": "P",
+            "children": [
+                {
+                    "text": "This case tests that flex items flexibility"
+                }
+            ],
+            "padding_box": {
+                "position": [
+                    8,
+                    16
+                ],
                 "size": [
                     624,
-                    50
-                ],
+                    18
+                ]
+            },
+            "margin_box": {
                 "position": [
                     8,
                     0
-                ]
-            },
-            "content": {
+                ],
                 "size": [
                     624,
-                    18
-                ],
+                    50
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin": [
+                16,
+                0,
+                16,
+                0
+            ],
+            "border_box": {
                 "position": [
                     8,
                     16
+                ],
+                "size": [
+                    624,
+                    18
                 ]
             },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "P",
-            "margin": [
-                16,
-                0,
-                16,
-                0
-            ]
+            "id": "",
+            "content": {
+                "position": [
+                    8,
+                    16
+                ],
+                "size": [
+                    624,
+                    18
+                ]
+            }
         },
         {
-            "border_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    50
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    50
-                ]
-            },
+            "text": "\n\t\t"
+        },
+        {
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "id": "",
-            "margin_box": {
-                "size": [
-                    624,
+            "tag": "P",
+            "children": [
+                {
+                    "text": "The test passes if there is no red"
+                }
+            ],
+            "padding_box": {
+                "position": [
+                    8,
                     50
                 ],
+                "size": [
+                    624,
+                    18
+                ]
+            },
+            "margin_box": {
                 "position": [
                     8,
                     34
-                ]
-            },
-            "content": {
+                ],
                 "size": [
                     624,
-                    18
-                ],
-                "position": [
-                    8,
                     50
                 ]
             },
@@ -169,60 +119,63 @@
                 0,
                 0
             ],
-            "tag": "P",
             "margin": [
                 16,
                 0,
                 16,
                 0
-            ]
+            ],
+            "border_box": {
+                "position": [
+                    8,
+                    50
+                ],
+                "size": [
+                    624,
+                    18
+                ]
+            },
+            "id": "",
+            "content": {
+                "position": [
+                    8,
+                    50
+                ],
+                "size": [
+                    624,
+                    18
+                ]
+            }
         },
         {
-            "border_box": {
-                "size": [
-                    274,
-                    60
-                ],
-                "position": [
-                    183,
-                    150
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    274,
-                    60
-                ],
-                "position": [
-                    183,
-                    150
-                ]
-            },
+            "text": "\n\t\t"
+        },
+        {
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "id": "fail-flag",
-            "margin_box": {
-                "size": [
-                    274,
-                    60
-                ],
+            "tag": "DIV",
+            "padding_box": {
                 "position": [
                     183,
                     150
+                ],
+                "size": [
+                    274,
+                    60
                 ]
             },
-            "content": {
-                "size": [
-                    254,
-                    40
-                ],
+            "margin_box": {
                 "position": [
-                    193,
-                    160
+                    183,
+                    150
+                ],
+                "size": [
+                    274,
+                    60
                 ]
             },
             "padding": [
@@ -231,60 +184,263 @@
                 10,
                 10
             ],
-            "tag": "DIV",
             "margin": [
                 0,
                 0,
                 0,
                 0
-            ]
+            ],
+            "border_box": {
+                "position": [
+                    183,
+                    150
+                ],
+                "size": [
+                    274,
+                    60
+                ]
+            },
+            "id": "fail-flag",
+            "content": {
+                "position": [
+                    193,
+                    160
+                ],
+                "size": [
+                    254,
+                    40
+                ]
+            }
         },
         {
-            "border_box": {
-                "size": [
-                    620,
-                    220
-                ],
-                "position": [
-                    10,
-                    70
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    610,
-                    210
-                ],
-                "position": [
-                    15,
-                    75
-                ]
-            },
+            "text": "\n\t\t"
+        },
+        {
             "border": [
                 5,
                 5,
                 5,
                 5
             ],
-            "id": "container",
-            "margin_box": {
-                "size": [
-                    620,
-                    220
+            "tag": "SECTION",
+            "children": [
+                {
+                    "text": "\n\t\t\t"
+                },
+                {
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "tag": "DIV",
+                    "padding_box": {
+                        "position": [
+                            20,
+                            150
+                        ],
+                        "size": [
+                            161.5,
+                            60
+                        ]
+                    },
+                    "margin_box": {
+                        "position": [
+                            20,
+                            150
+                        ],
+                        "size": [
+                            161.5,
+                            60
+                        ]
+                    },
+                    "padding": [
+                        10,
+                        10,
+                        10,
+                        10
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            20,
+                            150
+                        ],
+                        "size": [
+                            161.5,
+                            60
+                        ]
+                    },
+                    "id": "",
+                    "content": {
+                        "position": [
+                            30,
+                            160
+                        ],
+                        "size": [
+                            141.5,
+                            40
+                        ]
+                    }
+                },
+                {
+                    "text": "\n\t\t\t"
+                },
+                {
+                    "border": [
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "tag": "DIV",
+                    "padding_box": {
+                        "position": [
+                            183.5,
+                            150
+                        ],
+                        "size": [
+                            273,
+                            60
+                        ]
+                    },
+                    "margin_box": {
+                        "position": [
+                            181.5,
+                            148
+                        ],
+                        "size": [
+                            277,
+                            64
+                        ]
+                    },
+                    "padding": [
+                        10,
+                        10,
+                        10,
+                        10
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            181.5,
+                            148
+                        ],
+                        "size": [
+                            277,
+                            64
+                        ]
+                    },
+                    "id": "flex",
+                    "content": {
+                        "position": [
+                            193.5,
+                            160
+                        ],
+                        "size": [
+                            253,
+                            40
+                        ]
+                    }
+                },
+                {
+                    "text": "\n\t\t\t"
+                },
+                {
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "tag": "DIV",
+                    "padding_box": {
+                        "position": [
+                            458.5,
+                            150
+                        ],
+                        "size": [
+                            161.5,
+                            60
+                        ]
+                    },
+                    "margin_box": {
+                        "position": [
+                            458.5,
+                            150
+                        ],
+                        "size": [
+                            161.5,
+                            60
+                        ]
+                    },
+                    "padding": [
+                        10,
+                        10,
+                        10,
+                        10
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            458.5,
+                            150
+                        ],
+                        "size": [
+                            161.5,
+                            60
+                        ]
+                    },
+                    "id": "",
+                    "content": {
+                        "position": [
+                            468.5,
+                            160
+                        ],
+                        "size": [
+                            141.5,
+                            40
+                        ]
+                    }
+                },
+                {
+                    "text": "\n\t\t"
+                }
+            ],
+            "padding_box": {
+                "position": [
+                    15,
+                    75
                 ],
+                "size": [
+                    610,
+                    210
+                ]
+            },
+            "margin_box": {
                 "position": [
                     10,
                     70
-                ]
-            },
-            "content": {
-                "size": [
-                    600,
-                    200
                 ],
-                "position": [
-                    20,
-                    80
+                "size": [
+                    620,
+                    220
                 ]
             },
             "padding": [
@@ -293,208 +449,89 @@
                 5,
                 5
             ],
-            "children": [
-                {
-                    "border_box": {
-                        "size": [
-                            161.5,
-                            60
-                        ],
-                        "position": [
-                            20,
-                            150
-                        ]
-                    },
-                    "padding_box": {
-                        "size": [
-                            161.5,
-                            60
-                        ],
-                        "position": [
-                            20,
-                            150
-                        ]
-                    },
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "",
-                    "margin_box": {
-                        "size": [
-                            161.5,
-                            60
-                        ],
-                        "position": [
-                            20,
-                            150
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            141.5,
-                            40
-                        ],
-                        "position": [
-                            30,
-                            160
-                        ]
-                    },
-                    "padding": [
-                        10,
-                        10,
-                        10,
-                        10
-                    ],
-                    "tag": "DIV",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                },
-                {
-                    "border_box": {
-                        "size": [
-                            277,
-                            64
-                        ],
-                        "position": [
-                            181.5,
-                            148
-                        ]
-                    },
-                    "padding_box": {
-                        "size": [
-                            273,
-                            60
-                        ],
-                        "position": [
-                            183.5,
-                            150
-                        ]
-                    },
-                    "border": [
-                        2,
-                        2,
-                        2,
-                        2
-                    ],
-                    "id": "flex",
-                    "margin_box": {
-                        "size": [
-                            277,
-                            64
-                        ],
-                        "position": [
-                            181.5,
-                            148
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            253,
-                            40
-                        ],
-                        "position": [
-                            193.5,
-                            160
-                        ]
-                    },
-                    "padding": [
-                        10,
-                        10,
-                        10,
-                        10
-                    ],
-                    "tag": "DIV",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                },
-                {
-                    "border_box": {
-                        "size": [
-                            161.5,
-                            60
-                        ],
-                        "position": [
-                            458.5,
-                            150
-                        ]
-                    },
-                    "padding_box": {
-                        "size": [
-                            161.5,
-                            60
-                        ],
-                        "position": [
-                            458.5,
-                            150
-                        ]
-                    },
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "",
-                    "margin_box": {
-                        "size": [
-                            161.5,
-                            60
-                        ],
-                        "position": [
-                            458.5,
-                            150
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            141.5,
-                            40
-                        ],
-                        "position": [
-                            468.5,
-                            160
-                        ]
-                    },
-                    "padding": [
-                        10,
-                        10,
-                        10,
-                        10
-                    ],
-                    "tag": "DIV",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ],
-            "tag": "SECTION",
             "margin": [
                 0,
                 0,
                 0,
                 0
-            ]
+            ],
+            "border_box": {
+                "position": [
+                    10,
+                    70
+                ],
+                "size": [
+                    620,
+                    220
+                ]
+            },
+            "id": "container",
+            "content": {
+                "position": [
+                    20,
+                    80
+                ],
+                "size": [
+                    600,
+                    200
+                ]
+            }
+        },
+        {
+            "text": "\n\t\n"
         }
     ],
-    "tag": "BODY",
+    "padding_box": {
+        "position": [
+            8,
+            16
+        ],
+        "size": [
+            624,
+            52
+        ]
+    },
+    "margin_box": {
+        "position": [
+            0,
+            8
+        ],
+        "size": [
+            640,
+            68
+        ]
+    },
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
     "margin": [
         8,
         8,
         8,
         8
-    ]
+    ],
+    "border_box": {
+        "position": [
+            8,
+            16
+        ],
+        "size": [
+            624,
+            52
+        ]
+    },
+    "id": "",
+    "content": {
+        "position": [
+            8,
+            16
+        ],
+        "size": [
+            624,
+            52
+        ]
+    }
 }

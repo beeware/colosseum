@@ -1,71 +1,97 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#floats",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
             "margin_bottom": "8px",
             "height": "70px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "36px",
                     "width": "624px",
+                    "display": "block",
                     "margin_top": "16px",
                     "margin_bottom": "16px",
-                    "display": "block"
+                    "height": "36px"
                 },
+                "children": [
+                    {
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent.",
+                        "style": {}
+                    }
+                ],
                 "tag": "p"
             },
             {
                 "style": {
-                    "height": "18px",
                     "width": "624px",
+                    "display": "block",
                     "margin_top": "16px",
                     "margin_bottom": "16px",
-                    "display": "block"
+                    "height": "18px"
                 },
-                "tag": "p",
                 "children": [
                     {
+                        "text": "Test passes if there is a green square and",
+                        "style": {}
+                    },
+                    {
                         "style": {},
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
                         "tag": "strong"
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
                     }
-                ]
+                ],
+                "tag": "p"
             },
             {
                 "style": {
-                    "height": "200px",
                     "width": "200px",
                     "display": "block",
+                    "height": "200px",
                     "position": "absolute"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "display": "block",
-                    "border_top_color": "rgb(255, 0, 0)",
-                    "float": "left",
-                    "max_width": "100px",
-                    "height": "64px",
-                    "border_bottom_color": "rgb(255, 0, 0)",
                     "border_left_color": "rgb(255, 0, 0)",
+                    "display": "block",
                     "width": "100px",
-                    "border_right_color": "rgb(255, 0, 0)"
+                    "float": "left",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "height": "64px",
+                    "border_top_color": "rgb(255, 0, 0)",
+                    "border_right_color": "rgb(255, 0, 0)",
+                    "max_width": "100px"
                 },
+                "children": [
+                    {
+                        "text": "XXXXXXXXXXXX",
+                        "style": {}
+                    }
+                ],
                 "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "max-width-105-ref.xht",
-    "assert": "'max-width' specifies a fixed maximum used width. If the used width is greater than max-width, then the computed value of max-width is used as the computed value for width. A floated box should not become wider than its declared max-width.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#floats",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    "assert": "'max-width' specifies a fixed maximum used width. If the used width is greater than max-width, then the computed value of max-width is used as the computed value for width. A floated box should not become wider than its declared max-width."
 }

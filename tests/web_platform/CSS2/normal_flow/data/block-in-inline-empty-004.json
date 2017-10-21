@@ -1,46 +1,52 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "direction": "rtl",
-            "height": "36px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "direction": "rtl",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "36px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_top_color": "rgb(0, 0, 255)",
+                    "direction": "rtl",
                     "border_top_width": "5px",
                     "padding_left": "10px",
+                    "border_bottom_style": "solid",
                     "border_bottom_color": "rgb(0, 0, 255)",
-                    "direction": "rtl",
-                    "border_bottom_width": "5px"
+                    "border_bottom_width": "5px",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_top_style": "solid"
                 },
-                "tag": "span",
                 "children": [
                     {
                         "style": {
-                            "height": "18px",
                             "width": "624px",
+                            "direction": "rtl",
                             "display": "block",
-                            "direction": "rtl"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "x",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     }
-                ]
+                ],
+                "tag": "span"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-in-inline-empty-004-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    "assert": null
 }

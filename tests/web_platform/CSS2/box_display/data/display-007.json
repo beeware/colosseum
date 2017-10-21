@@ -1,84 +1,84 @@
 {
-    "assert": "The property 'display' set to 'inline-table' behaves in layout as an inline table.",
-    "matches": "display-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
                         "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
+                        "text": "Filler text"
+                    },
                     {
                         "children": [
                             {
                                 "children": [
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "38.671875px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "38.671875px"
                                         },
                                         "tag": "div"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "text"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "24px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "24px"
                                         },
                                         "tag": "div"
                                     }
                                 ],
                                 "style": {
                                     "display": "table-row",
-                                    "width": "62.671875px",
-                                    "height": "18px"
+                                    "height": "18px",
+                                    "width": "62.671875px"
                                 },
                                 "tag": "div"
                             }
                         ],
                         "style": {
                             "display": "inline-table",
-                            "width": "62.671875px",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "62.671875px"
                         },
                         "tag": "div"
                     }
                 ],
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "52px",
+            "height": "18px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "display-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": "The property 'display' set to 'inline-table' behaves in layout as an inline table."
 }

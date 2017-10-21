@@ -1,146 +1,130 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "250px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "216px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "100px",
                     "width": "300px",
                     "display": "block",
+                    "height": "100px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "50px",
+                            "width": "300px",
                             "display": "block",
-                            "width": "300px"
+                            "height": "50px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "50px",
                                     "width": "375px",
+                                    "display": "block",
                                     "margin_top": "16px",
                                     "margin_bottom": "16px",
-                                    "display": "block"
+                                    "height": "50px"
                                 },
-                                "tag": "p",
                                 "children": [
                                     {
                                         "style": {
-                                            "height": "50px",
-                                            "display": "block",
+                                            "float": "left",
                                             "width": "100px",
-                                            "float": "left"
+                                            "display": "block",
+                                            "height": "50px"
                                         },
                                         "tag": "img"
                                     },
                                     {
                                         "style": {
-                                            "height": "50px",
-                                            "width": "300px"
+                                            "width": "300px",
+                                            "height": "50px"
                                         },
                                         "tag": "img"
                                     }
-                                ]
+                                ],
+                                "tag": "p"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             },
             {
                 "style": {
-                    "height": "100px",
                     "width": "300px",
                     "display": "block",
+                    "height": "100px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "50px",
+                            "width": "300px",
                             "display": "block",
-                            "width": "300px"
+                            "height": "50px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "50px",
                                     "width": "375px",
+                                    "display": "block",
                                     "margin_top": "16px",
                                     "margin_bottom": "16px",
-                                    "display": "block"
+                                    "height": "50px"
                                 },
-                                "tag": "p",
                                 "children": [
                                     {
                                         "style": {
-                                            "height": "50px",
-                                            "display": "block",
+                                            "float": "left",
                                             "width": "100px",
-                                            "float": "left"
+                                            "display": "block",
+                                            "height": "50px"
                                         },
                                         "tag": "img"
                                     },
                                     {
                                         "style": {
-                                            "height": "50px",
-                                            "width": "300px"
+                                            "width": "300px",
+                                            "height": "50px"
                                         },
                                         "tag": "img"
                                     },
                                     {
                                         "style": {
-                                            "bottom": "0px",
-                                            "height": "50px",
-                                            "left": "0px",
                                             "width": "300px",
                                             "display": "block",
+                                            "height": "50px",
+                                            "bottom": "0px",
+                                            "left": "0px",
                                             "position": "absolute"
                                         },
                                         "tag": "span"
                                     }
-                                ]
+                                ],
+                                "tag": "p"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inline-replaced-width-014-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ]
+    "assert": null
 }

@@ -1,46 +1,46 @@
 {
-    "matches": null,
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "tag": "IMG",
                         "style": {
                             "height": "100px",
-                            "min_height": "auto",
                             "min_width": "auto",
                             "display": "block",
+                            "min_height": "auto",
                             "width": "100px"
-                        },
-                        "tag": "IMG"
+                        }
                     }
                 ],
+                "tag": "DIV",
                 "style": {
-                    "position": "relative",
                     "height": "100px",
                     "display": "inline-grid",
+                    "position": "relative",
                     "width": "200px"
-                },
-                "tag": "DIV"
+                }
             }
         ],
+        "tag": "BODY",
         "style": {
             "margin_bottom": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
-            "width": "624px",
             "margin_top": "8px",
             "height": "104px",
-            "display": "block"
-        },
-        "tag": "BODY"
+            "width": "624px",
+            "display": "block",
+            "margin_right": "8px"
+        }
     },
-    "assert": "Changing the grid item's justify-items value from 'start' to 'normal' causes no effect on replaced items.",
     "help": [
         "https://drafts.csswg.org/css-grid-1/#row-align",
         "https://drafts.csswg.org/css-grid-1/#grid-item-sizing",
         "https://drafts.csswg.org/css-align-3/#propdef-justify-items",
         "https://drafts.csswg.org/css-align/#valdef-justify-self-start",
         "https://drafts.csswg.org/css-align/#valdef-justify-self-normal"
-    ]
+    ],
+    "matches": null,
+    "assert": "Changing the grid item's justify-items value from 'start' to 'normal' causes no effect on replaced items."
 }

@@ -1,28 +1,12 @@
 {
-    "assert": "The 'line-height' property applies to elements with 'display' set to 'table-column'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The 'line-height' property applies to elements with 'display' set to 'table-column'.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -65,31 +49,31 @@
                     {
                         "tag": "div",
                         "style": {
+                            "width": "96px",
+                            "left": "96px",
                             "height": "96px",
                             "position": "absolute",
-                            "width": "96px",
                             "display": "block",
-                            "top": "0px",
-                            "left": "96px"
+                            "top": "0px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
+                    "width": "624px",
                     "display": "block",
-                    "height": "96px",
-                    "width": "624px"
+                    "height": "96px"
                 }
             }
         ],
         "style": {
-            "height": "130px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "96px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-applies-to-005-ref.xht"

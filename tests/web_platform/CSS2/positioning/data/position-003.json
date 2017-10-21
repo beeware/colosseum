@@ -1,69 +1,65 @@
 {
     "assert": "The 'position' property applies the value 'absolute' and places the element out of flow of the document.",
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
     ],
     "test_case": {
-        "style": {
-            "height": "58px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "36px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "0px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_left_width": "3px",
-                    "border_right_style": "solid",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "border_bottom_width": "3px",
-                    "width": "618px",
-                    "border_top_style": "solid",
-                    "border_right_width": "3px"
-                },
                 "children": [
                     {
+                        "children": [
+                            {
+                                "text": "Text sample",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "display": "block",
                             "top": "144px",
-                            "position": "absolute",
-                            "width": "77.53125px",
-                            "height": "18px",
                             "border_left_color": "rgb(255, 255, 255)",
+                            "height": "18px",
                             "border_top_color": "rgb(255, 255, 255)",
-                            "left": "96px"
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "left": "96px",
+                            "width": "77.53125px",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "border_left_width": "3px",
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "width": "618px",
+                    "border_bottom_width": "3px",
+                    "height": "0px",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "border_right_color": "rgb(255, 165, 0)",
+                    "border_right_width": "3px",
+                    "border_top_width": "3px",
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "display": "block"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "6px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": null
 }

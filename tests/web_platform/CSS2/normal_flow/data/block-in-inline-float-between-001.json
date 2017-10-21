@@ -1,55 +1,73 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
             "margin_bottom": "8px",
             "height": "36px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
                     "left": "100px",
                     "position": "relative"
                 },
-                "tag": "span",
                 "children": [
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "624px",
                             "display": "block",
-                            "width": "624px"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "aaa",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     },
                     {
                         "style": {
-                            "height": "18px",
-                            "display": "block",
+                            "float": "left",
                             "width": "24px",
-                            "float": "left"
+                            "display": "block",
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "bbb",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     },
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "624px",
                             "display": "block",
-                            "width": "624px"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "aaa",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     }
-                ]
+                ],
+                "tag": "span"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-in-inline-float-between-001-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    "assert": null
 }

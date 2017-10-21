@@ -1,55 +1,33 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
+    ],
     "assert": "The 'top', 'right', 'bottom', 'left' property, for relative positioning, specify the offset of the box itself from its normal in-flow position, from the position it would have had if it had been static.",
     "test_case": {
         "tag": "body",
         "style": {
-            "margin_right": "8px",
-            "display": "block",
-            "margin_bottom": "8px",
-            "height": "334px",
             "margin_top": "8px",
+            "margin_right": "8px",
+            "height": "300px",
+            "margin_bottom": "8px",
             "width": "624px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block"
         },
         "children": [
             {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px"
-                },
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "height": "100px",
                     "width": "624px",
-                    "height": "100px"
+                    "display": "block"
                 },
                 "children": [
                     {
                         "tag": "img",
                         "style": {
                             "top": "100px",
-                            "position": "relative",
-                            "width": "100px",
                             "left": "100px",
-                            "height": "100px"
-                        }
-                    },
-                    {
-                        "tag": "img",
-                        "style": {
-                            "top": "100px",
                             "position": "relative",
                             "width": "100px",
                             "height": "100px"
@@ -59,10 +37,19 @@
                         "tag": "img",
                         "style": {
                             "top": "100px",
+                            "height": "100px",
+                            "position": "relative",
+                            "width": "100px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "top": "100px",
+                            "height": "100px",
                             "position": "relative",
                             "width": "100px",
-                            "right": "100px",
-                            "height": "100px"
+                            "right": "100px"
                         }
                     }
                 ]
@@ -70,35 +57,35 @@
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "height": "100px",
                     "width": "624px",
-                    "height": "100px"
+                    "display": "block"
                 },
                 "children": [
                     {
                         "tag": "img",
                         "style": {
-                            "width": "100px",
-                            "position": "relative",
                             "left": "100px",
+                            "position": "relative",
+                            "width": "100px",
                             "height": "100px"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "width": "100px",
+                            "height": "100px",
                             "position": "relative",
-                            "height": "100px"
+                            "width": "100px"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "right": "100px",
+                            "height": "100px",
                             "position": "relative",
                             "width": "100px",
-                            "height": "100px"
+                            "right": "100px"
                         }
                     }
                 ]
@@ -106,37 +93,37 @@
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "height": "100px",
                     "width": "624px",
-                    "height": "100px"
+                    "display": "block"
                 },
                 "children": [
                     {
                         "tag": "img",
                         "style": {
-                            "width": "100px",
-                            "position": "relative",
-                            "left": "100px",
                             "bottom": "100px",
+                            "position": "relative",
+                            "height": "100px",
+                            "width": "100px",
+                            "left": "100px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "bottom": "100px",
+                            "position": "relative",
+                            "width": "100px",
                             "height": "100px"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "width": "100px",
-                            "position": "relative",
                             "bottom": "100px",
-                            "height": "100px"
-                        }
-                    },
-                    {
-                        "tag": "img",
-                        "style": {
+                            "position": "relative",
+                            "width": "100px",
                             "right": "100px",
-                            "position": "relative",
-                            "width": "100px",
-                            "bottom": "100px",
                             "height": "100px"
                         }
                     }
@@ -144,8 +131,5 @@
             }
         ]
     },
-    "matches": "box-offsets-rel-pos-002-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    "matches": "box-offsets-rel-pos-002-ref.xht"
 }

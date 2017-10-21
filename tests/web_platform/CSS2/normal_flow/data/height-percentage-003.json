@@ -1,32 +1,38 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            }
-        ]
-    },
-    "matches": "height-percentage-003-ref.xht",
-    "assert": "A percentage 'height' on the root element is relative to the initial containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "text": "Test passes if a blue line is in the middle of the page.",
+                        "style": {}
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "height-percentage-003-ref.xht",
+    "assert": "A percentage 'height' on the root element is relative to the initial containing block."
 }

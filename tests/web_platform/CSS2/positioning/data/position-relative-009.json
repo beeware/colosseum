@@ -1,51 +1,41 @@
 {
     "assert": "If the 'direction' property of the containing block is 'ltr', the value of 'left' wins and 'right' becomes negative 'left'.",
-    "matches": "position-relative-005-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
     ],
     "test_case": {
-        "style": {
-            "height": "226px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
                     "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "width": "96px",
                     "height": "96px",
-                    "display": "block"
+                    "width": "96px"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "right": "96px",
+                    "top": "-96px",
                     "height": "96px",
+                    "right": "96px",
                     "display": "block",
                     "left": "96px",
-                    "position": "relative",
                     "width": "96px",
-                    "top": "-96px"
+                    "position": "relative"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "position-relative-005-ref.xht"
 }

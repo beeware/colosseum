@@ -1,124 +1,138 @@
 {
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "STRONG"
-                    }
-                ],
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "tag": "P"
-            },
-            {
-                "style": {
-                    "height": "36px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "tag": "P"
-            },
-            {
-                "style": {
-                    "height": "100px",
-                    "z_index": "-1",
-                    "display": "block",
-                    "position": "absolute",
-                    "width": "100px"
-                },
-                "tag": "DIV"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "display": "block",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(255, 255, 0)",
-                            "width": "50px",
-                            "height": "50px",
-                            "border_left_color": "rgb(255, 255, 0)",
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_right_color": "rgb(255, 0, 255)",
-                            "display": "block",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(255, 0, 255)",
-                            "width": "50px",
-                            "height": "50px",
-                            "border_left_color": "rgb(255, 0, 255)",
-                            "border_bottom_color": "rgb(255, 0, 255)",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "display": "block",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "width": "50px",
-                            "height": "50px",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_right_color": "rgb(0, 255, 0)",
-                            "display": "block",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(0, 255, 0)",
-                            "width": "50px",
-                            "height": "50px",
-                            "border_left_color": "rgb(0, 255, 0)",
-                            "border_bottom_color": "rgb(0, 255, 0)",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    }
-                ],
-                "style": {
-                    "height": "100px",
-                    "display": "grid",
-                    "width": "624px"
-                },
-                "tag": "DIV"
-            }
-        ],
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "height": "186px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_left": "8px"
-        },
-        "tag": "BODY"
-    },
+    "matches": "../reference/grid-2x2-blue-yellow-lime-magenta.html",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-grid-1/#order-property",
         "https://drafts.csswg.org/css-flexbox-1/#order-property"
     ],
-    "matches": "../reference/grid-2x2-blue-yellow-lime-magenta.html",
-    "assert": null
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "P",
+                "children": [
+                    {
+                        "text": "Blue and yellow squares in the first line; lime and magenta squares in the second line (exactly in this order).",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "margin_top": "16px",
+                    "display": "block",
+                    "height": "36px"
+                }
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "position": "absolute",
+                    "z_index": "-1",
+                    "width": "100px",
+                    "display": "block",
+                    "height": "100px"
+                }
+            },
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "Y",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(255, 255, 0)",
+                            "border_right_color": "rgb(255, 255, 0)",
+                            "min_width": "auto",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_top_color": "rgb(255, 255, 0)",
+                            "width": "50px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "height": "50px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "M",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(255, 0, 255)",
+                            "border_right_color": "rgb(255, 0, 255)",
+                            "min_width": "auto",
+                            "border_left_color": "rgb(255, 0, 255)",
+                            "border_top_color": "rgb(255, 0, 255)",
+                            "width": "50px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "height": "50px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "B",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "min_width": "auto",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "width": "50px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "height": "50px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "L",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(0, 255, 0)",
+                            "border_right_color": "rgb(0, 255, 0)",
+                            "min_width": "auto",
+                            "border_left_color": "rgb(0, 255, 0)",
+                            "border_top_color": "rgb(0, 255, 0)",
+                            "width": "50px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "height": "50px"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "grid",
+                    "height": "100px"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "display": "block",
+            "height": "152px"
+        }
+    }
 }

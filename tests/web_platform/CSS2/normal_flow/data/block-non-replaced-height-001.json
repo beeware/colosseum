@@ -1,61 +1,51 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "58px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "24px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid",
-                    "height": "18px",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "border_top_width": "3px",
-                    "border_bottom_color": "rgb(255, 165, 0)",
                     "display": "block",
                     "width": "96px",
-                    "border_bottom_width": "3px"
+                    "border_top_width": "3px",
+                    "border_bottom_style": "solid",
+                    "height": "18px",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "border_bottom_width": "3px",
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "border_top_style": "solid"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "96px",
                             "display": "block",
-                            "width": "96px"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-non-replaced-height-001-ref.xht",
-    "assert": "The margin top and bottom used values are '0' for block-level non-replaced elements in normal flow when 'overflow' computes to 'visible' and margin top and bottom both are 'auto'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ]
+    "assert": "The margin top and bottom used values are '0' for block-level non-replaced elements in normal flow when 'overflow' computes to 'visible' and margin top and bottom both are 'auto'."
 }

@@ -1,53 +1,53 @@
 {
-    "assert": "If 'text-align' is set to 'justify' the user agent may stretch spaces and/or words.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "If 'text-align' is set to 'justify' the user agent may stretch spaces and/or words.",
     "test_case": {
         "tag": "body",
         "children": [
             {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
-            {
                 "tag": "div",
                 "children": [
                     {
+                        "text": "XXXX XXXX XXXXXX",
+                        "style": {}
+                    },
+                    {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "XXXXX XXXXXX XXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
                             "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "border_right_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
                 "style": {
-                    "height": "32px",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_bottom_color": "rgb(255, 165, 0)",
                     "width": "320px",
+                    "height": "32px",
+                    "border_bottom_color": "rgb(255, 165, 0)",
                     "border_top_color": "rgb(255, 165, 0)",
-                    "display": "block"
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "display": "block",
+                    "border_right_color": "rgb(255, 165, 0)"
                 }
             }
         ],
         "style": {
-            "height": "66px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "32px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": null

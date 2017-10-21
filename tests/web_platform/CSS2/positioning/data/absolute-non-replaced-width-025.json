@@ -1,70 +1,56 @@
 {
     "assert": "When 'width' is computed according to the equation and rules of section 10.3.7 and when such computed 'width' is greater than 'max-width', then the equation and rules of section 10.3.7 are applied again but this time assuming the computed 'max-width' value. Then all three properties ('width', 'left' and 'right') are not 'auto' and both 'margin-left' and 'margin-right' are 'auto': in which case, the horizontal margins get equal values of available, remaining horizontal space.",
-    "matches": "absolute-non-replaced-width-025-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
     ],
     "test_case": {
-        "style": {
-            "height": "134px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    },
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "max_width": "100px",
-                    "right": "8px",
                     "height": "100px",
+                    "right": "8px",
+                    "max_width": "100px",
+                    "margin_right": "262px",
+                    "width": "100px",
                     "display": "block",
                     "left": "8px",
-                    "margin_right": "262px",
-                    "position": "absolute",
-                    "width": "100px",
-                    "margin_left": "262px"
+                    "margin_left": "262px",
+                    "position": "absolute"
                 },
                 "tag": "div"
             },
             {
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "margin_right": "262px",
-                    "width": "100px",
-                    "height": "100px",
                     "border_left_color": "rgb(255, 255, 0)",
+                    "height": "100px",
+                    "margin_right": "262px",
                     "border_top_color": "rgb(255, 255, 0)",
-                    "margin_left": "262px"
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "margin_left": "262px",
+                    "width": "100px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "100px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "absolute-non-replaced-width-025-ref.xht"
 }

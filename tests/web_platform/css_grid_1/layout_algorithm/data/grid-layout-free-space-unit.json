@@ -1,59 +1,49 @@
 {
-    "assert": "the layout should behave the same as reference.",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#free-space"
+    ],
     "matches": "../reference/grid-layout-basic-ref.html",
+    "assert": "the layout should behave the same as reference.",
     "test_case": {
+        "style": {
+            "display": "block",
+            "width": "640px",
+            "height": "18px"
+        },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "P",
                 "style": {
-                    "margin_bottom": "10px",
-                    "margin_top": "10px",
-                    "height": "40px",
-                    "width": "620px",
-                    "margin_left": "10px",
-                    "display": "block",
-                    "margin_right": "10px"
-                }
-            },
-            {
+                    "display": "grid",
+                    "width": "150px",
+                    "height": "18px"
+                },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "height": "18px",
                             "min_width": "auto",
                             "display": "block",
                             "width": "100px",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px"
+                        },
+                        "tag": "DIV",
+                        "children": []
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "height": "18px",
                             "min_width": "auto",
                             "display": "block",
                             "width": "50px",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px"
+                        },
+                        "tag": "DIV",
+                        "children": []
                     }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "height": "18px",
-                    "display": "grid",
-                    "width": "150px"
-                }
+                ]
             }
-        ],
-        "tag": "BODY",
-        "style": {
-            "height": "68px",
-            "display": "block",
-            "width": "640px"
-        }
-    },
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#free-space"
-    ]
+        ]
+    }
 }

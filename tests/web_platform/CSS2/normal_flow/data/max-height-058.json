@@ -1,57 +1,41 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "226px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "max_height": "96px",
-                    "height": "96px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "bottom": "96px",
-                    "display": "block",
-                    "position": "relative",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "max-height-058-ref.xht",
-    "assert": "The 'max-height' property sets a minimum plus one length value in inches.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "192px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "max_height": "96px",
+                    "height": "96px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "bottom": "96px",
+                    "height": "96px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "max-height-058-ref.xht",
+    "assert": "The 'max-height' property sets a minimum plus one length value in inches."
 }

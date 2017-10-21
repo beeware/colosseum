@@ -1,59 +1,71 @@
 {
-    "matches": "flexbox_margin-collapse-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#visibility-collapse"
     ],
+    "matches": "flexbox_margin-collapse-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "P",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "display": "block",
-                            "margin_bottom": "16px",
-                            "width": "638px",
-                            "min_width": "auto",
+                            "min_height": "auto",
                             "height": "18px",
+                            "display": "block",
+                            "width": "638px",
                             "margin_top": "16px",
-                            "min_height": "auto"
-                        }
+                            "margin_bottom": "16px",
+                            "min_width": "auto"
+                        },
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "display": "block",
-                            "margin_bottom": "16px",
-                            "width": "638px",
-                            "min_width": "auto",
+                            "min_height": "auto",
                             "height": "18px",
+                            "display": "block",
+                            "width": "638px",
                             "margin_top": "16px",
-                            "min_height": "auto"
-                        }
+                            "margin_bottom": "16px",
+                            "min_width": "auto"
+                        },
+                        "tag": "P"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
-                    "border_bottom_width": "1px",
-                    "border_right_width": "1px",
+                    "border_bottom_style": "solid",
+                    "height": "100px",
+                    "display": "flex",
                     "border_left_style": "solid",
                     "border_right_style": "solid",
                     "border_top_style": "solid",
+                    "width": "638px",
+                    "border_bottom_width": "1px",
+                    "border_right_width": "1px",
                     "border_top_width": "1px",
-                    "border_left_width": "1px",
-                    "border_bottom_style": "solid",
-                    "display": "flex",
-                    "height": "100px",
-                    "width": "638px"
-                }
+                    "border_left_width": "1px"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "width": "640px",
-            "display": "block",
-            "height": "102px"
-        }
-    }
+            "height": "102px",
+            "display": "block"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

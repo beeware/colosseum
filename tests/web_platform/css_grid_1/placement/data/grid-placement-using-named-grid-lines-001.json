@@ -1,99 +1,83 @@
 {
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_right": "8px",
-            "height": "138px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
+            "margin_top": "8px",
             "width": "624px",
+            "margin_right": "8px",
             "display": "block",
-            "margin_top": "8px"
+            "height": "104px",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "P",
                 "style": {
-                    "width": "624px",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "children": [
-                    {
-                        "tag": "STRONG",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "height": "100px",
                     "width": "100px",
+                    "height": "100px",
                     "display": "inline-grid"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
+                            "width": "25px",
+                            "min_width": "auto",
                             "height": "50px",
-                            "min_width": "auto",
-                            "width": "25px",
+                            "min_height": "auto",
                             "display": "block"
-                        }
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
+                            "width": "25px",
+                            "min_width": "auto",
                             "height": "100px",
-                            "min_width": "auto",
-                            "width": "25px",
+                            "min_height": "auto",
                             "display": "block"
-                        }
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
+                            "width": "25px",
+                            "min_width": "auto",
                             "height": "100px",
-                            "min_width": "auto",
-                            "width": "25px",
+                            "min_height": "auto",
                             "display": "block"
-                        }
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
+                            "width": "25px",
+                            "min_width": "auto",
                             "height": "100px",
-                            "min_width": "auto",
-                            "width": "25px",
+                            "min_height": "auto",
                             "display": "block"
-                        }
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
+                            "width": "25px",
+                            "min_width": "auto",
                             "height": "50px",
-                            "min_width": "auto",
-                            "width": "25px",
+                            "min_height": "auto",
                             "display": "block"
-                        }
+                        },
+                        "tag": "DIV"
                     }
                 ]
             }
         ]
     },
+    "assert": "Line placement algorithm selects the first matching column when using a grid line name associated to several columns and no integer is specified within the custom-ident.",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#line-placement",
         "http://www.w3.org/TR/css-grid-1/#grid-placement-slot",
         "http://www.w3.org/TR/css-grid-1/#named-grid-area"
-    ],
-    "assert": "Line placement algorithm selects the first matching column when using a grid line name associated to several columns and no integer is specified within the custom-ident.",
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+    ]
 }

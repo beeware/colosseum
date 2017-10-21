@@ -1,73 +1,91 @@
 {
-    "matches": "flexbox_direction-row-reverse-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-direction-property"
     ],
+    "matches": "flexbox_direction-row-reverse-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "IJKL",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "width": "43.328125px",
-                            "display": "list-item",
-                            "height": "15px",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(255, 255, 255)"
-                        }
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "height": "15px",
+                            "display": "list-item",
+                            "width": "43.328125px",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "min_width": "auto"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "ABCD",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "width": "43.328125px",
-                            "display": "list-item",
-                            "height": "15px",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(255, 255, 255)"
-                        }
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "height": "15px",
+                            "display": "list-item",
+                            "width": "43.328125px",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "min_width": "auto"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "EFGH",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "width": "43.328125px",
-                            "display": "list-item",
-                            "height": "15px",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(255, 255, 255)"
-                        }
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "height": "15px",
+                            "display": "list-item",
+                            "width": "43.328125px",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "min_width": "auto"
+                        },
+                        "tag": "LI"
                     }
                 ],
-                "tag": "UL",
                 "style": {
                     "width": "130px",
-                    "display": "flex",
-                    "height": "15px"
-                }
+                    "height": "15px",
+                    "display": "flex"
+                },
+                "tag": "UL"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "130px",
-            "display": "block",
             "height": "15px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "130px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

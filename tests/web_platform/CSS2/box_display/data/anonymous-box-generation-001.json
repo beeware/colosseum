@@ -1,49 +1,43 @@
 {
-    "assert": "Block boxes with inline content followed by a block box generate an anonymous block box around the inline content.",
-    "matches": "anonymous-box-generation-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
                 "children": [
+                    {
+                        "style": {},
+                        "text": "Filler Text"
+                    },
                     {
                         "style": {
                             "display": "block",
-                            "width": "192px",
-                            "height": "16px"
+                            "height": "16px",
+                            "width": "192px"
                         },
                         "tag": "div"
                     }
                 ],
                 "style": {
                     "display": "block",
-                    "width": "192px",
-                    "height": "34px"
+                    "height": "34px",
+                    "width": "192px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "68px",
+            "height": "34px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "anonymous-box-generation-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": "Block boxes with inline content followed by a block box generate an anonymous block box around the inline content."
 }

@@ -1,66 +1,50 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "49px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "15px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "15px",
                     "width": "624px",
                     "display": "block",
+                    "height": "15px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "15px",
-                            "width": "15px"
+                            "width": "15px",
+                            "height": "15px"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
-                            "left": "15px",
-                            "height": "15px",
                             "width": "15px",
-                            "top": "0px",
                             "display": "block",
+                            "top": "0px",
+                            "height": "15px",
+                            "left": "15px",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-replaced-height-002-ref.xht",
-    "assert": "The 'height' is the intrinsic height when an inline replaced element with an intrinsic height has a 'height' and 'width' computed as 'auto'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ]
+    "assert": "The 'height' is the intrinsic height when an inline replaced element with an intrinsic height has a 'height' and 'width' computed as 'auto'."
 }

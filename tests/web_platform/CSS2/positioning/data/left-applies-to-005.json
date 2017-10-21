@@ -1,71 +1,61 @@
 {
     "assert": "The 'left' property applies to elements with a display of 'table-column-group'.",
-    "matches": "left-applies-to-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
         "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
     ],
     "test_case": {
-        "style": {
-            "height": "34px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "width": "1px",
-                    "height": "0px",
-                    "display": "table"
-                },
                 "children": [
                     {
                         "style": {
-                            "position": "absolute",
-                            "width": "96px",
-                            "height": "96px",
                             "display": "block",
-                            "left": "0px"
+                            "left": "0px",
+                            "height": "96px",
+                            "width": "96px",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     },
                     {
-                        "style": {
-                            "width": "1px",
-                            "height": "0px",
-                            "display": "table-row"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "1px",
+                                    "display": "table-cell",
                                     "height": "0px",
-                                    "display": "table-cell"
+                                    "width": "1px"
                                 },
                                 "tag": "div"
                             }
                         ],
+                        "style": {
+                            "display": "table-row",
+                            "height": "0px",
+                            "width": "1px"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "table",
+                    "height": "0px",
+                    "width": "1px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "left-applies-to-001-ref.xht"
 }

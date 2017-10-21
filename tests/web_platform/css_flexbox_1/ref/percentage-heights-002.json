@@ -1,104 +1,183 @@
 {
-    "border_box": {
-        "size": [
-            800,
-            600
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "padding_box": {
-        "size": [
-            800,
-            600
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
     "border": [
         0,
         0,
         0,
         0
     ],
-    "id": "",
-    "margin_box": {
-        "size": [
-            816,
-            616
-        ],
-        "position": [
-            0,
-            0
-        ]
-    },
-    "content": {
-        "size": [
-            800,
-            600
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "BODY",
     "children": [
         {
-            "border_box": {
-                "size": [
-                    800,
-                    600
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    800,
-                    600
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "id": "container",
-            "margin_box": {
-                "size": [
-                    800,
-                    600
-                ],
+            "tag": "DIV",
+            "children": [
+                {
+                    "text": "\n  "
+                },
+                {
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "tag": "DIV",
+                    "children": [
+                        {
+                            "text": "\n  Tests that percentage heights get resolved correctly when the flexbox is\n  "
+                        }
+                    ],
+                    "padding_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            800,
+                            120
+                        ]
+                    },
+                    "margin_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            800,
+                            120
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            800,
+                            120
+                        ]
+                    },
+                    "id": "top-bar",
+                    "content": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            800,
+                            120
+                        ]
+                    }
+                },
+                {
+                    "text": "\n  "
+                },
+                {
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "tag": "DIV",
+                    "children": [
+                        {
+                            "text": "\n  absolutely positioned without an explicit height. You should see no red.\n  "
+                        }
+                    ],
+                    "padding_box": {
+                        "position": [
+                            8,
+                            128
+                        ],
+                        "size": [
+                            800,
+                            480
+                        ]
+                    },
+                    "margin_box": {
+                        "position": [
+                            8,
+                            128
+                        ],
+                        "size": [
+                            800,
+                            480
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            8,
+                            128
+                        ],
+                        "size": [
+                            800,
+                            480
+                        ]
+                    },
+                    "id": "content",
+                    "content": {
+                        "position": [
+                            8,
+                            128
+                        ],
+                        "size": [
+                            800,
+                            480
+                        ]
+                    }
+                },
+                {
+                    "text": "\n"
+                }
+            ],
+            "padding_box": {
                 "position": [
                     8,
                     8
+                ],
+                "size": [
+                    800,
+                    600
                 ]
             },
-            "content": {
-                "size": [
-                    800,
-                    600
-                ],
+            "margin_box": {
                 "position": [
                     8,
                     8
+                ],
+                "size": [
+                    800,
+                    600
                 ]
             },
             "padding": [
@@ -107,146 +186,89 @@
                 0,
                 0
             ],
-            "children": [
-                {
-                    "border_box": {
-                        "size": [
-                            800,
-                            120
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "padding_box": {
-                        "size": [
-                            800,
-                            120
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "top-bar",
-                    "margin_box": {
-                        "size": [
-                            800,
-                            120
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            800,
-                            120
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "DIV",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                },
-                {
-                    "border_box": {
-                        "size": [
-                            800,
-                            480
-                        ],
-                        "position": [
-                            8,
-                            128
-                        ]
-                    },
-                    "padding_box": {
-                        "size": [
-                            800,
-                            480
-                        ],
-                        "position": [
-                            8,
-                            128
-                        ]
-                    },
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "content",
-                    "margin_box": {
-                        "size": [
-                            800,
-                            480
-                        ],
-                        "position": [
-                            8,
-                            128
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            800,
-                            480
-                        ],
-                        "position": [
-                            8,
-                            128
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "DIV",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ],
-            "tag": "DIV",
             "margin": [
                 0,
                 0,
                 0,
                 0
-            ]
+            ],
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    800,
+                    600
+                ]
+            },
+            "id": "container",
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    800,
+                    600
+                ]
+            }
+        },
+        {
+            "text": "\n\n\n"
         }
     ],
-    "tag": "BODY",
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            800,
+            600
+        ]
+    },
+    "margin_box": {
+        "position": [
+            0,
+            0
+        ],
+        "size": [
+            816,
+            616
+        ]
+    },
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
     "margin": [
         8,
         8,
         8,
         8
-    ]
+    ],
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            800,
+            600
+        ]
+    },
+    "id": "",
+    "content": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            800,
+            600
+        ]
+    }
 }

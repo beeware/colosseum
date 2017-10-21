@@ -1,75 +1,91 @@
 {
-    "assert": null,
-    "matches": "delete-block-in-inlines-beginning-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Several"
+                            }
+                        ],
                         "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
+                        "tag": "span"
+                    },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "inline elements"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
                         "style": {},
+                        "text": "are"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "in this"
+                            }
+                        ],
+                        "style": {},
                         "tag": "span"
                     },
                     {
                         "style": {},
-                        "tag": "span"
+                        "text": "sentence."
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
                     "margin_top": "20px",
-                    "margin_left": "20px",
                     "margin_right": "20px",
                     "height": "40px",
+                    "display": "block",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "width": "584px"
                 },
                 "tag": "div"
             },
             {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Several inline elements are in this sentence."
+                    }
+                ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
                     "margin_top": "20px",
-                    "margin_left": "20px",
                     "margin_right": "20px",
                     "height": "40px",
+                    "display": "block",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "width": "584px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "138px",
+            "height": "100px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "delete-block-in-inlines-beginning-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": null
 }

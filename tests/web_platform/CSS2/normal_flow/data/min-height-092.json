@@ -1,57 +1,47 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "min_height": "0%",
-                            "height": "0px",
-                            "display": "block",
-                            "width": "624px"
-                        },
-                        "tag": "div"
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "height-001-ref.xht",
-    "assert": "The 'min-height' property sets a negative zero length value in percentages.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "624px",
+                            "display": "block",
+                            "min_height": "0%",
+                            "height": "0px"
+                        },
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "height-001-ref.xht",
+    "assert": "The 'min-height' property sets a negative zero length value in percentages."
 }

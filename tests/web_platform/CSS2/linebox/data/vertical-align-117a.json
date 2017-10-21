@@ -1,42 +1,40 @@
 {
-    "assert": "For inline non-replaced elements (such as the span element in this testcase), the box used for vertical-alignment is the box whose height is the 'line-height' (containing the box's glyphs and the half-leading on each side). 'vertical-align: text-bottom' will align the bottom of such box with the bottom of the parent's content area and not with the bottom of the parent's box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "For inline non-replaced elements (such as the span element in this testcase), the box used for vertical-alignment is the box whose height is the 'line-height' (containing the box's glyphs and the half-leading on each side). 'vertical-align: text-bottom' will align the bottom of such box with the bottom of the parent's content area and not with the bottom of the parent's box.",
     "test_case": {
         "tag": "body",
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "36px",
-                    "width": "624px"
-                }
-            },
-            {
                 "tag": "div",
                 "children": [
                     {
+                        "text": "TTTT",
+                        "style": {}
+                    },
+                    {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "MustBeAbove",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "margin_top": "auto",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "margin_left": "-40px",
                             "margin_bottom": "auto",
-                            "margin_right": "-40px"
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "margin_right": "-40px",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "margin_top": "auto",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "margin_left": "-40px"
                         }
+                    },
+                    {
+                        "text": "TTTT",
+                        "style": {}
                     }
                 ],
                 "style": {
@@ -47,13 +45,13 @@
             }
         ],
         "style": {
-            "height": "227px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "175px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "vertical-align-117a-ref.xht"

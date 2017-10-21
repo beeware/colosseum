@@ -1,134 +1,142 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "70px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "36px",
-                    "display": "table",
-                    "width": "96px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "min_height": "96px",
-                            "height": "0px",
-                            "display": "table-column",
-                            "width": "0px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "min_height": "96px",
-                            "height": "0px",
-                            "display": "table-column",
-                            "width": "0px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "height": "18px",
-                            "display": "table-row",
-                            "width": "96px"
-                        },
-                        "tag": "div",
-                        "children": [
-                            {
-                                "style": {
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "height": "18px",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "width": "48px",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "div"
-                            },
-                            {
-                                "style": {
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "height": "18px",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "width": "48px",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "div"
-                            }
-                        ]
-                    },
-                    {
-                        "style": {
-                            "height": "18px",
-                            "display": "table-row",
-                            "width": "96px"
-                        },
-                        "tag": "div",
-                        "children": [
-                            {
-                                "style": {
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "height": "18px",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "width": "48px",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "div"
-                            },
-                            {
-                                "style": {
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "height": "18px",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "width": "48px",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "div"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "../reference/ref-if-there-is-no-red.xht",
-    "assert": "The 'min-height' property does not to elements with 'display' set to 'table-column'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "36px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "96px",
+                    "display": "table",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "0px",
+                            "display": "table-column",
+                            "min_height": "96px",
+                            "height": "0px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "width": "0px",
+                            "display": "table-column",
+                            "min_height": "96px",
+                            "height": "0px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "width": "96px",
+                            "display": "table-row",
+                            "height": "18px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "height": "18px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)"
+                                },
+                                "children": [
+                                    {
+                                        "text": "a",
+                                        "style": {}
+                                    }
+                                ],
+                                "tag": "div"
+                            },
+                            {
+                                "style": {
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "height": "18px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)"
+                                },
+                                "children": [
+                                    {
+                                        "text": "b",
+                                        "style": {}
+                                    }
+                                ],
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    },
+                    {
+                        "style": {
+                            "width": "96px",
+                            "display": "table-row",
+                            "height": "18px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "height": "18px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)"
+                                },
+                                "children": [
+                                    {
+                                        "text": "c",
+                                        "style": {}
+                                    }
+                                ],
+                                "tag": "div"
+                            },
+                            {
+                                "style": {
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "display": "table-cell",
+                                    "width": "48px",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "height": "18px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)"
+                                },
+                                "children": [
+                                    {
+                                        "text": "d",
+                                        "style": {}
+                                    }
+                                ],
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "The 'min-height' property does not to elements with 'display' set to 'table-column'."
 }

@@ -1,68 +1,58 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "34px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
                     "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "0px",
                     "display": "block",
-                    "width": "624px"
+                    "height": "0px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "100px",
+                            "width": "624px",
                             "display": "block",
-                            "width": "624px"
+                            "height": "100px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "100px",
+                                    "width": "624px",
                                     "display": "block",
-                                    "width": "624px"
+                                    "height": "100px"
                                 },
-                                "tag": "div",
                                 "children": [
                                     {
                                         "style": {
-                                            "height": "96px",
-                                            "width": "96px"
+                                            "width": "96px",
+                                            "height": "96px"
                                         },
                                         "tag": "img"
                                     }
-                                ]
+                                ],
+                                "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../reference/ref-filled-black-96px-square.xht",
-    "assert": "This test checks that an height percentage is calculated with respect to the height of the generated box's containing block only if and only when such containing block's height is specified explicitly (i.e., it depends on content height; its specified height is not 'auto'). In this test, the div#parent has an 'auto' height; therefore the height percentage specified on div#child is treated as 'auto' and so the image should be rendered (entirely visible) inside that div#child. Note that div#grandparent's initial overflow value is 'visible'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    "assert": "This test checks that an height percentage is calculated with respect to the height of the generated box's containing block only if and only when such containing block's height is specified explicitly (i.e., it depends on content height; its specified height is not 'auto'). In this test, the div#parent has an 'auto' height; therefore the height percentage specified on div#child is treated as 'auto' and so the image should be rendered (entirely visible) inside that div#child. Note that div#grandparent's initial overflow value is 'visible'."
 }

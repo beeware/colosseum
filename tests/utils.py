@@ -23,7 +23,8 @@ class Display:
 
 
 class TestNode:
-    def __init__(self, style=None, children=None):
+    def __init__(self, name=None,style=None, children=None):
+        self.name = name if name else 'div'
         self.parent = None
         self.children = []
         if children:
@@ -34,15 +35,26 @@ class TestNode:
         self.layout = Box(self)
         self.style = style.copy(self) if style else CSS()
 
+    def __repr__(self):
+        return '<{}:{} {}>'.format(self.name, id(self), str(self.layout))
+
 
 def build_document(data):
-    node = TestNode()
-    node.style.set(**data['style'])
+    if 'tag' in data:
+        node = TestNode(name=data['tag'])
+        node.style.set(**data['style'])
 
-    if 'children' in data:
-        for child in data['children']:
-            node.children.append(build_document(child))
-
+        if 'children' in data:
+            for child in data['children']:
+                subdocument = build_document(child)
+                if subdocument:
+                    node.children.append(subdocument)
+    else:
+        node = None
+    #     # TODO - add proper handling for anonymous boxes.
+    #     node = TestNode(name='<anon>')
+    #     node.intrinsic.width = ...
+    #     node.intrinsic.height = ...
     return node
 
 
@@ -66,38 +78,51 @@ def layout_summary(node):
                 'size': (node.layout.margin_box_width, node.layout.margin_box_height),
             }
         }
-        if node.children:
-            layout['children'] = [
-                layout_summary(child)
-                for child in node.children
-            ]
+        children = []
+        for child in node.children:
+            sublayout = layout_summary(child)
+            if sublayout:
+                children.append(sublayout)
+        if children:
+            layout['children'] = children
     else:
-        layout = 'NOT DISPLAYED'
+        layout = None
+    #     # TODO - add proper handling for anonymous boxes.
+    #     layout = 'NOT DISPLAYED'
 
     return layout
 
 
 def clean_reference(reference):
-    cleaned = {
-        key: {
-            'position': (reference[key]['position'][0], reference[key]['position'][1]),
-            'size': (reference[key]['size'][0], reference[key]['size'][1]),
+    if 'tag' in reference:
+        cleaned = {
+            key: {
+                'position': (reference[key]['position'][0], reference[key]['position'][1]),
+                'size': (reference[key]['size'][0], reference[key]['size'][1]),
+            }
+            for key in ['content', 'padding_box', 'border_box', 'margin_box']
         }
-        for key in ['content', 'padding_box', 'border_box', 'margin_box']
-    }
 
-    if 'children' in reference:
-        cleaned['children'] = [
-            clean_reference(child)
-            for child in reference['children']
-        ]
+        children = []
+        for child in reference.get('children', []):
+            subreference = clean_reference(child)
+            if subreference:
+                children.append(subreference)
+        if children:
+            cleaned['children'] = children
+
+    else:
+        cleaned = None
+    #     # TODO - add proper handling for anonymous boxes.
+    #     cleaned = {
+    #         'text': reference.get('text', '???')
+    #     }
 
     return cleaned
 
 
 def output_layout(layout, depth=1):
-    return (
-        '  ' * depth
+    return ('  ' * depth
         + '* {n[content][size][0]}x{n[content][size][1]}'
           ' @ ({n[content][position][0]}, {n[content][position][1]})'
           '\n'.format(n=layout)
@@ -116,8 +141,8 @@ def output_layout(layout, depth=1):
         + ''.join(
                 output_layout(child, depth=depth + 1)
                 for child in layout.get('children', [])
-            )
-        + ('\n' if layout.get('children', None) and depth > 1 else '')
+            ) if layout else ''
+        + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
     )
 
 
@@ -159,6 +184,18 @@ class W3CTestCase(LayoutTestCase):
                 )
         except IOError:
             not_implemented = set()
+
+        # Read the ignore file.
+        ignore_file = os.path.join(dirname, 'ignore')
+        try:
+            with open(ignore_file) as f:
+                ignore = set(
+                    'test_' + line.strip().replace('-', '_')
+                    for line in f
+                    if line.strip()
+                )
+        except IOError:
+            ignore = set()
 
         # Closure for building test cases for a given input file.
         def make_test(test_dir, filename):
@@ -212,7 +249,8 @@ class W3CTestCase(LayoutTestCase):
             return test_name, test_method
 
         # Find all the data files, and build a test case for each test group
-        # that is represented there.
+        # that is represented there. Exclude any test that is explicitly
+        # on the ignore list.
         tests = {}
         for filename in os.listdir(data_dir):
             if group.endswith('-'):
@@ -222,6 +260,7 @@ class W3CTestCase(LayoutTestCase):
             if found:
 
                 test_name, test_method = make_test(dirname, filename)
-                tests[test_name] = test_method
+                if test_name not in ignore:
+                    tests[test_name] = test_method
 
         return tests

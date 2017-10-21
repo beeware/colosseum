@@ -1,84 +1,68 @@
 {
     "assert": "For a relatively positioned element in an RTL       containing block, if neither 'left' nor 'right' is 'auto', used value of       'left' is minus the value of 'right'.",
-    "matches": "relpos-calcs-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
     ],
     "test_case": {
-        "style": {
-            "height": "154px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
                     "display": "block",
-                    "margin_top": "16px"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "direction": "rtl",
-                    "margin_bottom": "-120px",
                     "height": "120px",
-                    "display": "block",
-                    "width": "120px"
+                    "direction": "rtl",
+                    "width": "120px",
+                    "margin_bottom": "-120px"
                 },
                 "tag": "div"
             },
             {
-                "style": {
-                    "direction": "rtl",
-                    "unicode_bidi": "embed",
-                    "height": "120px",
-                    "display": "block",
-                    "width": "80px"
-                },
                 "children": [
                     {
+                        "children": [
+                            {
+                                "style": {
+                                    "height": "120px",
+                                    "display": "block",
+                                    "left": "-50%",
+                                    "direction": "rtl",
+                                    "width": "80px",
+                                    "position": "relative"
+                                },
+                                "tag": "div"
+                            }
+                        ],
                         "style": {
                             "right": "-50%",
                             "height": "120px",
                             "display": "block",
                             "left": "-50%",
-                            "position": "relative",
+                            "direction": "rtl",
                             "width": "80px",
-                            "direction": "rtl"
+                            "position": "relative"
                         },
-                        "children": [
-                            {
-                                "style": {
-                                    "direction": "rtl",
-                                    "height": "120px",
-                                    "display": "block",
-                                    "left": "-50%",
-                                    "position": "relative",
-                                    "width": "80px"
-                                },
-                                "tag": "div"
-                            }
-                        ],
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "120px",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "direction": "rtl",
+                    "width": "80px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "120px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "relpos-calcs-001-ref.xht"
 }

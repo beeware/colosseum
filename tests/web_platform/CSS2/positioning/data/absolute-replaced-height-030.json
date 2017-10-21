@@ -1,68 +1,58 @@
 {
     "assert": "The 'height' is the intrinsic height when an absolutely positioned inline replaced element has an intrinsic height; if values are overconstrained, then solve for 'bottom'.",
-    "matches": "absolute-replaced-height-008-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
     ],
     "test_case": {
-        "style": {
-            "height": "37px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "0px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "position": "relative",
-                    "width": "624px",
-                    "border_top_style": "solid"
-                },
                 "children": [
                     {
                         "style": {
-                            "height": "15px",
-                            "display": "block",
                             "margin_top": "48px",
-                            "position": "absolute",
-                            "margin_bottom": "48px",
+                            "height": "15px",
                             "width": "15px",
+                            "top": "48px",
+                            "display": "block",
+                            "margin_bottom": "48px",
                             "bottom": "96px",
-                            "top": "48px"
+                            "position": "absolute"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
+                            "top": "96px",
                             "height": "15px",
                             "display": "block",
                             "left": "15px",
-                            "position": "absolute",
                             "width": "15px",
-                            "top": "96px"
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "0px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_top_style": "solid",
+                    "width": "624px",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "3px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "absolute-replaced-height-008-ref.xht"
 }

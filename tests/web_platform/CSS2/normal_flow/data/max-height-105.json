@@ -1,61 +1,73 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "286px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "36px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "max_height": "400px",
-                    "height": "200px",
-                    "display": "block",
-                    "width": "200px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "height": "200px",
-                            "display": "block",
-                            "width": "200px"
-                        },
-                        "tag": "div"
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": null,
-    "assert": "The 'max-height' property can restrain the used value of height when the used value of height is greater than the declared max-height and not when it is less than the declared max-height and not when it does not exceed the declared max-height.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
         "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "286px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent.",
+                        "style": {}
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "text": "Test passes if there is a green rectangle with inactive scrollbars and no red square.",
+                        "style": {}
+                    }
+                ],
+                "tag": "p"
+            },
+            {
+                "style": {
+                    "width": "200px",
+                    "display": "block",
+                    "max_height": "400px",
+                    "height": "200px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "200px",
+                            "display": "block",
+                            "height": "200px"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": null,
+    "assert": "The 'max-height' property can restrain the used value of height when the used value of height is greater than the declared max-height and not when it is less than the declared max-height and not when it does not exceed the declared max-height."
 }

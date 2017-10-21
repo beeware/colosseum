@@ -1,71 +1,89 @@
 {
-    "matches": "flexbox_absolute-atomic-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#abspos-items"
     ],
+    "matches": "flexbox_absolute-atomic-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_left": "20px",
-                            "min_width": "auto",
-                            "margin_bottom": "20px",
-                            "margin_right": "20px",
-                            "width": "39.984375px",
-                            "display": "block",
-                            "height": "18px",
-                            "margin_top": "20px",
-                            "min_height": "auto"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "margin_left": "20px",
-                            "min_width": "auto",
-                            "margin_bottom": "20px",
-                            "top": "-1000px",
-                            "margin_right": "20px",
-                            "width": "39.984375px",
-                            "display": "block",
-                            "height": "18px",
-                            "margin_top": "20px",
                             "min_height": "auto",
-                            "position": "absolute"
-                        }
+                            "margin_left": "20px",
+                            "height": "18px",
+                            "margin_right": "20px",
+                            "display": "block",
+                            "width": "39.984375px",
+                            "margin_top": "20px",
+                            "margin_bottom": "20px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_left": "20px",
-                            "min_width": "auto",
-                            "margin_bottom": "20px",
-                            "margin_right": "20px",
+                            "top": "-1000px",
                             "width": "39.984375px",
-                            "display": "block",
+                            "margin_left": "20px",
                             "height": "18px",
+                            "margin_right": "20px",
+                            "display": "block",
+                            "position": "absolute",
                             "margin_top": "20px",
-                            "min_height": "auto"
-                        }
+                            "margin_bottom": "20px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "min_height": "auto",
+                            "margin_left": "20px",
+                            "height": "18px",
+                            "margin_right": "20px",
+                            "display": "block",
+                            "width": "39.984375px",
+                            "margin_top": "20px",
+                            "margin_bottom": "20px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "640px",
-                    "display": "flex",
-                    "height": "58px"
-                }
+                    "height": "58px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "width": "640px",
-            "display": "block",
-            "height": "58px"
-        }
-    }
+            "height": "58px",
+            "display": "block"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

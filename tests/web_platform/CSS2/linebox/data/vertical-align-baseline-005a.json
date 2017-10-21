@@ -1,52 +1,46 @@
 {
-    "assert": "The baseline of an 'inline-block' whose 'overflow' property has a computed value other than 'visible' is located at its bottom margin edge.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The baseline of an 'inline-block' whose 'overflow' property has a computed value other than 'visible' is located at its bottom margin edge.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "br",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "40px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "XXX XXX XXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "height": "100px",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
                             "width": "100px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
                             "margin_bottom": "99px",
-                            "display": "inline-block"
+                            "height": "100px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "display": "inline-block",
+                            "border_right_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
                             "position": "absolute",
+                            "width": "55px",
                             "display": "block",
-                            "height": "250px",
                             "top": "72px",
-                            "width": "55px"
+                            "height": "250px"
                         }
+                    },
+                    {
+                        "text": "pppppppp",
+                        "style": {}
                     }
                 ],
                 "style": {
@@ -57,13 +51,13 @@
             }
         ],
         "style": {
-            "height": "255px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "199px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "vertical-align-baseline-004a-ref.xht"

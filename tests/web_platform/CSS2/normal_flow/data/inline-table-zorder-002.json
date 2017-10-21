@@ -1,58 +1,60 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/zindex.html#painting-order"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
             "margin_bottom": "8px",
             "height": "32px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "32px",
+                    "width": "32px",
                     "display": "block",
-                    "width": "32px"
+                    "height": "32px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "32px",
+                            "width": "32px",
                             "display": "inline-table",
-                            "width": "32px"
+                            "height": "32px"
                         },
-                        "tag": "span",
                         "children": [
                             {
                                 "style": {
-                                    "height": "32px",
+                                    "width": "32px",
                                     "display": "block",
-                                    "width": "32px"
+                                    "height": "32px"
                                 },
+                                "children": [],
                                 "tag": "span"
                             }
-                        ]
+                        ],
+                        "tag": "span"
                     }
-                ]
+                ],
+                "tag": "div"
             },
             {
                 "style": {
-                    "height": "32px",
-                    "margin_top": "-32px",
+                    "width": "32px",
                     "display": "block",
-                    "width": "32px"
+                    "margin_top": "-32px",
+                    "height": "32px"
                 },
+                "children": [],
                 "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inline-table-zorder-001-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/zindex.html#painting-order"
-    ]
+    "assert": null
 }

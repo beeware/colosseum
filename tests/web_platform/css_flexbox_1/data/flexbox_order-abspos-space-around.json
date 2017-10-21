@@ -1,82 +1,100 @@
 {
-    "matches": "flexbox_order-abspos-space-around-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#order-property"
     ],
+    "matches": "flexbox_order-abspos-space-around-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "80px",
-                            "display": "block",
-                            "height": "128px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "128px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "display": "block",
+                            "min_height": "auto",
+                            "height": "0px",
                             "right": "0px",
                             "width": "80px",
+                            "position": "absolute",
+                            "display": "block",
+                            "min_width": "auto"
+                        },
+                        "tag": "SPAN"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "80px",
                             "min_width": "auto",
-                            "height": "0px",
                             "min_height": "auto",
-                            "position": "absolute"
-                        }
+                            "height": "128px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "80px",
-                            "display": "block",
-                            "height": "128px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
-                    },
-                    {
-                        "tag": "SPAN",
-                        "style": {
-                            "width": "80px",
-                            "display": "block",
+                            "min_height": "auto",
                             "height": "128px",
-                            "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
-                    "border_top_style": "solid",
                     "border_right_width": "1px",
-                    "border_left_width": "1px",
-                    "display": "flex",
                     "height": "128px",
-                    "position": "relative",
-                    "border_bottom_width": "1px",
-                    "border_left_style": "solid",
                     "border_right_style": "solid",
-                    "border_top_width": "1px",
                     "border_bottom_style": "solid",
-                    "width": "432px"
-                }
+                    "display": "flex",
+                    "border_left_style": "solid",
+                    "border_top_width": "1px",
+                    "border_top_style": "solid",
+                    "border_bottom_width": "1px",
+                    "width": "432px",
+                    "position": "relative",
+                    "border_left_width": "1px"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
             "height": "130px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

@@ -1,21 +1,11 @@
 {
-    "assert": "Additional inline boxes can be created for the bidirectional text.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Additional inline boxes can be created for the bidirectional text.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -23,22 +13,36 @@
                         "tag": "span",
                         "children": [
                             {
+                                "text": "Filler Text",
+                                "style": {}
+                            },
+                            {
                                 "tag": "span",
+                                "children": [
+                                    {
+                                        "text": "txeT relliF",
+                                        "style": {}
+                                    }
+                                ],
                                 "style": {
-                                    "direction": "rtl",
-                                    "unicode_bidi": "bidi-override"
+                                    "unicode_bidi": "bidi-override",
+                                    "direction": "rtl"
                                 }
+                            },
+                            {
+                                "text": "Filler Text",
+                                "style": {}
                             }
                         ],
                         "style": {
-                            "padding_top": "1px",
-                            "padding_left": "1px",
-                            "padding_right": "1px",
-                            "padding_bottom": "1px",
-                            "margin_top": "1px",
                             "margin_left": "1px",
                             "margin_bottom": "1px",
-                            "margin_right": "1px"
+                            "padding_left": "1px",
+                            "padding_bottom": "1px",
+                            "margin_right": "1px",
+                            "margin_top": "1px",
+                            "padding_right": "1px",
+                            "padding_top": "1px"
                         }
                     }
                 ],
@@ -50,13 +54,13 @@
             }
         ],
         "style": {
-            "height": "64px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "30px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-formatting-context-023-ref.xht"

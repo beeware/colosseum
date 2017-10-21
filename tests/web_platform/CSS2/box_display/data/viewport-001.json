@@ -1,31 +1,37 @@
 {
-    "assert": "Resizing the viewport may change the layout of page.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#viewport"
-    ],
     "test_case": {
         "children": [
             {
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes regardless if this text wraps or does not wrap when the page is resized to a small width."
+                    }
+                ],
                 "style": {
-                    "margin_bottom": "16px",
                     "display": "block",
-                    "width": "624px",
                     "margin_top": "16px",
-                    "height": "36px"
+                    "margin_bottom": "16px",
+                    "height": "36px",
+                    "width": "624px"
                 },
                 "tag": "p"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
             "height": "36px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#viewport"
+    ],
+    "assert": "Resizing the viewport may change the layout of page."
 }

@@ -1,22 +1,6 @@
 {
-    "assert": "The property 'display' set to 'table-header-group' behaves in layout as a table header group.",
-    "matches": "display-008-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
-            {
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
             {
                 "children": [
                     {
@@ -24,34 +8,46 @@
                             {
                                 "children": [
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler Text"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "66.875px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "66.875px"
                                         },
                                         "tag": "div"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler Text"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "66.875px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "66.875px"
                                         },
                                         "tag": "div"
                                     }
                                 ],
                                 "style": {
                                     "display": "table-row",
-                                    "width": "133.75px",
-                                    "height": "18px"
+                                    "height": "18px",
+                                    "width": "133.75px"
                                 },
                                 "tag": "div"
                             }
                         ],
                         "style": {
                             "display": "table-header-group",
-                            "width": "133.75px",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "133.75px"
                         },
                         "tag": "div"
                     },
@@ -60,55 +56,73 @@
                             {
                                 "children": [
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler Text"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "66.875px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "66.875px"
                                         },
                                         "tag": "div"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler Text"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "66.875px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "66.875px"
                                         },
                                         "tag": "div"
                                     }
                                 ],
                                 "style": {
                                     "display": "table-row",
-                                    "width": "133.75px",
-                                    "height": "18px"
+                                    "height": "18px",
+                                    "width": "133.75px"
                                 },
                                 "tag": "div"
                             }
                         ],
                         "style": {
                             "display": "table-row-group",
-                            "width": "133.75px",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "133.75px"
                         },
                         "tag": "div"
                     }
                 ],
                 "style": {
                     "display": "table",
-                    "width": "133.75px",
-                    "height": "36px"
+                    "height": "36px",
+                    "width": "133.75px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "70px",
+            "height": "36px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "display-008-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": "The property 'display' set to 'table-header-group' behaves in layout as a table header group."
 }

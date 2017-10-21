@@ -1,73 +1,57 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "259px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "225px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "225px",
+                    "width": "450px",
                     "display": "block",
-                    "width": "450px"
+                    "height": "225px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "150px",
-                            "width": "300px"
+                            "width": "300px",
+                            "height": "150px"
                         },
-                        "tag": "svg:svg",
                         "children": [
                             {
                                 "style": {
-                                    "height": "300px",
-                                    "width": "600px"
+                                    "width": "600px",
+                                    "height": "300px"
                                 },
                                 "tag": "svg:rect"
                             }
-                        ]
+                        ],
+                        "tag": "svg:svg"
                     },
                     {
                         "style": {
-                            "height": "150px",
-                            "bottom": "150px",
+                            "width": "300px",
                             "display": "block",
-                            "position": "relative",
-                            "width": "300px"
+                            "bottom": "150px",
+                            "height": "150px",
+                            "position": "relative"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../positioning/absolute-replaced-width-003a-ref.xht",
-    "assert": "If an inline-block replaced element (like the svg element in this test) has no intrinsic width and no intrinsic height, then the used value of 'width' becomes 300px and the used value of 'height' becomes 150px.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-replaced-width"
-    ]
+    "assert": "If an inline-block replaced element (like the svg element in this test) has no intrinsic width and no intrinsic height, then the used value of 'width' becomes 300px and the used value of 'height' becomes 150px."
 }

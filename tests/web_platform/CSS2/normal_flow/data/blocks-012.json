@@ -1,59 +1,49 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "66px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "32px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "16px",
+                    "width": "48px",
                     "display": "block",
-                    "width": "48px"
+                    "height": "16px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "16px",
                             "width": "0px",
                             "display": "block",
+                            "padding_left": "32px",
                             "padding_right": "32px",
-                            "padding_left": "32px"
+                            "height": "16px"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             },
             {
                 "style": {
-                    "height": "16px",
+                    "width": "64px",
                     "display": "block",
-                    "width": "64px"
+                    "height": "16px"
                 },
                 "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "blocks-011-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ]
+    "assert": null
 }

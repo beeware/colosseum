@@ -1,66 +1,50 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "134px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "104px",
-                    "z_index": "-1",
-                    "display": "block",
-                    "position": "absolute",
-                    "width": "100px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "max_height": "100px",
-                            "height": "100px",
-                            "width": "100px"
-                        },
-                        "tag": "img"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "100px",
-                    "display": "block",
-                    "width": "100px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "The width of an inline replaced element should be re-calculated based on its constrained height (constrained by computed 'max-height' value) and based its intrinsic ratio when it has an intrinsic ratio.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "100px",
+                    "z_index": "-1",
+                    "display": "block",
+                    "height": "104px",
+                    "position": "absolute"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "100px",
+                            "height": "100px",
+                            "max_height": "100px"
+                        },
+                        "tag": "img"
+                    }
+                ],
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "100px",
+                    "display": "block",
+                    "height": "100px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "The width of an inline replaced element should be re-calculated based on its constrained height (constrained by computed 'max-height' value) and based its intrinsic ratio when it has an intrinsic ratio."
 }

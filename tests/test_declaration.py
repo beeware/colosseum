@@ -263,11 +263,11 @@ class PropertyChoiceTests(TestCase):
 
 class CssDeclarationTests(TestCase):
     def test_engine(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         self.assertEqual(node.style.engine(), css_engine)
 
     def test_auto_default_property(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         # Default value is AUTO
@@ -314,7 +314,7 @@ class CssDeclarationTests(TestCase):
         self.assertFalse(node.style.dirty)
 
     def test_0_default_property(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         # Default value is 0
@@ -351,7 +351,7 @@ class CssDeclarationTests(TestCase):
         self.assertTrue(node.style.dirty)
 
     def test_None_default_property(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         # Default value is None
@@ -388,7 +388,7 @@ class CssDeclarationTests(TestCase):
         self.assertTrue(node.style.dirty)
 
     def test_property_with_choices(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         # Default value is INLINE
@@ -428,7 +428,7 @@ class CssDeclarationTests(TestCase):
         self.assertTrue(node.style.dirty)
 
     def test_directional_property(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         # Default value is 0
@@ -551,7 +551,7 @@ class CssDeclarationTests(TestCase):
         self.assertTrue(node.style.dirty)
 
     def test_set_multiple_properties(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         node.style.set(width=10, height=20)
@@ -579,7 +579,7 @@ class CssDeclarationTests(TestCase):
         self.assertFalse(node.style.dirty)
 
     def test_str(self):
-        node = TestNode(CSS())
+        node = TestNode(style=CSS())
         node.layout.dirty = None
 
         node.style.set(

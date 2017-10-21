@@ -1,42 +1,56 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {
-                            "height": "18px",
-                            "display": "inline-block",
-                            "width": "8px"
-                        },
-                        "tag": "span"
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "inline-block-000-ref.xht",
-    "assert": "The baseline of an 'inline-block' is the baseline of its last line box in the normal flow, unless it has either no in-flow line boxes or if its 'overflow' property has a computed value other than 'visible', in which case the baseline is the bottom margin edge.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "18px"
+                },
+                "children": [
+                    {
+                        "text": "a",
+                        "style": {}
+                    },
+                    {
+                        "style": {
+                            "width": "8px",
+                            "display": "inline-block",
+                            "height": "18px"
+                        },
+                        "children": [
+                            {
+                                "text": "b",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span"
+                    },
+                    {
+                        "text": "c",
+                        "style": {}
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "inline-block-000-ref.xht",
+    "assert": "The baseline of an 'inline-block' is the baseline of its last line box in the normal flow, unless it has either no in-flow line boxes or if its 'overflow' property has a computed value other than 'visible', in which case the baseline is the bottom margin edge."
 }

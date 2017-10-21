@@ -1,64 +1,48 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "226px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "192px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "192px",
+                    "width": "192px",
                     "display": "block",
-                    "width": "192px"
+                    "height": "192px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
-                            "display": "block",
                             "width": "96px",
-                            "max_width": "50%"
+                            "display": "block",
+                            "max_width": "50%",
+                            "height": "96px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "96px",
+                            "width": "96px",
                             "display": "block",
-                            "width": "96px"
+                            "height": "96px"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "max-width-percentage-001-ref.xht",
-    "assert": "The percentage is calculated in relation to the containing block.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    "assert": "The percentage is calculated in relation to the containing block."
 }

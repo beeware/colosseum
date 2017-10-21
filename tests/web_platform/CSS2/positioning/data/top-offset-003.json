@@ -1,62 +1,52 @@
 {
     "assert": "The 'top' property, for absolute positioning, specifies the offset of the element in relation to the containing block's top edge. The containing block of an absolutely positioned element is formed by the padding box of its nearest (closest) positioned ancestor element.",
-    "matches": "top-offset-003-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
     ],
     "test_case": {
-        "style": {
-            "height": "154px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "position": "relative",
-                    "width": "96px",
-                    "height": "96px",
-                    "display": "block",
-                    "padding_top": "24px"
-                },
                 "children": [
                     {
                         "style": {
-                            "position": "absolute",
-                            "width": "48px",
-                            "height": "48px",
                             "display": "block",
-                            "top": "72px"
+                            "height": "48px",
+                            "top": "72px",
+                            "width": "48px",
+                            "position": "absolute"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "width": "96px",
+                            "display": "block",
                             "height": "96px",
-                            "display": "block"
+                            "width": "96px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "96px",
+                    "display": "block",
+                    "padding_top": "24px",
+                    "width": "96px",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "120px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "top-offset-003-ref.xht"
 }

@@ -1,43 +1,49 @@
 {
-    "matches": null,
-    "assert": "Check if the web engine can identify the display value inline-flex.",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
     ],
+    "matches": null,
     "test_case": {
         "children": [
             {
-                "tag": "DIV",
                 "style": {
                     "width": "624px",
-                    "display": "block",
-                    "height": "0px"
-                }
+                    "height": "0px",
+                    "display": "block"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "style": {
                     "width": "0px",
-                    "display": "inline-flex",
-                    "height": "0px"
-                }
+                    "height": "0px",
+                    "display": "inline-flex"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "SCRIPT",
+                "children": [
+                    {
+                        "text": "var t = async_test(document.title, {timeout:500});\n        t.step(function () {\n            assert_equals(window.getComputedStyle(document.querySelector('div#test')).display, \"inline-flex\", \"Display value is\");\n        });\n        t.done();",
+                        "style": {}
+                    }
+                ],
                 "style": {
                     "display": "none"
-                }
+                },
+                "tag": "SCRIPT"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
             "height": "18px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "Check if the web engine can identify the display value inline-flex."
 }

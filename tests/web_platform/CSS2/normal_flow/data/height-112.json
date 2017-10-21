@@ -1,64 +1,49 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "88px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "54px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "border_top_style": "solid",
-                    "border_left_style": "solid",
-                    "border_right_width": "3px",
-                    "height": "48px",
-                    "border_top_width": "3px",
-                    "width": "240px",
-                    "border_left_width": "3px",
-                    "display": "block",
                     "border_right_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "3px"
+                    "width": "240px",
+                    "border_top_width": "3px",
+                    "border_left_width": "3px",
+                    "height": "48px",
+                    "border_left_style": "solid",
+                    "display": "block",
+                    "border_bottom_width": "3px",
+                    "border_right_width": "3px",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "48px",
                             "width": "240px",
+                            "display": "block",
                             "margin_bottom": "160px",
-                            "display": "block"
+                            "height": "48px"
                         },
+                        "children": [],
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "height-112-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    "assert": null
 }

@@ -1,55 +1,45 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "55px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "21px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid",
-                    "height": "15px",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "border_top_width": "3px",
-                    "border_bottom_color": "rgb(255, 165, 0)",
                     "display": "block",
                     "width": "96px",
-                    "border_bottom_width": "3px"
+                    "border_top_width": "3px",
+                    "border_bottom_style": "solid",
+                    "height": "15px",
+                    "border_bottom_color": "rgb(255, 165, 0)",
+                    "border_bottom_width": "3px",
+                    "border_top_color": "rgb(255, 165, 0)",
+                    "border_top_style": "solid"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "15px",
+                            "width": "15px",
                             "display": "block",
-                            "width": "15px"
+                            "height": "15px"
                         },
                         "tag": "img"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-replaced-height-001-ref.xht",
-    "assert": "A block replaced elements' used value of 'margin-top' and/or 'margin-bottom' set to 'auto' is '0'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ]
+    "assert": "A block replaced elements' used value of 'margin-top' and/or 'margin-bottom' set to 'auto' is '0'."
 }

@@ -1,76 +1,78 @@
 {
-    "matches": "reference/flex-box-wrap-ref.html",
-    "assert": "the test passes if you see green box.",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"
     ],
+    "matches": "reference/flex-box-wrap-ref.html",
     "test_case": {
         "children": [
             {
-                "tag": "P",
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
-            {
                 "children": [
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "width: 120px",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "120px",
-                            "display": "list-item",
-                            "height": "100px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "100px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "width: 120px",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "120px",
-                            "display": "list-item",
-                            "height": "100px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "100px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
                         "style": {
-                            "min_width": "auto",
+                            "min_height": "auto",
                             "top": "100px",
                             "height": "100px",
-                            "width": "120px",
                             "display": "list-item",
+                            "width": "120px",
+                            "position": "absolute",
                             "z_index": "-1",
                             "left": "0px",
-                            "min_height": "auto",
-                            "position": "absolute"
-                        }
+                            "min_width": "auto"
+                        },
+                        "tag": "LI"
                     }
                 ],
-                "tag": "UL",
                 "style": {
                     "width": "200px",
-                    "display": "flex",
+                    "position": "relative",
                     "height": "200px",
-                    "position": "relative"
-                }
+                    "display": "flex"
+                },
+                "tag": "UL"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
+            "height": "200px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "234px",
-            "margin_top": "8px"
-        }
-    }
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "the test passes if you see green box."
 }

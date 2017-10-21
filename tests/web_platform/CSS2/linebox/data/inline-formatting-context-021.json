@@ -1,26 +1,22 @@
 {
-    "assert": "If inline boxes cannot be split (i.e.: white-space: nowrap) then the inline box overflows the line box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "If inline boxes cannot be split (i.e.: white-space: nowrap) then the inline box overflows the line box.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler Text Filler Text Filler Text Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {}
                     }
                 ],
@@ -32,13 +28,13 @@
             }
         ],
         "style": {
-            "height": "52px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "18px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": null

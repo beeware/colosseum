@@ -1,61 +1,45 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "border_right_width": "5px",
-                    "height": "96px",
                     "border_right_style": "solid",
-                    "display": "block",
                     "width": "96px",
+                    "display": "block",
+                    "height": "96px",
+                    "border_right_width": "5px",
                     "border_right_color": "rgb(0, 0, 255)"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_right_width": "5px",
-                            "height": "96px",
                             "border_right_style": "solid",
-                            "display": "block",
                             "width": "91px",
+                            "display": "block",
+                            "height": "96px",
+                            "border_right_width": "5px",
                             "border_right_color": "rgb(255, 165, 0)"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-formatting-contexts-006-ref.xht",
-    "assert": "When there is no padding or margins on elements the right outer edge of the child box will touch the right edge of the containing block.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ]
+    "assert": "When there is no padding or margins on elements the right outer edge of the child box will touch the right edge of the containing block."
 }

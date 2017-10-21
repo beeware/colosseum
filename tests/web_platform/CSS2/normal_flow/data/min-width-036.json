@@ -1,41 +1,31 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "block",
                     "width": "37.78125px",
+                    "display": "block",
+                    "height": "96px",
                     "min_width": "37.7952766418457px"
                 },
                 "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "max-width-036-ref.xht",
-    "assert": "The 'min-width' property sets a minimum plus one length value in centimeters.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    "assert": "The 'min-width' property sets a minimum plus one length value in centimeters."
 }

@@ -1,28 +1,12 @@
 {
-    "assert": "The 'line-height' property applies to elements with 'display' set to 'inline-table'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The 'line-height' property applies to elements with 'display' set to 'inline-table'.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -34,6 +18,7 @@
                                 "children": [
                                     {
                                         "tag": "div",
+                                        "children": [],
                                         "style": {
                                             "width": "96px",
                                             "display": "table-cell",
@@ -57,31 +42,31 @@
                     {
                         "tag": "div",
                         "style": {
+                            "width": "96px",
+                            "left": "96px",
                             "height": "192px",
                             "position": "absolute",
-                            "width": "96px",
                             "display": "block",
-                            "top": "0px",
-                            "left": "96px"
+                            "top": "0px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
+                    "width": "624px",
                     "display": "block",
-                    "height": "192px",
-                    "width": "624px"
+                    "height": "192px"
                 }
             }
         ],
         "style": {
-            "height": "226px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "192px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-applies-to-001-ref.xht"

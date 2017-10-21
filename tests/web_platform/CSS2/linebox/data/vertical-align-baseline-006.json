@@ -1,22 +1,12 @@
 {
-    "assert": "The baseline of an inline element is aligned with the baseline of its child inline-block when 'vertical-align: baseline' is specified on the child.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The baseline of an inline element is aligned with the baseline of its child inline-block when 'vertical-align: baseline' is specified on the child.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -24,7 +14,17 @@
                         "tag": "span",
                         "children": [
                             {
+                                "text": "XXXXX",
+                                "style": {}
+                            },
+                            {
                                 "tag": "span",
+                                "children": [
+                                    {
+                                        "text": "XXXXX",
+                                        "style": {}
+                                    }
+                                ],
                                 "style": {
                                     "width": "115.546875px",
                                     "display": "inline-block",
@@ -43,13 +43,13 @@
             }
         ],
         "style": {
-            "height": "71px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "37px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": null

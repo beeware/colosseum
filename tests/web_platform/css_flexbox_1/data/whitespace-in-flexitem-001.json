@@ -1,71 +1,83 @@
 {
-    "matches": "whitespace-in-flexitem-001-ref.html",
-    "assert": "Whitespace-only nodes in a flexbox should not\nbe rendered and not influence justify-content, even in the presence of\nwhite-space: pre",
     "help": [
         "https://drafts.csswg.org/css-flexbox/#flex-items"
     ],
+    "matches": "whitespace-in-flexitem-001-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
                             "width": "30px",
-                            "display": "block",
-                            "height": "36px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "36px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "624px",
-                    "display": "flex",
-                    "height": "36px"
-                }
+                    "height": "36px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             },
             {
                 "children": [
                     {
-                        "tag": "B",
+                        "children": [
+                            {
+                                "text": "foo",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "21.328125px",
-                            "display": "block",
-                            "height": "36px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "36px",
+                            "display": "block"
+                        },
+                        "tag": "B"
                     },
                     {
-                        "tag": "B",
+                        "children": [
+                            {
+                                "text": "bar",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "24px",
-                            "display": "block",
-                            "height": "36px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "36px",
+                            "display": "block"
+                        },
+                        "tag": "B"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "624px",
-                    "display": "flex",
-                    "height": "36px"
-                }
+                    "height": "36px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
             "height": "72px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "Whitespace-only nodes in a flexbox should not\nbe rendered and not influence justify-content, even in the presence of\nwhite-space: pre"
 }

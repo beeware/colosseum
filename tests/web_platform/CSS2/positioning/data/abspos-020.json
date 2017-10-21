@@ -1,43 +1,55 @@
 {
     "assert": null,
-    "matches": "abspos-013-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
     ],
     "test_case": {
-        "style": {
-            "width": "620px",
-            "height": "64px",
-            "display": "block"
-        },
         "children": [
             {
+                "children": [
+                    {
+                        "text": "This block should be green.",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "display": "block",
-                    "position": "fixed",
-                    "width": "320px",
-                    "height": "64px",
                     "border_left_color": "rgb(255, 255, 255)",
+                    "height": "64px",
                     "border_top_color": "rgb(255, 255, 255)",
-                    "z_index": "0"
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "display": "block",
+                    "z_index": "0",
+                    "width": "320px",
+                    "position": "fixed"
                 },
                 "tag": "div"
             },
             {
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "width": "320px",
-                    "height": "64px",
                     "border_left_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)"
+                    "height": "64px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "width": "320px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "display": "block",
+            "height": "64px",
+            "width": "620px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "abspos-013-ref.xht"
 }

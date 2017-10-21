@@ -1,49 +1,234 @@
 {
-    "border_box": {
-        "size": [
-            624,
-            0
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "padding_box": {
-        "size": [
-            624,
-            0
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
     "border": [
         0,
         0,
         0,
         0
     ],
-    "id": "",
-    "margin_box": {
-        "size": [
-            640,
-            16
-        ],
-        "position": [
-            0,
-            0
-        ]
-    },
-    "content": {
-        "size": [
-            624,
-            0
-        ],
+    "tag": "BODY",
+    "children": [
+        {
+            "text": "\n    "
+        },
+        {
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "tag": "DIV",
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "margin_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "id": "log",
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            }
+        },
+        {
+            "text": "\n    "
+        },
+        {
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "tag": "DIV",
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "margin_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "id": "test",
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            }
+        },
+        {
+            "text": "\n    "
+        },
+        {
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "tag": "SCRIPT",
+            "children": [
+                {
+                    "text": "\n        var t = async_test(document.title, {timeout:500});\n        t.step(function () {\n            assert_equals(window.getComputedStyle(document.querySelector('div#test')).display, \"flex\", \"Display value is\");\n        });\n        t.done();\n    "
+                }
+            ],
+            "padding_box": {
+                "position": [
+                    0,
+                    0
+                ],
+                "size": [
+                    0,
+                    0
+                ]
+            },
+            "margin_box": {
+                "position": [
+                    0,
+                    0
+                ],
+                "size": [
+                    0,
+                    0
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
+                "position": [
+                    0,
+                    0
+                ],
+                "size": [
+                    0,
+                    0
+                ]
+            },
+            "id": "",
+            "content": {
+                "position": [
+                    0,
+                    0
+                ],
+                "size": [
+                    0,
+                    0
+                ]
+            }
+        },
+        {
+            "text": "\n  \n\n"
+        }
+    ],
+    "padding_box": {
         "position": [
             8,
             8
+        ],
+        "size": [
+            624,
+            0
+        ]
+    },
+    "margin_box": {
+        "position": [
+            0,
+            0
+        ],
+        "size": [
+            640,
+            16
         ]
     },
     "padding": [
@@ -52,199 +237,31 @@
         0,
         0
     ],
-    "children": [
-        {
-            "border_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "log",
-            "margin_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "content": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "DIV",
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ]
-        },
-        {
-            "border_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "test",
-            "margin_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "content": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "DIV",
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ]
-        },
-        {
-            "border_box": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "padding_box": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "",
-            "margin_box": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "content": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "SCRIPT",
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ]
-        }
-    ],
-    "tag": "BODY",
     "margin": [
         8,
         8,
         8,
         8
-    ]
+    ],
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            0
+        ]
+    },
+    "id": "",
+    "content": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            0
+        ]
+    }
 }

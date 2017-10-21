@@ -1,26 +1,26 @@
 {
-    "assert": "If 'text-align' is set to 'justify' the user agent does not stretch spaces and/or words when the 'display' property is set to 'inline-block'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "If 'text-align' is set to 'justify' the user agent does not stretch spaces and/or words when the 'display' property is set to 'inline-block'.",
     "test_case": {
         "tag": "body",
         "children": [
             {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "36px",
-                    "width": "624px"
-                }
-            },
-            {
                 "tag": "div",
                 "children": [
                     {
+                        "text": "Filler Text Filler Text",
+                        "style": {}
+                    },
+                    {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler Text Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "137.734375px",
                             "display": "inline-block",
@@ -29,28 +29,28 @@
                     }
                 ],
                 "style": {
-                    "border_right_width": "3px",
-                    "border_bottom_width": "3px",
+                    "width": "200px",
                     "border_left_style": "solid",
+                    "border_bottom_width": "3px",
+                    "border_left_width": "3px",
+                    "border_top_width": "3px",
+                    "border_right_style": "solid",
                     "display": "block",
                     "height": "36px",
-                    "border_right_style": "solid",
-                    "width": "200px",
-                    "border_left_width": "3px",
-                    "border_bottom_style": "solid",
                     "border_top_style": "solid",
-                    "border_top_width": "3px"
+                    "border_right_width": "3px",
+                    "border_bottom_style": "solid"
                 }
             }
         ],
         "style": {
-            "height": "94px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "42px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": null

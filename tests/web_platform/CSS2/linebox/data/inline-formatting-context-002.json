@@ -1,26 +1,22 @@
 {
-    "assert": "Horizontal left margins are respected between inline boxes.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Horizontal left margins are respected between inline boxes.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "margin_left": "100px"
                         }
@@ -30,13 +26,13 @@
             }
         ],
         "style": {
-            "height": "52px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "18px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-formatting-context-002-ref.xht"

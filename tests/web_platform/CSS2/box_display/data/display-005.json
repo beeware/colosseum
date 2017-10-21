@@ -1,56 +1,50 @@
 {
-    "assert": "The property 'display' set to 'inline-block' is formatted in layout as an inline-level element: it creates a new block formatting context for its descendants but it is laid out, flowed as an inline-level element. An inline-block does not begin on a new line and does not require to begin on a new line.",
-    "matches": "display-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
                         "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
+                        "text": "Filler text"
+                    },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Filler text"
+                            }
+                        ],
                         "style": {
                             "display": "inline-block",
-                            "width": "62.65625px",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "62.65625px"
                         },
                         "tag": "div"
                     }
                 ],
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "18px"
+                    "height": "18px",
+                    "width": "624px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "52px",
+            "height": "18px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "display-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": "The property 'display' set to 'inline-block' is formatted in layout as an inline-level element: it creates a new block formatting context for its descendants but it is laid out, flowed as an inline-level element. An inline-block does not begin on a new line and does not require to begin on a new line."
 }

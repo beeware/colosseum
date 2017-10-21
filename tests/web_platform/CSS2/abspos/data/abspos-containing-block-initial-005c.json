@@ -1,19 +1,20 @@
 {
-    "matches": "abspos-containing-block-initial-005-ref.xht",
-    "test_case": {
-        "style": {
-            "margin_right": "8px",
-            "width": "84px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px"
-        },
-        "tag": "body"
-    },
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
-    "assert": "If there is no such ancestor, the containing block is the initial containing block."
+    "assert": "If there is no such ancestor, the containing block is the initial containing block.",
+    "test_case": {
+        "tag": "body",
+        "children": [],
+        "style": {
+            "margin_left": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "width": "84px",
+            "margin_right": "8px",
+            "margin_bottom": "8px"
+        }
+    },
+    "matches": "abspos-containing-block-initial-005-ref.xht"
 }

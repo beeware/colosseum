@@ -1,157 +1,171 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/box.html#collapsing-margins"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "274px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "186px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "72px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "border_right_width": "3px",
-                    "height": "180px",
-                    "border_bottom_width": "3px",
-                    "border_left_width": "3px",
                     "display": "block",
-                    "width": "618px",
-                    "border_top_style": "solid",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "border_top_width": "3px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
                     "border_left_color": "rgb(0, 0, 255)",
+                    "border_bottom_style": "solid",
+                    "width": "618px",
+                    "border_top_width": "3px",
+                    "border_bottom_width": "3px",
+                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_top_style": "solid",
                     "border_right_style": "solid",
+                    "border_left_width": "3px",
+                    "border_left_style": "solid",
+                    "border_bottom_color": "rgb(0, 0, 255)",
+                    "height": "180px",
+                    "border_right_width": "3px",
                     "border_right_color": "rgb(0, 0, 255)"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "margin_left": "20px",
-                            "margin_bottom": "20px",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "width": "578px",
-                            "height": "20px",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "margin_top": "20px",
                             "border_left_color": "rgb(128, 128, 128)",
                             "display": "block",
+                            "margin_top": "20px",
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "578px",
+                            "border_bottom_color": "rgb(128, 128, 128)",
                             "margin_right": "20px",
-                            "border_right_color": "rgb(128, 128, 128)"
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "margin_left": "20px"
                         },
-                        "tag": "table",
                         "children": [
                             {
                                 "style": {
-                                    "display": "table-row",
-                                    "border_top_color": "rgb(128, 128, 128)",
-                                    "height": "20px",
-                                    "border_bottom_color": "rgb(128, 128, 128)",
                                     "border_left_color": "rgb(128, 128, 128)",
+                                    "display": "table-row",
                                     "width": "80px",
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "height": "20px",
+                                    "border_top_color": "rgb(128, 128, 128)",
                                     "border_right_color": "rgb(128, 128, 128)"
                                 },
-                                "tag": "tr",
                                 "children": [
                                     {
                                         "style": {
-                                            "height": "20px",
+                                            "width": "80px",
                                             "display": "table-cell",
-                                            "width": "80px"
+                                            "height": "20px"
                                         },
+                                        "children": [
+                                            {
+                                                "text": "Test",
+                                                "style": {}
+                                            }
+                                        ],
                                         "tag": "td"
                                     }
-                                ]
+                                ],
+                                "tag": "tr"
                             }
-                        ]
+                        ],
+                        "tag": "table"
                     },
                     {
                         "style": {
-                            "margin_left": "20px",
-                            "margin_bottom": "20px",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "width": "578px",
-                            "height": "20px",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "margin_top": "20px",
                             "border_left_color": "rgb(128, 128, 128)",
                             "display": "block",
+                            "margin_top": "20px",
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "578px",
+                            "border_bottom_color": "rgb(128, 128, 128)",
                             "margin_right": "20px",
-                            "border_right_color": "rgb(128, 128, 128)"
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "margin_left": "20px"
                         },
-                        "tag": "table",
                         "children": [
                             {
                                 "style": {
-                                    "display": "table-row",
-                                    "border_top_color": "rgb(128, 128, 128)",
-                                    "height": "20px",
-                                    "border_bottom_color": "rgb(128, 128, 128)",
                                     "border_left_color": "rgb(128, 128, 128)",
+                                    "display": "table-row",
                                     "width": "80px",
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "height": "20px",
+                                    "border_top_color": "rgb(128, 128, 128)",
                                     "border_right_color": "rgb(128, 128, 128)"
                                 },
-                                "tag": "tr",
                                 "children": [
                                     {
                                         "style": {
-                                            "height": "20px",
+                                            "width": "80px",
                                             "display": "table-cell",
-                                            "width": "80px"
+                                            "height": "20px"
                                         },
+                                        "children": [
+                                            {
+                                                "text": "Test",
+                                                "style": {}
+                                            }
+                                        ],
                                         "tag": "td"
                                     }
-                                ]
+                                ],
+                                "tag": "tr"
                             }
-                        ]
+                        ],
+                        "tag": "table"
                     },
                     {
                         "style": {
-                            "margin_left": "20px",
+                            "width": "578px",
+                            "display": "block",
+                            "margin_top": "20px",
                             "margin_bottom": "20px",
                             "height": "20px",
-                            "margin_top": "20px",
-                            "display": "block",
-                            "width": "578px",
-                            "margin_right": "20px"
+                            "margin_right": "20px",
+                            "margin_left": "20px"
                         },
+                        "children": [
+                            {
+                                "text": "Test",
+                                "style": {}
+                            }
+                        ],
                         "tag": "p"
                     },
                     {
                         "style": {
-                            "margin_left": "20px",
+                            "width": "578px",
+                            "display": "block",
+                            "margin_top": "20px",
                             "margin_bottom": "20px",
                             "height": "20px",
-                            "margin_top": "20px",
-                            "display": "block",
-                            "width": "578px",
-                            "margin_right": "20px"
+                            "margin_right": "20px",
+                            "margin_left": "20px"
                         },
+                        "children": [
+                            {
+                                "text": "Test",
+                                "style": {}
+                            }
+                        ],
                         "tag": "p"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../tables/reference/table-margin-004-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/box.html#collapsing-margins"
-    ]
+    "assert": null
 }

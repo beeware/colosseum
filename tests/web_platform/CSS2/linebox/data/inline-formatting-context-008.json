@@ -1,40 +1,30 @@
 {
-    "assert": "Inline element width is determined by the containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Inline element width is determined by the containing block.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "XX XX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "height": "200px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
                             "width": "200px",
+                            "height": "200px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
                             "border_top_color": "rgb(0, 128, 0)",
-                            "display": "block"
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "display": "block",
+                            "border_right_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
@@ -46,13 +36,13 @@
             }
         ],
         "style": {
-            "height": "234px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "200px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-formatting-context-008-ref.xht"

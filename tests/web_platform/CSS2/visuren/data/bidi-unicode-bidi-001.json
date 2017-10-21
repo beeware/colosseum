@@ -1,61 +1,71 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
+        "http://www.w3.org/TR/CSS21/visuren.html#direction"
+    ],
     "assert": "unicode-bidi: bidi-override should order characters strictly according to value of direction property",
     "test_case": {
         "tag": "body",
         "style": {
-            "margin_right": "8px",
-            "display": "block",
-            "margin_bottom": "8px",
-            "height": "86px",
             "margin_top": "8px",
+            "margin_right": "8px",
+            "height": "52px",
+            "margin_bottom": "8px",
             "width": "624px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block"
         },
         "children": [
             {
                 "tag": "p",
                 "style": {
+                    "height": "18px",
                     "margin_top": "16px",
-                    "display": "block",
                     "margin_bottom": "16px",
                     "width": "624px",
-                    "height": "18px"
-                }
-            },
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px"
-                }
-            },
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px"
+                    "display": "block"
                 },
                 "children": [
                     {
+                        "text": "a b, c d.",
+                        "style": {}
+                    }
+                ]
+            },
+            {
+                "tag": "p",
+                "style": {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "children": [
+                    {
+                        "text": "a b,",
+                        "style": {}
+                    },
+                    {
                         "tag": "span",
                         "style": {
-                            "unicode_bidi": "bidi-override",
-                            "direction": "rtl"
-                        }
+                            "direction": "rtl",
+                            "unicode_bidi": "bidi-override"
+                        },
+                        "children": [
+                            {
+                                "text": "d c",
+                                "style": {}
+                            }
+                        ]
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
                     }
                 ]
             }
         ]
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
-        "http://www.w3.org/TR/CSS21/visuren.html#direction"
-    ]
+    "matches": null
 }

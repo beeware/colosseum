@@ -1,92 +1,76 @@
 {
     "assert": "An absolutely positioned inline-block replaced element with its height set to a percentage is resolvable if and when its containing block height is explicitly specified and computable.",
-    "matches": "absolute-replaced-height-012-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
     ],
     "test_case": {
-        "style": {
-            "height": "226px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "position": "relative",
-                    "width": "624px",
-                    "height": "192px",
-                    "display": "block"
-                },
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
-                            "display": "block",
-                            "border_top_width": "3px",
-                            "border_left_width": "3px",
-                            "border_right_style": "solid",
                             "border_left_color": "rgb(255, 0, 0)",
+                            "border_left_width": "3px",
                             "border_top_color": "rgb(255, 0, 0)",
-                            "border_left_style": "solid",
                             "border_bottom_style": "solid",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "top": "96px",
-                            "border_bottom_width": "3px",
+                            "border_right_style": "solid",
                             "width": "300px",
-                            "border_top_style": "solid",
+                            "border_bottom_width": "3px",
+                            "top": "96px",
+                            "height": "96px",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_right_width": "3px",
+                            "border_top_width": "3px",
                             "position": "absolute",
-                            "border_right_width": "3px"
+                            "border_top_style": "solid",
+                            "border_left_style": "solid",
+                            "display": "block"
                         },
                         "tag": "iframe"
                     },
                     {
                         "style": {
-                            "height": "96px",
-                            "display": "block",
-                            "border_top_width": "3px",
-                            "border_left_width": "3px",
-                            "border_right_style": "solid",
                             "border_left_color": "rgb(0, 128, 0)",
+                            "border_left_width": "3px",
                             "border_top_color": "rgb(0, 128, 0)",
-                            "border_left_style": "solid",
                             "border_bottom_style": "solid",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "top": "96px",
-                            "border_bottom_width": "3px",
+                            "border_right_style": "solid",
                             "width": "300px",
-                            "border_top_style": "solid",
+                            "border_bottom_width": "3px",
+                            "top": "96px",
+                            "height": "96px",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_right_width": "3px",
+                            "border_top_width": "3px",
                             "position": "absolute",
-                            "border_right_width": "3px"
+                            "border_top_style": "solid",
+                            "border_left_style": "solid",
+                            "display": "block"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "192px",
+                    "width": "624px",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "absolute-replaced-height-012-ref.xht"
 }

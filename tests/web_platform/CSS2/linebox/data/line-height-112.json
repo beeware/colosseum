@@ -1,68 +1,58 @@
 {
-    "assert": "The 'line-height' property set to 'inherit' uses the default line-height.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The 'line-height' property set to 'inherit' uses the default line-height.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "position": "relative",
+                            "width": "20px",
                             "display": "block",
-                            "height": "96px",
-                            "width": "20px"
+                            "height": "96px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
+                            "width": "20px",
+                            "left": "22px",
                             "height": "96px",
                             "position": "absolute",
-                            "width": "20px",
                             "display": "block",
-                            "top": "0px",
-                            "left": "22px"
+                            "top": "0px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
+                    "width": "20px",
                     "display": "block",
-                    "height": "96px",
-                    "width": "20px"
+                    "height": "96px"
                 }
             }
         ],
         "style": {
-            "height": "130px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "96px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-006-ref.xht"

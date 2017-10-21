@@ -1,67 +1,51 @@
 {
-    "matches": "reference/layout-algorithm_algo-cross-line-002-ref.html",
-    "assert": "This test checks that correct width is applied if overflow: scroll is set",
     "help": [
         "https://www.w3.org/TR/css-flexbox-1/#algo-cross-line"
     ],
+    "matches": "reference/layout-algorithm_algo-cross-line-002-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "STRONG",
-                        "style": {}
-                    }
-                ],
-                "tag": "P",
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "tag": "DIV",
                         "style": {
                             "width": "200px",
-                            "display": "block",
-                            "height": "100px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "100px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
                             "width": "200px",
-                            "display": "block",
-                            "height": "100px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "100px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "200px",
-                    "display": "flex",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
+            "height": "200px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "234px",
-            "margin_top": "8px"
-        }
-    }
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "This test checks that correct width is applied if overflow: scroll is set"
 }

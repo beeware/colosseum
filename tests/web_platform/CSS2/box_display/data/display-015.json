@@ -1,60 +1,56 @@
 {
-    "assert": "The property 'display' set to 'table-caption' behaves in layout as a table caption.",
-    "matches": "display-002-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Filler text"
+                            }
+                        ],
                         "style": {
                             "display": "table-caption",
-                            "width": "62.65625px",
-                            "height": "18px"
+                            "height": "18px",
+                            "width": "62.65625px"
                         },
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Filler text"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     }
                 ],
                 "style": {
                     "display": "table",
-                    "width": "62.65625px",
-                    "height": "36px"
+                    "height": "36px",
+                    "width": "62.65625px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "70px",
+            "height": "36px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "display-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": "The property 'display' set to 'table-caption' behaves in layout as a table caption."
 }

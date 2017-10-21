@@ -1,60 +1,68 @@
 {
-    "assert": "Inline boxes are laid out horizontally or one after the other starting at the top of the containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Inline boxes are laid out horizontally or one after the other starting at the top of the containing block.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "36px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {}
                     },
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {}
                     },
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {}
                     }
                 ],
                 "style": {
-                    "border_right_width": "1px",
-                    "border_bottom_width": "1px",
+                    "width": "600px",
                     "border_left_style": "solid",
+                    "border_bottom_width": "1px",
+                    "border_left_width": "1px",
+                    "border_top_width": "1px",
+                    "border_right_style": "solid",
                     "display": "block",
                     "height": "18px",
-                    "border_right_style": "solid",
-                    "width": "600px",
-                    "border_left_width": "1px",
-                    "border_bottom_style": "solid",
                     "border_top_style": "solid",
-                    "border_top_width": "1px"
+                    "border_right_width": "1px",
+                    "border_bottom_style": "solid"
                 }
             }
         ],
         "style": {
-            "height": "72px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "20px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-formatting-context-001-ref.xht"

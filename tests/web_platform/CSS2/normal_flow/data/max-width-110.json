@@ -1,57 +1,41 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "100px",
-                    "display": "block",
+                    "float": "left",
                     "width": "100px",
-                    "float": "left"
+                    "display": "block",
+                    "height": "100px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "100px",
                             "width": "100px",
+                            "height": "100px",
                             "max_width": "100px"
                         },
                         "tag": "img"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "If 'height' and 'width' both have computed values of 'auto' and the element also has an intrinsic width, then such intrinsic width is the used value of 'width'. If 'width' of a floating, non-replaced element computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ]
+    "assert": "If 'height' and 'width' both have computed values of 'auto' and the element also has an intrinsic width, then such intrinsic width is the used value of 'width'. If 'width' of a floating, non-replaced element computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation."
 }

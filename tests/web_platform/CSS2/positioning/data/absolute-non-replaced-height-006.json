@@ -1,77 +1,67 @@
 {
     "assert": "The 'bottom' value is ignored and the equation solves for the bottom value, when the values for 'top', 'bottom', 'height', 'margin-top', 'margin-bottom' add up to more than the containing blocks height.",
-    "matches": "absolute-non-replaced-height-006-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
     ],
     "test_case": {
-        "style": {
-            "height": "372px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "36px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "300px",
-                    "display": "block",
-                    "border_top_width": "10px",
-                    "border_left_width": "10px",
-                    "border_right_style": "solid",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "10px",
-                    "width": "300px",
-                    "border_top_style": "solid",
-                    "position": "relative",
-                    "border_right_width": "10px"
-                },
                 "children": [
                     {
                         "style": {
-                            "height": "150px",
-                            "display": "block",
                             "margin_top": "50px",
-                            "position": "absolute",
-                            "margin_bottom": "50px",
+                            "height": "150px",
                             "width": "150px",
+                            "top": "50px",
+                            "display": "block",
+                            "margin_bottom": "50px",
                             "bottom": "50px",
-                            "top": "50px"
+                            "position": "absolute"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
+                            "margin_top": "50px",
                             "height": "150px",
+                            "width": "150px",
+                            "top": "50px",
                             "display": "block",
                             "left": "50%",
-                            "margin_top": "50px",
-                            "position": "absolute",
                             "margin_bottom": "50px",
-                            "width": "150px",
                             "bottom": "0px",
-                            "top": "50px"
+                            "position": "absolute"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "border_left_width": "10px",
+                    "border_bottom_style": "solid",
+                    "width": "300px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "10px",
+                    "height": "300px",
+                    "display": "block",
+                    "border_right_width": "10px",
+                    "border_top_width": "10px",
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "320px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "absolute-non-replaced-height-006-ref.xht"
 }

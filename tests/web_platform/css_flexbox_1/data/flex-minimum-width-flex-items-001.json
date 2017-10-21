@@ -1,71 +1,61 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "Checks that minimum width for flex items is the min-content size.",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#min-size-auto"
     ],
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "children": [
             {
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "tag": "p",
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "height": "100px",
                     "width": "100px",
-                    "display": "block",
+                    "position": "absolute",
                     "z_index": "-1",
-                    "position": "absolute"
-                }
+                    "height": "100px",
+                    "display": "block"
+                },
+                "tag": "div"
             },
             {
                 "children": [
                     {
-                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "IT E",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "width": "100px",
-                            "display": "block",
-                            "height": "100px",
-                            "border_top_color": "rgb(0, 128, 0)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(0, 128, 0)"
-                        }
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "height": "100px",
+                            "display": "block",
+                            "width": "100px",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "min_width": "auto"
+                        },
+                        "tag": "div"
                     }
                 ],
-                "tag": "div",
                 "style": {
                     "width": "10px",
-                    "display": "flex",
-                    "height": "100px"
-                }
+                    "height": "100px",
+                    "display": "flex"
+                },
+                "tag": "div"
             }
         ],
-        "tag": "body",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
+            "height": "100px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "134px",
-            "margin_top": "8px"
-        }
-    }
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "body"
+    },
+    "assert": "Checks that minimum width for flex items is the min-content size."
 }

@@ -1,22 +1,12 @@
 {
-    "assert": "The baseline of a table caption element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The baseline of a table caption element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "table",
                 "children": [
@@ -24,7 +14,17 @@
                         "tag": "caption",
                         "children": [
                             {
+                                "text": "XXXXX",
+                                "style": {}
+                            },
+                            {
                                 "tag": "span",
+                                "children": [
+                                    {
+                                        "text": "XXXXX",
+                                        "style": {}
+                                    }
+                                ],
                                 "style": {}
                             }
                         ],
@@ -36,24 +36,24 @@
                     }
                 ],
                 "style": {
-                    "height": "37px",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)",
                     "width": "173.328125px",
+                    "height": "37px",
+                    "border_bottom_color": "rgb(128, 128, 128)",
                     "border_top_color": "rgb(128, 128, 128)",
-                    "display": "table"
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "display": "table",
+                    "border_right_color": "rgb(128, 128, 128)"
                 }
             }
         ],
         "style": {
-            "height": "71px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "37px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "vertical-align-baseline-007-ref.xht"

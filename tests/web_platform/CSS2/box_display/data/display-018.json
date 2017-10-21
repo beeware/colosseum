@@ -1,24 +1,15 @@
 {
-    "assert": "When an element with its property 'display' set to 'inline', then it makes its box laid out horizontally, beginning at the top of its containing block without beginning on a new line and without requiring to begin on a new line. Elements with 'display' set to 'inline' are laid out horizontally, one after the other, in the line box.",
-    "matches": "display-018-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Filler text"
+                            }
+                        ],
                         "style": {},
                         "tag": "caption"
                     },
@@ -27,69 +18,98 @@
                             {
                                 "children": [
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler"
+                                            }
+                                        ],
                                         "style": {},
                                         "tag": "th"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "text"
+                                            }
+                                        ],
                                         "style": {},
                                         "tag": "td"
                                     }
                                 ],
                                 "style": {
-                                    "border_bottom_color": "rgb(128, 128, 128)",
                                     "border_left_color": "rgb(128, 128, 128)",
                                     "border_top_color": "rgb(128, 128, 128)",
-                                    "border_right_color": "rgb(128, 128, 128)"
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_bottom_color": "rgb(128, 128, 128)"
                                 },
                                 "tag": "tr"
                             },
                             {
                                 "children": [
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Filler"
+                                            }
+                                        ],
                                         "style": {},
                                         "tag": "th"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "text"
+                                            }
+                                        ],
                                         "style": {},
                                         "tag": "td"
                                     }
                                 ],
                                 "style": {
-                                    "border_bottom_color": "rgb(128, 128, 128)",
                                     "border_left_color": "rgb(128, 128, 128)",
                                     "border_top_color": "rgb(128, 128, 128)",
-                                    "border_right_color": "rgb(128, 128, 128)"
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_bottom_color": "rgb(128, 128, 128)"
                                 },
                                 "tag": "tr"
                             }
                         ],
                         "style": {
-                            "border_bottom_color": "rgb(128, 128, 128)",
                             "border_left_color": "rgb(128, 128, 128)",
                             "border_top_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)"
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_bottom_color": "rgb(128, 128, 128)"
                         },
                         "tag": "tbody"
                     }
                 ],
                 "style": {
-                    "border_bottom_color": "rgb(128, 128, 128)",
                     "border_left_color": "rgb(128, 128, 128)",
                     "border_top_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)"
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_bottom_color": "rgb(128, 128, 128)"
                 },
                 "tag": "table"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "52px",
+            "height": "18px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "display-018-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": "When an element with its property 'display' set to 'inline', then it makes its box laid out horizontally, beginning at the top of its containing block without beginning on a new line and without requiring to begin on a new line. Elements with 'display' set to 'inline' are laid out horizontally, one after the other, in the line box."
 }

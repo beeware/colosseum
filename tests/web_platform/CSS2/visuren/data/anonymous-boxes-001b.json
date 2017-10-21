@@ -1,46 +1,31 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level",
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
     "assert": "Anonymous block boxes are ignored when resolving percentage values that would refer to it: the closest non-anonymous ancestor box is used instead.",
     "test_case": {
         "tag": "body",
         "style": {
-            "margin_right": "8px",
-            "display": "block",
-            "margin_bottom": "8px",
-            "height": "256px",
             "margin_top": "8px",
+            "margin_right": "8px",
+            "height": "200px",
+            "margin_bottom": "8px",
             "width": "624px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block"
         },
         "children": [
             {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "40px"
-                },
-                "children": [
-                    {
-                        "tag": "br",
-                        "style": {}
-                    },
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
                 "tag": "div",
                 "style": {
-                    "right": "8px",
+                    "top": "122px",
+                    "left": "8px",
                     "position": "absolute",
                     "z_index": "-1",
-                    "left": "8px",
                     "height": "100px",
-                    "top": "122px",
+                    "right": "8px",
                     "width": "624px",
                     "display": "block"
                 }
@@ -48,49 +33,62 @@
             {
                 "tag": "div",
                 "style": {
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_left_color": "rgb(255, 255, 255)",
                     "height": "200px",
+                    "border_bottom_color": "rgb(255, 255, 255)",
                     "width": "624px",
-                    "border_bottom_color": "rgb(255, 255, 255)"
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "display": "block"
                 },
                 "children": [
                     {
+                        "text": "Some",
+                        "style": {}
+                    },
+                    {
                         "tag": "div",
                         "style": {
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "display": "block",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_left_color": "rgb(255, 255, 255)",
                             "height": "100px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
                             "width": "624px",
-                            "border_bottom_color": "rgb(255, 255, 255)"
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "display": "block"
                         }
+                    },
+                    {
+                        "text": "text",
+                        "style": {}
                     },
                     {
                         "tag": "p",
                         "style": {
-                            "margin_bottom": "40px",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "display": "block",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "height": "50px",
                             "margin_top": "40px",
+                            "height": "50px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
                             "width": "624px",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        }
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "margin_bottom": "40px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "border_top_color": "rgb(255, 255, 255)"
+                        },
+                        "children": [
+                            {
+                                "text": "More text",
+                                "style": {}
+                            }
+                        ]
                     }
                 ]
+            },
+            {
+                "text": "For example, if the child of the anonymous block box inside the DIV\n  above needs to know the height of its containing block to resolve a\n  percentage height, then it will use the height of the containing\n  block formed by the DIV, not of the anonymous block box.",
+                "style": {}
             }
         ]
     },
-    "matches": "anonymous-boxes-001b-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level",
-        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    "matches": "anonymous-boxes-001b-ref.xht"
 }

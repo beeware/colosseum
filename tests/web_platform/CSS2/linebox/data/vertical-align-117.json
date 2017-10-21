@@ -1,22 +1,12 @@
 {
-    "assert": "The 'vertical-align' property sets the keyword 'text-bottom'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The 'vertical-align' property sets the keyword 'text-bottom'.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -28,12 +18,22 @@
                                 "children": [
                                     {
                                         "tag": "span",
+                                        "children": [
+                                            {
+                                                "text": "X",
+                                                "style": {}
+                                            }
+                                        ],
                                         "style": {
                                             "border_bottom_color": "rgb(255, 0, 0)",
+                                            "border_top_color": "rgb(255, 0, 0)",
                                             "border_left_color": "rgb(255, 0, 0)",
-                                            "border_right_color": "rgb(255, 0, 0)",
-                                            "border_top_color": "rgb(255, 0, 0)"
+                                            "border_right_color": "rgb(255, 0, 0)"
                                         }
+                                    },
+                                    {
+                                        "text": "X",
+                                        "style": {}
                                     }
                                 ],
                                 "style": {}
@@ -47,31 +47,37 @@
                     },
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "position": "absolute",
+                            "width": "48px",
                             "display": "block",
-                            "height": "48px",
                             "top": "96px",
-                            "width": "48px"
+                            "height": "48px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
+                    "width": "624px",
                     "display": "block",
-                    "height": "144px",
-                    "width": "624px"
+                    "height": "144px"
                 }
             }
         ],
         "style": {
-            "height": "178px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "144px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": null

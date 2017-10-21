@@ -1,170 +1,163 @@
 {
     "assert": "This test checks that the background of positioned items is painted in the right position using RTL direction.",
-    "matches": "grid-positioned-items-background-rtl-001-ref.html",
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ],
     "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_bottom": "8px",
-            "display": "block",
-            "margin_right": "8px"
-        },
+        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "height": "18px"
-                },
-                "tag": "P"
-            },
-            {
-                "style": {
-                    "width": "600px",
-                    "position": "relative",
-                    "display": "block",
-                    "float": "left",
-                    "height": "400px"
-                },
+                "tag": "DIV",
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "width": "100px",
                             "position": "absolute",
                             "height": "50px",
-                            "left": "455px",
                             "display": "block",
+                            "left": "455px",
+                            "width": "100px",
                             "top": "50px"
-                        },
-                        "tag": "DIV"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "width": "50px",
                             "position": "absolute",
                             "height": "20px",
-                            "left": "390px",
                             "display": "block",
+                            "left": "390px",
+                            "width": "50px",
                             "top": "50px"
-                        },
-                        "tag": "DIV"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "width": "50px",
                             "position": "absolute",
                             "height": "30px",
-                            "left": "500px",
                             "display": "block",
+                            "left": "500px",
+                            "width": "50px",
                             "top": "115px"
-                        },
-                        "tag": "DIV"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "width": "145px",
                             "position": "absolute",
                             "height": "75px",
-                            "left": "275px",
                             "display": "block",
+                            "left": "275px",
+                            "width": "145px",
                             "top": "135px"
-                        },
-                        "tag": "DIV"
+                        }
                     },
                     {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "children": [],
+                                "style": {
+                                    "position": "absolute",
+                                    "height": "50px",
+                                    "min_height": "auto",
+                                    "direction": "rtl",
+                                    "display": "block",
+                                    "min_width": "auto",
+                                    "left": "5px",
+                                    "width": "100px"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "children": [],
+                                "style": {
+                                    "position": "absolute",
+                                    "height": "20px",
+                                    "min_height": "auto",
+                                    "direction": "rtl",
+                                    "display": "block",
+                                    "min_width": "auto",
+                                    "right": "10px",
+                                    "width": "50px"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "children": [],
+                                "style": {
+                                    "position": "absolute",
+                                    "height": "30px",
+                                    "min_height": "auto",
+                                    "direction": "rtl",
+                                    "display": "block",
+                                    "min_width": "auto",
+                                    "width": "50px",
+                                    "top": "15px"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "position": "absolute",
+                                    "height": "75px",
+                                    "width": "145px",
+                                    "bottom": "40px",
+                                    "display": "block",
+                                    "min_width": "auto",
+                                    "left": "25px",
+                                    "direction": "rtl",
+                                    "right": "30px",
+                                    "top": "35px",
+                                    "min_height": "auto"
+                                }
+                            }
+                        ],
                         "style": {
-                            "margin_top": "30px",
+                            "padding_right": "15px",
+                            "margin_left": "30px",
+                            "position": "relative",
+                            "border_left_width": "5px",
+                            "margin_right": "30px",
+                            "border_right_style": "solid",
                             "display": "grid",
+                            "margin_bottom": "30px",
+                            "border_right_width": "5px",
+                            "direction": "rtl",
+                            "border_top_style": "solid",
+                            "width": "500px",
+                            "height": "300px",
+                            "border_left_style": "solid",
                             "padding_left": "15px",
                             "padding_top": "15px",
                             "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "width": "500px",
-                            "height": "300px",
-                            "margin_left": "30px",
-                            "border_left_style": "solid",
-                            "position": "relative",
-                            "border_right_width": "5px",
-                            "border_bottom_width": "5px",
-                            "border_left_width": "5px",
+                            "padding_bottom": "15px",
+                            "margin_top": "30px",
                             "border_bottom_style": "solid",
-                            "direction": "rtl",
-                            "margin_bottom": "30px",
-                            "border_right_style": "solid",
-                            "margin_right": "30px",
-                            "border_top_style": "solid",
-                            "padding_bottom": "15px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "width": "100px",
-                                    "direction": "rtl",
-                                    "position": "absolute",
-                                    "height": "50px",
-                                    "left": "5px",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "min_width": "auto"
-                                },
-                                "tag": "DIV"
-                            },
-                            {
-                                "style": {
-                                    "width": "50px",
-                                    "position": "absolute",
-                                    "height": "20px",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "min_width": "auto",
-                                    "right": "10px"
-                                },
-                                "tag": "DIV"
-                            },
-                            {
-                                "style": {
-                                    "width": "50px",
-                                    "position": "absolute",
-                                    "height": "30px",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "top": "15px",
-                                    "min_width": "auto"
-                                },
-                                "tag": "DIV"
-                            },
-                            {
-                                "style": {
-                                    "width": "145px",
-                                    "right": "30px",
-                                    "position": "absolute",
-                                    "height": "75px",
-                                    "left": "25px",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "top": "35px",
-                                    "direction": "rtl",
-                                    "min_width": "auto",
-                                    "bottom": "40px"
-                                },
-                                "tag": "DIV"
-                            }
-                        ],
-                        "tag": "DIV"
+                            "border_bottom_width": "5px"
+                        }
                     }
                 ],
-                "tag": "DIV"
+                "style": {
+                    "display": "block",
+                    "position": "relative",
+                    "width": "600px",
+                    "float": "left",
+                    "height": "400px"
+                }
             }
         ],
-        "tag": "BODY"
-    }
+        "style": {
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "0px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_top": "8px"
+        }
+    },
+    "matches": "grid-positioned-items-background-rtl-001-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
 }

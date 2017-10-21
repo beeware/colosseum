@@ -1,21 +1,6 @@
 {
-    "assert": "When an inline box contains a block box,     the inline box is broken around the block.",
-    "matches": "block-in-inline-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
         "children": [
-            {
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
             {
                 "children": [
                     {
@@ -25,12 +10,26 @@
                                     {
                                         "children": [
                                             {
+                                                "style": {},
+                                                "text": "Line 1"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "style": {},
+                                                        "text": "Line 2"
+                                                    }
+                                                ],
                                                 "style": {
                                                     "display": "block",
-                                                    "width": "41.328125px",
-                                                    "height": "18px"
+                                                    "height": "18px",
+                                                    "width": "41.328125px"
                                                 },
                                                 "tag": "span"
+                                            },
+                                            {
+                                                "style": {},
+                                                "text": "Line 3"
                                             }
                                         ],
                                         "style": {},
@@ -38,96 +37,119 @@
                                     }
                                 ],
                                 "style": {
-                                    "border_right_style": "solid",
-                                    "display": "table-cell",
-                                    "border_top_width": "3px",
-                                    "border_bottom_width": "3px",
-                                    "border_top_style": "solid",
                                     "border_left_width": "3px",
-                                    "border_left_style": "solid",
+                                    "border_bottom_style": "solid",
+                                    "border_top_width": "3px",
                                     "height": "54px",
-                                    "width": "41.328125px",
+                                    "border_top_style": "solid",
                                     "border_right_width": "3px",
-                                    "border_bottom_style": "solid"
+                                    "display": "table-cell",
+                                    "border_bottom_width": "3px",
+                                    "border_left_style": "solid",
+                                    "width": "41.328125px",
+                                    "border_right_style": "solid"
                                 },
                                 "tag": "td"
                             },
                             {
                                 "children": [
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Line 1"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "block",
-                                            "width": "41.328125px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "41.328125px"
                                         },
                                         "tag": "div"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Line 2"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "block",
-                                            "width": "41.328125px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "41.328125px"
                                         },
                                         "tag": "div"
                                     },
                                     {
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "Line 3"
+                                            }
+                                        ],
                                         "style": {
                                             "display": "block",
-                                            "width": "41.328125px",
-                                            "height": "18px"
+                                            "height": "18px",
+                                            "width": "41.328125px"
                                         },
                                         "tag": "div"
                                     }
                                 ],
                                 "style": {
-                                    "border_right_style": "solid",
-                                    "display": "table-cell",
-                                    "border_top_width": "3px",
-                                    "border_bottom_width": "3px",
-                                    "border_top_style": "solid",
                                     "border_left_width": "3px",
-                                    "border_left_style": "solid",
+                                    "border_bottom_style": "solid",
+                                    "border_top_width": "3px",
                                     "height": "54px",
-                                    "width": "41.328125px",
+                                    "border_top_style": "solid",
                                     "border_right_width": "3px",
-                                    "border_bottom_style": "solid"
+                                    "display": "table-cell",
+                                    "border_bottom_width": "3px",
+                                    "border_left_style": "solid",
+                                    "width": "41.328125px",
+                                    "border_right_style": "solid"
                                 },
                                 "tag": "td"
                             }
                         ],
                         "style": {
                             "display": "table-row",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "width": "100.65625px",
-                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
                             "height": "60px",
                             "border_left_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)"
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "width": "100.65625px",
+                            "border_bottom_color": "rgb(128, 128, 128)"
                         },
                         "tag": "tr"
                     }
                 ],
                 "style": {
                     "display": "table",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "width": "100.65625px",
-                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
                     "height": "64px",
                     "border_left_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)"
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "width": "100.65625px",
+                    "border_bottom_color": "rgb(128, 128, 128)"
                 },
                 "tag": "table"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "98px",
+            "height": "64px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "block-in-inline-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": "When an inline box contains a block box,     the inline box is broken around the block."
 }

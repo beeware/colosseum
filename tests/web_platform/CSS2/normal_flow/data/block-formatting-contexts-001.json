@@ -1,73 +1,81 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "90px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "56px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "border_top_style": "solid",
-                    "border_left_style": "solid",
-                    "border_right_width": "1px",
-                    "height": "54px",
-                    "border_top_width": "1px",
-                    "width": "622px",
-                    "border_left_width": "1px",
-                    "display": "block",
                     "border_right_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "1px"
+                    "width": "622px",
+                    "border_top_width": "1px",
+                    "border_left_width": "1px",
+                    "height": "54px",
+                    "border_left_style": "solid",
+                    "display": "block",
+                    "border_bottom_width": "1px",
+                    "border_right_width": "1px",
+                    "border_top_style": "solid",
+                    "border_bottom_style": "solid"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "622px",
                             "display": "block",
-                            "width": "622px"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "622px",
                             "display": "block",
-                            "width": "622px"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "622px",
                             "display": "block",
-                            "width": "622px"
+                            "height": "18px"
                         },
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-formatting-contexts-001-ref.xht",
-    "assert": "Boxes are vertically laid out one after the other beginning at the top of a containing block.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ]
+    "assert": "Boxes are vertically laid out one after the other beginning at the top of a containing block."
 }

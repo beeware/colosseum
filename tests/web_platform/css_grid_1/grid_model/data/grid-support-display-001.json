@@ -1,83 +1,89 @@
 {
-    "assert": "This test checks that 'grid' and 'inline-grid' values for 'display' property are supported so that DOM methods, specifically getComputedValue(), and its associated CSS2Properties interface, can fetch such 'display' values.",
-    "matches": null,
+    "test_case": {
+        "style": {
+            "height": "36px",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "grid"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "0px",
+                    "display": "inline-grid"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "grid"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "0px",
+                    "display": "inline-grid"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "width": "624px",
+                    "display": "block"
+                },
+                "tag": "DIV"
+            },
+            {
+                "style": {
+                    "display": "none"
+                },
+                "tag": "SCRIPT",
+                "children": [
+                    {
+                        "style": {},
+                        "text": "function testStyleDisplay(element, value) {\n    assert_equals(element.style.display, value, \"Style display should be '\" + value + \"'\");\n  }\n\n  function testComputedStyleDisplay(element, value) {\n    assert_equals(getComputedStyle(element).getPropertyValue(\"display\"), value, \"getComputedStyle() display should be '\" + value + \"'\");\n  }\n\n  var styleGrid = document.getElementById(\"style-grid\");\n  test(function() {\n      testStyleDisplay(styleGrid, \"grid\");\n      testComputedStyleDisplay(styleGrid, \"grid\");\n    }, \"Test style display 'grid'\");\n\n  var styleInlineGrid = document.getElementById(\"style-inline-grid\");\n  test(function() {\n      testStyleDisplay(styleInlineGrid, \"inline-grid\");\n      testComputedStyleDisplay(styleInlineGrid, \"inline-grid\");\n    }, \"Test style display 'inline-grid'\");\n\n  var cssGrid = document.getElementById(\"css-grid\");\n  test(function() {\n      testComputedStyleDisplay(cssGrid, \"grid\");\n    }, \"Test CSS display 'grid'\");\n\n  var cssInlineGrid = document.getElementById(\"css-inline-grid\");\n  test(function() {\n      testComputedStyleDisplay(cssInlineGrid, \"inline-grid\");\n    }, \"Test CSS display 'inline-grid'\");\n\n  var jsGrid = document.getElementById(\"js-grid\");\n  jsGrid.style.display = \"grid\";\n  test(function() {\n      testStyleDisplay(jsGrid, \"grid\");\n      testComputedStyleDisplay(jsGrid, \"grid\");\n    }, \"Test JavaScript display 'grid'\");\n\n  var jsInlineGrid = document.getElementById(\"js-inline-grid\");\n  jsInlineGrid.style.display = \"inline-grid\";\n  test(function() {\n      testStyleDisplay(jsInlineGrid, \"inline-grid\");\n      testComputedStyleDisplay(jsInlineGrid, \"inline-grid\");\n    }, \"Test JavaScript display 'inline-grid'\");"
+                    }
+                ]
+            }
+        ]
+    },
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-containers"
     ],
-    "test_case": {
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "36px"
-        },
-        "children": [
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "block",
-                    "width": "624px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "624px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "inline-grid",
-                    "width": "0px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "624px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "inline-grid",
-                    "width": "0px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "block",
-                    "width": "624px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
-                    "display": "block",
-                    "width": "624px",
-                    "height": "0px"
-                }
-            },
-            {
-                "tag": "SCRIPT",
-                "style": {
-                    "display": "none"
-                }
-            }
-        ]
-    }
+    "assert": "This test checks that 'grid' and 'inline-grid' values for 'display' property are supported so that DOM methods, specifically getComputedValue(), and its associated CSS2Properties interface, can fetch such 'display' values.",
+    "matches": null
 }

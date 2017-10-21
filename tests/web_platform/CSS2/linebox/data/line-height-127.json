@@ -1,26 +1,14 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
+    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
             {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
+                "text": "!   The 0.3em comes from the following:\n   !\n   !     * The font is 1em high\n   !     * The line height is 0\n   !     * The half leading is therefore -0.5em centered around the middle of the font\n   !     * The baseline is 0.2em from the bottom of the font\n   !     * Thus the distance from the baseline to the center is 0.3em\n   !     * The image is placed on the baseline\n   |     * The line box has to include the image and the middle of the font\n   !     * Thus the line box is 0.3em high\n   !\n   !",
+                "style": {}
             },
             {
                 "tag": "table",
@@ -75,35 +63,35 @@
                             }
                         ],
                         "style": {
-                            "height": "48px",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)",
                             "width": "320px",
+                            "height": "48px",
+                            "border_bottom_color": "rgb(128, 128, 128)",
                             "border_top_color": "rgb(128, 128, 128)",
-                            "display": "table-row"
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "display": "table-row",
+                            "border_right_color": "rgb(128, 128, 128)"
                         }
                     }
                 ],
                 "style": {
-                    "height": "48px",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)",
                     "width": "320px",
+                    "height": "48px",
+                    "border_bottom_color": "rgb(128, 128, 128)",
                     "border_top_color": "rgb(128, 128, 128)",
-                    "display": "table"
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "display": "table",
+                    "border_right_color": "rgb(128, 128, 128)"
                 }
             }
         ],
         "style": {
-            "height": "82px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "48px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-127-ref.xht"

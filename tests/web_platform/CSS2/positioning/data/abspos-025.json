@@ -1,50 +1,64 @@
 {
     "assert": null,
-    "matches": "abspos-025-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
     ],
     "test_case": {
-        "style": {
-            "height": "20px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "20px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
                 "children": [
                     {
+                        "text": "Test passes if there is a green square and",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
                         "style": {},
                         "tag": "strong"
                     },
                     {
+                        "text": ".",
+                        "style": {}
+                    },
+                    {
                         "style": {
-                            "right": "0px",
+                            "top": "64px",
                             "height": "15px",
+                            "width": "15px",
+                            "right": "0px",
                             "display": "block",
                             "left": "64px",
-                            "width": "15px",
-                            "position": "absolute",
                             "bottom": "0px",
-                            "top": "64px"
+                            "position": "absolute"
                         },
                         "tag": "img"
                     }
                 ],
+                "style": {
+                    "margin_top": "16px",
+                    "height": "20px",
+                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "16px"
+                },
                 "tag": "p"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "20px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "abspos-025-ref.xht"
 }

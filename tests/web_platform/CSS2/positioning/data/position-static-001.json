@@ -1,51 +1,47 @@
 {
     "assert": "Static positioned elements are not affected by top, right, bottom, left property settings.",
-    "matches": "position-static-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
     ],
     "test_case": {
-        "style": {
-            "height": "226px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "position": "relative",
-                    "width": "192px",
-                    "height": "192px",
-                    "display": "block"
-                },
                 "children": [
                     {
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "width": "192px",
+                            "display": "block",
                             "height": "20px",
-                            "display": "block"
+                            "width": "192px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "192px",
+                    "width": "192px",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "192px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "position-static-001-ref.xht"
 }

@@ -1,105 +1,119 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "table",
-                    "width": "96px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "height": "96px",
-                            "display": "table-header-group",
-                            "width": "96px",
-                            "max_width": "0px"
-                        },
-                        "tag": "div",
-                        "children": [
-                            {
-                                "style": {
-                                    "height": "48px",
-                                    "display": "table-row",
-                                    "width": "96px"
-                                },
-                                "tag": "div",
-                                "children": [
-                                    {
-                                        "style": {
-                                            "height": "48px",
-                                            "display": "table-cell",
-                                            "width": "48px"
-                                        },
-                                        "tag": "div"
-                                    },
-                                    {
-                                        "style": {
-                                            "height": "48px",
-                                            "display": "table-cell",
-                                            "width": "48px"
-                                        },
-                                        "tag": "div"
-                                    }
-                                ]
-                            },
-                            {
-                                "style": {
-                                    "height": "48px",
-                                    "display": "table-row",
-                                    "width": "96px"
-                                },
-                                "tag": "div",
-                                "children": [
-                                    {
-                                        "style": {
-                                            "height": "48px",
-                                            "display": "table-cell",
-                                            "width": "48px"
-                                        },
-                                        "tag": "div"
-                                    },
-                                    {
-                                        "style": {
-                                            "height": "48px",
-                                            "display": "table-cell",
-                                            "width": "48px"
-                                        },
-                                        "tag": "div"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "../reference/ref-filled-black-96px-square.xht",
-    "assert": "The 'max-width' property does not apply to elements with 'display' set to 'table-header-group'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "96px",
+                    "display": "table",
+                    "height": "96px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "96px",
+                            "display": "table-header-group",
+                            "max_width": "0px",
+                            "height": "96px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "width": "96px",
+                                    "display": "table-row",
+                                    "height": "48px"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "width": "48px",
+                                            "display": "table-cell",
+                                            "height": "48px"
+                                        },
+                                        "children": [
+                                            {
+                                                "text": "a",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div"
+                                    },
+                                    {
+                                        "style": {
+                                            "width": "48px",
+                                            "display": "table-cell",
+                                            "height": "48px"
+                                        },
+                                        "children": [
+                                            {
+                                                "text": "b",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div"
+                                    }
+                                ],
+                                "tag": "div"
+                            },
+                            {
+                                "style": {
+                                    "width": "96px",
+                                    "display": "table-row",
+                                    "height": "48px"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "width": "48px",
+                                            "display": "table-cell",
+                                            "height": "48px"
+                                        },
+                                        "children": [
+                                            {
+                                                "text": "c",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div"
+                                    },
+                                    {
+                                        "style": {
+                                            "width": "48px",
+                                            "display": "table-cell",
+                                            "height": "48px"
+                                        },
+                                        "children": [
+                                            {
+                                                "text": "d",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "div"
+                                    }
+                                ],
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-black-96px-square.xht",
+    "assert": "The 'max-width' property does not apply to elements with 'display' set to 'table-header-group'."
 }

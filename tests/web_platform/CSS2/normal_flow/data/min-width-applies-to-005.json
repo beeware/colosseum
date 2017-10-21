@@ -1,69 +1,59 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
+                    "width": "1px",
                     "display": "table",
-                    "width": "1px"
+                    "height": "96px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "0px",
-                            "display": "table-column-group",
                             "width": "0px",
+                            "display": "table-column-group",
+                            "height": "0px",
                             "min_width": "96px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "96px",
+                            "width": "1px",
                             "display": "table-row",
-                            "width": "1px"
+                            "height": "96px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "96px",
+                                    "width": "1px",
                                     "display": "table-cell",
-                                    "width": "1px"
+                                    "height": "96px"
                                 },
                                 "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../../reference/pass_if_square_96px_black.html",
-    "assert": "The 'min-width' property applies to elements with 'display' set to 'table-column-group'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    "assert": "The 'min-width' property applies to elements with 'display' set to 'table-column-group'."
 }

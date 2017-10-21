@@ -1,79 +1,63 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#block-root-margin"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "96px",
                     "width": "624px",
                     "display": "block",
+                    "height": "96px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
+                            "width": "96px",
                             "display": "block",
-                            "width": "96px"
+                            "height": "96px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "0px",
                                     "width": "96px",
+                                    "display": "inline-block",
                                     "margin_top": "48px",
                                     "margin_bottom": "48px",
-                                    "display": "inline-block"
+                                    "height": "0px"
                                 },
                                 "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
                         "style": {
-                            "left": "96px",
-                            "height": "96px",
                             "width": "96px",
-                            "top": "0px",
                             "display": "block",
+                            "top": "0px",
+                            "height": "96px",
+                            "left": "96px",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "height-percentage-001-ref.xht",
-    "assert": "Inline-block non-replaced elements use the margin box for sizing the height of the line box.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#block-root-margin"
-    ]
+    "assert": "Inline-block non-replaced elements use the margin box for sizing the height of the line box."
 }

@@ -1,26 +1,27 @@
 {
-    "matches": "abspos-containing-block-initial-009-ref.xht",
-    "test_case": {
-        "style": {
-            "border_bottom_width": "10px",
-            "border_top_width": "10px",
-            "border_bottom_style": "solid",
-            "top": "50px",
-            "border_left_width": "10px",
-            "border_right_width": "10px",
-            "width": "320px",
-            "position": "absolute",
-            "border_top_style": "solid",
-            "border_right_style": "solid",
-            "left": "50px",
-            "height": "240px",
-            "border_left_style": "solid",
-            "display": "block"
-        },
-        "tag": "body"
-    },
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
-    "assert": "If there is no such ancestor, the containing block is the initial containing block."
+    "assert": "If there is no such ancestor, the containing block is the initial containing block.",
+    "test_case": {
+        "tag": "body",
+        "children": [],
+        "style": {
+            "border_top_width": "10px",
+            "left": "50px",
+            "height": "240px",
+            "border_bottom_width": "10px",
+            "display": "block",
+            "border_right_width": "10px",
+            "top": "50px",
+            "position": "absolute",
+            "border_top_style": "solid",
+            "border_left_width": "10px",
+            "border_left_style": "solid",
+            "border_right_style": "solid",
+            "width": "320px",
+            "border_bottom_style": "solid"
+        }
+    },
+    "matches": "abspos-containing-block-initial-009-ref.xht"
 }

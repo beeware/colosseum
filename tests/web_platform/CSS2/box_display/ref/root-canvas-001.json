@@ -1,94 +1,33 @@
 {
     "children": [
         {
-            "content": {
-                "position": [
-                    8,
-                    16
-                ],
-                "size": [
-                    624,
-                    18
-                ]
-            },
-            "border_box": {
-                "position": [
-                    8,
-                    16
-                ],
-                "size": [
-                    624,
-                    18
-                ]
-            },
-            "margin_box": {
-                "position": [
-                    8,
-                    0
-                ],
-                "size": [
-                    624,
-                    50
-                ]
-            },
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "p",
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    8,
-                    16
-                ],
-                "size": [
-                    624,
-                    18
-                ]
-            },
-            "id": "",
-            "margin": [
-                16,
-                0,
-                16,
-                0
-            ]
+            "text": "\n  "
+        },
+        {
+            "text": "\n  "
         },
         {
             "children": [
                 {
-                    "content": {
-                        "position": [
-                            11,
-                            53
-                        ],
-                        "size": [
-                            160,
-                            160
-                        ]
-                    },
-                    "border_box": {
-                        "position": [
-                            11,
-                            53
-                        ],
-                        "size": [
-                            160,
-                            160
-                        ]
-                    },
+                    "children": [
+                        {
+                            "text": "FAIL"
+                        }
+                    ],
                     "margin_box": {
                         "position": [
                             11,
-                            53
+                            11
+                        ],
+                        "size": [
+                            160,
+                            160
+                        ]
+                    },
+                    "content": {
+                        "position": [
+                            11,
+                            11
                         ],
                         "size": [
                             160,
@@ -101,25 +40,35 @@
                         0,
                         0
                     ],
-                    "tag": "object",
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
                     "padding_box": {
                         "position": [
                             11,
-                            53
+                            11
                         ],
                         "size": [
                             160,
                             160
                         ]
                     },
-                    "id": "",
+                    "tag": "object",
                     "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "id": "",
+                    "border_box": {
+                        "position": [
+                            11,
+                            11
+                        ],
+                        "size": [
+                            160,
+                            160
+                        ]
+                    },
+                    "padding": [
                         0,
                         0,
                         0,
@@ -127,34 +76,24 @@
                     ]
                 }
             ],
+            "margin_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    166,
+                    166
+                ]
+            },
             "content": {
                 "position": [
                     11,
-                    53
+                    11
                 ],
                 "size": [
                     160,
                     160
-                ]
-            },
-            "border_box": {
-                "position": [
-                    8,
-                    50
-                ],
-                "size": [
-                    166,
-                    166
-                ]
-            },
-            "margin_box": {
-                "position": [
-                    8,
-                    50
-                ],
-                "size": [
-                    166,
-                    166
                 ]
             },
             "border": [
@@ -163,60 +102,69 @@
                 3,
                 3
             ],
-            "tag": "div",
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
             "padding_box": {
                 "position": [
                     11,
-                    53
+                    11
                 ],
                 "size": [
                     160,
                     160
                 ]
             },
-            "id": "",
+            "tag": "div",
             "margin": [
                 0,
                 0,
                 0,
                 0
+            ],
+            "id": "",
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    166,
+                    166
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
             ]
+        },
+        {
+            "text": "\n\n  "
+        },
+        {
+            "text": " reasoning:\n\n    Section 9.1.1:\n    # There is at most one viewport per canvas\n     -> http://www.w3.org/TR/CSS21/visuren.html#q2\n\n    Section 2.3.1:\n    # the term canvas describes \"the space where the formatting\n    # structure is rendered.\"\n     -> http://www.w3.org/TR/CSS21/intro.html#q4\n\n    Section 2.3, item 5:\n    # From the annotated document tree, generate a formatting\n    # structure.\n     -> http://www.w3.org/TR/CSS21/intro.html#processing-model\n\n    Section 2.3, item 1:\n    # Parse the source document and create a document tree.\n     -> http://www.w3.org/TR/CSS21/intro.html#processing-model\n\n    ...therefore is a viewport per rendered document. Since there are\n    two documents on this page (the main one and the one in the\n    object) there are two viewports.\n\n    The question becomes, what size is the viewport on the object\n    element. The spec doesn't define this, but if we consider the\n    desired results of the following proposed rule:\n\n       @viewport { overflow: scroll; }\n\n    ...I don't think it makes sense for the viewport to be anything\n    other than the size of the object element's box.\n\n    "
+        },
+        {
+            "text": "\n\n "
         }
     ],
-    "content": {
-        "position": [
-            8,
-            16
-        ],
-        "size": [
-            624,
-            200
-        ]
-    },
-    "border_box": {
-        "position": [
-            8,
-            16
-        ],
-        "size": [
-            624,
-            200
-        ]
-    },
     "margin_box": {
         "position": [
             0,
-            8
+            0
         ],
         "size": [
             640,
-            216
+            182
+        ]
+    },
+    "content": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            166
         ]
     },
     "border": [
@@ -225,28 +173,38 @@
         0,
         0
     ],
-    "tag": "body",
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
     "padding_box": {
         "position": [
             8,
-            16
+            8
         ],
         "size": [
             624,
-            200
+            166
         ]
     },
-    "id": "",
+    "tag": "body",
     "margin": [
         8,
         8,
         8,
         8
+    ],
+    "id": "",
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            166
+        ]
+    },
+    "padding": [
+        0,
+        0,
+        0,
+        0
     ]
 }

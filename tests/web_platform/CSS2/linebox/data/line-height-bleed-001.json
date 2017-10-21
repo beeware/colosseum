@@ -1,27 +1,23 @@
 {
-    "assert": "Glyphs bleed out of the box when 'line-height' is less than the content height and the height of the box is not increased.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "Glyphs bleed out of the box when 'line-height' is less than the content height and the height of the box is not increased.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "624px",
                             "display": "block",
@@ -30,21 +26,21 @@
                     }
                 ],
                 "style": {
-                    "margin_top": "96px",
+                    "width": "624px",
                     "display": "block",
-                    "height": "0px",
-                    "width": "624px"
+                    "margin_top": "96px",
+                    "height": "0px"
                 }
             }
         ],
         "style": {
-            "height": "114px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "0px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-bleed-001-ref.xht"

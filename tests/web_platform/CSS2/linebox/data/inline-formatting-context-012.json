@@ -1,36 +1,32 @@
 {
-    "assert": "Inline boxes stack vertically when they do not fit within an element horizontally.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Inline boxes stack vertically when they do not fit within an element horizontally.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler text",
+                                "style": {}
+                            }
+                        ],
                         "style": {}
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "Filler text",
+                                "style": {}
+                            }
+                        ],
                         "style": {}
                     }
                 ],
@@ -42,13 +38,13 @@
             }
         ],
         "style": {
-            "height": "70px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "36px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "../generated-content/after-content-display-002-ref.xht"

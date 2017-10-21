@@ -1,21 +1,11 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
+    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -27,29 +17,41 @@
                                 "children": [
                                     {
                                         "tag": "span",
+                                        "children": [
+                                            {
+                                                "text": "FAIL",
+                                                "style": {}
+                                            }
+                                        ],
                                         "style": {
                                             "border_bottom_color": "rgb(255, 0, 0)",
+                                            "border_top_color": "rgb(255, 0, 0)",
                                             "border_left_color": "rgb(255, 0, 0)",
-                                            "border_right_color": "rgb(255, 0, 0)",
-                                            "border_top_color": "rgb(255, 0, 0)"
+                                            "border_right_color": "rgb(255, 0, 0)"
                                         }
                                     },
                                     {
                                         "tag": "span",
+                                        "children": [
+                                            {
+                                                "text": "PASS",
+                                                "style": {}
+                                            }
+                                        ],
                                         "style": {
-                                            "padding_top": "10px",
                                             "border_bottom_color": "rgb(255, 255, 255)",
-                                            "border_right_color": "rgb(255, 255, 255)",
                                             "border_top_color": "rgb(255, 255, 255)",
-                                            "border_left_color": "rgb(255, 255, 255)"
+                                            "border_left_color": "rgb(255, 255, 255)",
+                                            "border_right_color": "rgb(255, 255, 255)",
+                                            "padding_top": "10px"
                                         }
                                     }
                                 ],
                                 "style": {
-                                    "padding_top": "10px",
+                                    "width": "200px",
                                     "display": "block",
                                     "height": "20px",
-                                    "width": "200px"
+                                    "padding_top": "10px"
                                 }
                             }
                         ],
@@ -68,13 +70,13 @@
             }
         ],
         "style": {
-            "height": "64px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "30px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-125-ref.xht"

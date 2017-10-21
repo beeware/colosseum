@@ -1,27 +1,5 @@
 {
-    "id": "",
-    "tag": "body",
-    "border_box": {
-        "position": [
-            8,
-            16
-        ],
-        "size": [
-            624,
-            52
-        ]
-    },
-    "content": {
-        "position": [
-            8,
-            16
-        ],
-        "size": [
-            624,
-            52
-        ]
-    },
-    "padding": [
+    "border": [
         0,
         0,
         0,
@@ -29,91 +7,19 @@
     ],
     "children": [
         {
-            "id": "",
-            "tag": "p",
-            "border_box": {
-                "position": [
-                    8,
-                    16
-                ],
-                "size": [
-                    624,
-                    18
-                ]
-            },
-            "content": {
-                "position": [
-                    8,
-                    16
-                ],
-                "size": [
-                    624,
-                    18
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "margin": [
-                16,
-                0,
-                16,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    8,
-                    16
-                ],
-                "size": [
-                    624,
-                    18
-                ]
-            },
-            "margin_box": {
-                "position": [
-                    8,
-                    0
-                ],
-                "size": [
-                    624,
-                    50
-                ]
-            }
+            "text": "\n        "
         },
         {
-            "id": "table",
-            "tag": "div",
-            "border_box": {
-                "position": [
-                    8,
-                    50
-                ],
-                "size": [
-                    96,
-                    18
-                ]
-            },
-            "content": {
-                "position": [
-                    8,
-                    50
-                ],
-                "size": [
-                    96,
-                    18
-                ]
-            },
-            "padding": [
+            "text": "\n        "
+        },
+        {
+            "text": " If 'max-height' is supported on 'table-header-group' then a square will be visible. "
+        },
+        {
+            "text": "\n        "
+        },
+        {
+            "border": [
                 0,
                 0,
                 0,
@@ -121,29 +27,10 @@
             ],
             "children": [
                 {
-                    "id": "test",
-                    "tag": "div",
-                    "border_box": {
-                        "position": [
-                            8,
-                            50
-                        ],
-                        "size": [
-                            96,
-                            18
-                        ]
-                    },
-                    "content": {
-                        "position": [
-                            8,
-                            50
-                        ],
-                        "size": [
-                            96,
-                            18
-                        ]
-                    },
-                    "padding": [
+                    "text": "\n            "
+                },
+                {
+                    "border": [
                         0,
                         0,
                         0,
@@ -151,29 +38,10 @@
                     ],
                     "children": [
                         {
-                            "id": "row",
-                            "tag": "div",
-                            "border_box": {
-                                "position": [
-                                    8,
-                                    50
-                                ],
-                                "size": [
-                                    96,
-                                    18
-                                ]
-                            },
-                            "content": {
-                                "position": [
-                                    8,
-                                    50
-                                ],
-                                "size": [
-                                    96,
-                                    18
-                                ]
-                            },
-                            "padding": [
+                            "text": "\n                "
+                        },
+                        {
+                            "border": [
                                 0,
                                 0,
                                 0,
@@ -181,39 +49,19 @@
                             ],
                             "children": [
                                 {
-                                    "id": "cell",
-                                    "tag": "div",
-                                    "border_box": {
-                                        "position": [
-                                            8,
-                                            50
-                                        ],
-                                        "size": [
-                                            96,
-                                            18
-                                        ]
-                                    },
-                                    "content": {
-                                        "position": [
-                                            8,
-                                            50
-                                        ],
-                                        "size": [
-                                            96,
-                                            18
-                                        ]
-                                    },
-                                    "padding": [
-                                        0,
-                                        0,
-                                        0,
-                                        0
-                                    ],
+                                    "text": "\n                    "
+                                },
+                                {
                                     "border": [
                                         0,
                                         0,
                                         0,
                                         0
+                                    ],
+                                    "children": [
+                                        {
+                                            "text": "\u00a0"
+                                        }
                                     ],
                                     "margin": [
                                         0,
@@ -222,32 +70,57 @@
                                         0
                                     ],
                                     "padding_box": {
-                                        "position": [
-                                            8,
-                                            50
-                                        ],
                                         "size": [
                                             96,
                                             18
+                                        ],
+                                        "position": [
+                                            8,
+                                            8
                                         ]
                                     },
-                                    "margin_box": {
-                                        "position": [
-                                            8,
-                                            50
-                                        ],
+                                    "padding": [
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "border_box": {
                                         "size": [
                                             96,
                                             18
+                                        ],
+                                        "position": [
+                                            8,
+                                            8
                                         ]
-                                    }
+                                    },
+                                    "content": {
+                                        "size": [
+                                            96,
+                                            18
+                                        ],
+                                        "position": [
+                                            8,
+                                            8
+                                        ]
+                                    },
+                                    "id": "cell",
+                                    "margin_box": {
+                                        "size": [
+                                            96,
+                                            18
+                                        ],
+                                        "position": [
+                                            8,
+                                            8
+                                        ]
+                                    },
+                                    "tag": "div"
+                                },
+                                {
+                                    "text": "\n                "
                                 }
-                            ],
-                            "border": [
-                                0,
-                                0,
-                                0,
-                                0
                             ],
                             "margin": [
                                 0,
@@ -256,32 +129,57 @@
                                 0
                             ],
                             "padding_box": {
-                                "position": [
-                                    8,
-                                    50
-                                ],
                                 "size": [
                                     96,
                                     18
+                                ],
+                                "position": [
+                                    8,
+                                    8
                                 ]
                             },
-                            "margin_box": {
-                                "position": [
-                                    8,
-                                    50
-                                ],
+                            "padding": [
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "border_box": {
                                 "size": [
                                     96,
                                     18
+                                ],
+                                "position": [
+                                    8,
+                                    8
                                 ]
-                            }
+                            },
+                            "content": {
+                                "size": [
+                                    96,
+                                    18
+                                ],
+                                "position": [
+                                    8,
+                                    8
+                                ]
+                            },
+                            "id": "row",
+                            "margin_box": {
+                                "size": [
+                                    96,
+                                    18
+                                ],
+                                "position": [
+                                    8,
+                                    8
+                                ]
+                            },
+                            "tag": "div"
+                        },
+                        {
+                            "text": "\n            "
                         }
-                    ],
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
                     ],
                     "margin": [
                         0,
@@ -290,32 +188,57 @@
                         0
                     ],
                     "padding_box": {
-                        "position": [
-                            8,
-                            50
-                        ],
                         "size": [
                             96,
                             18
+                        ],
+                        "position": [
+                            8,
+                            8
                         ]
                     },
-                    "margin_box": {
-                        "position": [
-                            8,
-                            50
-                        ],
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
                         "size": [
                             96,
                             18
+                        ],
+                        "position": [
+                            8,
+                            8
                         ]
-                    }
+                    },
+                    "content": {
+                        "size": [
+                            96,
+                            18
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "id": "test",
+                    "margin_box": {
+                        "size": [
+                            96,
+                            18
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "tag": "div"
+                },
+                {
+                    "text": "\n        "
                 }
-            ],
-            "border": [
-                0,
-                0,
-                0,
-                0
             ],
             "margin": [
                 0,
@@ -324,32 +247,57 @@
                 0
             ],
             "padding_box": {
-                "position": [
-                    8,
-                    50
-                ],
                 "size": [
                     96,
                     18
+                ],
+                "position": [
+                    8,
+                    8
                 ]
             },
-            "margin_box": {
-                "position": [
-                    8,
-                    50
-                ],
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
                 "size": [
                     96,
                     18
+                ],
+                "position": [
+                    8,
+                    8
                 ]
-            }
+            },
+            "content": {
+                "size": [
+                    96,
+                    18
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "id": "table",
+            "margin_box": {
+                "size": [
+                    96,
+                    18
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "tag": "div"
+        },
+        {
+            "text": "\n    "
         }
-    ],
-    "border": [
-        0,
-        0,
-        0,
-        0
     ],
     "margin": [
         8,
@@ -358,23 +306,51 @@
         8
     ],
     "padding_box": {
-        "position": [
-            8,
-            16
-        ],
         "size": [
             624,
-            52
+            18
+        ],
+        "position": [
+            8,
+            8
         ]
     },
-    "margin_box": {
-        "position": [
-            0,
-            8
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "border_box": {
+        "size": [
+            624,
+            18
         ],
+        "position": [
+            8,
+            8
+        ]
+    },
+    "content": {
+        "size": [
+            624,
+            18
+        ],
+        "position": [
+            8,
+            8
+        ]
+    },
+    "id": "",
+    "margin_box": {
         "size": [
             640,
-            68
+            34
+        ],
+        "position": [
+            0,
+            0
         ]
-    }
+    },
+    "tag": "body"
 }

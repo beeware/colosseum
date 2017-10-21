@@ -1,73 +1,63 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
                     "width": "624px",
                     "display": "block",
+                    "height": "96px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
+                            "width": "96px",
                             "display": "block",
-                            "width": "96px"
+                            "height": "96px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "96px",
                                     "width": "96px",
-                                    "top": "96px",
+                                    "height": "96px",
                                     "display": "block",
+                                    "top": "96px",
                                     "position": "relative"
                                 },
                                 "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
                         "style": {
-                            "left": "96px",
-                            "height": "96px",
                             "width": "96px",
-                            "top": "0px",
                             "display": "block",
+                            "top": "0px",
+                            "height": "96px",
+                            "left": "96px",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": null,
-    "assert": "A relative positioned child elements' offset is not considered when sizing the 'height' of a block-level non-replaced element is in normal flow.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ]
+    "assert": "A relative positioned child elements' offset is not considered when sizing the 'height' of a block-level non-replaced element is in normal flow."
 }

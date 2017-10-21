@@ -1,77 +1,67 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "322px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "288px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "192px",
                     "width": "624px",
                     "display": "block",
+                    "height": "192px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "border_top_style": "solid",
+                            "width": "96px",
+                            "display": "block",
+                            "margin_top": "48px",
+                            "border_top_width": "48px",
                             "height": "48px",
                             "border_top_color": "rgb(0, 0, 255)",
-                            "border_top_width": "48px",
-                            "margin_top": "48px",
-                            "display": "block",
-                            "width": "96px"
+                            "border_top_style": "solid"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "border_bottom_style": "solid",
+                            "width": "96px",
+                            "display": "block",
                             "margin_bottom": "48px",
-                            "border_bottom_width": "48px",
                             "height": "48px",
                             "border_bottom_color": "rgb(0, 0, 255)",
-                            "display": "block",
-                            "width": "96px"
+                            "border_bottom_width": "48px",
+                            "border_bottom_style": "solid"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "left": "96px",
-                            "height": "192px",
                             "width": "96px",
-                            "top": "0px",
                             "display": "block",
+                            "top": "0px",
+                            "height": "192px",
+                            "left": "96px",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": null,
-    "assert": "The 'height' is the distance between the top border edge of the top most block-level child box that doesn't have margins collapsed, and the bottom border edge of the bottommost block-level child that doesn't have margins collapsed. When a block-level non-replaced element is in normal flow, 'overflow' does not compute to 'visible' but has been propagated to the viewport and the 'height' is 'auto'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ]
+    "assert": "The 'height' is the distance between the top border edge of the top most block-level child box that doesn't have margins collapsed, and the bottom border edge of the bottommost block-level child that doesn't have margins collapsed. When a block-level non-replaced element is in normal flow, 'overflow' does not compute to 'visible' but has been propagated to the viewport and the 'height' is 'auto'."
 }

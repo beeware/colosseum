@@ -1,189 +1,215 @@
 {
-    "assert": "When such an inline box is affected by relative positioning, the relative positioning also affects the block-level box contained in the inline box.",
-    "matches": "block-in-inline-relpos-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
                         "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
+                        "text": "A"
+                    },
                     {
                         "children": [
                             {
+                                "style": {},
+                                "text": "B"
+                            },
+                            {
                                 "style": {
-                                    "border_left_style": "solid",
-                                    "display": "block",
-                                    "border_top_color": "rgb(255, 165, 0)",
-                                    "width": "40px",
-                                    "margin_left": "-40px",
                                     "border_left_width": "40px",
-                                    "border_bottom_color": "rgb(255, 165, 0)",
+                                    "border_right_color": "rgb(255, 165, 0)",
                                     "height": "10px",
+                                    "border_left_style": "solid",
                                     "border_left_color": "rgb(0, 0, 255)",
-                                    "border_right_color": "rgb(255, 165, 0)"
+                                    "border_top_color": "rgb(255, 165, 0)",
+                                    "display": "block",
+                                    "margin_left": "-40px",
+                                    "width": "40px",
+                                    "border_bottom_color": "rgb(255, 165, 0)"
                                 },
                                 "tag": "div"
                             },
                             {
                                 "style": {
                                     "display": "block",
+                                    "border_right_color": "rgb(255, 165, 0)",
+                                    "height": "10px",
+                                    "float": "left",
+                                    "border_left_color": "rgb(255, 165, 0)",
                                     "border_top_color": "rgb(255, 165, 0)",
                                     "width": "40px",
-                                    "float": "left",
-                                    "border_bottom_color": "rgb(255, 165, 0)",
-                                    "height": "10px",
-                                    "border_left_color": "rgb(255, 165, 0)",
-                                    "border_right_color": "rgb(255, 165, 0)"
+                                    "border_bottom_color": "rgb(255, 165, 0)"
                                 },
                                 "tag": "div"
                             },
                             {
                                 "style": {
-                                    "display": "block",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "width": "40px",
-                                    "float": "right",
-                                    "right": "80px",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
-                                    "height": "10px",
-                                    "border_left_color": "rgb(0, 0, 255)",
                                     "position": "relative",
-                                    "border_right_color": "rgb(0, 0, 255)"
+                                    "display": "block",
+                                    "border_right_color": "rgb(0, 0, 255)",
+                                    "height": "10px",
+                                    "float": "right",
+                                    "border_left_color": "rgb(0, 0, 255)",
+                                    "border_top_color": "rgb(0, 0, 255)",
+                                    "right": "80px",
+                                    "width": "40px",
+                                    "border_bottom_color": "rgb(0, 0, 255)"
                                 },
                                 "tag": "div"
                             },
                             {
                                 "style": {
                                     "display": "block",
-                                    "border_top_color": "rgb(255, 255, 0)",
-                                    "width": "80px",
-                                    "border_bottom_color": "rgb(255, 255, 0)",
+                                    "border_right_color": "rgb(255, 255, 0)",
                                     "height": "0px",
                                     "border_left_color": "rgb(255, 255, 0)",
-                                    "border_right_color": "rgb(255, 255, 0)"
+                                    "border_top_color": "rgb(255, 255, 0)",
+                                    "width": "80px",
+                                    "border_bottom_color": "rgb(255, 255, 0)"
                                 },
                                 "tag": "div"
+                            },
+                            {
+                                "style": {},
+                                "text": "B"
                             }
                         ],
                         "style": {
                             "position": "relative",
-                            "border_top_color": "rgb(255, 255, 0)",
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "border_left_color": "rgb(255, 255, 0)",
                             "border_right_color": "rgb(255, 255, 0)",
-                            "left": "40px"
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_top_color": "rgb(255, 255, 0)",
+                            "left": "40px",
+                            "border_bottom_color": "rgb(255, 255, 0)"
                         },
                         "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "A"
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_top_color": "rgb(192, 192, 192)",
-                    "border_top_style": "solid",
+                    "margin_top": "20px",
                     "margin_left": "20px",
                     "margin_right": "20px",
-                    "border_bottom_color": "rgb(192, 192, 192)",
+                    "border_top_style": "solid",
                     "border_right_width": "3px",
-                    "border_right_style": "solid",
-                    "width": "80px",
-                    "margin_top": "20px",
                     "border_left_color": "rgb(192, 192, 192)",
+                    "border_top_color": "rgb(192, 192, 192)",
+                    "margin_bottom": "20px",
+                    "border_top_width": "3px",
+                    "height": "60px",
+                    "border_bottom_color": "rgb(192, 192, 192)",
+                    "display": "block",
+                    "border_bottom_style": "solid",
+                    "border_right_color": "rgb(192, 192, 192)",
                     "border_left_width": "3px",
                     "border_left_style": "solid",
-                    "height": "60px",
                     "border_bottom_width": "3px",
-                    "border_right_color": "rgb(192, 192, 192)",
-                    "border_bottom_style": "solid"
+                    "width": "80px",
+                    "border_right_style": "solid"
                 },
                 "tag": "div"
             },
             {
                 "children": [
                     {
+                        "style": {},
+                        "text": "A"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "B"
+                            }
+                        ],
                         "style": {
-                            "border_bottom_color": "rgb(255, 255, 0)",
                             "border_left_color": "rgb(255, 255, 0)",
                             "border_top_color": "rgb(255, 255, 0)",
-                            "border_right_color": "rgb(255, 255, 0)"
+                            "border_right_color": "rgb(255, 255, 0)",
+                            "border_bottom_color": "rgb(255, 255, 0)"
                         },
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "C"
+                            }
+                        ],
                         "style": {
-                            "border_left_style": "solid",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "width": "40px",
                             "border_left_width": "40px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_right_color": "rgb(255, 165, 0)",
                             "height": "20px",
                             "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(255, 165, 0)"
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "display": "block",
+                            "border_left_style": "solid",
+                            "width": "40px",
+                            "border_bottom_color": "rgb(255, 165, 0)"
                         },
                         "tag": "div"
                     },
                     {
+                        "style": {},
+                        "text": "A"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "B"
+                            }
+                        ],
                         "style": {
-                            "border_bottom_color": "rgb(255, 255, 0)",
                             "border_left_color": "rgb(255, 255, 0)",
                             "border_top_color": "rgb(255, 255, 0)",
-                            "border_right_color": "rgb(255, 255, 0)"
+                            "border_right_color": "rgb(255, 255, 0)",
+                            "border_bottom_color": "rgb(255, 255, 0)"
                         },
                         "tag": "span"
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_top_color": "rgb(192, 192, 192)",
-                    "border_top_style": "solid",
+                    "margin_top": "20px",
                     "margin_left": "20px",
                     "margin_right": "20px",
-                    "border_bottom_color": "rgb(192, 192, 192)",
+                    "border_top_style": "solid",
                     "border_right_width": "3px",
-                    "border_right_style": "solid",
-                    "width": "80px",
-                    "margin_top": "20px",
                     "border_left_color": "rgb(192, 192, 192)",
+                    "border_top_color": "rgb(192, 192, 192)",
+                    "margin_bottom": "20px",
+                    "border_top_width": "3px",
+                    "height": "60px",
+                    "border_bottom_color": "rgb(192, 192, 192)",
+                    "display": "block",
+                    "border_bottom_style": "solid",
+                    "border_right_color": "rgb(192, 192, 192)",
                     "border_left_width": "3px",
                     "border_left_style": "solid",
-                    "height": "60px",
                     "border_bottom_width": "3px",
-                    "border_right_color": "rgb(192, 192, 192)",
-                    "border_bottom_style": "solid"
+                    "width": "80px",
+                    "border_right_style": "solid"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "190px",
+            "height": "152px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "block-in-inline-relpos-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": "When such an inline box is affected by relative positioning, the relative positioning also affects the block-level box contained in the inline box."
 }

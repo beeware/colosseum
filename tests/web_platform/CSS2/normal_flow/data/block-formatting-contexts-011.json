@@ -1,53 +1,50 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "70px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "36px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
                     "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "36px",
                     "display": "block",
-                    "width": "624px"
+                    "height": "36px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "18px",
+                            "width": "100px",
                             "display": "table-cell",
-                            "width": "100px"
+                            "height": "18px"
                         },
+                        "children": [],
                         "tag": "span"
                     },
                     {
                         "style": {},
+                        "children": [
+                            {
+                                "text": "Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-formatting-contexts-011-ref.xht",
-    "assert": "Elements defined as table-cell elements establish a new block formatting context.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ]
+    "assert": "Elements defined as table-cell elements establish a new block formatting context."
 }

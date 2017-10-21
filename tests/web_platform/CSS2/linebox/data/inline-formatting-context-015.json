@@ -1,47 +1,43 @@
 {
-    "assert": "Line boxes adjust for floated elements.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Line boxes adjust for floated elements.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "36px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
                         "style": {
-                            "border_right_style": "solid",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "float": "left",
-                            "height": "20px",
-                            "width": "100px",
-                            "border_top_width": "5px",
-                            "border_right_width": "5px",
                             "border_bottom_width": "5px",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_bottom_style": "solid",
+                            "border_left_width": "5px",
                             "display": "block",
                             "border_top_style": "solid",
+                            "border_right_width": "5px",
+                            "border_bottom_style": "solid",
+                            "width": "100px",
                             "border_left_style": "solid",
-                            "border_left_width": "5px"
+                            "float": "left",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_top_width": "5px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "border_right_style": "solid",
+                            "height": "20px"
                         }
                     },
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "Filler Text Filler Text",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "200px",
                             "display": "block",
@@ -57,13 +53,13 @@
             }
         ],
         "style": {
-            "height": "88px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "36px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-formatting-context-015-ref.xht"

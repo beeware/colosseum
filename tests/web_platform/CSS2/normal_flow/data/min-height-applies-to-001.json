@@ -1,73 +1,67 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "34px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "0px",
-                    "display": "table",
-                    "width": "96px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "min_height": "96px",
-                            "height": "0px",
-                            "display": "table-row-group",
-                            "width": "96px"
-                        },
-                        "tag": "div",
-                        "children": [
-                            {
-                                "style": {
-                                    "min_height": "96px",
-                                    "height": "0px",
-                                    "display": "table-row",
-                                    "width": "96px"
-                                },
-                                "tag": "div",
-                                "children": [
-                                    {
-                                        "style": {
-                                            "min_height": "96px",
-                                            "height": "0px",
-                                            "display": "table-cell",
-                                            "width": "96px"
-                                        },
-                                        "tag": "div"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": null,
-    "assert": "The 'min-height' property applies to elements with 'display' set to 'table-row-group'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "text": "If 'min-height' is supported on 'table-row-group' then a square will be visible.",
+                "style": {}
+            },
+            {
+                "style": {
+                    "width": "96px",
+                    "display": "table",
+                    "height": "0px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "96px",
+                            "display": "table-row-group",
+                            "min_height": "96px",
+                            "height": "0px"
+                        },
+                        "children": [
+                            {
+                                "style": {
+                                    "width": "96px",
+                                    "display": "table-row",
+                                    "min_height": "96px",
+                                    "height": "0px"
+                                },
+                                "children": [
+                                    {
+                                        "style": {
+                                            "width": "96px",
+                                            "display": "table-cell",
+                                            "min_height": "96px",
+                                            "height": "0px"
+                                        },
+                                        "tag": "div"
+                                    }
+                                ],
+                                "tag": "div"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": null,
+    "assert": "The 'min-height' property applies to elements with 'display' set to 'table-row-group'."
 }

@@ -1,86 +1,96 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
+        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "40px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "40px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
+                    "width": "153.625px",
+                    "height": "64px",
+                    "display": "block",
+                    "top": "100px",
+                    "position": "absolute"
                 },
-                "tag": "p",
                 "children": [
                     {
-                        "style": {},
-                        "tag": "br"
+                        "text": "PASS",
+                        "style": {}
                     }
-                ]
-            },
-            {
-                "style": {
-                    "height": "64px",
-                    "width": "153.625px",
-                    "top": "100px",
-                    "display": "block",
-                    "position": "absolute"
-                },
+                ],
                 "tag": "div"
             },
             {
                 "style": {
-                    "height": "64px",
                     "width": "153.625px",
+                    "height": "64px",
+                    "display": "block",
                     "top": "164px",
-                    "display": "block",
                     "position": "absolute"
                 },
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
                 "tag": "div"
             },
             {
                 "style": {
-                    "height": "128px",
                     "width": "0px",
-                    "top": "100px",
+                    "height": "128px",
                     "display": "block",
+                    "top": "100px",
                     "position": "absolute"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "1px",
-                            "width": "1px"
+                            "width": "1px",
+                            "height": "1px"
                         },
                         "tag": "img"
                     },
                     {
+                        "text": "this should generate a line box 64px high",
+                        "style": {}
+                    },
+                    {
                         "style": {
-                            "height": "64px",
-                            "display": "block",
+                            "float": "left",
                             "width": "153.625px",
-                            "float": "left"
+                            "display": "block",
+                            "height": "64px"
                         },
+                        "children": [
+                            {
+                                "text": "XXXX",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
+                    },
+                    {
+                        "text": "this will overlap the PASS if it ends up on the previous line, otherwise it will overlap the fail",
+                        "style": {}
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inlines-013-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
-        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
-    ]
+    "assert": null
 }

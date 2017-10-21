@@ -1,61 +1,89 @@
 {
-    "assert": "This test checks that '::first-letter' pseudo-element works as expected if it is applied directly to a grid item within an inline grid.",
-    "matches": "../reference/grid-first-letter-green-margin-no-collapse-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers",
-        "http://www.w3.org/TR/css3-selectors/#first-letter"
-    ],
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
+            "height": "68px",
             "margin_bottom": "8px",
-            "width": "624px",
             "margin_right": "8px",
-            "height": "68px"
+            "display": "block",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "display": "inline-grid",
+                    "height": "68px",
                     "width": "624px",
-                    "height": "68px"
+                    "display": "inline-grid"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "624px",
                             "height": "68px",
-                            "min_height": "auto"
+                            "width": "624px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "min_width": "auto"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
-                                "tag": "P",
                                 "style": {
-                                    "display": "block",
-                                    "width": "624px",
                                     "height": "36px",
+                                    "margin_bottom": "16px",
+                                    "display": "block",
                                     "margin_top": "16px",
-                                    "margin_bottom": "16px"
+                                    "width": "624px"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
-                                        "tag": "STRONG",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "The"
                                     },
                                     {
+                                        "style": {},
                                         "tag": "STRONG",
-                                        "style": {}
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "first letter"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "style": {},
+                                        "text": "of this paragraph, and only that one, should be"
+                                    },
+                                    {
+                                        "style": {},
                                         "tag": "STRONG",
-                                        "style": {}
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "green"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "style": {},
+                                        "text": ".\n      In addition, body and paragraph margins should"
+                                    },
+                                    {
+                                        "style": {},
+                                        "tag": "STRONG",
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "not collapse"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "style": {},
+                                        "text": "."
                                     }
                                 ]
                             }
@@ -64,5 +92,11 @@
                 ]
             }
         ]
-    }
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-selectors/#first-letter"
+    ],
+    "assert": "This test checks that '::first-letter' pseudo-element works as expected if it is applied directly to a grid item within an inline grid.",
+    "matches": "../reference/grid-first-letter-green-margin-no-collapse-ref.html"
 }

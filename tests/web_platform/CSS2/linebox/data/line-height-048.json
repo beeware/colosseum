@@ -1,68 +1,58 @@
 {
-    "assert": "The 'line-height' property sets a negative zero length value in millimeters.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
+    "assert": "The 'line-height' property sets a negative zero length value in millimeters.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "div",
+                        "children": [
+                            {
+                                "text": "X X",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "position": "relative",
+                            "width": "20px",
                             "display": "block",
-                            "height": "0px",
-                            "width": "20px"
+                            "height": "0px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
+                            "width": "20px",
+                            "left": "22px",
                             "height": "20px",
                             "position": "absolute",
-                            "width": "20px",
                             "display": "block",
-                            "top": "-10px",
-                            "left": "22px"
+                            "top": "-10px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
+                    "width": "20px",
                     "display": "block",
-                    "height": "0px",
-                    "width": "20px"
+                    "height": "0px"
                 }
             }
         ],
         "style": {
-            "height": "34px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "0px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-002-ref.xht"

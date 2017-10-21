@@ -1,46 +1,30 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "block",
-                    "width": "0px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "../reference/ref-if-there-is-no-red.xht",
-    "assert": "The 'width' property sets a negative zero length value in pixels.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
         "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "0px",
+                    "display": "block",
+                    "height": "96px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "assert": "The 'width' property sets a negative zero length value in pixels."
 }

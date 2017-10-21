@@ -1,58 +1,58 @@
 {
-    "matches": "flexbox_empty-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#order-property"
     ],
+    "matches": "flexbox_empty-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "SPAN",
                         "style": {
                             "width": "100px",
-                            "display": "block",
-                            "height": "64px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "64px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
                             "width": "100px",
-                            "display": "block",
-                            "height": "64px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "64px",
+                            "display": "block"
+                        },
+                        "tag": "SPAN"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "200px",
-                    "display": "flex",
-                    "height": "64px"
-                }
+                    "height": "64px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H1",
                 "style": {
                     "top": "0px",
-                    "width": "100px",
-                    "display": "block",
                     "height": "128px",
-                    "left": "0px",
-                    "position": "absolute"
-                }
+                    "display": "block",
+                    "width": "100px",
+                    "position": "absolute",
+                    "left": "0px"
+                },
+                "tag": "H1"
             }
         ],
-        "tag": "BODY",
         "style": {
             "width": "640px",
-            "display": "block",
-            "height": "64px"
-        }
-    }
+            "height": "64px",
+            "display": "block"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

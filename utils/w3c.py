@@ -9,6 +9,11 @@ import toga
 from toga_cocoa.libs import NSObject, NSTimer, objc_method, SEL
 
 
+CLEANSE = open(
+    os.path.join(os.path.dirname(__file__), 'cleanse.js')
+).read()
+
+
 INSPECT = open(
     os.path.join(os.path.dirname(__file__), 'inspect.js')
 ).read()
@@ -28,10 +33,35 @@ class Loader(NSObject):
             self.webview.url = 'file://' + filename
             print("Inspecting {}...".format(filename))
 
+            cleaner = Cleaner.alloc().init()
+            cleaner.loader = self
+            cleaner.webview = self.webview
+            cleaner.filename = filename
+            cleaner.output = self.output
+            cleaner.path = self.path
+
+            NSTimer.scheduledTimerWithTimeInterval(
+                0.1,
+                target=cleaner,
+                selector=SEL('run:'),
+                userInfo=None,
+                repeats=False
+            )
+        except StopIteration:
+            sys.exit(1)
+
+
+class Cleaner(NSObject):
+    @objc_method
+    def run_(self, info) -> None:
+        try:
+            print("Cleaning {}...".format(self.filename))
+            self.webview.evaluate(CLEANSE)
+
             evaluator = Evaluator.alloc().init()
-            evaluator.loader = self
+            evaluator.loader = self.loader
             evaluator.webview = self.webview
-            evaluator.filename = filename
+            evaluator.filename = self.filename
             evaluator.output = self.output
             evaluator.path = self.path
 
@@ -50,6 +80,7 @@ class Evaluator(NSObject):
     @objc_method
     def run_(self, info) -> None:
         try:
+            print("Inspecting {}...".format(self.filename))
             result = self.webview.evaluate(INSPECT)
             # print(result)
             result = json.loads(result)

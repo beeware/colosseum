@@ -1,49 +1,63 @@
 {
     "assert": null,
-    "matches": "abspos-containing-block-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
     "test_case": {
-        "style": {
-            "height": "0px",
-            "display": "block",
-            "margin_right": "100px",
-            "margin_top": "100px",
-            "margin_bottom": "100px",
-            "width": "440px",
-            "margin_left": "100px"
-        },
         "children": [
             {
-                "style": {
-                    "height": "480px",
-                    "display": "block",
-                    "left": "0px",
-                    "position": "absolute",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "top": "0px",
-                    "right": "0px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "bottom": "0px",
-                    "width": "640px"
-                },
                 "children": [
                     {
+                        "text": "Test passes if there is",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_right_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
                             "border_left_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)"
                         },
                         "tag": "strong"
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
                     }
                 ],
+                "style": {
+                    "right": "0px",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "height": "480px",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "left": "0px",
+                    "width": "640px",
+                    "bottom": "0px",
+                    "top": "0px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "display": "block",
+                    "position": "absolute"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "100px",
+            "height": "0px",
+            "margin_right": "100px",
+            "width": "440px",
+            "display": "block",
+            "margin_left": "100px",
+            "margin_bottom": "100px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "abspos-containing-block-001-ref.xht"
 }

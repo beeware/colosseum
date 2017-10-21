@@ -1,21 +1,11 @@
 {
-    "assert": "Block boxes within inline boxes are also affected by relative positioning on the inline box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
     ],
+    "assert": "Block boxes within inline boxes are also affected by relative positioning on the inline box.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "36px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
@@ -23,36 +13,50 @@
                         "tag": "div",
                         "children": [
                             {
+                                "text": "Filler Text",
+                                "style": {}
+                            },
+                            {
                                 "tag": "div",
+                                "children": [
+                                    {
+                                        "text": "Filler Text",
+                                        "style": {}
+                                    }
+                                ],
                                 "style": {
                                     "width": "192px",
                                     "display": "block",
                                     "height": "18px"
                                 }
+                            },
+                            {
+                                "text": "Filler Text",
+                                "style": {}
                             }
                         ],
                         "style": {
-                            "top": "192px",
-                            "position": "relative"
+                            "position": "relative",
+                            "top": "192px"
                         }
                     }
                 ],
                 "style": {
                     "position": "relative",
+                    "width": "192px",
                     "display": "block",
-                    "height": "192px",
-                    "width": "192px"
+                    "height": "192px"
                 }
             }
         ],
         "style": {
-            "height": "244px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "192px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-box-002-ref.xht"

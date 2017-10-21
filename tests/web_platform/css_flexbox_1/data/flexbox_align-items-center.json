@@ -1,77 +1,95 @@
 {
-    "matches": "flexbox_align-items-center-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
     ],
+    "matches": "flexbox_align-items-center-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "one",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "margin_left": "16px",
-                            "min_width": "auto",
-                            "margin_right": "16px",
-                            "width": "128px",
-                            "display": "block",
                             "height": "32px",
-                            "min_height": "auto"
-                        }
+                            "margin_right": "16px",
+                            "display": "block",
+                            "width": "128px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "two",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "margin_left": "16px",
-                            "min_width": "auto",
-                            "margin_right": "16px",
-                            "width": "128px",
-                            "display": "block",
                             "height": "32px",
-                            "min_height": "auto"
-                        }
+                            "margin_right": "16px",
+                            "display": "block",
+                            "width": "128px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
+                        "children": [
+                            {
+                                "text": "three",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "margin_left": "16px",
-                            "min_width": "auto",
-                            "margin_right": "16px",
-                            "width": "128px",
-                            "display": "block",
                             "height": "32px",
-                            "min_height": "auto"
-                        }
+                            "margin_right": "16px",
+                            "display": "block",
+                            "width": "128px",
+                            "min_height": "auto",
+                            "min_width": "auto"
+                        },
+                        "tag": "SPAN"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
-                    "border_top_style": "solid",
                     "border_right_width": "1px",
-                    "width": "480px",
-                    "border_left_width": "1px",
-                    "display": "flex",
                     "height": "96px",
-                    "border_bottom_width": "1px",
-                    "border_left_style": "solid",
                     "border_right_style": "solid",
-                    "margin_bottom": "16px",
-                    "border_top_width": "1px",
                     "border_bottom_style": "solid",
-                    "margin_top": "16px"
-                }
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "display": "flex",
+                    "border_left_style": "solid",
+                    "border_top_width": "1px",
+                    "border_top_style": "solid",
+                    "width": "480px",
+                    "border_bottom_width": "1px",
+                    "border_left_width": "1px"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
             "height": "98px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

@@ -1,65 +1,55 @@
 {
     "assert": "An absolutely positioned inline replaced element's used value of 'bottom', 'margin-top' and/or 'margin-bottom' set to 'auto' is '0'.",
-    "matches": "absolute-replaced-height-008-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
     ],
     "test_case": {
-        "style": {
-            "height": "52px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "15px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "position": "relative",
-                    "width": "624px",
-                    "border_top_style": "solid"
-                },
                 "children": [
                     {
                         "style": {
-                            "position": "absolute",
-                            "width": "15px",
-                            "height": "15px",
                             "display": "block",
-                            "top": "96px"
+                            "height": "15px",
+                            "top": "96px",
+                            "width": "15px",
+                            "position": "absolute"
                         },
                         "tag": "img"
                     },
                     {
                         "style": {
+                            "top": "96px",
                             "height": "15px",
                             "display": "block",
                             "left": "15px",
-                            "position": "relative",
                             "width": "15px",
-                            "top": "96px"
+                            "position": "relative"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "15px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "border_top_style": "solid",
+                    "width": "624px",
+                    "position": "relative"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "18px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "absolute-replaced-height-008-ref.xht"
 }

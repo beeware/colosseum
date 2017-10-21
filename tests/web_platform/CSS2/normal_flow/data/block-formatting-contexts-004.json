@@ -1,65 +1,61 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "114px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "80px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "80px",
+                    "width": "100px",
                     "display": "block",
-                    "width": "100px"
+                    "height": "80px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "20px",
                             "width": "100px",
+                            "display": "block",
                             "margin_bottom": "20px",
-                            "display": "block"
+                            "height": "20px"
                         },
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "20px",
-                            "margin_top": "40px",
+                            "width": "100px",
                             "display": "block",
-                            "width": "100px"
+                            "margin_top": "40px",
+                            "height": "20px"
                         },
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-formatting-contexts-004-ref.xht",
-    "assert": "Margins collapse between adjacent block boxes in a block formatting context.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ]
+    "assert": "Margins collapse between adjacent block boxes in a block formatting context."
 }

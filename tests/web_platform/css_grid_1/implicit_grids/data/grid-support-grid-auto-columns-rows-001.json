@@ -3,69 +3,59 @@
         "http://www.w3.org/TR/css-grid-1/#auto-tracks"
     ],
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "94px",
-            "margin_bottom": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "width": "624px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "P"
-            },
-            {
-                "style": {
-                    "width": "624px",
-                    "height": "60px",
-                    "display": "grid"
-                },
-                "tag": "DIV",
                 "children": [
                     {
                         "style": {
-                            "min_height": "auto",
                             "width": "30px",
-                            "height": "30px",
+                            "display": "block",
+                            "min_height": "auto",
                             "min_width": "auto",
-                            "display": "block"
+                            "height": "30px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "min_height": "auto",
                             "width": "30px",
-                            "height": "60px",
+                            "display": "block",
+                            "min_height": "auto",
                             "min_width": "auto",
-                            "display": "block"
+                            "height": "60px"
                         },
                         "tag": "DIV"
                     },
                     {
                         "style": {
-                            "min_height": "auto",
                             "width": "60px",
-                            "height": "30px",
+                            "display": "block",
+                            "min_height": "auto",
                             "min_width": "auto",
-                            "display": "block"
+                            "height": "30px"
                         },
                         "tag": "DIV"
                     }
-                ]
+                ],
+                "style": {
+                    "width": "624px",
+                    "display": "grid",
+                    "height": "60px"
+                },
+                "tag": "DIV"
             }
-        ]
+        ],
+        "style": {
+            "margin_right": "8px",
+            "height": "60px",
+            "width": "624px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "BODY"
     },
-    "assert": null,
-    "matches": "../reference/grid-support-grid-auto-columns-rows-001-ref.html"
+    "matches": "../reference/grid-support-grid-auto-columns-rows-001-ref.html",
+    "assert": null
 }

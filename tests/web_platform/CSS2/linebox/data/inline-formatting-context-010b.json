@@ -1,75 +1,95 @@
 {
-    "assert": "A line box is always tall enough for all of the boxes it contains. A line box can be as tall as the tallest inline non-replaced box it contains.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height",
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "A line box is always tall enough for all of the boxes it contains. A line box can be as tall as the tallest inline non-replaced box it contains.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "children": [
-                    {
-                        "tag": "br",
-                        "style": {}
-                    },
-                    {
-                        "tag": "br",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "height": "60px",
-                    "display": "block",
-                    "width": "561px",
-                    "margin_top": "16px",
-                    "margin_left": "8px",
-                    "margin_bottom": "24px",
-                    "margin_right": "8px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "2",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "3",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "4",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "5",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "6",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "8",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "1",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "display": "none"
                         }
@@ -87,107 +107,107 @@
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
+                            "width": "12px",
+                            "margin_bottom": "3px",
                             "height": "12px",
                             "display": "inline-block",
-                            "width": "12px",
+                            "margin_right": "2px",
                             "margin_top": "3px",
-                            "margin_left": "2px",
-                            "margin_bottom": "3px",
-                            "margin_right": "2px"
+                            "margin_left": "2px"
                         }
                     }
                 ],
                 "style": {
+                    "width": "561px",
+                    "margin_bottom": "24px",
                     "height": "20px",
                     "display": "block",
-                    "width": "561px",
+                    "margin_right": "8px",
                     "margin_top": "16px",
-                    "margin_left": "8px",
-                    "margin_bottom": "24px",
-                    "margin_right": "8px"
+                    "margin_left": "8px"
                 }
             }
         ],
         "style": {
-            "height": "104px",
-            "display": "block",
             "width": "577px",
-            "margin_top": "8px",
-            "margin_left": "55px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "20px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "55px"
         }
     },
     "matches": null

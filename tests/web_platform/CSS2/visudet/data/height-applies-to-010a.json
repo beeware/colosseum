@@ -1,97 +1,99 @@
 {
     "assert": "If height of content exceeds the set height of a block-level non-replaced element in normal flow (like a list-item element such as in this test), then the content should overflow according to the 'overflow' property.",
     "test_case": {
-        "tag": "body",
         "style": {
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px",
+            "height": "96px",
+            "display": "block",
             "margin_right": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
-            "height": "130px",
-            "display": "block"
+            "width": "624px",
+            "margin_bottom": "8px"
         },
         "children": [
             {
-                "tag": "p",
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "tag": "strong",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "width": "584px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "margin_left": "40px",
-                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "0px",
+                    "display": "list-item",
                     "border_left_color": "rgb(0, 128, 0)",
-                    "height": "0px",
-                    "display": "list-item"
-                }
-            },
-            {
-                "tag": "ul",
-                "style": {
-                    "margin_bottom": "16px",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "margin_left": "40px",
                     "width": "584px",
-                    "padding_left": "40px",
-                    "margin_top": "48px",
-                    "height": "0px",
-                    "display": "block"
+                    "border_right_color": "rgb(0, 128, 0)"
                 },
                 "children": [
                     {
-                        "tag": "li",
-                        "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "width": "584px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "display": "list-item"
-                        }
+                        "style": {},
+                        "text": "PASS"
                     }
-                ]
+                ],
+                "tag": "div"
             },
             {
-                "tag": "ul",
                 "style": {
+                    "height": "0px",
+                    "display": "block",
                     "margin_bottom": "16px",
-                    "width": "584px",
                     "padding_left": "40px",
                     "margin_top": "48px",
-                    "height": "0px",
-                    "display": "block"
+                    "width": "584px"
                 },
                 "children": [
                     {
-                        "tag": "li",
                         "style": {
+                            "height": "0px",
+                            "display": "list-item",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
                             "border_bottom_color": "rgb(0, 128, 0)",
                             "width": "584px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "display": "list-item"
-                        }
+                            "border_right_color": "rgb(0, 128, 0)"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "PASS"
+                            }
+                        ],
+                        "tag": "li"
                     }
-                ]
+                ],
+                "tag": "ul"
+            },
+            {
+                "style": {
+                    "height": "0px",
+                    "display": "block",
+                    "margin_bottom": "16px",
+                    "padding_left": "40px",
+                    "margin_top": "48px",
+                    "width": "584px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "0px",
+                            "display": "list-item",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "width": "584px",
+                            "border_right_color": "rgb(0, 128, 0)"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "PASS"
+                            }
+                        ],
+                        "tag": "li"
+                    }
+                ],
+                "tag": "ul"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",

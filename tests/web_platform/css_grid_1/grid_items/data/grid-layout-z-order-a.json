@@ -1,73 +1,73 @@
 {
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "margin_top": "10px",
-                    "display": "block",
-                    "width": "620px",
-                    "height": "40px",
-                    "margin_right": "10px",
-                    "margin_bottom": "10px",
-                    "margin_left": "10px"
-                },
-                "tag": "P"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "display": "block",
-                            "min_height": "auto",
-                            "z_index": "1",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "width": "100px",
-                            "height": "18px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "display": "block",
-                            "min_height": "auto",
-                            "z_index": "10",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "width": "100px",
-                            "height": "18px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    }
-                ],
-                "style": {
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "display": "grid",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "width": "150px",
-                    "height": "18px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)"
-                },
-                "tag": "DIV"
-            }
-        ],
-        "style": {
-            "height": "68px",
-            "display": "block",
-            "width": "640px"
-        },
-        "tag": "BODY"
-    },
+    "matches": "../reference/grid-layout-z-order-ref.html",
+    "assert": "the layout should behave the same as reference.",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#z-order"
     ],
-    "matches": "../reference/grid-layout-z-order-ref.html",
-    "assert": "the layout should behave the same as reference."
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "down",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "min_height": "auto",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "width": "100px",
+                            "z_index": "1",
+                            "display": "block",
+                            "height": "18px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "up",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "min_height": "auto",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "width": "100px",
+                            "z_index": "10",
+                            "display": "block",
+                            "height": "18px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "width": "150px",
+                    "display": "grid",
+                    "height": "18px"
+                }
+            }
+        ],
+        "style": {
+            "width": "640px",
+            "display": "block",
+            "height": "18px"
+        }
+    }
 }

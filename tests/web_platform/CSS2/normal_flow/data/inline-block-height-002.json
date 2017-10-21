@@ -1,33 +1,39 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
             "margin_bottom": "8px",
             "height": "80px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "display": "inline-block",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "height": "80px",
-                    "border_bottom_color": "rgb(255, 255, 255)",
                     "border_left_color": "rgb(255, 255, 255)",
+                    "display": "inline-block",
                     "width": "160px",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "height": "80px",
+                    "border_top_color": "rgb(255, 255, 255)",
                     "border_right_color": "rgb(255, 255, 255)"
                 },
+                "children": [
+                    {
+                        "text": "test",
+                        "style": {}
+                    }
+                ],
                 "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inline-block-height-002-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ]
+    "assert": null
 }

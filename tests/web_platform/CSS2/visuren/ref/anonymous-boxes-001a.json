@@ -1,29 +1,318 @@
 {
-    "margin_box": {
-        "size": [
-            640,
-            250
-        ],
-        "position": [
-            0,
-            8
-        ]
-    },
+    "tag": "body",
     "content": {
-        "size": [
-            624,
-            234
-        ],
         "position": [
             8,
-            16
+            8
+        ],
+        "size": [
+            624,
+            200
         ]
     },
-    "margin": [
-        8,
-        8,
-        8,
-        8
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            200
+        ]
+    },
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            200
+        ]
+    },
+    "children": [
+        {
+            "text": "\n\n  "
+        },
+        {
+            "text": "\n\n  "
+        },
+        {
+            "tag": "div",
+            "content": {
+                "position": [
+                    208,
+                    8
+                ],
+                "size": [
+                    100,
+                    100
+                ]
+            },
+            "padding_box": {
+                "position": [
+                    208,
+                    8
+                ],
+                "size": [
+                    100,
+                    100
+                ]
+            },
+            "border_box": {
+                "position": [
+                    208,
+                    8
+                ],
+                "size": [
+                    100,
+                    100
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin_box": {
+                "position": [
+                    208,
+                    8
+                ],
+                "size": [
+                    100,
+                    100
+                ]
+            },
+            "id": "overlapped-red"
+        },
+        {
+            "text": "\n\n  "
+        },
+        {
+            "tag": "div",
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    200
+                ]
+            },
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    200
+                ]
+            },
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    200
+                ]
+            },
+            "children": [
+                {
+                    "text": "Some "
+                },
+                {
+                    "tag": "img",
+                    "content": {
+                        "position": [
+                            208,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "padding_box": {
+                        "position": [
+                            208,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "border_box": {
+                        "position": [
+                            208,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "margin": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "margin_box": {
+                        "position": [
+                            208,
+                            8
+                        ],
+                        "size": [
+                            100,
+                            100
+                        ]
+                    },
+                    "id": "child-of-anonymous-block-box"
+                },
+                {
+                    "text": " text\n    "
+                },
+                {
+                    "tag": "p",
+                    "content": {
+                        "position": [
+                            8,
+                            161
+                        ],
+                        "size": [
+                            624,
+                            50
+                        ]
+                    },
+                    "padding_box": {
+                        "position": [
+                            8,
+                            161
+                        ],
+                        "size": [
+                            624,
+                            50
+                        ]
+                    },
+                    "border_box": {
+                        "position": [
+                            8,
+                            161
+                        ],
+                        "size": [
+                            624,
+                            50
+                        ]
+                    },
+                    "children": [
+                        {
+                            "text": "More text"
+                        }
+                    ],
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "margin": [
+                        40,
+                        0,
+                        40,
+                        0
+                    ],
+                    "margin_box": {
+                        "position": [
+                            8,
+                            121
+                        ],
+                        "size": [
+                            624,
+                            130
+                        ]
+                    },
+                    "id": ""
+                },
+                {
+                    "text": "\n  "
+                }
+            ],
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "margin_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    200
+                ]
+            },
+            "id": "closest-non-anonymous-ancestor"
+        },
+        {
+            "text": "\n\n  "
+        },
+        {
+            "text": "\n  For example, if the child of the anonymous block box inside the DIV\n  above needs to know the height of its containing block to resolve a\n  percentage height, then it will use the height of the containing\n  block formed by the DIV, not of the anonymous block box.\n  "
+        },
+        {
+            "text": "\n\n "
+        }
     ],
     "padding": [
         0,
@@ -31,410 +320,27 @@
         0,
         0
     ],
-    "id": "",
-    "padding_box": {
-        "size": [
-            624,
-            234
-        ],
-        "position": [
-            8,
-            16
-        ]
-    },
-    "border_box": {
-        "size": [
-            624,
-            234
-        ],
-        "position": [
-            8,
-            16
-        ]
-    },
-    "tag": "body",
     "border": [
         0,
         0,
         0,
         0
     ],
-    "children": [
-        {
-            "margin_box": {
-                "size": [
-                    624,
-                    50
-                ],
-                "position": [
-                    8,
-                    0
-                ]
-            },
-            "content": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    16
-                ]
-            },
-            "margin": [
-                16,
-                0,
-                16,
-                0
-            ],
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "",
-            "padding_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    16
-                ]
-            },
-            "border_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    16
-                ]
-            },
-            "tag": "p",
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "children": [
-                {
-                    "margin_box": {
-                        "size": [
-                            43.71875,
-                            18
-                        ],
-                        "position": [
-                            308.1171875,
-                            16
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            43.71875,
-                            18
-                        ],
-                        "position": [
-                            308.1171875,
-                            16
-                        ]
-                    },
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "",
-                    "padding_box": {
-                        "size": [
-                            43.71875,
-                            18
-                        ],
-                        "position": [
-                            308.1171875,
-                            16
-                        ]
-                    },
-                    "border_box": {
-                        "size": [
-                            43.71875,
-                            18
-                        ],
-                        "position": [
-                            308.1171875,
-                            16
-                        ]
-                    },
-                    "tag": "strong",
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ]
-        },
-        {
-            "margin_box": {
-                "size": [
-                    100,
-                    100
-                ],
-                "position": [
-                    208,
-                    50
-                ]
-            },
-            "content": {
-                "size": [
-                    100,
-                    100
-                ],
-                "position": [
-                    208,
-                    50
-                ]
-            },
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "overlapped-red",
-            "padding_box": {
-                "size": [
-                    100,
-                    100
-                ],
-                "position": [
-                    208,
-                    50
-                ]
-            },
-            "border_box": {
-                "size": [
-                    100,
-                    100
-                ],
-                "position": [
-                    208,
-                    50
-                ]
-            },
-            "tag": "div",
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ]
-        },
-        {
-            "margin_box": {
-                "size": [
-                    624,
-                    200
-                ],
-                "position": [
-                    8,
-                    50
-                ]
-            },
-            "content": {
-                "size": [
-                    624,
-                    200
-                ],
-                "position": [
-                    8,
-                    50
-                ]
-            },
-            "margin": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "closest-non-anonymous-ancestor",
-            "padding_box": {
-                "size": [
-                    624,
-                    200
-                ],
-                "position": [
-                    8,
-                    50
-                ]
-            },
-            "border_box": {
-                "size": [
-                    624,
-                    200
-                ],
-                "position": [
-                    8,
-                    50
-                ]
-            },
-            "tag": "div",
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "children": [
-                {
-                    "margin_box": {
-                        "size": [
-                            100,
-                            100
-                        ],
-                        "position": [
-                            208,
-                            50
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            100,
-                            100
-                        ],
-                        "position": [
-                            208,
-                            50
-                        ]
-                    },
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "child-of-anonymous-block-box",
-                    "padding_box": {
-                        "size": [
-                            100,
-                            100
-                        ],
-                        "position": [
-                            208,
-                            50
-                        ]
-                    },
-                    "border_box": {
-                        "size": [
-                            100,
-                            100
-                        ],
-                        "position": [
-                            208,
-                            50
-                        ]
-                    },
-                    "tag": "img",
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                },
-                {
-                    "margin_box": {
-                        "size": [
-                            624,
-                            130
-                        ],
-                        "position": [
-                            8,
-                            163
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            624,
-                            50
-                        ],
-                        "position": [
-                            8,
-                            203
-                        ]
-                    },
-                    "margin": [
-                        40,
-                        0,
-                        40,
-                        0
-                    ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "",
-                    "padding_box": {
-                        "size": [
-                            624,
-                            50
-                        ],
-                        "position": [
-                            8,
-                            203
-                        ]
-                    },
-                    "border_box": {
-                        "size": [
-                            624,
-                            50
-                        ],
-                        "position": [
-                            8,
-                            203
-                        ]
-                    },
-                    "tag": "p",
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            ]
-        }
-    ]
+    "margin": [
+        8,
+        8,
+        8,
+        8
+    ],
+    "margin_box": {
+        "position": [
+            0,
+            0
+        ],
+        "size": [
+            640,
+            216
+        ]
+    },
+    "id": ""
 }

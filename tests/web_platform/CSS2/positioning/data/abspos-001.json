@@ -1,48 +1,54 @@
 {
     "assert": null,
-    "matches": "abspos-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
     ],
     "test_case": {
-        "style": {
-            "height": "66px",
-            "display": "block",
-            "padding_bottom": "16px",
-            "width": "608px",
-            "padding_left": "16px",
-            "padding_right": "16px",
-            "padding_top": "16px"
-        },
         "children": [
             {
+                "children": [
+                    {
+                        "text": "Test passes if there is a green stripe and no red.",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "margin_bottom": "32px",
+                    "display": "block",
                     "height": "18px",
-                    "display": "block",
-                    "width": "608px"
+                    "width": "608px",
+                    "margin_bottom": "32px"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "position": "absolute",
-                    "width": "160px",
                     "height": "16px",
                     "display": "block",
-                    "z_index": "1"
+                    "z_index": "1",
+                    "width": "160px",
+                    "position": "absolute"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "width": "160px",
+                    "display": "block",
                     "height": "16px",
-                    "display": "block"
+                    "width": "160px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "padding_left": "16px",
+            "height": "66px",
+            "display": "block",
+            "padding_bottom": "16px",
+            "padding_top": "16px",
+            "width": "608px",
+            "padding_right": "16px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "abspos-001-ref.xht"
 }

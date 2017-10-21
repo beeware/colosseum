@@ -1,63 +1,53 @@
 {
     "assert": "The 'left' property applies to elements with a display of 'inline-table'.",
-    "matches": "left-applies-to-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
         "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
     ],
     "test_case": {
-        "style": {
-            "height": "18px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "position": "absolute",
-                    "width": "96px",
-                    "height": "96px",
-                    "display": "table",
-                    "left": "0px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "width": "96px",
-                            "height": "96px",
-                            "display": "table-row"
-                        },
                         "children": [
                             {
                                 "style": {
-                                    "width": "96px",
+                                    "display": "table-cell",
                                     "height": "96px",
-                                    "display": "table-cell"
+                                    "width": "96px"
                                 },
                                 "tag": "div"
                             }
                         ],
+                        "style": {
+                            "display": "table-row",
+                            "height": "96px",
+                            "width": "96px"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "display": "table",
+                    "left": "0px",
+                    "height": "96px",
+                    "width": "96px",
+                    "position": "absolute"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": "left-applies-to-001-ref.xht"
 }

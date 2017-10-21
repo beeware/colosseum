@@ -1,26 +1,11 @@
 {
-    "assert": null,
-    "matches": "block-in-inline-008-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
             {
                 "style": {
-                    "margin_bottom": "16px",
                     "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "display": "block",
-                    "width": "80px",
-                    "height": "80px"
+                    "height": "80px",
+                    "width": "80px"
                 },
                 "tag": "div"
             },
@@ -30,11 +15,11 @@
                         "children": [
                             {
                                 "style": {
-                                    "position": "relative",
                                     "display": "block",
-                                    "width": "80px",
+                                    "position": "relative",
                                     "top": "-80px",
-                                    "height": "80px"
+                                    "height": "80px",
+                                    "width": "80px"
                                 },
                                 "tag": "div"
                             }
@@ -45,21 +30,26 @@
                 ],
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "80px"
+                    "height": "80px",
+                    "width": "624px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "194px",
+            "height": "160px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "block-in-inline-008-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": null
 }

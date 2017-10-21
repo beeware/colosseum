@@ -1,68 +1,69 @@
 {
-    "assert": null,
-    "matches": "insert-inline-in-blocks-end-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "First block"
+                            }
+                        ],
+                        "style": {
+                            "display": "block",
+                            "margin_top": "20px",
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
+                        },
+                        "tag": "div"
+                    },
+                    {
                         "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
+                        "text": "Anonymous second block"
+                    },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Third block"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Inserted new inline"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
-                            "display": "block",
-                            "width": "584px",
-                            "margin_top": "20px",
-                            "height": "20px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "border_right_style": "solid",
                             "border_left_width": "10px",
-                            "border_left_style": "solid",
-                            "border_left_color": "rgb(255, 255, 0)",
                             "border_right_color": "rgb(255, 255, 0)",
-                            "border_right_width": "10px"
+                            "border_right_style": "solid",
+                            "border_right_width": "10px",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_left_style": "solid"
                         },
                         "tag": "span"
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
                     "margin_top": "20px",
-                    "margin_left": "20px",
                     "margin_right": "20px",
                     "height": "140px",
+                    "display": "block",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "width": "584px"
                 },
                 "tag": "div"
@@ -70,58 +71,85 @@
             {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "First block"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
                     },
                     {
+                        "style": {},
+                        "text": "Anonymous second block"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Third block"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Inserted new inline"
+                            }
+                        ],
                         "style": {
-                            "border_right_style": "solid",
                             "border_left_width": "10px",
-                            "border_left_style": "solid",
-                            "border_left_color": "rgb(255, 255, 0)",
                             "border_right_color": "rgb(255, 255, 0)",
-                            "border_right_width": "10px"
+                            "border_right_style": "solid",
+                            "border_right_width": "10px",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_left_style": "solid"
                         },
                         "tag": "span"
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
                     "margin_top": "20px",
-                    "margin_left": "20px",
                     "margin_right": "20px",
                     "height": "140px",
+                    "display": "block",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "width": "584px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "338px",
+            "height": "300px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "insert-inline-in-blocks-end-001-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": null
 }

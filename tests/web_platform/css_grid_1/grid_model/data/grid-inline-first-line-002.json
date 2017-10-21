@@ -1,79 +1,97 @@
 {
-    "assert": "This test checks that '::first-line' pseudo-element is ignored in anonymous grid items when applied to an inline grid container ancestors.",
-    "matches": "../reference/grid-text-green-margin-no-collapse-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers",
-        "http://www.w3.org/TR/css3-selectors/#first-formatted-line"
-    ],
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
+            "height": "50px",
             "margin_bottom": "8px",
-            "width": "624px",
             "margin_right": "8px",
-            "height": "50px"
+            "display": "block",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
+                    "height": "50px",
+                    "width": "512.6875px",
+                    "border_left_color": "rgb(0, 128, 0)",
                     "display": "inline-grid",
                     "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
                     "border_top_color": "rgb(0, 128, 0)",
-                    "width": "512.6875px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "height": "50px"
+                    "border_bottom_color": "rgb(0, 128, 0)"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "display": "block",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "width": "512.6875px",
-                            "border_bottom_color": "rgb(0, 128, 0)",
                             "height": "50px",
-                            "min_height": "auto"
+                            "width": "512.6875px",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "display": "block",
+                            "min_width": "auto",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "min_height": "auto",
+                            "border_bottom_color": "rgb(0, 128, 0)"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
-                                "tag": "P",
                                 "style": {
-                                    "display": "block",
-                                    "border_right_color": "rgb(0, 128, 0)",
-                                    "border_left_color": "rgb(0, 128, 0)",
-                                    "border_top_color": "rgb(0, 128, 0)",
-                                    "margin_top": "16px",
+                                    "height": "18px",
                                     "margin_bottom": "16px",
+                                    "border_left_color": "rgb(0, 128, 0)",
+                                    "display": "block",
+                                    "margin_top": "16px",
+                                    "border_right_color": "rgb(0, 128, 0)",
                                     "width": "512.6875px",
-                                    "border_bottom_color": "rgb(0, 128, 0)",
-                                    "height": "18px"
+                                    "border_top_color": "rgb(0, 128, 0)",
+                                    "border_bottom_color": "rgb(0, 128, 0)"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
-                                        "tag": "STRONG",
-                                        "style": {
-                                            "border_left_color": "rgb(0, 128, 0)",
-                                            "border_right_color": "rgb(0, 128, 0)",
-                                            "border_bottom_color": "rgb(0, 128, 0)",
-                                            "border_top_color": "rgb(0, 128, 0)"
-                                        }
+                                        "style": {},
+                                        "text": "This text should be"
                                     },
                                     {
-                                        "tag": "STRONG",
                                         "style": {
+                                            "border_top_color": "rgb(0, 128, 0)",
                                             "border_left_color": "rgb(0, 128, 0)",
-                                            "border_right_color": "rgb(0, 128, 0)",
                                             "border_bottom_color": "rgb(0, 128, 0)",
-                                            "border_top_color": "rgb(0, 128, 0)"
-                                        }
+                                            "border_right_color": "rgb(0, 128, 0)"
+                                        },
+                                        "tag": "STRONG",
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "green"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "style": {},
+                                        "text": "and body and paragraph margins should"
+                                    },
+                                    {
+                                        "style": {
+                                            "border_top_color": "rgb(0, 128, 0)",
+                                            "border_left_color": "rgb(0, 128, 0)",
+                                            "border_bottom_color": "rgb(0, 128, 0)",
+                                            "border_right_color": "rgb(0, 128, 0)"
+                                        },
+                                        "tag": "STRONG",
+                                        "children": [
+                                            {
+                                                "style": {},
+                                                "text": "not collapse"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "style": {},
+                                        "text": "."
                                     }
                                 ]
                             }
@@ -82,5 +100,11 @@
                 ]
             }
         ]
-    }
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-selectors/#first-formatted-line"
+    ],
+    "assert": "This test checks that '::first-line' pseudo-element is ignored in anonymous grid items when applied to an inline grid container ancestors.",
+    "matches": "../reference/grid-text-green-margin-no-collapse-ref.html"
 }

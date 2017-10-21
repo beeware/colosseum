@@ -1,78 +1,74 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "108px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "74px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "37px",
+                    "width": "96px",
                     "display": "block",
-                    "width": "96px"
+                    "height": "37px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "37px",
-                            "margin_left": "64px",
-                            "display": "block",
                             "width": "0px",
-                            "margin_right": "64px"
+                            "display": "block",
+                            "margin_right": "64px",
+                            "height": "37px",
+                            "margin_left": "64px"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {},
+                                "children": [
+                                    {
+                                        "text": "|",
+                                        "style": {}
+                                    }
+                                ],
                                 "tag": "span"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             },
             {
                 "style": {
-                    "height": "37px",
-                    "display": "block",
                     "width": "560px",
-                    "padding_left": "64px"
+                    "display": "block",
+                    "padding_left": "64px",
+                    "height": "37px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {},
+                        "children": [
+                            {
+                                "text": "|",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "blocks-013-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ]
+    "assert": null
 }

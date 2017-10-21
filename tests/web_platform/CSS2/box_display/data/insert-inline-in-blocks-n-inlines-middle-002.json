@@ -1,92 +1,125 @@
 {
-    "assert": null,
-    "matches": "insert-inline-in-blocks-n-inlines-middle-002-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "1stInline"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "ScndInline"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "1stBlock"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "FourthInline"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Inserted new inline"
+                            }
+                        ],
                         "style": {
-                            "border_right_style": "solid",
                             "border_left_width": "10px",
-                            "border_left_style": "solid",
-                            "border_left_color": "rgb(255, 255, 0)",
                             "border_right_color": "rgb(255, 255, 0)",
-                            "border_right_width": "10px"
+                            "border_right_style": "solid",
+                            "border_right_width": "10px",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_left_style": "solid"
                         },
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Fifth55Inline"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "SecondBlock"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Seven777Inline"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Eight8888Inline"
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
                     "margin_top": "20px",
-                    "margin_left": "20px",
                     "margin_right": "20px",
                     "height": "220px",
+                    "display": "block",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "width": "584px"
                 },
                 "tag": "div"
@@ -94,58 +127,97 @@
             {
                 "children": [
                     {
+                        "style": {},
+                        "text": "1stInline ScndInline"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "1stBlock"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
                     },
                     {
+                        "style": {},
+                        "text": "FourthInline"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Inserted new inline"
+                            }
+                        ],
                         "style": {
-                            "border_right_style": "solid",
                             "border_left_width": "10px",
-                            "border_left_style": "solid",
-                            "border_left_color": "rgb(255, 255, 0)",
                             "border_right_color": "rgb(255, 255, 0)",
-                            "border_right_width": "10px"
+                            "border_right_style": "solid",
+                            "border_right_width": "10px",
+                            "border_left_color": "rgb(255, 255, 0)",
+                            "border_left_style": "solid"
                         },
                         "tag": "span"
                     },
                     {
+                        "style": {},
+                        "text": "Fifth55Inline"
+                    },
+                    {
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "SecondBlock"
+                            }
+                        ],
                         "style": {
-                            "margin_bottom": "20px",
                             "display": "block",
-                            "width": "584px",
                             "margin_top": "20px",
-                            "height": "20px"
+                            "margin_bottom": "20px",
+                            "height": "20px",
+                            "width": "584px"
                         },
                         "tag": "div"
+                    },
+                    {
+                        "style": {},
+                        "text": "Seven777Inline Eight8888Inline"
                     }
                 ],
                 "style": {
-                    "margin_bottom": "20px",
-                    "display": "block",
                     "margin_top": "20px",
-                    "margin_left": "20px",
                     "margin_right": "20px",
                     "height": "220px",
+                    "display": "block",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "width": "584px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "498px",
+            "height": "460px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "insert-inline-in-blocks-n-inlines-middle-002-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
+    "assert": null
 }

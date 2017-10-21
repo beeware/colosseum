@@ -1,69 +1,79 @@
 {
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#order-property"
-    ],
-    "assert": "This test check that a flex container layouts out its content starting with the lowest numbered ordinal group and going up with column-reverse direction.",
     "matches": "order-with-column-reverse-ref.html",
+    "assert": "This test check that a flex container layouts out its content starting with the lowest numbered ordinal group and going up with column-reverse direction.",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "height": "72px",
-            "width": "624px",
+            "margin_bottom": "8px",
             "margin_left": "8px",
             "margin_right": "8px",
+            "height": "54px",
+            "display": "block",
             "margin_top": "8px",
-            "margin_bottom": "8px",
-            "display": "block"
+            "width": "624px"
         },
         "children": [
             {
-                "tag": "P",
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "DIV",
-                "style": {
+                    "display": "flex",
                     "height": "54px",
-                    "width": "624px",
-                    "display": "flex"
+                    "width": "624px"
                 },
                 "children": [
                     {
-                        "tag": "P",
                         "style": {
-                            "min_width": "auto",
                             "min_height": "auto",
+                            "display": "block",
                             "height": "18px",
                             "width": "624px",
-                            "display": "block"
-                        }
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Second,"
+                            }
+                        ],
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
                         "style": {
-                            "min_width": "auto",
                             "min_height": "auto",
+                            "display": "block",
                             "height": "18px",
                             "width": "624px",
-                            "display": "block"
-                        }
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "First,"
+                            }
+                        ],
+                        "tag": "P"
                     },
                     {
-                        "tag": "P",
                         "style": {
-                            "min_width": "auto",
                             "min_height": "auto",
+                            "display": "block",
                             "height": "18px",
                             "width": "624px",
-                            "display": "block"
-                        }
+                            "min_width": "auto"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Third"
+                            }
+                        ],
+                        "tag": "P"
                     }
-                ]
+                ],
+                "tag": "DIV"
             }
-        ]
-    }
+        ],
+        "tag": "BODY"
+    },
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#order-property"
+    ]
 }

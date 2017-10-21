@@ -1,73 +1,57 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "134px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "100px",
-                    "display": "block",
-                    "width": "100px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "height": "100px",
-                            "display": "block",
-                            "width": "100px"
-                        },
-                        "tag": "div",
-                        "children": [
-                            {
-                                "style": {},
-                                "tag": "span",
-                                "children": [
-                                    {
-                                        "style": {
-                                            "height": "100px",
-                                            "display": "block",
-                                            "width": "100px"
-                                        },
-                                        "tag": "span"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "The computed height is inherited, even if     the 'height' property does not apply.",
     "help": [
         "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
         "http://www.w3.org/TR/css-cascade-3/#inherit",
         "http://www.w3.org/TR/css-cascade-4/#inherit"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "100px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "100px",
+                    "display": "block",
+                    "height": "100px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "100px",
+                            "display": "block",
+                            "height": "100px"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "children": [
+                                    {
+                                        "style": {
+                                            "width": "100px",
+                                            "display": "block",
+                                            "height": "100px"
+                                        },
+                                        "tag": "span"
+                                    }
+                                ],
+                                "tag": "span"
+                            }
+                        ],
+                        "tag": "div"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "The computed height is inherited, even if     the 'height' property does not apply."
 }

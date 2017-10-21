@@ -1,41 +1,63 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
             "margin_bottom": "8px",
             "height": "54px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {},
-                "tag": "span",
                 "children": [
                     {
+                        "text": "First",
+                        "style": {}
+                    },
+                    {
                         "style": {},
-                        "tag": "span",
                         "children": [
                             {
+                                "text": "line",
+                                "style": {}
+                            },
+                            {
                                 "style": {
-                                    "height": "18px",
+                                    "width": "624px",
                                     "display": "block",
-                                    "width": "624px"
+                                    "height": "18px"
                                 },
+                                "children": [
+                                    {
+                                        "text": "Second line",
+                                        "style": {}
+                                    }
+                                ],
                                 "tag": "span"
+                            },
+                            {
+                                "text": "Third",
+                                "style": {}
                             }
-                        ]
+                        ],
+                        "tag": "span"
+                    },
+                    {
+                        "text": "line, yes",
+                        "style": {}
                     }
-                ]
+                ],
+                "tag": "span"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-in-inline-nested-001-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    "assert": null
 }

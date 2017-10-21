@@ -1,147 +1,137 @@
 {
-    "assert": "Vertical alignment aligns the margin box of inline replaced elements.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
+    "assert": "Vertical alignment aligns the margin box of inline replaced elements.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "img",
                         "style": {
-                            "height": "40px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
                             "width": "40px",
+                            "margin_bottom": "-18px",
+                            "height": "40px",
                             "border_bottom_color": "rgb(255, 165, 0)",
-                            "margin_bottom": "-18px"
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_right_color": "rgb(255, 165, 0)"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
                             "width": "15px",
+                            "margin_bottom": "-18px",
                             "border_bottom_width": "15px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
                             "height": "15px",
-                            "border_bottom_style": "solid",
-                            "padding_bottom": "10px",
                             "border_bottom_color": "rgb(255, 165, 0)",
-                            "margin_bottom": "-18px"
+                            "padding_bottom": "10px",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_bottom_style": "solid"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "padding_top": "15px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "height": "15px",
                             "width": "15px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_style": "solid",
                             "margin_bottom": "-28px",
-                            "border_top_width": "10px"
-                        }
-                    },
-                    {
-                        "tag": "img",
-                        "style": {
-                            "padding_top": "15px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
                             "height": "15px",
-                            "border_top_style": "solid",
-                            "width": "15px",
-                            "margin_top": "10px",
+                            "border_top_width": "10px",
                             "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_width": "10px"
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_style": "solid",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "padding_top": "15px"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
                             "width": "15px",
+                            "border_top_style": "solid",
+                            "height": "15px",
+                            "border_top_width": "10px",
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "margin_top": "10px",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "padding_top": "15px"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "width": "15px",
+                            "margin_bottom": "-10px",
                             "border_bottom_width": "15px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
                             "height": "15px",
-                            "border_bottom_style": "solid",
+                            "border_bottom_color": "rgb(255, 165, 0)",
                             "padding_bottom": "10px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "margin_bottom": "-10px"
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_bottom_style": "solid"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
                             "width": "15px",
+                            "margin_bottom": "-48px",
                             "border_bottom_width": "10px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
                             "height": "15px",
-                            "border_bottom_style": "solid",
-                            "padding_bottom": "15px",
                             "border_bottom_color": "rgb(255, 165, 0)",
-                            "margin_bottom": "-48px"
+                            "padding_bottom": "15px",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_bottom_style": "solid"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "padding_top": "15px",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "height": "15px",
-                            "border_top_style": "solid",
                             "width": "15px",
-                            "margin_top": "10px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_top_style": "solid",
                             "margin_bottom": "10px",
-                            "border_top_width": "10px"
+                            "height": "15px",
+                            "border_top_width": "10px",
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "margin_top": "10px",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "padding_top": "15px"
                         }
                     }
                 ],
                 "style": {
-                    "height": "80px",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_bottom_color": "rgb(255, 165, 0)",
                     "width": "624px",
+                    "height": "80px",
+                    "border_bottom_color": "rgb(255, 165, 0)",
                     "border_top_color": "rgb(255, 165, 0)",
-                    "display": "block"
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "display": "block",
+                    "border_right_color": "rgb(255, 165, 0)"
                 }
             }
         ],
         "style": {
-            "height": "114px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "80px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": null

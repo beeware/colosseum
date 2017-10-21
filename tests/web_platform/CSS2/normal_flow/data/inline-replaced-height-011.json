@@ -1,66 +1,50 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "138px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "104px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "100px",
+                    "width": "100px",
                     "z_index": "-1",
                     "display": "block",
-                    "position": "absolute",
-                    "width": "100px"
+                    "height": "100px",
+                    "position": "absolute"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "height": "104px",
+                    "width": "624px",
                     "display": "block",
-                    "width": "624px"
+                    "height": "104px"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "100px",
                             "width": "100px",
+                            "height": "100px",
                             "min_width": "100px"
                         },
                         "tag": "img"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'min-width' value) and based its intrinsic ratio when it has an intrinsic ratio.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'min-width' value) and based its intrinsic ratio when it has an intrinsic ratio."
 }

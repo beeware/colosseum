@@ -1,35 +1,13 @@
 {
-    "assert": "Descendant elements do not get generated when parent is 'display: none'.",
-    "matches": "../reference/ref-if-there-is-no-red.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
-        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
                         "style": {
                             "display": "none",
-                            "width": "96px",
-                            "height": "96px"
+                            "height": "96px",
+                            "width": "96px"
                         },
                         "tag": "div"
                     }
@@ -41,14 +19,20 @@
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "18px",
+            "height": "0px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "../reference/ref-if-there-is-no-red.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
+        "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
+    ],
+    "assert": "Descendant elements do not get generated when parent is 'display: none'."
 }

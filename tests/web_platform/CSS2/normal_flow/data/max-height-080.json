@@ -1,57 +1,41 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "66px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "max_height": "16px",
-                    "height": "16px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "height": "16px",
-                    "bottom": "16px",
-                    "display": "block",
-                    "position": "relative",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "max-height-025-ref.xht",
-    "assert": "The 'max-height' property sets a minimum plus one length value in 'ex' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "32px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "max_height": "16px",
+                    "height": "16px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "bottom": "16px",
+                    "height": "16px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "max-height-025-ref.xht",
+    "assert": "The 'max-height' property sets a minimum plus one length value in 'ex' units."
 }

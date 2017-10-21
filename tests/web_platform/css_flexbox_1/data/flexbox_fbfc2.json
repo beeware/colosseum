@@ -1,51 +1,63 @@
 {
-    "matches": "flexbox_fbfc2-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
     ],
+    "matches": "flexbox_fbfc2-ref.html",
     "test_case": {
         "children": [
             {
-                "tag": "DIV",
+                "children": [
+                    {
+                        "text": "float",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "float": "left",
                     "width": "200px",
-                    "display": "block",
-                    "height": "18px"
-                }
+                    "float": "left",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "tag": "DIV"
             },
             {
                 "children": [
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "Yellow box yellow box yellow box",
+                                "style": {}
+                            }
+                        ],
                         "style": {
+                            "min_height": "auto",
                             "margin_left": "32px",
-                            "min_width": "auto",
-                            "margin_bottom": "32px",
-                            "margin_right": "32px",
-                            "width": "224.609375px",
-                            "display": "block",
                             "height": "18px",
+                            "margin_right": "32px",
+                            "display": "block",
+                            "width": "224.609375px",
                             "margin_top": "32px",
-                            "min_height": "auto"
-                        }
+                            "margin_bottom": "32px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
+                    "width": "400px",
                     "margin_left": "-200px",
-                    "display": "flex",
                     "height": "82px",
-                    "width": "400px"
-                }
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "width": "640px",
-            "display": "block",
-            "height": "82px"
-        }
-    }
+            "height": "82px",
+            "display": "block"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

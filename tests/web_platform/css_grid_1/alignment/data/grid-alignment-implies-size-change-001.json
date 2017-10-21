@@ -1,5 +1,4 @@
 {
-    "matches": null,
     "test_case": {
         "children": [
             {
@@ -7,54 +6,71 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "tag": "BR"
+                                "text": "XX X",
+                                "style": {}
                             },
                             {
-                                "style": {},
-                                "tag": "BR"
+                                "tag": "BR",
+                                "style": {}
                             },
                             {
-                                "style": {},
-                                "tag": "BR"
+                                "text": "X XXX",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "XX XXX",
+                                "style": {}
                             }
                         ],
+                        "tag": "DIV",
                         "style": {
                             "height": "200px",
-                            "min_height": "auto",
                             "min_width": "auto",
                             "display": "block",
+                            "min_height": "auto",
                             "width": "100px"
-                        },
-                        "tag": "DIV"
+                        }
                     }
                 ],
+                "tag": "DIV",
                 "style": {
-                    "position": "relative",
                     "height": "200px",
                     "display": "inline-grid",
+                    "position": "relative",
                     "width": "100px"
-                },
-                "tag": "DIV"
+                }
             }
         ],
+        "tag": "BODY",
         "style": {
             "margin_bottom": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
-            "width": "624px",
             "margin_top": "8px",
             "height": "200px",
-            "display": "block"
-        },
-        "tag": "BODY"
+            "width": "624px",
+            "display": "block",
+            "margin_right": "8px"
+        }
     },
-    "assert": "Changing the grid's align-items value from 'stretch' to 'start' causes non-replaced items to shrink.",
     "help": [
         "https://drafts.csswg.org/css-grid-1/#column-align",
         "https://drafts.csswg.org/css-grid-1/#grid-item-sizing",
         "https://drafts.csswg.org/css-align-3/#propdef-align-items",
         "https://drafts.csswg.org/css-align/#valdef-align-self-stretch",
         "https://drafts.csswg.org/css-align/#valdef-align-self-start"
-    ]
+    ],
+    "matches": null,
+    "assert": "Changing the grid's align-items value from 'stretch' to 'start' causes non-replaced items to shrink."
 }

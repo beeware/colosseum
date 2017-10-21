@@ -1,57 +1,47 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
+    "assert": null,
     "test_case": {
         "tag": "body",
         "children": [
             {
-                "tag": "p",
+                "tag": "div",
                 "children": [
                     {
-                        "tag": "strong",
+                        "text": "XXXX",
                         "style": {}
                     }
                 ],
                 "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
-                    "border_right_style": "solid",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "float": "left",
-                    "height": "60px",
-                    "width": "240px",
-                    "border_top_width": "60px",
-                    "border_right_width": "60px",
                     "border_bottom_width": "60px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_bottom_style": "solid",
+                    "border_left_width": "60px",
                     "display": "block",
                     "border_top_style": "solid",
+                    "border_right_width": "60px",
+                    "border_bottom_style": "solid",
+                    "width": "240px",
                     "border_left_style": "solid",
-                    "border_left_width": "60px"
+                    "float": "left",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_top_width": "60px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_right_style": "solid",
+                    "height": "60px"
                 }
             }
         ],
         "style": {
-            "height": "18px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "0px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "line-height-128-ref.xht"

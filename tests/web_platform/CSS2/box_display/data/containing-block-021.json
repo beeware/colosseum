@@ -1,80 +1,64 @@
 {
-    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest positioned ancestor.",
-    "matches": "containing-block-019-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
     "test_case": {
         "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ],
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "18px"
-                },
-                "tag": "p"
-            },
             {
                 "children": [
                     {
                         "children": [
                             {
                                 "style": {
-                                    "position": "absolute",
                                     "display": "block",
-                                    "width": "96px",
-                                    "height": "96px"
+                                    "position": "absolute",
+                                    "height": "96px",
+                                    "width": "96px"
                                 },
                                 "tag": "span"
                             }
                         ],
                         "style": {
                             "display": "block",
-                            "width": "0px",
-                            "height": "0px"
+                            "height": "0px",
+                            "width": "0px"
                         },
                         "tag": "span"
                     }
                 ],
                 "style": {
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_bottom_width": "3px",
-                    "border_top_style": "solid",
-                    "position": "fixed",
-                    "border_right_width": "3px",
-                    "padding_right": "96px",
-                    "border_right_style": "solid",
-                    "padding_bottom": "96px",
-                    "padding_left": "96px",
                     "border_left_width": "3px",
                     "border_left_style": "solid",
+                    "border_top_style": "solid",
+                    "border_right_width": "3px",
+                    "display": "block",
+                    "padding_right": "96px",
+                    "border_top_width": "3px",
                     "height": "0px",
-                    "width": "0px",
+                    "position": "fixed",
+                    "padding_left": "96px",
+                    "border_right_style": "solid",
                     "z_index": "0",
+                    "border_bottom_width": "3px",
                     "padding_top": "96px",
+                    "padding_bottom": "96px",
+                    "width": "0px",
                     "border_bottom_style": "solid"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "18px",
+            "height": "0px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "containing-block-019-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
+    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest positioned ancestor."
 }

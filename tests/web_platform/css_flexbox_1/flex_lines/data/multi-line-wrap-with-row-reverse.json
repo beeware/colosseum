@@ -1,107 +1,143 @@
 {
+    "assert": "This test check that a flex container wraps blocks multiline in row-reverse direction.",
     "test_case": {
         "tag": "BODY",
-        "style": {
-            "margin_right": "8px",
-            "display": "block",
-            "height": "150px",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px"
-        },
         "children": [
             {
                 "tag": "DIV",
-                "style": {
-                    "display": "flex",
-                    "width": "300px",
-                    "height": "150px"
-                },
                 "children": [
                     {
                         "tag": "P",
+                        "children": [
+                            {
+                                "text": "1-3",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_right": "10px",
-                            "display": "block",
                             "min_width": "auto",
-                            "height": "18px",
-                            "width": "90px",
-                            "margin_bottom": "16px",
+                            "display": "block",
+                            "margin_right": "10px",
                             "min_height": "auto",
-                            "margin_top": "16px"
+                            "width": "90px",
+                            "margin_top": "16px",
+                            "margin_bottom": "16px",
+                            "height": "18px"
                         }
                     },
                     {
                         "tag": "P",
+                        "children": [
+                            {
+                                "text": "1-2",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_right": "10px",
-                            "display": "block",
                             "min_width": "auto",
-                            "height": "18px",
-                            "width": "90px",
-                            "margin_bottom": "16px",
+                            "display": "block",
+                            "margin_right": "10px",
                             "min_height": "auto",
-                            "margin_top": "16px"
+                            "width": "90px",
+                            "margin_top": "16px",
+                            "margin_bottom": "16px",
+                            "height": "18px"
                         }
                     },
                     {
                         "tag": "P",
+                        "children": [
+                            {
+                                "text": "1-1",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_right": "10px",
-                            "display": "block",
                             "min_width": "auto",
-                            "height": "18px",
-                            "width": "90px",
-                            "margin_bottom": "16px",
+                            "display": "block",
+                            "margin_right": "10px",
                             "min_height": "auto",
-                            "margin_top": "16px"
+                            "width": "90px",
+                            "margin_top": "16px",
+                            "margin_bottom": "16px",
+                            "height": "18px"
                         }
                     },
                     {
                         "tag": "P",
+                        "children": [
+                            {
+                                "text": "2-2",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_right": "10px",
-                            "display": "block",
                             "min_width": "auto",
-                            "height": "18px",
+                            "display": "block",
+                            "margin_right": "10px",
+                            "min_height": "auto",
                             "width": "140px",
+                            "margin_top": "16px",
                             "margin_bottom": "16px",
-                            "min_height": "auto",
-                            "margin_top": "16px"
+                            "height": "18px"
                         }
                     },
                     {
                         "tag": "P",
+                        "children": [
+                            {
+                                "text": "2-1",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_right": "10px",
-                            "display": "block",
                             "min_width": "auto",
-                            "height": "18px",
+                            "display": "block",
+                            "margin_right": "10px",
+                            "min_height": "auto",
                             "width": "140px",
+                            "margin_top": "16px",
                             "margin_bottom": "16px",
-                            "min_height": "auto",
-                            "margin_top": "16px"
+                            "height": "18px"
                         }
                     },
                     {
                         "tag": "P",
+                        "children": [
+                            {
+                                "text": "3-1",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "margin_right": "10px",
-                            "display": "block",
                             "min_width": "auto",
-                            "height": "18px",
+                            "display": "block",
+                            "margin_right": "10px",
+                            "min_height": "auto",
                             "width": "290px",
+                            "margin_top": "16px",
                             "margin_bottom": "16px",
-                            "min_height": "auto",
-                            "margin_top": "16px"
+                            "height": "18px"
                         }
                     }
-                ]
+                ],
+                "style": {
+                    "display": "flex",
+                    "height": "150px",
+                    "width": "300px"
+                }
             }
-        ]
+        ],
+        "style": {
+            "display": "block",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "150px"
+        }
     },
-    "assert": "This test check that a flex container wraps blocks multiline in row-reverse direction.",
     "matches": "multi-line-wrap-with-row-reverse-ref.html",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property",

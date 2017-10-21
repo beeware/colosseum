@@ -1,43 +1,33 @@
 {
     "assert": "The 'top' property applies to elements with a display of list-item.",
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
     ],
     "test_case": {
-        "style": {
-            "height": "36px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "616px",
-            "margin_left": "16px"
-        },
         "children": [
             {
                 "style": {
-                    "margin_bottom": "16px",
-                    "width": "616px",
-                    "height": "36px",
-                    "display": "block",
-                    "margin_top": "144px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "position": "absolute",
-                    "width": "96px",
-                    "height": "96px",
                     "display": "list-item",
-                    "top": "0px"
+                    "height": "96px",
+                    "top": "0px",
+                    "width": "96px",
+                    "position": "absolute"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "width": "616px",
+            "display": "block",
+            "margin_left": "16px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": null
 }

@@ -1,27 +1,5 @@
 {
-    "id": "",
-    "tag": "body",
-    "border_box": {
-        "position": [
-            32,
-            16
-        ],
-        "size": [
-            576,
-            68
-        ]
-    },
-    "content": {
-        "position": [
-            32,
-            16
-        ],
-        "size": [
-            576,
-            68
-        ]
-    },
-    "padding": [
+    "border": [
         0,
         0,
         0,
@@ -29,39 +7,19 @@
     ],
     "children": [
         {
-            "id": "",
-            "tag": "p",
-            "border_box": {
-                "position": [
-                    16,
-                    16
-                ],
-                "size": [
-                    608,
-                    68
-                ]
-            },
-            "content": {
-                "position": [
-                    32,
-                    32
-                ],
-                "size": [
-                    576,
-                    36
-                ]
-            },
-            "padding": [
-                16,
-                16,
-                16,
-                16
-            ],
+            "text": "\n  "
+        },
+        {
             "border": [
                 0,
                 0,
                 0,
                 0
+            ],
+            "children": [
+                {
+                    "text": "This text should be in a white box surrounded by green that extends\n     to all edges of the viewport."
+                }
             ],
             "margin": [
                 -16,
@@ -70,32 +28,57 @@
                 -16
             ],
             "padding_box": {
-                "position": [
-                    16,
-                    16
-                ],
                 "size": [
                     608,
                     68
+                ],
+                "position": [
+                    16,
+                    16
                 ]
             },
-            "margin_box": {
-                "position": [
-                    32,
-                    32
+            "padding": [
+                16,
+                16,
+                16,
+                16
+            ],
+            "border_box": {
+                "size": [
+                    608,
+                    68
                 ],
+                "position": [
+                    16,
+                    16
+                ]
+            },
+            "content": {
                 "size": [
                     576,
                     36
+                ],
+                "position": [
+                    32,
+                    32
                 ]
-            }
+            },
+            "id": "",
+            "margin_box": {
+                "size": [
+                    576,
+                    36
+                ],
+                "position": [
+                    32,
+                    32
+                ]
+            },
+            "tag": "p"
+        },
+        {
+            "text": "\n "
         }
-    ],
-    "border": [
-        0,
-        0,
-        0,
-        0
     ],
     "margin": [
         0,
@@ -104,23 +87,51 @@
         0
     ],
     "padding_box": {
-        "position": [
-            32,
-            16
-        ],
         "size": [
             576,
             68
+        ],
+        "position": [
+            32,
+            16
         ]
     },
-    "margin_box": {
-        "position": [
-            32,
-            16
-        ],
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "border_box": {
         "size": [
             576,
             68
+        ],
+        "position": [
+            32,
+            16
         ]
-    }
+    },
+    "content": {
+        "size": [
+            576,
+            68
+        ],
+        "position": [
+            32,
+            16
+        ]
+    },
+    "id": "",
+    "margin_box": {
+        "size": [
+            576,
+            68
+        ],
+        "position": [
+            32,
+            16
+        ]
+    },
+    "tag": "body"
 }

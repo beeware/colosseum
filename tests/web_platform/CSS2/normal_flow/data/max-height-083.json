@@ -1,66 +1,56 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
                     "width": "624px",
                     "display": "block",
+                    "height": "96px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
                             "width": "96px",
-                            "max_height": "96px",
                             "display": "block",
+                            "max_height": "96px",
+                            "height": "96px",
                             "position": "relative"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "border_top_style": "solid",
-                            "left": "100px",
-                            "height": "0px",
-                            "border_top_width": "96px",
                             "width": "96px",
-                            "top": "0px",
                             "display": "block",
+                            "top": "0px",
+                            "border_top_width": "96px",
+                            "height": "0px",
+                            "left": "100px",
+                            "border_top_style": "solid",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "height-006-ref.xht",
-    "assert": "The 'max-height' property sets a nominal length value in 'ex' units.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    "assert": "The 'max-height' property sets a nominal length value in 'ex' units."
 }

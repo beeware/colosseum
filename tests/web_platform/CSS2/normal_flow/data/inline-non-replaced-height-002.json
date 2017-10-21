@@ -1,71 +1,61 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-non-replaced"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "209px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "150px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
                     "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "150px",
-                    "width": "624px",
-                    "margin_top": "41px",
                     "display": "block",
+                    "margin_top": "41px",
+                    "height": "150px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "padding_top": "50px",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "padding_bottom": "50px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
                             "border_left_color": "rgb(0, 0, 255)",
+                            "padding_bottom": "50px",
+                            "padding_top": "50px",
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
                             "border_right_color": "rgb(0, 0, 255)"
                         },
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
                         "tag": "span"
                     },
                     {
                         "style": {
-                            "left": "100px",
-                            "height": "200px",
                             "width": "100px",
-                            "top": "-25px",
                             "display": "block",
+                            "top": "-25px",
+                            "height": "200px",
+                            "left": "100px",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inline-non-replaced-height-002-ref.xht",
-    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-non-replaced"
-    ]
+    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'."
 }

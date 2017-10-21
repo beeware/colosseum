@@ -1,81 +1,111 @@
 {
-    "matches": "flexbox_columns-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
     ],
+    "matches": "flexbox_columns-ref.html",
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "one two three four",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "117.734375px",
-                            "display": "list-item",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "39.984375px",
-                            "display": "list-item",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "39.984375px",
-                            "display": "list-item",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "39.984375px",
-                            "display": "list-item",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     },
                     {
-                        "tag": "LI",
+                        "children": [
+                            {
+                                "text": "damer",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "width": "39.984375px",
-                            "display": "list-item",
-                            "height": "18px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "18px",
+                            "display": "list-item"
+                        },
+                        "tag": "LI"
                     }
                 ],
-                "tag": "UL",
                 "style": {
                     "width": "624px",
-                    "display": "flex",
-                    "height": "18px"
-                }
+                    "height": "18px",
+                    "display": "flex"
+                },
+                "tag": "UL"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "624px",
-            "display": "block",
             "height": "18px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

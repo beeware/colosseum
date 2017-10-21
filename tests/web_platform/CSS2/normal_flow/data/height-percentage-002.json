@@ -1,64 +1,52 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "52px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "display": "block",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "height": "18px",
-                    "border_bottom_color": "rgb(255, 255, 255)",
                     "border_left_color": "rgb(255, 255, 255)",
+                    "display": "block",
                     "width": "96px",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "height": "18px",
+                    "border_top_color": "rgb(255, 255, 255)",
                     "border_right_color": "rgb(255, 255, 255)"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "text": "Text sample",
+                        "style": {}
+                    },
+                    {
                         "style": {
-                            "display": "block",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "0px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
                             "border_left_color": "rgb(255, 255, 255)",
+                            "display": "block",
                             "width": "96px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "height": "0px",
+                            "border_top_color": "rgb(255, 255, 255)",
                             "border_right_color": "rgb(255, 255, 255)"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "../reference/ref-if-there-is-no-red.xht",
-    "assert": "A percentage height is computed to 'auto' when the element is not absolutely positioned and there is no 'height' explicitly set on the containing block (or when the containing block's height is set to 'auto').",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    "assert": "A percentage height is computed to 'auto' when the element is not absolutely positioned and there is no 'height' explicitly set on the containing block (or when the containing block's height is set to 'auto')."
 }

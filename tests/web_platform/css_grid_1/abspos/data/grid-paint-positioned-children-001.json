@@ -1,105 +1,95 @@
 {
     "assert": null,
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "min_width": "auto",
+                            "width": "90px",
+                            "min_height": "auto",
+                            "height": "30px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "position": "absolute",
+                            "min_height": "auto",
+                            "height": "5px",
+                            "display": "block",
+                            "min_width": "auto",
+                            "width": "10px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "position": "absolute",
+                            "min_height": "auto",
+                            "height": "5px",
+                            "display": "block",
+                            "min_width": "auto",
+                            "width": "20px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "position": "absolute",
+                            "min_height": "auto",
+                            "height": "5px",
+                            "display": "block",
+                            "min_width": "auto",
+                            "width": "30px"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "position": "absolute",
+                            "min_height": "auto",
+                            "height": "5px",
+                            "display": "block",
+                            "min_width": "auto",
+                            "width": "40px"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_right_style": "solid",
+                    "position": "relative",
+                    "display": "grid",
+                    "border_top_width": "2px",
+                    "border_right_width": "2px",
+                    "width": "100px",
+                    "border_top_style": "solid",
+                    "height": "30px",
+                    "border_left_style": "solid",
+                    "padding_top": "10px",
+                    "border_left_width": "2px",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "2px"
+                }
+            }
+        ],
+        "style": {
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "44px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_top": "8px"
+        }
+    },
     "matches": "grid-paint-positioned-children-001-ref.html",
     "help": [
         "https://drafts.csswg.org/css-grid-1/#abspos"
-    ],
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "height": "114px",
-            "width": "624px",
-            "margin_bottom": "8px",
-            "display": "block",
-            "margin_right": "8px"
-        },
-        "children": [
-            {
-                "style": {
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "height": "54px"
-                },
-                "tag": "P"
-            },
-            {
-                "style": {
-                    "border_right_style": "solid",
-                    "padding_top": "10px",
-                    "border_top_width": "2px",
-                    "height": "30px",
-                    "width": "100px",
-                    "border_left_style": "solid",
-                    "position": "relative",
-                    "border_right_width": "2px",
-                    "border_bottom_width": "2px",
-                    "border_left_width": "2px",
-                    "border_bottom_style": "solid",
-                    "border_top_style": "solid",
-                    "display": "grid"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "width": "90px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "30px"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "width": "10px",
-                            "position": "absolute",
-                            "height": "5px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "width": "20px",
-                            "position": "absolute",
-                            "height": "5px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "width": "30px",
-                            "position": "absolute",
-                            "height": "5px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "width": "40px",
-                            "position": "absolute",
-                            "height": "5px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto"
-                        },
-                        "tag": "DIV"
-                    }
-                ],
-                "tag": "DIV"
-            }
-        ],
-        "tag": "BODY"
-    }
+    ]
 }

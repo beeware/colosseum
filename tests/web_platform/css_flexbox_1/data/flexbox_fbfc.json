@@ -1,50 +1,62 @@
 {
-    "matches": "flexbox_fbfc-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
     ],
+    "matches": "flexbox_fbfc-ref.html",
     "test_case": {
         "children": [
             {
-                "tag": "DIV",
+                "children": [
+                    {
+                        "text": "damer",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "float": "left",
                     "width": "150px",
-                    "display": "block",
-                    "height": "18px"
-                }
+                    "float": "left",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "tag": "DIV"
             },
             {
                 "children": [
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "Yellow box should be below the blue box",
+                                "style": {}
+                            }
+                        ],
                         "style": {
+                            "min_height": "auto",
                             "margin_left": "32px",
-                            "min_width": "auto",
-                            "margin_bottom": "32px",
-                            "margin_right": "32px",
-                            "width": "265.484375px",
-                            "display": "block",
                             "height": "64px",
+                            "margin_right": "32px",
+                            "display": "block",
+                            "width": "265.484375px",
                             "margin_top": "32px",
-                            "min_height": "auto"
-                        }
+                            "margin_bottom": "32px",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "480px",
-                    "display": "flex",
-                    "height": "128px"
-                }
+                    "height": "128px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "width": "600px",
-            "display": "block",
-            "height": "146px"
-        }
-    }
+            "height": "146px",
+            "display": "block"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

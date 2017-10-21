@@ -1,21 +1,10 @@
 {
-    "matches": "position-absolute-005-ref.html",
-    "assert": "Checks that we correctly handle overflow: auto in\nabspos nodes in flexbox",
     "help": [
         "https://drafts.csswg.org/css-flexbox/#abspos-items"
     ],
+    "matches": "position-absolute-005-ref.html",
     "test_case": {
         "children": [
-            {
-                "tag": "P",
-                "style": {
-                    "height": "18px",
-                    "width": "400px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
             {
                 "children": [
                     {
@@ -31,126 +20,133 @@
                                                             {
                                                                 "children": [
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     },
                                                                     {
-                                                                        "tag": "BR",
-                                                                        "style": {}
+                                                                        "style": {},
+                                                                        "tag": "BR"
                                                                     }
                                                                 ],
-                                                                "tag": "DIV",
                                                                 "style": {
                                                                     "width": "400px",
-                                                                    "display": "block",
-                                                                    "height": "144px"
-                                                                }
+                                                                    "height": "144px",
+                                                                    "display": "block"
+                                                                },
+                                                                "tag": "DIV"
                                                             },
                                                             {
-                                                                "tag": "DIV",
                                                                 "style": {
-                                                                    "right": "0px",
                                                                     "top": "0px",
-                                                                    "width": "400px",
-                                                                    "display": "block",
                                                                     "height": "10px",
-                                                                    "left": "0px",
-                                                                    "position": "absolute"
-                                                                }
+                                                                    "right": "0px",
+                                                                    "width": "400px",
+                                                                    "position": "absolute",
+                                                                    "display": "block",
+                                                                    "left": "0px"
+                                                                },
+                                                                "tag": "DIV"
                                                             }
                                                         ],
-                                                        "tag": "DIV",
                                                         "style": {
                                                             "width": "400px",
-                                                            "display": "block",
-                                                            "height": "144px"
-                                                        }
+                                                            "height": "144px",
+                                                            "display": "block"
+                                                        },
+                                                        "tag": "DIV"
                                                     }
                                                 ],
-                                                "tag": "DIV",
                                                 "style": {
                                                     "width": "400px",
-                                                    "display": "block",
-                                                    "height": "144px"
-                                                }
+                                                    "height": "144px",
+                                                    "display": "block"
+                                                },
+                                                "tag": "DIV"
                                             }
                                         ],
-                                        "tag": "DIV",
                                         "style": {
                                             "width": "400px",
-                                            "display": "block",
+                                            "position": "relative",
                                             "height": "100px",
-                                            "position": "relative"
-                                        }
+                                            "display": "block"
+                                        },
+                                        "tag": "DIV"
                                     }
                                 ],
-                                "tag": "DIV",
                                 "style": {
                                     "width": "400px",
-                                    "display": "block",
-                                    "height": "100px",
                                     "min_width": "auto",
-                                    "min_height": "auto"
-                                }
+                                    "min_height": "auto",
+                                    "height": "100px",
+                                    "display": "block"
+                                },
+                                "tag": "DIV"
                             }
                         ],
-                        "tag": "DIV",
                         "style": {
                             "width": "400px",
-                            "display": "flex",
-                            "height": "100px",
                             "min_width": "auto",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "100px",
+                            "display": "flex"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "400px",
-                    "display": "flex",
-                    "height": "100px"
-                }
+                    "height": "100px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "SCRIPT",
+                "children": [
+                    {
+                        "text": "onload = function() {\n  var historyEl = document.getElementById('history');\n  historyEl.offsetWidth;\n  historyEl.innerText = '\\n\\n\\n\\n\\n\\n\\n\\n';\n};",
+                        "style": {}
+                    }
+                ],
                 "style": {
                     "display": "none"
-                }
+                },
+                "tag": "SCRIPT"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "width": "400px",
-            "display": "block",
             "height": "300px",
-            "margin_top": "8px"
-        }
-    }
+            "margin_right": "8px",
+            "display": "block",
+            "width": "400px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "Checks that we correctly handle overflow: auto in\nabspos nodes in flexbox"
 }

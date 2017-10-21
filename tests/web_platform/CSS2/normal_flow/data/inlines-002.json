@@ -1,59 +1,65 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
             "margin_bottom": "8px",
             "height": "18px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
                     "width": "624px",
+                    "display": "block",
                     "margin_top": "16px",
                     "margin_bottom": "16px",
-                    "display": "block"
+                    "height": "18px"
                 },
-                "tag": "p",
                 "children": [
                     {
                         "style": {
-                            "padding_top": "8px",
-                            "padding_bottom": "8px"
+                            "padding_bottom": "8px",
+                            "padding_top": "8px"
                         },
-                        "tag": "span",
                         "children": [
                             {
                                 "style": {
-                                    "border_right_width": "8px",
-                                    "border_bottom_width": "8px",
-                                    "border_left_width": "8px",
-                                    "border_top_style": "solid",
-                                    "border_left_style": "solid",
-                                    "border_bottom_style": "solid",
-                                    "border_top_color": "rgb(0, 128, 0)",
-                                    "border_top_width": "8px",
-                                    "border_bottom_color": "rgb(0, 128, 0)",
                                     "border_left_color": "rgb(0, 128, 0)",
+                                    "border_bottom_style": "solid",
+                                    "border_top_width": "8px",
+                                    "border_bottom_width": "8px",
+                                    "border_top_color": "rgb(0, 128, 0)",
+                                    "border_top_style": "solid",
                                     "border_right_style": "solid",
+                                    "border_left_width": "8px",
+                                    "border_left_style": "solid",
+                                    "border_bottom_color": "rgb(0, 128, 0)",
+                                    "border_right_width": "8px",
                                     "border_right_color": "rgb(0, 128, 0)"
                                 },
+                                "children": [
+                                    {
+                                        "text": "This should have a green border.",
+                                        "style": {}
+                                    }
+                                ],
                                 "tag": "strong"
                             }
-                        ]
+                        ],
+                        "tag": "span"
                     }
-                ]
+                ],
+                "tag": "p"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "inlines-002-ref.xht",
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ]
+    "assert": null
 }

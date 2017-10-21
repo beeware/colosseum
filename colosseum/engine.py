@@ -72,6 +72,8 @@ class Viewport:
         self.layout = self.display
 
 
+
+
 def layout(display, node, standard=HTML5):
     containing_block = Viewport(display, node)
     font = None  # FIXME - default font
@@ -182,6 +184,8 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.padding_bottom = calculate_size(node.style.padding_bottom, horizontal)
     node.layout.padding_left = calculate_size(node.style.padding_left, vertical)
 
+    # print("NODE", node)
+
     # Section 10.3 - evaluate height and margins
     calculate_width_and_margins(node, horizontal)
 
@@ -227,6 +231,8 @@ def layout_box(display, node, containing_block, viewport, font):
 
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
+
+    # print("END NODE", node)
 
     # If position is relative, adjust the position.
     if node.style.position is RELATIVE:

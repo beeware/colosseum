@@ -1,21 +1,21 @@
 {
     "assert": "Fixed position elements cannot be paginated.",
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
     ],
     "test_case": {
-        "style": {
-            "width": "640px",
-            "height": "480px",
-            "display": "block"
-        },
         "children": [
             {
+                "children": [
+                    {
+                        "text": "PREREQUISITE: Switch to print preview or a paged view.",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "display": "block",
                     "height": "18px",
+                    "display": "block",
                     "padding_left": "16px",
                     "padding_top": "16px",
                     "width": "624px"
@@ -23,9 +23,15 @@
                 "tag": "p"
             },
             {
+                "children": [
+                    {
+                        "text": "Test passes if there is only one page and there is no red underlined text visible when paginated or printed.",
+                        "style": {}
+                    }
+                ],
                 "style": {
-                    "display": "block",
                     "height": "36px",
+                    "display": "block",
                     "padding_left": "16px",
                     "padding_top": "16px",
                     "width": "624px"
@@ -33,36 +39,48 @@
                 "tag": "p"
             },
             {
-                "style": {
-                    "height": "480px",
-                    "display": "block",
-                    "position": "fixed",
-                    "width": "481.4375px",
-                    "top": "80px",
-                    "z_index": "0"
-                },
                 "children": [
                     {
                         "style": {
-                            "width": "481.4375px",
+                            "display": "block",
                             "height": "480px",
-                            "display": "block"
+                            "width": "481.4375px"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "text": "Test fails if this line of text is visible when the page is paginated or printed.",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_right_color": "rgb(255, 0, 0)",
-                            "border_bottom_color": "rgb(255, 0, 0)",
                             "border_left_color": "rgb(255, 0, 0)",
-                            "border_top_color": "rgb(255, 0, 0)"
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "border_bottom_color": "rgb(255, 0, 0)"
                         },
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "top": "80px",
+                    "height": "480px",
+                    "display": "block",
+                    "position": "fixed",
+                    "width": "481.4375px",
+                    "z_index": "0"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "display": "block",
+            "height": "480px",
+            "width": "640px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": null
 }

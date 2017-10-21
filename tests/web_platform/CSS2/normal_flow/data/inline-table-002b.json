@@ -1,58 +1,76 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "36px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "36px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "span",
-                        "children": [
-                            {
-                                "style": {
-                                    "height": "36px",
-                                    "display": "table-cell",
-                                    "width": "23.109375px"
-                                },
-                                "tag": "span",
-                                "children": [
-                                    {
-                                        "style": {
-                                            "height": "18px",
-                                            "display": "block",
-                                            "width": "23.109375px"
-                                        },
-                                        "tag": "span"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "inline-table-002-ref.xht",
-    "assert": "The baseline of an 'inline-table' is the baseline of the first row of the table.",
     "help": [
         "http://www.w3.org/TR/CSS21/tables.html#table-display",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "36px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "margin_bottom": "16px",
+                    "height": "36px"
+                },
+                "children": [
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "text": "a",
+                                "style": {}
+                            },
+                            {
+                                "style": {
+                                    "width": "23.109375px",
+                                    "display": "table-cell",
+                                    "height": "36px"
+                                },
+                                "children": [
+                                    {
+                                        "text": "bcd",
+                                        "style": {}
+                                    },
+                                    {
+                                        "style": {
+                                            "width": "23.109375px",
+                                            "display": "block",
+                                            "height": "18px"
+                                        },
+                                        "children": [
+                                            {
+                                                "text": "x",
+                                                "style": {}
+                                            }
+                                        ],
+                                        "tag": "span"
+                                    }
+                                ],
+                                "tag": "span"
+                            },
+                            {
+                                "text": "e",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span"
+                    }
+                ],
+                "tag": "p"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "inline-table-002-ref.xht",
+    "assert": "The baseline of an 'inline-table' is the baseline of the first row of the table."
 }

@@ -1,70 +1,60 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#root-height"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "50px",
                     "width": "100px",
                     "display": "block",
+                    "height": "50px",
                     "position": "absolute"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "50px",
+                            "width": "100px",
                             "display": "block",
-                            "width": "100px"
+                            "height": "50px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "height": "50px",
                             "width": "100px",
                             "display": "block",
+                            "height": "50px",
                             "position": "absolute"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "50px",
                                     "width": "100px",
+                                    "display": "block",
                                     "margin_bottom": "50px",
-                                    "display": "block"
+                                    "height": "50px"
                                 },
                                 "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": "block-formatting-context-height-003-ref.xht",
-    "assert": "The auto height of a block formatting context element does not account for bottom margins of floated content descendents of out of flow blocks.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#root-height"
-    ]
+    "assert": "The auto height of a block formatting context element does not account for bottom margins of floated content descendents of out of flow blocks."
 }

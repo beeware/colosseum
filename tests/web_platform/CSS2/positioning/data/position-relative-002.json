@@ -1,63 +1,65 @@
 {
     "assert": "Element following relatively positioned element show up in normal flow as if the relatively positioned element were not offset.",
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
     ],
     "test_case": {
-        "style": {
-            "height": "58px",
-            "display": "block",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "20px",
-                    "display": "block",
-                    "margin_top": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "width": "624px",
-                    "height": "22px",
-                    "display": "block"
-                },
                 "children": [
                     {
                         "style": {
+                            "top": "24px",
                             "height": "2px",
                             "display": "block",
                             "left": "0px",
-                            "position": "relative",
                             "width": "200px",
-                            "top": "24px"
+                            "position": "relative"
                         },
                         "tag": "div"
                     },
                     {
+                        "children": [
+                            {
+                                "text": "a",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "position": "relative",
-                            "top": "25px"
+                            "top": "25px",
+                            "position": "relative"
                         },
                         "tag": "span"
                     },
                     {
+                        "children": [
+                            {
+                                "text": "b",
+                                "style": {}
+                            }
+                        ],
                         "style": {},
                         "tag": "span"
                     }
                 ],
+                "style": {
+                    "display": "block",
+                    "height": "22px",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_top": "8px",
+            "height": "22px",
+            "margin_right": "8px",
+            "width": "624px",
+            "display": "block",
+            "margin_left": "8px",
+            "margin_bottom": "8px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": null
 }

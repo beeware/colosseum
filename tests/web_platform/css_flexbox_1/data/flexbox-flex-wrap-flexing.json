@@ -1,61 +1,51 @@
 {
-    "matches": "flexbox-flex-wrap-flexing-ref.html",
-    "assert": "http://www.w3.org/TR/css-flexbox-1/#flex-property",
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-lines"
     ],
+    "matches": "flexbox-flex-wrap-flexing-ref.html",
     "test_case": {
         "children": [
             {
-                "tag": "P",
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
-            {
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
                             "width": "150px",
-                            "display": "block",
-                            "height": "50px",
                             "min_width": "100px",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "50px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
                             "width": "150px",
-                            "display": "block",
-                            "height": "50px",
                             "min_width": "100px",
-                            "min_height": "auto"
-                        }
+                            "min_height": "auto",
+                            "height": "50px",
+                            "display": "block"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "150px",
-                    "display": "flex",
-                    "height": "100px"
-                }
+                    "height": "100px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
+            "height": "100px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "134px",
-            "margin_top": "8px"
-        }
-    }
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": "http://www.w3.org/TR/css-flexbox-1/#flex-property"
 }

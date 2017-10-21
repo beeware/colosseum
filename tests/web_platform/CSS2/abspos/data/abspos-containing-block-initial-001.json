@@ -1,63 +1,69 @@
 {
-    "matches": "abspos-containing-block-initial-001-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "display": "none"
-                },
-                "tag": "script"
-            },
-            {
-                "style": {
-                    "top": "0px",
-                    "width": "100px",
-                    "position": "absolute",
-                    "display": "block",
-                    "height": "100px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "height": "100px",
-                    "right": "0px",
-                    "position": "absolute",
-                    "display": "block",
-                    "width": "100px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "bottom": "0px",
-                    "width": "100px",
-                    "position": "absolute",
-                    "display": "block",
-                    "height": "100px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "left": "0px",
-                    "height": "100px",
-                    "width": "100px",
-                    "position": "absolute",
-                    "display": "block"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "height": "10000px",
-            "width": "520px",
-            "display": "block"
-        },
-        "tag": "body"
-    },
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
     ],
-    "assert": "If there is no such ancestor, the containing block is the initial containing block."
+    "assert": "If there is no such ancestor, the containing block is the initial containing block.",
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "script",
+                "children": [
+                    {
+                        "text": "window.scrollTo(0,50);",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "display": "none"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "top": "0px",
+                    "display": "block",
+                    "width": "100px",
+                    "height": "100px",
+                    "position": "absolute"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "width": "100px",
+                    "right": "0px",
+                    "height": "100px",
+                    "position": "absolute"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "width": "100px",
+                    "bottom": "0px",
+                    "height": "100px",
+                    "position": "absolute"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "left": "0px",
+                    "height": "100px",
+                    "width": "100px",
+                    "position": "absolute"
+                }
+            }
+        ],
+        "style": {
+            "display": "block",
+            "width": "520px",
+            "height": "10000px"
+        }
+    },
+    "matches": "abspos-containing-block-initial-001-ref.xht"
 }

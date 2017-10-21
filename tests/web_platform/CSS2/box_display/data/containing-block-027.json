@@ -1,51 +1,41 @@
 {
-    "assert": "Content may overflow containing blocks.",
-    "matches": "containing-block-027-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#containing-block"
-    ],
     "test_case": {
         "children": [
-            {
-                "style": {
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "height": "36px"
-                },
-                "tag": "p"
-            },
             {
                 "children": [
                     {
                         "style": {
                             "display": "block",
-                            "width": "192px",
                             "padding_top": "5px",
-                            "height": "48px"
+                            "height": "48px",
+                            "width": "192px"
                         },
                         "tag": "div"
                     }
                 ],
                 "style": {
                     "display": "block",
-                    "width": "96px",
                     "padding_top": "5px",
-                    "height": "96px"
+                    "height": "96px",
+                    "width": "96px"
                 },
                 "tag": "div"
             }
         ],
         "style": {
-            "margin_bottom": "8px",
-            "display": "block",
             "margin_top": "8px",
-            "margin_left": "8px",
             "margin_right": "8px",
-            "height": "153px",
+            "height": "101px",
+            "display": "block",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "width": "624px"
         },
         "tag": "body"
-    }
+    },
+    "matches": "containing-block-027-ref.xht",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#containing-block"
+    ],
+    "assert": "Content may overflow containing blocks."
 }

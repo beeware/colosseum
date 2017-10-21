@@ -1,46 +1,36 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "34px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "0px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "height-001-ref.xht",
-    "assert": "The 'height' property sets a minimum length value in millimeters.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "624px",
+                    "display": "block",
+                    "height": "0px"
+                },
+                "children": [
+                    {
+                        "text": "Filler Text",
+                        "style": {}
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "height-001-ref.xht",
+    "assert": "The 'height' property sets a minimum length value in millimeters."
 }

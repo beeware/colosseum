@@ -1,112 +1,132 @@
 {
-    "matches": "reference/css-box-justify-content-ref.html",
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#justify-content-property",
         "http://www.w3.org/TR/css-flexbox-1/#flex-flow-property"
     ],
+    "matches": "reference/css-box-justify-content-ref.html",
     "test_case": {
         "children": [
             {
-                "tag": "P",
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
-            {
                 "children": [
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "DIV1",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(41, 119, 248)",
-                            "border_bottom_color": "rgb(41, 119, 248)",
-                            "width": "50px",
-                            "display": "block",
-                            "height": "30px",
-                            "border_top_color": "rgb(41, 119, 248)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(41, 119, 248)"
-                        }
+                            "border_right_color": "rgb(41, 119, 248)",
+                            "border_left_color": "rgb(41, 119, 248)",
+                            "height": "30px",
+                            "display": "block",
+                            "width": "50px",
+                            "border_top_color": "rgb(41, 119, 248)",
+                            "border_bottom_color": "rgb(41, 119, 248)",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "DIV2",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
+                            "min_height": "auto",
+                            "border_right_color": "rgb(162, 152, 22)",
                             "border_left_color": "rgb(162, 152, 22)",
-                            "border_bottom_color": "rgb(162, 152, 22)",
-                            "width": "50px",
-                            "display": "block",
                             "height": "30px",
+                            "display": "block",
+                            "width": "50px",
                             "border_top_color": "rgb(162, 152, 22)",
-                            "min_height": "auto",
-                            "border_right_color": "rgb(162, 152, 22)"
-                        }
+                            "border_bottom_color": "rgb(162, 152, 22)",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "DIV3",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
+                            "min_height": "auto",
+                            "border_right_color": "rgb(74, 123, 110)",
                             "border_left_color": "rgb(74, 123, 110)",
-                            "border_bottom_color": "rgb(74, 123, 110)",
-                            "width": "50px",
-                            "display": "block",
                             "height": "30px",
+                            "display": "block",
+                            "width": "50px",
                             "border_top_color": "rgb(74, 123, 110)",
-                            "min_height": "auto",
-                            "border_right_color": "rgb(74, 123, 110)"
-                        }
+                            "border_bottom_color": "rgb(74, 123, 110)",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "DIV4",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(41, 119, 248)",
-                            "border_bottom_color": "rgb(41, 119, 248)",
-                            "width": "50px",
-                            "display": "block",
-                            "height": "30px",
-                            "border_top_color": "rgb(41, 119, 248)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(41, 119, 248)"
-                        }
+                            "border_right_color": "rgb(41, 119, 248)",
+                            "border_left_color": "rgb(41, 119, 248)",
+                            "height": "30px",
+                            "display": "block",
+                            "width": "50px",
+                            "border_top_color": "rgb(41, 119, 248)",
+                            "border_bottom_color": "rgb(41, 119, 248)",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "DIV5",
+                                "style": {}
+                            }
+                        ],
                         "style": {
-                            "min_width": "auto",
-                            "border_left_color": "rgb(41, 119, 248)",
-                            "border_bottom_color": "rgb(41, 119, 248)",
-                            "width": "50px",
-                            "display": "block",
-                            "height": "30px",
-                            "border_top_color": "rgb(41, 119, 248)",
                             "min_height": "auto",
-                            "border_right_color": "rgb(41, 119, 248)"
-                        }
+                            "border_right_color": "rgb(41, 119, 248)",
+                            "border_left_color": "rgb(41, 119, 248)",
+                            "height": "30px",
+                            "display": "block",
+                            "width": "50px",
+                            "border_top_color": "rgb(41, 119, 248)",
+                            "border_bottom_color": "rgb(41, 119, 248)",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
                 "style": {
                     "width": "300px",
-                    "display": "flex",
-                    "height": "40px"
-                }
+                    "height": "40px",
+                    "display": "flex"
+                },
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
         "style": {
             "margin_left": "8px",
-            "margin_bottom": "8px",
+            "height": "40px",
             "margin_right": "8px",
-            "width": "624px",
             "display": "block",
-            "height": "74px",
-            "margin_top": "8px"
-        }
-    }
+            "width": "624px",
+            "margin_top": "8px",
+            "margin_bottom": "8px"
+        },
+        "tag": "BODY"
+    },
+    "assert": null
 }

@@ -1,57 +1,41 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "230px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p",
-                "children": [
-                    {
-                        "style": {},
-                        "tag": "strong"
-                    }
-                ]
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "block",
-                    "width": "96px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "border_left_style": "solid",
-                    "height": "96px",
-                    "border_left_width": "96px",
-                    "margin_top": "4px",
-                    "display": "block",
-                    "width": "528px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": "max-width-006-ref.xht",
-    "assert": "The 'width' property sets a nominal length value in pixels.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
         "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "196px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "96px",
+                    "display": "block",
+                    "height": "96px"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "width": "528px",
+                    "display": "block",
+                    "margin_top": "4px",
+                    "border_left_width": "96px",
+                    "border_left_style": "solid",
+                    "height": "96px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "max-width-006-ref.xht",
+    "assert": "The 'width' property sets a nominal length value in pixels."
 }

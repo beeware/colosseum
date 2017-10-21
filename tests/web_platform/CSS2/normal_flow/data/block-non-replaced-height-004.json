@@ -1,73 +1,63 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ],
     "test_case": {
         "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "242px",
-            "margin_top": "8px",
-            "display": "block",
             "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "192px",
+            "margin_right": "8px",
+            "margin_left": "8px"
         },
-        "tag": "body",
         "children": [
             {
                 "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "192px",
                     "width": "624px",
                     "display": "block",
+                    "height": "192px",
                     "position": "relative"
                 },
-                "tag": "div",
                 "children": [
                     {
                         "style": {
-                            "height": "192px",
                             "width": "96px",
                             "display": "block",
+                            "height": "192px",
                             "position": "relative"
                         },
-                        "tag": "div",
                         "children": [
                             {
                                 "style": {
-                                    "height": "192px",
                                     "width": "96px",
                                     "display": "block",
+                                    "height": "192px",
                                     "position": "relative"
                                 },
                                 "tag": "div"
                             }
-                        ]
+                        ],
+                        "tag": "div"
                     },
                     {
                         "style": {
-                            "left": "96px",
-                            "height": "192px",
                             "width": "96px",
-                            "top": "0px",
                             "display": "block",
+                            "top": "0px",
+                            "height": "192px",
+                            "left": "96px",
                             "position": "absolute"
                         },
                         "tag": "div"
                     }
-                ]
+                ],
+                "tag": "div"
             }
-        ]
+        ],
+        "tag": "body"
     },
     "matches": null,
-    "assert": "The 'height' is the 'height' of the child block box when a block-level non-replaced element is in normal flow and 'overflow' does not compute to 'visible'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ]
+    "assert": "The 'height' is the 'height' of the child block box when a block-level non-replaced element is in normal flow and 'overflow' does not compute to 'visible'."
 }

@@ -1,67 +1,87 @@
 {
-    "assert": "Line boxes are stacked with no vertical separation and they never overlap.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
+    "assert": "Line boxes are stacked with no vertical separation and they never overlap.",
     "test_case": {
         "tag": "body",
         "children": [
-            {
-                "tag": "p",
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "height": "18px",
-                    "width": "624px"
-                }
-            },
             {
                 "tag": "div",
                 "children": [
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
                             "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
+                            "border_right_color": "rgb(0, 128, 0)"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
                             "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "border_right_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
                             "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
+                            "border_right_color": "rgb(0, 128, 0)"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)",
                             "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "border_right_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
                         "tag": "span",
+                        "children": [
+                            {
+                                "text": "XXXXX",
+                                "style": {}
+                            }
+                        ],
                         "style": {
                             "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
                             "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
+                            "border_right_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
@@ -73,13 +93,13 @@
             }
         ],
         "style": {
-            "height": "134px",
-            "display": "block",
             "width": "624px",
-            "margin_top": "8px",
-            "margin_left": "8px",
             "margin_bottom": "8px",
-            "margin_right": "8px"
+            "height": "100px",
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "margin_left": "8px"
         }
     },
     "matches": "inline-formatting-context-013-ref.xht"

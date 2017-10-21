@@ -1,78 +1,62 @@
 {
-    "assert": "This test checks that 'column-*' properties in the Multicol module are ignored in grid items when applied to an inline grid container.",
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers",
-        "http://www.w3.org/TR/css3-multicol/#the-number-and-width-of-columns"
-    ],
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "display": "block",
-            "margin_left": "8px",
-            "margin_top": "8px",
+            "height": "104px",
             "margin_bottom": "8px",
-            "width": "624px",
             "margin_right": "8px",
-            "height": "138px"
+            "display": "block",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "P",
                 "style": {
-                    "display": "block",
-                    "width": "624px",
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px"
-                },
-                "children": [
-                    {
-                        "tag": "STRONG",
-                        "style": {}
-                    }
-                ]
-            },
-            {
-                "tag": "DIV",
-                "style": {
+                    "height": "100px",
+                    "position": "absolute",
                     "display": "block",
                     "z_index": "-1",
-                    "width": "100px",
-                    "position": "absolute",
-                    "height": "100px"
-                }
+                    "width": "100px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "style": {
-                    "display": "inline-grid",
+                    "height": "100px",
                     "width": "100px",
-                    "height": "100px"
+                    "display": "inline-grid"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "50px",
-                            "min_height": "auto"
-                        }
+                            "width": "100px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "100px",
                             "height": "50px",
-                            "min_height": "auto"
-                        }
+                            "width": "100px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "min_width": "auto"
+                        },
+                        "tag": "DIV"
                     }
                 ]
             }
         ]
-    }
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-multicol/#the-number-and-width-of-columns"
+    ],
+    "assert": "This test checks that 'column-*' properties in the Multicol module are ignored in grid items when applied to an inline grid container.",
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

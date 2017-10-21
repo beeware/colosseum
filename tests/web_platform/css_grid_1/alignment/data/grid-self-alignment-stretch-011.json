@@ -1,96 +1,120 @@
 {
-    "matches": null,
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
                             "border_left_style": "solid",
-                            "border_bottom_style": "solid",
                             "height": "20px",
                             "width": "110px",
                             "border_right_width": "10px",
-                            "display": "block"
-                        },
-                        "tag": "DIV"
+                            "border_right_style": "solid",
+                            "border_bottom_style": "solid",
+                            "border_top_style": "solid",
+                            "min_height": "auto",
+                            "display": "block",
+                            "min_width": "auto"
+                        }
                     },
                     {
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
                         "style": {
-                            "border_bottom_width": "20px",
-                            "min_width": "auto",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
                             "border_left_style": "solid",
-                            "border_bottom_style": "solid",
                             "height": "110px",
+                            "min_width": "auto",
                             "min_height": "auto",
+                            "border_top_style": "solid",
+                            "border_bottom_style": "solid",
                             "width": "80px",
-                            "display": "block"
-                        },
-                        "tag": "DIV"
+                            "display": "block",
+                            "border_bottom_width": "20px",
+                            "border_right_style": "solid"
+                        }
                     },
                     {
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
                             "border_left_style": "solid",
-                            "border_bottom_style": "solid",
                             "height": "20px",
                             "width": "80px",
-                            "display": "block"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "style": {
-                            "border_bottom_width": "10px",
-                            "min_width": "auto",
-                            "border_top_style": "solid",
-                            "border_left_style": "solid",
+                            "min_height": "auto",
                             "border_right_style": "solid",
                             "border_bottom_style": "solid",
+                            "border_top_style": "solid",
+                            "display": "block",
+                            "min_width": "auto"
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_style": "solid",
                             "height": "110px",
-                            "min_height": "auto",
-                            "width": "110px",
+                            "min_width": "auto",
                             "border_right_width": "20px",
-                            "display": "block"
-                        },
-                        "tag": "DIV"
+                            "border_top_style": "solid",
+                            "border_bottom_style": "solid",
+                            "width": "110px",
+                            "min_height": "auto",
+                            "display": "block",
+                            "border_bottom_width": "10px",
+                            "border_right_style": "solid"
+                        }
                     }
                 ],
+                "tag": "DIV",
                 "style": {
-                    "position": "relative",
                     "height": "250px",
                     "display": "inline-grid",
+                    "position": "relative",
                     "width": "250px"
-                },
-                "tag": "DIV"
+                }
             }
         ],
+        "tag": "BODY",
         "style": {
             "margin_bottom": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
-            "width": "624px",
             "margin_top": "8px",
             "height": "250px",
-            "display": "block"
-        },
-        "tag": "BODY"
+            "width": "624px",
+            "display": "block",
+            "margin_right": "8px"
+        }
     },
-    "assert": "The stretched grid items along the column and/or row axis respect their defined margin-box's boundaries.",
     "help": [
         "https://drafts.csswg.org/css-grid-1/#alignment",
         "https://drafts.csswg.org/css-align-3/#propdef-align-self",
         "https://drafts.csswg.org/css-align-3/#propdef-justify-self",
         "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
         "https://drafts.csswg.org/css-align/#valdef-align-self-stretch"
-    ]
+    ],
+    "matches": null,
+    "assert": "The stretched grid items along the column and/or row axis respect their defined margin-box's boundaries."
 }

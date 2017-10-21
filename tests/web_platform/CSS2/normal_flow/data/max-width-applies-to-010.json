@@ -1,42 +1,32 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "130px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "margin_left": "32px",
-                    "display": "list-item",
-                    "width": "96px",
-                    "max_width": "96px"
-                },
-                "tag": "div"
-            }
-        ]
-    },
-    "matches": null,
-    "assert": "The 'max-width' property applies to elements with 'display' set to 'list-item'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "96px",
+                    "display": "list-item",
+                    "max_width": "96px",
+                    "height": "96px",
+                    "margin_left": "32px"
+                },
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": null,
+    "assert": "The 'max-width' property applies to elements with 'display' set to 'list-item'."
 }

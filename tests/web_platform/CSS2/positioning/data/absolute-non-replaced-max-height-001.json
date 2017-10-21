@@ -1,44 +1,16 @@
 {
     "assert": "The calculation of static position is based on initial containing block when there is a fixed positioned element.",
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
     ],
     "test_case": {
-        "style": {
-            "width": "640px",
-            "height": "18px",
-            "display": "block"
-        },
         "children": [
             {
-                "style": {
-                    "width": "640px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "192px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_left_width": "3px",
-                    "border_right_style": "solid",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "3px",
-                    "width": "192px",
-                    "border_top_style": "solid",
-                    "position": "absolute",
-                    "border_right_width": "3px"
-                },
                 "children": [
                     {
                         "style": {
-                            "max_height": "48px",
                             "height": "48px",
+                            "max_height": "48px",
                             "display": "block",
                             "position": "fixed",
                             "width": "96px",
@@ -47,9 +19,29 @@
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "border_left_width": "3px",
+                    "border_bottom_style": "solid",
+                    "width": "192px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "3px",
+                    "height": "192px",
+                    "display": "block",
+                    "border_right_width": "3px",
+                    "border_top_width": "3px",
+                    "border_top_style": "solid",
+                    "border_left_style": "solid",
+                    "position": "absolute"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "display": "block",
+            "height": "0px",
+            "width": "640px"
+        },
         "tag": "body"
-    }
+    },
+    "matches": null
 }

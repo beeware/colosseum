@@ -1,51 +1,47 @@
 {
-    "test_case": {
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "190px",
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_right": "8px"
-        },
-        "tag": "body",
-        "children": [
-            {
-                "style": {
-                    "height": "54px",
-                    "width": "624px",
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "display": "block"
-                },
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "height": "120px",
-                    "display": "inline-block",
-                    "width": "120px"
-                },
-                "tag": "div",
-                "children": [
-                    {
-                        "style": {
-                            "height": "120px",
-                            "display": "inline-block",
-                            "width": "120px",
-                            "max_width": "120px"
-                        },
-                        "tag": "span"
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "../positioning/absolute-non-replaced-width-017-ref.xht",
-    "assert": "If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto', then the used value of 'width' is given by 'shrink-to-fit' width calculation. If 'width' of an inline-block, non-replaced element in normal flow is given by 'shrink-to-fit' width calculation, then such calculated width can be furthermore constrained, reduced by a max-width declaration. If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    ],
+    "test_case": {
+        "style": {
+            "width": "624px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "120px",
+            "margin_right": "8px",
+            "margin_left": "8px"
+        },
+        "children": [
+            {
+                "style": {
+                    "width": "120px",
+                    "display": "inline-block",
+                    "height": "120px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "width": "120px",
+                            "display": "inline-block",
+                            "max_width": "120px",
+                            "height": "120px"
+                        },
+                        "children": [
+                            {
+                                "text": "12345678",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span"
+                    }
+                ],
+                "tag": "div"
+            }
+        ],
+        "tag": "body"
+    },
+    "matches": "../positioning/absolute-non-replaced-width-017-ref.xht",
+    "assert": "If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto', then the used value of 'width' is given by 'shrink-to-fit' width calculation. If 'width' of an inline-block, non-replaced element in normal flow is given by 'shrink-to-fit' width calculation, then such calculated width can be furthermore constrained, reduced by a max-width declaration. If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation."
 }
