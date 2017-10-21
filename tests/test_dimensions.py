@@ -507,6 +507,37 @@ class BoxTests(TestCase):
             }
         )
 
+    def test_dirty_handling(self):
+        self.node.layout.dirty = None
+        self.assertIsNone(self.node.layout.dirty)
+        self.assertIsNone(self.child1.layout.dirty)
+        self.assertIsNone(self.child2.layout.dirty)
+        self.assertIsNone(self.grandchild1_1.layout.dirty)
+        self.assertIsNone(self.grandchild1_2.layout.dirty)
+
+        self.node.layout.dirty = True
+        self.assertTrue(self.node.layout.dirty)
+        self.assertTrue(self.child1.layout.dirty)
+        self.assertTrue(self.child2.layout.dirty)
+        self.assertTrue(self.grandchild1_1.layout.dirty)
+        self.assertTrue(self.grandchild1_2.layout.dirty)
+
+        self.node.layout.dirty = None
+        self.grandchild1_2.layout.dirty = False
+        self.assertIsNone(self.node.layout.dirty)
+        self.assertIsNone(self.child1.layout.dirty)
+        self.assertIsNone(self.child2.layout.dirty)
+        self.assertIsNone(self.grandchild1_1.layout.dirty)
+        self.assertFalse(self.grandchild1_2.layout.dirty)
+
+        self.node.layout.dirty = None
+        self.child1.layout.dirty = False
+        self.assertIsNone(self.node.layout.dirty)
+        self.assertFalse(self.child1.layout.dirty)
+        self.assertIsNone(self.child2.layout.dirty)
+        self.assertFalse(self.grandchild1_1.layout.dirty)
+        self.assertFalse(self.grandchild1_2.layout.dirty)
+
     def test_margins_and_borders(self):
         self.node.layout._origin_top = 100
         self.node.layout._origin_left = 200
