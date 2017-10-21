@@ -720,3 +720,79 @@ class BoxTests(TestCase):
             self.node.layout.absolute_border_box_top + self.node.layout.border_box_height,
             self.node.layout.absolute_border_box_bottom
         )
+
+    def test_collapse_top(self):
+        self.node.layout.collapse_top = 5
+        self.assertEqual(self.node.layout.collapse_top, 5)
+
+        # Setting the margin sets the collapse as well
+        self.node.layout.margin_top = 15
+        self.assertEqual(self.node.layout.margin_top, 15)
+        self.assertEqual(self.node.layout.collapse_top, 15)
+
+        # The collapse can't be set to a smaller value
+        self.node.layout.collapse_top = 10
+        self.assertEqual(self.node.layout.collapse_top, 15)
+
+        # The margin can be set to a smaller value,
+        # but that doesn't change the collapse
+        self.node.layout.margin_top = 10
+        self.assertEqual(self.node.layout.margin_top, 10)
+        self.assertEqual(self.node.layout.collapse_top, 15)
+
+    def test_collapse_right(self):
+        self.node.layout.collapse_right = 5
+        self.assertEqual(self.node.layout.collapse_right, 5)
+
+        # Setting the margin sets the collapse as well
+        self.node.layout.margin_right = 15
+        self.assertEqual(self.node.layout.margin_right, 15)
+        self.assertEqual(self.node.layout.collapse_right, 15)
+
+        # The collapse can't be set to a smaller value
+        self.node.layout.collapse_right = 10
+        self.assertEqual(self.node.layout.collapse_right, 15)
+
+        # The margin can be set to a smaller value,
+        # but that doesn't change the collapse
+        self.node.layout.margin_right = 10
+        self.assertEqual(self.node.layout.margin_right, 10)
+        self.assertEqual(self.node.layout.collapse_right, 15)
+
+    def test_collapse_bottom(self):
+        self.node.layout.collapse_bottom = 5
+        self.assertEqual(self.node.layout.collapse_bottom, 5)
+
+        # Setting the margin sets the collapse as well
+        self.node.layout.margin_bottom = 15
+        self.assertEqual(self.node.layout.margin_bottom, 15)
+        self.assertEqual(self.node.layout.collapse_bottom, 15)
+
+        # The collapse can't be set to a smaller value
+        self.node.layout.collapse_bottom = 10
+        self.assertEqual(self.node.layout.collapse_bottom, 15)
+
+        # The margin can be set to a smaller value,
+        # but that doesn't change the collapse
+        self.node.layout.margin_bottom = 10
+        self.assertEqual(self.node.layout.margin_bottom, 10)
+        self.assertEqual(self.node.layout.collapse_bottom, 15)
+
+    def test_collapse_left(self):
+        self.node.layout.collapse_left = 5
+        self.assertEqual(self.node.layout.collapse_left, 5)
+
+        # Setting the margin sets the collapse as well
+        self.node.layout.margin_left = 15
+        self.assertEqual(self.node.layout.margin_left, 15)
+        self.assertEqual(self.node.layout.collapse_left, 15)
+
+        # The collapse can't be set to a smaller value
+        self.node.layout.collapse_left = 10
+        self.assertEqual(self.node.layout.collapse_left, 15)
+
+        # The margin can be set to a smaller value,
+        # but that doesn't change the collapse
+        self.node.layout.margin_left = 10
+        self.assertEqual(self.node.layout.margin_left, 10)
+        self.assertEqual(self.node.layout.collapse_left, 15)

@@ -300,7 +300,7 @@ class Box:
     def margin_top(self, value):
         if value != self._margin_top:
             self._margin_top = value
-            self._collapse_top = value
+            self.collapse_top = value
 
     @property
     def margin_right(self):
@@ -310,7 +310,7 @@ class Box:
     def margin_right(self, value):
         if value != self._margin_right:
             self._margin_right = value
-            self._collapse_right = value
+            self.collapse_right = value
 
     @property
     def margin_bottom(self):
@@ -320,7 +320,7 @@ class Box:
     def margin_bottom(self, value):
         if value != self._margin_bottom:
             self._margin_bottom = value
-            self._collapse_bottom = value
+            self.collapse_bottom = value
 
     @property
     def margin_left(self):
@@ -330,7 +330,7 @@ class Box:
     def margin_left(self, value):
         if value != self._margin_left:
             self._margin_left = value
-            self._collapse_left = value
+            self.collapse_left = value
 
     @property
     def collapse_top(self):
