@@ -254,7 +254,6 @@ class Box:
             for child in self.node.children:
                 if child.layout:
                     child.layout._origin_top = self.absolute_content_top
-            self._dirty = True
 
     @property
     def _origin_left(self):
@@ -267,7 +266,6 @@ class Box:
             for child in self.node.children:
                 if child.layout:
                     child.layout._origin_left = self.absolute_content_left
-            self._dirty = True
 
     ######################################################################
     # Core properties
@@ -281,7 +279,6 @@ class Box:
     def content_width(self, value):
         if value != self._content_width:
             self._content_width = value
-            self.dirty = True
 
     @property
     def content_height(self):
@@ -291,7 +288,6 @@ class Box:
     def content_height(self, value):
         if value != self._content_height:
             self._content_height = value
-            self.dirty = True
 
     @property
     def content_top(self):
@@ -304,7 +300,6 @@ class Box:
             for child in self.node.children:
                 if child.layout:
                     child.layout._origin_top = self.absolute_content_top
-            self._dirty = True
 
     @property
     def content_left(self):
@@ -317,7 +312,6 @@ class Box:
             for child in self.node.children:
                 if child.layout:
                     child.layout._origin_left = self.absolute_content_left
-            self._dirty = True
 
     @property
     def margin_top(self):
@@ -328,7 +322,6 @@ class Box:
         if value != self._margin_top:
             self._margin_top = value
             self._collapse_top = value
-            self.dirty = True
 
     @property
     def margin_right(self):
@@ -339,7 +332,6 @@ class Box:
         if value != self._margin_right:
             self._margin_right = value
             self._collapse_right = value
-            self.dirty = True
 
     @property
     def margin_bottom(self):
@@ -350,7 +342,6 @@ class Box:
         if value != self._margin_bottom:
             self._margin_bottom = value
             self._collapse_bottom = value
-            self.dirty = True
 
     @property
     def margin_left(self):
@@ -361,7 +352,6 @@ class Box:
         if value != self._margin_left:
             self._margin_left = value
             self._collapse_left = value
-            self.dirty = True
 
     @property
     def collapse_top(self):
@@ -407,7 +397,6 @@ class Box:
     def border_top_width(self, value):
         if value != self._border_top_width:
             self._border_top_width = value
-            self.dirty = True
 
     @property
     def border_right_width(self):
@@ -417,7 +406,6 @@ class Box:
     def border_right_width(self, value):
         if value != self._border_right_width:
             self._border_right_width = value
-            self.dirty = True
 
     @property
     def border_bottom_width(self):
@@ -427,7 +415,6 @@ class Box:
     def border_bottom_width(self, value):
         if value != self._border_bottom_width:
             self._border_bottom_width = value
-            self.dirty = True
 
     @property
     def border_left_width(self):
@@ -437,7 +424,6 @@ class Box:
     def border_left_width(self, value):
         if value != self._border_left_width:
             self._border_left_width = value
-            self.dirty = True
 
     @property
     def padding_top(self):
@@ -447,7 +433,6 @@ class Box:
     def padding_top(self, value):
         if value != self._padding_top:
             self._padding_top = value
-            self.dirty = True
 
     @property
     def padding_right(self):
@@ -457,7 +442,6 @@ class Box:
     def padding_right(self, value):
         if value != self._padding_right:
             self._padding_right = value
-            self.dirty = True
 
     @property
     def padding_bottom(self):
@@ -467,7 +451,6 @@ class Box:
     def padding_bottom(self, value):
         if value != self._padding_bottom:
             self._padding_bottom = value
-            self.dirty = True
 
     @property
     def padding_left(self):
@@ -477,7 +460,6 @@ class Box:
     def padding_left(self, value):
         if value != self._padding_left:
             self._padding_left = value
-            self.dirty = True
 
     ######################################################################
     # Border box dimensions

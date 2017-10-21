@@ -194,9 +194,6 @@ class BoxTests(TestCase):
         self.node.children = [self.child1, self.child2]
         self.child1.children = [self.grandchild1_1, self.grandchild1_2]
 
-        # Mark the layout as "in calculation"
-        self.node.layout.dirty = None
-
     def assertLayout(self, box, expected):
         actual = {}
         if 'origin' in expected:
@@ -267,13 +264,6 @@ class BoxTests(TestCase):
 
         self.assertEqual(actual, expected)
 
-    def assertDirty(self, n, c1, c2, gc1, gc2):
-        self.assertEqual(n, self.node.layout.dirty)
-        self.assertEqual(c1, self.child1.layout.dirty)
-        self.assertEqual(c2, self.child2.layout.dirty)
-        self.assertEqual(gc1, self.grandchild1_1.layout.dirty)
-        self.assertEqual(gc2, self.grandchild1_2.layout.dirty)
-
     def test_repr(self):
         self.node.layout._origin_top = 1
         self.node.layout._origin_left = 2
@@ -303,9 +293,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # All the nodes are in calcuation
-        self.assertDirty(None, None, None, None, None)
-
     def test_set_top(self):
         self.node.layout.content_top = 5
 
@@ -318,28 +305,6 @@ class BoxTests(TestCase):
                 'absolute': {'content': (5, 10, 21, 0)},
             }
         )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Set the layout back to calculation
-        self.node.layout.dirty = None
-
-        # Set the top to the same value
-        self.node.layout.content_top = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (5, 10, 21, 0)},
-                'absolute': {'content': (5, 10, 21, 0)},
-            }
-        )
-
-        # Dirty state has not changed.
-        self.assertDirty(None, None, None, None, None)
 
         # Set the top to a new value
         self.node.layout.content_top = 7
@@ -354,9 +319,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
     def test_set_left(self):
         self.node.layout.content_left = 5
 
@@ -369,28 +331,6 @@ class BoxTests(TestCase):
                 'absolute': {'content': (0, 15, 16, 5)},
             }
         )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Set the layout back to calculation
-        self.node.layout.dirty = None
-
-        # Set the left to the same value
-        self.node.layout.content_left = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 15, 16, 5)},
-                'absolute': {'content': (0, 15, 16, 5)},
-            }
-        )
-
-        # Dirty state has not changed.
-        self.assertDirty(None, None, None, None, None)
 
         # Set the left to a new value
         self.node.layout.content_left = 7
@@ -405,9 +345,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
     def test_set_height(self):
         self.node.layout.content_height = 5
 
@@ -420,28 +357,6 @@ class BoxTests(TestCase):
                 'absolute': {'content': (0, 10, 5, 0)},
             }
         )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Set the layout back to calculation
-        self.node.layout.dirty = None
-
-        # Set the height to the same value
-        self.node.layout.content_height = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 0),
-                'size': {'content': (10, 5)},
-                'relative': {'content': (0, 10, 5, 0)},
-                'absolute': {'content': (0, 10, 5, 0)},
-            }
-        )
-
-        # Dirty state has not changed.
-        self.assertDirty(None, None, None, None, None)
 
         # Set the height to a new value
         self.node.layout.content_height = 7
@@ -456,9 +371,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
     def test_set_width(self):
         self.node.layout.content_width = 5
 
@@ -472,28 +384,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Set the layout back to calculation
-        self.node.layout.dirty = None
-
-        # Set the width to the same value
-        self.node.layout.content_width = 5
-
-        self.assertLayout(
-            self.node.layout,
-            {
-                'origin': (0, 0),
-                'size': {'content': (5, 16)},
-                'relative': {'content': (0, 5, 16, 0)},
-                'absolute': {'content': (0, 5, 16, 0)},
-            }
-        )
-
-        # Dirty state has not changed.
-        self.assertDirty(None, None, None, None, None)
-
         # Set the width to a new value
         self.node.layout.content_width = 7
 
@@ -506,9 +396,6 @@ class BoxTests(TestCase):
                 'absolute': {'content': (0, 7, 16, 0)},
             }
         )
-
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
 
     def test_descendent_offsets(self):
         self.node.layout.content_top = 7
@@ -550,12 +437,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # All the nodes have been marked dirty
-        self.assertDirty(True, True, True, True, True)
-
-        # Clean the layout
-        self.node.layout.dirty = False
-
         # Modify the grandchild position
         self.grandchild1_1.layout.content_top = 13
         self.grandchild1_1.layout.content_left = 14
@@ -591,9 +472,6 @@ class BoxTests(TestCase):
             }
         )
 
-        # Only the grandchild node is dirty
-        self.assertDirty(False, False, False, True, False)
-
         # Modify the child position
         self.child1.layout.content_top = 15
         self.child1.layout.content_left = 16
@@ -628,9 +506,6 @@ class BoxTests(TestCase):
                 'absolute': {'content': (35, 48, 51, 38)},
             }
         )
-
-        # Only the affected child node, and grandchild nodes are dirty
-        self.assertDirty(False, True, False, True, True)
 
     def test_margins_and_borders(self):
         self.node.layout._origin_top = 100
