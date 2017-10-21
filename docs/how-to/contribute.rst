@@ -67,25 +67,25 @@ fully automated test suite; but also because we're not targetting a web
 browser, so "load this web page" isn't a test we can use.
 
 So - Colosseum's ``utils`` directory has a set of scripts that take the W3C
-repository, and converts each page into raw data. It uses Toga to create a
-640x480 web view, loads the test document, and then injects some Javascript to
-extract the document structure and the rendering information about the
-document.
+repository, and converts each page into raw data. It uses `Toga
+<https://pybee.org/toga>`__ to create a 640x480 web view, loads the test
+document, and then injects some Javascript to extract the document structure
+and the rendering information about the document.
 
-The output of this process is two documents - a data file, and a ``reference``
-file.
+The output of this process is two documents - a `data` file, and a
+`reference` file.
 
-The ``data`` file contains a JSON-formatted version of the DOM elements in the
+The `data` file contains a JSON-formatted version of the DOM elements in the
 test, with their style declarations.
 
-The ``reference`` file contains the same DOM structure - but instead of
+The `reference` file contains the same DOM structure - but instead of
 recording the style, it records the size, position, borders, padding and
 margin of each element in the DOM.
 
-The test suite then takes the ``data`` file, reconstructs the DOM nodes in
-Colosseum, and apply the test styles to those nodes. It then lays out the
-document, and evaluates if the size and position of each DOM node in the
-document matches that in the reference rendering.
+The test suite takes the data file, reconstructs the DOM nodes in Colosseum,
+and apply the test styles to those nodes. It then lays out the document, and
+evaluates if the size and position of each DOM node in the document matches
+that in the reference rendering.
 
 Effectively, what we're doing is checking that given the same inputs,
 Colosseum will produce the same output as the web view - except that we don't
