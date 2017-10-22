@@ -1,35 +1,35 @@
 {
+    "matches": null,
+    "assert": "Some block-level elements (i.e. 'list-item' elements) can generate additional boxes outside the principal block box.",
     "test_case": {
+        "style": {
+            "width": "582px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "50px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "width": "582px",
+                    "height": "18px",
+                    "display": "list-item"
+                },
+                "tag": "div",
                 "children": [
                     {
-                        "text": "Filler Text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler Text"
                     }
-                ],
-                "tag": "div",
-                "style": {
-                    "display": "list-item",
-                    "height": "18px",
-                    "width": "582px"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "582px",
-            "margin_left": "50px"
-        }
+        ]
     },
-    "assert": "Some block-level elements (i.e. 'list-item' elements) can generate additional boxes outside the principal block box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#block-boxes"
-    ],
-    "matches": null
+    ]
 }

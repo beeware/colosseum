@@ -1,45 +1,45 @@
 {
+    "matches": "containing-block-007-ref.xht",
+    "assert": "The containing block is established by the viewport when an element uses fixed positioning.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
-                "children": [
-                    {
-                        "tag": "div",
-                        "style": {
-                            "display": "block",
-                            "top": "0px",
-                            "width": "96px",
-                            "right": "0px",
-                            "z_index": "0",
-                            "height": "96px",
-                            "position": "fixed"
-                        }
-                    }
-                ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
+                    "height": "0px",
+                    "width": "624px",
                     "bottom": "0px",
                     "position": "relative",
-                    "width": "624px",
-                    "height": "0px"
-                }
+                    "display": "block"
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "z_index": "0",
+                            "top": "0px",
+                            "height": "96px",
+                            "right": "0px",
+                            "width": "96px",
+                            "position": "fixed",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "0px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "The containing block is established by the viewport when an element uses fixed positioning.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
-    "matches": "containing-block-007-ref.xht"
+    ]
 }

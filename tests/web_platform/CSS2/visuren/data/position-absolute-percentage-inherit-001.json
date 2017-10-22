@@ -1,46 +1,45 @@
 {
-    "matches": "position-absolute-percentage-inherit-001-ref.xht",
     "test_case": {
         "style": {
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "300px",
             "margin_top": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "300px",
+            "margin_bottom": "8px",
+            "width": "624px"
         },
         "children": [
             {
                 "style": {
-                    "height": "300px",
+                    "width": "400px",
                     "display": "block",
                     "position": "relative",
-                    "width": "400px"
+                    "height": "300px"
                 },
                 "children": [
                     {
                         "style": {
-                            "height": "180px",
-                            "top": "30%",
-                            "position": "absolute",
-                            "width": "260px",
-                            "bottom": "10%",
-                            "left": "15%",
                             "display": "block",
-                            "right": "20%"
+                            "width": "260px",
+                            "left": "15%",
+                            "bottom": "10%",
+                            "right": "20%",
+                            "position": "absolute",
+                            "top": "30%",
+                            "height": "180px"
                         },
                         "children": [
                             {
                                 "style": {
-                                    "height": "108px",
-                                    "top": "30%",
-                                    "position": "absolute",
-                                    "width": "169px",
-                                    "bottom": "10%",
-                                    "left": "15%",
                                     "display": "block",
-                                    "right": "20%"
+                                    "width": "169px",
+                                    "left": "15%",
+                                    "bottom": "10%",
+                                    "right": "20%",
+                                    "position": "absolute",
+                                    "top": "30%",
+                                    "height": "108px"
                                 },
                                 "tag": "div"
                             }
@@ -52,18 +51,19 @@
             },
             {
                 "style": {
-                    "top": "216px",
+                    "display": "block",
                     "position": "absolute",
-                    "width": "169px",
-                    "height": "108px",
                     "left": "107px",
-                    "display": "block"
+                    "height": "108px",
+                    "width": "169px",
+                    "top": "216px"
                 },
                 "tag": "div"
             }
         ],
         "tag": "body"
     },
+    "matches": "position-absolute-percentage-inherit-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props",
         "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",

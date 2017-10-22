@@ -1,4 +1,7 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/zindex.html#painting-order"
+    ],
     "test_case": {
         "children": [
             {
@@ -6,74 +9,71 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "x"
+                                "text": "x",
+                                "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_right_color": "rgb(255, 0, 0)",
                             "border_left_color": "rgb(255, 0, 0)",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_bottom_color": "rgb(255, 0, 0)",
                             "border_top_color": "rgb(255, 0, 0)"
-                        },
-                        "tag": "span"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "16px",
                     "width": "624px",
                     "margin_bottom": "-16px"
-                },
-                "tag": "div"
+                }
             },
             {
                 "children": [
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "x"
+                                "text": "x",
+                                "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
+                            "display": "inline-block",
+                            "border_bottom_width": "4px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "4px",
+                            "width": "16px",
                             "border_left_color": "rgb(0, 128, 0)",
                             "border_top_style": "solid",
-                            "border_bottom_style": "solid",
-                            "display": "inline-block",
-                            "border_right_color": "rgb(0, 128, 0)",
                             "height": "18px",
-                            "border_top_width": "4px",
-                            "border_bottom_width": "4px",
                             "border_bottom_color": "rgb(0, 128, 0)",
-                            "width": "16px",
                             "border_top_color": "rgb(0, 128, 0)"
-                        },
-                        "tag": "span"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "26px",
                     "width": "624px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "26px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": null,
-    "matches": "inline-block-zorder-004-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/zindex.html#painting-order"
-    ]
+    "matches": "inline-block-zorder-004-ref.xht"
 }

@@ -1,77 +1,77 @@
 {
-    "assert": "The margins of adjacent flex items do not collapse.",
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
             "width": "624px",
-            "height": "90px",
-            "margin_bottom": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_right": "8px",
+            "height": "90px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "margin_right": "20px",
+                    "margin_bottom": "20px",
+                    "margin_left": "20px",
                     "margin_top": "20px",
                     "width": "584px",
-                    "height": "90px",
-                    "margin_bottom": "20px",
                     "display": "flex",
-                    "margin_left": "20px"
+                    "margin_right": "20px",
+                    "height": "90px"
                 },
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "margin_right": "20px",
-                            "margin_top": "20px",
-                            "min_width": "auto",
-                            "width": "50px",
-                            "height": "50px",
                             "margin_bottom": "20px",
+                            "margin_left": "20px",
+                            "margin_top": "20px",
                             "min_height": "auto",
+                            "width": "50px",
                             "display": "block",
-                            "margin_left": "20px"
-                        },
-                        "tag": "DIV"
+                            "margin_right": "20px",
+                            "min_width": "auto",
+                            "height": "50px"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "margin_right": "20px",
-                            "margin_top": "20px",
-                            "min_width": "auto",
-                            "width": "50px",
-                            "height": "50px",
                             "margin_bottom": "20px",
+                            "margin_left": "20px",
+                            "margin_top": "20px",
                             "min_height": "auto",
+                            "width": "50px",
                             "display": "block",
-                            "margin_left": "20px"
-                        },
-                        "tag": "DIV"
+                            "margin_right": "20px",
+                            "min_width": "auto",
+                            "height": "50px"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "margin_right": "20px",
-                            "margin_top": "20px",
-                            "min_width": "auto",
-                            "width": "50px",
-                            "height": "50px",
                             "margin_bottom": "20px",
+                            "margin_left": "20px",
+                            "margin_top": "20px",
                             "min_height": "auto",
+                            "width": "50px",
                             "display": "block",
-                            "margin_left": "20px"
-                        },
-                        "tag": "DIV"
+                            "margin_right": "20px",
+                            "min_width": "auto",
+                            "height": "50px"
+                        }
                     }
-                ],
-                "tag": "DIV"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "https://drafts.csswg.org/css-flexbox-1/#item-margins"
     ],
-    "matches": "reference/flex-container-margin-ref.html"
+    "matches": "reference/flex-container-margin-ref.html",
+    "assert": "The margins of adjacent flex items do not collapse."
 }

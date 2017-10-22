@@ -1,41 +1,41 @@
 {
+    "matches": "root-box-003-ref.xht",
+    "assert": null,
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "text": "FAIL",
-                        "style": {}
-                    }
-                ],
-                "tag": "p",
-                "style": {
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "margin_top": "16px",
-                    "border_left_color": "rgb(255, 255, 0)"
-                }
-            }
-        ],
-        "tag": "body",
         "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
             "border_bottom_color": "rgb(255, 255, 0)",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
             "border_top_color": "rgb(255, 255, 0)",
-            "border_right_color": "rgb(255, 255, 0)",
             "margin_top": "8px",
+            "border_right_color": "rgb(255, 255, 0)",
+            "display": "block",
             "margin_left": "8px",
             "border_left_color": "rgb(255, 255, 0)"
-        }
+        },
+        "tag": "body",
+        "children": [
+            {
+                "style": {
+                    "margin_bottom": "16px",
+                    "margin_top": "16px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "display": "block",
+                    "border_left_color": "rgb(255, 255, 0)"
+                },
+                "tag": "p",
+                "children": [
+                    {
+                        "style": {},
+                        "text": "FAIL"
+                    }
+                ]
+            }
+        ]
     },
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
-    "matches": "root-box-003-ref.xht"
+    ]
 }

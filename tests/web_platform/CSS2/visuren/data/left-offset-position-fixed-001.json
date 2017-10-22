@@ -1,32 +1,31 @@
 {
-    "matches": "left-offset-position-fixed-001-ref.xht",
     "test_case": {
         "style": {
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "0px",
             "margin_top": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "width": "624px"
         },
         "children": [
             {
                 "style": {
-                    "height": "0px",
-                    "left": "50%",
+                    "width": "312px",
                     "display": "block",
                     "position": "relative",
-                    "width": "312px"
+                    "left": "50%",
+                    "height": "0px"
                 },
                 "children": [
                     {
                         "style": {
                             "width": "100px",
-                            "height": "100px",
                             "display": "block",
                             "position": "fixed",
-                            "z_index": "0"
+                            "z_index": "0",
+                            "height": "100px"
                         },
                         "tag": "div"
                     }
@@ -35,17 +34,18 @@
             },
             {
                 "style": {
-                    "height": "100px",
-                    "left": "50%",
+                    "width": "100px",
                     "display": "block",
                     "position": "absolute",
-                    "width": "100px"
+                    "left": "50%",
+                    "height": "100px"
                 },
                 "tag": "div"
             }
         ],
         "tag": "body"
     },
+    "matches": "left-offset-position-fixed-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props",
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",

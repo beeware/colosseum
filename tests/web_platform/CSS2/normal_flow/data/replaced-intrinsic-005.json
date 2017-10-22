@@ -1,77 +1,77 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ],
     "test_case": {
         "children": [
             {
+                "tag": "div",
                 "style": {
-                    "border_right_style": "solid",
-                    "border_left_style": "solid",
-                    "border_left_width": "20px",
-                    "border_top_width": "20px",
-                    "border_top_style": "solid",
-                    "position": "absolute",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_style": "solid",
-                    "width": "60px",
                     "display": "block",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_right_width": "20px",
-                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_left_width": "20px",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "20px",
+                    "position": "absolute",
                     "height": "150px",
+                    "border_left_style": "solid",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "width": "60px",
+                    "border_top_width": "20px",
+                    "border_right_width": "20px",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "border_right_style": "solid",
+                    "border_left_color": "rgb(0, 128, 0)",
                     "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_bottom_width": "20px"
-                },
-                "tag": "div"
+                    "border_top_style": "solid"
+                }
             },
             {
                 "children": [
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "FAIL: SVG support required"
+                                "text": "FAIL: SVG support required",
+                                "style": {}
                             }
                         ],
+                        "tag": "object",
                         "style": {
-                            "border_right_style": "solid",
-                            "border_left_style": "solid",
                             "border_left_width": "20px",
-                            "border_top_width": "20px",
-                            "border_top_style": "solid",
-                            "width": "60px",
-                            "border_top_color": "rgb(255, 0, 0)",
                             "border_bottom_style": "solid",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "border_right_width": "20px",
-                            "border_left_color": "rgb(255, 0, 0)",
+                            "border_bottom_width": "20px",
                             "height": "150px",
+                            "border_left_style": "solid",
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "width": "60px",
+                            "border_top_width": "20px",
+                            "border_right_width": "20px",
+                            "border_top_color": "rgb(255, 0, 0)",
+                            "border_right_style": "solid",
+                            "border_left_color": "rgb(255, 0, 0)",
                             "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_bottom_width": "20px"
-                        },
-                        "tag": "object"
+                            "border_top_style": "solid"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "194px",
                     "width": "624px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "194px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "A replaced element with an intrinsic height only     and a specified width is drawn at the specified width and intrinsic height.",
-    "matches": "replaced-intrinsic-005-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ]
+    "matches": "replaced-intrinsic-005-ref.xht"
 }

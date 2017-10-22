@@ -1,26 +1,28 @@
 {
+    "assert": "The 'vertical-align' property sets a nominal length value in millimeters.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "div",
                         "children": [
                             {
-                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "span",
                                 "style": {
                                     "border_left_color": "rgb(255, 0, 0)",
                                     "border_right_color": "rgb(255, 0, 0)",
-                                    "border_top_color": "rgb(255, 0, 0)",
-                                    "border_bottom_color": "rgb(255, 0, 0)"
+                                    "border_bottom_color": "rgb(255, 0, 0)",
+                                    "border_top_color": "rgb(255, 0, 0)"
                                 }
                             },
                             {
@@ -28,73 +30,71 @@
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_left_color": "rgb(255, 0, 0)",
                             "width": "624px",
+                            "display": "block",
                             "border_top_color": "rgb(255, 0, 0)",
                             "height": "116px",
                             "position": "relative",
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "display": "block",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "border_right_color": "rgb(255, 0, 0)"
+                            "border_bottom_color": "rgb(255, 0, 0)"
                         }
                     },
                     {
-                        "tag": "div",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "position": "absolute",
-                            "display": "block",
                             "top": "0px",
-                            "width": "20px",
-                            "height": "20px"
-                        }
-                    },
-                    {
-                        "tag": "div",
-                        "children": [
-                            {
-                                "text": "X",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "width": "20px",
-                            "left": "20px",
+                            "display": "block",
                             "height": "20px",
                             "position": "absolute",
+                            "width": "20px"
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "div",
+                        "style": {
+                            "left": "20px",
+                            "position": "absolute",
+                            "top": "96px",
+                            "height": "20px",
                             "display": "block",
-                            "top": "96px"
+                            "width": "20px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "position": "relative",
                     "display": "block",
-                    "width": "624px",
-                    "height": "116px"
+                    "height": "116px",
+                    "position": "relative",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "116px"
+            "height": "116px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "vertical-align-007-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property sets a nominal length value in millimeters."
+    "matches": "vertical-align-007-ref.xht"
 }

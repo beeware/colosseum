@@ -1,4 +1,7 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
     "test_case": {
         "children": [
             {
@@ -6,61 +9,58 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "document.body.offsetWidth"
+                                "text": "document.body.offsetWidth",
+                                "style": {}
                             }
                         ],
+                        "tag": "script",
                         "style": {
                             "display": "none"
-                        },
-                        "tag": "script"
+                        }
                     },
                     {
-                        "style": {},
-                        "text": "One"
+                        "text": "One",
+                        "style": {}
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "Two"
+                                "text": "Two",
+                                "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "height": "18px",
                             "width": "624px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "border_bottom_style": "solid",
-                    "border_right_style": "solid",
-                    "border_left_width": "2px",
-                    "border_right_width": "2px",
-                    "border_top_width": "2px",
-                    "border_top_style": "solid",
+                    "border_bottom_width": "2px",
                     "border_left_style": "solid",
-                    "border_bottom_width": "2px"
-                },
-                "tag": "div"
+                    "border_left_width": "2px",
+                    "border_bottom_style": "solid",
+                    "border_top_width": "2px",
+                    "border_right_width": "2px",
+                    "border_right_style": "solid",
+                    "border_top_style": "solid"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "72px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": null,
-    "matches": "block-in-inline-insert-012-nosplit-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    "matches": "block-in-inline-insert-012-nosplit-ref.xht"
 }

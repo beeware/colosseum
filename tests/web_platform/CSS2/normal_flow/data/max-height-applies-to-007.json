@@ -1,9 +1,13 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
     "test_case": {
         "children": [
             {
-                "style": {},
-                "text": "If 'max-height' is supported on 'table-cell' then a square will be visible."
+                "text": "If 'max-height' is supported on 'table-cell' then a square will be visible.",
+                "style": {}
             },
             {
                 "children": [
@@ -11,46 +15,42 @@
                         "children": [
                             {
                                 "children": [],
+                                "tag": "div",
                                 "style": {
-                                    "max_height": "96px",
                                     "display": "table-cell",
                                     "height": "288px",
-                                    "width": "96px"
-                                },
-                                "tag": "div"
+                                    "width": "96px",
+                                    "max_height": "96px"
+                                }
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "display": "table-row",
                             "height": "288px",
                             "width": "96px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "table",
                     "height": "288px",
                     "width": "96px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "288px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "The 'max-height' property applies to elements with 'display' set to 'table-cell'.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    "matches": null
 }

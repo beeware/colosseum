@@ -1,50 +1,50 @@
 {
+    "matches": null,
+    "assert": "Display set to 'inline' applies the correct rendering behavior for the 'abbr' element.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "width": "624px",
+                    "height": "18px",
+                    "display": "block"
+                },
+                "tag": "div",
                 "children": [
                     {
-                        "text": "Filler Text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler Text"
                     },
                     {
+                        "style": {},
+                        "tag": "abbr",
                         "children": [
                             {
-                                "text": "Filler Text",
-                                "style": {}
+                                "style": {},
+                                "text": "Filler Text"
                             }
-                        ],
-                        "tag": "abbr",
-                        "style": {}
+                        ]
                     },
                     {
-                        "text": "Filler Text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler Text"
                     }
-                ],
-                "tag": "div",
-                "style": {
-                    "display": "block",
-                    "height": "18px",
-                    "width": "624px"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "Display set to 'inline' applies the correct rendering behavior for the 'abbr' element.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
-    "matches": null
+    ]
 }

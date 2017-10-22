@@ -1,86 +1,86 @@
 {
+    "help": [
+        "https://www.w3.org/TR/CSS21/visufx.html#overflow",
+        "https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
+        "https://www.w3.org/TR/CSS21/visudet.html#float-width"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test does not apply to such user agent."
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test does not apply to such user agent.",
+                        "style": {}
                     }
                 ],
+                "tag": "p",
                 "style": {
-                    "display": "block",
                     "margin_top": "16px",
-                    "height": "36px",
+                    "display": "block",
                     "width": "624px",
+                    "height": "36px",
                     "margin_bottom": "16px"
-                },
-                "tag": "p"
+                }
             },
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "Test passes if there is a filled green rectangle with inactive scrollbars and"
+                        "text": "Test passes if there is a filled green rectangle with inactive scrollbars and",
+                        "style": {}
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "no red"
+                                "text": "no red",
+                                "style": {}
                             }
                         ],
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     },
                     {
-                        "style": {},
-                        "text": "."
+                        "text": ".",
+                        "style": {}
                     }
                 ],
+                "tag": "p",
                 "style": {
-                    "display": "block",
                     "margin_top": "16px",
-                    "height": "18px",
+                    "display": "block",
                     "width": "624px",
+                    "height": "18px",
                     "margin_bottom": "16px"
-                },
-                "tag": "p"
+                }
             },
             {
                 "children": [
                     {
+                        "tag": "img",
                         "style": {
                             "height": "100px",
                             "width": "500px"
-                        },
-                        "tag": "img"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "inline-block",
                     "height": "100px",
                     "width": "500px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "186px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "This test checks interaction of percentage height of an inline replaced element with its parent having scrollbars and with the parent's width determined by 'shrink-to-fit' width algorithm. In this test, the image height should be 100px minus scrollbar height since space taken up by generated scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. Then the width of parent should be (used image height == 100px minus scrollbar) * (intrinsic ratio == 5width:1height).",
-    "matches": null,
-    "help": [
-        "https://www.w3.org/TR/CSS21/visufx.html#overflow",
-        "https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
-        "https://www.w3.org/TR/CSS21/visudet.html#float-width"
-    ]
+    "matches": null
 }

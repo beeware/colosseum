@@ -1,78 +1,78 @@
 {
+    "assert": "The baseline of a table cell element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "table",
                 "children": [
                     {
-                        "tag": "tr",
                         "children": [
                             {
-                                "tag": "td",
                                 "children": [
                                     {
                                         "text": "XXXXX",
                                         "style": {}
                                     },
                                     {
-                                        "tag": "span",
                                         "children": [
                                             {
                                                 "text": "XXXXX",
                                                 "style": {}
                                             }
                                         ],
+                                        "tag": "span",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "td",
                                 "style": {
-                                    "width": "173.328125px",
-                                    "height": "37px",
-                                    "padding_bottom": "1px",
+                                    "padding_top": "1px",
                                     "padding_left": "1px",
                                     "padding_right": "1px",
                                     "display": "table-cell",
-                                    "padding_top": "1px"
+                                    "height": "37px",
+                                    "width": "173.328125px",
+                                    "padding_bottom": "1px"
                                 }
                             }
                         ],
+                        "tag": "tr",
                         "style": {
-                            "width": "179.328125px",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "display": "table-row",
                             "border_top_color": "rgb(128, 128, 128)",
                             "height": "39px",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "display": "table-row",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)"
+                            "width": "179.328125px",
+                            "border_bottom_color": "rgb(128, 128, 128)"
                         }
                     }
                 ],
+                "tag": "table",
                 "style": {
-                    "width": "179.328125px",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "display": "table",
                     "border_top_color": "rgb(128, 128, 128)",
                     "height": "43px",
-                    "border_bottom_color": "rgb(128, 128, 128)",
-                    "display": "table",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)"
+                    "width": "179.328125px",
+                    "border_bottom_color": "rgb(128, 128, 128)"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "43px"
+            "height": "43px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "vertical-align-baseline-008-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The baseline of a table cell element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child."
+    "matches": "vertical-align-baseline-008-ref.xht"
 }

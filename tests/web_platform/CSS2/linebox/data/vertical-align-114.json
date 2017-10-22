@@ -1,85 +1,85 @@
 {
+    "assert": "The 'vertical-align' property sets the keyword 'middle'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "div",
                         "children": [
                             {
-                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "span",
                                 "style": {
                                     "border_left_color": "rgb(255, 0, 0)",
                                     "border_right_color": "rgb(255, 0, 0)",
-                                    "border_top_color": "rgb(255, 0, 0)",
-                                    "border_bottom_color": "rgb(255, 0, 0)"
+                                    "border_bottom_color": "rgb(255, 0, 0)",
+                                    "border_top_color": "rgb(255, 0, 0)"
                                 }
                             },
                             {
-                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "span",
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "position": "relative",
                             "display": "block",
-                            "width": "624px",
-                            "height": "144px"
+                            "height": "144px",
+                            "position": "relative",
+                            "width": "624px"
                         }
                     },
                     {
-                        "tag": "div",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "position": "absolute",
-                            "display": "block",
                             "top": "72px",
-                            "width": "48px",
-                            "height": "48px"
+                            "display": "block",
+                            "height": "48px",
+                            "position": "absolute",
+                            "width": "48px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "position": "relative",
                     "display": "block",
-                    "width": "624px",
-                    "height": "144px"
+                    "height": "144px",
+                    "position": "relative",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "144px"
+            "height": "144px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property sets the keyword 'middle'."
+    "matches": null
 }

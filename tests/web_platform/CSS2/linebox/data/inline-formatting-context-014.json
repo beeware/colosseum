@@ -1,54 +1,54 @@
 {
+    "assert": "Line boxes span the entire width of a container unless constrained by floats.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "XXXXX",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
-                            "border_right_width": "3px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_style": "solid",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_style": "solid",
-                            "border_left_width": "3px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_bottom_width": "3px",
+                            "border_top_width": "3px",
                             "border_left_style": "solid",
                             "border_bottom_style": "solid",
-                            "border_top_width": "3px",
-                            "border_bottom_width": "3px",
-                            "border_right_color": "rgb(0, 128, 0)"
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_right_style": "solid",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_style": "solid",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_left_width": "3px",
+                            "border_right_width": "3px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "20px"
+                    "height": "20px",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "20px"
+            "height": "20px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "Line boxes span the entire width of a container unless constrained by floats."
+    "matches": null
 }

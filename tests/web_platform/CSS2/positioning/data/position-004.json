@@ -1,76 +1,76 @@
 {
-    "assert": "The 'position' property applies the value 'fixed' and places the element out of flow of the document and locks it to a specific point on the viewport.",
+    "matches": null,
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "3000px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "display": "block",
-                    "height": "3000px",
-                    "width": "624px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "border_bottom_width": "3px",
-                            "width": "618px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_left_width": "3px",
-                            "border_left_style": "solid",
-                            "height": "0px",
-                            "border_right_style": "solid",
-                            "border_top_style": "solid",
-                            "border_right_width": "3px",
-                            "border_bottom_style": "solid",
-                            "display": "block",
-                            "border_top_width": "3px"
-                        },
                         "children": [
                             {
-                                "style": {
-                                    "border_right_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "left": "96px",
-                                    "position": "fixed",
-                                    "width": "77.53125px",
-                                    "z_index": "0",
-                                    "display": "block",
-                                    "top": "168px",
-                                    "height": "18px",
-                                    "border_bottom_color": "rgb(255, 255, 255)"
-                                },
                                 "children": [
                                     {
                                         "style": {},
                                         "text": "Text sample"
                                     }
                                 ],
+                                "style": {
+                                    "left": "96px",
+                                    "border_top_color": "rgb(255, 255, 255)",
+                                    "top": "168px",
+                                    "display": "block",
+                                    "position": "fixed",
+                                    "border_right_color": "rgb(255, 255, 255)",
+                                    "border_left_color": "rgb(255, 255, 255)",
+                                    "height": "18px",
+                                    "z_index": "0",
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "width": "77.53125px"
+                                },
                                 "tag": "div"
                             }
                         ],
+                        "style": {
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_left_width": "3px",
+                            "border_left_style": "solid",
+                            "border_right_color": "rgb(255, 165, 0)",
+                            "border_top_style": "solid",
+                            "height": "0px",
+                            "width": "618px",
+                            "border_bottom_width": "3px",
+                            "border_top_color": "rgb(255, 165, 0)",
+                            "border_right_width": "3px",
+                            "display": "block",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_top_width": "3px",
+                            "border_right_style": "solid",
+                            "border_bottom_style": "solid"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "3000px",
+                    "display": "block",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "3000px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'position' property applies the value 'fixed' and places the element out of flow of the document and locks it to a specific point on the viewport.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ],
-    "matches": null
+    ]
 }

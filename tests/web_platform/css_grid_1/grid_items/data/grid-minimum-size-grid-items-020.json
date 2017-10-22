@@ -1,18 +1,15 @@
 {
     "assert": "Checks that automatic minimum size is clamped if the grid item only spans fixed grid tracks.",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
-    ],
     "test_case": {
         "children": [
             {
                 "tag": "DIV",
                 "style": {
                     "display": "block",
-                    "height": "100px",
-                    "position": "absolute",
                     "width": "100px",
-                    "z_index": "-1"
+                    "position": "absolute",
+                    "z_index": "-1",
+                    "height": "100px"
                 }
             },
             {
@@ -31,10 +28,10 @@
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -49,13 +46,16 @@
         "tag": "BODY",
         "style": {
             "display": "block",
+            "width": "624px",
             "margin_left": "8px",
             "height": "500px",
-            "width": "624px",
-            "margin_right": "8px",
+            "margin_bottom": "8px",
             "margin_top": "8px",
-            "margin_bottom": "8px"
+            "margin_right": "8px"
         }
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
+    ]
 }

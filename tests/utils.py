@@ -58,7 +58,7 @@ def build_document(data):
     return node
 
 
-def layout_summary(node):
+def summarize(node):
     if node.layout:
         layout = {
             'content': {
@@ -74,9 +74,11 @@ def layout_summary(node):
                 'size': (node.layout.border_box_width, node.layout.border_box_height),
             },
         }
+        if node.name:
+            layout['tag'] = node.name
         children = []
         for child in node.children:
-            sublayout = layout_summary(child)
+            sublayout = summarize(child)
             if sublayout:
                 children.append(sublayout)
         if children:
@@ -89,21 +91,20 @@ def layout_summary(node):
     return layout
 
 
-def clean_reference(reference):
-    if 'tag' in reference:
+def clean_layout(layout):
+    if 'tag' in layout:
         cleaned = {
             key: {
-                'position': (reference[key]['position'][0], reference[key]['position'][1]),
-                'size': (reference[key]['size'][0], reference[key]['size'][1]),
+                'position': (layout[key]['position'][0], layout[key]['position'][1]),
+                'size': (layout[key]['size'][0], layout[key]['size'][1]),
             }
             for key in ['content', 'padding_box', 'border_box']
         }
-
         children = []
-        for child in reference.get('children', []):
-            subreference = clean_reference(child)
-            if subreference:
-                children.append(subreference)
+        for child in layout.get('children', []):
+            sublayout = clean_layout(child)
+            if sublayout:
+                children.append(sublayout)
         if children:
             cleaned['children'] = children
 
@@ -111,35 +112,44 @@ def clean_reference(reference):
         cleaned = None
     #     # TODO - add proper handling for anonymous boxes.
     #     cleaned = {
-    #         'text': reference.get('text', '???')
+    #         'text': layout.get('text', '???')
     #     }
 
     return cleaned
 
 
 def output_layout(layout, depth=1):
-    return ('  ' * depth
-        + '* {n[content][size][0]}x{n[content][size][1]}'
-          ' @ ({n[content][position][0]}, {n[content][position][1]})'
-          '\n'.format(n=layout)
-        # + '  ' * depth
-        # + '  {n[padding_box][size][0]}x{n[padding_box][size][1]}'
-        #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
-        #   '\n'.format(n=layout)
-        # + '  ' * depth
-        # + '  {n[border_box][size][0]}x{n[border_box][size][1]}'
-        #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
-        #   '\n'.format(n=layout)
-        # + '  ' * depth
-        # + '  {n[margin_box][size][0]}x{n[margin_box][size][1]}'
-        #   ' @ ({n[margin_box][position][0]}, {n[margin_box][position][1]})'
-        #   '\n'.format(n=layout)
-        + ''.join(
-                output_layout(child, depth=depth + 1)
-                for child in layout.get('children', [])
-            ) if layout else ''
-        + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
-    )
+    if 'tag' in layout:
+        return ('  ' * depth
+            + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
+              ' @ ({n[content][position][0]}, {n[content][position][1]}){text}'
+              '\n'.format(
+                    n=layout,
+                    tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
+                    text=(": '" + layout['text'] + "'") if 'text' in layout else ''
+                )
+            # + '  ' * depth
+            # + '  {n[padding_box][size][0]}x{n[padding_box][size][1]}'
+            #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
+            #   '\n'.format(n=layout)
+            # + '  ' * depth
+            # + '  {n[border_box][size][0]}x{n[border_box][size][1]}'
+            #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
+            #   '\n'.format(n=layout)
+            # + '  ' * depth
+            # + '  {n[margin_box][size][0]}x{n[margin_box][size][1]}'
+            #   ' @ ({n[margin_box][position][0]}, {n[margin_box][position][1]})'
+            #   '\n'.format(n=layout)
+            + ''.join(
+                    output_layout(child, depth=depth + 1)
+                    for child in layout.get('children', [])
+                ) if layout else ''
+            + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
+        )
+    else:
+        return ('  ' * depth
+            + "* '{text}'\n".format(text=layout['text'].strip())
+        )
 
 
 class LayoutTestCase(TestCase):
@@ -153,11 +163,11 @@ class LayoutTestCase(TestCase):
 
     def assertLayout(self, node, reference, extra=''):
         self.assertEqual(
-            layout_summary(node),
-            reference,
+            clean_layout(summarize(node)),
+            clean_layout(reference),
             '\n\nExpected:\n{}Actual:\n{}{}'.format(
                 output_layout(reference),
-                output_layout(layout_summary(node)),
+                output_layout(summarize(node)),
                 extra
             )
         )
@@ -242,7 +252,7 @@ class W3CTestCase(LayoutTestCase):
 
                 self.assertLayout(
                     root,
-                    clean_reference(reference),
+                    reference,
                     '\n' + '\n'.join(extra)
                 )
 

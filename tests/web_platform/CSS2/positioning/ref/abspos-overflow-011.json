@@ -1,216 +1,192 @@
 {
-    "border": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "border_box": {
-        "size": [
-            624,
-            18
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "tag": "body",
-    "padding_box": {
-        "size": [
-            624,
-            18
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
     "id": "",
-    "content": {
-        "size": [
-            624,
-            18
-        ],
-        "position": [
-            8,
-            8
-        ]
-    },
     "children": [
         {
-            "text": "\n  "
-        },
-        {
-            "text": "\n  "
-        },
-        {
+            "id": "outer",
+            "children": [
+                {
+                    "id": "inner",
+                    "children": [],
+                    "content": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            320,
+                            18
+                        ]
+                    },
+                    "padding_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            320,
+                            18
+                        ]
+                    },
+                    "tag": "div",
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            320,
+                            18
+                        ]
+                    },
+                    "text": "This text should be green."
+                },
+                {
+                    "id": "content",
+                    "children": [],
+                    "content": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            320,
+                            18
+                        ]
+                    },
+                    "padding_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            320,
+                            18
+                        ]
+                    },
+                    "tag": "div",
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            320,
+                            18
+                        ]
+                    },
+                    "text": "FAIL"
+                }
+            ],
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    18
+                ]
+            },
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    18
+                ]
+            },
+            "tag": "div",
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "border_box": {
-                "size": [
-                    624,
-                    18
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
             "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "tag": "div",
-            "padding_box": {
-                "size": [
-                    624,
-                    18
-                ],
+            "border_box": {
                 "position": [
                     8,
                     8
-                ]
-            },
-            "id": "outer",
-            "content": {
+                ],
                 "size": [
                     624,
                     18
-                ],
-                "position": [
-                    8,
-                    8
                 ]
-            },
-            "children": [
-                {
-                    "text": "\n   "
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "size": [
-                            320,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "div",
-                    "padding_box": {
-                        "size": [
-                            320,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "id": "inner",
-                    "content": {
-                        "size": [
-                            320,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "children": [
-                        {
-                            "text": " This text should be green. "
-                        }
-                    ]
-                },
-                {
-                    "text": "\n   "
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "size": [
-                            320,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "tag": "div",
-                    "padding_box": {
-                        "size": [
-                            320,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "id": "content",
-                    "content": {
-                        "size": [
-                            320,
-                            18
-                        ],
-                        "position": [
-                            8,
-                            8
-                        ]
-                    },
-                    "children": [
-                        {
-                            "text": " FAIL "
-                        }
-                    ]
-                },
-                {
-                    "text": "\n "
-                }
-            ]
-        },
-        {
-            "text": "\n "
+            }
         }
-    ]
+    ],
+    "content": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            18
+        ]
+    },
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            18
+        ]
+    },
+    "tag": "body",
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "border_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            18
+        ]
+    }
 }

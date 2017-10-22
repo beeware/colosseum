@@ -1,74 +1,74 @@
 {
-    "assert": null,
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "height": "54px",
             "width": "640px",
-            "display": "block"
+            "display": "block",
+            "height": "54px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "float": "left",
                     "height": "18px",
-                    "width": "200px",
-                    "display": "block"
+                    "float": "left",
+                    "display": "block",
+                    "width": "200px"
                 },
                 "children": [
                     {
                         "style": {},
                         "text": "float"
                     }
-                ],
-                "tag": "DIV"
+                ]
             },
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "54px",
-                    "width": "200px",
                     "margin_left": "-200px",
-                    "display": "flex"
+                    "width": "200px",
+                    "display": "flex",
+                    "height": "54px"
                 },
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
+                            "margin_bottom": "32px",
+                            "border_bottom_color": "rgba(0, 0, 0, 0)",
                             "min_height": "auto",
+                            "border_left_color": "rgba(0, 0, 0, 0)",
+                            "border_top_style": "solid",
                             "border_right_width": "2px",
-                            "width": "304px",
-                            "border_top_color": "rgba(0, 0, 0, 0)",
+                            "margin_right": "32px",
                             "border_bottom_style": "solid",
                             "border_right_color": "rgba(0, 0, 0, 0)",
-                            "margin_bottom": "32px",
-                            "border_bottom_width": "2px",
-                            "border_left_style": "solid",
-                            "display": "block",
-                            "border_left_color": "rgba(0, 0, 0, 0)",
-                            "margin_right": "32px",
-                            "height": "18px",
-                            "min_width": "auto",
-                            "border_top_width": "2px",
-                            "border_bottom_color": "rgba(0, 0, 0, 0)",
-                            "border_left_width": "2px",
                             "border_right_style": "solid",
+                            "border_top_color": "rgba(0, 0, 0, 0)",
+                            "display": "block",
+                            "border_bottom_width": "2px",
                             "margin_left": "32px",
-                            "border_top_style": "solid"
+                            "height": "18px",
+                            "border_top_width": "2px",
+                            "border_left_width": "2px",
+                            "border_left_style": "solid",
+                            "min_width": "auto",
+                            "width": "304px"
                         },
                         "children": [
                             {
                                 "style": {},
                                 "text": "xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx xxx"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     }
-                ],
-                "tag": "DIV"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
     ],
-    "matches": "flexbox_flex-formatting-interop-ref.html"
+    "matches": "flexbox_flex-formatting-interop-ref.html",
+    "assert": null
 }

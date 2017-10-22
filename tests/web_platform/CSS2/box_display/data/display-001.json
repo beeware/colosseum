@@ -1,42 +1,42 @@
 {
+    "matches": "display-001-ref.xht",
+    "assert": "The property 'display' set to 'inline' behaves in layout as an inline element.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {},
+                "tag": "div",
                 "children": [
                     {
-                        "text": "Filler text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler text"
                     }
-                ],
-                "tag": "div",
-                "style": {}
+                ]
             },
             {
+                "style": {},
+                "tag": "div",
                 "children": [
                     {
-                        "text": "Filler text",
-                        "style": {}
+                        "style": {},
+                        "text": "Filler text"
                     }
-                ],
-                "tag": "div",
-                "style": {}
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "The property 'display' set to 'inline' behaves in layout as an inline element.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
-    "matches": "display-001-ref.xht"
+    ]
 }

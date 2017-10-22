@@ -1,175 +1,21 @@
 {
+    "tag": "body",
     "padding": [
         0,
         0,
         0,
         0
     ],
-    "tag": "BODY",
     "padding_box": {
-        "size": [
-            624,
-            0
-        ],
         "position": [
             8,
             8
+        ],
+        "size": [
+            624,
+            0
         ]
     },
-    "children": [
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "DIV",
-            "padding_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "content": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "border_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "id": "log"
-        },
-        {
-            "text": "\n\n"
-        },
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "DIV",
-            "padding_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "content": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "border_box": {
-                "size": [
-                    624,
-                    0
-                ],
-                "position": [
-                    8,
-                    8
-                ]
-            },
-            "id": "inline-grid"
-        },
-        {
-            "text": "\n\n"
-        },
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "tag": "SCRIPT",
-            "padding_box": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "children": [
-                {
-                    "text": "\n  // Single values.\n  TestingUtils.testGridTemplateAreas('inline-grid', 'none', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a\"', '\"a\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\".\"', '\".\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"lower UPPER 10 -minus _low 1-st \u00a9copy_right line\u00b6\"', '\"lower UPPER 10 -minus _low 1-st \u00a9copy_right line\u00b6\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\"', '\"a b\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" \"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a   b\"   \"c   d\"', ['\"a b\" \"c d\"', '\"a   b\" \"c   d\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\"\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\"\\t\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\"\\n\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" \"a b\"', '\"a b\" \"a b\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a a\" \"b b\"', '\"a a\" \"b b\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\". a .\" \"b a c\"', '\". a .\" \"b a c\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\".. a ...\" \"b a c\"', ['\". a .\" \"b a c\"', '\".. a ...\" \"b a c\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\".a...\" \"b a c\"', ['\". a .\" \"b a c\"', '\".a...\" \"b a c\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot .\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"head head\" \"nav main\" \"foot ....\"', ['\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot ....\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"head head\" \"nav main\" \"foot.\"', ['\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot.\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\". header header .\" \"nav main main main\" \"nav footer footer .\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"... header header ....\" \"nav main main main\" \"nav footer footer ....\"', ['\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\"... header header ....\" \"nav main main main\" \"nav footer footer ....\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"...header header....\" \"nav main main main\" \"nav footer footer....\"', ['\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\"...header header....\" \"nav main main main\" \"nav footer footer....\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"title stats\" \"score stats\" \"board board\" \"ctrls ctrls\"', '\"title stats\" \"score stats\" \"board board\" \"ctrls ctrls\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"title board\" \"stats board\" \"score ctrls\"', '\"title board\" \"stats board\" \"score ctrls\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\". a\" \"b a\" \". a\"', '\". a\" \"b a\" \". a\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\".. a\" \"b a\" \"... a\"', ['\". a\" \"b a\" \". a\"', '\".. a\" \"b a\" \"... a\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"..a\" \"b a\" \".a\"', ['\". a\" \"b a\" \". a\"', '\"..a\" \"b a\" \".a\"']);\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a a a\" \"b b b\"', '\"a a a\" \"b b b\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\". .\" \"a a\"', '\". .\" \"a a\"');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"... ....\" \"a a\"', ['\". .\" \"a a\"', '\"... ....\" \"a a\"']);\n\n  // Reset values.\n  document.getElementById('inline-grid').style.gridTemplateAreas = '';\n\n  // Wrong values.\n  TestingUtils.testGridTemplateAreas('inline-grid', 'a', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a\" \"b c\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" \"c\" \"d e\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b c\" \"d e\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\"-\"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" - \"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" . \"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b a\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a\" \"b\" \"a\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" \"b b\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"b a\" \"b b\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a b\" \"b a\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"a .\" \". a\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\",\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"10%\"', 'none');\n  TestingUtils.testGridTemplateAreas('inline-grid', '\"USD$\"', 'none');\n"
-                }
-            ],
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "content": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "border_box": {
-                "size": [
-                    0,
-                    0
-                ],
-                "position": [
-                    0,
-                    0
-                ]
-            },
-            "id": ""
-        },
-        {
-            "text": "\n"
-        }
-    ],
     "border": [
         0,
         0,
@@ -177,24 +23,118 @@
         0
     ],
     "content": {
-        "size": [
-            624,
-            0
-        ],
         "position": [
             8,
             8
+        ],
+        "size": [
+            624,
+            0
         ]
     },
+    "id": "",
+    "children": [
+        {
+            "tag": "div",
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "id": "log",
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            }
+        },
+        {
+            "tag": "div",
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            },
+            "id": "inline-grid",
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    0
+                ]
+            }
+        }
+    ],
     "border_box": {
-        "size": [
-            624,
-            0
-        ],
         "position": [
             8,
             8
+        ],
+        "size": [
+            624,
+            0
         ]
-    },
-    "id": ""
+    }
 }

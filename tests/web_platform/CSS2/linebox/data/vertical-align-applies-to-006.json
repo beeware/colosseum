@@ -1,80 +1,80 @@
 {
+    "assert": "The 'vertical-align' property does not apply to elements with 'display' set to 'table-column'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
                         "tag": "div",
                         "style": {
-                            "width": "0px",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "display": "table-column",
                             "border_top_color": "rgb(0, 0, 255)",
                             "height": "0px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "display": "table-column",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)"
+                            "width": "0px",
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
-                        "tag": "div",
                         "children": [
                             {
-                                "tag": "div",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "div",
                                 "style": {
-                                    "width": "96px",
+                                    "border_right_color": "rgb(0, 0, 255)",
+                                    "border_left_color": "rgb(0, 0, 255)",
+                                    "display": "table-cell",
                                     "border_top_color": "rgb(0, 0, 255)",
                                     "height": "96px",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
-                                    "display": "table-cell",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "border_right_color": "rgb(0, 0, 255)"
+                                    "width": "96px",
+                                    "border_bottom_color": "rgb(0, 0, 255)"
                                 }
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "width": "96px",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "display": "table-row",
                             "border_top_color": "rgb(0, 0, 255)",
                             "height": "96px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "display": "table-row",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)"
+                            "width": "96px",
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "width": "96px",
+                    "border_right_color": "rgb(0, 0, 255)",
+                    "border_left_color": "rgb(0, 0, 255)",
+                    "display": "table",
                     "border_top_color": "rgb(0, 0, 255)",
                     "height": "96px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "display": "table",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "border_right_color": "rgb(0, 0, 255)"
+                    "width": "96px",
+                    "border_bottom_color": "rgb(0, 0, 255)"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "96px"
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "vertical-align-applies-to-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property does not apply to elements with 'display' set to 'table-column'."
+    "matches": "vertical-align-applies-to-001-ref.xht"
 }

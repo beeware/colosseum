@@ -1,86 +1,86 @@
 {
+    "matches": "display-012-ref.xht",
+    "assert": "The property 'display' set to 'table-column' behaves in layout as a table column.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "width": "133.75px",
+                    "height": "18px",
+                    "display": "table"
+                },
+                "tag": "div",
                 "children": [
                     {
-                        "tag": "span",
                         "style": {
-                            "display": "table-column",
+                            "width": "0px",
                             "height": "0px",
-                            "width": "0px"
-                        }
+                            "display": "table-column"
+                        },
+                        "tag": "span"
                     },
                     {
-                        "tag": "span",
                         "style": {
-                            "display": "table-column",
+                            "width": "0px",
                             "height": "0px",
-                            "width": "0px"
-                        }
+                            "display": "table-column"
+                        },
+                        "tag": "span"
                     },
                     {
+                        "style": {
+                            "width": "133.75px",
+                            "height": "18px",
+                            "display": "table-row"
+                        },
+                        "tag": "div",
                         "children": [
                             {
+                                "style": {
+                                    "width": "66.875px",
+                                    "height": "18px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div",
                                 "children": [
                                     {
-                                        "text": "Filler Text",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "Filler Text"
                                     }
-                                ],
-                                "tag": "div",
-                                "style": {
-                                    "display": "table-cell",
-                                    "height": "18px",
-                                    "width": "66.875px"
-                                }
+                                ]
                             },
                             {
+                                "style": {
+                                    "width": "66.875px",
+                                    "height": "18px",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div",
                                 "children": [
                                     {
-                                        "text": "Filler Text",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "Filler Text"
                                     }
-                                ],
-                                "tag": "div",
-                                "style": {
-                                    "display": "table-cell",
-                                    "height": "18px",
-                                    "width": "66.875px"
-                                }
+                                ]
                             }
-                        ],
-                        "tag": "div",
-                        "style": {
-                            "display": "table-row",
-                            "height": "18px",
-                            "width": "133.75px"
-                        }
+                        ]
                     }
-                ],
-                "tag": "div",
-                "style": {
-                    "display": "table",
-                    "height": "18px",
-                    "width": "133.75px"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "The property 'display' set to 'table-column' behaves in layout as a table column.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
-    "matches": "display-012-ref.xht"
+    ]
 }

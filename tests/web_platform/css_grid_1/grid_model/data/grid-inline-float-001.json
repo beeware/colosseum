@@ -1,62 +1,62 @@
 {
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-containers",
         "http://www.w3.org/TR/CSS21/visuren.html#float-position"
     ],
     "assert": null,
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "104px",
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px"
-        },
+        "tag": "BODY",
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "position": "absolute",
                     "display": "block",
+                    "position": "absolute",
                     "height": "100px",
-                    "width": "100px",
-                    "z_index": "-1"
-                },
-                "tag": "DIV"
+                    "z_index": "-1",
+                    "width": "100px"
+                }
             },
             {
-                "style": {
-                    "height": "100px",
-                    "display": "inline-grid",
-                    "width": "100px"
-                },
+                "tag": "DIV",
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "min_width": "auto",
                             "display": "block",
+                            "min_height": "auto",
                             "height": "50px",
-                            "width": "100px",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
+                            "min_width": "auto",
+                            "width": "100px"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "min_width": "auto",
                             "display": "block",
+                            "min_height": "auto",
                             "height": "50px",
-                            "width": "100px",
-                            "min_height": "auto"
-                        },
-                        "tag": "DIV"
+                            "min_width": "auto",
+                            "width": "100px"
+                        }
                     }
                 ],
-                "tag": "DIV"
+                "style": {
+                    "display": "inline-grid",
+                    "height": "100px",
+                    "width": "100px"
+                }
             }
         ],
-        "tag": "BODY"
-    },
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+        "style": {
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "104px",
+            "margin_bottom": "8px"
+        }
+    }
 }

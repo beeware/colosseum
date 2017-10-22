@@ -1,42 +1,42 @@
 {
-    "assert": "The 'top' property, when using an absolute length value (not percentage) for relative positioning, specifies the offset of the box itself.",
+    "matches": "bottom-offset-001-ref.xht",
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "96px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "display": "block",
-                    "height": "96px",
-                    "width": "96px"
-                },
                 "children": [
                     {
                         "style": {
-                            "display": "block",
-                            "top": "48px",
-                            "height": "48px",
                             "position": "relative",
+                            "height": "48px",
+                            "top": "48px",
+                            "display": "block",
                             "width": "48px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "96px",
+                    "display": "block",
+                    "width": "96px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "96px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'top' property, when using an absolute length value (not percentage) for relative positioning, specifies the offset of the box itself.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
-    "matches": "bottom-offset-001-ref.xht"
+    ]
 }

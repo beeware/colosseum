@@ -1,110 +1,110 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent."
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test case does not apply to this user agent.",
+                        "style": {}
                     }
                 ],
+                "tag": "p",
                 "style": {
-                    "display": "block",
                     "margin_top": "16px",
-                    "height": "36px",
+                    "display": "block",
                     "width": "624px",
+                    "height": "36px",
                     "margin_bottom": "16px"
-                },
-                "tag": "p"
+                }
             },
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "Test passes if there is a green square and"
+                        "text": "Test passes if there is a green square and",
+                        "style": {}
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "no red"
+                                "text": "no red",
+                                "style": {}
                             }
                         ],
-                        "style": {},
-                        "tag": "strong"
+                        "tag": "strong",
+                        "style": {}
                     },
                     {
-                        "style": {},
-                        "text": ". Such green square should have active horizontal and vertical scrollbars."
+                        "text": ". Such green square should have active horizontal and vertical scrollbars.",
+                        "style": {}
                     }
                 ],
+                "tag": "p",
                 "style": {
-                    "display": "block",
                     "margin_top": "16px",
-                    "height": "36px",
+                    "display": "block",
                     "width": "624px",
+                    "height": "36px",
                     "margin_bottom": "16px"
-                },
-                "tag": "p"
+                }
             },
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "XX"
+                        "text": "XX",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "height": "200px",
+                    "display": "block",
                     "max_width": "200px",
                     "float": "left",
                     "border_right_color": "rgb(255, 0, 0)",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "border_top_color": "rgb(255, 0, 0)",
-                    "border_left_color": "rgb(255, 0, 0)",
                     "width": "200px",
-                    "display": "block"
-                },
-                "tag": "div"
+                    "height": "200px",
+                    "border_left_color": "rgb(255, 0, 0)",
+                    "border_bottom_color": "rgb(255, 0, 0)",
+                    "border_top_color": "rgb(255, 0, 0)"
+                }
             },
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "XX"
+                        "text": "XX",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
+                    "display": "block",
                     "clear": "left",
-                    "top": "-200px",
-                    "width": "200px",
                     "border_right_color": "rgb(0, 128, 0)",
+                    "width": "200px",
+                    "position": "relative",
                     "max_width": "200px",
+                    "top": "-200px",
+                    "border_left_color": "rgb(0, 128, 0)",
                     "height": "200px",
                     "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "position": "relative",
-                    "display": "block"
-                },
-                "tag": "div"
+                    "border_top_color": "rgb(0, 128, 0)"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "504px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "'max-width' specifies a fixed maximum used width. If the used width is greater than max-width, then the computed value of max-width is used as the computed value for width.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ]
+    "matches": null
 }

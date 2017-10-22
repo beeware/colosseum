@@ -1,18 +1,15 @@
 {
     "assert": "Checks that minimum size for grid items is the content size.",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
-    ],
     "test_case": {
         "children": [
             {
                 "tag": "DIV",
                 "style": {
                     "display": "block",
-                    "height": "100px",
-                    "position": "absolute",
                     "width": "100px",
-                    "z_index": "-1"
+                    "position": "absolute",
+                    "z_index": "-1",
+                    "height": "100px"
                 }
             },
             {
@@ -20,21 +17,21 @@
                     {
                         "children": [
                             {
-                                "text": "IT E",
-                                "style": {}
+                                "style": {},
+                                "text": "IT E"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
-                            "height": "100px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
                             "width": "100px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "height": "100px",
                             "border_left_color": "rgb(0, 128, 0)",
+                            "min_width": "auto",
                             "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)"
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
@@ -49,13 +46,16 @@
         "tag": "BODY",
         "style": {
             "display": "block",
+            "width": "624px",
             "margin_left": "8px",
             "height": "10px",
-            "width": "624px",
-            "margin_right": "8px",
+            "margin_bottom": "8px",
             "margin_top": "8px",
-            "margin_bottom": "8px"
+            "margin_right": "8px"
         }
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#min-size-auto"
+    ]
 }

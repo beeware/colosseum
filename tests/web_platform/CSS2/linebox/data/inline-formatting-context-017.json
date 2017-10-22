@@ -1,54 +1,54 @@
 {
+    "assert": "If 'text-align' is set to 'justify' the user agent may stretch spaces and/or words.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
                         "text": "XXXX XXXX XXXXXX",
                         "style": {}
                     },
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "XXXXX XXXXXX XXX",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
                             "border_left_color": "rgb(0, 0, 255)",
                             "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)"
+                            "border_bottom_color": "rgb(0, 0, 255)",
+                            "border_top_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "width": "320px",
+                    "border_right_color": "rgb(255, 165, 0)",
+                    "border_left_color": "rgb(255, 165, 0)",
+                    "display": "block",
                     "border_top_color": "rgb(255, 165, 0)",
                     "height": "32px",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "display": "block",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "border_right_color": "rgb(255, 165, 0)"
+                    "width": "320px",
+                    "border_bottom_color": "rgb(255, 165, 0)"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "32px"
+            "height": "32px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "If 'text-align' is set to 'justify' the user agent may stretch spaces and/or words."
+    "matches": null
 }

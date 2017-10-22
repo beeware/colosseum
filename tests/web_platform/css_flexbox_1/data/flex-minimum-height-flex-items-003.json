@@ -1,69 +1,69 @@
 {
-    "assert": "Checks that minimum height for flex items is the min-content size if it's smaller than the specified size.",
     "test_case": {
+        "tag": "body",
         "style": {
-            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
             "width": "624px",
-            "height": "10px",
-            "margin_bottom": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_right": "8px",
+            "height": "10px"
         },
         "children": [
             {
+                "tag": "div",
                 "style": {
-                    "height": "100px",
                     "z_index": "-1",
+                    "position": "absolute",
                     "width": "100px",
                     "display": "block",
-                    "position": "absolute"
-                },
-                "tag": "div"
+                    "height": "100px"
+                }
             },
             {
+                "tag": "div",
                 "style": {
-                    "height": "10px",
                     "width": "100px",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "10px"
                 },
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "200px",
-                            "min_width": "auto",
-                            "width": "100px",
-                            "border_right_color": "rgb(0, 128, 0)",
                             "border_bottom_color": "rgb(0, 128, 0)",
                             "min_height": "auto",
-                            "display": "block"
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "display": "block",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "200px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "min_width": "auto",
+                            "width": "100px"
                         },
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
+                                    "border_bottom_color": "rgb(0, 128, 0)",
                                     "border_left_color": "rgb(0, 128, 0)",
+                                    "display": "block",
                                     "border_top_color": "rgb(0, 128, 0)",
                                     "height": "100px",
-                                    "width": "100px",
                                     "border_right_color": "rgb(0, 128, 0)",
-                                    "border_bottom_color": "rgb(0, 128, 0)",
-                                    "display": "block"
-                                },
-                                "tag": "div"
+                                    "width": "100px"
+                                }
                             }
-                        ],
-                        "tag": "div"
+                        ]
                     }
-                ],
-                "tag": "div"
+                ]
             }
-        ],
-        "tag": "body"
+        ]
     },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#min-size-auto"
     ],
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": "Checks that minimum height for flex items is the min-content size if it's smaller than the specified size."
 }

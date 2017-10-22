@@ -1,52 +1,52 @@
 {
+    "assert": "That glyphs bleed out of the box when 'line-height' can overlap adjoining line boxes.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "X X",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
                             "border_left_color": "rgb(0, 128, 0)",
                             "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)"
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
+                    "margin_top": "100px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
                     "display": "block",
                     "border_top_color": "rgb(0, 128, 0)",
-                    "margin_top": "100px",
+                    "height": "0px",
                     "width": "100px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "height": "0px"
+                    "border_bottom_color": "rgb(0, 128, 0)"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "0px"
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "line-height-bleed-002-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "That glyphs bleed out of the box when 'line-height' can overlap adjoining line boxes."
+    "matches": "line-height-bleed-002-ref.xht"
 }

@@ -1,83 +1,84 @@
 {
-    "assert": "Check if the web engine can indentify order property.",
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
             "width": "624px",
-            "height": "200px",
-            "margin_bottom": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_right": "8px",
+            "height": "200px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "0px",
                     "width": "624px",
-                    "display": "block"
-                },
-                "tag": "DIV"
+                    "display": "block",
+                    "height": "0px"
+                }
             },
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "200px",
                     "width": "200px",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "200px"
                 },
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "50px",
+                            "min_height": "auto",
                             "min_width": "auto",
                             "width": "50px",
                             "display": "block",
-                            "min_height": "auto"
+                            "height": "50px"
                         },
                         "children": [
                             {
                                 "style": {},
                                 "text": "1"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "50px",
+                            "min_height": "auto",
                             "min_width": "auto",
                             "width": "50px",
                             "display": "block",
-                            "min_height": "auto"
+                            "height": "50px"
                         },
                         "children": [
                             {
                                 "style": {},
                                 "text": "2"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "50px",
+                            "min_height": "auto",
                             "min_width": "auto",
                             "width": "50px",
                             "display": "block",
-                            "min_height": "auto"
+                            "height": "50px"
                         },
                         "children": [
                             {
                                 "style": {},
                                 "text": "3"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     }
-                ],
-                "tag": "DIV"
+                ]
             },
             {
+                "tag": "SCRIPT",
                 "style": {
                     "display": "none"
                 },
@@ -86,14 +87,13 @@
                         "style": {},
                         "text": "var t = async_test(document.title, {timeout:500});\n        t.step(function () {\n            assert_equals(document.getElementById(\"test01\").offsetTop, document.getElementById(\"test02\").offsetTop, \"Rectangle 1 and 2 have the same offsetTop value\");\n            assert_equals((document.getElementById(\"test02\").offsetLeft >= document.getElementById(\"test01\").offsetLeft), false, \"Rectangle 2 have a smaller offsetLeft value than 1.\");\n        });\n        t.done();"
                     }
-                ],
-                "tag": "SCRIPT"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#order-property"
     ],
-    "matches": null
+    "matches": null,
+    "assert": "Check if the web engine can indentify order property."
 }

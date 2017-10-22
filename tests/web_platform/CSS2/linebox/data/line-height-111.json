@@ -1,69 +1,69 @@
 {
+    "assert": "The 'line-height' property set to 'normal' uses the default line-height.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
                         "tag": "div",
                         "style": {
-                            "width": "100px",
-                            "display": "block",
                             "float": "left",
-                            "height": "120px"
+                            "display": "block",
+                            "height": "120px",
+                            "width": "100px"
                         }
                     },
                     {
-                        "tag": "div",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "float": "left",
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
+                            "display": "block",
                             "border_top_color": "rgb(0, 0, 255)",
                             "height": "100px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "display": "block",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "width": "100px"
+                            "width": "100px",
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "width": "100px",
-                            "display": "block",
                             "float": "left",
-                            "height": "100px"
+                            "display": "block",
+                            "height": "100px",
+                            "width": "100px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "0px"
+                    "height": "0px",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "0px"
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'line-height' property set to 'normal' uses the default line-height."
+    "matches": null
 }

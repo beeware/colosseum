@@ -1,86 +1,86 @@
 {
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-containers",
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align"
     ],
     "assert": null,
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "margin_bottom": "8px",
-            "height": "100px",
-            "width": "624px",
-            "margin_right": "8px",
-            "display": "block",
-            "margin_left": "8px"
-        },
+        "tag": "BODY",
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "position": "absolute",
                     "display": "block",
+                    "position": "absolute",
                     "height": "100px",
-                    "width": "100px",
-                    "z_index": "-1"
-                },
-                "tag": "DIV"
+                    "z_index": "-1",
+                    "width": "100px"
+                }
             },
             {
-                "style": {
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "height": "100px",
-                    "width": "100px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "display": "inline-grid",
-                    "border_right_color": "rgb(0, 128, 0)"
-                },
+                "tag": "DIV",
                 "children": [
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "50px",
-                            "width": "100px",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "display": "block",
-                            "border_right_color": "rgb(0, 128, 0)"
-                        },
+                        "tag": "SPAN",
                         "children": [
                             {
-                                "style": {},
-                                "text": "1s"
+                                "text": "1s",
+                                "style": {}
                             }
                         ],
-                        "tag": "SPAN"
+                        "style": {
+                            "display": "block",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "width": "100px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "50px",
+                            "min_width": "auto"
+                        }
                     },
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "50px",
-                            "width": "100px",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "display": "block",
-                            "border_right_color": "rgb(0, 128, 0)"
-                        },
+                        "tag": "SPAN",
                         "children": [
                             {
-                                "style": {},
-                                "text": "2n"
+                                "text": "2n",
+                                "style": {}
                             }
                         ],
-                        "tag": "SPAN"
+                        "style": {
+                            "display": "block",
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "width": "100px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "min_height": "auto",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "height": "50px",
+                            "min_width": "auto"
+                        }
                     }
                 ],
-                "tag": "DIV"
+                "style": {
+                    "display": "inline-grid",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_left_color": "rgb(0, 128, 0)",
+                    "width": "100px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "100px"
+                }
             }
         ],
-        "tag": "BODY"
-    },
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+        "style": {
+            "display": "block",
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_right": "8px",
+            "height": "100px",
+            "margin_bottom": "8px"
+        }
+    }
 }

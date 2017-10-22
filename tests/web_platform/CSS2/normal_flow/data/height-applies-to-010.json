@@ -1,31 +1,31 @@
 {
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "height": "96px",
-                    "display": "list-item",
-                    "margin_left": "32px",
-                    "width": "96px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "96px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": "The 'height' property applies to elements with 'display' set to 'list-item'.",
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-height",
         "http://www.w3.org/TR/CSS21/visudet.html#the-height-property"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "display": "list-item",
+                    "height": "96px",
+                    "margin_left": "32px",
+                    "width": "96px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "96px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "The 'height' property applies to elements with 'display' set to 'list-item'.",
+    "matches": null
 }

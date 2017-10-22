@@ -1,61 +1,61 @@
 {
-    "assert": "Percentage offset values for the 'bottom' property are based off the height of the containing block.",
+    "matches": "bottom-offset-percentage-001-ref.xht",
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "206px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "border_left_width": "3px",
-                    "position": "relative",
-                    "width": "100px",
-                    "border_right_width": "3px",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "height": "200px",
-                    "border_right_style": "solid",
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid",
-                    "display": "block",
-                    "border_top_width": "3px"
-                },
                 "children": [
                     {
                         "style": {
-                            "display": "block",
-                            "top": "50px",
-                            "height": "50px",
                             "position": "absolute",
+                            "height": "50px",
+                            "top": "50px",
+                            "display": "block",
                             "width": "50px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
+                            "position": "absolute",
                             "height": "50px",
                             "display": "block",
-                            "bottom": "50%",
-                            "position": "absolute",
-                            "width": "50px"
+                            "width": "50px",
+                            "bottom": "50%"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "border_left_width": "3px",
+                    "position": "relative",
+                    "width": "100px",
+                    "border_left_style": "solid",
+                    "height": "200px",
+                    "border_right_width": "3px",
+                    "display": "block",
+                    "border_top_style": "solid",
+                    "border_top_width": "3px",
+                    "border_right_style": "solid",
+                    "border_bottom_width": "3px",
+                    "border_bottom_style": "solid"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "206px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Percentage offset values for the 'bottom' property are based off the height of the containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
-    "matches": "bottom-offset-percentage-001-ref.xht"
+    ]
 }

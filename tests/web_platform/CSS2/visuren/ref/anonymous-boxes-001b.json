@@ -1,29 +1,7 @@
 {
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "padding_box": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            200
-        ]
-    },
     "children": [
         {
-            "text": "\n\n  "
-        },
-        {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
+            "border": [
                 0,
                 0,
                 0,
@@ -40,13 +18,13 @@
                 ]
             },
             "tag": "div",
-            "border": [
+            "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "border_box": {
                 "position": [
                     8,
                     122
@@ -57,7 +35,7 @@
                 ]
             },
             "id": "overlapped-red",
-            "border_box": {
+            "content": {
                 "position": [
                     8,
                     122
@@ -69,31 +47,16 @@
             }
         },
         {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    624,
-                    200
-                ]
-            },
             "children": [
                 {
-                    "text": "Some "
+                    "text": "Some ",
+                    "size": [
+                        160,
+                        40
+                    ]
                 },
                 {
-                    "padding": [
+                    "border": [
                         0,
                         0,
                         0,
@@ -110,13 +73,13 @@
                         ]
                     },
                     "tag": "div",
-                    "border": [
+                    "padding": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "content": {
+                    "border_box": {
                         "position": [
                             8,
                             58
@@ -127,7 +90,7 @@
                         ]
                     },
                     "id": "child-of-anonymous-block-box",
-                    "border_box": {
+                    "content": {
                         "position": [
                             8,
                             58
@@ -139,10 +102,16 @@
                     }
                 },
                 {
-                    "text": " text\n    "
+                    "text": " text\n    ",
+                    "size": [
+                        160,
+                        40
+                    ]
                 },
                 {
-                    "padding": [
+                    "text": "More text",
+                    "children": [],
+                    "border": [
                         0,
                         0,
                         0,
@@ -158,19 +127,14 @@
                             50
                         ]
                     },
-                    "children": [
-                        {
-                            "text": "More text"
-                        }
-                    ],
                     "tag": "p",
-                    "border": [
+                    "padding": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "content": {
+                    "border_box": {
                         "position": [
                             8,
                             248
@@ -181,7 +145,7 @@
                         ]
                     },
                     "id": "",
-                    "border_box": {
+                    "content": {
                         "position": [
                             8,
                             248
@@ -191,19 +155,32 @@
                             50
                         ]
                     }
-                },
-                {
-                    "text": "\n  "
                 }
             ],
-            "tag": "div",
             "border": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    624,
+                    200
+                ]
+            },
+            "tag": "div",
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
                 "position": [
                     8,
                     8
@@ -214,7 +191,7 @@
                 ]
             },
             "id": "closest-non-anonymous-ancestor",
-            "border_box": {
+            "content": {
                 "position": [
                     8,
                     8
@@ -226,23 +203,37 @@
             }
         },
         {
-            "text": "\n\n  "
-        },
-        {
-            "text": "\n  For example, if the child of the anonymous block box inside the DIV\n  above needs to know the height of its containing block to resolve a\n  percentage height, then it will use the height of the containing\n  block formed by the DIV, not of the anonymous block box.\n  "
-        },
-        {
-            "text": "\n\n "
+            "text": "",
+            "size": [
+                0,
+                0
+            ]
         }
     ],
-    "tag": "body",
     "border": [
         0,
         0,
         0,
         0
     ],
-    "content": {
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            200
+        ]
+    },
+    "tag": "body",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "border_box": {
         "position": [
             8,
             8
@@ -253,7 +244,7 @@
         ]
     },
     "id": "",
-    "border_box": {
+    "content": {
         "position": [
             8,
             8

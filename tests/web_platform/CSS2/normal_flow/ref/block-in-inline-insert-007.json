@@ -1,10 +1,6 @@
 {
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "body",
+    "id": "",
     "padding_box": {
         "position": [
             8,
@@ -15,171 +11,11 @@
             54
         ]
     },
-    "tag": "body",
-    "id": "",
-    "border": [
+    "padding": [
         0,
         0,
         0,
         0
-    ],
-    "children": [
-        {
-            "text": "\n  "
-        },
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    11,
-                    8
-                ],
-                "size": [
-                    618,
-                    54
-                ]
-            },
-            "tag": "span",
-            "id": "target",
-            "border": [
-                3,
-                3,
-                3,
-                3
-            ],
-            "children": [
-                {
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            26
-                        ],
-                        "size": [
-                            624,
-                            18
-                        ]
-                    },
-                    "tag": "div",
-                    "id": "",
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "children": [
-                        {
-                            "text": "One"
-                        }
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            26
-                        ],
-                        "size": [
-                            624,
-                            18
-                        ]
-                    },
-                    "content": {
-                        "position": [
-                            8,
-                            26
-                        ],
-                        "size": [
-                            624,
-                            18
-                        ]
-                    }
-                },
-                {
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            44
-                        ],
-                        "size": [
-                            28.2109375,
-                            18
-                        ]
-                    },
-                    "tag": "span",
-                    "id": "insertion",
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "children": [
-                        {
-                            "text": "Two"
-                        }
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            44
-                        ],
-                        "size": [
-                            28.2109375,
-                            18
-                        ]
-                    },
-                    "content": {
-                        "position": [
-                            8,
-                            44
-                        ],
-                        "size": [
-                            28.2109375,
-                            18
-                        ]
-                    }
-                }
-            ],
-            "border_box": {
-                "position": [
-                    8,
-                    5
-                ],
-                "size": [
-                    624,
-                    60
-                ]
-            },
-            "content": {
-                "position": [
-                    11,
-                    8
-                ],
-                "size": [
-                    618,
-                    54
-                ]
-            }
-        },
-        {
-            "text": "\n\n\n"
-        }
     ],
     "border_box": {
         "position": [
@@ -200,5 +36,157 @@
             624,
             54
         ]
-    }
+    },
+    "children": [
+        {
+            "tag": "span",
+            "id": "target",
+            "padding_box": {
+                "position": [
+                    11,
+                    8
+                ],
+                "size": [
+                    618,
+                    54
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
+                "position": [
+                    8,
+                    5
+                ],
+                "size": [
+                    624,
+                    60
+                ]
+            },
+            "content": {
+                "position": [
+                    11,
+                    8
+                ],
+                "size": [
+                    618,
+                    54
+                ]
+            },
+            "children": [
+                {
+                    "tag": "div",
+                    "id": "",
+                    "padding_box": {
+                        "position": [
+                            8,
+                            26
+                        ],
+                        "size": [
+                            624,
+                            18
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            8,
+                            26
+                        ],
+                        "size": [
+                            624,
+                            18
+                        ]
+                    },
+                    "text": "One",
+                    "content": {
+                        "position": [
+                            8,
+                            26
+                        ],
+                        "size": [
+                            624,
+                            18
+                        ]
+                    },
+                    "children": [],
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "tag": "span",
+                    "id": "insertion",
+                    "padding_box": {
+                        "position": [
+                            8,
+                            44
+                        ],
+                        "size": [
+                            28.2109375,
+                            18
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "border_box": {
+                        "position": [
+                            8,
+                            44
+                        ],
+                        "size": [
+                            28.2109375,
+                            18
+                        ]
+                    },
+                    "text": "Two",
+                    "content": {
+                        "position": [
+                            8,
+                            44
+                        ],
+                        "size": [
+                            28.2109375,
+                            18
+                        ]
+                    },
+                    "children": [],
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "border": [
+                3,
+                3,
+                3,
+                3
+            ]
+        }
+    ],
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

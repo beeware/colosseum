@@ -1,50 +1,50 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
                         "children": [],
+                        "tag": "span",
                         "style": {
                             "display": "table-cell",
                             "height": "18px",
                             "width": "100px"
-                        },
-                        "tag": "span"
+                        }
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "Filler Text"
+                                "text": "Filler Text",
+                                "style": {}
                             }
                         ],
-                        "style": {},
-                        "tag": "span"
+                        "tag": "span",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "36px",
                     "width": "624px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "36px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "Elements defined as table-cell elements establish a new block formatting context.",
-    "matches": "block-formatting-contexts-011-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ]
+    "matches": "block-formatting-contexts-011-ref.xht"
 }

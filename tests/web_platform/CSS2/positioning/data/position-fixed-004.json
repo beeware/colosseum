@@ -1,80 +1,80 @@
 {
-    "assert": "Fixed position elements are positioned with respect to the page box when printed.",
+    "matches": null,
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "480px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "PREREQUISITE: Switch to print preview or a paged view."
                     }
                 ],
+                "style": {
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
                 "tag": "p"
             },
             {
-                "style": {
-                    "height": "18px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "Test passes if the \"Filler Text\" is on all five pages when paginated or printed."
                     }
                 ],
+                "style": {
+                    "height": "18px",
+                    "margin_bottom": "16px",
+                    "display": "block",
+                    "margin_top": "16px",
+                    "width": "624px"
+                },
                 "tag": "p"
             },
             {
-                "style": {
-                    "display": "block",
-                    "height": "18px",
-                    "width": "624px"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "Filler Text"
                     }
                 ],
+                "style": {
+                    "height": "18px",
+                    "display": "block",
+                    "width": "624px"
+                },
                 "tag": "div"
             },
             {
                 "style": {
-                    "margin_top": "10px",
+                    "margin_left": "10px",
                     "height": "1920px",
-                    "margin_bottom": "10px",
-                    "margin_right": "10px",
                     "display": "block",
-                    "width": "604px",
-                    "margin_left": "10px"
+                    "margin_top": "10px",
+                    "margin_right": "10px",
+                    "margin_bottom": "10px",
+                    "width": "604px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "480px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Fixed position elements are positioned with respect to the page box when printed.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ],
-    "matches": null
+    ]
 }

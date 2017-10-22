@@ -1,67 +1,67 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#block-replaced-width"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "tag": "img",
                         "style": {
-                            "height": "15px",
                             "display": "block",
+                            "height": "15px",
                             "margin_left": "88.5px",
-                            "margin_right": "88.5px",
-                            "width": "15px"
-                        },
-                        "tag": "img"
+                            "width": "15px",
+                            "margin_right": "88.5px"
+                        }
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "X"
+                                "text": "X",
+                                "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "height": "15px",
+                            "display": "block",
                             "border_right_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
                             "width": "192px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                            "height": "15px",
+                            "border_left_color": "rgb(255, 165, 0)",
+                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "border_top_color": "rgb(255, 165, 0)"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "height": "192px",
-                    "border_bottom_style": "solid",
-                    "border_right_style": "solid",
                     "display": "block",
-                    "border_left_width": "3px",
-                    "border_right_width": "3px",
-                    "border_top_width": "3px",
-                    "border_top_style": "solid",
+                    "border_bottom_width": "3px",
                     "border_left_style": "solid",
+                    "border_left_width": "3px",
+                    "border_bottom_style": "solid",
+                    "border_top_width": "3px",
                     "width": "192px",
-                    "border_bottom_width": "3px"
-                },
-                "tag": "div"
+                    "border_right_width": "3px",
+                    "border_right_style": "solid",
+                    "height": "192px",
+                    "border_top_style": "solid"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "198px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "Computed value of 'auto' for 'margin-left' or margin-right' on block replaced elements becomes a used value of '0'. The intrinsic width is also used if 'height' and 'width' are 'auto'.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#block-replaced-width"
-    ]
+    "matches": null
 }

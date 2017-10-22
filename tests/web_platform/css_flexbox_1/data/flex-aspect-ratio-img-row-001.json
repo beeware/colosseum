@@ -1,49 +1,49 @@
 {
-    "assert": null,
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
             "width": "624px",
-            "height": "100px",
-            "margin_bottom": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_right": "8px",
+            "height": "100px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "100px",
                     "z_index": "-1",
+                    "position": "absolute",
                     "width": "100px",
                     "display": "block",
-                    "position": "absolute"
-                },
-                "tag": "DIV"
+                    "height": "100px"
+                }
             },
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "100px",
                     "width": "10px",
-                    "display": "flex"
+                    "display": "flex",
+                    "height": "100px"
                 },
                 "children": [
                     {
+                        "tag": "IMG",
                         "style": {
-                            "height": "100px",
                             "width": "100px",
-                            "display": "block"
-                        },
-                        "tag": "IMG"
+                            "display": "block",
+                            "height": "100px"
+                        }
                     }
-                ],
-                "tag": "DIV"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "https://drafts.csswg.org/css-flexbox-1/#hypothetical-main-size"
     ],
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "matches": "../reference/ref-filled-green-100px-square.xht",
+    "assert": null
 }

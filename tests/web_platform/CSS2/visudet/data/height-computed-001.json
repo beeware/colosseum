@@ -1,59 +1,59 @@
 {
+    "matches": "height-computed-001-ref.xht",
+    "assert": "If the resulting height is smaller than 'min-height', the rules above are applied again, but this time using the value of 'min-height' as the computed value for 'height'. Note: These steps do not affect the real computed value of 'height'.",
     "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "height": "140px",
+            "margin_left": "8px",
+            "width": "624px",
+            "margin_top": "8px",
+            "display": "block",
+            "margin_bottom": "8px"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "margin_top": "14px",
+                    "height": "140px",
+                    "width": "624px",
+                    "display": "block",
+                    "margin_bottom": "14px"
+                },
+                "tag": "p",
                 "children": [
                     {
+                        "style": {
+                            "height": "140px",
+                            "min_height": "140px",
+                            "display": "inline-block",
+                            "width": "140px"
+                        },
+                        "tag": "span",
                         "children": [
                             {
                                 "style": {
-                                    "display": "inline-block",
                                     "height": "70px",
+                                    "display": "inline-block",
                                     "width": "70px"
                                 },
                                 "tag": "span"
                             },
                             {
                                 "style": {
-                                    "display": "inline-block",
                                     "height": "70px",
+                                    "display": "inline-block",
                                     "width": "70px"
                                 },
                                 "tag": "span"
                             }
-                        ],
-                        "style": {
-                            "display": "inline-block",
-                            "height": "140px",
-                            "min_height": "140px",
-                            "width": "140px"
-                        },
-                        "tag": "span"
+                        ]
                     }
-                ],
-                "style": {
-                    "display": "block",
-                    "width": "624px",
-                    "margin_top": "14px",
-                    "height": "140px",
-                    "margin_bottom": "14px"
-                },
-                "tag": "p"
+                ]
             }
-        ],
-        "style": {
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "height": "140px",
-            "width": "624px",
-            "display": "block",
-            "margin_bottom": "8px"
-        },
-        "tag": "body"
+        ]
     },
-    "matches": "height-computed-001-ref.xht",
-    "assert": "If the resulting height is smaller than 'min-height', the rules above are applied again, but this time using the value of 'min-height' as the computed value for 'height'. Note: These steps do not affect the real computed value of 'height'.",
     "help": [
         "http://www.w3.org/TR/CSS22/visudet.html#min-max-heights",
         "http://www.w3.org/TR/CSS22/changes.html#s.10.7"

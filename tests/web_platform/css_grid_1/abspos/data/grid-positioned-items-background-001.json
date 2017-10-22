@@ -1,158 +1,158 @@
 {
-    "assert": "This test checks that the background of positioned items is painted in the right position",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ],
+    "matches": "grid-positioned-items-background-001-ref.html",
     "test_case": {
-        "tag": "BODY",
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "width": "624px"
-        },
         "children": [
             {
-                "tag": "DIV",
-                "style": {
-                    "display": "block",
-                    "position": "relative",
-                    "height": "400px",
-                    "float": "left",
-                    "width": "600px"
-                },
                 "children": [
                     {
                         "tag": "DIV",
                         "style": {
+                            "top": "50px",
                             "display": "block",
-                            "left": "55px",
                             "height": "50px",
-                            "position": "absolute",
-                            "top": "50px",
-                            "width": "100px"
+                            "width": "100px",
+                            "left": "55px",
+                            "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
+                            "top": "50px",
                             "display": "block",
-                            "left": "290px",
                             "height": "20px",
-                            "position": "absolute",
-                            "top": "50px",
-                            "width": "50px"
+                            "width": "50px",
+                            "left": "290px",
+                            "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "display": "block",
-                            "left": "50px",
-                            "height": "30px",
-                            "position": "absolute",
                             "top": "115px",
-                            "width": "50px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
                             "display": "block",
-                            "left": "175px",
-                            "height": "75px",
-                            "position": "absolute",
-                            "top": "135px",
-                            "width": "145px"
+                            "height": "30px",
+                            "width": "50px",
+                            "left": "50px",
+                            "position": "absolute"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "margin_top": "30px",
-                            "padding_bottom": "15px",
-                            "height": "300px",
-                            "margin_left": "30px",
-                            "border_left_style": "solid",
-                            "margin_right": "30px",
-                            "margin_bottom": "30px",
-                            "border_right_style": "solid",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_bottom_width": "5px",
-                            "border_left_width": "5px",
-                            "width": "500px",
-                            "border_top_width": "5px",
-                            "border_right_width": "5px",
-                            "padding_top": "15px",
-                            "position": "relative",
-                            "border_top_style": "solid",
-                            "padding_right": "15px",
-                            "padding_left": "15px"
-                        },
+                            "top": "135px",
+                            "display": "block",
+                            "height": "75px",
+                            "width": "145px",
+                            "left": "175px",
+                            "position": "absolute"
+                        }
+                    },
+                    {
                         "children": [
                             {
+                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "display": "block",
-                                    "min_height": "auto",
-                                    "left": "5px",
-                                    "height": "50px",
-                                    "position": "absolute",
                                     "min_width": "auto",
-                                    "width": "100px"
-                                },
-                                "children": []
+                                    "min_height": "auto",
+                                    "display": "block",
+                                    "height": "50px",
+                                    "width": "100px",
+                                    "left": "5px",
+                                    "position": "absolute"
+                                }
                             },
                             {
+                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "display": "block",
-                                    "height": "20px",
+                                    "min_width": "auto",
                                     "min_height": "auto",
                                     "right": "10px",
-                                    "position": "absolute",
+                                    "display": "block",
                                     "width": "50px",
-                                    "min_width": "auto"
-                                },
-                                "children": []
+                                    "height": "20px",
+                                    "position": "absolute"
+                                }
                             },
                             {
+                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "display": "block",
-                                    "min_height": "auto",
-                                    "height": "30px",
-                                    "position": "absolute",
-                                    "top": "15px",
-                                    "width": "50px",
-                                    "min_width": "auto"
-                                },
-                                "children": []
-                            },
-                            {
-                                "tag": "DIV",
-                                "style": {
-                                    "display": "block",
-                                    "height": "75px",
                                     "min_width": "auto",
                                     "min_height": "auto",
-                                    "left": "25px",
+                                    "top": "15px",
+                                    "display": "block",
+                                    "width": "50px",
+                                    "height": "30px",
+                                    "position": "absolute"
+                                }
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "min_width": "auto",
+                                    "min_height": "auto",
                                     "right": "30px",
-                                    "position": "absolute",
                                     "top": "35px",
+                                    "display": "block",
+                                    "height": "75px",
+                                    "width": "145px",
                                     "bottom": "40px",
-                                    "width": "145px"
+                                    "left": "25px",
+                                    "position": "absolute"
                                 }
                             }
-                        ]
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "margin_right": "30px",
+                            "border_bottom_width": "5px",
+                            "padding_top": "15px",
+                            "padding_bottom": "15px",
+                            "width": "500px",
+                            "margin_left": "30px",
+                            "height": "300px",
+                            "border_top_style": "solid",
+                            "border_right_style": "solid",
+                            "position": "relative",
+                            "border_right_width": "5px",
+                            "display": "grid",
+                            "border_bottom_style": "solid",
+                            "border_left_style": "solid",
+                            "margin_bottom": "30px",
+                            "border_top_width": "5px",
+                            "padding_right": "15px",
+                            "padding_left": "15px",
+                            "margin_top": "30px"
+                        }
                     }
-                ]
+                ],
+                "tag": "DIV",
+                "style": {
+                    "float": "left",
+                    "width": "600px",
+                    "height": "400px",
+                    "position": "relative",
+                    "display": "block"
+                }
             }
-        ]
+        ],
+        "tag": "BODY",
+        "style": {
+            "display": "block",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_right": "8px"
+        }
     },
-    "matches": "grid-positioned-items-background-001-ref.html",
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ]
+    "assert": "This test checks that the background of positioned items is painted in the right position"
 }

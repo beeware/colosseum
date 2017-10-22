@@ -1,4 +1,7 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ],
     "test_case": {
         "children": [
             {
@@ -6,42 +9,39 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "Filler Text"
+                                "text": "Filler Text",
+                                "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "height": "18px",
-                            "min_width": "200%",
-                            "width": "133.75px"
-                        },
-                        "tag": "div"
+                            "width": "133.75px",
+                            "min_width": "200%"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "18px",
-                    "width": "66.875px",
-                    "float": "left"
-                },
-                "tag": "div"
+                    "float": "left",
+                    "width": "66.875px"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "0px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "If the containing block's width depends on this element's width, then the resulting layout is undefined.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    "matches": null
 }

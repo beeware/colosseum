@@ -1,12 +1,5 @@
 {
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "id": "",
-    "padding_box": {
+    "border_box": {
         "position": [
             8,
             8
@@ -18,17 +11,7 @@
     },
     "children": [
         {
-            "text": "\n\n"
-        },
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "id": "wrapper",
-            "padding_box": {
+            "border_box": {
                 "position": [
                     8,
                     8
@@ -40,17 +23,7 @@
             },
             "children": [
                 {
-                    "text": "\n  "
-                },
-                {
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "id": "grid",
-                    "padding_box": {
+                    "border_box": {
                         "position": [
                             8,
                             8
@@ -62,16 +35,17 @@
                     },
                     "children": [
                         {
-                            "text": "\n    "
-                        },
-                        {
-                            "padding": [
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
-                            "id": "item",
+                            "border_box": {
+                                "position": [
+                                    8,
+                                    8
+                                ],
+                                "size": [
+                                    100,
+                                    100
+                                ]
+                            },
+                            "tag": "div",
                             "padding_box": {
                                 "position": [
                                     8,
@@ -92,28 +66,32 @@
                                     100
                                 ]
                             },
-                            "border_box": {
-                                "position": [
-                                    8,
-                                    8
-                                ],
-                                "size": [
-                                    100,
-                                    100
-                                ]
-                            },
-                            "tag": "DIV",
+                            "padding": [
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
                             "border": [
                                 0,
                                 0,
                                 0,
                                 0
-                            ]
-                        },
-                        {
-                            "text": "\n  "
+                            ],
+                            "id": "item"
                         }
                     ],
+                    "tag": "div",
+                    "padding_box": {
+                        "position": [
+                            8,
+                            8
+                        ],
+                        "size": [
+                            200,
+                            100
+                        ]
+                    },
                     "content": {
                         "position": [
                             8,
@@ -124,28 +102,32 @@
                             100
                         ]
                     },
-                    "border_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            200,
-                            100
-                        ]
-                    },
-                    "tag": "DIV",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
                     "border": [
                         0,
                         0,
                         0,
                         0
-                    ]
-                },
-                {
-                    "text": "\n"
+                    ],
+                    "id": "grid"
                 }
             ],
+            "tag": "div",
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    200,
+                    200
+                ]
+            },
             "content": {
                 "position": [
                     8,
@@ -156,82 +138,32 @@
                     200
                 ]
             },
-            "border_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    200,
-                    200
-                ]
-            },
-            "tag": "DIV",
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ]
-        },
-        {
-            "text": "\n\n"
-        },
-        {
             "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "id": "",
-            "padding_box": {
-                "position": [
-                    0,
-                    0
-                ],
-                "size": [
-                    0,
-                    0
-                ]
-            },
-            "children": [
-                {
-                    "text": "\n  window.requestAnimationFrame(() => {\n    document.getElementById(\"item\").style.position = \"absolute\";\n    document.body.offsetLeft;\n    document.documentElement.classList.remove('reftest-wait');\n  });\n"
-                }
-            ],
-            "content": {
-                "position": [
-                    0,
-                    0
-                ],
-                "size": [
-                    0,
-                    0
-                ]
-            },
-            "border_box": {
-                "position": [
-                    0,
-                    0
-                ],
-                "size": [
-                    0,
-                    0
-                ]
-            },
-            "tag": "SCRIPT",
             "border": [
                 0,
                 0,
                 0,
                 0
-            ]
-        },
-        {
-            "text": "\n\n\n"
+            ],
+            "id": "wrapper"
         }
     ],
+    "tag": "body",
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            200
+        ]
+    },
     "content": {
         "position": [
             8,
@@ -242,21 +174,17 @@
             200
         ]
     },
-    "border_box": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            200
-        ]
-    },
-    "tag": "BODY",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
     "border": [
         0,
         0,
         0,
         0
-    ]
+    ],
+    "id": ""
 }

@@ -1,37 +1,39 @@
 {
+    "assert": "The baseline of an 'inline-block' whose 'overflow' property has a computed value other than 'visible' is located at its bottom margin edge.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "div",
                         "children": [
                             {
                                 "text": "XXX XXX XXX",
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
+                            "border_right_color": "rgb(0, 0, 255)",
+                            "border_left_color": "rgb(0, 0, 255)",
                             "display": "inline-block",
                             "border_top_color": "rgb(0, 0, 255)",
                             "height": "100px",
+                            "width": "100px",
                             "margin_bottom": "99px",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "width": "100px"
+                            "border_bottom_color": "rgb(0, 0, 255)"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "position": "absolute",
-                            "display": "block",
                             "top": "72px",
-                            "width": "55px",
-                            "height": "250px"
+                            "display": "block",
+                            "height": "250px",
+                            "position": "absolute",
+                            "width": "55px"
                         }
                     },
                     {
@@ -39,26 +41,24 @@
                         "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "199px"
+                    "height": "199px",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "199px"
+            "height": "199px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "vertical-align-baseline-004a-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The baseline of an 'inline-block' whose 'overflow' property has a computed value other than 'visible' is located at its bottom margin edge."
+    "matches": "vertical-align-baseline-004a-ref.xht"
 }

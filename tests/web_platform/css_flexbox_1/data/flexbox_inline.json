@@ -1,32 +1,32 @@
 {
-    "assert": null,
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "height": "18px",
             "width": "640px",
-            "display": "block"
+            "display": "block",
+            "height": "18px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "18px",
                     "margin_top": "-320px",
                     "width": "111.09375px",
-                    "display": "inline-flex"
+                    "display": "inline-flex",
+                    "height": "18px"
                 },
                 "children": [
                     {
                         "style": {},
                         "text": "HELLOWORLD"
                     }
-                ],
-                "tag": "DIV"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
     ],
-    "matches": "flexbox_inline-ref.html"
+    "matches": "flexbox_inline-ref.html",
+    "assert": null
 }

@@ -1,8 +1,5 @@
 {
     "assert": "the nested grid should behave the same as reference.",
-    "help": [
-        "https://drafts.csswg.org/css-grid/#grid-items"
-    ],
     "test_case": {
         "children": [
             {
@@ -22,10 +19,10 @@
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "50px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     },
                     {
@@ -45,10 +42,10 @@
                                 "tag": "DIV",
                                 "style": {
                                     "display": "block",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "50px",
-                                    "height": "50px"
+                                    "min_height": "auto",
+                                    "height": "50px",
+                                    "min_width": "auto"
                                 }
                             },
                             {
@@ -66,20 +63,20 @@
                                 "tag": "DIV",
                                 "style": {
                                     "display": "block",
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "50px",
-                                    "height": "50px"
+                                    "min_height": "auto",
+                                    "height": "50px",
+                                    "min_width": "auto"
                                 }
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "grid",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     },
                     {
@@ -97,10 +94,10 @@
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "50px"
+                            "min_height": "auto",
+                            "height": "50px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -119,5 +116,8 @@
             "height": "150px"
         }
     },
-    "matches": "../reference/grid-layout-grid-in-grid-ref.html"
+    "matches": "../reference/grid-layout-grid-in-grid-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid/#grid-items"
+    ]
 }

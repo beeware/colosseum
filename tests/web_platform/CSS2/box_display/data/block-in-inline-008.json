@@ -1,55 +1,55 @@
 {
+    "matches": "block-in-inline-008-ref.xht",
+    "assert": null,
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "160px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "style": {
-                    "display": "block",
+                    "width": "80px",
                     "height": "80px",
-                    "width": "80px"
-                }
+                    "display": "block"
+                },
+                "tag": "div"
             },
             {
+                "style": {
+                    "width": "624px",
+                    "height": "80px",
+                    "display": "block"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {},
+                        "tag": "div",
                         "children": [
                             {
-                                "tag": "div",
                                 "style": {
-                                    "display": "block",
                                     "top": "-80px",
+                                    "height": "80px",
                                     "position": "relative",
                                     "width": "80px",
-                                    "height": "80px"
-                                }
+                                    "display": "block"
+                                },
+                                "tag": "div"
                             }
-                        ],
-                        "tag": "div",
-                        "style": {}
+                        ]
                     }
-                ],
-                "tag": "div",
-                "style": {
-                    "display": "block",
-                    "height": "80px",
-                    "width": "624px"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "160px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
-    "matches": "block-in-inline-008-ref.xht"
+    ]
 }

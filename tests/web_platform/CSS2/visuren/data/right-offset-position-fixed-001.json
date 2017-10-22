@@ -1,35 +1,34 @@
 {
-    "matches": "right-offset-position-fixed-001-ref.xht",
     "test_case": {
         "style": {
-            "direction": "rtl",
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "0px",
             "margin_top": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "direction": "rtl",
+            "height": "0px",
+            "margin_bottom": "8px",
+            "width": "624px"
         },
         "children": [
             {
                 "style": {
-                    "direction": "rtl",
-                    "position": "relative",
-                    "width": "312px",
-                    "height": "0px",
                     "display": "block",
+                    "position": "relative",
+                    "height": "0px",
+                    "direction": "rtl",
+                    "width": "312px",
                     "right": "50%"
                 },
                 "children": [
                     {
                         "style": {
-                            "direction": "rtl",
-                            "position": "fixed",
-                            "width": "100px",
-                            "height": "100px",
                             "display": "block",
-                            "z_index": "0"
+                            "position": "fixed",
+                            "z_index": "0",
+                            "direction": "rtl",
+                            "height": "100px",
+                            "width": "100px"
                         },
                         "tag": "div"
                     }
@@ -38,11 +37,11 @@
             },
             {
                 "style": {
-                    "direction": "rtl",
-                    "position": "absolute",
-                    "width": "100px",
-                    "height": "100px",
                     "display": "block",
+                    "position": "absolute",
+                    "height": "100px",
+                    "direction": "rtl",
+                    "width": "100px",
                     "right": "50%"
                 },
                 "tag": "div"
@@ -50,6 +49,7 @@
         ],
         "tag": "body"
     },
+    "matches": "right-offset-position-fixed-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props",
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width",
