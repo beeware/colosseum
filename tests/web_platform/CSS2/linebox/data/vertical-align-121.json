@@ -1,97 +1,97 @@
 {
-    "test_case": {
-        "tag": "body",
-        "children": [
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "text": "x",
-                        "style": {}
-                    },
-                    {
-                        "tag": "span",
-                        "children": [
-                            {
-                                "text": "X",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)",
-                            "border_bottom_color": "rgb(0, 0, 128)"
-                        }
-                    },
-                    {
-                        "text": "x",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "display": "block",
-                    "border_top_color": "rgb(0, 0, 128)",
-                    "height": "60px",
-                    "border_bottom_style": "solid",
-                    "border_right_color": "rgb(0, 0, 128)",
-                    "width": "180px",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_left_color": "rgb(0, 0, 128)",
-                    "border_bottom_width": "3px"
-                }
-            },
-            {
-                "tag": "div",
-                "children": [
-                    {
-                        "text": "x",
-                        "style": {}
-                    },
-                    {
-                        "tag": "span",
-                        "children": [
-                            {
-                                "text": "X",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)",
-                            "border_bottom_color": "rgb(0, 0, 128)"
-                        }
-                    },
-                    {
-                        "text": "x",
-                        "style": {}
-                    }
-                ],
-                "style": {
-                    "width": "180px",
-                    "border_top_color": "rgb(0, 0, 128)",
-                    "height": "60px",
-                    "border_bottom_color": "rgb(0, 0, 128)",
-                    "display": "block",
-                    "border_left_color": "rgb(0, 0, 128)",
-                    "border_right_color": "rgb(0, 0, 128)"
-                }
-            }
-        ],
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "height": "123px"
-        }
-    },
-    "matches": "vertical-align-121-ref.xht",
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
-    "assert": null
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "text": "x",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span",
+                        "style": {
+                            "border_left_color": "rgb(0, 0, 128)",
+                            "border_right_color": "rgb(0, 0, 128)",
+                            "border_bottom_color": "rgb(0, 0, 128)",
+                            "border_top_color": "rgb(0, 0, 128)"
+                        }
+                    },
+                    {
+                        "text": "x",
+                        "style": {}
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "border_right_color": "rgb(0, 0, 128)",
+                    "border_left_color": "rgb(0, 0, 128)",
+                    "border_bottom_width": "3px",
+                    "border_bottom_style": "solid",
+                    "display": "block",
+                    "border_top_color": "rgb(0, 0, 128)",
+                    "height": "60px",
+                    "width": "180px",
+                    "border_bottom_color": "rgb(0, 0, 255)"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "text": "x",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "span",
+                        "style": {
+                            "border_left_color": "rgb(0, 0, 128)",
+                            "border_right_color": "rgb(0, 0, 128)",
+                            "border_bottom_color": "rgb(0, 0, 128)",
+                            "border_top_color": "rgb(0, 0, 128)"
+                        }
+                    },
+                    {
+                        "text": "x",
+                        "style": {}
+                    }
+                ],
+                "tag": "div",
+                "style": {
+                    "border_right_color": "rgb(0, 0, 128)",
+                    "border_left_color": "rgb(0, 0, 128)",
+                    "display": "block",
+                    "border_top_color": "rgb(0, 0, 128)",
+                    "height": "60px",
+                    "width": "180px",
+                    "border_bottom_color": "rgb(0, 0, 128)"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "height": "123px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        }
+    },
+    "matches": "vertical-align-121-ref.xht"
 }

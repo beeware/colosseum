@@ -1,8 +1,5 @@
 {
     "assert": "the layout should behave the same as reference.",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#z-order"
-    ],
     "test_case": {
         "children": [
             {
@@ -10,55 +7,55 @@
                     {
                         "children": [
                             {
-                                "text": "down",
-                                "style": {}
+                                "style": {},
+                                "text": "down"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
-                            "z_index": "1",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "width": "100px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "z_index": "1",
                             "height": "18px",
                             "border_left_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
                             "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 255, 255)"
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "up",
-                                "style": {}
+                                "style": {},
+                                "text": "up"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
-                            "z_index": "10",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
                             "width": "100px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "z_index": "10",
                             "height": "18px",
                             "border_left_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
                             "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 255, 255)"
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "border_top_color": "rgb(255, 255, 255)"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
                     "display": "grid",
-                    "height": "18px",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)",
                     "width": "150px",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "height": "18px",
                     "border_left_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)"
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)"
                 }
             }
         ],
@@ -69,5 +66,8 @@
             "height": "18px"
         }
     },
-    "matches": "../reference/grid-layout-z-order-ref.html"
+    "matches": "../reference/grid-layout-z-order-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#z-order"
+    ]
 }

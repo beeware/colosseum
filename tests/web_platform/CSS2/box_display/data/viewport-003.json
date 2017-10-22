@@ -1,38 +1,38 @@
 {
+    "matches": null,
+    "assert": "Scrolling mechanism should be available when canvas is larger than viewport even when page is set to right-to-left.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "direction": "rtl",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "direction": "rtl",
+                    "height": "18px",
+                    "width": "624px",
+                    "margin_top": "2000px",
+                    "display": "block"
+                },
+                "tag": "div",
                 "children": [
                     {
-                        "text": "Bottom of page",
-                        "style": {}
+                        "style": {},
+                        "text": "Bottom of page"
                     }
-                ],
-                "tag": "div",
-                "style": {
-                    "display": "block",
-                    "direction": "rtl",
-                    "width": "624px",
-                    "height": "18px",
-                    "margin_top": "2000px"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "direction": "rtl",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "Scrolling mechanism should be available when canvas is larger than viewport even when page is set to right-to-left.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#viewport"
-    ],
-    "matches": null
+    ]
 }

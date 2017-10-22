@@ -1,42 +1,42 @@
 {
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "display": "block",
-                    "height": "96px",
-                    "min_width": "96px",
-                    "width": "96px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "height": "96px",
-                    "border_left_width": "96px",
-                    "display": "block",
-                    "margin_top": "4px",
-                    "border_left_style": "solid",
-                    "width": "528px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "margin_bottom": "8px",
-            "height": "196px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": "The 'min-width' property sets a positive nominal length value in millimeters.",
-    "matches": "max-width-006-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
         "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ]
+    ],
+    "test_case": {
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "display": "block",
+                    "height": "96px",
+                    "width": "96px",
+                    "min_width": "96px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "margin_top": "4px",
+                    "display": "block",
+                    "border_left_style": "solid",
+                    "border_left_width": "96px",
+                    "width": "528px",
+                    "height": "96px"
+                }
+            }
+        ],
+        "tag": "body",
+        "style": {
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "height": "196px",
+            "margin_left": "8px"
+        }
+    },
+    "assert": "The 'min-width' property sets a positive nominal length value in millimeters.",
+    "matches": "max-width-006-ref.xht"
 }

@@ -1,35 +1,35 @@
 {
+    "assert": "Empty inline elements create a zero-height line box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
                         "tag": "span",
                         "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "0px"
+                    "height": "0px",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "0px"
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "../reference/ref-if-there-is-no-red.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "Empty inline elements create a zero-height line box."
+    "matches": "../reference/ref-if-there-is-no-red.xht"
 }

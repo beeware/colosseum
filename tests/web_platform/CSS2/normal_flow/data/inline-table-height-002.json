@@ -1,39 +1,39 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/tables.html#table-display"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "test"
+                        "text": "test",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "height": "80px",
+                    "display": "inline-table",
                     "border_right_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "border_left_color": "rgb(255, 255, 255)",
                     "width": "22.21875px",
-                    "display": "inline-table"
-                },
-                "tag": "div"
+                    "height": "80px",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "border_top_color": "rgb(255, 255, 255)"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "80px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "it is a rectangular block that participates in an inline formatting context).",
-    "matches": "inline-table-height-002-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/tables.html#table-display"
-    ]
+    "matches": "inline-table-height-002-ref.xht"
 }

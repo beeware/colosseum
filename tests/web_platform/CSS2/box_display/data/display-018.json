@@ -1,115 +1,115 @@
 {
+    "matches": "display-018-ref.xht",
+    "assert": "When an element with its property 'display' set to 'inline', then it makes its box laid out horizontally, beginning at the top of its containing block without beginning on a new line and without requiring to begin on a new line. Elements with 'display' set to 'inline' are laid out horizontally, one after the other, in the line box.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "18px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "border_bottom_color": "rgb(128, 128, 128)",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_top_color": "rgb(128, 128, 128)",
+                    "border_left_color": "rgb(128, 128, 128)"
+                },
+                "tag": "table",
                 "children": [
                     {
+                        "style": {},
+                        "tag": "caption",
                         "children": [
                             {
-                                "text": "Filler text",
-                                "style": {}
+                                "style": {},
+                                "text": "Filler text"
                             }
-                        ],
-                        "tag": "caption",
-                        "style": {}
+                        ]
                     },
                     {
+                        "style": {
+                            "border_bottom_color": "rgb(128, 128, 128)",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_top_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)"
+                        },
+                        "tag": "tbody",
                         "children": [
                             {
+                                "style": {
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)",
+                                    "border_left_color": "rgb(128, 128, 128)"
+                                },
+                                "tag": "tr",
                                 "children": [
                                     {
+                                        "style": {},
+                                        "tag": "th",
                                         "children": [
                                             {
-                                                "text": "Filler",
-                                                "style": {}
+                                                "style": {},
+                                                "text": "Filler"
                                             }
-                                        ],
-                                        "tag": "th",
-                                        "style": {}
+                                        ]
                                     },
                                     {
+                                        "style": {},
+                                        "tag": "td",
                                         "children": [
                                             {
-                                                "text": "text",
-                                                "style": {}
+                                                "style": {},
+                                                "text": "text"
                                             }
-                                        ],
-                                        "tag": "td",
-                                        "style": {}
+                                        ]
                                     }
-                                ],
-                                "tag": "tr",
-                                "style": {
-                                    "border_right_color": "rgb(128, 128, 128)",
-                                    "border_left_color": "rgb(128, 128, 128)",
-                                    "border_bottom_color": "rgb(128, 128, 128)",
-                                    "border_top_color": "rgb(128, 128, 128)"
-                                }
+                                ]
                             },
                             {
+                                "style": {
+                                    "border_bottom_color": "rgb(128, 128, 128)",
+                                    "border_right_color": "rgb(128, 128, 128)",
+                                    "border_top_color": "rgb(128, 128, 128)",
+                                    "border_left_color": "rgb(128, 128, 128)"
+                                },
+                                "tag": "tr",
                                 "children": [
                                     {
+                                        "style": {},
+                                        "tag": "th",
                                         "children": [
                                             {
-                                                "text": "Filler",
-                                                "style": {}
+                                                "style": {},
+                                                "text": "Filler"
                                             }
-                                        ],
-                                        "tag": "th",
-                                        "style": {}
+                                        ]
                                     },
                                     {
+                                        "style": {},
+                                        "tag": "td",
                                         "children": [
                                             {
-                                                "text": "text",
-                                                "style": {}
+                                                "style": {},
+                                                "text": "text"
                                             }
-                                        ],
-                                        "tag": "td",
-                                        "style": {}
+                                        ]
                                     }
-                                ],
-                                "tag": "tr",
-                                "style": {
-                                    "border_right_color": "rgb(128, 128, 128)",
-                                    "border_left_color": "rgb(128, 128, 128)",
-                                    "border_bottom_color": "rgb(128, 128, 128)",
-                                    "border_top_color": "rgb(128, 128, 128)"
-                                }
+                                ]
                             }
-                        ],
-                        "tag": "tbody",
-                        "style": {
-                            "border_right_color": "rgb(128, 128, 128)",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "border_top_color": "rgb(128, 128, 128)"
-                        }
+                        ]
                     }
-                ],
-                "tag": "table",
-                "style": {
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)",
-                    "border_top_color": "rgb(128, 128, 128)"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "18px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "When an element with its property 'display' set to 'inline', then it makes its box laid out horizontally, beginning at the top of its containing block without beginning on a new line and without requiring to begin on a new line. Elements with 'display' set to 'inline' are laid out horizontally, one after the other, in the line box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ],
-    "matches": "display-018-ref.xht"
+    ]
 }

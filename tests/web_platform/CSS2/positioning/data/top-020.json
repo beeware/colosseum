@@ -1,56 +1,56 @@
 {
-    "assert": "The 'top' property sets a positive nominal length value in points.",
+    "matches": "top-019-ref.xht",
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "96px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "height": "96px",
-                    "margin_top": "-96px",
-                    "display": "block",
-                    "position": "relative",
-                    "width": "624px"
-                },
                 "children": [
                     {
                         "style": {
-                            "height": "96px",
-                            "margin_top": "96px",
-                            "display": "block",
                             "position": "absolute",
+                            "height": "96px",
+                            "display": "block",
+                            "margin_top": "96px",
                             "width": "624px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "border_bottom_width": "96px",
                             "height": "0px",
-                            "position": "relative",
-                            "width": "624px",
-                            "border_bottom_style": "solid",
+                            "top": "96px",
                             "display": "block",
-                            "top": "96px"
+                            "border_bottom_width": "96px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "width": "624px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "position": "relative",
+                    "height": "96px",
+                    "display": "block",
+                    "margin_top": "-96px",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "96px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'top' property sets a positive nominal length value in points.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
-    "matches": "top-019-ref.xht"
+    ]
 }

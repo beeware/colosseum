@@ -1,61 +1,61 @@
 {
+    "matches": null,
+    "assert": "An absolutely positioned element ignores page breaks in paged media.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "52px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
-                "children": [
-                    {
-                        "text": "PREREQUISITE: Switch to paged media view.",
-                        "style": {}
-                    }
-                ],
-                "tag": "p",
                 "style": {
-                    "display": "block",
-                    "height": "18px",
                     "width": "624px",
                     "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
-            },
-            {
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
                 "children": [
                     {
-                        "text": "Test passes if there is a black box above.",
-                        "style": {}
+                        "style": {},
+                        "text": "PREREQUISITE: Switch to paged media view."
                     }
-                ],
-                "tag": "p",
-                "style": {
-                    "display": "block",
-                    "height": "18px",
-                    "width": "624px",
-                    "margin_bottom": "16px",
-                    "margin_top": "16px"
-                }
+                ]
             },
             {
-                "tag": "div",
                 "style": {
-                    "display": "block",
+                    "width": "624px",
+                    "margin_bottom": "16px",
+                    "height": "18px",
+                    "margin_top": "16px",
+                    "display": "block"
+                },
+                "tag": "p",
+                "children": [
+                    {
+                        "style": {},
+                        "text": "Test passes if there is a black box above."
+                    }
+                ]
+            },
+            {
+                "style": {
+                    "width": "624px",
                     "height": "0px",
-                    "width": "624px"
-                }
+                    "display": "block"
+                },
+                "tag": "div"
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "52px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "An absolutely positioned element ignores page breaks in paged media.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
-    "matches": null
+    ]
 }

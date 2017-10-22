@@ -1,31 +1,30 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "style": {
-            "margin_bottom": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "100px",
             "margin_top": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "margin_right": "8px",
+            "height": "100px",
+            "margin_bottom": "8px",
+            "width": "624px"
         },
         "children": [
             {
                 "style": {
-                    "height": "100px",
                     "display": "block",
-                    "width": "100px"
+                    "width": "100px",
+                    "height": "100px"
                 },
                 "children": [
                     {
                         "style": {
-                            "top": "50%",
+                            "display": "block",
                             "position": "relative",
-                            "width": "50px",
-                            "height": "50px",
                             "left": "50%",
-                            "display": "block"
+                            "height": "50px",
+                            "width": "50px",
+                            "top": "50%"
                         },
                         "tag": "div"
                     }
@@ -35,6 +34,7 @@
         ],
         "tag": "body"
     },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props",
         "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",

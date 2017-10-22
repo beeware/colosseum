@@ -1,47 +1,47 @@
 {
+    "matches": null,
     "test_case": {
+        "tag": "BODY",
         "children": [
             {
                 "tag": "DIV",
                 "style": {
-                    "width": "624px",
+                    "display": "block",
                     "height": "0px",
-                    "display": "block"
+                    "width": "624px"
                 }
             },
             {
                 "tag": "DIV",
                 "style": {
-                    "width": "624px",
+                    "display": "grid",
                     "height": "0px",
-                    "display": "grid"
+                    "width": "624px"
                 }
             },
             {
+                "tag": "SCRIPT",
                 "children": [
                     {
-                        "style": {},
-                        "text": "// Single values.\n  TestingUtils.testGridTemplateAreas('grid', 'none', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a\"', '\"a\"');\n  TestingUtils.testGridTemplateAreas('grid', '\".\"', '\".\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"lower UPPER 10 -minus _low 1-st \u00a9copy_right line\u00b6\"', '\"lower UPPER 10 -minus _low 1-st \u00a9copy_right line\u00b6\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"', '\"a b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a   b\"   \"c   d\"', ['\"a b\" \"c d\"', '\"a   b\" \"c   d\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"\\t\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"\\n\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"a b\"', '\"a b\" \"a b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a a\" \"b b\"', '\"a a\" \"b b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\". a .\" \"b a c\"', '\". a .\" \"b a c\"');\n  TestingUtils.testGridTemplateAreas('grid', '\".. a ...\" \"b a c\"', ['\". a .\" \"b a c\"', '\".. a ...\" \"b a c\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\".a...\" \"b a c\"', ['\". a .\" \"b a c\"', '\".a...\" \"b a c\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot .\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"head head\" \"nav main\" \"foot ....\"', ['\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot ....\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"head head\" \"nav main\" \"foot.\"', ['\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot.\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\". header header .\" \"nav main main main\" \"nav footer footer .\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"... header header ....\" \"nav main main main\" \"nav footer footer ....\"', ['\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\"... header header ....\" \"nav main main main\" \"nav footer footer ....\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"...header header....\" \"nav main main main\" \"nav footer footer....\"', ['\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\"...header header....\" \"nav main main main\" \"nav footer footer....\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"title stats\" \"score stats\" \"board board\" \"ctrls ctrls\"', '\"title stats\" \"score stats\" \"board board\" \"ctrls ctrls\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"title board\" \"stats board\" \"score ctrls\"', '\"title board\" \"stats board\" \"score ctrls\"');\n  TestingUtils.testGridTemplateAreas('grid', '\". a\" \"b a\" \". a\"', '\". a\" \"b a\" \". a\"');\n  TestingUtils.testGridTemplateAreas('grid', '\".. a\" \"b a\" \"... a\"', ['\". a\" \"b a\" \". a\"', '\".. a\" \"b a\" \"... a\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"..a\" \"b a\" \".a\"', ['\". a\" \"b a\" \". a\"', '\"..a\" \"b a\" \".a\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"a a a\" \"b b b\"', '\"a a a\" \"b b b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\". .\" \"a a\"', '\". .\" \"a a\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"... ....\" \"a a\"', ['\". .\" \"a a\"', '\"... ....\" \"a a\"']);\n\n  // Reset values.\n  document.getElementById('grid').style.gridTemplateAreas = '';\n\n  // Wrong values.\n  TestingUtils.testGridTemplateAreas('grid', 'a', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a\" \"b c\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"c\" \"d e\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b c\" \"d e\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"-\"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" - \"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" . \"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a\" \"b\" \"a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"b b\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"b a\" \"b b\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"b a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a .\" \". a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\",\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"10%\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"USD$\"', 'none');"
+                        "text": "// Single values.\n  TestingUtils.testGridTemplateAreas('grid', 'none', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a\"', '\"a\"');\n  TestingUtils.testGridTemplateAreas('grid', '\".\"', '\".\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"lower UPPER 10 -minus _low 1-st \u00a9copy_right line\u00b6\"', '\"lower UPPER 10 -minus _low 1-st \u00a9copy_right line\u00b6\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"', '\"a b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a   b\"   \"c   d\"', ['\"a b\" \"c d\"', '\"a   b\" \"c   d\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"\\t\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"\\n\"c d\"', '\"a b\" \"c d\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"a b\"', '\"a b\" \"a b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"a a\" \"b b\"', '\"a a\" \"b b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\". a .\" \"b a c\"', '\". a .\" \"b a c\"');\n  TestingUtils.testGridTemplateAreas('grid', '\".. a ...\" \"b a c\"', ['\". a .\" \"b a c\"', '\".. a ...\" \"b a c\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\".a...\" \"b a c\"', ['\". a .\" \"b a c\"', '\".a...\" \"b a c\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot .\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"head head\" \"nav main\" \"foot ....\"', ['\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot ....\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"head head\" \"nav main\" \"foot.\"', ['\"head head\" \"nav main\" \"foot .\"', '\"head head\" \"nav main\" \"foot.\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\". header header .\" \"nav main main main\" \"nav footer footer .\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"... header header ....\" \"nav main main main\" \"nav footer footer ....\"', ['\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\"... header header ....\" \"nav main main main\" \"nav footer footer ....\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"...header header....\" \"nav main main main\" \"nav footer footer....\"', ['\". header header .\" \"nav main main main\" \"nav footer footer .\"', '\"...header header....\" \"nav main main main\" \"nav footer footer....\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"title stats\" \"score stats\" \"board board\" \"ctrls ctrls\"', '\"title stats\" \"score stats\" \"board board\" \"ctrls ctrls\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"title board\" \"stats board\" \"score ctrls\"', '\"title board\" \"stats board\" \"score ctrls\"');\n  TestingUtils.testGridTemplateAreas('grid', '\". a\" \"b a\" \". a\"', '\". a\" \"b a\" \". a\"');\n  TestingUtils.testGridTemplateAreas('grid', '\".. a\" \"b a\" \"... a\"', ['\". a\" \"b a\" \". a\"', '\".. a\" \"b a\" \"... a\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"..a\" \"b a\" \".a\"', ['\". a\" \"b a\" \". a\"', '\"..a\" \"b a\" \".a\"']);\n  TestingUtils.testGridTemplateAreas('grid', '\"a a a\" \"b b b\"', '\"a a a\" \"b b b\"');\n  TestingUtils.testGridTemplateAreas('grid', '\". .\" \"a a\"', '\". .\" \"a a\"');\n  TestingUtils.testGridTemplateAreas('grid', '\"... ....\" \"a a\"', ['\". .\" \"a a\"', '\"... ....\" \"a a\"']);\n\n  // Reset values.\n  document.getElementById('grid').style.gridTemplateAreas = '';\n\n  // Wrong values.\n  TestingUtils.testGridTemplateAreas('grid', 'a', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a\" \"b c\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"c\" \"d e\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b c\" \"d e\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\"-\"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" - \"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" . \"c d\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a\" \"b\" \"a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"b b\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"b a\" \"b b\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a b\" \"b a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"a .\" \". a\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\",\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"10%\"', 'none');\n  TestingUtils.testGridTemplateAreas('grid', '\"USD$\"', 'none');",
+                        "style": {}
                     }
                 ],
-                "tag": "SCRIPT",
                 "style": {
                     "display": "none"
                 }
             }
         ],
-        "tag": "BODY",
         "style": {
+            "margin_top": "8px",
+            "margin_left": "8px",
+            "height": "0px",
             "width": "624px",
-            "display": "block",
             "margin_bottom": "8px",
             "margin_right": "8px",
-            "margin_top": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "display": "block"
         }
     },
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-template-areas-property"
     ],

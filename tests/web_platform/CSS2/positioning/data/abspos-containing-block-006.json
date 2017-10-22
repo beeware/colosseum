@@ -1,49 +1,26 @@
 {
-    "assert": null,
+    "matches": "abspos-containing-block-001-ref.xht",
     "test_case": {
-        "style": {
-            "margin_top": "100px",
-            "height": "0px",
-            "margin_bottom": "100px",
-            "margin_right": "128px",
-            "display": "block",
-            "width": "384px",
-            "margin_left": "128px"
-        },
         "children": [
             {
-                "style": {
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "position": "absolute",
-                    "width": "640px",
-                    "top": "0px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "480px",
-                    "left": "0px",
-                    "right": "0px",
-                    "display": "block",
-                    "bottom": "0px"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "Test passes if there is"
                     },
                     {
-                        "style": {
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)"
-                        },
                         "children": [
                             {
                                 "style": {},
                                 "text": "no red"
                             }
                         ],
+                        "style": {
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "border_left_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_bottom_color": "rgb(0, 128, 0)"
+                        },
                         "tag": "strong"
                     },
                     {
@@ -51,13 +28,36 @@
                         "text": "."
                     }
                 ],
+                "style": {
+                    "left": "0px",
+                    "top": "0px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "position": "absolute",
+                    "bottom": "0px",
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "width": "640px",
+                    "right": "0px",
+                    "border_top_color": "rgb(0, 128, 0)",
+                    "height": "480px",
+                    "display": "block",
+                    "border_left_color": "rgb(0, 128, 0)"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "128px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "100px",
+            "margin_right": "128px",
+            "margin_bottom": "100px",
+            "width": "384px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
-    "matches": "abspos-containing-block-001-ref.xht"
+    ]
 }

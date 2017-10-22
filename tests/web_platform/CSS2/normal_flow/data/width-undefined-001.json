@@ -1,4 +1,7 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ],
     "test_case": {
         "children": [
             {
@@ -8,47 +11,44 @@
                             {
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "XX"
+                                        "text": "XX",
+                                        "style": {}
                                     }
                                 ],
-                                "style": {},
-                                "tag": "span"
+                                "tag": "span",
+                                "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
-                            "top": "10px",
-                            "position": "absolute",
-                            "left": "10px",
-                            "height": "96px",
                             "display": "block",
-                            "width": "192px"
-                        },
-                        "tag": "span"
+                            "height": "96px",
+                            "position": "absolute",
+                            "width": "192px",
+                            "top": "10px",
+                            "left": "10px"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "0px",
                     "width": "624px"
-                },
-                "tag": "div"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "0px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "The containing block's width depends on this element's width because the resulting layout has not been defined in CSS2.1.",
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ]
+    "matches": null
 }

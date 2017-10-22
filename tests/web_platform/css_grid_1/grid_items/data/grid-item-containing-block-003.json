@@ -1,8 +1,5 @@
 {
     "assert": "A grid item is sized within the containing block defined by its grid area",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-items"
-    ],
     "test_case": {
         "children": [
             {
@@ -21,10 +18,10 @@
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -39,13 +36,16 @@
         "tag": "BODY",
         "style": {
             "display": "block",
+            "width": "624px",
             "margin_left": "8px",
             "height": "200px",
-            "width": "624px",
-            "margin_right": "8px",
+            "margin_bottom": "8px",
             "margin_top": "8px",
-            "margin_bottom": "8px"
+            "margin_right": "8px"
         }
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-items"
+    ]
 }

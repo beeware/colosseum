@@ -1,10 +1,6 @@
 {
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "body",
+    "id": "",
     "padding_box": {
         "position": [
             32,
@@ -15,72 +11,11 @@
             68
         ]
     },
-    "tag": "body",
-    "id": "",
-    "border": [
+    "padding": [
         0,
         0,
         0,
         0
-    ],
-    "children": [
-        {
-            "text": "\n  "
-        },
-        {
-            "padding": [
-                16,
-                16,
-                16,
-                16
-            ],
-            "padding_box": {
-                "position": [
-                    16,
-                    16
-                ],
-                "size": [
-                    608,
-                    68
-                ]
-            },
-            "tag": "p",
-            "id": "",
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "children": [
-                {
-                    "text": "This text should be in a white box surrounded by green that extends\n     to all edges of the viewport."
-                }
-            ],
-            "border_box": {
-                "position": [
-                    16,
-                    16
-                ],
-                "size": [
-                    608,
-                    68
-                ]
-            },
-            "content": {
-                "position": [
-                    32,
-                    32
-                ],
-                "size": [
-                    576,
-                    36
-                ]
-            }
-        },
-        {
-            "text": "\n "
-        }
     ],
     "border_box": {
         "position": [
@@ -101,5 +36,61 @@
             576,
             68
         ]
-    }
+    },
+    "children": [
+        {
+            "tag": "p",
+            "id": "",
+            "padding_box": {
+                "position": [
+                    16,
+                    16
+                ],
+                "size": [
+                    608,
+                    68
+                ]
+            },
+            "padding": [
+                16,
+                16,
+                16,
+                16
+            ],
+            "border_box": {
+                "position": [
+                    16,
+                    16
+                ],
+                "size": [
+                    608,
+                    68
+                ]
+            },
+            "text": "This text should be in a white box surrounded by green that extends\n     to all edges of the viewport.",
+            "content": {
+                "position": [
+                    32,
+                    32
+                ],
+                "size": [
+                    576,
+                    36
+                ]
+            },
+            "children": [],
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

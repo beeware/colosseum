@@ -1,80 +1,80 @@
 {
+    "assert": "The 'line-height' property applies to elements with 'display' set to 'table-column'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "div",
                         "children": [
                             {
                                 "tag": "div",
                                 "style": {
                                     "display": "table-column",
-                                    "width": "0px",
-                                    "height": "0px"
+                                    "height": "0px",
+                                    "width": "0px"
                                 }
                             },
                             {
-                                "tag": "div",
                                 "children": [
                                     {
                                         "tag": "div",
                                         "style": {
                                             "display": "table-cell",
-                                            "width": "96px",
-                                            "height": "96px"
+                                            "height": "96px",
+                                            "width": "96px"
                                         }
                                     }
                                 ],
+                                "tag": "div",
                                 "style": {
                                     "display": "table-row",
-                                    "width": "96px",
-                                    "height": "96px"
+                                    "height": "96px",
+                                    "width": "96px"
                                 }
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "display": "table",
-                            "width": "96px",
-                            "height": "96px"
+                            "height": "96px",
+                            "width": "96px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "width": "96px",
                             "left": "96px",
-                            "height": "96px",
                             "position": "absolute",
+                            "top": "0px",
+                            "height": "96px",
                             "display": "block",
-                            "top": "0px"
+                            "width": "96px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "position": "relative",
                     "display": "block",
-                    "width": "624px",
-                    "height": "96px"
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "96px"
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "line-height-applies-to-005-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'line-height' property applies to elements with 'display' set to 'table-column'."
+    "matches": "line-height-applies-to-005-ref.xht"
 }

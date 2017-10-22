@@ -1,98 +1,98 @@
 {
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
                 "text": "!   The 0.3em comes from the following:\n   !\n   !     * The font is 1em high\n   !     * The line height is 0\n   !     * The half leading is therefore -0.5em centered around the middle of the font\n   !     * The baseline is 0.2em from the bottom of the font\n   !     * Thus the distance from the baseline to the center is 0.3em\n   !     * The image is placed on the baseline\n   |     * The line box has to include the image and the middle of the font\n   !     * Thus the line box is 0.3em high\n   !\n   !",
                 "style": {}
             },
             {
-                "tag": "table",
                 "children": [
                     {
-                        "tag": "tr",
                         "children": [
                             {
-                                "tag": "td",
                                 "children": [
                                     {
-                                        "tag": "div",
                                         "children": [
                                             {
                                                 "tag": "img",
                                                 "style": {
-                                                    "width": "160px",
-                                                    "height": "1px"
+                                                    "height": "1px",
+                                                    "width": "160px"
                                                 }
                                             }
                                         ],
+                                        "tag": "div",
                                         "style": {
                                             "display": "block",
-                                            "width": "160px",
-                                            "height": "48px"
+                                            "height": "48px",
+                                            "width": "160px"
                                         }
                                     }
                                 ],
+                                "tag": "td",
                                 "style": {
                                     "display": "table-cell",
-                                    "width": "160px",
-                                    "height": "48px"
+                                    "height": "48px",
+                                    "width": "160px"
                                 }
                             },
                             {
-                                "tag": "td",
                                 "children": [
                                     {
                                         "tag": "div",
                                         "style": {
                                             "display": "block",
-                                            "width": "160px",
-                                            "height": "48px"
+                                            "height": "48px",
+                                            "width": "160px"
                                         }
                                     }
                                 ],
+                                "tag": "td",
                                 "style": {
                                     "display": "table-cell",
-                                    "width": "160px",
-                                    "height": "48px"
+                                    "height": "48px",
+                                    "width": "160px"
                                 }
                             }
                         ],
+                        "tag": "tr",
                         "style": {
-                            "width": "320px",
+                            "border_right_color": "rgb(128, 128, 128)",
+                            "border_left_color": "rgb(128, 128, 128)",
+                            "display": "table-row",
                             "border_top_color": "rgb(128, 128, 128)",
                             "height": "48px",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "display": "table-row",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)"
+                            "width": "320px",
+                            "border_bottom_color": "rgb(128, 128, 128)"
                         }
                     }
                 ],
+                "tag": "table",
                 "style": {
-                    "width": "320px",
+                    "border_right_color": "rgb(128, 128, 128)",
+                    "border_left_color": "rgb(128, 128, 128)",
+                    "display": "table",
                     "border_top_color": "rgb(128, 128, 128)",
                     "height": "48px",
-                    "border_bottom_color": "rgb(128, 128, 128)",
-                    "display": "table",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)"
+                    "width": "320px",
+                    "border_bottom_color": "rgb(128, 128, 128)"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "48px"
+            "height": "48px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "line-height-127-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#line-height"
-    ],
-    "assert": null
+    "matches": "line-height-127-ref.xht"
 }

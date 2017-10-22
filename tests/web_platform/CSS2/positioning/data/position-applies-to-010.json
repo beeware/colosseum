@@ -1,33 +1,33 @@
 {
-    "assert": "The 'position' property applies to elements with a display of list-item.",
+    "matches": null,
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "0px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "616px",
-            "margin_left": "16px"
-        },
         "children": [
             {
                 "style": {
+                    "position": "absolute",
                     "height": "96px",
                     "display": "list-item",
-                    "bottom": "0px",
-                    "position": "absolute",
-                    "width": "96px"
+                    "width": "96px",
+                    "bottom": "0px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "16px",
+            "height": "0px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "616px"
+        },
         "tag": "body"
     },
+    "assert": "The 'position' property applies to elements with a display of list-item.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#dis-pos-flo",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ],
-    "matches": null
+    ]
 }

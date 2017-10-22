@@ -1,47 +1,47 @@
 {
-    "assert": "Checks that we correctly handle when a flex item\nbecomes absolutely positioned",
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
             "width": "624px",
-            "height": "200px",
-            "margin_bottom": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_right": "8px",
+            "height": "200px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "200px",
+                    "position": "relative",
                     "width": "500px",
                     "display": "flex",
-                    "position": "relative"
+                    "height": "200px"
                 },
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
                             "left": "0px",
-                            "height": "200px",
-                            "min_width": "auto",
+                            "position": "absolute",
+                            "min_height": "auto",
                             "width": "500px",
+                            "display": "block",
+                            "bottom": "0px",
+                            "min_width": "auto",
                             "right": "0px",
                             "top": "0px",
-                            "min_height": "auto",
-                            "bottom": "0px",
-                            "display": "block",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
+                            "height": "200px"
+                        }
                     }
-                ],
-                "tag": "DIV"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "https://drafts.csswg.org/css-flexbox/#abspos-items"
     ],
-    "matches": null
+    "matches": null,
+    "assert": "Checks that we correctly handle when a flex item\nbecomes absolutely positioned"
 }

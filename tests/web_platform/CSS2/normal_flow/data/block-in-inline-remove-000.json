@@ -1,29 +1,29 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
     "test_case": {
         "children": [
             {
-                "style": {},
-                "text": "One"
+                "text": "One",
+                "style": {}
             },
             {
-                "style": {},
-                "text": "Two"
+                "text": "Two",
+                "style": {}
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "18px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": null,
-    "matches": "block-in-inline-remove-000-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    "matches": "block-in-inline-remove-000-ref.xht"
 }

@@ -1,67 +1,67 @@
 {
-    "assert": null,
+    "matches": "abspos-overflow-005-ref.xht",
     "test_case": {
-        "style": {
-            "display": "block",
-            "height": "146px",
-            "width": "640px"
-        },
         "children": [
             {
-                "style": {
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "margin_left": "480px",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "height": "18px",
-                    "width": "160px",
-                    "display": "block",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "FAIL"
                     }
                 ],
+                "style": {
+                    "margin_left": "480px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "height": "18px",
+                    "display": "block",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "width": "160px"
+                },
                 "tag": "div"
             },
             {
-                "style": {
-                    "display": "block",
-                    "height": "128px",
-                    "width": "128px"
-                },
                 "children": [
                     {
-                        "style": {
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "18px",
-                            "position": "absolute",
-                            "right": "0px",
-                            "display": "block",
-                            "width": "160px",
-                            "top": "0px",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        },
                         "children": [
                             {
                                 "style": {},
                                 "text": "PASS"
                             }
                         ],
+                        "style": {
+                            "right": "0px",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "top": "0px",
+                            "display": "block",
+                            "position": "absolute",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "height": "18px",
+                            "border_bottom_color": "rgb(255, 255, 255)",
+                            "width": "160px"
+                        },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "height": "128px",
+                    "display": "block",
+                    "width": "128px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "height": "146px",
+            "display": "block",
+            "width": "640px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
-    ],
-    "matches": "abspos-overflow-005-ref.xht"
+    ]
 }

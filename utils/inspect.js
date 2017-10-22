@@ -123,11 +123,11 @@ function dump_test_case(node) {
             // color
 
             // 14.2.1 Background properties
-            // background-color
-            // background-image
-            // background-repeat
-            // background-attachment
-            // background-position
+            // 'background-color': 'rgb(0, 0, 0, 0)',
+            // 'background-image': 'none',
+            // 'background-repeat': 'repeat',
+            // 'background-attachment': 'scroll',
+            // 'background-position': '0% 0%',
 
             // 15. Fonts ##########################################################
             // 15.3 Font family
@@ -216,9 +216,11 @@ function dump_test_case(node) {
     return result
 }
 
-function dump_reference(node) {
-    if (node.tagName) {
-        var style = window.getComputedStyle(node)
+function dump_reference(node, tagName) {
+    var style = node.style && window.getComputedStyle(node)
+    if (style && style.display === 'none') {
+        return null
+    } else if (tagName) {
         var position = node.getBoundingClientRect()
         var result = {
             'content': {
@@ -277,19 +279,70 @@ function dump_reference(node) {
             //         position.height + parseInt(style.marginTop) + parseInt(style.marginBottom)
             //     ]
             // },
-            'tag': node.tagName,
+            'tag': node.tagName.toLowerCase(),
             'id': node.id
+        }
+        // If this is a node that has a single (non-ignorable) text child,
+        // include the text for debugging purposes.
+        if (node.childNodes.length == 1 && !node.childNodes[0].tagName) {
+            var textContent = node.childNodes[0].textContent.trim()
+            if (textContent !== '') {
+                result['text'] = textContent
+            }
         }
 
         if (node.childNodes.length > 0) {
             result['children'] = []
+            var prevChild = null
+            var parent, child, content, reference
             for (var i = 0; i < node.childNodes.length; i++) {
-                result['children'].push(dump_reference(node.childNodes[i]))
+                child = node.childNodes[i]
+                parent = child.parentNode
+                // If the child has a tagName, it's a Node;
+                // process it as normal.
+                // Otherwise, it's a text element. If it's the only
+                // child of the parent, or if the content is ignorable,
+                // do nothing; otherwise, wrap the text in a span
+                // to evaluate it's size.
+                if (child.tagName) {
+                    reference = dump_reference(child, child.tagName)
+                } else if (parent.childNodes.length > 1
+                            && child.textContent.trim() !== '') {
+                    content = document.createElement('span')
+                    // Make sure the style on the temporary
+                    // span element is reset
+                    content.style.margin = 0
+                    content.style.border = 0
+                    content.style.padding = 0
+                    content.style.display = 'inline'
+                    content.style.position = 'static'
+
+                    // Add the text node to the child
+                    content.append(child)
+
+                    // Add the temporary element back into the document
+                    if (prevChild) {
+                        prevChild.after(content)
+                    } else {
+                        parent.prepend(content)
+                    }
+
+                    reference = dump_reference(content)
+                } else {
+                    reference = null
+                }
+
+                if (reference) {
+                    result['children'].push(reference)
+                }
+                prevChild = child
             }
         }
     } else {
+        var position = node.getBoundingClientRect()
         result = {
-            'text': node.textContent
+            'text': node.textContent,
+            'size': [position.width, position.height]
         }
     }
     return result
@@ -299,10 +352,15 @@ function dump_reference(node) {
  * Mainline
  *******************************************************/
 
+// Evaluating the reference will modify the document, so
+// evaluate the test case first.
+var test_case = dump_test_case(document.body)
+var reference = dump_reference(document.body, document.body.tagName)
+
 var result = {
     'help': [],
-    'test_case': dump_test_case(document.body),
-    'reference': dump_reference(document.body)
+    'test_case': test_case,
+    'reference': reference
 }
 
 // Read the document metadata, looking for key elements:

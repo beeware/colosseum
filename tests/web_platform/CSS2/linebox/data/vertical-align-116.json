@@ -1,88 +1,88 @@
 {
+    "assert": "The 'vertical-align' property sets the keyword 'super'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "div",
                         "children": [
                             {
-                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "span",
                                 "style": {
                                     "border_left_color": "rgb(255, 165, 0)",
                                     "border_right_color": "rgb(255, 165, 0)",
-                                    "border_top_color": "rgb(255, 165, 0)",
-                                    "border_bottom_color": "rgb(255, 165, 0)"
+                                    "border_bottom_color": "rgb(255, 165, 0)",
+                                    "border_top_color": "rgb(255, 165, 0)"
                                 }
                             },
                             {
-                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
+                                "tag": "span",
                                 "style": {
                                     "border_left_color": "rgb(255, 255, 255)",
                                     "border_right_color": "rgb(255, 255, 255)",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "border_bottom_color": "rgb(255, 255, 255)"
+                                    "border_bottom_color": "rgb(255, 255, 255)",
+                                    "border_top_color": "rgb(255, 255, 255)"
                                 }
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "position": "relative",
                             "display": "block",
-                            "width": "624px",
-                            "height": "96px"
+                            "height": "96px",
+                            "position": "relative",
+                            "width": "624px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
+                            "top": "86px",
                             "width": "48px",
                             "border_top_style": "solid",
                             "height": "48px",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "position": "absolute",
-                            "border_top_width": "2px",
                             "display": "block",
-                            "top": "86px",
-                            "z_index": "1"
+                            "border_top_width": "2px",
+                            "z_index": "1",
+                            "position": "absolute",
+                            "border_top_color": "rgb(0, 0, 255)"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "position": "relative",
                     "display": "block",
-                    "width": "624px",
-                    "height": "96px"
+                    "height": "96px",
+                    "position": "relative",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "96px"
+            "height": "96px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'vertical-align' property sets the keyword 'super'."
+    "matches": null
 }

@@ -1,63 +1,63 @@
 {
-    "assert": null,
+    "matches": "abspos-013-ref.xht",
     "test_case": {
-        "style": {
-            "padding_left": "10px",
-            "padding_right": "10px",
-            "height": "0px",
-            "width": "620px",
-            "padding_bottom": "10px",
-            "padding_top": "10px",
-            "display": "block"
-        },
         "children": [
             {
-                "style": {
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "left": "10px",
-                    "position": "fixed",
-                    "width": "320px",
-                    "z_index": "0",
-                    "display": "block",
-                    "top": "10px",
-                    "height": "64px",
-                    "border_bottom_color": "rgb(255, 255, 0)"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "FAIL"
                     }
                 ],
+                "style": {
+                    "left": "10px",
+                    "border_top_color": "rgb(255, 255, 0)",
+                    "top": "10px",
+                    "display": "block",
+                    "position": "fixed",
+                    "border_right_color": "rgb(255, 255, 0)",
+                    "border_left_color": "rgb(255, 255, 0)",
+                    "height": "64px",
+                    "z_index": "0",
+                    "border_bottom_color": "rgb(255, 255, 0)",
+                    "width": "320px"
+                },
                 "tag": "div"
             },
             {
-                "style": {
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "height": "64px",
-                    "position": "fixed",
-                    "width": "320px",
-                    "z_index": "0",
-                    "display": "block",
-                    "border_bottom_color": "rgb(255, 255, 255)"
-                },
                 "children": [
                     {
                         "style": {},
                         "text": "This block should be green."
                     }
                 ],
+                "style": {
+                    "border_top_color": "rgb(255, 255, 255)",
+                    "height": "64px",
+                    "display": "block",
+                    "position": "fixed",
+                    "border_right_color": "rgb(255, 255, 255)",
+                    "border_left_color": "rgb(255, 255, 255)",
+                    "z_index": "0",
+                    "border_bottom_color": "rgb(255, 255, 255)",
+                    "width": "320px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "padding_top": "10px",
+            "height": "0px",
+            "display": "block",
+            "padding_right": "10px",
+            "padding_left": "10px",
+            "width": "620px",
+            "padding_bottom": "10px"
+        },
         "tag": "body"
     },
+    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
-    ],
-    "matches": "abspos-013-ref.xht"
+    ]
 }

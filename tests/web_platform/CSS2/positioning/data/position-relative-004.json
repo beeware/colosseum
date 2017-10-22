@@ -1,50 +1,50 @@
 {
-    "assert": "Relative positioning with left or right does not change size of a box.",
+    "matches": "position-relative-004-ref.xht",
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "192px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
                 "style": {
-                    "display": "block",
-                    "height": "96px",
                     "position": "absolute",
+                    "height": "96px",
+                    "display": "block",
                     "width": "96px"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "height": "96px",
-                    "display": "block",
+                    "position": "relative",
                     "left": "96px",
-                    "position": "relative",
+                    "height": "96px",
+                    "display": "block",
                     "width": "96px"
                 },
                 "tag": "div"
             },
             {
                 "style": {
-                    "display": "block",
-                    "width": "96px",
-                    "height": "96px",
+                    "right": "-96px",
                     "position": "relative",
-                    "right": "-96px"
+                    "height": "96px",
+                    "display": "block",
+                    "width": "96px"
                 },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "192px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "Relative positioning with left or right does not change size of a box.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ],
-    "matches": "position-relative-004-ref.xht"
+    ]
 }

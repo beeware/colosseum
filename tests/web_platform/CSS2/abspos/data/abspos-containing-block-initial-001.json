@@ -1,7 +1,4 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
     "assert": "If there is no such ancestor, the containing block is the initial containing block.",
     "test_case": {
         "children": [
@@ -20,50 +17,53 @@
             {
                 "tag": "div",
                 "style": {
-                    "width": "100px",
-                    "display": "block",
-                    "position": "absolute",
                     "height": "100px",
-                    "top": "0px"
+                    "top": "0px",
+                    "position": "absolute",
+                    "width": "100px",
+                    "display": "block"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "width": "100px",
-                    "display": "block",
-                    "position": "absolute",
+                    "right": "0px",
                     "height": "100px",
-                    "right": "0px"
+                    "width": "100px",
+                    "position": "absolute",
+                    "display": "block"
                 }
             },
             {
                 "tag": "div",
                 "style": {
+                    "height": "100px",
+                    "width": "100px",
                     "bottom": "0px",
-                    "display": "block",
-                    "width": "100px",
                     "position": "absolute",
-                    "height": "100px"
+                    "display": "block"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "width": "100px",
-                    "display": "block",
+                    "height": "100px",
                     "left": "0px",
                     "position": "absolute",
-                    "height": "100px"
+                    "width": "100px",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
             "width": "520px",
-            "display": "block",
-            "height": "10000px"
+            "height": "10000px",
+            "display": "block"
         }
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
+    ],
     "matches": "abspos-containing-block-initial-001-ref.xht"
 }

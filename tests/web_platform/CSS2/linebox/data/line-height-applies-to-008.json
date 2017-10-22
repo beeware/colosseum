@@ -1,65 +1,65 @@
 {
+    "assert": "The 'line-height' property applies to elements with 'display' set to 'inline'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
                         "tag": "div",
                         "style": {
                             "display": "block",
-                            "width": "96px",
-                            "height": "48px"
+                            "height": "48px",
+                            "width": "96px"
                         }
                     },
                     {
-                        "tag": "div",
                         "children": [],
+                        "tag": "div",
                         "style": {}
                     },
                     {
                         "tag": "div",
                         "style": {
                             "display": "block",
-                            "width": "96px",
-                            "height": "48px"
+                            "height": "48px",
+                            "width": "96px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "width": "96px",
                             "left": "96px",
-                            "height": "192px",
                             "position": "absolute",
+                            "top": "0px",
+                            "height": "192px",
                             "display": "block",
-                            "top": "0px"
+                            "width": "96px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "position": "relative",
                     "display": "block",
-                    "width": "192px",
-                    "height": "192px"
+                    "height": "192px",
+                    "position": "relative",
+                    "width": "192px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "192px"
+            "height": "192px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "line-height-applies-to-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'line-height' property applies to elements with 'display' set to 'inline'."
+    "matches": "line-height-applies-to-001-ref.xht"
 }

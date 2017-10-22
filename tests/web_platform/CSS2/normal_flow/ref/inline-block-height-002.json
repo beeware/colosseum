@@ -1,10 +1,6 @@
 {
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "body",
+    "id": "",
     "padding_box": {
         "position": [
             8,
@@ -15,72 +11,11 @@
             80
         ]
     },
-    "tag": "body",
-    "id": "",
-    "border": [
+    "padding": [
         0,
         0,
         0,
         0
-    ],
-    "children": [
-        {
-            "text": "\n"
-        },
-        {
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    160,
-                    80
-                ]
-            },
-            "tag": "div",
-            "id": "",
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "children": [
-                {
-                    "text": "test"
-                }
-            ],
-            "border_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    160,
-                    80
-                ]
-            },
-            "content": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    160,
-                    80
-                ]
-            }
-        },
-        {
-            "text": "\n\n\n"
-        }
     ],
     "border_box": {
         "position": [
@@ -101,5 +36,61 @@
             624,
             80
         ]
-    }
+    },
+    "children": [
+        {
+            "tag": "div",
+            "id": "",
+            "padding_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    160,
+                    80
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "border_box": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    160,
+                    80
+                ]
+            },
+            "text": "test",
+            "content": {
+                "position": [
+                    8,
+                    8
+                ],
+                "size": [
+                    160,
+                    80
+                ]
+            },
+            "children": [],
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

@@ -1,42 +1,42 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#root-height"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "height": "48px",
                             "display": "block",
-                            "width": "96px",
+                            "height": "48px",
                             "float": "left",
+                            "width": "96px",
                             "margin_bottom": "48px"
-                        },
-                        "tag": "div"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "96px",
-                    "width": "96px",
-                    "position": "absolute"
-                },
-                "tag": "div"
+                    "position": "absolute",
+                    "width": "96px"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "0px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "The auto height of a block formatting context element is computed by accounting for bottom-margins of floated content which would otherwise be below the bottom edge of that element.",
-    "matches": "../reference/ref-filled-black-96px-square.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#root-height"
-    ]
+    "matches": "../reference/ref-filled-black-96px-square.xht"
 }

@@ -1,70 +1,70 @@
 {
+    "matches": "containing-block-009-ref.xht",
+    "assert": "If the element has 'position: absolute', the containing block is established by the nearest positioned ancestor.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "202px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "tag": "div",
-                                "style": {
-                                    "display": "block",
-                                    "top": "0px",
-                                    "width": "96px",
-                                    "right": "0px",
-                                    "height": "96px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "div",
-                        "style": {
-                            "display": "block",
-                            "margin_right": "50px",
-                            "margin_bottom": "50px",
-                            "margin_top": "50px",
-                            "height": "96px",
-                            "width": "96px",
-                            "margin_left": "50px"
-                        }
-                    }
-                ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
                     "top": "0px",
-                    "border_right_width": "3px",
                     "margin_bottom": "50px",
-                    "border_left_width": "3px",
-                    "border_left_style": "solid",
-                    "height": "196px",
+                    "border_right_width": "3px",
+                    "margin_top": "50px",
+                    "border_bottom_width": "3px",
+                    "width": "518px",
+                    "margin_left": "50px",
+                    "display": "block",
+                    "border_top_width": "3px",
+                    "position": "relative",
+                    "margin_right": "50px",
                     "border_bottom_style": "solid",
                     "border_right_style": "solid",
-                    "margin_left": "50px",
-                    "width": "518px",
-                    "margin_right": "50px",
-                    "border_top_width": "3px",
-                    "border_bottom_width": "3px",
-                    "margin_top": "50px",
-                    "position": "relative",
+                    "border_left_style": "solid",
+                    "border_left_width": "3px",
+                    "height": "196px",
                     "border_top_style": "solid"
-                }
+                },
+                "tag": "div",
+                "children": [
+                    {
+                        "style": {
+                            "width": "96px",
+                            "margin_bottom": "50px",
+                            "height": "96px",
+                            "margin_top": "50px",
+                            "margin_right": "50px",
+                            "margin_left": "50px",
+                            "display": "block"
+                        },
+                        "tag": "div",
+                        "children": [
+                            {
+                                "style": {
+                                    "width": "96px",
+                                    "height": "96px",
+                                    "right": "0px",
+                                    "display": "block",
+                                    "top": "0px",
+                                    "position": "absolute"
+                                },
+                                "tag": "div"
+                            }
+                        ]
+                    }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "202px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "If the element has 'position: absolute', the containing block is established by the nearest positioned ancestor.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
-    "matches": "containing-block-009-ref.xht"
+    ]
 }

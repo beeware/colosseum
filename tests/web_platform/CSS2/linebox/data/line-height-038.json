@@ -1,59 +1,59 @@
 {
+    "assert": "The 'line-height' property sets a positive zero length value in centimeters.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#leading"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "div",
                         "children": [
                             {
                                 "text": "X X",
                                 "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
-                            "position": "relative",
                             "display": "block",
-                            "width": "20px",
-                            "height": "0px"
+                            "height": "0px",
+                            "position": "relative",
+                            "width": "20px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "width": "20px",
                             "left": "22px",
-                            "height": "20px",
                             "position": "absolute",
+                            "top": "-10px",
+                            "height": "20px",
                             "display": "block",
-                            "top": "-10px"
+                            "width": "20px"
                         }
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "position": "relative",
                     "display": "block",
-                    "width": "20px",
-                    "height": "0px"
+                    "height": "0px",
+                    "position": "relative",
+                    "width": "20px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "0px"
+            "height": "0px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": "line-height-002-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#leading"
-    ],
-    "assert": "The 'line-height' property sets a positive zero length value in centimeters."
+    "matches": "line-height-002-ref.xht"
 }

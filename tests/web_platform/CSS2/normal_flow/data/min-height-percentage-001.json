@@ -1,52 +1,52 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "height": "96px",
-                            "min_height": "50%",
-                            "width": "96px"
-                        },
-                        "tag": "div"
+                            "width": "96px",
+                            "min_height": "50%"
+                        }
                     },
                     {
+                        "tag": "div",
                         "style": {
-                            "top": "0px",
-                            "position": "absolute",
-                            "left": "96px",
-                            "height": "96px",
                             "display": "block",
-                            "width": "96px"
-                        },
-                        "tag": "div"
+                            "height": "96px",
+                            "position": "absolute",
+                            "width": "96px",
+                            "top": "0px",
+                            "left": "96px"
+                        }
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
                     "height": "192px",
-                    "width": "624px",
-                    "position": "relative"
-                },
-                "tag": "div"
+                    "position": "relative",
+                    "width": "624px"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "192px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": "A percentage for 'min-height' is calculated with respect to the 'height' of the generated boxes containing block.",
-    "matches": "max-height-percentage-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ]
+    "matches": "max-height-percentage-001-ref.xht"
 }

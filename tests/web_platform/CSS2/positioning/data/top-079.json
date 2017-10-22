@@ -1,56 +1,56 @@
 {
-    "assert": "The 'top' property sets a nominal length value in 'em' units.",
+    "matches": "top-079-ref.xht",
     "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "height": "120px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px"
-        },
         "children": [
             {
-                "style": {
-                    "height": "120px",
-                    "margin_top": "-120px",
-                    "display": "block",
-                    "position": "relative",
-                    "width": "624px"
-                },
                 "children": [
                     {
                         "style": {
-                            "height": "120px",
-                            "margin_top": "120px",
-                            "display": "block",
                             "position": "absolute",
+                            "height": "120px",
+                            "display": "block",
+                            "margin_top": "120px",
                             "width": "624px"
                         },
                         "tag": "div"
                     },
                     {
                         "style": {
-                            "border_bottom_width": "120px",
                             "height": "0px",
-                            "position": "relative",
-                            "width": "624px",
-                            "border_bottom_style": "solid",
+                            "top": "120px",
                             "display": "block",
-                            "top": "120px"
+                            "border_bottom_width": "120px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "width": "624px"
                         },
                         "tag": "div"
                     }
                 ],
+                "style": {
+                    "position": "relative",
+                    "height": "120px",
+                    "display": "block",
+                    "margin_top": "-120px",
+                    "width": "624px"
+                },
                 "tag": "div"
             }
         ],
+        "style": {
+            "margin_left": "8px",
+            "height": "120px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
+        },
         "tag": "body"
     },
+    "assert": "The 'top' property sets a nominal length value in 'em' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ],
-    "matches": "top-079-ref.xht"
+    ]
 }

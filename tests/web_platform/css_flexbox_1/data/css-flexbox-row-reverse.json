@@ -1,48 +1,50 @@
 {
-    "assert": "Test checks that when writing mode is vertical and flex-flow: row-reverse, the flex container is vertical.",
     "test_case": {
+        "tag": "BODY",
         "style": {
-            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "margin_top": "8px",
             "width": "624px",
-            "height": "144px",
-            "margin_bottom": "8px",
             "display": "block",
-            "margin_left": "8px"
+            "margin_right": "8px",
+            "height": "144px"
         },
         "children": [
             {
+                "tag": "DIV",
                 "style": {
-                    "height": "144px",
                     "z_index": "-1",
+                    "position": "absolute",
                     "width": "48px",
                     "display": "block",
-                    "position": "absolute"
-                },
-                "tag": "DIV"
+                    "height": "144px"
+                }
             },
             {
+                "tag": "DIV",
                 "style": {
+                    "border_bottom_color": "rgb(255, 255, 255)",
                     "border_left_color": "rgb(255, 255, 255)",
+                    "display": "flex",
                     "border_top_color": "rgb(255, 255, 255)",
                     "height": "144px",
-                    "width": "48px",
                     "border_right_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "display": "flex"
+                    "width": "48px"
                 },
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "48px",
-                            "min_width": "auto",
-                            "width": "48px",
-                            "border_right_color": "rgb(255, 255, 255)",
                             "border_bottom_color": "rgb(255, 255, 255)",
                             "min_height": "auto",
-                            "display": "block"
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "height": "48px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "width": "48px"
                         },
                         "children": [
                             {
@@ -50,32 +52,32 @@
                                 "text": "\uff17\uff18\uff19"
                             },
                             {
+                                "tag": "BR",
                                 "style": {
-                                    "border_left_color": "rgb(255, 255, 255)",
                                     "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)",
                                     "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "BR"
+                                    "border_left_color": "rgb(255, 255, 255)"
+                                }
                             },
                             {
                                 "style": {},
                                 "text": "\uff47\uff48\uff49"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "48px",
-                            "min_width": "auto",
-                            "width": "48px",
-                            "border_right_color": "rgb(255, 255, 255)",
                             "border_bottom_color": "rgb(255, 255, 255)",
                             "min_height": "auto",
-                            "display": "block"
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "height": "48px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "width": "48px"
                         },
                         "children": [
                             {
@@ -83,32 +85,32 @@
                                 "text": "\uff14\uff15\uff16"
                             },
                             {
+                                "tag": "BR",
                                 "style": {
-                                    "border_left_color": "rgb(255, 255, 255)",
                                     "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)",
                                     "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "BR"
+                                    "border_left_color": "rgb(255, 255, 255)"
+                                }
                             },
                             {
                                 "style": {},
                                 "text": "\uff44\uff45\uff46"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "48px",
-                            "min_width": "auto",
-                            "width": "48px",
-                            "border_right_color": "rgb(255, 255, 255)",
                             "border_bottom_color": "rgb(255, 255, 255)",
                             "min_height": "auto",
-                            "display": "block"
+                            "border_left_color": "rgb(255, 255, 255)",
+                            "display": "block",
+                            "border_top_color": "rgb(255, 255, 255)",
+                            "height": "48px",
+                            "border_right_color": "rgb(255, 255, 255)",
+                            "min_width": "auto",
+                            "width": "48px"
                         },
                         "children": [
                             {
@@ -116,30 +118,28 @@
                                 "text": "\uff11\uff12\uff13"
                             },
                             {
+                                "tag": "BR",
                                 "style": {
-                                    "border_left_color": "rgb(255, 255, 255)",
                                     "border_top_color": "rgb(255, 255, 255)",
+                                    "border_right_color": "rgb(255, 255, 255)",
                                     "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_right_color": "rgb(255, 255, 255)"
-                                },
-                                "tag": "BR"
+                                    "border_left_color": "rgb(255, 255, 255)"
+                                }
                             },
                             {
                                 "style": {},
                                 "text": "\uff41\uff42\uff43"
                             }
-                        ],
-                        "tag": "DIV"
+                        ]
                     }
-                ],
-                "tag": "DIV"
+                ]
             }
-        ],
-        "tag": "BODY"
+        ]
     },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-flow-property",
         "http://www.w3.org/TR/css-writing-modes-3/#block-flow"
     ],
-    "matches": "css-flexbox-row-ref.html"
+    "matches": "css-flexbox-row-ref.html",
+    "assert": "Test checks that when writing mode is vertical and flex-flow: row-reverse, the flex container is vertical."
 }

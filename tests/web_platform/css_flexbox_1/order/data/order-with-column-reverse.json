@@ -1,79 +1,79 @@
 {
+    "matches": "order-with-column-reverse-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#order-property"
+    ],
+    "assert": "This test check that a flex container layouts out its content starting with the lowest numbered ordinal group and going up with column-reverse direction.",
     "test_case": {
         "tag": "BODY",
-        "style": {
-            "margin_bottom": "8px",
-            "display": "block",
-            "height": "54px",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px"
-        },
         "children": [
             {
                 "tag": "DIV",
-                "style": {
-                    "width": "624px",
-                    "display": "flex",
-                    "height": "54px"
-                },
                 "children": [
                     {
                         "tag": "P",
-                        "style": {
-                            "width": "624px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "18px"
-                        },
                         "children": [
                             {
                                 "text": "Second,",
                                 "style": {}
                             }
-                        ]
+                        ],
+                        "style": {
+                            "display": "block",
+                            "width": "624px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "18px"
+                        }
                     },
                     {
                         "tag": "P",
-                        "style": {
-                            "width": "624px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "18px"
-                        },
                         "children": [
                             {
                                 "text": "First,",
                                 "style": {}
                             }
-                        ]
+                        ],
+                        "style": {
+                            "display": "block",
+                            "width": "624px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "18px"
+                        }
                     },
                     {
                         "tag": "P",
-                        "style": {
-                            "width": "624px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "18px"
-                        },
                         "children": [
                             {
                                 "text": "Third",
                                 "style": {}
                             }
-                        ]
+                        ],
+                        "style": {
+                            "display": "block",
+                            "width": "624px",
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "height": "18px"
+                        }
                     }
-                ]
+                ],
+                "style": {
+                    "display": "flex",
+                    "width": "624px",
+                    "height": "54px"
+                }
             }
-        ]
-    },
-    "matches": "order-with-column-reverse-ref.html",
-    "assert": "This test check that a flex container layouts out its content starting with the lowest numbered ordinal group and going up with column-reverse direction.",
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#order-property"
-    ]
+        ],
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "height": "54px",
+            "width": "624px",
+            "margin_right": "8px"
+        }
+    }
 }

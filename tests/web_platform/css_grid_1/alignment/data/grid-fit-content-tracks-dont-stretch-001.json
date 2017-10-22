@@ -1,17 +1,21 @@
 {
+    "assert": "This test checks that 'fit-content()' tracks behave the same with 'normal', 'stretch' or 'start' values for content distribution properties.",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#track-sizing",
+        "https://drafts.csswg.org/css-grid-1/#grid-align",
+        "https://drafts.csswg.org/css-grid-1/#algo-stretch"
+    ],
     "test_case": {
-        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "0px"
-                }
+                    "height": "0px",
+                    "width": "624px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H1",
                 "children": [
                     {
                         "text": "1) place-content: normal",
@@ -20,14 +24,14 @@
                 ],
                 "style": {
                     "margin_bottom": "21.440000534057617px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "21.440000534057617px",
-                    "height": "37px"
-                }
+                    "height": "37px",
+                    "display": "block"
+                },
+                "tag": "H1"
             },
             {
-                "tag": "H2",
                 "children": [
                     {
                         "text": "1.2) Unconstrained grid container",
@@ -36,17 +40,16 @@
                 ],
                 "style": {
                     "margin_bottom": "19.920000076293945px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "19.920000076293945px",
-                    "height": "28px"
-                }
+                    "height": "28px",
+                    "display": "block"
+                },
+                "tag": "H2"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -54,25 +57,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -80,25 +83,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -106,25 +109,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -132,25 +135,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXXXXXXX X",
@@ -158,57 +161,57 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XX",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
@@ -216,22 +219,23 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H2",
                 "children": [
                     {
                         "text": "1.2) Constrained grid container",
@@ -240,17 +244,16 @@
                 ],
                 "style": {
                     "margin_bottom": "19.920000076293945px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "19.920000076293945px",
-                    "height": "28px"
-                }
+                    "height": "28px",
+                    "display": "block"
+                },
+                "tag": "H2"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -258,25 +261,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "25px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "25px",
-                            "height": "25px"
-                        }
+                            "width": "25px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -284,25 +287,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "75px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "100px",
-                            "height": "75px"
-                        }
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -310,25 +313,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "25px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "25px",
-                            "height": "25px"
-                        }
+                            "width": "25px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -336,25 +339,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "75px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "100px",
-                            "height": "75px"
-                        }
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXXXXXXX X",
@@ -362,57 +365,57 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "50px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "225px",
-                            "height": "50px"
-                        }
+                            "width": "225px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XX",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
@@ -420,22 +423,23 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "125px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "50px",
-                            "height": "125px"
-                        }
+                            "width": "50px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H1",
                 "children": [
                     {
                         "text": "2) place-content: stretch",
@@ -444,14 +448,14 @@
                 ],
                 "style": {
                     "margin_bottom": "21.440000534057617px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "21.440000534057617px",
-                    "height": "37px"
-                }
+                    "height": "37px",
+                    "display": "block"
+                },
+                "tag": "H1"
             },
             {
-                "tag": "H2",
                 "children": [
                     {
                         "text": "2.2) Unconstrained grid container",
@@ -460,17 +464,16 @@
                 ],
                 "style": {
                     "margin_bottom": "19.920000076293945px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "19.920000076293945px",
-                    "height": "28px"
-                }
+                    "height": "28px",
+                    "display": "block"
+                },
+                "tag": "H2"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -478,25 +481,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -504,25 +507,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -530,25 +533,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -556,25 +559,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXXXXXXX X",
@@ -582,57 +585,57 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XX",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
@@ -640,22 +643,23 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H2",
                 "children": [
                     {
                         "text": "2.2) Constrained grid container",
@@ -664,17 +668,16 @@
                 ],
                 "style": {
                     "margin_bottom": "19.920000076293945px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "19.920000076293945px",
-                    "height": "28px"
-                }
+                    "height": "28px",
+                    "display": "block"
+                },
+                "tag": "H2"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -682,25 +685,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "25px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "25px",
-                            "height": "25px"
-                        }
+                            "width": "25px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -708,25 +711,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "75px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "100px",
-                            "height": "75px"
-                        }
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -734,25 +737,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "25px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "25px",
-                            "height": "25px"
-                        }
+                            "width": "25px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -760,25 +763,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "75px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "100px",
-                            "height": "75px"
-                        }
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXXXXXXX X",
@@ -786,57 +789,57 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "50px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "225px",
-                            "height": "50px"
-                        }
+                            "width": "225px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XX",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
@@ -844,22 +847,23 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "125px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "50px",
-                            "height": "125px"
-                        }
+                            "width": "50px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H1",
                 "children": [
                     {
                         "text": "3) place-content: start",
@@ -868,14 +872,14 @@
                 ],
                 "style": {
                     "margin_bottom": "21.440000534057617px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "21.440000534057617px",
-                    "height": "37px"
-                }
+                    "height": "37px",
+                    "display": "block"
+                },
+                "tag": "H1"
             },
             {
-                "tag": "H2",
                 "children": [
                     {
                         "text": "3.1) Unconstrained grid container",
@@ -884,17 +888,16 @@
                 ],
                 "style": {
                     "margin_bottom": "19.920000076293945px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "19.920000076293945px",
-                    "height": "28px"
-                }
+                    "height": "28px",
+                    "display": "block"
+                },
+                "tag": "H2"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -902,25 +905,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -928,25 +931,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -954,25 +957,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -980,25 +983,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXXXXXXX X",
@@ -1006,57 +1009,57 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XX",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
@@ -1064,22 +1067,23 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "200px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "400px",
-                            "height": "200px"
-                        }
+                            "width": "400px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "400px",
-                    "height": "200px"
-                }
+                    "height": "200px",
+                    "width": "400px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "H2",
                 "children": [
                     {
                         "text": "3.2) Constrained grid container",
@@ -1088,17 +1092,16 @@
                 ],
                 "style": {
                     "margin_bottom": "19.920000076293945px",
-                    "display": "block",
                     "width": "624px",
                     "margin_top": "19.920000076293945px",
-                    "height": "28px"
-                }
+                    "height": "28px",
+                    "display": "block"
+                },
+                "tag": "H2"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -1106,25 +1109,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "25px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "25px",
-                            "height": "25px"
-                        }
+                            "width": "25px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -1132,25 +1135,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "75px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "100px",
-                            "height": "75px"
-                        }
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "X",
@@ -1158,25 +1161,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "25px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "25px",
-                            "height": "25px"
-                        }
+                            "width": "25px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXX XXX XX X",
@@ -1184,25 +1187,25 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "75px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "100px",
-                            "height": "75px"
-                        }
+                            "width": "100px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XXXXXXXXX X",
@@ -1210,57 +1213,57 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "50px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "225px",
-                            "height": "50px"
-                        }
+                            "width": "225px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "children": [
                             {
                                 "text": "XX",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
                                 "style": {}
                             },
                             {
-                                "tag": "BR",
-                                "style": {}
+                                "style": {},
+                                "tag": "BR"
                             },
                             {
                                 "text": "X",
@@ -1268,36 +1271,33 @@
                             }
                         ],
                         "style": {
-                            "display": "block",
+                            "height": "125px",
                             "min_height": "auto",
+                            "display": "block",
                             "min_width": "auto",
-                            "width": "50px",
-                            "height": "125px"
-                        }
+                            "width": "50px"
+                        },
+                        "tag": "DIV"
                     }
                 ],
                 "style": {
                     "display": "grid",
-                    "width": "20px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "width": "20px"
+                },
+                "tag": "DIV"
             }
         ],
         "style": {
-            "display": "block",
-            "height": "4345.34375px",
             "margin_bottom": "8px",
+            "margin_top": "8px",
+            "height": "4345.34375px",
+            "width": "624px",
             "margin_left": "8px",
             "margin_right": "8px",
-            "margin_top": "8px",
-            "width": "624px"
-        }
+            "display": "block"
+        },
+        "tag": "BODY"
     },
-    "matches": null,
-    "assert": "This test checks that 'fit-content()' tracks behave the same with 'normal', 'stretch' or 'start' values for content distribution properties.",
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#track-sizing",
-        "https://drafts.csswg.org/css-grid-1/#grid-align",
-        "https://drafts.csswg.org/css-grid-1/#algo-stretch"
-    ]
+    "matches": null
 }

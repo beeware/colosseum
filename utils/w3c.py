@@ -86,7 +86,7 @@ class Evaluator(NSObject):
             result = json.loads(result)
             example = os.path.splitext(os.path.basename(self.filename))[0]
 
-            test_dir = os.path.join(self.output, 'web_platform', self.path.replace('-', '_'))
+            test_dir = os.path.join(self.output, self.path.replace('-', '_'))
 
             # If a document has "matches" or "assert" metadata,
             # it's a test document; otherwise, it's a reference.
@@ -123,12 +123,9 @@ class Evaluator(NSObject):
                 group_file = 'test_' + '_'.join(parts) + '.py'
 
                 test_filename = os.path.join(test_dir, group_file)
-
                 print("Writing unittest file {}".format(test_filename))
                 with open(os.path.join(test_filename), 'w') as f:
-                    depth = '.' * len(self.path.split(os.path.sep))
                     f.write(TEST_CLASS_TEMPLATE.format(
-                        depth=depth,
                         group=group + suffix,
                         classname=group_class,
                     ))

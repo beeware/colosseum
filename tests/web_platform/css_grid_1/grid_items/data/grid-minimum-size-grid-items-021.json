@@ -1,9 +1,5 @@
 {
     "assert": "Checks how automatic minimum size of images affect to the calculation of the grid container size and the grid tracks. Verifies the sizing of the image in the different cases too.",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#min-size-auto",
-        "http://www.w3.org/TR/css-grid-1/#algo-track-sizing"
-    ],
     "test_case": {
         "children": [
             {
@@ -15,8 +11,8 @@
                 }
             },
             {
-                "text": "Grids with only a 50x50 image as grid item.",
-                "style": {}
+                "style": {},
+                "text": "Grids with only a 50x50 image as grid item."
             },
             {
                 "children": [
@@ -24,10 +20,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -44,10 +40,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -64,10 +60,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "50px"
+                            "min_height": "auto",
+                            "height": "50px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -84,10 +80,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "50px"
+                            "min_height": "auto",
+                            "height": "50px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -104,10 +100,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "50px",
-                            "height": "50px"
+                            "min_height": "auto",
+                            "height": "50px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -124,10 +120,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "50px",
-                            "height": "50px"
+                            "min_height": "auto",
+                            "height": "50px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -139,8 +135,8 @@
                 }
             },
             {
-                "text": "Grids with a 50x50 image as grid item and a 100x25 text grid item.",
-                "style": {}
+                "style": {},
+                "text": "Grids with a 50x50 image as grid item and a 100x25 text grid item."
             },
             {
                 "children": [
@@ -148,26 +144,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -184,26 +180,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -220,26 +216,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -256,26 +252,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -292,26 +288,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -328,26 +324,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "100px"
+                            "min_height": "auto",
+                            "height": "100px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "100px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -359,8 +355,8 @@
                 }
             },
             {
-                "text": "Grids with only a 500x500 image as grid item.",
-                "style": {}
+                "style": {},
+                "text": "Grids with only a 500x500 image as grid item."
             },
             {
                 "children": [
@@ -368,10 +364,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -388,10 +384,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -408,10 +404,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -428,10 +424,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -448,10 +444,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -468,10 +464,10 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -483,8 +479,8 @@
                 }
             },
             {
-                "text": "Grids with a 500x500 image as grid item and a 100x25 text grid item.",
-                "style": {}
+                "style": {},
+                "text": "Grids with a 500x500 image as grid item and a 100x25 text grid item."
             },
             {
                 "children": [
@@ -492,26 +488,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -528,26 +524,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -564,26 +560,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -600,26 +596,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -636,26 +632,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -672,26 +668,26 @@
                         "tag": "IMG",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "200px"
+                            "min_height": "auto",
+                            "height": "200px",
+                            "min_width": "auto"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "ITEM",
-                                "style": {}
+                                "style": {},
+                                "text": "ITEM"
                             }
                         ],
                         "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "min_height": "auto",
-                            "min_width": "auto",
                             "width": "200px",
-                            "height": "25px"
+                            "min_height": "auto",
+                            "height": "25px",
+                            "min_width": "auto"
                         }
                     }
                 ],
@@ -706,13 +702,17 @@
         "tag": "BODY",
         "style": {
             "display": "block",
+            "width": "624px",
             "margin_left": "8px",
             "height": "1412px",
-            "width": "624px",
-            "margin_right": "8px",
+            "margin_bottom": "8px",
             "margin_top": "8px",
-            "margin_bottom": "8px"
+            "margin_right": "8px"
         }
     },
-    "matches": null
+    "matches": null,
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#min-size-auto",
+        "http://www.w3.org/TR/css-grid-1/#algo-track-sizing"
+    ]
 }

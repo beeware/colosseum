@@ -1,18 +1,15 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-items"
-    ],
     "test_case": {
         "children": [
             {
                 "tag": "DIV",
                 "style": {
                     "display": "block",
-                    "height": "100px",
-                    "position": "absolute",
                     "width": "100px",
-                    "z_index": "-1"
+                    "position": "absolute",
+                    "z_index": "-1",
+                    "height": "100px"
                 }
             },
             {
@@ -20,84 +17,87 @@
                     {
                         "children": [
                             {
-                                "text": "it",
-                                "style": {}
+                                "style": {},
+                                "text": "it"
                             }
                         ],
                         "tag": "SPAN",
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
-                            "height": "50px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
                             "width": "624px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "height": "50px",
                             "border_left_color": "rgb(0, 128, 0)",
+                            "min_width": "auto",
                             "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)"
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "hidden",
-                                "style": {}
+                                "style": {},
+                                "text": "hidden"
                             }
                         ],
                         "tag": "SPAN",
                         "style": {
                             "display": "none",
-                            "min_width": "auto",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "border_top_color": "rgb(255, 0, 0)",
-                            "border_left_color": "rgb(255, 0, 0)",
                             "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 0, 0)"
+                            "border_right_color": "rgb(255, 0, 0)",
+                            "border_left_color": "rgb(255, 0, 0)",
+                            "min_width": "auto",
+                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_top_color": "rgb(255, 0, 0)"
                         }
                     },
                     {
                         "children": [
                             {
-                                "text": "em",
-                                "style": {}
+                                "style": {},
+                                "text": "em"
                             }
                         ],
                         "tag": "SPAN",
                         "style": {
                             "display": "block",
-                            "min_width": "auto",
-                            "height": "50px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
                             "width": "624px",
+                            "border_right_color": "rgb(0, 128, 0)",
+                            "height": "50px",
                             "border_left_color": "rgb(0, 128, 0)",
+                            "min_width": "auto",
                             "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)"
+                            "border_bottom_color": "rgb(0, 128, 0)",
+                            "border_top_color": "rgb(0, 128, 0)"
                         }
                     }
                 ],
                 "tag": "DIV",
                 "style": {
                     "display": "grid",
-                    "height": "100px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
                     "width": "624px",
+                    "border_right_color": "rgb(0, 128, 0)",
+                    "height": "100px",
                     "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)"
+                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "border_top_color": "rgb(0, 128, 0)"
                 }
             }
         ],
         "tag": "BODY",
         "style": {
             "display": "block",
+            "width": "624px",
             "margin_left": "8px",
             "height": "100px",
-            "width": "624px",
-            "margin_right": "8px",
+            "margin_bottom": "8px",
             "margin_top": "8px",
-            "margin_bottom": "8px"
+            "margin_right": "8px"
         }
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht"
+    "matches": "../../reference/ref-filled-green-100px-square.xht",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-items"
+    ]
 }

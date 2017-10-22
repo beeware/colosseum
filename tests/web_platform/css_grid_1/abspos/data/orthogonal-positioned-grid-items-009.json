@@ -1,132 +1,132 @@
 {
-    "assert": "Checks that absolutely positioned orthogonal grid items are properly placed and sized when they have specific 'left, 'right', 'top' and 'bottom' offsets.",
-    "test_case": {
-        "tag": "BODY",
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "height": "451px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "tag": "DIV",
-                "style": {
-                    "margin_top": "1px",
-                    "padding_bottom": "10px",
-                    "height": "400px",
-                    "margin_left": "4px",
-                    "border_left_style": "solid",
-                    "margin_right": "2px",
-                    "margin_bottom": "3px",
-                    "border_right_style": "solid",
-                    "display": "grid",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "12px",
-                    "border_left_width": "6px",
-                    "width": "550px",
-                    "border_top_width": "9px",
-                    "border_right_width": "3px",
-                    "padding_top": "20px",
-                    "position": "relative",
-                    "border_top_style": "solid",
-                    "padding_right": "15px",
-                    "padding_left": "5px"
-                },
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "height": "430px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "left": "0px",
-                            "right": "0px",
-                            "position": "absolute",
-                            "top": "0px",
-                            "bottom": "0px",
-                            "width": "570px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "First item"
-                            }
-                        ]
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "height": "430px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "left": "0px",
-                            "right": "0px",
-                            "position": "absolute",
-                            "top": "0px",
-                            "bottom": "0px",
-                            "width": "570px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Second item"
-                            }
-                        ]
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "height": "430px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "left": "0px",
-                            "right": "0px",
-                            "position": "absolute",
-                            "top": "0px",
-                            "bottom": "0px",
-                            "width": "570px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Third item"
-                            }
-                        ]
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "height": "430px",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "left": "0px",
-                            "right": "0px",
-                            "position": "absolute",
-                            "top": "0px",
-                            "bottom": "0px",
-                            "width": "570px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Fourth item"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "matches": "orthogonal-positioned-grid-items-009-ref.html",
     "help": [
         "https://drafts.csswg.org/css-grid/#abspos"
-    ]
+    ],
+    "matches": "orthogonal-positioned-grid-items-009-ref.html",
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "text": "First item",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "right": "0px",
+                            "top": "0px",
+                            "display": "block",
+                            "height": "430px",
+                            "width": "570px",
+                            "bottom": "0px",
+                            "left": "0px",
+                            "position": "absolute"
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Second item",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "right": "0px",
+                            "top": "0px",
+                            "display": "block",
+                            "height": "430px",
+                            "width": "570px",
+                            "bottom": "0px",
+                            "left": "0px",
+                            "position": "absolute"
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Third item",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "right": "0px",
+                            "top": "0px",
+                            "display": "block",
+                            "height": "430px",
+                            "width": "570px",
+                            "bottom": "0px",
+                            "left": "0px",
+                            "position": "absolute"
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Fourth item",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV",
+                        "style": {
+                            "min_width": "auto",
+                            "min_height": "auto",
+                            "right": "0px",
+                            "top": "0px",
+                            "display": "block",
+                            "height": "430px",
+                            "width": "570px",
+                            "bottom": "0px",
+                            "left": "0px",
+                            "position": "absolute"
+                        }
+                    }
+                ],
+                "tag": "DIV",
+                "style": {
+                    "border_left_width": "6px",
+                    "margin_right": "2px",
+                    "border_bottom_width": "12px",
+                    "padding_top": "20px",
+                    "padding_bottom": "10px",
+                    "width": "550px",
+                    "margin_left": "4px",
+                    "height": "400px",
+                    "border_top_style": "solid",
+                    "border_right_style": "solid",
+                    "position": "relative",
+                    "border_right_width": "3px",
+                    "display": "grid",
+                    "border_bottom_style": "solid",
+                    "border_left_style": "solid",
+                    "margin_bottom": "3px",
+                    "border_top_width": "9px",
+                    "padding_right": "15px",
+                    "padding_left": "5px",
+                    "margin_top": "1px"
+                }
+            }
+        ],
+        "tag": "BODY",
+        "style": {
+            "display": "block",
+            "height": "451px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px",
+            "width": "624px",
+            "margin_right": "8px"
+        }
+    },
+    "assert": "Checks that absolutely positioned orthogonal grid items are properly placed and sized when they have specific 'left, 'right', 'top' and 'bottom' offsets."
 }

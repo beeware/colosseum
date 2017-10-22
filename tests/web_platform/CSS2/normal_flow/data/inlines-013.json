@@ -1,96 +1,96 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
+        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
+    ],
     "test_case": {
         "children": [
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "PASS"
+                        "text": "PASS",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "height": "64px",
                     "display": "block",
                     "top": "100px",
+                    "position": "absolute",
                     "width": "153.625px",
-                    "position": "absolute"
-                },
-                "tag": "div"
+                    "height": "64px"
+                }
             },
             {
                 "children": [
                     {
-                        "style": {},
-                        "text": "FAIL"
+                        "text": "FAIL",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "height": "64px",
                     "display": "block",
                     "top": "164px",
+                    "position": "absolute",
                     "width": "153.625px",
-                    "position": "absolute"
-                },
-                "tag": "div"
+                    "height": "64px"
+                }
             },
             {
                 "children": [
                     {
+                        "tag": "img",
                         "style": {
                             "height": "1px",
                             "width": "1px"
-                        },
-                        "tag": "img"
+                        }
                     },
                     {
-                        "style": {},
-                        "text": "this should generate a line box 64px high"
+                        "text": "this should generate a line box 64px high",
+                        "style": {}
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "XXXX"
+                                "text": "XXXX",
+                                "style": {}
                             }
                         ],
+                        "tag": "div",
                         "style": {
                             "display": "block",
                             "height": "64px",
-                            "width": "153.625px",
-                            "float": "left"
-                        },
-                        "tag": "div"
+                            "float": "left",
+                            "width": "153.625px"
+                        }
                     },
                     {
-                        "style": {},
-                        "text": "this will overlap the PASS if it ends up on the previous line, otherwise it will overlap the fail"
+                        "text": "this will overlap the PASS if it ends up on the previous line, otherwise it will overlap the fail",
+                        "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
-                    "height": "128px",
                     "display": "block",
                     "top": "100px",
+                    "position": "absolute",
                     "width": "0px",
-                    "position": "absolute"
-                },
-                "tag": "div"
+                    "height": "128px"
+                }
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "0px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": null,
-    "matches": "inlines-013-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
-        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
-    ]
+    "matches": "inlines-013-ref.xht"
 }

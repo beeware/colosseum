@@ -1,60 +1,60 @@
 {
+    "matches": "containing-block-023-ref.xht",
+    "assert": "When there are no positioned ancestors, then the initial containing block is used.",
     "test_case": {
+        "style": {
+            "width": "624px",
+            "margin_bottom": "8px",
+            "height": "0px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        },
+        "tag": "body",
         "children": [
             {
+                "style": {
+                    "width": "432px",
+                    "margin_bottom": "96px",
+                    "height": "0px",
+                    "margin_top": "96px",
+                    "margin_right": "96px",
+                    "margin_left": "96px",
+                    "display": "block"
+                },
+                "tag": "div",
                 "children": [
                     {
+                        "style": {
+                            "width": "240px",
+                            "margin_bottom": "96px",
+                            "height": "0px",
+                            "margin_top": "96px",
+                            "margin_right": "96px",
+                            "margin_left": "96px",
+                            "display": "block"
+                        },
+                        "tag": "div",
                         "children": [
                             {
-                                "tag": "div",
                                 "style": {
+                                    "width": "96px",
+                                    "height": "96px",
                                     "display": "block",
                                     "bottom": "0px",
-                                    "width": "96px",
                                     "left": "0px",
-                                    "height": "96px",
                                     "position": "absolute"
-                                }
+                                },
+                                "tag": "div"
                             }
-                        ],
-                        "tag": "div",
-                        "style": {
-                            "display": "block",
-                            "margin_right": "96px",
-                            "margin_bottom": "96px",
-                            "margin_top": "96px",
-                            "height": "0px",
-                            "width": "240px",
-                            "margin_left": "96px"
-                        }
+                        ]
                     }
-                ],
-                "tag": "div",
-                "style": {
-                    "display": "block",
-                    "margin_right": "96px",
-                    "margin_bottom": "96px",
-                    "margin_top": "96px",
-                    "height": "0px",
-                    "width": "432px",
-                    "margin_left": "96px"
-                }
+                ]
             }
-        ],
-        "tag": "body",
-        "style": {
-            "display": "block",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "0px",
-            "width": "624px",
-            "margin_left": "8px"
-        }
+        ]
     },
-    "assert": "When there are no positioned ancestors, then the initial containing block is used.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ],
-    "matches": "containing-block-023-ref.xht"
+    ]
 }

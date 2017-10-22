@@ -1,47 +1,9 @@
 {
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "padding_box": {
-        "position": [
-            8,
-            8
-        ],
-        "size": [
-            624,
-            400
-        ]
-    },
     "children": [
         {
-            "text": "\n\n  "
-        },
-        {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
-                50,
-                50,
-                50,
-                50
-            ],
-            "padding_box": {
-                "position": [
-                    158,
-                    58
-                ],
-                "size": [
-                    200,
-                    200
-                ]
-            },
             "children": [
                 {
-                    "padding": [
+                    "border": [
                         0,
                         0,
                         0,
@@ -58,13 +20,13 @@
                         ]
                     },
                     "tag": "img",
-                    "border": [
+                    "padding": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "content": {
+                    "border_box": {
                         "position": [
                             208,
                             108
@@ -75,7 +37,7 @@
                         ]
                     },
                     "id": "",
-                    "border_box": {
+                    "content": {
                         "position": [
                             208,
                             108
@@ -87,24 +49,29 @@
                     }
                 }
             ],
-            "tag": "div",
             "border": [
                 50,
                 50,
                 50,
                 50
             ],
-            "content": {
+            "padding_box": {
                 "position": [
-                    208,
-                    108
+                    158,
+                    58
                 ],
                 "size": [
-                    100,
-                    100
+                    200,
+                    200
                 ]
             },
-            "id": "statically-positioned-box",
+            "tag": "div",
+            "padding": [
+                50,
+                50,
+                50,
+                50
+            ],
             "border_box": {
                 "position": [
                     108,
@@ -114,13 +81,23 @@
                     300,
                     300
                 ]
+            },
+            "id": "statically-positioned-box",
+            "content": {
+                "position": [
+                    208,
+                    108
+                ],
+                "size": [
+                    100,
+                    100
+                ]
             }
         },
         {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
+            "text": "TL",
+            "children": [],
+            "border": [
                 0,
                 0,
                 0,
@@ -136,19 +113,14 @@
                     25
                 ]
             },
-            "children": [
-                {
-                    "text": "TL"
-                }
-            ],
             "tag": "div",
-            "border": [
+            "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "border_box": {
                 "position": [
                     158,
                     58
@@ -159,7 +131,7 @@
                 ]
             },
             "id": "top-left",
-            "border_box": {
+            "content": {
                 "position": [
                     158,
                     58
@@ -171,10 +143,9 @@
             }
         },
         {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
+            "text": "TR",
+            "children": [],
+            "border": [
                 0,
                 0,
                 0,
@@ -190,19 +161,14 @@
                     25
                 ]
             },
-            "children": [
-                {
-                    "text": "TR"
-                }
-            ],
             "tag": "div",
-            "border": [
+            "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "border_box": {
                 "position": [
                     333,
                     58
@@ -213,7 +179,7 @@
                 ]
             },
             "id": "top-right",
-            "border_box": {
+            "content": {
                 "position": [
                     333,
                     58
@@ -225,10 +191,9 @@
             }
         },
         {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
+            "text": "BL",
+            "children": [],
+            "border": [
                 0,
                 0,
                 0,
@@ -244,19 +209,14 @@
                     25
                 ]
             },
-            "children": [
-                {
-                    "text": "BL"
-                }
-            ],
             "tag": "div",
-            "border": [
+            "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "border_box": {
                 "position": [
                     158,
                     233
@@ -267,7 +227,7 @@
                 ]
             },
             "id": "bottom-left",
-            "border_box": {
+            "content": {
                 "position": [
                     158,
                     233
@@ -279,10 +239,9 @@
             }
         },
         {
-            "text": "\n\n  "
-        },
-        {
-            "padding": [
+            "text": "BR",
+            "children": [],
+            "border": [
                 0,
                 0,
                 0,
@@ -298,19 +257,14 @@
                     25
                 ]
             },
-            "children": [
-                {
-                    "text": "BR"
-                }
-            ],
             "tag": "div",
-            "border": [
+            "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "content": {
+            "border_box": {
                 "position": [
                     333,
                     233
@@ -321,7 +275,7 @@
                 ]
             },
             "id": "bottom-right",
-            "border_box": {
+            "content": {
                 "position": [
                     333,
                     233
@@ -331,19 +285,32 @@
                     25
                 ]
             }
-        },
-        {
-            "text": "\n\n "
         }
     ],
-    "tag": "body",
     "border": [
         0,
         0,
         0,
         0
     ],
-    "content": {
+    "padding_box": {
+        "position": [
+            8,
+            8
+        ],
+        "size": [
+            624,
+            400
+        ]
+    },
+    "tag": "body",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "border_box": {
         "position": [
             8,
             8
@@ -354,7 +321,7 @@
         ]
     },
     "id": "",
-    "border_box": {
+    "content": {
         "position": [
             8,
             8

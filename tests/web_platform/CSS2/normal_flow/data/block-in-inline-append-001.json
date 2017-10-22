@@ -1,4 +1,7 @@
 {
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ],
     "test_case": {
         "children": [
             {
@@ -6,50 +9,47 @@
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "A"
+                                "text": "A",
+                                "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
                             "display": "block",
                             "height": "18px",
                             "width": "160px"
-                        },
-                        "tag": "span"
+                        }
                     },
                     {
                         "children": [
                             {
-                                "style": {},
-                                "text": "A"
+                                "text": "A",
+                                "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {
                             "display": "block",
                             "height": "18px",
                             "width": "160px"
-                        },
-                        "tag": "span"
+                        }
                     }
                 ],
-                "style": {},
-                "tag": "span"
+                "tag": "span",
+                "style": {}
             }
         ],
+        "tag": "body",
         "style": {
-            "margin_left": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "width": "624px",
+            "margin_right": "8px",
             "margin_bottom": "8px",
             "height": "36px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
+            "margin_left": "8px"
+        }
     },
     "assert": null,
-    "matches": "block-in-inline-append-001-ref.xht",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    "matches": "block-in-inline-append-001-ref.xht"
 }

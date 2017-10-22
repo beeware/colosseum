@@ -1,83 +1,83 @@
 {
+    "assert": "The line box height is given by the distance between the uppermost box top and the lowermost box bottom. The line box height is not necessarly given by the height of the tallest inline box contained in the line box.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#line-height",
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
+    ],
     "test_case": {
-        "tag": "body",
         "children": [
             {
                 "text": "In this test, the short vertical blue line represents the tallest\n  inline box present in the line box. And its presence contribute\n  to demonstrate that the line box height is not necessarly given\n  by the height of its tallest inline box.",
                 "style": {}
             },
             {
-                "tag": "div",
                 "children": [
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "1",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {}
                     },
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "0",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {}
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "width": "5px",
-                            "height": "35px"
+                            "height": "35px",
+                            "width": "5px"
                         }
                     },
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "1",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {}
                     },
                     {
-                        "tag": "span",
                         "children": [
                             {
                                 "text": "2",
                                 "style": {}
                             }
                         ],
+                        "tag": "span",
                         "style": {}
                     }
                 ],
+                "tag": "div",
                 "style": {
                     "display": "block",
-                    "width": "624px",
-                    "height": "50px"
+                    "height": "50px",
+                    "width": "624px"
                 }
             }
         ],
+        "tag": "body",
         "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_left": "8px",
-            "margin_right": "8px",
             "display": "block",
-            "height": "50px"
+            "height": "50px",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "width": "624px"
         }
     },
-    "matches": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#line-height",
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
-    ],
-    "assert": "The line box height is given by the distance between the uppermost box top and the lowermost box bottom. The line box height is not necessarly given by the height of the tallest inline box contained in the line box."
+    "matches": null
 }
