@@ -1,155 +1,126 @@
 {
     "assert": "Checks that inline grid container children become grid items, and text that is directly contained inside the inline grid is wrapped in an anonymous grid item.",
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "display": "block",
                     "width": "100px",
                     "position": "absolute",
+                    "height": "100px",
                     "z_index": "-1",
-                    "height": "100px"
-                }
+                    "display": "block",
+                    "background_color": "red",
+                    "unicode_bidi": "embed"
+                },
+                "tag": "DIV"
             },
             {
+                "style": {
+                    "font_style": "normal",
+                    "font_family": "Ahem",
+                    "font_variant_caps": "normal",
+                    "color": "green",
+                    "font_weight": "normal",
+                    "display": "inline-grid",
+                    "line_height": "1",
+                    "unicode_bidi": "embed",
+                    "font_size": "25px"
+                },
                 "children": [
                     {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "it"
-                            }
-                        ],
-                        "tag": "DIV",
                         "style": {
                             "display": "block",
-                            "width": "50px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "height": "25px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
-                        }
-                    },
-                    {
-                        "style": {},
-                        "text": "em"
-                    },
-                    {
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "style": {},
-                                "text": "it"
+                                "text": "it",
+                                "style": {}
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "50px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "height": "25px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
-                        }
+                        "tag": "DIV"
                     },
                     {
-                        "style": {},
-                        "text": "em"
+                        "text": "em",
+                        "style": {}
+                    },
+                    {
+                        "style": {
+                            "display": "block",
+                            "unicode_bidi": "embed"
+                        },
+                        "children": [
+                            {
+                                "text": "it",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV"
+                    },
+                    {
+                        "text": "em",
+                        "style": {}
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "inline-grid",
-                    "width": "50px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "height": "100px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)"
-                }
+                "tag": "DIV"
             },
             {
+                "style": {
+                    "font_style": "normal",
+                    "font_family": "Ahem",
+                    "font_variant_caps": "normal",
+                    "color": "green",
+                    "font_weight": "normal",
+                    "display": "inline-grid",
+                    "line_height": "1",
+                    "unicode_bidi": "embed",
+                    "font_size": "25px"
+                },
                 "children": [
                     {
-                        "style": {},
-                        "text": "it"
-                    },
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "em"
-                            }
-                        ],
-                        "tag": "SPAN",
-                        "style": {
-                            "display": "block",
-                            "width": "50px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "height": "25px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
-                        }
+                        "text": "it",
+                        "style": {}
                     },
                     {
                         "style": {},
-                        "text": "it"
-                    },
-                    {
                         "children": [
                             {
-                                "style": {},
-                                "text": "em"
+                                "text": "em",
+                                "style": {}
                             }
                         ],
-                        "tag": "SPAN",
-                        "style": {
-                            "display": "block",
-                            "width": "50px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "height": "25px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
-                        }
+                        "tag": "SPAN"
+                    },
+                    {
+                        "text": "it",
+                        "style": {}
+                    },
+                    {
+                        "style": {},
+                        "children": [
+                            {
+                                "text": "em",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "SPAN"
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "inline-grid",
-                    "width": "50px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "height": "100px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)"
-                }
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "100px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-items"
-    ]
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

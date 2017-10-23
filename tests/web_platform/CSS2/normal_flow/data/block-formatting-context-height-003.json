@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#root-height"
-    ],
+    "assert": "The auto height of a block formatting context element does not account for bottom margins of floated content descendents of out of flow blocks.",
+    "matches": "block-formatting-context-height-003-ref.xht",
     "test_case": {
         "children": [
             {
@@ -9,9 +8,10 @@
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "width": "100px",
                             "display": "block",
-                            "height": "50px",
-                            "width": "100px"
+                            "height": "50px"
                         }
                     },
                     {
@@ -19,42 +19,55 @@
                             {
                                 "tag": "div",
                                 "style": {
+                                    "unicode_bidi": "embed",
+                                    "width": "100%",
+                                    "margin_bottom": "50px",
                                     "display": "block",
-                                    "height": "50px",
-                                    "width": "100px",
-                                    "margin_bottom": "50px"
+                                    "height": "50px"
                                 }
                             }
                         ],
                         "tag": "div",
                         "style": {
-                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "width": "100px",
                             "height": "50px",
-                            "position": "absolute",
-                            "width": "100px"
+                            "display": "block",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_x": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "background_attachment": "initial",
+                    "width": "100px",
+                    "background_color": "black",
                     "display": "block",
-                    "height": "50px",
-                    "position": "absolute",
-                    "width": "100px"
+                    "background_repeat_y": "initial",
+                    "background_repeat_x": "initial",
+                    "background_size": "initial",
+                    "background_image": "initial",
+                    "height": "auto",
+                    "background_clip": "initial",
+                    "position": "absolute"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The auto height of a block formatting context element does not account for bottom margins of floated content descendents of out of flow blocks.",
-    "matches": "block-formatting-context-height-003-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#root-height"
+    ]
 }

@@ -1,51 +1,55 @@
 {
     "assert": "A grid item is sized within the containing block defined by its grid area",
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
+                "style": {
+                    "grid_template_columns": "50%",
+                    "width": "200px",
+                    "unicode_bidi": "embed",
+                    "height": "200px",
+                    "display": "grid",
+                    "grid_template_rows": "50%"
+                },
                 "children": [
                     {
+                        "style": {
+                            "display": "block",
+                            "width": "100%",
+                            "height": "100%",
+                            "background_color": "red",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "tag": "DIV",
                                 "style": {
                                     "display": "block",
                                     "width": "100px",
-                                    "height": "100px"
-                                }
+                                    "height": "100px",
+                                    "background_color": "green",
+                                    "unicode_bidi": "embed"
+                                },
+                                "tag": "DIV"
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "min_height": "auto",
-                            "height": "100px",
-                            "min_width": "auto"
-                        }
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "200px",
-                    "height": "200px"
-                }
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "200px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#grid-items"
-    ]
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

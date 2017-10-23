@@ -1,120 +1,176 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-grid/#abspos"
-    ],
-    "matches": "orthogonal-positioned-grid-items-011-ref.html",
     "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "text": "First item",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "display": "block",
-                            "height": "61.78125px",
-                            "width": "18px",
-                            "left": "10px",
-                            "position": "absolute"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "Second item",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "display": "block",
-                            "height": "79.546875px",
-                            "width": "18px",
-                            "left": "10px",
-                            "position": "absolute"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "Third item",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "display": "block",
-                            "height": "67.984375px",
-                            "width": "18px",
-                            "left": "10px",
-                            "position": "absolute"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "Fourth item",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "display": "block",
-                            "height": "75.109375px",
-                            "width": "18px",
-                            "left": "10px",
-                            "position": "absolute"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "border_left_width": "6px",
-                    "margin_right": "2px",
-                    "border_bottom_width": "12px",
-                    "padding_top": "20px",
-                    "padding_bottom": "10px",
-                    "width": "550px",
-                    "margin_left": "4px",
-                    "height": "400px",
-                    "border_top_style": "solid",
-                    "border_right_style": "solid",
-                    "position": "relative",
-                    "border_right_width": "3px",
-                    "display": "grid",
-                    "border_bottom_style": "solid",
-                    "border_left_style": "solid",
-                    "margin_bottom": "3px",
-                    "border_top_width": "9px",
-                    "padding_right": "15px",
-                    "padding_left": "5px",
-                    "margin_top": "1px"
-                }
-            }
-        ],
         "tag": "BODY",
         "style": {
             "display": "block",
-            "height": "451px",
+            "unicode_bidi": "embed",
             "margin_bottom": "8px",
+            "margin_right": "8px",
             "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_right": "8px"
-        }
+            "margin_top": "8px"
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "grid_template_areas": "none",
+                    "height": "400px",
+                    "border_left_width": "6px",
+                    "padding_bottom": "10px",
+                    "padding_right": "15px",
+                    "padding_top": "20px",
+                    "grid_auto_rows": "initial",
+                    "border_right_width": "3px",
+                    "margin_left": "4px",
+                    "border_top_style": "solid",
+                    "grid_template_columns": "200px 300px",
+                    "display": "grid",
+                    "margin_bottom": "3px",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "padding_left": "5px",
+                    "grid_template_rows": "150px 100px",
+                    "position": "relative",
+                    "grid_auto_columns": "initial",
+                    "border_bottom_width": "12px",
+                    "unicode_bidi": "embed",
+                    "border_left_style": "solid",
+                    "width": "550px",
+                    "margin_top": "1px",
+                    "grid_row_gap": "initial",
+                    "margin_right": "2px",
+                    "grid_column_gap": "initial",
+                    "border_top_width": "9px",
+                    "grid_auto_flow": "initial"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "writing_mode": "vertical-lr",
+                            "background_image": "initial",
+                            "position": "absolute",
+                            "grid_column_end": "2",
+                            "background_origin": "initial",
+                            "left": "10px",
+                            "background_color": "magenta",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "background_repeat_y": "initial",
+                            "background_size": "initial",
+                            "grid_column_start": "1",
+                            "background_clip": "initial",
+                            "grid_row_end": "2",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "First item"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "writing_mode": "vertical-lr",
+                            "background_image": "initial",
+                            "position": "absolute",
+                            "grid_column_end": "3",
+                            "background_origin": "initial",
+                            "left": "10px",
+                            "background_color": "cyan",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "background_repeat_y": "initial",
+                            "background_size": "initial",
+                            "grid_column_start": "2",
+                            "background_clip": "initial",
+                            "grid_row_end": "2",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Second item"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "writing_mode": "vertical-lr",
+                            "background_image": "initial",
+                            "position": "absolute",
+                            "grid_column_end": "2",
+                            "background_origin": "initial",
+                            "left": "10px",
+                            "background_color": "yellow",
+                            "display": "block",
+                            "grid_row_start": "2",
+                            "background_repeat_y": "initial",
+                            "background_size": "initial",
+                            "grid_column_start": "1",
+                            "background_clip": "initial",
+                            "grid_row_end": "3",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Third item"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "writing_mode": "vertical-lr",
+                            "background_image": "initial",
+                            "position": "absolute",
+                            "grid_column_end": "3",
+                            "background_origin": "initial",
+                            "left": "10px",
+                            "background_color": "lime",
+                            "display": "block",
+                            "grid_row_start": "2",
+                            "background_repeat_y": "initial",
+                            "background_size": "initial",
+                            "grid_column_start": "2",
+                            "background_clip": "initial",
+                            "grid_row_end": "3",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "Fourth item"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
-    "assert": "Checks that absolutely positioned orthogonal grid items are properly placed and sized when they have a specific 'left' offset and a static block position (top/bottom are 'auto')."
+    "assert": "Checks that absolutely positioned orthogonal grid items are properly placed and sized when they have a specific 'left' offset and a static block position (top/bottom are 'auto').",
+    "matches": "orthogonal-positioned-grid-items-011-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid/#abspos"
+    ]
 }

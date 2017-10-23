@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The 'min-height' property sets a positive nominal length value in millimeters.",
+    "matches": "height-006-ref.xht",
     "test_case": {
         "children": [
             {
@@ -10,47 +8,58 @@
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "min_height": "25.4mm",
+                            "background_position_y": "initial",
+                            "background_attachment": "initial",
+                            "width": "1in",
+                            "background_color": "black",
                             "display": "block",
-                            "height": "96px",
-                            "position": "relative",
-                            "width": "96px",
-                            "min_height": "96px"
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "position": "relative"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "display": "block",
+                            "unicode_bidi": "embed",
                             "top": "0px",
-                            "position": "absolute",
-                            "width": "96px",
-                            "border_top_width": "96px",
+                            "border_top_color": "black",
+                            "border_top_width": "25.4mm",
                             "left": "100px",
-                            "height": "0px",
+                            "width": "1in",
+                            "position": "absolute",
+                            "display": "block",
                             "border_top_style": "solid"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
                     "display": "block",
-                    "height": "96px",
-                    "position": "relative",
-                    "width": "624px"
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "96px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-height' property sets a positive nominal length value in millimeters.",
-    "matches": "height-006-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

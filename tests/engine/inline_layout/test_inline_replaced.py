@@ -8,7 +8,7 @@ from ...utils import LayoutTestCase, TestNode
 class WidthTests(LayoutTestCase):
     def test_auto_left_margin(self):
         node = TestNode(
-name=            'img',
+            name='img',
             style=CSS(display=INLINE, margin_left=AUTO)
         )
         node.intrinsic.width = 50
@@ -83,9 +83,9 @@ name=            'img',
             node,
             {
                 'tag': 'img',
-                'border_box': {'position': (0, 0), 'size': (640, 960)},
-                'padding_box': {'position': (0, 0), 'size': (640, 960)},
-                'content': {'position': (0, 0), 'size': (640, 960)},
+                'border_box': {'position': (0, 0), 'size': (1024, 1536)},
+                'padding_box': {'position': (0, 0), 'size': (1024, 1536)},
+                'content': {'position': (0, 0), 'size': (1024, 1536)},
             }
         )
 

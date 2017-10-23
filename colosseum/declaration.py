@@ -1,13 +1,43 @@
 from . import engine as css_engine
 from .constants import (
-    AUTO, BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
+    ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
+    BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
     BOX_OFFSET_CHOICES, CLEAR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
-    FLOAT_CHOICES, INLINE, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
-    MIN_SIZE_CHOICES, NORMAL, PADDING_CHOICES, POSITION_CHOICES, SIZE_CHOICES,
-    STATIC, TRANSPARENT, UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES,
+    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
+    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
+    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
+    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
+    INLINE, JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
+    MIN_SIZE_CHOICES, NORMAL, NOWRAP, PADDING_CHOICES, POSITION_CHOICES, ROW,
+    SIZE_CHOICES, STATIC, STRETCH, TRANSPARENT, UNICODE_BIDI_CHOICES,
+    Z_INDEX_CHOICES, ORDER_CHOICES
 )
 
 _CSS_PROPERTIES = set()
+
+
+def unvalidated_property(name, choices, initial):
+    "Define a simple CSS property attribute."
+    initial = choices.validate(initial)
+
+    def getter(self):
+        return getattr(self, '_%s' % name, initial)
+
+    def setter(self, value):
+        if value != getattr(self, '_%s' % name, initial):
+            setattr(self, '_%s' % name, value)
+            self.dirty = True
+
+    def deleter(self):
+        try:
+            delattr(self, '_%s' % name)
+            self.dirty = True
+        except AttributeError:
+            # Attribute doesn't exist
+            pass
+
+    _CSS_PROPERTIES.add(name)
+    return property(getter, setter, deleter)
 
 
 def validated_property(name, choices, initial):
@@ -177,14 +207,16 @@ class CSS:
     width = validated_property('width', choices=SIZE_CHOICES, initial=AUTO)
 
     # 10.4 Minimum and maximum width
-    min_width = validated_property('min_width', choices=MIN_SIZE_CHOICES, initial=0)
+    # Initial value updated by Flexbox 4.5
+    min_width = validated_property('min_width', choices=MIN_SIZE_CHOICES, initial=AUTO)
     max_width = validated_property('max_width', choices=MAX_SIZE_CHOICES, initial=None)
 
     # 10.5 Content height
     height = validated_property('height', choices=SIZE_CHOICES, initial=AUTO)
 
     # 10.7 Minimum and maximum heights
-    min_height = validated_property('min_height', choices=MIN_SIZE_CHOICES, initial=0)
+    # Initial value updated by Flexbox 4.5
+    min_height = validated_property('min_height', choices=MIN_SIZE_CHOICES, initial=AUTO)
     max_height = validated_property('max_height', choices=MAX_SIZE_CHOICES, initial=None)
 
     # 10.8 Leading and half-leading
@@ -296,10 +328,89 @@ class CSS:
     # cursor
 
     # 18.4 Dynamic outlines
-    # outline-width
-    # outline-style
-    # outline-color
+    # outline_width
+    # outline_style
+    # outline_color
     # outline
+
+    ######################################################################
+    # Flexbox properties
+    ######################################################################
+
+    # 5. Ordering and orientation ########################################
+    # 5.1 Flex flow direction
+    # flex_direction = validated_property('flex_direction', choices=FLEX_DIRECTION_CHOICES, initial=ROW)
+
+    # 5.2 Flex line wrapping
+    # flex_wrap = validated_property('flex_wrap', choices=FLEX_WRAP_CHOICES, initial=NOWRAP)
+
+    # 5.3 Flex direction and wrap
+    # flex_flow =
+
+    # 5.4 Display order
+    # order = validated_property('order', choices=ORDER_CHOICES, initial=0)
+
+    # 7. Flexibility #####################################################
+    # 7.2 Components of flexibility
+    # flex_grow = validated_property('flex_grow', choices=FLEX_GROW_CHOICES, initial=0)
+    # flex_shrink = validated_property('flex_shrink', choices=FLEX_SHRINK_CHOICES, initial=1)
+    # flex_basis = validated_property('flex_basis', choices=FLEX_BASIS_CHOICES, initial=AUTO)
+
+    # 7.1 The 'flex' shorthand
+    # flex =
+
+    # 8. Alignment #######################################################
+    # 8.2 Axis alignment
+    # justify_content = validated_property('justify_content', choices=JUSTIFY_CONTENT_CHOICES, initial=FLEX_START)
+
+    # 8.3 Cros-axis alignment
+    # align_items = validated_property('align_items', choices=ALIGN_ITEMS_CHOICES, initial=STRETCH)
+    # align_self = validated_property('align_self', choices=ALIGN_SELF_CHOICES, initial=AUTO)
+
+    # 8.4 Packing flex lines
+    # align_content = validated_property('align_content', choices=ALIGN_CONTENT_CHOICES, initial=STRETCH)
+
+    ######################################################################
+    # Grid properties
+    ######################################################################
+    # 7. Defining the grid ###############################################
+    # 7.2 Explicit track sizing
+    # grid_template_columns = validated_property('grid_template_columns', choices=GRID_TEMPLATE_CHOICES, initial=None)
+    # grid_template_rows = validated_property('grid_template_rows', choices=GRID_TEMPLATE_CHOICES, initial=None)
+
+    # 7.3 Named Areas
+    # grid_template_areas = validated_property('grid_template_areas', choices=GRID_TEMPLATE_AREA_CHOICES, initial=None)
+
+    # 7.4 Explicit grid shorthand
+    # grid_template =
+
+    # 7.6 Implicit track sizing
+    # grid_auto_columns = validated_property('grid_auto_columns', choices=GRID_AUTO_CHOICES, initial=AUTO)
+    # grid_auto_rows = validated_property('grid_auto_rows', choices=GRID_AUTO_CHOICES, initial=AUTO)
+
+    # 7.7 Automatic placement
+    # grid_auto_flow = validated_property('grid_auto_flow', choices=GRID_AUTO_FLOW_CHOICES, initial=ROW)
+
+    # 7.8 Grid definition shorthand
+    # grid =
+
+    # 8. Placing grid items ##############################################
+    # 8.3 Line-based placement
+    # grid_row_start = validated_property('grid_row_start', choices=GRID_PLACEMENT_CHOICES, initial=AUTO)
+    # grid_column_start = validated_property('grid_column_start', choices=GRID_PLACEMENT_CHOICES, initial=AUTO)
+    # grid_row_end = validated_property('grid_row_end', choices=GRID_PLACEMENT_CHOICES, initial=AUTO)
+    # grid_column_end = validated_property('grid_column_end', choices=GRID_PLACEMENT_CHOICES, initial=AUTO)
+
+    # 8.4 Placement shorthands
+    # grid_row =
+    # grid_column =
+    # grid_area =
+
+    # 10. Alignment and spacing ##########################################
+    # 10.1 Gutters
+    # grid_row_gap = validated_property('grid_row_gap', choices=GRID_GAP_CHOICES, initial=0)
+    # grid_column_gap = validated_property('grid_column_gap', choices=GRID_GAP_CHOICES, initial=0)
+    # grid_gap =
 
     ######################################################################
     # Proxy the dirtiness state of layout calculations

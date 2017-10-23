@@ -1,51 +1,73 @@
 {
     "matches": "../reference/ref-filled-green-100px-square.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "100px",
-                            "display": "block",
-                            "width": "100px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "left": "0px",
-                            "top": "0px",
-                            "display": "block",
-                            "height": "100px",
-                            "position": "absolute",
-                            "width": "100px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "100px",
-                    "display": "block",
-                    "width": "200px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "100px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Absolute positioned elements are taken out of the normal flow when they have explicit offsets.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "100px",
+                            "background_clip": "initial",
+                            "height": "100px",
+                            "background_color": "red",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "100px",
+                            "background_clip": "initial",
+                            "height": "100px",
+                            "background_color": "green",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "0px",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "left": "0px",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "200px",
+                    "position": "relative",
+                    "height": "100px",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

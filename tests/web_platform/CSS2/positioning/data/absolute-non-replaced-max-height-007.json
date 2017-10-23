@@ -1,54 +1,85 @@
 {
     "matches": "absolute-non-replaced-max-height-007-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "relative",
-                            "height": "50px",
-                            "top": "50px",
-                            "display": "block",
-                            "width": "100px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "children": [],
-                        "style": {
-                            "height": "50px",
-                            "display": "block",
-                            "max_height": "50px",
-                            "bottom": "300px",
-                            "position": "absolute",
-                            "width": "50px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "400px",
-                    "display": "block",
-                    "width": "100px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "400px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "The height is based on the overall height of the content, 'margin-top', 'auto' is set to '0' and solve for 'top', when 'top' and 'height' are both 'auto' and 'bottom' is not 'auto'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "100px",
+                            "background_clip": "initial",
+                            "height": "50px",
+                            "background_color": "orange",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "50px",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "relative",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "children": [],
+                        "style": {
+                            "width": "50px",
+                            "margin_bottom": "auto",
+                            "margin_top": "auto",
+                            "background_clip": "initial",
+                            "height": "auto",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "auto",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "max_height": "50px",
+                            "unicode_bidi": "embed",
+                            "bottom": "300px",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "100px",
+                    "font_style": "normal",
+                    "font_family": "Ahem",
+                    "font_variant_caps": "normal",
+                    "height": "400px",
+                    "font_size": "100px",
+                    "position": "relative",
+                    "line_height": "1",
+                    "unicode_bidi": "embed",
+                    "font_weight": "normal",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

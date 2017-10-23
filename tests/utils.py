@@ -42,7 +42,11 @@ class TestNode:
 def build_document(data):
     if 'tag' in data:
         node = TestNode(name=data['tag'])
-        node.style.set(**data['style'])
+        node.style.set(**{
+            attr: value
+            for attr, value in data['style'].items()
+            if hasattr(node.style, attr)
+        })
 
         if 'children' in data:
             for child in data['children']:
@@ -122,23 +126,19 @@ def output_layout(layout, depth=1):
     if 'tag' in layout:
         return ('  ' * depth
             + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
-              ' @ ({n[content][position][0]}, {n[content][position][1]}){text}'
+              ' @ ({n[content][position][0]}, {n[content][position][1]})'
               '\n'.format(
                     n=layout,
                     tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
-                    text=(": '" + layout['text'] + "'") if 'text' in layout else ''
+                    # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
                 )
             # + '  ' * depth
-            # + '  {n[padding_box][size][0]}x{n[padding_box][size][1]}'
+            # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
             #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
             #   '\n'.format(n=layout)
             # + '  ' * depth
-            # + '  {n[border_box][size][0]}x{n[border_box][size][1]}'
+            # + '  border: {n[border_box][size][0]}x{n[border_box][size][1]}'
             #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
-            #   '\n'.format(n=layout)
-            # + '  ' * depth
-            # + '  {n[margin_box][size][0]}x{n[margin_box][size][1]}'
-            #   ' @ ({n[margin_box][position][0]}, {n[margin_box][position][1]})'
             #   '\n'.format(n=layout)
             + ''.join(
                     output_layout(child, depth=depth + 1)
@@ -155,22 +155,126 @@ def output_layout(layout, depth=1):
 class LayoutTestCase(TestCase):
     def setUp(self):
         self.maxDiff = None
-        self.display = Display(dpi=96, width=640, height=480)
+        self.display = Display(dpi=96, width=1024, height=768)
 
     def layout_node(self, node):
         root = TestNode(style=CSS(display=BLOCK), children=[node])
         layout(self.display, root)
 
-    def assertLayout(self, node, reference, extra=''):
-        self.assertEqual(
-            clean_layout(summarize(node)),
-            clean_layout(reference),
-            '\n\nExpected:\n{}Actual:\n{}{}'.format(
-                output_layout(reference),
-                output_layout(summarize(node)),
-                extra
+    def _assertLayout(self, actual, expected, output, depth=0):
+        found_problem = False
+        tag = ('<' + expected['tag'] + '> ') if 'tag' in expected else ''
+        output.append(
+            '    '
+            + '    ' * depth
+            + '* {tag}{n[size][0]}x{n[size][1]}'
+              ' @ ({n[position][0]}, {n[position][1]})'.format(
+                    n=expected['content'],
+                    tag=tag,
+                    text=(": '" + expected['text'] + "'") if 'text' in expected else ''
             )
         )
+
+        content_match = (
+            expected['content']['size'][0] == actual.layout.content_width
+            and expected['content']['size'][1] == actual.layout.content_height
+            and expected['content']['position'][0] == actual.layout.absolute_content_left
+            and expected['content']['position'][1] == actual.layout.absolute_content_top
+        )
+        if not content_match:
+            found_problem = True
+            output.append(
+                '>>  '
+                + '    ' * depth
+                + ' ' * len(tag)
+                + '  {n.content_width}x{n.content_height}'
+                  ' @ ({n.absolute_content_left}, {n.absolute_content_top})'.format(
+                        n=actual.layout
+                    )
+            )
+
+        output.append(
+            '    '
+            + '    ' * depth
+            + ' ' * len(tag)
+            + '  padding: {n[size][0]}x{n[size][1]}'
+              ' @ ({n[position][0]}, {n[position][1]})'.format(
+                    n=expected['padding_box']
+                )
+        )
+
+        content_match = (
+            expected['padding_box']['size'][0] == actual.layout.padding_box_width
+            and expected['padding_box']['size'][1] == actual.layout.padding_box_height
+            and expected['padding_box']['position'][0] == actual.layout.absolute_padding_box_left
+            and expected['padding_box']['position'][1] == actual.layout.absolute_padding_box_top
+        )
+        if not content_match:
+            found_problem = True
+            output.append(
+                '>>  '
+                + '    ' * depth
+                + ' ' * len(tag)
+                + '  padding: {n.padding_box_width}x{n.padding_box_height}'
+                  ' @ ({n.absolute_padding_box_left}, {n.absolute_padding_box_top})'.format(
+                        n=actual.layout
+                    )
+            )
+
+        output.append(
+            '    '
+            + '    ' * depth
+            + ' ' * len(tag)
+            + '  border: {n[size][0]}x{n[size][1]}'
+              ' @ ({n[position][0]}, {n[position][1]})'.format(
+                    n=expected['border_box']
+                )
+        )
+
+        content_match = (
+            expected['border_box']['size'][0] == actual.layout.border_box_width
+            and expected['border_box']['size'][1] == actual.layout.border_box_height
+            and expected['border_box']['position'][0] == actual.layout.absolute_border_box_left
+            and expected['border_box']['position'][1] == actual.layout.absolute_border_box_top
+        )
+        if not content_match:
+            found_problem = True
+            output.append(
+                '>>  '
+                + '    ' * depth
+                + ' ' * len(tag)
+                + '  border: {n.border_box_width}x{n.border_box_height}'
+                  ' @ ({n.absolute_border_box_left}, {n.absolute_border_box_top})'.format(
+                        n=actual.layout
+                    )
+            )
+
+        expected_children = expected.pop('children', [])
+        n_actual = len(actual.children)
+        n_expected = len(expected_children)
+        if n_actual == n_expected:
+            for actual_child, expected_child in zip(actual.children, expected_children):
+                child_problem = self._assertLayout(actual_child, expected_child, output, depth=depth+1)
+                found_problem = found_problem or child_problem
+        else:
+            found_problem = True
+            output.append(
+                '>>  '
+                + '    ' * depth
+                + '  Found {} children, expected {}'.format(
+                n_actual, n_expected
+            ))
+
+        return found_problem
+
+    def assertLayout(self, actual, expected, extra=''):
+        output = ['\n', '~' * 80]
+        problems = self._assertLayout(actual, expected, output)
+
+        output.append('~' * 80)
+        output.append(extra)
+        if problems:
+            self.fail('\n'.join(output))
 
 
 class W3CTestCase(LayoutTestCase):

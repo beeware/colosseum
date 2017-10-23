@@ -1,61 +1,89 @@
 {
-    "test_case": {
-        "tag": "BODY",
-        "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "100px"
-        },
-        "children": [
-            {
-                "tag": "DIV",
-                "style": {
-                    "width": "624px",
-                    "display": "flex",
-                    "height": "100px"
-                },
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "100px",
-                            "display": "block",
-                            "height": "100px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "100px",
-                            "display": "block",
-                            "height": "100px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "100px",
-                            "display": "block",
-                            "height": "100px"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#order-property"
     ],
     "matches": "flex-order-ref.html",
-    "assert": "ordered flex items should ordered properly"
+    "assert": "ordered flex items should ordered properly",
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "unicode_bidi": "embed",
+                    "display": "flex"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "order": "1",
+                            "background_color": "lime",
+                            "background_image": "initial",
+                            "width": "100px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_clip": "initial",
+                            "display": "block",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "100px",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "order": "3",
+                            "background_color": "red",
+                            "background_image": "initial",
+                            "width": "100px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_clip": "initial",
+                            "display": "block",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "100px",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "order": "2",
+                            "background_color": "orange",
+                            "background_image": "initial",
+                            "width": "100px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_clip": "initial",
+                            "display": "block",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "100px",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            }
+        ]
+    }
 }

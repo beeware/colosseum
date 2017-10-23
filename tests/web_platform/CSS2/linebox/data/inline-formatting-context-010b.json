@@ -1,214 +1,216 @@
 {
-    "assert": "A line box is always tall enough for all of the boxes it contains. A line box can be as tall as the tallest inline non-replaced box it contains.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height",
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "2",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "20px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "3",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "30px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "4",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "40px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "5",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "50px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "6",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "60px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "8",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "80px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "1",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "display": "none"
+                            "font_size": "100px",
+                            "line_height": "1",
+                            "color": "black",
+                            "display": "none",
+                            "vertical_align": "baseline"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "0px",
-                    "width": "577px"
+                    "line_height": "0",
+                    "background_color": "orange",
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 }
             },
             {
+                "tag": "p",
                 "children": [
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     },
                     {
                         "tag": "input",
                         "style": {
-                            "margin_top": "3px",
-                            "margin_left": "2px",
-                            "display": "inline-block",
-                            "height": "12px",
-                            "margin_right": "2px",
-                            "margin_bottom": "3px",
-                            "width": "12px"
+                            "display": "inline-block"
                         }
                     }
                 ],
-                "tag": "p",
                 "style": {
-                    "margin_top": "16px",
-                    "margin_left": "8px",
-                    "display": "block",
-                    "height": "20px",
-                    "margin_right": "8px",
-                    "margin_bottom": "24px",
-                    "width": "561px"
+                    "margin_bottom": "1.5em",
+                    "font_variant_caps": "normal",
+                    "unicode_bidi": "embed",
+                    "font_family": "serif",
+                    "font_size": "1em",
+                    "margin_top": "1em",
+                    "font_weight": "normal",
+                    "margin_left": "0.5em",
+                    "font_style": "normal",
+                    "margin_right": "0.5em",
+                    "line_height": "1.25",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "55px",
-            "display": "block",
-            "height": "20px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "577px"
+            "background_position_x": "initial",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "background_clip": "initial",
+            "background_color": "white",
+            "background_image": "url(file:///Users/rkm/projects/web-platform-tests/css/CSS2/linebox/support/ruler-v-100px-200px.png)",
+            "background_repeat_x": "no-repeat",
+            "background_attachment": "initial",
+            "background_size": "initial",
+            "margin_left": "55px",
+            "background_origin": "initial",
+            "margin_right": "8px",
+            "background_repeat_y": "no-repeat",
+            "background_position_y": "initial",
+            "display": "block"
         }
     },
+    "assert": "A line box is always tall enough for all of the boxes it contains. A line box can be as tall as the tallest inline non-replaced box it contains.",
     "matches": null
 }

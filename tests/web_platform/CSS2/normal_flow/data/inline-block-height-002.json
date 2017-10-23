@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
+    "assert": null,
+    "matches": "inline-block-height-002-ref.xht",
     "test_case": {
         "children": [
             {
@@ -13,27 +12,36 @@
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_x": "initial",
+                    "background_position_y": "initial",
+                    "color": "white",
+                    "background_attachment": "initial",
+                    "width": "10em",
+                    "background_color": "green",
                     "display": "inline-block",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "width": "160px",
-                    "height": "80px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)"
+                    "background_repeat_y": "initial",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "background_size": "initial",
+                    "background_origin": "initial",
+                    "vertical_align": "baseline",
+                    "height": "5em",
+                    "background_clip": "initial"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "80px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": null,
-    "matches": "inline-block-height-002-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
 }

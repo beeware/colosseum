@@ -1,62 +1,68 @@
 {
     "assert": null,
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "R"
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "height": "100px",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_top_color": "rgb(255, 0, 0)"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "min_height": "auto",
-                            "height": "100px",
-                            "min_width": "auto"
-                        }
-                    }
-                ],
-                "tag": "DIV",
                 "style": {
                     "display": "inline-grid",
-                    "width": "100px",
-                    "height": "100px"
-                }
+                    "unicode_bidi": "embed"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "font_variant_caps": "normal",
+                            "font_family": "Ahem",
+                            "grid_column_end": "auto",
+                            "font_weight": "normal",
+                            "font_style": "normal",
+                            "grid_row_end": "auto",
+                            "unicode_bidi": "embed",
+                            "grid_column_start": "1",
+                            "color": "red",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "line_height": "1",
+                            "font_size": "100px"
+                        },
+                        "children": [
+                            {
+                                "text": "R",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "width": "100px",
+                            "grid_row_end": "auto",
+                            "grid_column_end": "auto",
+                            "grid_column_start": "1",
+                            "height": "100px",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "background_color": "green",
+                            "unicode_bidi": "embed"
+                        },
+                        "tag": "DIV"
+                    }
+                ],
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "100px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#z-order",
         "http://www.w3.org/TR/CSS2/zindex.html#painting-order"
-    ]
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

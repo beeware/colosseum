@@ -1,133 +1,143 @@
 {
     "matches": "abspos-containing-block-010-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "FAIL"
-                    }
-                ],
-                "style": {
-                    "margin_left": "16px",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "margin_top": "16px",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "padding_left": "16px",
-                    "width": "480px",
-                    "padding_top": "16px",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "height": "18px",
-                    "margin_right": "16px",
-                    "padding_right": "16px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "padding_bottom": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "This page should be completely green."
-                    }
-                ],
-                "style": {
-                    "margin_left": "16px",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "margin_top": "16px",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "padding_left": "16px",
-                    "width": "480px",
-                    "padding_top": "16px",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "height": "18px",
-                    "margin_right": "16px",
-                    "padding_right": "16px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "display": "block",
-                    "margin_bottom": "16px",
-                    "padding_bottom": "16px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "Test passes if there is"
-                    },
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "no red"
-                            }
-                        ],
-                        "style": {
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        },
-                        "tag": "strong"
-                    },
-                    {
-                        "style": {},
-                        "text": "."
-                    }
-                ],
-                "style": {
-                    "left": "0px",
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "top": "0px",
-                    "display": "block",
-                    "position": "absolute",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "height": "480px",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "width": "640px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {},
-                "text": "the <div> element should exactly overlap the <html> element,\n  since they have the same dimensions and the same containing block\n  and the same origin."
-            }
-        ],
-        "style": {
-            "margin_top": "16px",
-            "padding_left": "16px",
-            "border_left_style": "solid",
-            "border_top_color": "rgb(255, 0, 0)",
-            "border_right_width": "16px",
-            "margin_right": "16px",
-            "padding_right": "16px",
-            "border_bottom_width": "16px",
-            "border_right_style": "solid",
-            "border_bottom_style": "solid",
-            "padding_bottom": "16px",
-            "margin_left": "16px",
-            "border_bottom_color": "rgb(255, 0, 0)",
-            "border_left_width": "16px",
-            "padding_top": "16px",
-            "border_right_color": "rgb(255, 0, 0)",
-            "border_left_color": "rgb(255, 0, 0)",
-            "width": "544px",
-            "height": "148px",
-            "border_top_width": "16px",
-            "display": "block",
-            "border_top_style": "solid",
-            "margin_bottom": "16px"
-        },
-        "tag": "body"
-    },
     "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "padding_bottom": "1em",
+                    "margin_bottom": "1em",
+                    "margin_top": "1em",
+                    "margin_right": "1em",
+                    "padding_right": "1em",
+                    "padding_left": "1em",
+                    "margin_left": "1em",
+                    "padding_top": "1em",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "text": "This page should be completely green.",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "padding_bottom": "1em",
+                    "margin_bottom": "1em",
+                    "margin_top": "1em",
+                    "margin_right": "1em",
+                    "padding_right": "1em",
+                    "padding_left": "1em",
+                    "margin_left": "1em",
+                    "padding_top": "1em",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "Test passes if there is",
+                        "style": {}
+                    },
+                    {
+                        "tag": "strong",
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "font_weight": "bolder"
+                        }
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "width": "100%",
+                    "background_clip": "initial",
+                    "height": "100%",
+                    "background_color": "green",
+                    "background_position_y": "initial",
+                    "color": "white",
+                    "background_size": "initial",
+                    "top": "0px",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "left": "0px",
+                    "background_repeat_y": "initial",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "position": "absolute",
+                    "display": "block",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed"
+                }
+            },
+            {
+                "text": "the <div> element should exactly overlap the <html> element,\n  since they have the same dimensions and the same containing block\n  and the same origin.",
+                "style": {}
+            }
+        ],
+        "style": {
+            "margin_bottom": "1em",
+            "margin_left": "1em",
+            "color": "yellow",
+            "background_size": "initial",
+            "background_color": "red",
+            "border_top_style": "solid",
+            "display": "block",
+            "border_image_slice": "initial",
+            "border_image_width": "initial",
+            "border_top_color": "red",
+            "border_bottom_color": "red",
+            "background_origin": "initial",
+            "border_image_source": "initial",
+            "background_repeat_x": "initial",
+            "border_image_outset": "initial",
+            "background_position_x": "initial",
+            "background_attachment": "initial",
+            "padding_bottom": "1em",
+            "border_left_width": "1em",
+            "margin_top": "1em",
+            "border_bottom_width": "1em",
+            "padding_right": "1em",
+            "background_clip": "initial",
+            "border_image_repeat": "initial",
+            "border_left_style": "solid",
+            "background_position_y": "initial",
+            "border_left_color": "red",
+            "border_right_width": "1em",
+            "background_repeat_y": "initial",
+            "border_top_width": "1em",
+            "background_image": "initial",
+            "padding_left": "1em",
+            "margin_right": "1em",
+            "border_right_style": "solid",
+            "border_bottom_style": "solid",
+            "padding_top": "1em",
+            "unicode_bidi": "embed",
+            "border_right_color": "red"
+        }
+    }
 }

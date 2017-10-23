@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto', then the used value of 'width' is given by 'shrink-to-fit' width calculation. If 'width' of an inline-block, non-replaced element in normal flow is given by 'shrink-to-fit' width calculation, then such calculated width can be furthermore constrained, reduced by a max-width declaration. If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
+    "matches": "../positioning/absolute-non-replaced-width-017-ref.xht",
     "test_case": {
         "children": [
             {
@@ -16,32 +14,47 @@
                         ],
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "font_style": "normal",
+                            "max_width": "4em",
+                            "font_variant_caps": "normal",
+                            "width": "auto",
+                            "font_weight": "normal",
+                            "background_color": "green",
+                            "font_family": "Ahem",
                             "display": "inline-block",
-                            "max_width": "120px",
-                            "width": "120px",
-                            "height": "120px"
+                            "line_height": "4",
+                            "font_size": "30px"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "width": "auto",
+                    "font_weight": "normal",
+                    "background_color": "red",
+                    "font_family": "Ahem",
                     "display": "inline-block",
-                    "height": "120px",
-                    "width": "120px"
+                    "line_height": "4",
+                    "font_size": "30px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "120px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto', then the used value of 'width' is given by 'shrink-to-fit' width calculation. If 'width' of an inline-block, non-replaced element in normal flow is given by 'shrink-to-fit' width calculation, then such calculated width can be furthermore constrained, reduced by a max-width declaration. If 'width' of an inline-block, non-replaced element in normal flow computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
-    "matches": "../positioning/absolute-non-replaced-width-017-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

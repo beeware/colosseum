@@ -1,192 +1,192 @@
 {
-    "tag": "body",
-    "padding": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "content": {
-        "position": [
-            8,
-            8
-        ],
+    "id": "",
+    "border_box": {
         "size": [
             800,
             600
+        ],
+        "position": [
+            8,
+            8
         ]
     },
-    "id": "",
-    "children": [
-        {
-            "tag": "div",
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "content": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    800,
-                    600
-                ]
-            },
-            "id": "container",
-            "children": [
-                {
-                    "tag": "div",
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "text": "Tests that percentage heights get resolved correctly when the flexbox is",
-                    "content": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    },
-                    "id": "top-bar",
-                    "children": [],
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    },
-                    "padding_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            800,
-                            120
-                        ]
-                    }
-                },
-                {
-                    "tag": "div",
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "text": "absolutely positioned without an explicit height. You should see no red.",
-                    "content": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    },
-                    "id": "content",
-                    "children": [],
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    },
-                    "padding_box": {
-                        "position": [
-                            8,
-                            128
-                        ],
-                        "size": [
-                            800,
-                            480
-                        ]
-                    }
-                }
-            ],
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "border_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    800,
-                    600
-                ]
-            },
-            "padding_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    800,
-                    600
-                ]
-            }
-        }
-    ],
+    "tag": "body",
     "border": [
         0,
         0,
         0,
         0
     ],
-    "border_box": {
-        "position": [
-            8,
-            8
-        ],
+    "content": {
         "size": [
             800,
             600
+        ],
+        "position": [
+            8,
+            8
         ]
     },
     "padding_box": {
-        "position": [
-            8,
-            8
-        ],
         "size": [
             800,
             600
+        ],
+        "position": [
+            8,
+            8
         ]
-    }
+    },
+    "children": [
+        {
+            "id": "container",
+            "border_box": {
+                "size": [
+                    800,
+                    600
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "tag": "div",
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": {
+                "size": [
+                    800,
+                    600
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "padding_box": {
+                "size": [
+                    800,
+                    600
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "children": [
+                {
+                    "id": "top-bar",
+                    "border_box": {
+                        "size": [
+                            800,
+                            120
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "text": "Tests that percentage heights get resolved correctly when the flexbox is",
+                    "tag": "div",
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "content": {
+                        "size": [
+                            800,
+                            120
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "padding_box": {
+                        "size": [
+                            800,
+                            120
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "children": [],
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "id": "content",
+                    "border_box": {
+                        "size": [
+                            800,
+                            480
+                        ],
+                        "position": [
+                            8,
+                            128
+                        ]
+                    },
+                    "text": "absolutely positioned without an explicit height. You should see no red.",
+                    "tag": "div",
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "content": {
+                        "size": [
+                            800,
+                            480
+                        ],
+                        "position": [
+                            8,
+                            128
+                        ]
+                    },
+                    "padding_box": {
+                        "size": [
+                            800,
+                            480
+                        ],
+                        "position": [
+                            8,
+                            128
+                        ]
+                    },
+                    "children": [],
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

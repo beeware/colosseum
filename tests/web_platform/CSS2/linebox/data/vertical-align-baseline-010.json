@@ -1,46 +1,47 @@
 {
-    "assert": "The baseline of an inline-block element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
                         "text": "XXXXX",
                         "style": {}
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "XXXXX",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
-                        "style": {}
+                        "style": {
+                            "font_size": "2em",
+                            "vertical_align": "baseline"
+                        }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "inline-block",
-                    "height": "37px",
-                    "width": "173.328125px"
+                    "unicode_bidi": "embed",
+                    "display": "inline-block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "37px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The baseline of an inline-block element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "matches": null
 }

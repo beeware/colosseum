@@ -1,761 +1,999 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ],
-    "matches": null,
     "test_case": {
+        "tag": "BODY",
+        "style": {
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
                 "tag": "DIV",
                 "style": {
-                    "width": "624px",
-                    "height": "0px",
-                    "display": "block"
+                    "display": "block",
+                    "unicode_bidi": "embed"
                 }
             },
             {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
                 "children": [
                     {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "1030px",
-                                    "height": "1030px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "915px",
-                                    "height": "965px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "100px",
-                                    "height": "50px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "315px",
-                                    "height": "215px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
                         "tag": "DIV",
                         "style": {
                             "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
                             "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
                             "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
+                            "grid_template_rows": "50px 150px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
                         "children": [
                             {
-                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "515px",
-                                    "height": "206px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "457.5px",
-                                    "height": "193px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "10px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "157.5px",
-                                    "height": "43px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "995px",
-                                    "width": "1015px",
-                                    "bottom": "20px",
-                                    "left": "5px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "930px",
-                                    "width": "900px",
-                                    "bottom": "20px",
-                                    "left": "5px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "15px",
-                                    "width": "85px",
-                                    "bottom": "20px",
-                                    "left": "5px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "180px",
-                                    "width": "300px",
-                                    "bottom": "20px",
-                                    "left": "5px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "1030px",
-                                    "height": "1030px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "915px",
-                                    "height": "965px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "100px",
-                                    "height": "50px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "315px",
-                                    "height": "215px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "direction": "rtl",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "direction": "rtl",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "515px",
-                                    "height": "206px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "457.5px",
-                                    "height": "193px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "10px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "width": "157.5px",
-                                    "height": "43px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "direction": "rtl",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
-                            "padding_right": "15px",
-                            "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
-                    }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "995px",
-                                    "width": "1015px",
-                                    "bottom": "20px",
-                                    "left": "5px",
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "auto",
+                                    "background_color": "pink",
+                                    "font_family": "Ahem",
+                                    "grid_column_end": "auto",
                                     "position": "absolute",
-                                    "min_height": "auto"
-                                }
+                                    "font_size": "10px",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "auto",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "auto"
+                                },
+                                "children": []
                             },
                             {
-                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "930px",
-                                    "width": "900px",
-                                    "bottom": "20px",
-                                    "left": "5px",
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "auto",
+                                    "background_color": "orange",
+                                    "font_family": "Ahem",
+                                    "grid_column_end": "auto",
                                     "position": "absolute",
-                                    "min_height": "auto"
-                                }
+                                    "font_size": "10px",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "2",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "2"
+                                },
+                                "children": []
                             },
                             {
-                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "15px",
-                                    "width": "85px",
-                                    "bottom": "20px",
-                                    "left": "5px",
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "2",
+                                    "background_color": "blue",
+                                    "font_family": "Ahem",
+                                    "grid_column_end": "2",
                                     "position": "absolute",
-                                    "min_height": "auto"
-                                }
+                                    "font_size": "10px",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "1",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "1"
+                                },
+                                "children": []
                             },
                             {
-                                "children": [],
                                 "tag": "DIV",
                                 "style": {
-                                    "min_width": "auto",
-                                    "direction": "rtl",
-                                    "right": "10px",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "height": "180px",
-                                    "width": "300px",
-                                    "bottom": "20px",
-                                    "left": "5px",
+                                    "unicode_bidi": "embed",
+                                    "line_height": "1",
+                                    "height": "100%",
+                                    "background_color": "orange",
+                                    "font_family": "Ahem",
+                                    "font_size": "10px",
                                     "position": "absolute",
-                                    "min_height": "auto"
-                                }
+                                    "grid_column_end": "3",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_row_end": "3",
+                                    "font_weight": "normal"
+                                },
+                                "children": []
                             }
-                        ],
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
+                "children": [
+                    {
                         "tag": "DIV",
                         "style": {
                             "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "1000px",
-                            "margin_left": "30px",
-                            "height": "1000px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "direction": "rtl",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
                             "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
                             "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
+                            "grid_template_rows": "50px 150px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "grid_row_start": "auto",
+                                    "height": "20px",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "auto",
+                                    "background_color": "pink"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "grid_row_start": "2",
+                                    "height": "20px",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "2",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "grid_row_start": "1",
+                                    "height": "20px",
+                                    "grid_row_end": "2",
+                                    "grid_column_end": "2",
+                                    "grid_column_start": "1",
+                                    "background_color": "blue"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "height": "20px",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "3",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            }
+                        ]
                     }
-                ],
+                ]
+            },
+            {
                 "tag": "DIV",
                 "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
                     "width": "1000px",
-                    "height": "1000px",
-                    "display": "block"
-                }
+                    "height": "1000px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
+                            "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
+                            "padding_left": "15px",
+                            "grid_template_rows": "50px 150px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "grid_row_start": "auto",
+                                    "height": "20%",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "auto",
+                                    "background_color": "pink"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "grid_row_start": "2",
+                                    "height": "20%",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "2",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "grid_row_start": "1",
+                                    "height": "20%",
+                                    "grid_row_end": "2",
+                                    "grid_column_end": "2",
+                                    "grid_column_start": "1",
+                                    "background_color": "blue"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "height": "20%",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "3",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
+                            "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
+                            "padding_left": "15px",
+                            "grid_template_rows": "50px 150px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "15px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "auto",
+                                    "bottom": "20px",
+                                    "left": "5px",
+                                    "background_color": "pink",
+                                    "display": "block",
+                                    "grid_column_start": "auto",
+                                    "right": "10px",
+                                    "grid_row_end": "auto",
+                                    "grid_row_start": "auto"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "15px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "auto",
+                                    "bottom": "20px",
+                                    "left": "5px",
+                                    "background_color": "orange",
+                                    "display": "block",
+                                    "grid_column_start": "2",
+                                    "right": "10px",
+                                    "grid_row_end": "auto",
+                                    "grid_row_start": "2"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "15px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "2",
+                                    "bottom": "20px",
+                                    "left": "5px",
+                                    "background_color": "blue",
+                                    "display": "block",
+                                    "grid_column_start": "1",
+                                    "right": "10px",
+                                    "grid_row_end": "2",
+                                    "grid_row_start": "1"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "top": "15px",
+                                    "position": "absolute",
+                                    "bottom": "20px",
+                                    "right": "10px",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "3",
+                                    "left": "5px",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
+                            "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "position": "relative",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
+                            "padding_left": "15px",
+                            "grid_template_rows": "50px 150px",
+                            "direction": "rtl",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "auto",
+                                    "background_color": "pink",
+                                    "font_family": "Ahem",
+                                    "grid_column_end": "auto",
+                                    "position": "absolute",
+                                    "font_size": "10px",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "auto",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "auto"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "auto",
+                                    "background_color": "orange",
+                                    "font_family": "Ahem",
+                                    "grid_column_end": "auto",
+                                    "position": "absolute",
+                                    "font_size": "10px",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "2",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "2"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "2",
+                                    "background_color": "blue",
+                                    "font_family": "Ahem",
+                                    "grid_column_end": "2",
+                                    "position": "absolute",
+                                    "font_size": "10px",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "1",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "1"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "line_height": "1",
+                                    "height": "100%",
+                                    "background_color": "orange",
+                                    "font_family": "Ahem",
+                                    "font_size": "10px",
+                                    "position": "absolute",
+                                    "grid_column_end": "3",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_row_end": "3",
+                                    "font_weight": "normal"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
+                            "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "position": "relative",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
+                            "padding_left": "15px",
+                            "grid_template_rows": "50px 150px",
+                            "direction": "rtl",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "grid_row_start": "auto",
+                                    "height": "20px",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "auto",
+                                    "background_color": "pink"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "grid_row_start": "2",
+                                    "height": "20px",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "2",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "grid_row_start": "1",
+                                    "height": "20px",
+                                    "grid_row_end": "2",
+                                    "grid_column_end": "2",
+                                    "grid_column_start": "1",
+                                    "background_color": "blue"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50px",
+                                    "height": "20px",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "3",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
+                            "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "position": "relative",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
+                            "padding_left": "15px",
+                            "grid_template_rows": "50px 150px",
+                            "direction": "rtl",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "grid_row_start": "auto",
+                                    "height": "20%",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "auto",
+                                    "background_color": "pink"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "grid_row_start": "2",
+                                    "height": "20%",
+                                    "grid_row_end": "auto",
+                                    "grid_column_end": "auto",
+                                    "grid_column_start": "2",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "grid_row_start": "1",
+                                    "height": "20%",
+                                    "grid_row_end": "2",
+                                    "grid_column_end": "2",
+                                    "grid_column_start": "1",
+                                    "background_color": "blue"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "width": "50%",
+                                    "height": "20%",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "3",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "width": "1000px",
+                    "height": "1000px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "border_left_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
+                            "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "position": "relative",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
+                            "padding_left": "15px",
+                            "grid_template_rows": "50px 150px",
+                            "direction": "rtl",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "grey",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "100%",
+                            "border_image_width": "initial",
+                            "height": "100%",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "15px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "auto",
+                                    "bottom": "20px",
+                                    "left": "5px",
+                                    "background_color": "pink",
+                                    "display": "block",
+                                    "grid_column_start": "auto",
+                                    "right": "10px",
+                                    "grid_row_end": "auto",
+                                    "grid_row_start": "auto"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "15px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "auto",
+                                    "bottom": "20px",
+                                    "left": "5px",
+                                    "background_color": "orange",
+                                    "display": "block",
+                                    "grid_column_start": "2",
+                                    "right": "10px",
+                                    "grid_row_end": "auto",
+                                    "grid_row_start": "2"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "15px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "2",
+                                    "bottom": "20px",
+                                    "left": "5px",
+                                    "background_color": "blue",
+                                    "display": "block",
+                                    "grid_column_start": "1",
+                                    "right": "10px",
+                                    "grid_row_end": "2",
+                                    "grid_row_start": "1"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "top": "15px",
+                                    "position": "absolute",
+                                    "bottom": "20px",
+                                    "right": "10px",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "3",
+                                    "left": "5px",
+                                    "background_color": "orange"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
             }
-        ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "height": "8210px",
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_right": "8px"
-        }
+        ]
     },
-    "assert": "This test checks the different size options for absolutely positioned grid items."
+    "assert": "This test checks the different size options for absolutely positioned grid items.",
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
 }

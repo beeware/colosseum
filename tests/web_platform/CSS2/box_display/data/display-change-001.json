@@ -1,29 +1,38 @@
 {
-    "matches": "display-change-001-ref.xht",
-    "assert": null,
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "20px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "100%",
-                    "float": "left",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "display": "none"
-                },
                 "tag": "div",
+                "style": {
+                    "background_position_y": "initial",
+                    "background_size": "initial",
+                    "0": "display",
+                    "line_height": "1",
+                    "font_size": "1.25em",
+                    "width": "1em",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial",
+                    "color": "green",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "float": "left",
+                    "background_clip": "initial",
+                    "display": "block",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
+                    "font_family": "Ahem",
+                    "background_color": "red"
+                },
                 "children": [
                     {
                         "style": {},
@@ -32,16 +41,26 @@
                 ]
             },
             {
-                "style": {
-                    "width": "20px",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "20px",
-                    "display": "block"
-                },
                 "tag": "div",
+                "style": {
+                    "background_position_y": "initial",
+                    "background_size": "initial",
+                    "width": "1em",
+                    "line_height": "1",
+                    "font_size": "1.25em",
+                    "background_clip": "initial",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial",
+                    "color": "green",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_color": "red",
+                    "display": "block",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
+                    "font_family": "Ahem"
+                },
                 "children": [
                     {
                         "style": {},
@@ -51,7 +70,9 @@
             }
         ]
     },
+    "matches": "display-change-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": null
 }

@@ -1,66 +1,112 @@
 {
     "assert": "If there is no such ancestor, the containing block is the initial containing block.",
     "test_case": {
+        "tag": "body",
+        "style": {
+            "unicode_bidi": "embed",
+            "margin_bottom": "0px",
+            "margin_right": "0px",
+            "margin_left": "0px",
+            "display": "block",
+            "height": "10000px",
+            "margin_top": "0px"
+        },
         "children": [
             {
+                "tag": "script",
+                "style": {},
                 "children": [
                     {
                         "style": {},
                         "text": "window.scrollTo(0,50);"
                     }
-                ],
-                "tag": "script",
+                ]
+            },
+            {
+                "tag": "div",
                 "style": {
-                    "display": "none"
+                    "display": "block",
+                    "2": "background-position-x",
+                    "9": "background-clip",
+                    "width": "100px",
+                    "0": "top",
+                    "1": "background-image",
+                    "10": "background-color",
+                    "6": "background-repeat-y",
+                    "height": "100px",
+                    "3": "background-position-y",
+                    "unicode_bidi": "embed",
+                    "5": "background-repeat-x",
+                    "position": "absolute",
+                    "7": "background-attachment",
+                    "8": "background-origin",
+                    "4": "background-size"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "height": "100px",
-                    "top": "0px",
-                    "position": "absolute",
+                    "display": "block",
+                    "2": "background-position-x",
+                    "9": "background-clip",
                     "width": "100px",
-                    "display": "block"
+                    "0": "right",
+                    "1": "background-image",
+                    "10": "background-color",
+                    "6": "background-repeat-y",
+                    "height": "100px",
+                    "3": "background-position-y",
+                    "unicode_bidi": "embed",
+                    "5": "background-repeat-x",
+                    "position": "absolute",
+                    "7": "background-attachment",
+                    "8": "background-origin",
+                    "4": "background-size"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "right": "0px",
-                    "height": "100px",
+                    "display": "block",
+                    "2": "background-position-x",
+                    "9": "background-clip",
                     "width": "100px",
+                    "0": "bottom",
+                    "1": "background-image",
+                    "10": "background-color",
+                    "6": "background-repeat-y",
+                    "height": "100px",
+                    "3": "background-position-y",
+                    "unicode_bidi": "embed",
+                    "5": "background-repeat-x",
                     "position": "absolute",
-                    "display": "block"
+                    "7": "background-attachment",
+                    "8": "background-origin",
+                    "4": "background-size"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "height": "100px",
+                    "display": "block",
+                    "2": "background-position-x",
+                    "9": "background-clip",
                     "width": "100px",
-                    "bottom": "0px",
-                    "position": "absolute",
-                    "display": "block"
-                }
-            },
-            {
-                "tag": "div",
-                "style": {
+                    "0": "left",
+                    "1": "background-image",
+                    "10": "background-color",
+                    "6": "background-repeat-y",
                     "height": "100px",
-                    "left": "0px",
+                    "3": "background-position-y",
+                    "unicode_bidi": "embed",
+                    "5": "background-repeat-x",
                     "position": "absolute",
-                    "width": "100px",
-                    "display": "block"
+                    "7": "background-attachment",
+                    "8": "background-origin",
+                    "4": "background-size"
                 }
             }
-        ],
-        "tag": "body",
-        "style": {
-            "width": "520px",
-            "height": "10000px",
-            "display": "block"
-        }
+        ]
     },
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"

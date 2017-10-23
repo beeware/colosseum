@@ -1,118 +1,118 @@
 {
-    "matches": null,
-    "assert": "The containing block of an absolutely positioned block-level element is formed by the padding edge of its nearest (closest) positioned ancestor element.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "242px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
+                "tag": "div",
                 "style": {
-                    "width": "450px",
-                    "padding_bottom": "100px",
-                    "border_right_width": "3px",
+                    "border_bottom_style": "solid",
+                    "border_right_color": "silver",
+                    "unicode_bidi": "embed",
                     "padding_left": "100px",
-                    "border_bottom_width": "3px",
-                    "border_bottom_color": "rgb(192, 192, 192)",
+                    "border_left_style": "solid",
+                    "border_top_color": "silver",
+                    "border_image_source": "initial",
+                    "border_left_width": "initial",
+                    "margin_bottom": "20px",
                     "border_top_style": "solid",
                     "padding_right": "100px",
-                    "height": "36px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "direction": "rtl",
-                    "margin_bottom": "20px",
-                    "border_top_color": "rgb(192, 192, 192)",
-                    "border_bottom_style": "solid",
                     "padding_top": "100px",
+                    "border_left_color": "silver",
+                    "border_image_repeat": "initial",
+                    "width": "450px",
+                    "direction": "rtl",
+                    "border_top_width": "initial",
+                    "border_image_slice": "initial",
+                    "padding_bottom": "100px",
                     "border_right_style": "solid",
-                    "border_right_color": "rgb(192, 192, 192)",
-                    "border_left_width": "3px",
-                    "border_left_style": "solid",
-                    "border_left_color": "rgb(192, 192, 192)"
+                    "display": "block",
+                    "border_bottom_color": "silver",
+                    "border_right_width": "initial",
+                    "border_image_outset": "initial",
+                    "border_image_width": "initial",
+                    "border_bottom_width": "initial"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "style": {
-                            "padding_bottom": "50px",
-                            "border_right_width": "5px",
+                            "border_bottom_style": "solid",
+                            "border_right_color": "silver",
                             "padding_left": "50px",
-                            "border_bottom_width": "5px",
-                            "border_bottom_color": "rgb(192, 192, 192)",
+                            "border_left_style": "solid",
+                            "border_top_color": "silver",
+                            "border_image_source": "initial",
+                            "border_left_width": "5px",
                             "border_top_style": "solid",
                             "padding_right": "50px",
-                            "position": "relative",
+                            "border_left_color": "silver",
+                            "border_image_repeat": "initial",
+                            "border_bottom_color": "silver",
                             "border_top_width": "5px",
-                            "direction": "rtl",
-                            "border_top_color": "rgb(192, 192, 192)",
-                            "border_bottom_style": "solid",
-                            "padding_top": "50px",
+                            "border_image_slice": "initial",
+                            "padding_bottom": "50px",
                             "border_right_style": "solid",
-                            "border_right_color": "rgb(192, 192, 192)",
-                            "border_left_width": "5px",
-                            "border_left_style": "solid",
-                            "border_left_color": "rgb(192, 192, 192)"
+                            "position": "relative",
+                            "padding_top": "50px",
+                            "border_right_width": "5px",
+                            "border_image_outset": "initial",
+                            "border_image_width": "initial",
+                            "border_bottom_width": "5px"
                         },
-                        "tag": "span",
                         "children": [
                             {
-                                "style": {
-                                    "border_bottom_color": "rgb(192, 192, 192)",
-                                    "border_right_color": "rgb(192, 192, 192)",
-                                    "direction": "rtl",
-                                    "border_top_color": "rgb(192, 192, 192)",
-                                    "border_left_color": "rgb(192, 192, 192)"
-                                },
                                 "tag": "span",
+                                "style": {
+                                    "color": "silver"
+                                },
                                 "children": [
                                     {
+                                        "tag": "span",
                                         "style": {
-                                            "padding_left": "15px",
                                             "padding_bottom": "20px",
-                                            "border_top_color": "rgb(255, 0, 0)",
-                                            "padding_right": "15px",
-                                            "border_bottom_color": "rgb(192, 192, 192)",
-                                            "border_top_style": "solid",
                                             "margin_left": "20px",
+                                            "border_top_style": "solid",
                                             "border_top_width": "30px",
-                                            "margin_right": "-50px",
+                                            "padding_left": "15px",
+                                            "padding_right": "15px",
+                                            "border_top_color": "red",
                                             "padding_top": "20px",
-                                            "border_right_color": "rgb(192, 192, 192)",
-                                            "direction": "rtl",
-                                            "border_left_color": "rgb(192, 192, 192)"
-                                        },
-                                        "tag": "span"
+                                            "margin_right": "-50px"
+                                        }
                                     },
                                     {
-                                        "style": {
-                                            "border_bottom_color": "rgb(192, 192, 192)",
-                                            "border_right_color": "rgb(192, 192, 192)",
-                                            "direction": "rtl",
-                                            "border_top_color": "rgb(192, 192, 192)",
-                                            "border_left_color": "rgb(192, 192, 192)"
-                                        },
-                                        "tag": "br"
+                                        "tag": "br",
+                                        "style": {}
                                     }
                                 ]
                             },
                             {
-                                "style": {
-                                    "width": "30px",
-                                    "height": "30px",
-                                    "direction": "rtl",
-                                    "display": "block",
-                                    "bottom": "0px",
-                                    "left": "0px",
-                                    "position": "absolute"
-                                },
                                 "tag": "span",
+                                "style": {
+                                    "background_position_y": "initial",
+                                    "background_size": "initial",
+                                    "height": "30px",
+                                    "left": "0px",
+                                    "width": "30px",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial",
+                                    "background_clip": "initial",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "bottom": "0px",
+                                    "background_color": "green",
+                                    "position": "absolute",
+                                    "background_image": "initial",
+                                    "background_repeat_y": "initial"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -121,16 +121,24 @@
                                 ]
                             },
                             {
+                                "tag": "span",
                                 "style": {
-                                    "width": "30px",
+                                    "background_position_y": "initial",
+                                    "background_size": "initial",
                                     "top": "0px",
                                     "height": "30px",
-                                    "right": "0px",
-                                    "direction": "rtl",
+                                    "width": "30px",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial",
+                                    "background_clip": "initial",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "background_color": "green",
                                     "position": "absolute",
-                                    "display": "block"
+                                    "background_image": "initial",
+                                    "background_repeat_y": "initial",
+                                    "right": "0px"
                                 },
-                                "tag": "span",
                                 "children": [
                                     {
                                         "style": {},
@@ -139,32 +147,24 @@
                                 ]
                             },
                             {
-                                "style": {
-                                    "border_bottom_color": "rgb(192, 192, 192)",
-                                    "border_right_color": "rgb(192, 192, 192)",
-                                    "direction": "rtl",
-                                    "border_top_color": "rgb(192, 192, 192)",
-                                    "border_left_color": "rgb(192, 192, 192)"
-                                },
                                 "tag": "span",
+                                "style": {
+                                    "color": "silver"
+                                },
                                 "children": [
                                     {
+                                        "tag": "span",
                                         "style": {
-                                            "padding_left": "15px",
                                             "padding_bottom": "20px",
-                                            "padding_right": "15px",
-                                            "border_bottom_width": "30px",
-                                            "border_bottom_color": "rgb(255, 0, 0)",
-                                            "direction": "rtl",
-                                            "margin_left": "-50px",
-                                            "margin_right": "20px",
                                             "border_bottom_style": "solid",
+                                            "border_bottom_width": "30px",
+                                            "margin_left": "-50px",
+                                            "padding_left": "15px",
+                                            "padding_right": "15px",
+                                            "border_bottom_color": "red",
                                             "padding_top": "20px",
-                                            "border_right_color": "rgb(192, 192, 192)",
-                                            "border_top_color": "rgb(192, 192, 192)",
-                                            "border_left_color": "rgb(192, 192, 192)"
-                                        },
-                                        "tag": "span"
+                                            "margin_right": "20px"
+                                        }
                                     }
                                 ]
                             }
@@ -174,7 +174,9 @@
             }
         ]
     },
+    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "assert": "The containing block of an absolutely positioned block-level element is formed by the padding edge of its nearest (closest) positioned ancestor element."
 }

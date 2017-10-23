@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'max-width' value) and based its intrinsic ratio when it has an intrinsic ratio.",
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "children": [
             {
@@ -10,41 +8,43 @@
                     {
                         "tag": "img",
                         "style": {
-                            "max_width": "100px",
-                            "height": "100px",
-                            "width": "100px"
+                            "width": "12.5em",
+                            "max_width": "6.25em",
+                            "height": "auto"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "z_index": "-1",
                     "display": "block",
-                    "height": "104px",
-                    "position": "absolute",
-                    "width": "100px",
-                    "z_index": "-1"
+                    "position": "absolute"
                 }
             },
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "width": "100px",
+                    "background_color": "green",
                     "display": "block",
-                    "height": "100px",
-                    "width": "100px"
+                    "height": "100px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "100px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The height of an inline replaced element should be re-calculated based on its constrained width (constrained by computed 'max-width' value) and based its intrinsic ratio when it has an intrinsic ratio.",
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
+    "assert": "If 'height' and 'width' both have computed values of 'auto' and the element also has an intrinsic width, then such intrinsic width is the used value of 'width'. If 'width' of a floating, non-replaced element computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "children": [
             {
@@ -10,32 +8,34 @@
                     {
                         "tag": "img",
                         "style": {
+                            "width": "auto",
                             "max_width": "100px",
-                            "height": "100px",
-                            "width": "100px"
+                            "vertical_align": "bottom",
+                            "height": "auto"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_color": "red",
                     "display": "block",
-                    "height": "100px",
-                    "float": "left",
-                    "width": "100px"
+                    "float": "left"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "If 'height' and 'width' both have computed values of 'auto' and the element also has an intrinsic width, then such intrinsic width is the used value of 'width'. If 'width' of a floating, non-replaced element computes to 'auto' but its own child uses a constrained length resulting from a max-width declaration, then such constrained length will define the preferred width in 'shrink-to-fit' width calculation.",
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ]
 }

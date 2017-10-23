@@ -1,68 +1,87 @@
 {
-    "assert": "The 'vertical-align' property applies to elements with 'display' set to 'table-cell'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "div",
                                 "style": {
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "height": "96px",
-                                    "width": "96px",
-                                    "border_bottom_color": "rgb(0, 0, 255)"
+                                    "background_position_x": "initial",
+                                    "font_variant_caps": "normal",
+                                    "width": "1in",
+                                    "font_size": "20px",
+                                    "background_clip": "initial",
+                                    "background_color": "orange",
+                                    "background_image": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_attachment": "initial",
+                                    "background_size": "initial",
+                                    "unicode_bidi": "embed",
+                                    "height": "1in",
+                                    "background_repeat_y": "initial",
+                                    "vertical_align": "bottom",
+                                    "background_origin": "initial",
+                                    "font_family": "Ahem",
+                                    "font_weight": "normal",
+                                    "font_style": "normal",
+                                    "line_height": "1em",
+                                    "color": "blue",
+                                    "background_position_y": "initial",
+                                    "display": "table-cell"
                                 }
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "display": "table-row",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "height": "96px",
-                            "width": "96px",
-                            "border_bottom_color": "rgb(0, 0, 255)"
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "20px",
+                            "font_style": "normal",
+                            "line_height": "1em",
+                            "color": "blue",
+                            "display": "table-row"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "display": "table",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "height": "96px",
-                    "width": "96px",
-                    "border_bottom_color": "rgb(0, 0, 255)"
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "20px",
+                    "font_style": "normal",
+                    "line_height": "1em",
+                    "color": "blue",
+                    "table_layout": "fixed",
+                    "display": "table"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "96px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'vertical-align' property applies to elements with 'display' set to 'table-cell'.",
     "matches": "vertical-align-applies-to-007-ref.xht"
 }

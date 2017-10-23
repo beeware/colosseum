@@ -1,31 +1,45 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The 'min-height' property sets a minimum plus one length value in 'em' units.",
+    "matches": "height-069-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_x": "initial",
+                    "min_height": "1em",
+                    "background_position_y": "initial",
+                    "font_size": "20px",
+                    "background_attachment": "initial",
+                    "line_height": "1",
+                    "background_color": "black",
+                    "font_family": "Ahem",
                     "display": "block",
-                    "height": "20px",
-                    "width": "624px",
-                    "min_height": "20px"
+                    "background_repeat_y": "initial",
+                    "font_style": "normal",
+                    "background_repeat_x": "initial",
+                    "font_variant_caps": "normal",
+                    "background_size": "initial",
+                    "font_weight": "normal",
+                    "background_origin": "initial",
+                    "background_clip": "initial",
+                    "background_image": "initial"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "20px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-height' property sets a minimum plus one length value in 'em' units.",
-    "matches": "height-069-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

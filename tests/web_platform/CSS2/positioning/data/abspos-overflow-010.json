@@ -1,54 +1,46 @@
 {
     "matches": "abspos-overflow-010-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "This text should be green."
-                    },
-                    {
-                        "children": [],
-                        "style": {
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "display": "block",
-                            "position": "absolute",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "z_index": "-1",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "width": "0px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "height": "18px",
-                    "display": "block",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "18px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "This text should be green.",
+                        "style": {}
+                    },
+                    {
+                        "tag": "div",
+                        "children": [],
+                        "style": {
+                            "position": "absolute",
+                            "z_index": "-1",
+                            "unicode_bidi": "embed",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "overflow_x": "auto",
+                    "overflow_y": "auto",
+                    "unicode_bidi": "embed",
+                    "color": "green",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

@@ -1,56 +1,69 @@
 {
     "matches": "absolute-non-replaced-height-007-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "X"
-                            }
-                        ],
-                        "style": {
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "height": "100px",
-                            "display": "block",
-                            "position": "absolute",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "bottom": "200px",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "width": "200px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "height": "300px",
-                    "display": "block",
-                    "position": "relative",
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "width": "200px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "300px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Verify that height is based on the overall height of the content, 'margin-top' and 'margin-bottom' when set to 'auto' are solved to '0' and solve for 'top', when 'top' and 'height' are both 'auto' and 'bottom' is not 'auto'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "100%",
+                            "margin_bottom": "auto",
+                            "margin_top": "auto",
+                            "background_clip": "initial",
+                            "height": "auto",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "auto",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "unicode_bidi": "embed",
+                            "bottom": "200px",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "200px",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "color": "orange",
+                    "height": "300px",
+                    "line_height": "1",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "position": "relative",
+                    "font_family": "Ahem",
+                    "font_size": "100px",
+                    "font_weight": "normal"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

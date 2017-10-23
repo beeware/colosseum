@@ -1,174 +1,23 @@
 {
-    "border": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "padding_box": {
+    "id": "",
+    "border_box": {
+        "size": [
+            1008,
+            100
+        ],
         "position": [
             8,
             8
-        ],
-        "size": [
-            624,
-            100
         ]
     },
-    "id": "",
-    "children": [
-        {
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    624,
-                    100
-                ]
-            },
-            "id": "grid",
-            "children": [
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            624,
-                            100
-                        ]
-                    },
-                    "id": "reference-overlapped-red",
-                    "children": [],
-                    "text": "R",
-                    "tag": "div",
-                    "content": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            624,
-                            100
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            624,
-                            100
-                        ]
-                    }
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
-                    "id": "test-overlapping-green",
-                    "tag": "div",
-                    "content": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            8,
-                            8
-                        ],
-                        "size": [
-                            100,
-                            100
-                        ]
-                    }
-                }
-            ],
-            "tag": "div",
-            "content": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    624,
-                    100
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "border_box": {
-                "position": [
-                    8,
-                    8
-                ],
-                "size": [
-                    624,
-                    100
-                ]
-            }
-        }
-    ],
-    "tag": "body",
     "content": {
+        "size": [
+            1008,
+            100
+        ],
         "position": [
             8,
             8
-        ],
-        "size": [
-            624,
-            100
         ]
     },
     "padding": [
@@ -177,14 +26,165 @@
         0,
         0
     ],
-    "border_box": {
+    "children": [
+        {
+            "id": "grid",
+            "border_box": {
+                "size": [
+                    1008,
+                    100
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "content": {
+                "size": [
+                    1008,
+                    100
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "children": [
+                {
+                    "id": "reference-overlapped-red",
+                    "border_box": {
+                        "size": [
+                            1008,
+                            100
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            1008,
+                            100
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "text": "R",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "children": [],
+                    "tag": "div",
+                    "padding_box": {
+                        "size": [
+                            1008,
+                            100
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "id": "test-overlapping-green",
+                    "border_box": {
+                        "size": [
+                            100,
+                            100
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            100,
+                            100
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "tag": "div",
+                    "padding_box": {
+                        "size": [
+                            100,
+                            100
+                        ],
+                        "position": [
+                            8,
+                            8
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "tag": "div",
+            "padding_box": {
+                "size": [
+                    1008,
+                    100
+                ],
+                "position": [
+                    8,
+                    8
+                ]
+            },
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "tag": "body",
+    "padding_box": {
+        "size": [
+            1008,
+            100
+        ],
         "position": [
             8,
             8
-        ],
-        "size": [
-            624,
-            100
         ]
-    }
+    },
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

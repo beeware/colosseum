@@ -1,9 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
-        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The initial containing block has the dimensions of the viewport. A percentage height on the root element is relative to the initial containing block. A 'min-height: 100%;' of the document root element should use all of the document root element's height. A percentage for 'min-height' is calculated with respect to the height of the generated box's containing block.",
+    "matches": "min-height-percentage-003-ref.xht",
     "test_case": {
         "children": [
             {
@@ -21,10 +18,7 @@
                         ],
                         "tag": "strong",
                         "style": {
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)"
+                            "font_weight": "bolder"
                         }
                     },
                     {
@@ -34,24 +28,33 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "display": "block",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "width": "640px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0px",
+                    "margin_bottom": "0px",
                     "min_height": "100%",
-                    "height": "480px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)"
+                    "color": "white",
+                    "background_color": "green",
+                    "margin_left": "0px",
+                    "display": "block",
+                    "margin_top": "0px"
                 }
             }
         ],
         "tag": "body",
         "style": {
+            "unicode_bidi": "embed",
+            "margin_right": "0px",
+            "margin_bottom": "0px",
+            "background_color": "red",
+            "margin_left": "0px",
             "display": "block",
-            "height": "480px",
-            "width": "640px"
+            "margin_top": "0px",
+            "height": "100%"
         }
     },
-    "assert": "The initial containing block has the dimensions of the viewport. A percentage height on the root element is relative to the initial containing block. A 'min-height: 100%;' of the document root element should use all of the document root element's height. A percentage for 'min-height' is calculated with respect to the height of the generated box's containing block.",
-    "matches": "min-height-percentage-003-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
+        "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

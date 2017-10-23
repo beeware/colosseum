@@ -1,41 +1,42 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The 'min-height' property sets a minimum plus one length value in inches.",
+    "matches": "max-height-058-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_color": "red",
                     "display": "block",
-                    "height": "96px",
-                    "width": "624px"
+                    "height": "1in"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "min_height": "1in",
+                    "bottom": "1in",
                     "position": "relative",
-                    "width": "624px",
-                    "min_height": "96px",
-                    "height": "96px",
-                    "bottom": "96px"
+                    "background_color": "black",
+                    "height": "0in",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "192px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-height' property sets a minimum plus one length value in inches.",
-    "matches": "max-height-058-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

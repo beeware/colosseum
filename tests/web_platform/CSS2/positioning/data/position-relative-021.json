@@ -1,54 +1,62 @@
 {
     "matches": null,
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "relative",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "top": "96px",
-                            "border_left_width": "5px",
-                            "border_left_style": "solid",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_style": "solid",
-                            "height": "96px",
-                            "width": "96px",
-                            "border_bottom_width": "5px",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_right_width": "5px",
-                            "display": "block",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_top_width": "5px",
-                            "border_right_style": "solid",
-                            "border_bottom_style": "solid"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "144px",
-                    "display": "block",
-                    "width": "144px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "144px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "If relative positioning causes overflow the user agent needs to provide a scrolling mechanism to all of the content at its offset position.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "1in",
+                            "border_right_width": "5px",
+                            "top": "1in",
+                            "display": "block",
+                            "border_image_repeat": "initial",
+                            "border_image_width": "initial",
+                            "border_top_color": "blue",
+                            "border_bottom_color": "blue",
+                            "border_image_source": "initial",
+                            "border_left_width": "5px",
+                            "border_top_style": "solid",
+                            "border_bottom_width": "5px",
+                            "height": "1in",
+                            "border_left_style": "solid",
+                            "border_left_color": "blue",
+                            "border_image_outset": "initial",
+                            "unicode_bidi": "embed",
+                            "border_right_style": "solid",
+                            "border_image_slice": "initial",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "5px",
+                            "border_right_color": "blue"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "1.5in",
+                    "overflow_x": "scroll",
+                    "height": "1.5in",
+                    "position": "relative",
+                    "overflow_y": "scroll",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

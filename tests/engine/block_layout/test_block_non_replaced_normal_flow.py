@@ -16,9 +16,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (0, 0), 'size': (640, 10)},
-                'padding_box': {'position': (0, 0), 'size': (640, 10)},
-                'content': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (1024, 10)},
+                'padding_box': {'position': (0, 0), 'size': (1024, 10)},
+                'content': {'position': (0, 0), 'size': (1024, 10)},
             }
         )
 
@@ -33,9 +33,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (0, 0), 'size': (640, 10)},
-                'padding_box': {'position': (0, 0), 'size': (640, 10)},
-                'content': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (1024, 10)},
+                'padding_box': {'position': (0, 0), 'size': (1024, 10)},
+                'content': {'position': (0, 0), 'size': (1024, 10)},
             }
         )
 
@@ -50,9 +50,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (0, 0), 'size': (640, 10)},
-                'padding_box': {'position': (0, 0), 'size': (640, 10)},
-                'content': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (1024, 10)},
+                'padding_box': {'position': (0, 0), 'size': (1024, 10)},
+                'content': {'position': (0, 0), 'size': (1024, 10)},
             }
         )
 
@@ -67,9 +67,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (0, 0), 'size': (640, 10)},
-                'padding_box': {'position': (0, 0), 'size': (640, 10)},
-                'content': {'position': (0, 0), 'size': (640, 10)},
+                'border_box': {'position': (0, 0), 'size': (1024, 10)},
+                'padding_box': {'position': (0, 0), 'size': (1024, 10)},
+                'content': {'position': (0, 0), 'size': (1024, 10)},
             }
         )
 
@@ -101,9 +101,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (590, 0), 'size': (50, 10)},
-                'padding_box': {'position': (590, 0), 'size': (50, 10)},
-                'content': {'position': (590, 0), 'size': (50, 10)},
+                'border_box': {'position': (974, 0), 'size': (50, 10)},
+                'padding_box': {'position': (974, 0), 'size': (50, 10)},
+                'content': {'position': (974, 0), 'size': (50, 10)},
             }
         )
 
@@ -135,9 +135,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (295, 0), 'size': (50, 10)},
-                'padding_box': {'position': (295, 0), 'size': (50, 10)},
-                'content': {'position': (295, 0), 'size': (50, 10)},
+                'border_box': {'position': (487, 0), 'size': (50, 10)},
+                'padding_box': {'position': (487, 0), 'size': (50, 10)},
+                'content': {'position': (487, 0), 'size': (50, 10)},
             }
         )
 
@@ -172,9 +172,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (550, 0), 'size': (50, 10)},
-                'padding_box': {'position': (550, 0), 'size': (50, 10)},
-                'content': {'position': (550, 0), 'size': (50, 10)},
+                'border_box': {'position': (934, 0), 'size': (50, 10)},
+                'padding_box': {'position': (934, 0), 'size': (50, 10)},
+                'content': {'position': (934, 0), 'size': (50, 10)},
             }
         )
 
@@ -214,9 +214,9 @@ class WidthTests(LayoutTestCase):
             node,
             {
                 'tag': 'div',
-                'border_box': {'position': (0, 0), 'size': (720, 240)},
-                'padding_box': {'position': (60, 60), 'size': (600, 120)},
-                'content': {'position': (110, 110), 'size': (500, 20)},
+                'border_box': {'position': (152, 0), 'size': (720, 240)},
+                'padding_box': {'position': (212, 60), 'size': (600, 120)},
+                'content': {'position': (262, 110), 'size': (500, 20)},
             }
         )
 

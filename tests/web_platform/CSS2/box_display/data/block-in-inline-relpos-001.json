@@ -1,75 +1,101 @@
 {
-    "matches": "block-in-inline-relpos-001-ref.xht",
-    "assert": "When such an inline box is affected by relative positioning, the relative positioning also affects the block-level box contained in the inline box.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "152px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "80px",
-                    "margin_bottom": "20px",
-                    "border_right_width": "3px",
-                    "margin_top": "20px",
-                    "border_bottom_width": "3px",
-                    "border_bottom_color": "rgb(192, 192, 192)",
-                    "border_top_style": "solid",
-                    "margin_left": "20px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "height": "60px",
-                    "margin_right": "20px",
-                    "border_bottom_style": "solid",
-                    "border_right_style": "solid",
-                    "border_right_color": "rgb(192, 192, 192)",
-                    "border_top_color": "rgb(192, 192, 192)",
-                    "border_left_width": "3px",
-                    "border_left_style": "solid",
-                    "border_left_color": "rgb(192, 192, 192)"
-                },
                 "tag": "div",
+                "style": {
+                    "border_bottom_style": "solid",
+                    "font_weight": "normal",
+                    "font_size": "20px",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "color": "aqua",
+                    "border_top_color": "silver",
+                    "border_image_source": "initial",
+                    "border_left_width": "initial",
+                    "background_color": "fuchsia",
+                    "border_top_style": "solid",
+                    "background_position_x": "initial",
+                    "background_repeat_y": "initial",
+                    "border_bottom_color": "silver",
+                    "background_size": "initial",
+                    "font_family": "Ahem",
+                    "border_left_color": "silver",
+                    "background_clip": "initial",
+                    "background_position_y": "initial",
+                    "font_variant_caps": "normal",
+                    "border_image_repeat": "initial",
+                    "border_right_color": "silver",
+                    "width": "4em",
+                    "margin_left": "1em",
+                    "background_repeat_x": "initial",
+                    "margin_bottom": "1em",
+                    "margin_top": "1em",
+                    "background_origin": "initial",
+                    "border_top_width": "initial",
+                    "border_image_width": "initial",
+                    "background_attachment": "initial",
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "border_left_style": "solid",
+                    "border_right_width": "initial",
+                    "background_image": "initial",
+                    "border_image_outset": "initial",
+                    "border_image_slice": "initial",
+                    "margin_right": "1em",
+                    "border_bottom_width": "initial"
+                },
                 "children": [
                     {
                         "style": {},
                         "text": "A"
                     },
                     {
-                        "style": {
-                            "border_top_color": "rgb(255, 255, 0)",
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "position": "relative",
-                            "left": "40px",
-                            "border_left_color": "rgb(255, 255, 0)"
-                        },
                         "tag": "div",
+                        "style": {
+                            "left": "2em",
+                            "color": "yellow",
+                            "position": "relative",
+                            "display": "inline",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
                                 "style": {},
                                 "text": "B"
                             },
                             {
-                                "style": {
-                                    "border_left_style": "solid",
-                                    "width": "40px",
-                                    "height": "20px",
-                                    "border_top_color": "rgb(255, 165, 0)",
-                                    "border_bottom_color": "rgb(255, 165, 0)",
-                                    "border_right_color": "rgb(255, 165, 0)",
-                                    "display": "block",
-                                    "border_left_width": "40px",
-                                    "margin_left": "-40px",
-                                    "border_left_color": "rgb(0, 0, 255)"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "background_position_y": "initial",
+                                    "color": "orange",
+                                    "width": "2em",
+                                    "background_size": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial",
+                                    "unicode_bidi": "embed",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "border_left_width": "2em",
+                                    "margin_left": "-2em",
+                                    "background_clip": "initial",
+                                    "display": "block",
+                                    "background_image": "initial",
+                                    "background_repeat_y": "initial",
+                                    "border_left_style": "solid",
+                                    "border_left_color": "blue",
+                                    "background_color": "orange"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -90,41 +116,60 @@
                 ]
             },
             {
-                "style": {
-                    "width": "80px",
-                    "margin_bottom": "20px",
-                    "border_right_width": "3px",
-                    "margin_top": "20px",
-                    "border_bottom_width": "3px",
-                    "border_bottom_color": "rgb(192, 192, 192)",
-                    "border_top_style": "solid",
-                    "margin_left": "20px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "height": "60px",
-                    "margin_right": "20px",
-                    "border_bottom_style": "solid",
-                    "border_right_style": "solid",
-                    "border_right_color": "rgb(192, 192, 192)",
-                    "border_top_color": "rgb(192, 192, 192)",
-                    "border_left_width": "3px",
-                    "border_left_style": "solid",
-                    "border_left_color": "rgb(192, 192, 192)"
-                },
                 "tag": "div",
+                "style": {
+                    "border_bottom_style": "solid",
+                    "font_weight": "normal",
+                    "font_size": "20px",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "color": "aqua",
+                    "border_top_color": "silver",
+                    "border_image_source": "initial",
+                    "border_left_width": "initial",
+                    "background_color": "fuchsia",
+                    "border_top_style": "solid",
+                    "background_position_x": "initial",
+                    "background_repeat_y": "initial",
+                    "border_bottom_color": "silver",
+                    "background_size": "initial",
+                    "font_family": "Ahem",
+                    "border_left_color": "silver",
+                    "background_clip": "initial",
+                    "background_position_y": "initial",
+                    "font_variant_caps": "normal",
+                    "border_image_repeat": "initial",
+                    "border_right_color": "silver",
+                    "width": "4em",
+                    "margin_left": "1em",
+                    "background_repeat_x": "initial",
+                    "margin_bottom": "1em",
+                    "margin_top": "1em",
+                    "background_origin": "initial",
+                    "border_top_width": "initial",
+                    "border_image_width": "initial",
+                    "background_attachment": "initial",
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "border_left_style": "solid",
+                    "border_right_width": "initial",
+                    "background_image": "initial",
+                    "border_image_outset": "initial",
+                    "border_image_slice": "initial",
+                    "margin_right": "1em",
+                    "border_bottom_width": "initial"
+                },
                 "children": [
                     {
                         "style": {},
                         "text": "A"
                     },
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "border_top_color": "rgb(255, 255, 0)",
-                            "border_left_color": "rgb(255, 255, 0)"
-                        },
                         "tag": "span",
+                        "style": {
+                            "color": "yellow"
+                        },
                         "children": [
                             {
                                 "style": {},
@@ -133,18 +178,27 @@
                         ]
                     },
                     {
-                        "style": {
-                            "width": "40px",
-                            "height": "20px",
-                            "border_top_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "display": "block",
-                            "border_left_width": "40px",
-                            "border_left_style": "solid",
-                            "border_left_color": "rgb(0, 0, 255)"
-                        },
                         "tag": "div",
+                        "style": {
+                            "background_position_y": "initial",
+                            "color": "orange",
+                            "width": "2em",
+                            "background_size": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "border_left_width": "2em",
+                            "margin_left": "0px",
+                            "background_clip": "initial",
+                            "display": "block",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial",
+                            "border_left_style": "solid",
+                            "border_left_color": "blue",
+                            "background_color": "orange"
+                        },
                         "children": [
                             {
                                 "style": {},
@@ -157,13 +211,10 @@
                         "text": "A"
                     },
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "border_top_color": "rgb(255, 255, 0)",
-                            "border_left_color": "rgb(255, 255, 0)"
-                        },
                         "tag": "span",
+                        "style": {
+                            "color": "yellow"
+                        },
                         "children": [
                             {
                                 "style": {},
@@ -175,7 +226,9 @@
             }
         ]
     },
+    "matches": "block-in-inline-relpos-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    ],
+    "assert": "When such an inline box is affected by relative positioning, the relative positioning also affects the block-level box contained in the inline box."
 }

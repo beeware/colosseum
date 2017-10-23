@@ -1,50 +1,40 @@
 {
-    "matches": null,
-    "assert": "A block that splits an inline still inherits     from the inline, even in dynamic cases.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "54px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "height": "54px",
-                    "display": "block"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
-                        "style": {
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)"
-                        },
                         "tag": "div",
+                        "style": {
+                            "color": "blue",
+                            "display": "inline",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
                                 "style": {},
                                 "text": "The text of all 3 sentences should become green when you hover over any text."
                             },
                             {
-                                "style": {
-                                    "width": "624px",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)",
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "height": "18px",
-                                    "display": "block"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -62,7 +52,9 @@
             }
         ]
     },
+    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": "A block that splits an inline still inherits     from the inline, even in dynamic cases."
 }

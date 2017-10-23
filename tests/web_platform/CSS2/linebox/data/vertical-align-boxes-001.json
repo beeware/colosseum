@@ -1,138 +1,183 @@
 {
-    "assert": "Vertical alignment aligns the margin box of inline replaced elements.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
                         "tag": "img",
                         "style": {
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)",
+                            "margin_bottom": "-18px",
+                            "background_position_x": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "background_color": "orange",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
+                            "background_size": "initial",
                             "height": "40px",
-                            "width": "40px",
-                            "margin_bottom": "-18px",
-                            "border_bottom_color": "rgb(255, 165, 0)"
+                            "background_repeat_y": "initial",
+                            "background_position_y": "initial"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "border_right_color": "rgb(255, 165, 0)",
+                            "margin_bottom": "-18px",
+                            "vertical_align": "baseline",
                             "border_bottom_width": "15px",
+                            "background_repeat_y": "initial",
+                            "background_color": "orange",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
                             "border_bottom_style": "solid",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
+                            "background_size": "initial",
+                            "border_bottom_color": "initial",
+                            "background_clip": "initial",
                             "padding_bottom": "10px",
-                            "height": "15px",
-                            "width": "15px",
-                            "margin_bottom": "-18px",
-                            "border_top_color": "rgb(255, 165, 0)"
+                            "background_position_y": "initial",
+                            "background_origin": "initial"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "padding_top": "15px",
-                            "border_top_style": "solid",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_width": "10px",
-                            "height": "15px",
-                            "width": "15px",
+                            "background_position_x": "initial",
+                            "vertical_align": "middle",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "background_color": "orange",
                             "margin_bottom": "-28px",
-                            "border_top_color": "rgb(255, 165, 0)"
-                        }
-                    },
-                    {
-                        "tag": "img",
-                        "style": {
-                            "margin_top": "10px",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
                             "padding_top": "15px",
-                            "border_top_style": "solid",
-                            "border_bottom_color": "rgb(255, 165, 0)",
                             "border_top_width": "10px",
-                            "height": "15px",
-                            "width": "15px",
-                            "border_top_color": "rgb(255, 165, 0)"
+                            "background_size": "initial",
+                            "background_attachment": "initial",
+                            "border_top_style": "solid",
+                            "border_top_color": "initial",
+                            "background_repeat_y": "initial",
+                            "background_position_y": "initial"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_bottom_width": "15px",
-                            "border_bottom_style": "solid",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "padding_bottom": "10px",
-                            "height": "15px",
-                            "width": "15px",
+                            "background_position_x": "initial",
+                            "vertical_align": "text-top",
+                            "background_origin": "initial",
+                            "margin_top": "10px",
+                            "background_clip": "initial",
+                            "background_color": "orange",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "padding_top": "15px",
+                            "border_top_width": "10px",
+                            "background_size": "initial",
+                            "background_attachment": "initial",
+                            "border_top_style": "solid",
+                            "border_top_color": "initial",
+                            "background_repeat_y": "initial",
+                            "background_position_y": "initial"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
                             "margin_bottom": "-10px",
-                            "border_top_color": "rgb(255, 165, 0)"
-                        }
-                    },
-                    {
-                        "tag": "img",
-                        "style": {
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_bottom_width": "10px",
+                            "vertical_align": "text-bottom",
+                            "border_bottom_width": "15px",
+                            "background_repeat_y": "initial",
+                            "background_color": "orange",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
                             "border_bottom_style": "solid",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "padding_bottom": "15px",
-                            "height": "15px",
-                            "width": "15px",
-                            "margin_bottom": "-48px",
-                            "border_top_color": "rgb(255, 165, 0)"
+                            "background_size": "initial",
+                            "border_bottom_color": "initial",
+                            "background_clip": "initial",
+                            "padding_bottom": "10px",
+                            "background_position_y": "initial",
+                            "background_origin": "initial"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
+                            "margin_bottom": "-48px",
+                            "vertical_align": "50%",
+                            "border_bottom_width": "10px",
+                            "background_repeat_y": "initial",
+                            "background_color": "orange",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
+                            "border_bottom_style": "solid",
+                            "background_size": "initial",
+                            "border_bottom_color": "initial",
+                            "background_clip": "initial",
+                            "padding_bottom": "15px",
+                            "background_position_y": "initial",
+                            "background_origin": "initial"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "background_position_x": "initial",
+                            "vertical_align": "-28px",
+                            "background_origin": "initial",
                             "margin_top": "10px",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "padding_top": "15px",
-                            "border_top_style": "solid",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_width": "10px",
-                            "height": "15px",
-                            "width": "15px",
+                            "background_clip": "initial",
+                            "background_color": "orange",
                             "margin_bottom": "10px",
-                            "border_top_color": "rgb(255, 165, 0)"
+                            "background_image": "initial",
+                            "border_top_color": "initial",
+                            "padding_top": "15px",
+                            "border_top_width": "10px",
+                            "background_size": "initial",
+                            "margin_left": "0px",
+                            "background_attachment": "initial",
+                            "border_top_style": "solid",
+                            "margin_right": "0px",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "background_position_y": "initial"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "display": "block",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "height": "80px",
-                    "width": "624px",
-                    "border_bottom_color": "rgb(255, 165, 0)"
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "40px",
+                    "font_style": "normal",
+                    "height": "2em",
+                    "color": "orange",
+                    "line_height": "60px",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "80px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "Vertical alignment aligns the margin box of inline replaced elements.",
     "matches": null
 }

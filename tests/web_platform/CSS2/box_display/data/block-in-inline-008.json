@@ -1,47 +1,68 @@
 {
-    "matches": "block-in-inline-008-ref.xht",
-    "assert": null,
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "160px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
+                "tag": "div",
                 "style": {
-                    "width": "80px",
-                    "height": "80px",
-                    "display": "block"
-                },
-                "tag": "div"
+                    "background_position_y": "initial",
+                    "background_size": "initial",
+                    "width": "5em",
+                    "height": "5em",
+                    "background_clip": "initial",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_color": "red",
+                    "display": "block",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial"
+                }
             },
             {
-                "style": {
-                    "width": "624px",
-                    "height": "80px",
-                    "display": "block"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
-                        "style": {},
                         "tag": "div",
+                        "style": {
+                            "display": "inline",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "top": "-80px",
-                                    "height": "80px",
+                                    "background_position_y": "initial",
+                                    "background_size": "initial",
+                                    "width": "5em",
+                                    "height": "5em",
                                     "position": "relative",
-                                    "width": "80px",
-                                    "display": "block"
-                                },
-                                "tag": "div"
+                                    "background_clip": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial",
+                                    "unicode_bidi": "embed",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "top": "-5em",
+                                    "background_color": "green",
+                                    "display": "block",
+                                    "background_image": "initial",
+                                    "background_repeat_y": "initial"
+                                }
                             }
                         ]
                     }
@@ -49,7 +70,9 @@
             }
         ]
     },
+    "matches": "block-in-inline-008-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": null
 }

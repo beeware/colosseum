@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ],
+    "assert": null,
+    "matches": "inlines-017-ref.xht",
     "test_case": {
         "children": [
             {
@@ -15,35 +14,40 @@
                         ],
                         "tag": "span",
                         "style": {
+                            "padding_left": "1em",
+                            "border_left_width": "1em",
+                            "border_left_color": "teal",
+                            "color": "teal",
                             "border_left_style": "solid",
-                            "border_left_width": "20px",
-                            "padding_left": "20px",
-                            "border_left_color": "rgb(0, 128, 128)",
-                            "border_right_color": "rgb(0, 128, 128)",
-                            "border_bottom_color": "rgb(0, 128, 128)",
-                            "border_top_color": "rgb(0, 128, 128)"
+                            "line_height": "2"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "width": "10em",
+                    "font_weight": "normal",
+                    "font_family": "Ahem",
                     "display": "block",
-                    "height": "200px",
-                    "width": "200px"
+                    "line_height": "1",
+                    "font_size": "1.25em"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "200px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": null,
-    "matches": "inlines-017-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
+    ]
 }

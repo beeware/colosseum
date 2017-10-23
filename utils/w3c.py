@@ -182,9 +182,9 @@ class Evaluator(NSObject):
 
 class W3CTestExtractor(toga.App):
     def startup(self):
-        # We want the web canvas to be 640x480;
+        # We want the web canvas to be 1024x768;
         # 22 pixels is the window header size.
-        self.main_window = toga.MainWindow(self.name, size=(640, 480+22))
+        self.main_window = toga.MainWindow(self.name, size=(1024, 768+22))
         self.main_window.app = self
 
         webview = toga.WebView()

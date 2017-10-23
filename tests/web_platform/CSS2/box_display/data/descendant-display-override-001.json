@@ -1,38 +1,49 @@
 {
-    "matches": "../reference/ref-if-there-is-no-red.xht",
-    "assert": "Descendant elements cannot override the parent's setting of the 'display' property when set to 'none'.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "display": "none"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "none",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "width": "96px",
-                            "height": "96px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "width": "1in",
+                            "height": "1in",
+                            "background_clip": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "background_color": "red",
+                            "display": "block",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial"
+                        }
                     }
                 ]
             }
         ]
     },
+    "matches": "../reference/ref-if-there-is-no-red.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": "Descendant elements cannot override the parent's setting of the 'display' property when set to 'none'."
 }

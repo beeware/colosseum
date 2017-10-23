@@ -1,30 +1,36 @@
 {
-    "matches": "height-applies-to-010a-ref.xht",
-    "assert": "If height of content exceeds the set height of a block-level non-replaced element in normal flow (like a list-item element such as in this test), then the content should overflow according to the 'overflow' property.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ],
     "test_case": {
+        "tag": "body",
         "style": {
-            "margin_right": "8px",
-            "height": "96px",
-            "margin_left": "8px",
-            "width": "624px",
-            "margin_top": "8px",
             "display": "block",
+            "unicode_bidi": "embed",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px",
             "margin_bottom": "8px"
         },
-        "tag": "body",
         "children": [
             {
-                "style": {
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "0px",
-                    "margin_left": "40px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "display": "list-item",
-                    "width": "584px"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "list-item",
+                    "font_weight": "normal",
+                    "font_size": "2em",
+                    "overflow_x": "visible",
+                    "color": "green",
+                    "unicode_bidi": "embed",
+                    "line_height": "1",
+                    "font_style": "normal",
+                    "height": "0px",
+                    "margin_left": "1.25em",
+                    "overflow_y": "visible",
+                    "font_family": "serif",
+                    "font_variant_caps": "normal"
+                },
                 "children": [
                     {
                         "text": "PASS",
@@ -33,27 +39,34 @@
                 ]
             },
             {
-                "style": {
-                    "height": "0px",
-                    "width": "584px",
-                    "margin_top": "48px",
-                    "padding_left": "40px",
-                    "display": "block",
-                    "margin_bottom": "16px"
-                },
                 "tag": "ul",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "height": "auto",
+                    "margin_right": "0",
+                    "margin_left": "40px",
+                    "overflow_x": "visible",
+                    "overflow_y": "visible",
+                    "margin_top": "3em",
+                    "margin_bottom": "1.12em"
+                },
                 "children": [
                     {
-                        "style": {
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "display": "list-item",
-                            "width": "584px"
-                        },
                         "tag": "li",
+                        "style": {
+                            "line_height": "1",
+                            "display": "list-item",
+                            "font_weight": "normal",
+                            "font_size": "2em",
+                            "color": "green",
+                            "height": "0px",
+                            "overflow_x": "visible",
+                            "font_family": "serif",
+                            "font_variant_caps": "normal",
+                            "overflow_y": "visible",
+                            "font_style": "normal"
+                        },
                         "children": [
                             {
                                 "text": "PASS",
@@ -64,27 +77,34 @@
                 ]
             },
             {
-                "style": {
-                    "height": "0px",
-                    "width": "584px",
-                    "margin_top": "48px",
-                    "padding_left": "40px",
-                    "display": "block",
-                    "margin_bottom": "16px"
-                },
                 "tag": "ul",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "height": "0px",
+                    "margin_right": "0",
+                    "margin_left": "40px",
+                    "overflow_x": "visible",
+                    "overflow_y": "visible",
+                    "margin_top": "3em",
+                    "margin_bottom": "1.12em"
+                },
                 "children": [
                     {
-                        "style": {
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "height": "0px",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "display": "list-item",
-                            "width": "584px"
-                        },
                         "tag": "li",
+                        "style": {
+                            "line_height": "1",
+                            "display": "list-item",
+                            "font_weight": "normal",
+                            "font_size": "2em",
+                            "color": "green",
+                            "height": "0px",
+                            "overflow_x": "visible",
+                            "font_family": "serif",
+                            "font_variant_caps": "normal",
+                            "overflow_y": "visible",
+                            "font_style": "normal"
+                        },
                         "children": [
                             {
                                 "text": "PASS",
@@ -96,8 +116,6 @@
             }
         ]
     },
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-height-property",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ]
+    "matches": "height-applies-to-010a-ref.xht",
+    "assert": "If height of content exceeds the set height of a block-level non-replaced element in normal flow (like a list-item element such as in this test), then the content should overflow according to the 'overflow' property."
 }

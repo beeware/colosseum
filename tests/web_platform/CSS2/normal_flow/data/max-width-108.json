@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ],
+    "assert": "'max-width' specifies a fixed maximum used width. If the used width is greater than max-width, then the computed value of max-width is used as the computed value for width.",
+    "matches": null,
     "test_case": {
         "children": [
             {
@@ -14,11 +12,12 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
                     "display": "block",
-                    "width": "624px",
-                    "height": "36px",
-                    "margin_bottom": "16px"
+                    "margin_top": "1.12em"
                 }
             },
             {
@@ -35,7 +34,9 @@
                             }
                         ],
                         "tag": "strong",
-                        "style": {}
+                        "style": {
+                            "font_weight": "bolder"
+                        }
                     },
                     {
                         "text": ". Such green square should have active horizontal and vertical scrollbars.",
@@ -44,11 +45,12 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
                     "display": "block",
-                    "width": "624px",
-                    "height": "36px",
-                    "margin_bottom": "16px"
+                    "margin_top": "1.12em"
                 }
             },
             {
@@ -60,15 +62,20 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "max_width": "200px",
+                    "unicode_bidi": "embed",
                     "float": "left",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "width": "200px",
+                    "line_height": "1",
+                    "font_family": "Ahem",
+                    "display": "block",
+                    "font_size": "200px",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "max_width": "200px",
+                    "color": "red",
                     "height": "200px",
-                    "border_left_color": "rgb(255, 0, 0)",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "border_top_color": "rgb(255, 0, 0)"
+                    "overflow_x": "auto",
+                    "overflow_y": "auto"
                 }
             },
             {
@@ -80,31 +87,37 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "clear": "left",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "width": "200px",
+                    "unicode_bidi": "embed",
                     "position": "relative",
-                    "max_width": "200px",
                     "top": "-200px",
-                    "border_left_color": "rgb(0, 128, 0)",
+                    "line_height": "1",
+                    "font_family": "Ahem",
+                    "display": "block",
+                    "font_size": "200px",
+                    "clear": "left",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "max_width": "200px",
+                    "color": "green",
                     "height": "200px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)"
+                    "overflow_x": "auto",
+                    "overflow_y": "auto"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "504px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "'max-width' specifies a fixed maximum used width. If the used width is greater than max-width, then the computed value of max-width is used as the computed value for width.",
-    "matches": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ]
 }

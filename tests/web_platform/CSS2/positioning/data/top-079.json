@@ -1,56 +1,83 @@
 {
     "matches": "top-079-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "absolute",
-                            "height": "120px",
-                            "display": "block",
-                            "margin_top": "120px",
-                            "width": "624px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "height": "0px",
-                            "top": "120px",
-                            "display": "block",
-                            "border_bottom_width": "120px",
-                            "position": "relative",
-                            "border_bottom_style": "solid",
-                            "width": "624px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "120px",
-                    "display": "block",
-                    "margin_top": "-120px",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "120px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "The 'top' property sets a nominal length value in 'em' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "100%",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "background_size": "initial",
+                            "font_family": "Ahem",
+                            "line_height": "1",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "block",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial",
+                            "font_weight": "normal",
+                            "font_style": "normal",
+                            "margin_top": "6em",
+                            "background_clip": "initial",
+                            "height": "6em",
+                            "background_position_y": "initial",
+                            "background_color": "red",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "position": "absolute",
+                            "unicode_bidi": "embed"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "font_style": "normal",
+                            "border_bottom_style": "solid",
+                            "font_variant_caps": "normal",
+                            "top": "6em",
+                            "line_height": "1",
+                            "display": "block",
+                            "border_bottom_color": "black",
+                            "unicode_bidi": "embed",
+                            "position": "relative",
+                            "font_family": "Ahem",
+                            "font_size": "20px",
+                            "font_weight": "normal",
+                            "border_bottom_width": "6em"
+                        }
+                    }
+                ],
+                "style": {
+                    "margin_top": "-6em",
+                    "font_style": "normal",
+                    "font_family": "Ahem",
+                    "font_variant_caps": "normal",
+                    "font_size": "20px",
+                    "position": "relative",
+                    "line_height": "1",
+                    "unicode_bidi": "embed",
+                    "font_weight": "normal",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

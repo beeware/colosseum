@@ -1,41 +1,42 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The 'max-height' property sets a minimum plus one length value in picas.",
+    "matches": "max-height-025-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_color": "red",
                     "display": "block",
-                    "height": "16px",
-                    "width": "624px",
-                    "max_height": "16px"
+                    "max_height": "1pc",
+                    "height": "12pc"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "width": "624px",
+                    "unicode_bidi": "embed",
                     "position": "relative",
-                    "bottom": "16px",
-                    "height": "16px"
+                    "bottom": "1pc",
+                    "background_color": "black",
+                    "height": "1pc",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "32px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'max-height' property sets a minimum plus one length value in picas.",
-    "matches": "max-height-025-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

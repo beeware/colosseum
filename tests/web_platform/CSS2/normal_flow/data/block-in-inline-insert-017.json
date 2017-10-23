@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ],
+    "assert": null,
+    "matches": "block-in-inline-insert-017-ref.xht",
     "test_case": {
         "children": [
             {
@@ -9,9 +8,7 @@
                     {
                         "tag": "span",
                         "style": {
-                            "display": "block",
-                            "height": "0px",
-                            "width": "0px"
+                            "0": "display"
                         }
                     },
                     {
@@ -26,16 +23,12 @@
                             }
                         ],
                         "tag": "script",
-                        "style": {
-                            "display": "none"
-                        }
+                        "style": {}
                     },
                     {
                         "tag": "span",
                         "style": {
-                            "display": "block",
-                            "height": "0px",
-                            "width": "0px"
+                            "0": "display"
                         }
                     },
                     {
@@ -45,32 +38,38 @@
                 ],
                 "tag": "span",
                 "style": {
-                    "border_left_width": "2px",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "2px",
-                    "border_left_style": "solid",
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "border_top_width": "2px",
-                    "border_right_width": "2px",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "border_right_style": "solid",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_top_style": "solid"
+                    "1": "border-right-width",
+                    "13": "border-image-slice",
+                    "0": "border-top-width",
+                    "7": "border-left-style",
+                    "15": "border-image-outset",
+                    "12": "border-image-source",
+                    "2": "border-bottom-width",
+                    "11": "border-left-color",
+                    "10": "border-bottom-color",
+                    "4": "border-top-style",
+                    "3": "border-left-width",
+                    "8": "border-top-color",
+                    "9": "border-right-color",
+                    "14": "border-image-width",
+                    "6": "border-bottom-style",
+                    "16": "border-image-repeat",
+                    "5": "border-right-style"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "0px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "72px",
-            "margin_left": "8px"
+            "0": "width",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": null,
-    "matches": "block-in-inline-insert-017-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
+    ]
 }

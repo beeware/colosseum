@@ -1,14 +1,16 @@
 {
-    "assert": "The 'vertical-align' property aligns an empty 'inline-block' elements' bottom margin edge with the baseline.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "X",
@@ -17,15 +19,21 @@
                             {
                                 "tag": "span",
                                 "style": {
-                                    "top": "19.200000762939453px",
-                                    "border_right_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "width": "96px",
-                                    "display": "inline-block",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "height": "96px",
+                                    "background_position_x": "initial",
+                                    "width": "1in",
                                     "position": "relative",
-                                    "border_bottom_color": "rgb(255, 255, 255)"
+                                    "background_origin": "initial",
+                                    "background_clip": "initial",
+                                    "background_color": "white",
+                                    "background_image": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_attachment": "initial",
+                                    "background_size": "initial",
+                                    "top": "0.2em",
+                                    "height": "1in",
+                                    "background_repeat_y": "initial",
+                                    "background_position_y": "initial",
+                                    "display": "inline-block"
                                 }
                             },
                             {
@@ -33,47 +41,67 @@
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)"
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
+                            "font_family": "Ahem",
+                            "font_size": "1in",
+                            "font_style": "normal",
+                            "line_height": "1em",
+                            "color": "white"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "115px",
-                    "width": "288px"
+                    "background_position_x": "initial",
+                    "width": "3in",
+                    "background_origin": "initial",
+                    "background_clip": "initial",
+                    "background_color": "black",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "background_attachment": "initial",
+                    "background_size": "initial",
+                    "unicode_bidi": "embed",
+                    "background_repeat_y": "initial",
+                    "background_position_y": "initial",
+                    "display": "block"
                 }
             },
             {
+                "tag": "div",
                 "children": [
                     {
                         "text": "XXX",
                         "style": {}
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "18px",
-                    "width": "288px"
+                    "background_position_x": "initial",
+                    "width": "3in",
+                    "background_origin": "initial",
+                    "background_clip": "initial",
+                    "background_color": "black",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "background_attachment": "initial",
+                    "background_size": "initial",
+                    "unicode_bidi": "embed",
+                    "background_repeat_y": "initial",
+                    "background_position_y": "initial",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "133px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'vertical-align' property aligns an empty 'inline-block' elements' bottom margin edge with the baseline.",
     "matches": null
 }

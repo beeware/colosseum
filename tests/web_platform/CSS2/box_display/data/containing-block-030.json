@@ -1,40 +1,43 @@
 {
-    "matches": "containing-block-030-ref.xht",
-    "assert": "Content may overflow containing blocks.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "96px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "96px",
-                    "height": "96px",
-                    "padding_left": "5px",
-                    "display": "block"
-                },
                 "tag": "div",
+                "style": {
+                    "height": "1in",
+                    "background_color": "blue",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "padding_left": "5px",
+                    "width": "1in"
+                },
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "width": "48px",
-                            "height": "192px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                            "width": "0.5in",
+                            "height": "2in",
+                            "background_color": "orange",
+                            "display": "block",
+                            "unicode_bidi": "embed"
+                        }
                     }
                 ]
             }
         ]
     },
+    "matches": "containing-block-030-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#containing-block"
-    ]
+    ],
+    "assert": "Content may overflow containing blocks."
 }

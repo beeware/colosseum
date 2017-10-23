@@ -1,72 +1,102 @@
 {
     "matches": "position-relative-016-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "border_bottom_color": "rgba(0, 0, 0, 0)",
-                    "border_left_width": "1px",
-                    "border_left_style": "solid",
-                    "border_right_color": "rgba(0, 0, 0, 0)",
-                    "border_top_style": "solid",
-                    "height": "0px",
-                    "width": "96px",
-                    "border_bottom_width": "1px",
-                    "border_top_color": "rgba(0, 0, 0, 0)",
-                    "border_right_width": "1px",
-                    "display": "block",
-                    "border_left_color": "rgba(0, 0, 0, 0)",
-                    "border_top_width": "1px",
-                    "border_right_style": "solid",
-                    "border_bottom_style": "solid"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "position": "absolute",
-                    "height": "96px",
-                    "display": "block",
-                    "margin_top": "96px",
-                    "width": "96px"
-                },
-                "tag": "div"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "relative",
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "96px",
-                    "display": "block",
-                    "width": "96px",
-                    "bottom": "-96px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "98px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Used value of top equals negative bottom when top is auto and bottom is given. (Computed value of top remains auto.)",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "width": "1in",
+                    "border_left_width": "1px",
+                    "border_bottom_style": "solid",
+                    "border_image_repeat": "initial",
+                    "border_bottom_color": "transparent",
+                    "height": "0px",
+                    "border_left_style": "solid",
+                    "border_left_color": "transparent",
+                    "border_image_width": "initial",
+                    "border_image_source": "initial",
+                    "display": "block",
+                    "border_image_outset": "initial",
+                    "border_image_slice": "initial",
+                    "border_right_width": "1px",
+                    "border_top_color": "transparent",
+                    "border_right_style": "solid",
+                    "unicode_bidi": "embed",
+                    "border_right_color": "transparent",
+                    "border_top_style": "solid",
+                    "border_top_width": "1px",
+                    "border_bottom_width": "1px"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "width": "1in",
+                    "margin_top": "1in",
+                    "background_clip": "initial",
+                    "height": "1in",
+                    "background_color": "red",
+                    "background_position_y": "initial",
+                    "background_size": "initial",
+                    "background_repeat_y": "initial",
+                    "background_image": "initial",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "display": "block",
+                    "background_position_x": "initial",
+                    "position": "absolute"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "1in",
+                            "background_clip": "initial",
+                            "height": "1in",
+                            "background_color": "green",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "inherit",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "relative",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "1in",
+                    "height": "1in",
+                    "bottom": "-1in",
+                    "position": "relative",
+                    "unicode_bidi": "embed",
+                    "top": "auto",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

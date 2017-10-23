@@ -1,60 +1,54 @@
 {
-    "assert": "The baseline of a table caption element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "table",
                 "children": [
                     {
+                        "tag": "caption",
                         "children": [
                             {
                                 "text": "XXXXX",
                                 "style": {}
                             },
                             {
+                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "XXXXX",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "span",
-                                "style": {}
+                                "style": {
+                                    "font_size": "2em",
+                                    "vertical_align": "baseline"
+                                }
                             }
                         ],
-                        "tag": "caption",
                         "style": {
-                            "display": "table-caption",
-                            "height": "37px",
-                            "width": "173.328125px"
+                            "text_align": "center"
                         }
                     }
                 ],
-                "tag": "table",
                 "style": {
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "display": "table",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "height": "37px",
-                    "width": "173.328125px",
-                    "border_bottom_color": "rgb(128, 128, 128)"
+                    "border_spacing": "2px"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "37px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The baseline of a table caption element is aligned with the baseline of its child inline element when 'vertical-align: baseline' is specified on the child.",
     "matches": "vertical-align-baseline-007-ref.xht"
 }

@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The percentage is calculated in relation to the containing block.",
+    "matches": "max-width-percentage-001-ref.xht",
     "test_case": {
         "children": [
             {
@@ -9,40 +8,53 @@
                     {
                         "tag": "div",
                         "style": {
-                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_color": "blue",
+                            "width": "4in",
                             "max_width": "50%",
-                            "width": "96px",
-                            "height": "96px"
+                            "display": "block",
+                            "height": "1in"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "background_attachment": "initial",
+                            "width": "1in",
+                            "background_color": "orange",
                             "display": "block",
-                            "height": "96px",
-                            "width": "96px"
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "height": "1in",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "192px",
-                    "width": "192px"
+                    "unicode_bidi": "embed",
+                    "width": "2in",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "192px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The percentage is calculated in relation to the containing block.",
-    "matches": "max-width-percentage-001-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

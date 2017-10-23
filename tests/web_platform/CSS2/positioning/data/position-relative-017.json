@@ -1,40 +1,63 @@
 {
     "matches": "position-relative-014-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "relative",
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "height": "192px",
-                    "display": "block",
-                    "width": "96px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "192px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Computed values are zero when both 'top' and 'bottom' are set to 'auto'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "1in",
+                            "background_clip": "initial",
+                            "height": "1in",
+                            "background_color": "orange",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "auto",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "relative",
+                            "unicode_bidi": "embed",
+                            "bottom": "auto",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "1in",
+                    "background_clip": "initial",
+                    "height": "2in",
+                    "background_color": "blue",
+                    "background_position_y": "initial",
+                    "background_size": "initial",
+                    "background_repeat_y": "initial",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "background_position_x": "initial",
+                    "background_attachment": "initial"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

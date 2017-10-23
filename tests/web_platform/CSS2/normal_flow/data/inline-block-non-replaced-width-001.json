@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-width"
-    ],
+    "assert": "If 'width' is 'auto' then 'inline-block' elements shrink-to-fit.",
+    "matches": "inline-block-non-replaced-width-001-ref.xht",
     "test_case": {
         "children": [
             {
@@ -13,27 +12,31 @@
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "width": "auto",
+                    "font_family": "Ahem",
+                    "font_weight": "normal",
+                    "background_color": "red",
+                    "color": "blue",
                     "display": "inline-block",
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "width": "100px",
-                    "height": "100px",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "border_bottom_color": "rgb(0, 0, 255)",
-                    "border_top_color": "rgb(0, 0, 255)"
+                    "line_height": "1",
+                    "font_size": "100px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "100px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "If 'width' is 'auto' then 'inline-block' elements shrink-to-fit.",
-    "matches": "inline-block-non-replaced-width-001-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inlineblock-width"
+    ]
 }

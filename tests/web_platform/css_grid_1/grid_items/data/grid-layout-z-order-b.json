@@ -1,73 +1,102 @@
 {
     "assert": "the layout should behave the same as reference.",
     "test_case": {
+        "style": {
+            "margin_top": "0px",
+            "margin_bottom": "0px",
+            "margin_left": "0px",
+            "padding_left": "0px",
+            "padding_top": "0px",
+            "display": "block",
+            "margin_right": "0px",
+            "padding_bottom": "0px",
+            "padding_right": "0px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
+                "style": {
+                    "grid_template_columns": "50px 50px 50px",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "unicode_bidi": "embed",
+                    "background_clip": "initial",
+                    "background_image": "initial",
+                    "width": "150px",
+                    "background_position_x": "initial",
+                    "background_repeat_x": "initial",
+                    "color": "white",
+                    "display": "grid",
+                    "background_position_y": "initial",
+                    "background_color": "rgb(238, 238, 238)",
+                    "background_attachment": "initial",
+                    "background_size": "initial"
+                },
                 "children": [
                     {
+                        "style": {
+                            "grid_row_end": "auto",
+                            "grid_column_end": "4",
+                            "z_index": "1",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_clip": "initial",
+                            "grid_column_start": "2",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "background_position_y": "initial",
+                            "background_color": "yellow",
+                            "background_attachment": "initial",
+                            "background_size": "initial"
+                        },
                         "children": [
                             {
-                                "style": {},
-                                "text": "down"
+                                "text": "down",
+                                "style": {}
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "z_index": "1",
-                            "height": "18px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)"
-                        }
+                        "tag": "DIV"
                     },
                     {
+                        "style": {
+                            "grid_row_end": "auto",
+                            "grid_column_end": "3",
+                            "z_index": "10",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_clip": "initial",
+                            "grid_column_start": "1",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "background_position_y": "initial",
+                            "background_color": "blue",
+                            "background_attachment": "initial",
+                            "background_size": "initial"
+                        },
                         "children": [
                             {
-                                "style": {},
-                                "text": "up"
+                                "text": "up",
+                                "style": {}
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "z_index": "10",
-                            "height": "18px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "border_top_color": "rgb(255, 255, 255)"
-                        }
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "150px",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "height": "18px",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)"
-                }
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "640px",
-            "height": "18px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../reference/grid-layout-z-order-ref.html",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#z-order"
-    ]
+    ],
+    "matches": "../reference/grid-layout-z-order-ref.html"
 }

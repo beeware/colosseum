@@ -1,117 +1,131 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "height": "86px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "text": "Two identical lines:"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "text": "First"
-                    },
-                    {
-                        "style": {
-                            "border_right_style": "solid",
-                            "border_bottom_style": "solid",
-                            "border_right_width": "5px",
-                            "border_bottom_width": "5px",
-                            "border_left_width": "5px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(128, 0, 128)",
-                            "border_top_width": "5px",
-                            "border_top_style": "solid",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_left_style": "solid",
-                            "border_bottom_color": "rgb(255, 255, 0)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Second"
-                            }
-                        ],
-                        "tag": "span"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "height": "18px",
-                    "direction": "rtl",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "text": "First"
-                    },
-                    {
-                        "style": {
-                            "border_right_style": "solid",
-                            "border_bottom_style": "solid",
-                            "border_right_width": "5px",
-                            "border_bottom_width": "5px",
-                            "border_left_width": "5px",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "direction": "rtl",
-                            "border_right_color": "rgb(128, 0, 128)",
-                            "border_top_width": "5px",
-                            "border_top_style": "solid",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_left_style": "solid",
-                            "border_bottom_color": "rgb(255, 255, 0)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Second"
-                            }
-                        ],
-                        "tag": "span"
-                    }
-                ],
-                "tag": "p"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/box.html#bidi-box-model"
     ],
+    "matches": null,
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "text": "Two identical lines:",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "text_align": "left",
+                    "margin_top": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "text": "First",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Second",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_image_outset": "initial",
+                            "border_right_width": "5px",
+                            "border_image_width": "initial",
+                            "border_left_width": "5px",
+                            "border_right_style": "solid",
+                            "border_top_color": "green",
+                            "border_bottom_style": "solid",
+                            "border_top_style": "solid",
+                            "border_right_color": "purple",
+                            "border_bottom_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_bottom_color": "yellow",
+                            "border_left_style": "solid",
+                            "border_top_width": "5px",
+                            "border_image_source": "initial",
+                            "border_left_color": "blue",
+                            "border_image_slice": "initial"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "text_align": "left",
+                    "margin_top": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "text": "First",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "Second",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "border_image_outset": "initial",
+                            "border_right_width": "5px",
+                            "border_image_width": "initial",
+                            "border_left_width": "5px",
+                            "border_right_style": "solid",
+                            "border_top_color": "green",
+                            "border_bottom_style": "solid",
+                            "border_top_style": "solid",
+                            "border_right_color": "purple",
+                            "border_bottom_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_bottom_color": "yellow",
+                            "border_left_style": "solid",
+                            "border_top_width": "5px",
+                            "border_image_source": "initial",
+                            "border_left_color": "blue",
+                            "border_image_slice": "initial"
+                        },
+                        "tag": "span"
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "text_align": "left",
+                    "margin_top": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "normal",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
+                    "direction": "rtl"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "Borders should be unaffected by directionality"
 }

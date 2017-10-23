@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The 'min-width' property does not apply to elements with 'display' set to 'inline'.",
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "children": [
             {
@@ -14,25 +12,32 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_right_color": "rgb(0, 128, 0)",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
                     "min_width": "200px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)"
+                    "font_family": "Ahem",
+                    "font_weight": "normal",
+                    "background_color": "red",
+                    "color": "green",
+                    "display": "inline",
+                    "line_height": "1",
+                    "font_size": "100px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "100px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-width' property does not apply to elements with 'display' set to 'inline'.",
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

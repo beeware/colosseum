@@ -1,86 +1,97 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ],
-    "matches": null,
     "test_case": {
+        "tag": "BODY",
+        "style": {
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
                 "tag": "DIV",
                 "style": {
-                    "width": "624px",
-                    "height": "0px",
-                    "display": "block"
+                    "display": "block",
+                    "unicode_bidi": "embed"
                 }
             },
             {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "text": "XXX X",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "min_width": "auto",
-                            "width": "200px",
-                            "min_height": "auto",
-                            "height": "50px",
-                            "display": "block"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "XX XXX XX",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "min_width": "auto",
-                            "width": "200px",
-                            "min_height": "auto",
-                            "height": "150px",
-                            "display": "block"
-                        }
-                    }
-                ],
                 "tag": "DIV",
                 "style": {
+                    "top": "50px",
+                    "grid_template_areas": "none",
+                    "border_image_repeat": "initial",
+                    "border_image_slice": "initial",
+                    "border_image_outset": "initial",
                     "border_left_width": "7px",
-                    "border_bottom_width": "7px",
-                    "border_left_color": "rgb(204, 204, 204)",
-                    "border_top_color": "rgb(204, 204, 204)",
-                    "border_bottom_color": "rgb(204, 204, 204)",
-                    "border_bottom_style": "solid",
-                    "width": "200px",
                     "left": "50px",
-                    "border_top_style": "solid",
-                    "height": "200px",
-                    "position": "absolute",
-                    "border_right_width": "7px",
-                    "display": "grid",
-                    "border_left_style": "solid",
+                    "border_bottom_color": "rgb(204, 204, 204)",
                     "border_right_color": "rgb(204, 204, 204)",
-                    "border_top_width": "7px",
+                    "border_right_width": "7px",
+                    "font_family": "Ahem",
+                    "line_height": "1",
+                    "border_top_style": "solid",
+                    "grid_template_columns": "1fr",
+                    "display": "grid",
                     "border_right_style": "solid",
-                    "top": "50px"
-                }
+                    "grid_template_rows": "50px 1fr",
+                    "position": "absolute",
+                    "border_bottom_style": "solid",
+                    "border_bottom_width": "7px",
+                    "font_style": "normal",
+                    "unicode_bidi": "embed",
+                    "border_left_style": "solid",
+                    "font_variant_caps": "normal",
+                    "width": "200px",
+                    "border_image_width": "initial",
+                    "height": "200px",
+                    "font_size": "10px",
+                    "border_top_color": "rgb(204, 204, 204)",
+                    "border_top_width": "7px",
+                    "font_weight": "normal",
+                    "border_left_color": "rgb(204, 204, 204)",
+                    "border_image_source": "initial"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "grid_row_start": "1",
+                            "background_color": "yellow"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "XXX X"
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "grid_row_start": "2",
+                            "background_color": "cyan"
+                        },
+                        "children": [
+                            {
+                                "style": {},
+                                "text": "XX XXX XX"
+                            }
+                        ]
+                    }
+                ]
             }
-        ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "height": "0px",
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_right": "8px"
-        }
+        ]
     },
-    "assert": "Items should extend to fill the width of the absolutely positioned grid container."
+    "assert": "Items should extend to fill the width of the absolutely positioned grid container.",
+    "matches": null,
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
 }

@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-non-replaced"
-    ],
+    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'.",
+    "matches": "inline-non-replaced-height-002-ref.xht",
     "test_case": {
         "children": [
             {
@@ -15,47 +14,72 @@
                         ],
                         "tag": "span",
                         "style": {
-                            "border_right_color": "rgb(0, 0, 255)",
+                            "padding_left": "0px",
+                            "background_position_x": "initial",
+                            "background_size": "initial",
+                            "font_size": "100px",
+                            "background_attachment": "initial",
+                            "line_height": "150px",
+                            "background_color": "blue",
+                            "font_family": "Ahem",
+                            "background_repeat_y": "initial",
                             "padding_top": "50px",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "padding_bottom": "50px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "background_image": "initial",
+                            "font_style": "normal",
+                            "background_repeat_x": "initial",
+                            "font_variant_caps": "normal",
+                            "padding_right": "0px",
+                            "background_position_y": "initial",
+                            "font_weight": "normal",
+                            "background_origin": "initial",
+                            "color": "blue",
+                            "background_clip": "initial",
+                            "padding_bottom": "50px"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "200px",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
                             "position": "absolute",
-                            "width": "100px",
+                            "background_position_y": "initial",
                             "top": "-25px",
-                            "left": "100px"
+                            "left": "100px",
+                            "background_attachment": "initial",
+                            "width": "100px",
+                            "background_color": "orange",
+                            "display": "block",
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "height": "200px",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "margin_top": "41px",
+                    "unicode_bidi": "embed",
                     "display": "block",
-                    "position": "relative",
-                    "width": "624px",
-                    "height": "150px"
+                    "margin_top": "41px",
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "150px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The padding starts at the top and bottom of the content area not the 'line-height'.",
-    "matches": "inline-non-replaced-height-002-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-non-replaced"
+    ]
 }

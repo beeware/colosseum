@@ -1,49 +1,89 @@
 {
+    "assert": "the layout should behave the same as reference.",
+    "matches": "../reference/grid-layout-basic-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-span"
+    ],
     "test_case": {
         "tag": "BODY",
         "style": {
-            "width": "640px",
-            "height": "18px",
-            "display": "block"
+            "margin_top": "0px",
+            "padding_bottom": "0px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_right": "0px",
+            "padding_right": "0px",
+            "margin_bottom": "0px",
+            "margin_left": "0px",
+            "padding_top": "0px",
+            "padding_left": "0px"
         },
         "children": [
             {
                 "tag": "DIV",
                 "style": {
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "display": "grid",
+                    "background_color": "rgb(238, 238, 238)",
                     "width": "150px",
-                    "height": "18px",
-                    "display": "grid"
+                    "background_origin": "initial",
+                    "background_repeat_y": "initial",
+                    "background_clip": "initial",
+                    "unicode_bidi": "embed",
+                    "background_position_x": "initial",
+                    "grid_template_columns": "50px 50px 50px",
+                    "background_position_y": "initial",
+                    "background_image": "initial",
+                    "background_size": "initial"
                 },
                 "children": [
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_width": "auto",
-                            "width": "100px",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "block",
+                            "background_color": "blue",
+                            "grid_column_start": "1",
+                            "grid_row_start": "1",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "grid_column_end": "span 2",
+                            "grid_row_end": "auto",
+                            "unicode_bidi": "embed",
+                            "background_repeat_y": "initial",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "background_image": "initial",
+                            "background_size": "initial"
                         },
                         "children": []
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "min_width": "auto",
-                            "width": "50px",
-                            "min_height": "auto",
-                            "height": "18px",
-                            "display": "block"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "block",
+                            "background_color": "yellow",
+                            "grid_column_start": "3",
+                            "grid_row_start": "1",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "grid_column_end": "auto",
+                            "grid_row_end": "auto",
+                            "unicode_bidi": "embed",
+                            "background_repeat_y": "initial",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "background_image": "initial",
+                            "background_size": "initial"
                         },
                         "children": []
                     }
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-span"
-    ],
-    "assert": "the layout should behave the same as reference.",
-    "matches": "../reference/grid-layout-basic-ref.html"
+    }
 }

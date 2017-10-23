@@ -1,104 +1,139 @@
 {
     "matches": "../reference/ref-if-there-is-no-red.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "left": "0px",
-                            "top": "0px",
-                            "display": "block",
-                            "margin_top": "15px",
-                            "bottom": "0px",
-                            "height": "15px",
-                            "position": "absolute",
-                            "margin_bottom": "15px",
-                            "width": "15px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "left": "15px",
-                            "top": "0px",
-                            "display": "block",
-                            "margin_top": "30px",
-                            "bottom": "0px",
-                            "height": "15px",
-                            "position": "absolute",
-                            "width": "15px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "right": "0px",
-                            "height": "15px",
-                            "top": "0px",
-                            "display": "block",
-                            "bottom": "0px",
-                            "position": "absolute",
-                            "margin_bottom": "30px",
-                            "width": "15px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "height": "15px",
-                            "border_right_width": "15px",
-                            "display": "block",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "border_right_style": "solid",
-                            "width": "30px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "border_left_style": "solid",
-                            "height": "15px",
-                            "display": "block",
-                            "border_left_width": "15px",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "width": "30px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "margin_left": "15px",
-                            "display": "block",
-                            "height": "15px",
-                            "margin_right": "15px",
-                            "width": "15px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "45px",
-                    "display": "block",
-                    "width": "45px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "45px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "If 'top' and 'bottom' are specified on an     absolutely-positioned replaced element, then any remaining space is     split amongst the 'auto' vertical margins.",
     "help": [
         "http://www.w3.org/TR/CSS21/visufx.html#clipping"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "margin_bottom": "auto",
+                            "margin_top": "auto",
+                            "background_clip": "initial",
+                            "background_color": "red",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "0px",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "left": "0px",
+                            "margin_left": "auto",
+                            "margin_right": "auto",
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "margin_top": "auto",
+                            "background_clip": "initial",
+                            "background_color": "red",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "0px",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "left": "15px",
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    },
+                    {
+                        "tag": "img",
+                        "style": {
+                            "margin_bottom": "auto",
+                            "background_clip": "initial",
+                            "right": "0px",
+                            "background_color": "red",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "0px",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "position": "absolute",
+                            "bottom": "0px",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_right_width": "15px",
+                            "border_right_style": "solid",
+                            "height": "15px",
+                            "border_right_color": "red",
+                            "unicode_bidi": "embed",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "border_left_width": "15px",
+                            "height": "15px",
+                            "border_left_style": "solid",
+                            "border_left_color": "red",
+                            "unicode_bidi": "embed",
+                            "display": "block"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "margin_bottom": "0px",
+                            "margin_top": "0px",
+                            "background_clip": "initial",
+                            "height": "15px",
+                            "background_color": "red",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "margin_left": "15px",
+                            "margin_right": "15px",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "block",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "45px",
+                    "position": "relative",
+                    "height": "45px",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

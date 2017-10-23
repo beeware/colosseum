@@ -1,69 +1,4 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "height": "300px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "width": "400px",
-                    "display": "block",
-                    "position": "relative",
-                    "height": "300px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "display": "block",
-                            "width": "260px",
-                            "left": "15%",
-                            "bottom": "10%",
-                            "right": "20%",
-                            "position": "absolute",
-                            "top": "30%",
-                            "height": "180px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "display": "block",
-                                    "width": "169px",
-                                    "left": "15%",
-                                    "bottom": "10%",
-                                    "right": "20%",
-                                    "position": "absolute",
-                                    "top": "30%",
-                                    "height": "108px"
-                                },
-                                "tag": "div"
-                            }
-                        ],
-                        "tag": "div"
-                    }
-                ],
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "display": "block",
-                    "position": "absolute",
-                    "left": "107px",
-                    "height": "108px",
-                    "width": "169px",
-                    "top": "216px"
-                },
-                "tag": "div"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": "position-absolute-percentage-inherit-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props",
         "http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit",
@@ -71,5 +6,73 @@
         "http://www.w3.org/TR/css-cascade-4/#inherit",
         "http://www.w3.org/TR/CSS21/syndata.html#length-units"
     ],
+    "matches": "position-absolute-percentage-inherit-001-ref.xht",
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "left": "inherit",
+                                    "right": "inherit",
+                                    "bottom": "inherit",
+                                    "unicode_bidi": "embed",
+                                    "background_color": "red",
+                                    "display": "block",
+                                    "position": "inherit",
+                                    "top": "inherit"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "left": "15%",
+                            "right": "20%",
+                            "bottom": "10%",
+                            "unicode_bidi": "embed",
+                            "background_color": "green",
+                            "display": "block",
+                            "position": "absolute",
+                            "top": "30%"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "width": "400px",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "background_color": "green",
+                    "height": "300px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            },
+            {
+                "style": {
+                    "left": "107px",
+                    "width": "169px",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "background_color": "green",
+                    "height": "108px",
+                    "position": "absolute",
+                    "top": "216px"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "Absolutely positioned boxes can be dimensioned and positioned solely by setting offset 'top', 'right', 'bottom' and 'left' property values with percentage unit and then with inherit keyword. 'inherit' on a offset property makes such offset property take the same computed value as the offset property of the nearest positioned ancestor; in the case of a percentage value - like in this testcase - , the computed value is the specified percentage value of such nearest positioned ancestor."
 }

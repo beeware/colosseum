@@ -1,176 +1,23 @@
 {
-    "border": [
-        0,
-        0,
-        0,
-        0
-    ],
-    "padding_box": {
+    "id": "",
+    "border_box": {
+        "size": [
+            1024,
+            18
+        ],
         "position": [
             0,
             0
-        ],
-        "size": [
-            640,
-            18
         ]
     },
-    "id": "",
-    "children": [
-        {
-            "border": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "padding_box": {
-                "position": [
-                    0,
-                    0
-                ],
-                "size": [
-                    150,
-                    18
-                ]
-            },
-            "id": "grid",
-            "children": [
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            50,
-                            0
-                        ],
-                        "size": [
-                            100,
-                            18
-                        ]
-                    },
-                    "id": "",
-                    "children": [],
-                    "text": "down",
-                    "tag": "div",
-                    "content": {
-                        "position": [
-                            50,
-                            0
-                        ],
-                        "size": [
-                            100,
-                            18
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            50,
-                            0
-                        ],
-                        "size": [
-                            100,
-                            18
-                        ]
-                    }
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "position": [
-                            0,
-                            0
-                        ],
-                        "size": [
-                            100,
-                            18
-                        ]
-                    },
-                    "id": "",
-                    "children": [],
-                    "text": "up",
-                    "tag": "div",
-                    "content": {
-                        "position": [
-                            0,
-                            0
-                        ],
-                        "size": [
-                            100,
-                            18
-                        ]
-                    },
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "border_box": {
-                        "position": [
-                            0,
-                            0
-                        ],
-                        "size": [
-                            100,
-                            18
-                        ]
-                    }
-                }
-            ],
-            "tag": "div",
-            "content": {
-                "position": [
-                    0,
-                    0
-                ],
-                "size": [
-                    150,
-                    18
-                ]
-            },
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "border_box": {
-                "position": [
-                    0,
-                    0
-                ],
-                "size": [
-                    150,
-                    18
-                ]
-            }
-        }
-    ],
-    "tag": "body",
     "content": {
+        "size": [
+            1024,
+            18
+        ],
         "position": [
             0,
             0
-        ],
-        "size": [
-            640,
-            18
         ]
     },
     "padding": [
@@ -179,14 +26,167 @@
         0,
         0
     ],
-    "border_box": {
+    "children": [
+        {
+            "id": "grid",
+            "border_box": {
+                "size": [
+                    150,
+                    18
+                ],
+                "position": [
+                    0,
+                    0
+                ]
+            },
+            "content": {
+                "size": [
+                    150,
+                    18
+                ],
+                "position": [
+                    0,
+                    0
+                ]
+            },
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "children": [
+                {
+                    "id": "",
+                    "border_box": {
+                        "size": [
+                            100,
+                            18
+                        ],
+                        "position": [
+                            50,
+                            0
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            100,
+                            18
+                        ],
+                        "position": [
+                            50,
+                            0
+                        ]
+                    },
+                    "text": "down",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "children": [],
+                    "tag": "div",
+                    "padding_box": {
+                        "size": [
+                            100,
+                            18
+                        ],
+                        "position": [
+                            50,
+                            0
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "id": "",
+                    "border_box": {
+                        "size": [
+                            100,
+                            18
+                        ],
+                        "position": [
+                            0,
+                            0
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            100,
+                            18
+                        ],
+                        "position": [
+                            0,
+                            0
+                        ]
+                    },
+                    "text": "up",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "children": [],
+                    "tag": "div",
+                    "padding_box": {
+                        "size": [
+                            100,
+                            18
+                        ],
+                        "position": [
+                            0,
+                            0
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "tag": "div",
+            "padding_box": {
+                "size": [
+                    150,
+                    18
+                ],
+                "position": [
+                    0,
+                    0
+                ]
+            },
+            "border": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "tag": "body",
+    "padding_box": {
+        "size": [
+            1024,
+            18
+        ],
         "position": [
             0,
             0
-        ],
-        "size": [
-            640,
-            18
         ]
-    }
+    },
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

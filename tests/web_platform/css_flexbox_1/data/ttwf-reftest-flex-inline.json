@@ -1,25 +1,30 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#valdef-display-inline-flex"
+    ],
+    "matches": "reference/ttwf-reftest-flex-inline-ref.html",
+    "assert": "Statement describing what the test case is asserting",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "52px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "P",
                 "style": {
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "624px",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
                     "display": "block",
-                    "height": "18px"
+                    "margin_top": "1.12em",
+                    "unicode_bidi": "embed",
+                    "margin_left": "0"
                 },
+                "tag": "P",
                 "children": [
                     {
                         "style": {},
@@ -28,26 +33,34 @@
                 ]
             },
             {
-                "tag": "DIV",
                 "style": {
-                    "position": "relative",
-                    "width": "624px",
+                    "unicode_bidi": "embed",
                     "display": "block",
-                    "height": "18px"
+                    "position": "relative"
                 },
+                "tag": "DIV",
                 "children": [
                     {
                         "style": {},
                         "text": "This is the square that should not be visible if the test passes"
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "margin_top": "-200px",
-                            "width": "55.984375px",
+                            "background_color": "green",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_clip": "initial",
                             "display": "inline-flex",
-                            "height": "18px"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "margin_top": "-200px",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -58,10 +71,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#valdef-display-inline-flex"
-    ],
-    "matches": "reference/ttwf-reftest-flex-inline-ref.html",
-    "assert": "Statement describing what the test case is asserting"
+    }
 }

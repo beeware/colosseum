@@ -1,33 +1,73 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-items"
+    ],
+    "matches": "reference/flex-flexitem-percentage-prescation-ref.html",
+    "assert": "no blue color could be seen.",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "300px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
+                    "background_color": "blue",
+                    "background_image": "initial",
                     "width": "101px",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "background_clip": "initial",
                     "display": "flex",
-                    "height": "300px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "height": "300px",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "P",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "50.5px",
+                            "4": "background-repeat-x",
                             "display": "block",
-                            "height": "300px"
+                            "0": "background-image",
+                            "flex_shrink": "1",
+                            "margin_top": "0px",
+                            "2": "background-position-y",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "6": "background-attachment",
+                            "margin_bottom": "0px",
+                            "flex_grow": "1",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "margin_left": "0px",
+                            "margin_right": "0px",
+                            "background_color": "red",
+                            "8": "background-clip",
+                            "3": "background-size",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "flex_basis": "0px",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "7": "background-origin",
+                            "background_clip": "initial",
+                            "5": "background-repeat-y",
+                            "1": "background-position-x",
+                            "9": "background-color",
+                            "flex_direction": "row",
+                            "background_position_x": "initial"
                         },
+                        "tag": "P",
                         "children": [
                             {
                                 "style": {},
@@ -36,14 +76,29 @@
                         ]
                     },
                     {
-                        "tag": "P",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "50.5px",
+                            "margin_right": "0px",
+                            "background_size": "initial",
+                            "background_color": "red",
                             "display": "block",
-                            "height": "300px"
+                            "flex_direction": "row",
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "1",
+                            "margin_top": "0px",
+                            "flex_basis": "0px",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "margin_left": "0px",
+                            "background_clip": "initial",
+                            "margin_bottom": "0px",
+                            "flex_grow": "1",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "P",
                         "children": [
                             {
                                 "style": {},
@@ -54,10 +109,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-items"
-    ],
-    "matches": "reference/flex-flexitem-percentage-prescation-ref.html",
-    "assert": "no blue color could be seen."
+    }
 }

@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
-    ],
+    "assert": "If an inline replaced element (like the svg element in this test) has no intrinsic width and no intrinsic ratio, then the used value of 'width' becomes 300px.",
+    "matches": "../positioning/absolute-replaced-width-003c-ref.xht",
     "test_case": {
         "children": [
             {
@@ -10,48 +9,48 @@
                         "children": [
                             {
                                 "tag": "svg:rect",
-                                "style": {
-                                    "height": "300px",
-                                    "width": "600px"
-                                }
+                                "style": {}
                             }
                         ],
                         "tag": "svg:svg",
                         "style": {
-                            "height": "300px",
-                            "width": "300px"
+                            "vertical_align": "top",
+                            "display": "inline"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "display": "block",
-                            "width": "300px",
+                            "unicode_bidi": "embed",
                             "position": "relative",
                             "bottom": "300px",
+                            "width": "300px",
+                            "background_color": "green",
+                            "display": "block",
                             "height": "300px"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "width": "600px",
                     "display": "block",
-                    "height": "300px",
-                    "width": "600px"
+                    "height": "300px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "300px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "If an inline replaced element (like the svg element in this test) has no intrinsic width and no intrinsic ratio, then the used value of 'width' becomes 300px.",
-    "matches": "../positioning/absolute-replaced-width-003c-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width"
+    ]
 }

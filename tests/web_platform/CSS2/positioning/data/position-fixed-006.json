@@ -1,38 +1,35 @@
 {
     "matches": null,
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "var el = document.getElementById('test');\n            document.body.appendChild(document.createTextNode(window.getComputedStyle(el, null).position));"
-                    }
-                ],
-                "style": {
-                    "display": "none"
-                },
-                "tag": "script"
-            },
-            {
-                "style": {},
-                "text": "fixed"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "18px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "32px"
-        },
-        "tag": "body"
-    },
     "assert": "Root elements may treat non-static positions as 'static'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "script",
+                "children": [
+                    {
+                        "text": "var el = document.getElementById('test');\n            document.body.appendChild(document.createTextNode(window.getComputedStyle(el, null).position));",
+                        "style": {}
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "text": "fixed",
+                "style": {}
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

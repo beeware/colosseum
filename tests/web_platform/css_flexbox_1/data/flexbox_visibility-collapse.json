@@ -1,41 +1,74 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#visibility-collapse"
+    ],
+    "matches": "flexbox_visibility-collapse-ref.html",
+    "assert": null,
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "width": "640px",
+            "margin_right": "0px",
+            "margin_bottom": "0px",
             "display": "block",
-            "height": "84px"
+            "margin_top": "0px",
+            "unicode_bidi": "embed",
+            "margin_left": "0px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "638px",
                     "border_bottom_width": "1px",
-                    "border_right_style": "solid",
+                    "border_image_repeat": "initial",
                     "border_bottom_style": "solid",
-                    "border_top_style": "solid",
-                    "border_right_width": "1px",
-                    "height": "82px",
+                    "border_right_style": "solid",
                     "border_top_width": "1px",
-                    "border_left_width": "1px",
+                    "background_position_y": "initial",
+                    "border_right_color": "black",
+                    "background_size": "initial",
+                    "border_top_style": "solid",
+                    "border_bottom_color": "black",
+                    "background_image": "initial",
+                    "border_right_width": "1px",
+                    "background_attachment": "initial",
                     "border_left_style": "solid",
-                    "display": "flex"
+                    "border_image_outset": "initial",
+                    "border_top_color": "black",
+                    "border_left_width": "1px",
+                    "background_color": "rgb(51, 102, 204)",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "border_image_source": "initial",
+                    "unicode_bidi": "embed",
+                    "background_clip": "initial",
+                    "display": "flex",
+                    "border_image_slice": "initial",
+                    "border_image_width": "initial",
+                    "background_repeat_x": "initial",
+                    "border_left_color": "black",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "P",
                         "style": {
-                            "margin_bottom": "32px",
-                            "margin_left": "32px",
-                            "margin_top": "32px",
-                            "min_height": "auto",
-                            "width": "39.984375px",
+                            "margin_right": "2em",
+                            "background_color": "rgb(255, 204, 0)",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial",
+                            "margin_top": "2em",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "margin_left": "2em",
+                            "background_clip": "initial",
+                            "margin_bottom": "2em",
                             "display": "block",
-                            "margin_right": "32px",
-                            "min_width": "auto",
-                            "height": "18px"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "P",
                         "children": [
                             {
                                 "style": {},
@@ -44,18 +77,26 @@
                         ]
                     },
                     {
-                        "tag": "P",
                         "style": {
-                            "margin_bottom": "32px",
-                            "margin_left": "32px",
-                            "margin_top": "32px",
-                            "min_height": "auto",
-                            "width": "34.375px",
+                            "margin_right": "2em",
+                            "background_color": "red",
+                            "background_image": "initial",
+                            "visibility": "collapse",
+                            "background_repeat_y": "initial",
+                            "margin_top": "2em",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "margin_left": "2em",
+                            "background_clip": "initial",
+                            "margin_bottom": "2em",
                             "display": "block",
-                            "margin_right": "32px",
-                            "min_width": "auto",
-                            "height": "18px"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "P",
                         "children": [
                             {
                                 "style": {},
@@ -64,18 +105,25 @@
                         ]
                     },
                     {
-                        "tag": "P",
                         "style": {
-                            "margin_bottom": "32px",
-                            "margin_left": "32px",
-                            "margin_top": "32px",
-                            "min_height": "auto",
-                            "width": "39.984375px",
+                            "margin_right": "2em",
+                            "background_color": "rgb(255, 204, 0)",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial",
+                            "margin_top": "2em",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "margin_left": "2em",
+                            "background_clip": "initial",
+                            "margin_bottom": "2em",
                             "display": "block",
-                            "margin_right": "32px",
-                            "min_width": "auto",
-                            "height": "18px"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "P",
                         "children": [
                             {
                                 "style": {},
@@ -86,10 +134,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#visibility-collapse"
-    ],
-    "matches": "flexbox_visibility-collapse-ref.html",
-    "assert": null
+    }
 }

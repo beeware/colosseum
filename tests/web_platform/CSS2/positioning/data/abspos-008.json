@@ -1,87 +1,97 @@
 {
     "matches": "abspos-008-ref.xht",
+    "assert": null,
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
+    ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "X X0"
+                                        "text": "X X0",
+                                        "style": {}
                                     }
                                 ],
                                 "style": {
+                                    "background_clip": "initial",
+                                    "color": "white",
                                     "float": "left",
-                                    "border_top_color": "rgb(255, 255, 255)",
-                                    "height": "115px",
+                                    "background_color": "green",
+                                    "background_position_y": "initial",
+                                    "background_size": "initial",
+                                    "background_repeat_y": "initial",
                                     "display": "block",
-                                    "border_right_color": "rgb(255, 255, 255)",
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "width": "219.4375px"
-                                },
-                                "tag": "div"
+                                    "unicode_bidi": "embed",
+                                    "background_origin": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_image": "initial",
+                                    "background_position_x": "initial",
+                                    "background_attachment": "initial"
+                                }
                             }
                         ],
                         "style": {
                             "left": "0px",
-                            "top": "0px",
-                            "display": "block",
-                            "height": "115px",
-                            "position": "absolute",
                             "z_index": "1",
-                            "width": "219.4375px"
-                        },
-                        "tag": "div"
+                            "position": "absolute",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "top": "0px"
+                        }
                     },
                     {
+                        "tag": "div",
                         "children": [
                             {
-                                "style": {},
-                                "text": "X X1"
+                                "text": "X X1",
+                                "style": {}
                             }
                         ],
                         "style": {
+                            "background_clip": "initial",
+                            "color": "yellow",
                             "float": "left",
-                            "border_top_color": "rgb(255, 255, 0)",
-                            "height": "115px",
+                            "background_color": "red",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_repeat_y": "initial",
                             "display": "block",
-                            "border_right_color": "rgb(255, 255, 0)",
-                            "border_left_color": "rgb(255, 255, 0)",
-                            "border_bottom_color": "rgb(255, 255, 0)",
-                            "width": "219.4375px"
-                        },
-                        "tag": "div"
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
                     }
                 ],
                 "style": {
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "border_top_width": "10px",
-                    "display": "block",
-                    "position": "relative",
-                    "height": "0px",
+                    "border_top_color": "white",
                     "border_top_style": "solid",
-                    "width": "624px"
-                },
-                "tag": "div"
+                    "unicode_bidi": "embed",
+                    "position": "relative",
+                    "display": "block",
+                    "font_size": "100px",
+                    "border_top_width": "10px"
+                }
             }
         ],
         "style": {
-            "margin_left": "8px",
-            "height": "10px",
-            "display": "block",
+            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
-    ]
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

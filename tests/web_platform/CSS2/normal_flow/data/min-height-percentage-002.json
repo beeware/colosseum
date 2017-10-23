@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "When the 'height' of the containing block (#div1) of an element (inner div) is not specified (or if its height value is 'auto') and the element is not absolutely positioned, then the percentage value of 'max-height' is treated as '0' for 'min-height' and 'none' for 'max-height'.",
+    "matches": "../reference/ref-if-there-is-no-red.xht",
     "test_case": {
         "children": [
             {
@@ -9,33 +8,43 @@
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "min_height": "50%",
+                            "background_position_y": "initial",
+                            "background_attachment": "initial",
+                            "width": "1in",
+                            "background_color": "red",
                             "display": "block",
-                            "height": "0px",
-                            "width": "96px",
-                            "min_height": "50%"
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "width": "1in",
                     "display": "block",
-                    "height": "0px",
-                    "position": "relative",
-                    "width": "96px"
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "When the 'height' of the containing block (#div1) of an element (inner div) is not specified (or if its height value is 'auto') and the element is not absolutely positioned, then the percentage value of 'max-height' is treated as '0' for 'min-height' and 'none' for 'max-height'.",
-    "matches": "../reference/ref-if-there-is-no-red.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

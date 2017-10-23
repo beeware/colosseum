@@ -1,42 +1,53 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The 'max-width' property sets a positive nominal length value in picas.",
+    "matches": "max-width-006-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_x": "initial",
+                    "max_width": "6pc",
+                    "background_position_y": "initial",
+                    "background_attachment": "initial",
+                    "width": "12pc",
+                    "background_color": "black",
                     "display": "block",
-                    "max_width": "96px",
-                    "width": "96px",
-                    "height": "96px"
+                    "background_repeat_y": "initial",
+                    "background_repeat_x": "initial",
+                    "background_size": "initial",
+                    "background_origin": "initial",
+                    "height": "1in",
+                    "background_clip": "initial",
+                    "background_image": "initial"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "margin_top": "4px",
+                    "unicode_bidi": "embed",
+                    "border_left_width": "6pc",
+                    "border_left_color": "black",
+                    "height": "1in",
                     "display": "block",
-                    "border_left_style": "solid",
-                    "border_left_width": "96px",
-                    "width": "528px",
-                    "height": "96px"
+                    "margin_top": "4px",
+                    "border_left_style": "solid"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "196px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'max-width' property sets a positive nominal length value in picas.",
-    "matches": "max-width-006-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

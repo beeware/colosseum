@@ -1,81 +1,70 @@
 {
     "matches": "../reference/grid-text-green-margin-no-collapse-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers"
-    ],
     "assert": "This test checks that inline grid's margin (body) do not collapse with the marings of the grid item (a paragraph).",
     "test_case": {
         "tag": "BODY",
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "display": "inline-grid",
+            "unicode_bidi": "embed",
+            "margin_right": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
                 "tag": "P",
+                "style": {
+                    "margin_left": "0",
+                    "color": "green",
+                    "margin_bottom": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_top": "1.12em"
+                },
                 "children": [
                     {
-                        "text": "This text should be",
-                        "style": {}
+                        "style": {},
+                        "text": "This text should be"
                     },
                     {
                         "tag": "STRONG",
+                        "style": {
+                            "font_weight": "bolder"
+                        },
                         "children": [
                             {
-                                "text": "green",
-                                "style": {}
+                                "style": {},
+                                "text": "green"
                             }
-                        ],
-                        "style": {
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)"
-                        }
+                        ]
                     },
                     {
-                        "text": "and body and paragraph margins should",
-                        "style": {}
+                        "style": {},
+                        "text": "and body and paragraph margins should"
                     },
                     {
                         "tag": "STRONG",
+                        "style": {
+                            "font_weight": "bolder"
+                        },
                         "children": [
                             {
-                                "text": "not collapse",
-                                "style": {}
+                                "style": {},
+                                "text": "not collapse"
                             }
-                        ],
-                        "style": {
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_right_color": "rgb(0, 128, 0)"
-                        }
+                        ]
                     },
                     {
-                        "text": ".",
-                        "style": {}
+                        "style": {},
+                        "text": "."
                     }
-                ],
-                "style": {
-                    "display": "block",
-                    "margin_top": "16px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "width": "512.6875px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "min_height": "auto",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "min_width": "auto"
-                }
+                ]
             }
-        ],
-        "style": {
-            "display": "inline-grid",
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "width": "512.6875px",
-            "margin_right": "8px",
-            "height": "50px",
-            "margin_bottom": "8px"
-        }
-    }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers"
+    ]
 }

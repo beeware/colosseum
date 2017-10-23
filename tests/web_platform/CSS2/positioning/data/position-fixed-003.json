@@ -1,51 +1,46 @@
 {
     "matches": null,
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "Filler Text"
-                    }
-                ],
-                "style": {
-                    "height": "24px",
-                    "top": "48px",
-                    "display": "block",
-                    "position": "fixed",
-                    "z_index": "0",
-                    "width": "66.875px"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "margin_left": "10px",
-                    "height": "6000px",
-                    "display": "block",
-                    "margin_top": "10px",
-                    "margin_right": "10px",
-                    "margin_bottom": "10px",
-                    "width": "604px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "6000px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Elements that are set to 'position: fixed' are fixed with respect to the viewport.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-position",
         "http://www.w3.org/TR/CSS21/visuren.html#choose-position"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "Filler Text",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "margin_bottom": "10px",
+                    "margin_top": "10px",
+                    "margin_right": "10px",
+                    "height": "6000px",
+                    "margin_left": "10px",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

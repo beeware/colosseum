@@ -1,84 +1,130 @@
 {
     "matches": "abspos-overflow-003-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "FAIL"
-                    }
-                ],
-                "style": {
-                    "margin_left": "80px",
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "height": "80px",
-                    "display": "block",
-                    "margin_top": "80px",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "width": "80px"
-                },
-                "tag": "div"
-            },
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "Ignore the scrollbars below."
-                    }
-                ],
-                "style": {
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "width": "640px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "PASS"
-                            }
-                        ],
-                        "style": {
-                            "left": "80px",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "top": "80px",
-                            "display": "block",
-                            "position": "absolute",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "height": "80px",
-                            "border_bottom_color": "rgb(255, 255, 255)",
-                            "width": "80px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "height": "128px",
-                    "display": "block",
-                    "width": "128px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "height": "258px",
-            "display": "block",
-            "width": "640px"
-        },
-        "tag": "body"
-    },
     "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visufx.html#overflow-clipping"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "width": "5em",
+                    "margin_bottom": "0px",
+                    "margin_top": "5em",
+                    "background_clip": "initial",
+                    "color": "yellow",
+                    "background_color": "red",
+                    "background_position_y": "initial",
+                    "height": "5em",
+                    "background_size": "initial",
+                    "background_repeat_y": "initial",
+                    "background_image": "initial",
+                    "margin_left": "5em",
+                    "margin_right": "0px",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "display": "block",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed"
+                }
+            },
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "text": "Ignore the scrollbars below.",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "1.12em",
+                    "margin_top": "1.12em",
+                    "margin_right": "0",
+                    "margin_left": "0",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "children": [
+                            {
+                                "text": "PASS",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "width": "5em",
+                            "background_repeat_x": "initial",
+                            "background_clip": "initial",
+                            "color": "white",
+                            "background_color": "green",
+                            "background_position_y": "initial",
+                            "height": "5em",
+                            "background_size": "initial",
+                            "top": "5em",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "left": "5em",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "position": "absolute",
+                            "display": "block",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "8em",
+                    "overflow_x": "scroll",
+                    "overflow_y": "scroll",
+                    "height": "8em",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "0px",
+            "margin_left": "0px",
+            "border_top_style": "initial",
+            "display": "block",
+            "border_image_slice": "initial",
+            "border_image_width": "initial",
+            "border_top_color": "initial",
+            "border_bottom_color": "initial",
+            "border_image_source": "initial",
+            "border_image_outset": "initial",
+            "padding_bottom": "0px",
+            "border_left_width": "0px",
+            "margin_top": "0px",
+            "border_bottom_width": "0px",
+            "padding_right": "0px",
+            "border_image_repeat": "initial",
+            "border_left_style": "initial",
+            "border_left_color": "initial",
+            "border_right_width": "0px",
+            "border_top_width": "0px",
+            "padding_left": "0px",
+            "margin_right": "0px",
+            "border_right_style": "initial",
+            "border_bottom_style": "initial",
+            "padding_top": "0px",
+            "unicode_bidi": "embed",
+            "border_right_color": "initial"
+        }
+    }
 }

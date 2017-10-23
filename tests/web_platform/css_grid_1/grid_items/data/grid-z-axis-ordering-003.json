@@ -1,73 +1,73 @@
 {
     "assert": null,
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
+                "style": {
+                    "font_style": "normal",
+                    "font_family": "Ahem",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "display": "grid",
+                    "line_height": "1",
+                    "unicode_bidi": "embed",
+                    "font_size": "100px"
+                },
                 "children": [
                     {
+                        "style": {
+                            "grid_row_end": "auto",
+                            "grid_column_end": "auto",
+                            "grid_column_start": "1",
+                            "color": "green",
+                            "z_index": "10",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "style": {},
-                                "text": "G"
+                                "text": "G",
+                                "style": {}
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "624px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "z_index": "10",
-                            "height": "100px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
-                        }
+                        "tag": "DIV"
                     },
                     {
+                        "style": {
+                            "grid_row_end": "auto",
+                            "grid_column_end": "auto",
+                            "grid_column_start": "1",
+                            "color": "red",
+                            "z_index": "5",
+                            "display": "block",
+                            "grid_row_start": "1",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "style": {},
-                                "text": "R"
+                                "text": "R",
+                                "style": {}
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "624px",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "z_index": "5",
-                            "height": "100px",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_top_color": "rgb(255, 0, 0)"
-                        }
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "624px",
-                    "height": "100px"
-                }
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "100px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#z-order"
-    ]
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

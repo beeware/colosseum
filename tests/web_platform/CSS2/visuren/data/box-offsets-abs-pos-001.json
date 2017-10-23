@@ -1,140 +1,140 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "height": "300px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "width": "100px",
-                    "border_bottom_width": "50px",
-                    "border_right_style": "solid",
-                    "margin_left": "100px",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "border_left_width": "50px",
-                    "border_right_width": "50px",
-                    "position": "relative",
-                    "padding_right": "50px",
-                    "padding_left": "50px",
-                    "display": "block",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "padding_bottom": "50px",
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_top_width": "50px",
-                    "border_top_style": "solid",
-                    "border_left_color": "rgb(255, 165, 0)",
-                    "height": "100px",
-                    "padding_top": "50px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "width": "100px",
-                            "height": "100px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "width": "25px",
-                            "position": "absolute",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "left": "0px",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "height": "25px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "top": "0px",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "TL"
-                            }
-                        ],
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "width": "25px",
-                            "position": "absolute",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "25px",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "right": "0px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "top": "0px",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "TR"
-                            }
-                        ],
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "width": "25px",
-                            "position": "absolute",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "left": "0px",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "bottom": "0px",
-                            "height": "25px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "BL"
-                            }
-                        ],
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "width": "25px",
-                            "position": "absolute",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 255, 255)",
-                            "height": "25px",
-                            "border_right_color": "rgb(255, 255, 255)",
-                            "bottom": "0px",
-                            "border_left_color": "rgb(255, 255, 255)",
-                            "right": "0px",
-                            "border_bottom_color": "rgb(255, 255, 255)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "BR"
-                            }
-                        ],
-                        "tag": "div"
-                    }
-                ],
-                "tag": "div"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
     ],
+    "matches": null,
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "style": {},
+                        "tag": "img"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "TL",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "color": "white",
+                            "left": "0px",
+                            "width": "25px",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_color": "blue",
+                            "height": "25px",
+                            "position": "absolute",
+                            "top": "0px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "TR",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "color": "white",
+                            "right": "0px",
+                            "width": "25px",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_color": "blue",
+                            "height": "25px",
+                            "position": "absolute",
+                            "top": "0px"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "BL",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "color": "white",
+                            "left": "0px",
+                            "width": "25px",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_color": "blue",
+                            "height": "25px",
+                            "bottom": "0px",
+                            "position": "absolute"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "BR",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "color": "white",
+                            "right": "0px",
+                            "width": "25px",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_color": "blue",
+                            "height": "25px",
+                            "bottom": "0px",
+                            "position": "absolute"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "top": "auto",
+                    "border_left_color": "orange",
+                    "width": "100px",
+                    "display": "block",
+                    "border_right_style": "solid",
+                    "background_color": "yellow",
+                    "border_bottom_style": "solid",
+                    "border_image_width": "initial",
+                    "border_bottom_width": "50px",
+                    "border_image_repeat": "initial",
+                    "padding_left": "50px",
+                    "border_left_style": "solid",
+                    "padding_right": "50px",
+                    "border_image_source": "initial",
+                    "border_image_slice": "initial",
+                    "border_image_outset": "initial",
+                    "padding_bottom": "50px",
+                    "border_right_width": "50px",
+                    "border_left_width": "50px",
+                    "unicode_bidi": "embed",
+                    "margin_left": "100px",
+                    "border_top_color": "orange",
+                    "border_top_style": "solid",
+                    "border_bottom_color": "orange",
+                    "border_top_width": "50px",
+                    "border_right_color": "orange",
+                    "height": "100px",
+                    "padding_top": "50px",
+                    "position": "relative"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "Box offsets (bottom, left, right, top) for an absolutely positioned box refers to the padding box of its nearest positioned ancestor; such padding box forms and acts as the containing block of the absolutely positioned box."
 }

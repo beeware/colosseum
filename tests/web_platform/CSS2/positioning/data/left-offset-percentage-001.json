@@ -1,56 +1,76 @@
 {
     "matches": "left-offset-percentage-001-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "left": "50%",
-                            "top": "0px",
-                            "display": "block",
-                            "height": "50px",
-                            "position": "absolute",
-                            "width": "50px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "border_left_width": "3px",
-                    "border_left_style": "solid",
-                    "border_top_style": "solid",
-                    "width": "50px",
-                    "padding_top": "25px",
-                    "height": "150px",
-                    "border_right_width": "3px",
-                    "display": "block",
-                    "padding_right": "25px",
-                    "padding_left": "25px",
-                    "border_top_width": "3px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_bottom_style": "solid",
-                    "padding_bottom": "25px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "206px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Percentage offset values for the 'left' property are based off the width of the containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-left",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "50px",
+                            "background_clip": "initial",
+                            "height": "50px",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "0px",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "left": "50%",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "50px",
+                    "border_right_width": "initial",
+                    "display": "block",
+                    "border_image_repeat": "initial",
+                    "border_image_width": "initial",
+                    "border_top_color": "black",
+                    "border_bottom_color": "black",
+                    "border_image_source": "initial",
+                    "padding_bottom": "25px",
+                    "border_left_width": "initial",
+                    "border_top_style": "solid",
+                    "border_bottom_width": "initial",
+                    "padding_right": "25px",
+                    "height": "150px",
+                    "border_left_style": "solid",
+                    "border_left_color": "black",
+                    "border_image_outset": "initial",
+                    "unicode_bidi": "embed",
+                    "padding_left": "25px",
+                    "border_right_style": "solid",
+                    "border_image_slice": "initial",
+                    "position": "relative",
+                    "border_bottom_style": "solid",
+                    "padding_top": "25px",
+                    "border_top_width": "initial",
+                    "border_right_color": "black"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

@@ -1,91 +1,135 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "height": "0px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "display": "block",
-                    "position": "absolute",
-                    "left": "16px",
-                    "height": "32px",
-                    "width": "80px",
-                    "top": "48px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "width": "80px",
-                            "display": "block",
-                            "position": "absolute",
-                            "height": "32px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "width": "80px",
-                                    "display": "block",
-                                    "position": "absolute",
-                                    "z_index": "-1",
-                                    "height": "32px"
-                                },
-                                "tag": "div"
-                            }
-                        ],
-                        "tag": "div"
-                    }
-                ],
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "width": "80px",
-                    "display": "block",
-                    "position": "fixed",
-                    "left": "160px",
-                    "height": "32px",
-                    "z_index": "0",
-                    "top": "48px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "width": "80px",
-                            "display": "block",
-                            "position": "absolute",
-                            "height": "32px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "width": "80px",
-                                    "display": "block",
-                                    "position": "absolute",
-                                    "z_index": "-1",
-                                    "height": "32px"
-                                },
-                                "tag": "div"
-                            }
-                        ],
-                        "tag": "div"
-                    }
-                ],
-                "tag": "div"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": "fixed-pos-stacking-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS22/visuren.html#z-index",
         "http://www.w3.org/TR/CSS22/changes.html#s.9.9.1"
     ],
+    "matches": "fixed-pos-stacking-001-ref.xht",
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "background_clip": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_origin": "initial",
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "background_color": "red",
+                                    "height": "2em",
+                                    "background_image": "initial",
+                                    "z_index": "-1",
+                                    "background_attachment": "initial",
+                                    "background_repeat_y": "initial",
+                                    "width": "5em",
+                                    "background_position_x": "initial",
+                                    "background_size": "initial",
+                                    "position": "absolute",
+                                    "background_position_y": "initial"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "height": "2em",
+                            "position": "absolute",
+                            "width": "5em",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "top": "3em",
+                    "height": "2em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "left": "1em",
+                    "background_clip": "initial",
+                    "background_repeat_y": "initial",
+                    "width": "5em",
+                    "background_color": "green",
+                    "background_position_x": "initial",
+                    "background_size": "initial",
+                    "position": "absolute",
+                    "background_position_y": "initial"
+                },
+                "tag": "div"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "style": {
+                                    "background_clip": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_origin": "initial",
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "background_color": "green",
+                                    "height": "2em",
+                                    "background_image": "initial",
+                                    "z_index": "-1",
+                                    "background_attachment": "initial",
+                                    "background_repeat_y": "initial",
+                                    "width": "5em",
+                                    "background_position_x": "initial",
+                                    "background_size": "initial",
+                                    "position": "absolute",
+                                    "background_position_y": "initial"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "height": "2em",
+                            "position": "absolute",
+                            "width": "5em",
+                            "display": "block"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "top": "3em",
+                    "height": "2em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "left": "10em",
+                    "background_clip": "initial",
+                    "background_repeat_y": "initial",
+                    "width": "5em",
+                    "background_color": "red",
+                    "background_position_x": "initial",
+                    "background_size": "initial",
+                    "position": "fixed",
+                    "background_position_y": "initial"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "auto The stack level of the generated box in the current stacking context is 0. If the box has 'position: fixed' or if it is the root, it also establishes a new stacking context."
 }

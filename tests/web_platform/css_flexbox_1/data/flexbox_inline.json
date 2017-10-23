@@ -1,20 +1,37 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
+    ],
+    "matches": "flexbox_inline-ref.html",
+    "assert": null,
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "width": "640px",
+            "margin_right": "0px",
+            "margin_bottom": "0px",
             "display": "block",
-            "height": "18px"
+            "margin_top": "0px",
+            "unicode_bidi": "embed",
+            "margin_left": "0px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "margin_top": "-320px",
-                    "width": "111.09375px",
+                    "background_color": "yellow",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "background_clip": "initial",
                     "display": "inline-flex",
-                    "height": "18px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "margin_top": "-20em",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
                         "style": {},
@@ -23,10 +40,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-containers"
-    ],
-    "matches": "flexbox_inline-ref.html",
-    "assert": null
+    }
 }
