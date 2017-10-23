@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ],
+    "assert": "The 'height' is the distance between the top border edge of the top most block-level child box that doesn't have margins collapsed through it, and the bottom border edge of the bottommost block-level child that doesn't have margins collapsed through it. When a block-level non-replaced element is in normal flow, 'overflow' computes to 'visible' and the 'height' is 'auto'.",
+    "matches": null,
     "test_case": {
         "children": [
             {
@@ -9,59 +8,91 @@
                     {
                         "tag": "div",
                         "style": {
-                            "margin_top": "48px",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "border_top_width": "0.5in",
+                            "background_attachment": "initial",
+                            "width": "1in",
+                            "background_color": "blue",
+                            "border_top_style": "solid",
                             "display": "block",
-                            "width": "96px",
-                            "border_top_width": "48px",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "height": "48px",
-                            "border_top_style": "solid"
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "border_top_color": "blue",
+                            "margin_top": "0.5in",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "height": "0.5in",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "border_bottom_color": "blue",
+                            "background_attachment": "initial",
+                            "width": "1in",
+                            "background_color": "blue",
                             "display": "block",
-                            "height": "48px",
+                            "border_bottom_width": "0.5in",
+                            "background_repeat_y": "initial",
+                            "margin_bottom": "0.5in",
+                            "background_repeat_x": "initial",
                             "border_bottom_style": "solid",
-                            "margin_bottom": "48px",
-                            "border_bottom_width": "48px",
-                            "width": "96px",
-                            "border_bottom_color": "rgb(0, 0, 255)"
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "height": "0.5in",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "192px",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
                             "position": "absolute",
-                            "width": "96px",
+                            "background_position_y": "initial",
                             "top": "0px",
-                            "left": "96px"
+                            "left": "1in",
+                            "background_attachment": "initial",
+                            "width": "1in",
+                            "background_color": "blue",
+                            "display": "block",
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "height": "2in",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
                     "display": "block",
-                    "height": "192px",
-                    "position": "relative",
-                    "width": "624px"
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "192px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'height' is the distance between the top border edge of the top most block-level child box that doesn't have margins collapsed through it, and the bottom border edge of the bottommost block-level child that doesn't have margins collapsed through it. When a block-level non-replaced element is in normal flow, 'overflow' computes to 'visible' and the 'height' is 'auto'.",
-    "matches": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ]
 }

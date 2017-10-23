@@ -1,42 +1,81 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-items"
+    ],
+    "matches": "reference/flex-flexitem-childmargin-ref.html",
+    "assert": "margin should effect the orange box and green box need to align to bottom.",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "300px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "624px",
+                    "background_color": "blue",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "background_clip": "initial",
                     "display": "flex",
-                    "height": "300px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "height": "300px",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "524px",
+                            "background_color": "red",
                             "display": "block",
-                            "height": "300px"
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "1",
+                            "background_origin": "initial",
+                            "flex_basis": "0px",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "flex_grow": "1",
+                            "background_clip": "initial",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "300px",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_top": "200px",
-                                    "width": "100px",
+                                    "margin_right": "0px",
                                     "display": "block",
-                                    "height": "100px"
+                                    "8": "background-attachment",
+                                    "3": "background-position-x",
+                                    "0": "width",
+                                    "11": "background-color",
+                                    "margin_top": "200px",
+                                    "4": "background-position-y",
+                                    "2": "background-image",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px",
+                                    "1": "height",
+                                    "6": "background-repeat-x",
+                                    "margin_bottom": "0px",
+                                    "5": "background-size",
+                                    "10": "background-clip",
+                                    "9": "background-origin",
+                                    "7": "background-repeat-y"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -47,23 +86,45 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
+                            "background_color": "red",
+                            "background_image": "initial",
                             "width": "100px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_clip": "initial",
                             "display": "block",
-                            "height": "300px"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_top": "200px",
-                                    "width": "100px",
+                                    "margin_right": "0px",
                                     "display": "block",
-                                    "height": "100px"
+                                    "8": "background-attachment",
+                                    "3": "background-position-x",
+                                    "0": "width",
+                                    "11": "background-color",
+                                    "margin_top": "200px",
+                                    "4": "background-position-y",
+                                    "2": "background-image",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px",
+                                    "1": "height",
+                                    "6": "background-repeat-x",
+                                    "margin_bottom": "0px",
+                                    "5": "background-size",
+                                    "10": "background-clip",
+                                    "9": "background-origin",
+                                    "7": "background-repeat-y"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -76,10 +137,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-items"
-    ],
-    "matches": "reference/flex-flexitem-childmargin-ref.html",
-    "assert": "margin should effect the orange box and green box need to align to bottom."
+    }
 }

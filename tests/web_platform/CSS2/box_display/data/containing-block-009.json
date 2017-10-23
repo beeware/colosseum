@@ -1,62 +1,79 @@
 {
-    "matches": "containing-block-009-ref.xht",
-    "assert": "If the element has 'position: absolute', the containing block is established by the nearest positioned ancestor.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "202px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "top": "0px",
-                    "margin_bottom": "50px",
-                    "border_right_width": "3px",
-                    "margin_top": "50px",
-                    "border_bottom_width": "3px",
-                    "width": "518px",
-                    "margin_left": "50px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "position": "relative",
-                    "margin_right": "50px",
-                    "border_bottom_style": "solid",
-                    "border_right_style": "solid",
-                    "border_left_style": "solid",
-                    "border_left_width": "3px",
-                    "height": "196px",
-                    "border_top_style": "solid"
-                },
                 "tag": "div",
+                "style": {
+                    "border_bottom_style": "solid",
+                    "position": "relative",
+                    "border_right_color": "black",
+                    "unicode_bidi": "embed",
+                    "border_left_style": "solid",
+                    "border_top_color": "black",
+                    "border_image_source": "initial",
+                    "border_left_width": "initial",
+                    "top": "0px",
+                    "border_top_style": "solid",
+                    "border_left_color": "black",
+                    "border_image_repeat": "initial",
+                    "margin_top": "50px",
+                    "margin_bottom": "50px",
+                    "margin_left": "50px",
+                    "border_top_width": "initial",
+                    "border_image_slice": "initial",
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "border_bottom_color": "black",
+                    "border_right_width": "initial",
+                    "border_image_outset": "initial",
+                    "border_image_width": "initial",
+                    "margin_right": "50px",
+                    "border_bottom_width": "initial"
+                },
                 "children": [
                     {
-                        "style": {
-                            "width": "96px",
-                            "margin_bottom": "50px",
-                            "height": "96px",
-                            "margin_top": "50px",
-                            "margin_right": "50px",
-                            "margin_left": "50px",
-                            "display": "block"
-                        },
                         "tag": "div",
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "margin_left": "50px",
+                            "height": "1in",
+                            "display": "block",
+                            "width": "1in",
+                            "margin_bottom": "50px",
+                            "margin_top": "50px",
+                            "margin_right": "50px"
+                        },
                         "children": [
                             {
+                                "tag": "div",
                                 "style": {
-                                    "width": "96px",
-                                    "height": "96px",
-                                    "right": "0px",
-                                    "display": "block",
+                                    "background_position_y": "initial",
+                                    "background_size": "initial",
                                     "top": "0px",
-                                    "position": "absolute"
-                                },
-                                "tag": "div"
+                                    "height": "1in",
+                                    "position": "absolute",
+                                    "unicode_bidi": "embed",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial",
+                                    "width": "1in",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "background_clip": "initial",
+                                    "display": "block",
+                                    "background_image": "initial",
+                                    "background_repeat_y": "initial",
+                                    "right": "0px",
+                                    "background_color": "blue"
+                                }
                             }
                         ]
                     }
@@ -64,7 +81,9 @@
             }
         ]
     },
+    "matches": "containing-block-009-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "assert": "If the element has 'position: absolute', the containing block is established by the nearest positioned ancestor."
 }

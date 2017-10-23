@@ -1,73 +1,92 @@
 {
-    "matches": "block-in-inline-001-ref.xht",
-    "assert": "When an inline box contains a block box,     the inline box is broken around the box and its background is drawn     only behind the inline's pieces, not behind the block.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "64px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "100.65625px",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "height": "64px",
-                    "display": "table"
-                },
                 "tag": "table",
+                "style": {
+                    "border_spacing": "2px"
+                },
                 "children": [
                     {
+                        "tag": "tr",
                         "style": {
-                            "width": "100.65625px",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "height": "60px",
+                            "vertical_align": "inherit",
                             "display": "table-row"
                         },
-                        "tag": "tr",
                         "children": [
                             {
-                                "style": {
-                                    "border_top_width": "3px",
-                                    "width": "41.328125px",
-                                    "border_right_width": "3px",
-                                    "border_top_style": "solid",
-                                    "border_bottom_width": "3px",
-                                    "border_bottom_style": "solid",
-                                    "border_right_style": "solid",
-                                    "border_left_style": "solid",
-                                    "border_left_width": "3px",
-                                    "height": "54px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "td",
+                                "style": {
+                                    "border_bottom_style": "solid",
+                                    "vertical_align": "inherit",
+                                    "border_right_color": "black",
+                                    "color": "black",
+                                    "padding_left": "0px",
+                                    "border_left_style": "solid",
+                                    "border_top_color": "black",
+                                    "border_image_source": "initial",
+                                    "border_left_width": "initial",
+                                    "border_top_style": "solid",
+                                    "background_position_x": "initial",
+                                    "background_repeat_y": "initial",
+                                    "padding_right": "0px",
+                                    "padding_top": "0px",
+                                    "border_left_color": "black",
+                                    "background_color": "green",
+                                    "background_position_y": "initial",
+                                    "background_clip": "initial",
+                                    "border_image_repeat": "initial",
+                                    "background_size": "initial",
+                                    "background_image": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "border_top_width": "initial",
+                                    "border_image_slice": "initial",
+                                    "padding_bottom": "0px",
+                                    "border_right_style": "solid",
+                                    "display": "table-cell",
+                                    "border_bottom_color": "black",
+                                    "border_right_width": "initial",
+                                    "border_image_outset": "initial",
+                                    "border_image_width": "initial",
+                                    "border_bottom_width": "initial"
+                                },
                                 "children": [
                                     {
-                                        "style": {},
                                         "tag": "span",
+                                        "style": {
+                                            "background_position_y": "initial",
+                                            "background_size": "initial",
+                                            "background_repeat_y": "initial",
+                                            "background_color": "lime",
+                                            "display": "inline",
+                                            "background_image": "initial",
+                                            "background_repeat_x": "initial",
+                                            "background_position_x": "initial",
+                                            "background_clip": "initial",
+                                            "background_attachment": "initial",
+                                            "background_origin": "initial"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
                                                 "text": "Line 1"
                                             },
                                             {
+                                                "tag": "span",
                                                 "style": {
-                                                    "width": "41.328125px",
-                                                    "height": "18px",
                                                     "display": "block"
                                                 },
-                                                "tag": "span",
                                                 "children": [
                                                     {
                                                         "style": {},
@@ -84,28 +103,60 @@
                                 ]
                             },
                             {
-                                "style": {
-                                    "border_top_width": "3px",
-                                    "width": "41.328125px",
-                                    "border_right_width": "3px",
-                                    "border_top_style": "solid",
-                                    "border_bottom_width": "3px",
-                                    "border_bottom_style": "solid",
-                                    "border_right_style": "solid",
-                                    "border_left_style": "solid",
-                                    "border_left_width": "3px",
-                                    "height": "54px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "td",
+                                "style": {
+                                    "border_bottom_style": "solid",
+                                    "vertical_align": "inherit",
+                                    "border_right_color": "black",
+                                    "color": "black",
+                                    "padding_left": "0px",
+                                    "border_left_style": "solid",
+                                    "border_top_color": "black",
+                                    "border_image_source": "initial",
+                                    "border_left_width": "initial",
+                                    "border_top_style": "solid",
+                                    "background_position_x": "initial",
+                                    "background_repeat_y": "initial",
+                                    "padding_right": "0px",
+                                    "padding_top": "0px",
+                                    "border_left_color": "black",
+                                    "background_color": "green",
+                                    "background_position_y": "initial",
+                                    "background_clip": "initial",
+                                    "border_image_repeat": "initial",
+                                    "background_size": "initial",
+                                    "background_image": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "border_top_width": "initial",
+                                    "border_image_slice": "initial",
+                                    "padding_bottom": "0px",
+                                    "border_right_style": "solid",
+                                    "display": "table-cell",
+                                    "border_bottom_color": "black",
+                                    "border_right_width": "initial",
+                                    "border_image_outset": "initial",
+                                    "border_image_width": "initial",
+                                    "border_bottom_width": "initial"
+                                },
                                 "children": [
                                     {
-                                        "style": {
-                                            "width": "41.328125px",
-                                            "height": "18px",
-                                            "display": "block"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "background_position_y": "initial",
+                                            "background_size": "initial",
+                                            "background_clip": "initial",
+                                            "background_repeat_x": "initial",
+                                            "background_position_x": "initial",
+                                            "unicode_bidi": "embed",
+                                            "background_attachment": "initial",
+                                            "background_origin": "initial",
+                                            "background_color": "lime",
+                                            "display": "block",
+                                            "background_image": "initial",
+                                            "background_repeat_y": "initial"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -114,12 +165,21 @@
                                         ]
                                     },
                                     {
-                                        "style": {
-                                            "width": "41.328125px",
-                                            "height": "18px",
-                                            "display": "block"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "background_position_y": "initial",
+                                            "background_size": "initial",
+                                            "background_clip": "initial",
+                                            "background_repeat_x": "initial",
+                                            "background_position_x": "initial",
+                                            "unicode_bidi": "embed",
+                                            "background_attachment": "initial",
+                                            "background_origin": "initial",
+                                            "background_color": "green",
+                                            "display": "block",
+                                            "background_image": "initial",
+                                            "background_repeat_y": "initial"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -128,12 +188,21 @@
                                         ]
                                     },
                                     {
-                                        "style": {
-                                            "width": "41.328125px",
-                                            "height": "18px",
-                                            "display": "block"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "background_position_y": "initial",
+                                            "background_size": "initial",
+                                            "background_clip": "initial",
+                                            "background_repeat_x": "initial",
+                                            "background_position_x": "initial",
+                                            "unicode_bidi": "embed",
+                                            "background_attachment": "initial",
+                                            "background_origin": "initial",
+                                            "background_color": "lime",
+                                            "display": "block",
+                                            "background_image": "initial",
+                                            "background_repeat_y": "initial"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -149,7 +218,9 @@
             }
         ]
     },
+    "matches": "block-in-inline-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    ],
+    "assert": "When an inline box contains a block box,     the inline box is broken around the box and its background is drawn     only behind the inline's pieces, not behind the block."
 }

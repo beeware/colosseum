@@ -1,28 +1,27 @@
 {
-    "assert": "The 'vertical-align' property sets a nominal length value in centimeters.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "span",
                                 "style": {
-                                    "border_left_color": "rgb(255, 0, 0)",
-                                    "border_right_color": "rgb(255, 0, 0)",
-                                    "border_bottom_color": "rgb(255, 0, 0)",
-                                    "border_top_color": "rgb(255, 0, 0)"
+                                    "vertical_align": "2.54cm"
                                 }
                             },
                             {
@@ -30,71 +29,85 @@
                                 "style": {}
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "width": "624px",
-                            "display": "block",
-                            "border_top_color": "rgb(255, 0, 0)",
-                            "height": "116px",
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
                             "position": "relative",
-                            "border_bottom_color": "rgb(255, 0, 0)"
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "20px",
+                            "font_style": "normal",
+                            "line_height": "1",
+                            "color": "red",
+                            "display": "block"
                         }
                     },
                     {
+                        "tag": "div",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "div",
                         "style": {
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
+                            "position": "absolute",
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "20px",
+                            "font_style": "normal",
+                            "line_height": "1",
                             "top": "0px",
-                            "display": "block",
-                            "height": "20px",
-                            "position": "absolute",
-                            "width": "20px"
+                            "display": "block"
                         }
                     },
                     {
+                        "tag": "div",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "left": "20px",
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
                             "position": "absolute",
-                            "top": "96px",
-                            "height": "20px",
-                            "display": "block",
-                            "width": "20px"
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "20px",
+                            "font_style": "normal",
+                            "line_height": "1",
+                            "top": "2.54cm",
+                            "left": "1em",
+                            "display": "block"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "116px",
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
                     "position": "relative",
-                    "width": "624px"
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "20px",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "116px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'vertical-align' property sets a nominal length value in centimeters.",
     "matches": "vertical-align-007-ref.xht"
 }

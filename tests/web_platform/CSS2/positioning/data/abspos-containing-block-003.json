@@ -1,62 +1,75 @@
 {
     "matches": "abspos-containing-block-001-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "Test passes if there is"
-                    },
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "no red"
-                            }
-                        ],
-                        "style": {
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)"
-                        },
-                        "tag": "strong"
-                    },
-                    {
-                        "style": {},
-                        "text": "."
-                    }
-                ],
-                "style": {
-                    "right": "0px",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "top": "0px",
-                    "display": "block",
-                    "position": "fixed",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "height": "480px",
-                    "z_index": "0",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "width": "640px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "100px",
-            "height": "0px",
-            "display": "block",
-            "margin_top": "100px",
-            "margin_right": "100px",
-            "margin_bottom": "100px",
-            "width": "440px"
-        },
-        "tag": "body"
-    },
     "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "Test passes if there is",
+                        "style": {}
+                    },
+                    {
+                        "tag": "strong",
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "font_weight": "bolder"
+                        }
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "width": "100%",
+                    "right": "0px",
+                    "background_clip": "initial",
+                    "color": "green",
+                    "background_color": "white",
+                    "background_position_y": "initial",
+                    "height": "100%",
+                    "background_size": "initial",
+                    "top": "0px",
+                    "background_repeat_y": "initial",
+                    "display": "block",
+                    "position": "fixed",
+                    "unicode_bidi": "embed",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "background_position_x": "initial",
+                    "background_attachment": "initial"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "100px",
+            "margin_top": "100px",
+            "background_clip": "initial",
+            "background_color": "red",
+            "background_position_y": "initial",
+            "background_size": "initial",
+            "background_repeat_y": "initial",
+            "background_image": "initial",
+            "margin_left": "100px",
+            "margin_right": "100px",
+            "background_attachment": "initial",
+            "background_origin": "initial",
+            "background_repeat_x": "initial",
+            "display": "block",
+            "background_position_x": "initial",
+            "unicode_bidi": "embed"
+        }
+    }
 }

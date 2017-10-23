@@ -1,41 +1,66 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#order-property"
+    ],
+    "matches": null,
+    "assert": "Check if the web engine can indentify order property.",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "200px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "0px"
-                }
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                },
+                "tag": "DIV"
             },
             {
-                "tag": "DIV",
                 "style": {
+                    "background_color": "rgb(255, 0, 0)",
+                    "background_image": "initial",
                     "width": "200px",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "background_clip": "initial",
                     "display": "flex",
-                    "height": "200px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "height": "200px",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "50px",
+                            "text_align": "center",
                             "display": "block",
-                            "height": "50px"
+                            "width": "50px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_color": "rgb(127, 255, 0)",
+                            "background_clip": "initial",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "font_size": "20px",
+                            "height": "50px",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -44,14 +69,26 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "50px",
+                            "order": "-1",
+                            "text_align": "center",
                             "display": "block",
-                            "height": "50px"
+                            "width": "50px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_color": "rgb(0, 255, 255)",
+                            "background_clip": "initial",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "font_size": "20px",
+                            "height": "50px",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -60,14 +97,25 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "50px",
+                            "text_align": "center",
                             "display": "block",
-                            "height": "50px"
+                            "width": "50px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_color": "rgb(65, 105, 225)",
+                            "background_clip": "initial",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "font_size": "20px",
+                            "height": "50px",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -78,10 +126,8 @@
                 ]
             },
             {
+                "style": {},
                 "tag": "SCRIPT",
-                "style": {
-                    "display": "none"
-                },
                 "children": [
                     {
                         "style": {},
@@ -90,10 +136,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#order-property"
-    ],
-    "matches": null,
-    "assert": "Check if the web engine can indentify order property."
+    }
 }

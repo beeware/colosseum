@@ -1,88 +1,70 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "height": "58px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "width": "28.203125px",
-                    "unicode_bidi": "bidi-override",
-                    "display": "table",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "height": "24px",
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "direction": "rtl",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "width": "28.203125px",
-                            "display": "table-row",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "height": "20px",
-                            "border_right_color": "rgb(128, 128, 128)",
-                            "direction": "rtl",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "padding_right": "1px",
-                                    "padding_left": "1px",
-                                    "display": "table-cell",
-                                    "direction": "rtl",
-                                    "padding_bottom": "1px",
-                                    "padding_top": "1px",
-                                    "height": "18px",
-                                    "width": "22.203125px"
-                                },
-                                "children": [
-                                    {
-                                        "style": {},
-                                        "text": "abc"
-                                    }
-                                ],
-                                "tag": "td"
-                            }
-                        ],
-                        "tag": "tr"
-                    }
-                ],
-                "tag": "table"
-            },
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "text": "abc"
-                    }
-                ],
-                "tag": "p"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi",
         "http://www.w3.org/TR/CSS21/visuren.html#direction"
     ],
+    "matches": null,
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "text": "abc",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "vertical_align": "inherit",
+                                    "display": "table-cell"
+                                },
+                                "tag": "td"
+                            }
+                        ],
+                        "style": {
+                            "vertical_align": "inherit",
+                            "display": "table-row"
+                        },
+                        "tag": "tr"
+                    }
+                ],
+                "style": {
+                    "border_spacing": "2px",
+                    "unicode_bidi": "bidi-override",
+                    "direction": "rtl"
+                },
+                "tag": "table"
+            },
+            {
+                "children": [
+                    {
+                        "text": "abc",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "margin_top": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "bidi-override should not be applied to table cell content when specified on table"
 }

@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ],
+    "assert": "Elements defined as inline-blocks establish a new block formatting context.",
+    "matches": "block-formatting-contexts-008-ref.xht",
     "test_case": {
         "children": [
             {
@@ -11,55 +10,65 @@
                             {
                                 "tag": "span",
                                 "style": {
+                                    "width": "100%",
+                                    "background_color": "blue",
                                     "display": "block",
-                                    "height": "50px",
-                                    "width": "200px"
+                                    "height": "25%"
                                 }
                             },
                             {
                                 "tag": "span",
                                 "style": {
+                                    "width": "100%",
+                                    "background_color": "blue",
                                     "display": "block",
-                                    "height": "50px",
-                                    "width": "200px"
+                                    "height": "25%"
                                 }
                             }
                         ],
                         "tag": "span",
                         "style": {
+                            "border_image_width": "initial",
+                            "border_bottom_color": "black",
+                            "border_image_source": "initial",
+                            "border_right_width": "medium",
+                            "border_top_width": "medium",
+                            "border_left_color": "black",
                             "display": "inline-block",
-                            "border_bottom_width": "3px",
-                            "border_left_style": "solid",
-                            "border_left_width": "3px",
+                            "border_bottom_width": "medium",
                             "border_bottom_style": "solid",
-                            "border_top_width": "3px",
-                            "width": "200px",
-                            "border_right_width": "3px",
-                            "border_right_style": "solid",
                             "height": "200px",
+                            "border_right_style": "solid",
+                            "border_left_width": "medium",
+                            "border_image_slice": "initial",
+                            "border_image_repeat": "initial",
+                            "width": "200px",
+                            "border_top_color": "black",
+                            "border_right_color": "black",
+                            "border_image_outset": "initial",
+                            "border_left_style": "solid",
                             "border_top_style": "solid"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "210px",
-                    "width": "624px"
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "210px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "Elements defined as inline-blocks establish a new block formatting context.",
-    "matches": "block-formatting-contexts-008-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ]
 }

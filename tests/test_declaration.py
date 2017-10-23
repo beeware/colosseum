@@ -318,13 +318,13 @@ class CssDeclarationTests(TestCase):
         node.layout.dirty = None
 
         # Default value is 0
-        self.assertEqual(node.style.min_width, 0)
+        self.assertEqual(node.style.border_top_width, 0)
         self.assertIsNone(node.style.dirty)
 
         # Modify the value
-        node.style.min_width = 10
+        node.style.border_top_width = 10
 
-        self.assertEqual(node.style.min_width, 10)
+        self.assertEqual(node.style.border_top_width, 10)
         self.assertTrue(node.style.dirty)
 
         # Clean the layout
@@ -332,22 +332,22 @@ class CssDeclarationTests(TestCase):
 
         # Set the value to the same value.
         # Dirty flag is not set.
-        node.style.min_width = 10
-        self.assertEqual(node.style.min_width, 10)
+        node.style.border_top_width = 10
+        self.assertEqual(node.style.border_top_width, 10)
         self.assertFalse(node.style.dirty)
 
         # Set the value to something new
         # Dirty flag is set.
-        node.style.min_width = 20
-        self.assertEqual(node.style.min_width, 20)
+        node.style.border_top_width = 20
+        self.assertEqual(node.style.border_top_width, 20)
         self.assertTrue(node.style.dirty)
 
         # Clean the layout
         node.layout.dirty = False
 
         # Clear the property
-        del node.style.min_width
-        self.assertEqual(node.style.min_width, 0)
+        del node.style.border_top_width
+        self.assertEqual(node.style.border_top_width, 0)
         self.assertTrue(node.style.dirty)
 
     def test_None_default_property(self):

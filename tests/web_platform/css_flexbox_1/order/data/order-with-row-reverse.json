@@ -1,9 +1,4 @@
 {
-    "matches": "order-with-row-reverse-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#order-property"
-    ],
-    "assert": "This test check that a flex container layouts out its content starting with the lowest numbered ordinal group and going up with row-reverse direction.",
     "test_case": {
         "tag": "BODY",
         "children": [
@@ -19,13 +14,13 @@
                             }
                         ],
                         "style": {
+                            "unicode_bidi": "embed",
+                            "margin_left": "0",
+                            "order": "1",
+                            "margin_bottom": "1.12em",
                             "display": "block",
-                            "min_width": "auto",
-                            "margin_top": "16px",
-                            "margin_bottom": "16px",
-                            "height": "18px",
-                            "width": "33.34375px",
-                            "min_height": "auto"
+                            "margin_right": "0",
+                            "margin_top": "1.12em"
                         }
                     },
                     {
@@ -37,13 +32,13 @@
                             }
                         ],
                         "style": {
+                            "unicode_bidi": "embed",
+                            "margin_left": "0",
+                            "order": "0",
+                            "margin_bottom": "1.12em",
                             "display": "block",
-                            "min_width": "auto",
-                            "margin_top": "16px",
-                            "margin_bottom": "16px",
-                            "height": "18px",
-                            "width": "51.109375px",
-                            "min_height": "auto"
+                            "margin_right": "0",
+                            "margin_top": "1.12em"
                         }
                     },
                     {
@@ -55,31 +50,35 @@
                             }
                         ],
                         "style": {
+                            "unicode_bidi": "embed",
+                            "margin_left": "0",
+                            "order": "-1",
+                            "margin_bottom": "1.12em",
                             "display": "block",
-                            "min_width": "auto",
-                            "margin_top": "16px",
-                            "margin_bottom": "16px",
-                            "height": "18px",
-                            "width": "35.546875px",
-                            "min_height": "auto"
+                            "margin_right": "0",
+                            "margin_top": "1.12em"
                         }
                     }
                 ],
                 "style": {
-                    "display": "flex",
-                    "width": "624px",
-                    "height": "50px"
+                    "unicode_bidi": "embed",
+                    "flex_direction": "row-reverse",
+                    "display": "flex"
                 }
             }
         ],
         "style": {
+            "unicode_bidi": "embed",
             "margin_left": "8px",
-            "display": "block",
-            "margin_top": "8px",
             "margin_bottom": "8px",
-            "height": "50px",
-            "width": "624px",
-            "margin_right": "8px"
+            "display": "block",
+            "margin_right": "8px",
+            "margin_top": "8px"
         }
-    }
+    },
+    "assert": "This test check that a flex container layouts out its content starting with the lowest numbered ordinal group and going up with row-reverse direction.",
+    "matches": "order-with-row-reverse-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#order-property"
+    ]
 }

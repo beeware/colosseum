@@ -1,39 +1,45 @@
 {
+    "help": [
+        "https://drafts.csswg.org/css-flexbox/#definite-sizes"
+    ],
+    "matches": "percentage-heights-002-ref.html",
+    "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "800px",
-            "display": "block",
             "margin_right": "8px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "width": "800px",
+            "margin_top": "8px",
+            "height": "600px",
             "position": "relative",
-            "height": "600px"
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "left": "0px",
-                    "position": "absolute",
-                    "width": "800px",
-                    "display": "flex",
-                    "bottom": "0px",
+                    "background_color": "red",
                     "right": "0px",
+                    "display": "flex",
                     "top": "0px",
-                    "height": "600px"
+                    "left": "0px",
+                    "bottom": "0px",
+                    "flex_direction": "column",
+                    "position": "absolute",
+                    "unicode_bidi": "embed"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "800px",
+                            "background_color": "green",
+                            "unicode_bidi": "embed",
                             "display": "block",
-                            "height": "120px"
+                            "height": "20%"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -42,14 +48,13 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "800px",
-                            "display": "block",
-                            "height": "480px"
+                            "flex_basis": "100%",
+                            "background_color": "blue",
+                            "unicode_bidi": "embed",
+                            "display": "block"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -60,10 +65,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "https://drafts.csswg.org/css-flexbox/#definite-sizes"
-    ],
-    "matches": "percentage-heights-002-ref.html",
-    "assert": "Checks that we correctly size percentage-sized\nchildren of absolute-positioned flex boxes"
+    }
 }

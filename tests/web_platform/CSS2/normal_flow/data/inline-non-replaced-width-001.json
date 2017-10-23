@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-width"
-    ],
+    "assert": "Computed value of 'auto' for 'left', 'right', and 'margin-left' becomes a used value of '0'.",
+    "matches": "inline-non-replaced-width-001-ref.xht",
     "test_case": {
         "children": [
             {
@@ -15,42 +14,57 @@
                         ],
                         "tag": "span",
                         "style": {
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "position": "relative",
+                            "font_style": "normal",
+                            "font_variant_caps": "normal",
+                            "left": "auto",
+                            "right": "auto",
                             "margin_left": "auto",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "font_weight": "normal",
+                            "position": "relative",
+                            "color": "blue",
+                            "line_height": "1",
+                            "font_family": "Ahem",
+                            "font_size": "100px"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "border_image_width": "initial",
+                    "border_right_color": "black",
+                    "border_top_style": "solid",
+                    "border_image_source": "initial",
+                    "border_bottom_color": "black",
                     "display": "block",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "border_left_width": "3px",
+                    "border_bottom_width": "initial",
                     "border_bottom_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "200px",
-                    "border_right_width": "3px",
-                    "border_right_style": "solid",
+                    "border_left_color": "black",
                     "height": "200px",
-                    "border_top_style": "solid"
+                    "border_right_style": "solid",
+                    "border_left_width": "initial",
+                    "border_image_slice": "initial",
+                    "border_image_repeat": "initial",
+                    "width": "200px",
+                    "border_top_color": "black",
+                    "border_right_width": "initial",
+                    "border_image_outset": "initial",
+                    "border_left_style": "solid",
+                    "border_top_width": "initial"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "206px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "Computed value of 'auto' for 'left', 'right', and 'margin-left' becomes a used value of '0'.",
-    "matches": "inline-non-replaced-width-001-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-width"
+    ]
 }

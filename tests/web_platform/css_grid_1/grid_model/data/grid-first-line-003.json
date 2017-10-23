@@ -1,110 +1,89 @@
 {
     "matches": "../reference/grid-text-green-margin-no-collapse-ref.html",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers",
-        "http://www.w3.org/TR/css3-selectors/#first-formatted-line"
-    ],
     "assert": "This test checks that '::first-line' pseudo-element works as expected if it is applied directly to a grid item.",
     "test_case": {
         "tag": "BODY",
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_right": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
                 "tag": "DIV",
+                "style": {
+                    "display": "grid",
+                    "unicode_bidi": "embed",
+                    "color": "red"
+                },
                 "children": [
                     {
                         "tag": "DIV",
+                        "style": {
+                            "display": "block",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
                                 "tag": "P",
+                                "style": {
+                                    "margin_left": "0",
+                                    "margin_bottom": "1.12em",
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "margin_right": "0",
+                                    "margin_top": "1.12em"
+                                },
                                 "children": [
                                     {
-                                        "text": "This text should be",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "This text should be"
                                     },
                                     {
                                         "tag": "STRONG",
+                                        "style": {
+                                            "font_weight": "bolder"
+                                        },
                                         "children": [
                                             {
-                                                "text": "green",
-                                                "style": {}
+                                                "style": {},
+                                                "text": "green"
                                             }
-                                        ],
-                                        "style": {
-                                            "border_top_color": "rgb(255, 0, 0)",
-                                            "border_bottom_color": "rgb(255, 0, 0)",
-                                            "border_left_color": "rgb(255, 0, 0)",
-                                            "border_right_color": "rgb(255, 0, 0)"
-                                        }
+                                        ]
                                     },
                                     {
-                                        "text": "and body and paragraph margins should",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "and body and paragraph margins should"
                                     },
                                     {
                                         "tag": "STRONG",
+                                        "style": {
+                                            "font_weight": "bolder"
+                                        },
                                         "children": [
                                             {
-                                                "text": "not collapse",
-                                                "style": {}
+                                                "style": {},
+                                                "text": "not collapse"
                                             }
-                                        ],
-                                        "style": {
-                                            "border_top_color": "rgb(255, 0, 0)",
-                                            "border_bottom_color": "rgb(255, 0, 0)",
-                                            "border_left_color": "rgb(255, 0, 0)",
-                                            "border_right_color": "rgb(255, 0, 0)"
-                                        }
+                                        ]
                                     },
                                     {
-                                        "text": ".",
-                                        "style": {}
+                                        "style": {},
+                                        "text": "."
                                     }
-                                ],
-                                "style": {
-                                    "display": "block",
-                                    "margin_top": "16px",
-                                    "border_bottom_color": "rgb(255, 0, 0)",
-                                    "border_left_color": "rgb(255, 0, 0)",
-                                    "width": "624px",
-                                    "border_right_color": "rgb(255, 0, 0)",
-                                    "border_top_color": "rgb(255, 0, 0)",
-                                    "height": "18px",
-                                    "margin_bottom": "16px"
-                                }
+                                ]
                             }
-                        ],
-                        "style": {
-                            "display": "block",
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "width": "624px",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(255, 0, 0)",
-                            "height": "50px",
-                            "min_width": "auto"
-                        }
+                        ]
                     }
-                ],
-                "style": {
-                    "display": "grid",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "border_left_color": "rgb(255, 0, 0)",
-                    "width": "624px",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "border_top_color": "rgb(255, 0, 0)",
-                    "height": "50px"
-                }
+                ]
             }
-        ],
-        "style": {
-            "display": "block",
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "50px",
-            "margin_bottom": "8px"
-        }
-    }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/css3-selectors/#first-formatted-line"
+    ]
 }

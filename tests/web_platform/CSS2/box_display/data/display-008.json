@@ -1,49 +1,52 @@
 {
-    "matches": "display-008-ref.xht",
-    "assert": "The property 'display' set to 'table-row-group' behaves in layout as a table row group.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "36px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "133.75px",
-                    "height": "36px",
-                    "display": "table"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "table",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
-                        "style": {
-                            "width": "133.75px",
-                            "height": "18px",
-                            "display": "table-row-group"
-                        },
                         "tag": "div",
+                        "style": {
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_clip": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "background_color": "blue",
+                            "display": "table-row-group",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial"
+                        },
                         "children": [
                             {
-                                "style": {
-                                    "width": "133.75px",
-                                    "height": "18px",
-                                    "display": "table-row"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "table-row",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
-                                        "style": {
-                                            "width": "66.875px",
-                                            "height": "18px",
-                                            "display": "table-cell"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "display": "table-cell",
+                                            "unicode_bidi": "embed"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -52,12 +55,11 @@
                                         ]
                                     },
                                     {
-                                        "style": {
-                                            "width": "66.875px",
-                                            "height": "18px",
-                                            "display": "table-cell"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "display": "table-cell",
+                                            "unicode_bidi": "embed"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -70,20 +72,18 @@
                         ]
                     },
                     {
-                        "style": {
-                            "width": "133.75px",
-                            "height": "18px",
-                            "display": "table-row"
-                        },
                         "tag": "div",
+                        "style": {
+                            "display": "table-row",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "style": {
-                                    "width": "66.875px",
-                                    "height": "18px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "table-cell",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -92,12 +92,11 @@
                                 ]
                             },
                             {
-                                "style": {
-                                    "width": "66.875px",
-                                    "height": "18px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "table-cell",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -111,8 +110,10 @@
             }
         ]
     },
+    "matches": "display-008-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": "The property 'display' set to 'table-row-group' behaves in layout as a table row group."
 }

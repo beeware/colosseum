@@ -1,43 +1,54 @@
 {
-    "matches": "anonymous-box-generation-001-ref.xht",
-    "assert": "Block boxes with inline content followed by a block box generate an anonymous block box around the inline content.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "34px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "192px",
-                    "height": "34px",
-                    "display": "block"
-                },
                 "tag": "div",
+                "style": {
+                    "text_align": "center",
+                    "width": "2in",
+                    "display": "block",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
                         "style": {},
                         "text": "Filler Text"
                     },
                     {
+                        "tag": "div",
                         "style": {
-                            "width": "192px",
-                            "height": "16px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "height": "1em",
+                            "unicode_bidi": "embed",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "width": "2in",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "display": "block",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial",
+                            "background_color": "blue"
+                        }
                     }
                 ]
             }
         ]
     },
+    "matches": "anonymous-box-generation-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#anonymous-block-level"
-    ]
+    ],
+    "assert": "Block boxes with inline content followed by a block box generate an anonymous block box around the inline content."
 }

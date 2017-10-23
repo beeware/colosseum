@@ -1,52 +1,74 @@
 {
     "matches": "top-offset-003-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "absolute",
-                            "height": "48px",
-                            "top": "72px",
-                            "display": "block",
-                            "width": "48px"
-                        },
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "padding_top": "24px",
-                    "height": "96px",
-                    "display": "block",
-                    "width": "96px",
-                    "position": "relative"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "120px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "The 'top' property, for absolute positioning, specifies the offset of the element in relation to the containing block's top edge. The containing block of an absolutely positioned element is formed by the padding box of its nearest (closest) positioned ancestor element.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "0.5in",
+                            "background_clip": "initial",
+                            "height": "0.5in",
+                            "background_color": "white",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "0.75in",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "1in",
+                            "background_clip": "initial",
+                            "height": "1in",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "1in",
+                    "height": "1in",
+                    "position": "relative",
+                    "padding_top": "0.25in",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

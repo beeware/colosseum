@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
+    "assert": "When 'height: 1%' (or any other percentage) applies to an 'inline-block' replaced element and when the height of its containing block is not specified explicitly (i.e., it depends on content height), then such height computes to 'auto'. Then, if such inline-block replaced element has an intrinsic ratio and its used width is known or resolved, then the used value of 'height' is determined by the equation (used width) / (intrinsic ratio).",
+    "matches": null,
     "test_case": {
         "children": [
             {
@@ -14,9 +13,28 @@
                             }
                         ],
                         "tag": "object",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "FAIL: image download must be enabled",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "object",
+                        "style": {}
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "FAIL: image download must be enabled",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "object",
                         "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
+                            "0": "width"
                         }
                     },
                     {
@@ -28,8 +46,8 @@
                         ],
                         "tag": "object",
                         "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
+                            "1": "height",
+                            "0": "width"
                         }
                     },
                     {
@@ -41,56 +59,29 @@
                         ],
                         "tag": "object",
                         "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "FAIL: image download must be enabled",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "object",
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "FAIL: image download must be enabled",
-                                "style": {}
-                            }
-                        ],
-                        "tag": "object",
-                        "style": {
-                            "height": "94px",
-                            "width": "93.59375px"
+                            "1": "height",
+                            "0": "width"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "98px",
-                    "width": "624px"
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "98px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "When 'height: 1%' (or any other percentage) applies to an 'inline-block' replaced element and when the height of its containing block is not specified explicitly (i.e., it depends on content height), then such height computes to 'auto'. Then, if such inline-block replaced element has an intrinsic ratio and its used width is known or resolved, then the used value of 'height' is determined by the equation (used width) / (intrinsic ratio).",
-    "matches": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
 }

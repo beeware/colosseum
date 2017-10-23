@@ -1,49 +1,89 @@
 {
+    "matches": "../reference/grid-layout-basic-ref.html",
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#free-space"
+    ],
     "test_case": {
-        "style": {
-            "height": "18px",
-            "display": "block",
-            "width": "640px"
-        },
         "tag": "BODY",
         "children": [
             {
-                "style": {
-                    "height": "18px",
-                    "display": "grid",
-                    "width": "150px"
-                },
                 "tag": "DIV",
                 "children": [
                     {
-                        "style": {
-                            "height": "18px",
-                            "display": "block",
-                            "min_height": "auto",
-                            "width": "100px",
-                            "min_width": "auto"
-                        },
                         "tag": "DIV",
-                        "children": []
+                        "children": [],
+                        "style": {
+                            "display": "block",
+                            "background_position_x": "initial",
+                            "grid_column_start": "1",
+                            "background_color": "blue",
+                            "background_size": "initial",
+                            "background_image": "initial",
+                            "grid_column_end": "auto",
+                            "background_clip": "initial",
+                            "background_origin": "initial",
+                            "unicode_bidi": "embed",
+                            "background_position_y": "initial",
+                            "grid_row_start": "1",
+                            "background_attachment": "initial",
+                            "grid_row_end": "auto",
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial"
+                        }
                     },
                     {
-                        "style": {
-                            "height": "18px",
-                            "display": "block",
-                            "min_height": "auto",
-                            "width": "50px",
-                            "min_width": "auto"
-                        },
                         "tag": "DIV",
-                        "children": []
+                        "children": [],
+                        "style": {
+                            "display": "block",
+                            "background_position_x": "initial",
+                            "grid_column_start": "2",
+                            "background_color": "yellow",
+                            "background_size": "initial",
+                            "background_image": "initial",
+                            "grid_column_end": "auto",
+                            "background_clip": "initial",
+                            "background_origin": "initial",
+                            "unicode_bidi": "embed",
+                            "background_position_y": "initial",
+                            "grid_row_start": "1",
+                            "background_attachment": "initial",
+                            "grid_row_end": "auto",
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial"
+                        }
                     }
-                ]
+                ],
+                "style": {
+                    "display": "grid",
+                    "background_position_x": "initial",
+                    "background_color": "rgb(238, 238, 238)",
+                    "background_size": "initial",
+                    "width": "150px",
+                    "background_image": "initial",
+                    "grid_template_columns": "1fr 50px",
+                    "background_clip": "initial",
+                    "background_origin": "initial",
+                    "unicode_bidi": "embed",
+                    "background_position_y": "initial",
+                    "background_attachment": "initial",
+                    "background_repeat_y": "initial",
+                    "background_repeat_x": "initial"
+                }
             }
-        ]
+        ],
+        "style": {
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "0px",
+            "padding_top": "0px",
+            "margin_right": "0px",
+            "margin_top": "0px",
+            "padding_right": "0px",
+            "padding_left": "0px",
+            "margin_left": "0px",
+            "padding_bottom": "0px"
+        }
     },
-    "matches": "../reference/grid-layout-basic-ref.html",
-    "assert": "the layout should behave the same as reference.",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#free-space"
-    ]
+    "assert": "the layout should behave the same as reference."
 }

@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
+    "assert": "An inline-block replaced elements' used value of 'margin-top' and/or 'margin-bottom' set to 'auto' is '0'.",
+    "matches": "block-replaced-height-001-ref.xht",
     "test_case": {
         "children": [
             {
@@ -9,37 +8,38 @@
                     {
                         "tag": "img",
                         "style": {
+                            "margin_bottom": "auto",
                             "display": "inline-block",
-                            "height": "15px",
-                            "width": "15px"
+                            "margin_top": "auto"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "border_top_style": "solid",
+                    "border_top_color": "orange",
+                    "border_bottom_color": "orange",
+                    "width": "1in",
+                    "border_top_width": "initial",
+                    "line_height": "0",
                     "display": "block",
-                    "border_bottom_width": "3px",
-                    "border_bottom_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "96px",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "height": "15px",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "border_top_style": "solid"
+                    "border_bottom_width": "initial",
+                    "border_bottom_style": "solid"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "21px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "An inline-block replaced elements' used value of 'margin-top' and/or 'margin-bottom' set to 'auto' is '0'.",
-    "matches": "block-replaced-height-001-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
 }

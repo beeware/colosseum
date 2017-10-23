@@ -1,56 +1,65 @@
 {
     "matches": "absolute-replaced-height-008-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "15px",
-                            "top": "96px",
-                            "display": "block",
-                            "bottom": "96px",
-                            "position": "absolute",
-                            "width": "15px"
-                        },
-                        "tag": "img"
-                    },
-                    {
-                        "style": {
-                            "left": "15px",
-                            "top": "96px",
-                            "display": "block",
-                            "height": "15px",
-                            "position": "absolute",
-                            "width": "15px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "height": "0px",
-                    "border_top_width": "3px",
-                    "display": "block",
-                    "position": "relative",
-                    "border_top_style": "solid",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "3px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "The 'height' is the intrinsic height when an absolutely positioned inline replaced element has an intrinsic height and its height is specified as 'auto', 'width' is specified 'auto' and 'top', 'bottom' are not 'auto'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-replaced-height"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "bottom": "1in",
+                            "width": "auto",
+                            "position": "absolute",
+                            "top": "1in",
+                            "height": "auto"
+                        }
+                    },
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "15px",
+                            "background_clip": "initial",
+                            "height": "15px",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "1in",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "left": "15px",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "border_top_color": "black",
+                    "position": "relative",
+                    "border_top_style": "solid",
+                    "border_top_width": "initial",
+                    "unicode_bidi": "embed"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

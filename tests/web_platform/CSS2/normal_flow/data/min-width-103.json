@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The 'min-width' property properly inherits the min-width value of the parent.",
+    "matches": "max-width-003-ref.xht",
     "test_case": {
         "children": [
             {
@@ -10,33 +8,44 @@
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "background_attachment": "initial",
+                            "background_color": "black",
                             "display": "block",
-                            "height": "96px",
-                            "width": "1px",
-                            "min_width": "1px"
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "min_width": "inherit",
+                            "height": "1in",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "96px",
-                    "width": "1px",
-                    "min_width": "1px"
+                    "unicode_bidi": "embed",
+                    "width": "0px",
+                    "min_width": "1px",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "96px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-width' property properly inherits the min-width value of the parent.",
-    "matches": "max-width-003-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

@@ -1,168 +1,249 @@
 {
     "assert": "The stretched grid items along the column and/or row axis include their defined border-box.",
+    "matches": null,
+    "test_case": {
+        "tag": "BODY",
+        "children": [
+            {
+                "tag": "DIV",
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "X XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "grid_column_start": "1",
+                            "background_attachment": "initial",
+                            "border_right_width": "0px",
+                            "border_left_width": "0px",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "border_bottom_width": "10px",
+                            "background_color": "green",
+                            "background_size": "initial",
+                            "grid_column_end": "auto",
+                            "display": "block",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "0px",
+                            "border_left_style": "solid",
+                            "align_self": "start",
+                            "background_clip": "initial",
+                            "background_position_y": "initial",
+                            "border_top_style": "solid",
+                            "background_origin": "initial",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "grid_row_end": "auto",
+                            "border_right_style": "solid",
+                            "grid_row_start": "1",
+                            "justify_self": "stretch"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X XXX",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "XX XXX",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "grid_column_start": "2",
+                            "background_attachment": "initial",
+                            "border_right_width": "20px",
+                            "border_left_width": "0px",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "border_bottom_width": "0px",
+                            "background_color": "blue",
+                            "background_size": "initial",
+                            "grid_column_end": "auto",
+                            "display": "block",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "0px",
+                            "border_left_style": "solid",
+                            "align_self": "stretch",
+                            "background_clip": "initial",
+                            "background_position_y": "initial",
+                            "border_top_style": "solid",
+                            "background_origin": "initial",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "grid_row_end": "auto",
+                            "border_right_style": "solid",
+                            "grid_row_start": "1",
+                            "justify_self": "start"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "X XX X",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "grid_column_start": "1",
+                            "background_attachment": "initial",
+                            "border_right_width": "0px",
+                            "border_left_width": "0px",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "border_bottom_width": "0px",
+                            "background_color": "yellow",
+                            "background_size": "initial",
+                            "grid_column_end": "auto",
+                            "display": "block",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "0px",
+                            "border_left_style": "solid",
+                            "align_self": "start",
+                            "background_clip": "initial",
+                            "background_position_y": "initial",
+                            "border_top_style": "solid",
+                            "background_origin": "initial",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "grid_row_end": "auto",
+                            "border_right_style": "solid",
+                            "grid_row_start": "2",
+                            "justify_self": "start"
+                        }
+                    },
+                    {
+                        "tag": "DIV",
+                        "children": [
+                            {
+                                "text": "XX X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X XXX",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "X",
+                                "style": {}
+                            },
+                            {
+                                "tag": "BR",
+                                "style": {}
+                            },
+                            {
+                                "text": "XX XXX",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "grid_column_start": "2",
+                            "background_attachment": "initial",
+                            "border_right_width": "10px",
+                            "border_left_width": "0px",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "border_bottom_width": "20px",
+                            "background_color": "red",
+                            "background_size": "initial",
+                            "grid_column_end": "auto",
+                            "display": "block",
+                            "border_bottom_style": "solid",
+                            "border_top_width": "0px",
+                            "border_left_style": "solid",
+                            "align_self": "stretch",
+                            "background_clip": "initial",
+                            "background_position_y": "initial",
+                            "border_top_style": "solid",
+                            "background_origin": "initial",
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "grid_row_end": "auto",
+                            "border_right_style": "solid",
+                            "grid_row_start": "2",
+                            "justify_self": "stretch"
+                        }
+                    }
+                ],
+                "style": {
+                    "font_family": "Ahem",
+                    "background_attachment": "initial",
+                    "writing_mode": "vertical-lr",
+                    "grid_template_rows": "150px 100px",
+                    "grid_template_columns": "100px 150px",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "background_repeat_y": "initial",
+                    "background_color": "grey",
+                    "background_clip": "initial",
+                    "font_weight": "normal",
+                    "display": "inline-grid",
+                    "font_size": "10px",
+                    "background_size": "initial",
+                    "background_position_y": "initial",
+                    "position": "relative",
+                    "background_origin": "initial",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "background_position_x": "initial",
+                    "line_height": "1",
+                    "font_variant_caps": "normal"
+                }
+            }
+        ],
+        "style": {
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block"
+        }
+    },
     "help": [
         "https://drafts.csswg.org/css-grid-1/#alignment",
         "https://drafts.csswg.org/css-align-3/#propdef-align-self",
         "https://drafts.csswg.org/css-align-3/#propdef-justify-self",
         "https://drafts.csswg.org/css-align/#valdef-justify-self-stretch",
         "https://drafts.csswg.org/css-align/#valdef-align-self-stretch"
-    ],
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "text": "X XX X",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "height": "90px",
-                            "min_height": "auto",
-                            "border_left_style": "solid",
-                            "display": "block",
-                            "border_right_style": "solid",
-                            "min_width": "auto",
-                            "border_bottom_width": "10px",
-                            "border_top_style": "solid",
-                            "width": "10px",
-                            "border_bottom_style": "solid"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "XX X",
-                                "style": {}
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "text": "X XXX",
-                                "style": {}
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "text": "X",
-                                "style": {}
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "text": "XX XXX",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "height": "60px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "border_right_style": "solid",
-                            "min_width": "auto",
-                            "width": "130px",
-                            "border_top_style": "solid",
-                            "border_left_style": "solid",
-                            "border_right_width": "20px",
-                            "border_bottom_style": "solid"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "X XX X",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "height": "60px",
-                            "min_height": "auto",
-                            "border_right_style": "solid",
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "10px",
-                            "border_top_style": "solid",
-                            "border_left_style": "solid",
-                            "border_bottom_style": "solid"
-                        },
-                        "tag": "DIV"
-                    },
-                    {
-                        "children": [
-                            {
-                                "text": "XX X",
-                                "style": {}
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "text": "X XXX",
-                                "style": {}
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "text": "X",
-                                "style": {}
-                            },
-                            {
-                                "style": {},
-                                "tag": "BR"
-                            },
-                            {
-                                "text": "XX XXX",
-                                "style": {}
-                            }
-                        ],
-                        "style": {
-                            "min_width": "auto",
-                            "height": "130px",
-                            "min_height": "auto",
-                            "border_left_style": "solid",
-                            "display": "block",
-                            "border_right_style": "solid",
-                            "width": "90px",
-                            "border_bottom_width": "20px",
-                            "border_top_style": "solid",
-                            "border_right_width": "10px",
-                            "border_bottom_style": "solid"
-                        },
-                        "tag": "DIV"
-                    }
-                ],
-                "style": {
-                    "width": "250px",
-                    "display": "inline-grid",
-                    "height": "250px",
-                    "position": "relative"
-                },
-                "tag": "DIV"
-            }
-        ],
-        "style": {
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "height": "254px",
-            "width": "624px",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "display": "block"
-        },
-        "tag": "BODY"
-    },
-    "matches": null
+    ]
 }

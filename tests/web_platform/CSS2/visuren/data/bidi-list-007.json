@@ -1,90 +1,82 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "direction": "rtl",
-            "height": "54px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "padding_right": "32px",
-                    "margin_top": "16px",
-                    "display": "block",
-                    "height": "54px",
-                    "padding_left": "32px",
-                    "direction": "rtl",
-                    "margin_bottom": "16px",
-                    "width": "560px"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "padding_right": "32px",
-                            "padding_left": "32px",
-                            "display": "list-item",
-                            "height": "18px",
-                            "direction": "rtl",
-                            "width": "496px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "This is the first of three items that are centered"
-                            }
-                        ],
-                        "tag": "li"
-                    },
-                    {
-                        "style": {
-                            "padding_right": "32px",
-                            "padding_left": "32px",
-                            "display": "list-item",
-                            "height": "18px",
-                            "direction": "rtl",
-                            "width": "496px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "And this is the second of the three items that are centered"
-                            }
-                        ],
-                        "tag": "li"
-                    },
-                    {
-                        "style": {
-                            "padding_right": "32px",
-                            "padding_left": "32px",
-                            "display": "list-item",
-                            "height": "18px",
-                            "direction": "rtl",
-                            "width": "496px"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "And this is the third and last of the three items"
-                            }
-                        ],
-                        "tag": "li"
-                    }
-                ],
-                "tag": "ul"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/text.html#alignment-prop",
         "http://www.w3.org/TR/CSS21/visuren.html#direction",
         "http://www.w3.org/TR/CSS21/generate.html#list-style"
     ],
+    "matches": null,
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "text": "This is the first of three items that are centered",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "padding_right": "2em",
+                            "text_align": "center",
+                            "padding_left": "2em",
+                            "display": "list-item"
+                        },
+                        "tag": "li"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "And this is the second of the three items that are centered",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "padding_right": "2em",
+                            "text_align": "center",
+                            "padding_left": "2em",
+                            "display": "list-item"
+                        },
+                        "tag": "li"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "And this is the third and last of the three items",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "padding_right": "2em",
+                            "text_align": "center",
+                            "padding_left": "2em",
+                            "display": "list-item"
+                        },
+                        "tag": "li"
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "margin_top": "1.12em",
+                    "padding_left": "2em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "40px",
+                    "padding_right": "2em"
+                },
+                "tag": "ul"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "text-align: center should apply to unordered lists in rtl context without affecting their rtlness"
 }

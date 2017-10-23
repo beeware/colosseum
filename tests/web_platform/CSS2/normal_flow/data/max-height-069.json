@@ -1,41 +1,54 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The 'max-height' property sets a minimum plus one length value in 'em' units.",
+    "matches": "max-height-069-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "max_height": "1em",
+                    "font_variant_caps": "normal",
+                    "height": "6em",
+                    "font_weight": "normal",
+                    "background_color": "red",
+                    "font_family": "Ahem",
                     "display": "block",
-                    "height": "20px",
-                    "width": "624px",
-                    "max_height": "20px"
+                    "line_height": "1",
+                    "font_size": "20px"
                 }
             },
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "bottom": "1em",
+                    "line_height": "1",
+                    "background_color": "black",
                     "display": "block",
-                    "width": "624px",
-                    "position": "relative",
-                    "bottom": "20px",
-                    "height": "20px"
+                    "font_size": "20px",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "height": "1em",
+                    "font_family": "Ahem",
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "40px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'max-height' property sets a minimum plus one length value in 'em' units.",
-    "matches": "max-height-069-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

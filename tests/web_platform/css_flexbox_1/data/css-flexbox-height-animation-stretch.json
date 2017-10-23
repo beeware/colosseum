@@ -1,109 +1,117 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
+    ],
+    "matches": "css-flexbox-height-animation-stretch-ref.html",
+    "assert": "Items should stretch vertically in all time",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "71.15625px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "71.15625px"
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
                             "width": "200px",
-                            "display": "flex",
-                            "height": "71.15625px"
+                            "background_color": "red",
+                            "unicode_bidi": "embed",
+                            "display": "flex"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
-                                "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "50px",
-                                    "display": "block",
-                                    "height": "71.15625px"
+                                    "background_color": "green",
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 },
+                                "tag": "DIV",
                                 "children": [
                                     {
-                                        "tag": "DIV",
                                         "style": {
-                                            "width": "50px",
+                                            "animation_direction": "alternate",
+                                            "unicode_bidi": "embed",
                                             "display": "block",
-                                            "height": "71.15625px"
-                                        }
+                                            "animation_iteration_count": "infinite",
+                                            "animation_delay": "initial",
+                                            "animation_fill_mode": "initial",
+                                            "animation_timing_function": "initial",
+                                            "animation_play_state": "initial",
+                                            "height": "100px",
+                                            "animation_duration": "500ms",
+                                            "animation_name": "resize"
+                                        },
+                                        "tag": "DIV"
                                     }
                                 ]
                             },
                             {
-                                "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "50px",
-                                    "display": "block",
-                                    "height": "71.15625px"
+                                    "background_color": "green",
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 },
+                                "tag": "DIV",
                                 "children": [
                                     {
-                                        "tag": "DIV",
                                         "style": {
-                                            "width": "50px",
+                                            "unicode_bidi": "embed",
                                             "display": "block",
                                             "height": "50px"
-                                        }
+                                        },
+                                        "tag": "DIV"
                                     }
                                 ]
                             },
                             {
-                                "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "50px",
-                                    "display": "block",
-                                    "height": "71.15625px"
+                                    "background_color": "green",
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 },
+                                "tag": "DIV",
                                 "children": [
                                     {
-                                        "tag": "DIV",
                                         "style": {
-                                            "width": "50px",
+                                            "unicode_bidi": "embed",
                                             "display": "block",
                                             "height": "50px"
-                                        }
+                                        },
+                                        "tag": "DIV"
                                     }
                                 ]
                             },
                             {
-                                "tag": "DIV",
                                 "style": {
-                                    "min_height": "auto",
-                                    "min_width": "auto",
                                     "width": "50px",
-                                    "display": "block",
-                                    "height": "71.15625px"
+                                    "background_color": "green",
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 },
+                                "tag": "DIV",
                                 "children": [
                                     {
-                                        "tag": "DIV",
                                         "style": {
-                                            "width": "50px",
+                                            "unicode_bidi": "embed",
                                             "display": "block",
                                             "height": "50px"
-                                        }
+                                        },
+                                        "tag": "DIV"
                                     }
                                 ]
                             }
@@ -112,10 +120,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
-    ],
-    "matches": "css-flexbox-height-animation-stretch-ref.html",
-    "assert": "Items should stretch vertically in all time"
+    }
 }

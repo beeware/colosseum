@@ -1,86 +1,71 @@
 {
     "matches": "../../reference/ref-filled-green-100px-square.xht",
-    "help": [
-        "http://www.w3.org/TR/css-grid-1/#grid-containers",
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align"
-    ],
     "assert": null,
     "test_case": {
         "tag": "BODY",
+        "style": {
+            "margin_left": "8px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_right": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
                 "tag": "DIV",
                 "style": {
-                    "display": "block",
-                    "position": "absolute",
-                    "height": "100px",
+                    "width": "100px",
                     "z_index": "-1",
-                    "width": "100px"
+                    "background_color": "red",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "height": "100px",
+                    "position": "absolute"
                 }
             },
             {
                 "tag": "DIV",
+                "style": {
+                    "font_weight": "normal",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "color": "green",
+                    "display": "grid",
+                    "unicode_bidi": "embed",
+                    "font_size": "50px",
+                    "font_family": "Ahem",
+                    "font_variant_caps": "normal"
+                },
                 "children": [
                     {
                         "tag": "SPAN",
+                        "style": {},
                         "children": [
                             {
-                                "text": "1s",
-                                "style": {}
+                                "style": {},
+                                "text": "1s"
                             }
-                        ],
-                        "style": {
-                            "display": "block",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "width": "624px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "50px",
-                            "min_width": "auto"
-                        }
+                        ]
                     },
                     {
                         "tag": "SPAN",
+                        "style": {
+                            "vertical_align": "125px"
+                        },
                         "children": [
                             {
-                                "text": "2n",
-                                "style": {}
+                                "style": {},
+                                "text": "2n"
                             }
-                        ],
-                        "style": {
-                            "display": "block",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "width": "624px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "50px",
-                            "min_width": "auto"
-                        }
+                        ]
                     }
-                ],
-                "style": {
-                    "display": "grid",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "width": "624px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "height": "100px"
-                }
+                ]
             }
-        ],
-        "style": {
-            "display": "block",
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "width": "624px",
-            "margin_right": "8px",
-            "height": "100px",
-            "margin_bottom": "8px"
-        }
-    }
+        ]
+    },
+    "help": [
+        "http://www.w3.org/TR/css-grid-1/#grid-containers",
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align"
+    ]
 }

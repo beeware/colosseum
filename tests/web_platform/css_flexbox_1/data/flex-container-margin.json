@@ -1,77 +1,112 @@
 {
-    "test_case": {
-        "tag": "BODY",
-        "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "90px"
-        },
-        "children": [
-            {
-                "tag": "DIV",
-                "style": {
-                    "margin_bottom": "20px",
-                    "margin_left": "20px",
-                    "margin_top": "20px",
-                    "width": "584px",
-                    "display": "flex",
-                    "margin_right": "20px",
-                    "height": "90px"
-                },
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "margin_bottom": "20px",
-                            "margin_left": "20px",
-                            "margin_top": "20px",
-                            "min_height": "auto",
-                            "width": "50px",
-                            "display": "block",
-                            "margin_right": "20px",
-                            "min_width": "auto",
-                            "height": "50px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "margin_bottom": "20px",
-                            "margin_left": "20px",
-                            "margin_top": "20px",
-                            "min_height": "auto",
-                            "width": "50px",
-                            "display": "block",
-                            "margin_right": "20px",
-                            "min_width": "auto",
-                            "height": "50px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "margin_bottom": "20px",
-                            "margin_left": "20px",
-                            "margin_top": "20px",
-                            "min_height": "auto",
-                            "width": "50px",
-                            "display": "block",
-                            "margin_right": "20px",
-                            "min_width": "auto",
-                            "height": "50px"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
     "help": [
         "https://drafts.csswg.org/css-flexbox-1/#item-margins"
     ],
     "matches": "reference/flex-container-margin-ref.html",
-    "assert": "The margins of adjacent flex items do not collapse."
+    "assert": "The margins of adjacent flex items do not collapse.",
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "margin_right": "20px",
+                    "background_color": "rgb(51, 51, 51)",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
+                    "margin_top": "20px",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "margin_left": "20px",
+                    "background_clip": "initial",
+                    "margin_bottom": "20px",
+                    "display": "flex",
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "background_origin": "initial",
+                    "background_position_x": "initial"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "margin_right": "20px",
+                            "background_size": "initial",
+                            "background_color": "rgb(238, 238, 238)",
+                            "margin_left": "20px",
+                            "width": "50px",
+                            "background_repeat_y": "initial",
+                            "margin_top": "20px",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "margin_bottom": "20px",
+                            "display": "block",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "50px",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "margin_right": "20px",
+                            "background_size": "initial",
+                            "background_color": "rgb(238, 238, 238)",
+                            "margin_left": "20px",
+                            "width": "50px",
+                            "background_repeat_y": "initial",
+                            "margin_top": "20px",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "margin_bottom": "20px",
+                            "display": "block",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "50px",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "margin_right": "20px",
+                            "background_size": "initial",
+                            "background_color": "rgb(238, 238, 238)",
+                            "margin_left": "20px",
+                            "width": "50px",
+                            "background_repeat_y": "initial",
+                            "margin_top": "20px",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "margin_bottom": "20px",
+                            "display": "block",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "height": "50px",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            }
+        ]
+    }
 }

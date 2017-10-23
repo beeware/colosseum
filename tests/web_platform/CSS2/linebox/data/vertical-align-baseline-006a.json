@@ -1,60 +1,68 @@
 {
-    "assert": "The baseline of an (anonymous) inline element is aligned with the baseline of the last line box of an 'inline-block' in the normal flow as 'vertical-align: baseline' is by default applied. In such case, the vertical padding and vertical margin have no influence on the position of the baseline line of an 'inline-block'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
                         "text": "LLLLL",
                         "style": {}
                     },
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "p",
                                 "children": [
                                     {
                                         "text": "ABCDE",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "p",
                                 "style": {
-                                    "margin_top": "30px",
-                                    "display": "block",
-                                    "height": "36px",
-                                    "width": "101.6875px",
-                                    "margin_bottom": "30px"
+                                    "margin_bottom": "1.12em",
+                                    "margin_left": "0",
+                                    "unicode_bidi": "embed",
+                                    "margin_top": "1.12em",
+                                    "margin_right": "0",
+                                    "display": "block"
                                 }
                             },
                             {
+                                "tag": "p",
                                 "children": [
                                     {
                                         "text": "LLLLL",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "p",
                                 "style": {
-                                    "margin_top": "30px",
-                                    "display": "block",
-                                    "height": "36px",
-                                    "width": "101.6875px",
-                                    "margin_bottom": "30px"
+                                    "margin_bottom": "1.12em",
+                                    "margin_left": "0",
+                                    "unicode_bidi": "embed",
+                                    "margin_top": "1.12em",
+                                    "margin_right": "0",
+                                    "display": "block"
                                 }
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "margin_top": "9px",
-                            "padding_top": "21px",
-                            "display": "inline-block",
-                            "height": "162px",
-                            "width": "101.6875px",
-                            "margin_bottom": "9px",
-                            "padding_bottom": "21px"
+                            "margin_bottom": "0.3em",
+                            "font_size": "30px",
+                            "unicode_bidi": "embed",
+                            "padding_right": "0em",
+                            "padding_left": "0em",
+                            "margin_top": "0.3em",
+                            "padding_top": "0.7em",
+                            "vertical_align": "baseline",
+                            "margin_left": "0em",
+                            "margin_right": "0em",
+                            "padding_bottom": "0.7em",
+                            "display": "inline-block"
                         }
                     },
                     {
@@ -62,24 +70,21 @@
                         "style": {}
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "222px",
-                    "width": "624px"
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "222px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The baseline of an (anonymous) inline element is aligned with the baseline of the last line box of an 'inline-block' in the normal flow as 'vertical-align: baseline' is by default applied. In such case, the vertical padding and vertical margin have no influence on the position of the baseline line of an 'inline-block'.",
     "matches": null
 }

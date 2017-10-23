@@ -1,54 +1,53 @@
 {
     "matches": "positioning-float-002-ref.xht",
+    "assert": "Floating a box will first lay out the box then shift it to the right.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme"
+    ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
-                        "style": {},
-                        "text": "Filler Text"
+                        "text": "Filler Text",
+                        "style": {}
                     },
                     {
+                        "tag": "div",
                         "children": [
                             {
-                                "style": {},
-                                "text": "Floated element"
+                                "text": "Floated element",
+                                "style": {}
                             }
                         ],
                         "style": {
                             "float": "right",
-                            "height": "20px",
-                            "display": "block",
-                            "width": "102.640625px"
-                        },
-                        "tag": "div"
+                            "line_height": "1.25",
+                            "unicode_bidi": "embed",
+                            "display": "block"
+                        }
                     },
                     {
-                        "style": {},
-                        "text": "Filler Text"
+                        "text": "Filler Text",
+                        "style": {}
                     }
                 ],
                 "style": {
-                    "height": "20px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
+                    "line_height": "1.25",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
             }
         ],
         "style": {
-            "margin_left": "8px",
-            "height": "20px",
-            "display": "block",
+            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": "Floating a box will first lay out the box then shift it to the right.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme"
-    ]
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

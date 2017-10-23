@@ -1,46 +1,67 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest inline-block ancestor box.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "104px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
+                "tag": "div",
                 "style": {
+                    "background_position_y": "initial",
+                    "background_size": "initial",
                     "width": "60px",
+                    "height": "60px",
+                    "background_clip": "initial",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
                     "padding_bottom": "20px",
                     "padding_left": "20px",
+                    "background_color": "red",
+                    "display": "inline-block",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
                     "padding_right": "20px",
-                    "padding_top": "20px",
-                    "height": "60px",
-                    "display": "inline-block"
+                    "padding_top": "20px"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "width": "100px",
-                            "height": "100px",
-                            "display": "block",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
                             "top": "-20px",
+                            "height": "100px",
+                            "position": "relative",
                             "left": "-20px",
-                            "position": "relative"
-                        },
-                        "tag": "div"
+                            "background_clip": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "width": "100px",
+                            "background_color": "green",
+                            "display": "block",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial"
+                        }
                     }
                 ]
             }
         ]
     },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "assert": "If the element's position is 'relative', the containing block is formed by the content edge of the nearest inline-block ancestor box."
 }

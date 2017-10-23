@@ -1,39 +1,61 @@
 {
-    "matches": "../reference/ref-filled-green-100px-square.xht",
-    "assert": "If the element's position is 'static', the containing block is formed by the content edge of the nearest inline-block ancestor box.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "104px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
+                "tag": "div",
                 "style": {
+                    "background_position_y": "initial",
+                    "background_size": "initial",
                     "width": "100px",
                     "height": "100px",
-                    "display": "inline-block"
+                    "background_clip": "initial",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_color": "red",
+                    "display": "inline-block",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial"
                 },
-                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "width": "100px",
-                            "height": "100px",
-                            "display": "block"
-                        },
-                        "tag": "div"
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "width": "100%",
+                            "height": "100%",
+                            "position": "static",
+                            "background_clip": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "background_color": "green",
+                            "display": "block",
+                            "background_image": "initial",
+                            "background_repeat_y": "initial"
+                        }
                     }
                 ]
             }
         ]
     },
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "assert": "If the element's position is 'static', the containing block is formed by the content edge of the nearest inline-block ancestor box."
 }

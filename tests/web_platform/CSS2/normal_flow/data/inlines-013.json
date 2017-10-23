@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
-        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
-    ],
+    "assert": null,
+    "matches": "inlines-013-ref.xht",
     "test_case": {
         "children": [
             {
@@ -14,11 +12,16 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
                     "top": "100px",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
                     "position": "absolute",
-                    "width": "153.625px",
-                    "height": "64px"
+                    "font_family": "monospace",
+                    "display": "block",
+                    "line_height": "1",
+                    "font_size": "64px"
                 }
             },
             {
@@ -30,21 +33,23 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
                     "top": "164px",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
                     "position": "absolute",
-                    "width": "153.625px",
-                    "height": "64px"
+                    "font_family": "monospace",
+                    "display": "block",
+                    "line_height": "1",
+                    "font_size": "64px"
                 }
             },
             {
                 "children": [
                     {
                         "tag": "img",
-                        "style": {
-                            "height": "1px",
-                            "width": "1px"
-                        }
+                        "style": {}
                     },
                     {
                         "text": "this should generate a line box 64px high",
@@ -59,10 +64,15 @@
                         ],
                         "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "64px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal",
+                            "font_variant_caps": "normal",
                             "float": "left",
-                            "width": "153.625px"
+                            "font_weight": "normal",
+                            "font_family": "monospace",
+                            "display": "block",
+                            "line_height": "1",
+                            "font_size": "64px"
                         }
                     },
                     {
@@ -72,25 +82,32 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
                     "top": "100px",
-                    "position": "absolute",
+                    "font_variant_caps": "normal",
                     "width": "0px",
-                    "height": "128px"
+                    "font_weight": "normal",
+                    "position": "absolute",
+                    "font_family": "monospace",
+                    "display": "block",
+                    "line_height": "1",
+                    "font_size": "64px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": null,
-    "matches": "inlines-013-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes",
+        "http://www.w3.org/TR/CSS21/visuren.html#float-position"
+    ]
 }

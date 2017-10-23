@@ -1,129 +1,235 @@
 {
     "assert": "Content Distribution properties with 'stretch' value render correcly.",
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#grid-align",
-        "https://drafts.csswg.org/css-align-3/#content-distribution",
-        "https://drafts.csswg.org/css-align-3/#valdef-align-content-stretch"
-    ],
+    "matches": "../../reference/ref-filled-green-200px-square.html",
     "test_case": {
+        "tag": "BODY",
         "children": [
             {
+                "tag": "DIV",
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "left": "70px",
-                            "display": "block",
+                            "background_attachment": "initial",
+                            "1": "left",
+                            "0": "top",
+                            "background_clip": "initial",
                             "height": "60px",
-                            "top": "0px",
+                            "background_position_y": "initial",
+                            "position": "absolute",
+                            "background_color": "red",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
                             "width": "60px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "left": "140px",
-                            "display": "block",
+                            "background_attachment": "initial",
+                            "1": "left",
+                            "0": "top",
+                            "background_clip": "initial",
                             "height": "60px",
-                            "top": "0px",
+                            "background_position_y": "initial",
+                            "position": "absolute",
+                            "background_color": "red",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
                             "width": "60px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "left": "0px",
-                            "display": "block",
+                            "background_attachment": "initial",
+                            "1": "left",
+                            "0": "top",
+                            "background_clip": "initial",
                             "height": "60px",
-                            "top": "70px",
+                            "background_position_y": "initial",
+                            "position": "absolute",
+                            "background_color": "red",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
                             "width": "60px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "left": "0px",
-                            "display": "block",
+                            "background_attachment": "initial",
+                            "1": "left",
+                            "0": "top",
+                            "background_clip": "initial",
                             "height": "60px",
-                            "top": "140px",
+                            "background_position_y": "initial",
+                            "position": "absolute",
+                            "background_color": "red",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
                             "width": "60px",
-                            "position": "absolute"
-                        },
-                        "tag": "DIV"
+                            "background_position_x": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     }
                 ],
                 "style": {
                     "z_index": "-1",
-                    "width": "200px",
-                    "display": "block",
+                    "background_attachment": "initial",
+                    "background_clip": "initial",
                     "height": "200px",
-                    "position": "absolute"
-                },
-                "tag": "DIV"
+                    "background_position_y": "initial",
+                    "position": "absolute",
+                    "background_color": "green",
+                    "background_image": "initial",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "background_repeat_y": "initial",
+                    "width": "200px",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "display": "block"
+                }
             },
             {
+                "tag": "DIV",
                 "children": [
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "60px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "60px"
-                        },
-                        "tag": "DIV"
+                            "background_color": "green",
+                            "background_attachment": "initial",
+                            "1": "grid-row-end",
+                            "0": "grid-row-start",
+                            "2": "grid-column-start",
+                            "background_position_y": "initial",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "background_clip": "initial",
+                            "3": "grid-column-end",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "60px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "60px"
-                        },
-                        "tag": "DIV"
+                            "background_color": "green",
+                            "background_attachment": "initial",
+                            "1": "grid-row-end",
+                            "0": "grid-row-start",
+                            "2": "grid-column-start",
+                            "background_position_y": "initial",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "background_clip": "initial",
+                            "3": "grid-column-end",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "60px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "60px"
-                        },
-                        "tag": "DIV"
+                            "background_color": "green",
+                            "background_attachment": "initial",
+                            "1": "grid-row-end",
+                            "0": "grid-row-start",
+                            "2": "grid-column-start",
+                            "background_position_y": "initial",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "background_clip": "initial",
+                            "3": "grid-column-end",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     },
                     {
+                        "tag": "DIV",
                         "style": {
-                            "height": "60px",
-                            "min_height": "auto",
-                            "display": "block",
-                            "min_width": "auto",
-                            "width": "60px"
-                        },
-                        "tag": "DIV"
+                            "background_color": "green",
+                            "background_attachment": "initial",
+                            "1": "grid-row-end",
+                            "0": "grid-row-start",
+                            "2": "grid-column-start",
+                            "background_position_y": "initial",
+                            "background_position_x": "initial",
+                            "background_image": "initial",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_repeat_y": "initial",
+                            "background_clip": "initial",
+                            "3": "grid-column-end",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "display": "block"
+                        }
                     }
                 ],
                 "style": {
-                    "display": "grid",
+                    "grid_template_columns": "auto auto auto",
+                    "grid_row_gap": "10px",
+                    "unicode_bidi": "embed",
+                    "justify_content": "stretch",
+                    "z_index": "1",
+                    "width": "200px",
+                    "grid_column_gap": "10px",
+                    "align_content": "stretch",
                     "height": "200px",
-                    "width": "200px"
-                },
-                "tag": "DIV"
+                    "display": "grid",
+                    "grid_template_rows": "auto auto auto"
+                }
             }
         ],
         "style": {
-            "margin_bottom": "8px",
             "margin_top": "8px",
-            "height": "200px",
-            "width": "624px",
-            "margin_left": "8px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
             "display": "block"
-        },
-        "tag": "BODY"
+        }
     },
-    "matches": "../../reference/ref-filled-green-200px-square.html"
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#grid-align",
+        "https://drafts.csswg.org/css-align-3/#content-distribution",
+        "https://drafts.csswg.org/css-align-3/#valdef-align-content-stretch"
+    ]
 }

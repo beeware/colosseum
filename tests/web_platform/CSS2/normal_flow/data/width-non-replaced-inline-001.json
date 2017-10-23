@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
+    "assert": "Content width of a non-replaced inline element is that of the rendered content.",
+    "matches": "width-non-replaced-inline-001-ref.xht",
     "test_case": {
         "children": [
             {
@@ -13,28 +12,29 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "border_left_style": "solid",
-                    "border_left_width": "5px",
-                    "width": "279.46875px",
-                    "height": "18px",
-                    "border_right_width": "5px",
+                    "unicode_bidi": "embed",
                     "border_right_style": "solid",
-                    "float": "left"
+                    "border_left_width": "5px",
+                    "border_left_style": "solid",
+                    "float": "left",
+                    "border_left_color": "black",
+                    "border_right_color": "black",
+                    "display": "block",
+                    "border_right_width": "5px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "Content width of a non-replaced inline element is that of the rendered content.",
-    "matches": "width-non-replaced-inline-001-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

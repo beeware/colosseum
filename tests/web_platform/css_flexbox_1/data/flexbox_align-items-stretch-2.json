@@ -1,36 +1,54 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
+    ],
+    "matches": "flexbox_align-items-stretch-2-ref.html",
+    "assert": null,
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "96px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "width": "480px",
+                    "margin_right": "0px",
+                    "align_items": "stretch",
+                    "background_color": "black",
+                    "background_image": "initial",
+                    "width": "30em",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "height": "6em",
+                    "background_size": "initial",
+                    "margin_left": "0px",
+                    "background_clip": "initial",
+                    "margin_bottom": "1em",
                     "display": "flex",
-                    "height": "96px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "margin_top": "1em",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "margin_top": "96px",
-                            "min_height": "auto",
-                            "width": "128px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "0px"
+                            "width": "8em",
+                            "display": "inline-block",
+                            "flex_grow": "0",
+                            "flex_shrink": "0",
+                            "margin_top": "6em",
+                            "flex_basis": "auto"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -39,24 +57,24 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "128px",
-                            "display": "block",
-                            "height": "96px"
-                        }
+                            "flex_shrink": "0",
+                            "flex_grow": "0",
+                            "flex_basis": "auto",
+                            "display": "inline-block",
+                            "width": "8em"
+                        },
+                        "tag": "SPAN"
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "128px",
-                            "display": "block",
-                            "height": "96px"
+                            "flex_shrink": "0",
+                            "flex_grow": "0",
+                            "flex_basis": "auto",
+                            "display": "inline-block",
+                            "width": "8em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -67,10 +85,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
-    ],
-    "matches": "flexbox_align-items-stretch-2-ref.html",
-    "assert": null
+    }
 }

@@ -1,81 +1,73 @@
 {
-    "matches": "block-in-inline-007-ref.xht",
-    "assert": "When an inline box contains block boxes,     the inline box is broken around the blocks.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "201px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "25.625px",
-                    "border_top_color": "rgb(128, 128, 128)",
-                    "border_bottom_color": "rgb(128, 128, 128)",
-                    "border_right_color": "rgb(128, 128, 128)",
-                    "border_left_color": "rgb(128, 128, 128)",
-                    "height": "201px",
-                    "display": "table"
-                },
                 "tag": "table",
+                "style": {
+                    "border_spacing": "2px"
+                },
                 "children": [
                     {
+                        "tag": "tr",
                         "style": {
-                            "width": "25.625px",
-                            "border_top_color": "rgb(128, 128, 128)",
-                            "border_bottom_color": "rgb(128, 128, 128)",
-                            "border_right_color": "rgb(128, 128, 128)",
-                            "border_left_color": "rgb(128, 128, 128)",
-                            "height": "197px",
+                            "vertical_align": "inherit",
                             "display": "table-row"
                         },
-                        "tag": "tr",
                         "children": [
                             {
-                                "style": {
-                                    "width": "7.8125px",
-                                    "padding_bottom": "1px",
-                                    "padding_left": "1px",
-                                    "padding_right": "1px",
-                                    "padding_top": "1px",
-                                    "height": "195px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "td",
+                                "style": {
+                                    "font_variant_caps": "normal",
+                                    "vertical_align": "inherit",
+                                    "font_weight": "normal",
+                                    "display": "table-cell",
+                                    "font_style": "normal",
+                                    "line_height": "1",
+                                    "font_size": "1em",
+                                    "font_family": "monospace"
+                                },
                                 "children": [
                                     {
-                                        "style": {
-                                            "width": "7.8125px",
-                                            "margin_bottom": "13px",
-                                            "height": "169px",
-                                            "margin_top": "13px",
-                                            "display": "block"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "margin_left": "0px",
+                                            "display": "block",
+                                            "margin_top": "1em",
+                                            "margin_bottom": "1em",
+                                            "unicode_bidi": "embed",
+                                            "margin_right": "0px"
+                                        },
                                         "children": [
                                             {
-                                                "style": {},
                                                 "tag": "div",
+                                                "style": {
+                                                    "display": "inline",
+                                                    "unicode_bidi": "embed"
+                                                },
                                                 "children": [
                                                     {
                                                         "style": {},
                                                         "text": "A"
                                                     },
                                                     {
-                                                        "style": {
-                                                            "width": "7.8125px",
-                                                            "margin_bottom": "13px",
-                                                            "height": "13px",
-                                                            "margin_top": "13px",
-                                                            "display": "block"
-                                                        },
                                                         "tag": "div",
+                                                        "style": {
+                                                            "margin_left": "0px",
+                                                            "display": "block",
+                                                            "margin_top": "1em",
+                                                            "margin_bottom": "1em",
+                                                            "unicode_bidi": "embed",
+                                                            "margin_right": "0px"
+                                                        },
                                                         "children": [
                                                             {
                                                                 "style": {},
@@ -84,14 +76,15 @@
                                                         ]
                                                     },
                                                     {
-                                                        "style": {
-                                                            "width": "7.8125px",
-                                                            "margin_bottom": "13px",
-                                                            "height": "13px",
-                                                            "margin_top": "13px",
-                                                            "display": "block"
-                                                        },
                                                         "tag": "div",
+                                                        "style": {
+                                                            "margin_left": "0px",
+                                                            "display": "block",
+                                                            "margin_top": "1em",
+                                                            "margin_bottom": "1em",
+                                                            "unicode_bidi": "embed",
+                                                            "margin_right": "0px"
+                                                        },
                                                         "children": [
                                                             {
                                                                 "style": {},
@@ -104,14 +97,15 @@
                                                         "text": "D"
                                                     },
                                                     {
-                                                        "style": {
-                                                            "width": "7.8125px",
-                                                            "margin_bottom": "13px",
-                                                            "height": "13px",
-                                                            "margin_top": "13px",
-                                                            "display": "block"
-                                                        },
                                                         "tag": "div",
+                                                        "style": {
+                                                            "margin_left": "0px",
+                                                            "display": "block",
+                                                            "margin_top": "1em",
+                                                            "margin_bottom": "1em",
+                                                            "unicode_bidi": "embed",
+                                                            "margin_right": "0px"
+                                                        },
                                                         "children": [
                                                             {
                                                                 "style": {},
@@ -124,14 +118,15 @@
                                                         "text": "F"
                                                     },
                                                     {
-                                                        "style": {
-                                                            "width": "7.8125px",
-                                                            "margin_bottom": "13px",
-                                                            "height": "13px",
-                                                            "margin_top": "13px",
-                                                            "display": "block"
-                                                        },
                                                         "tag": "div",
+                                                        "style": {
+                                                            "margin_left": "0px",
+                                                            "display": "block",
+                                                            "margin_top": "1em",
+                                                            "margin_bottom": "1em",
+                                                            "unicode_bidi": "embed",
+                                                            "margin_right": "0px"
+                                                        },
                                                         "children": [
                                                             {
                                                                 "style": {},
@@ -146,26 +141,26 @@
                                 ]
                             },
                             {
-                                "style": {
-                                    "width": "7.8125px",
-                                    "padding_bottom": "1px",
-                                    "padding_left": "1px",
-                                    "padding_right": "1px",
-                                    "padding_top": "1px",
-                                    "height": "195px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "td",
+                                "style": {
+                                    "font_variant_caps": "normal",
+                                    "vertical_align": "inherit",
+                                    "font_weight": "normal",
+                                    "display": "table-cell",
+                                    "font_style": "normal",
+                                    "line_height": "1",
+                                    "font_size": "1em",
+                                    "font_family": "monospace"
+                                },
                                 "children": [
                                     {
-                                        "style": {
-                                            "width": "7.8125px",
-                                            "margin_bottom": "13px",
-                                            "height": "169px",
-                                            "margin_top": "13px",
-                                            "display": "block"
-                                        },
                                         "tag": "pre",
+                                        "style": {
+                                            "font_family": "monospace",
+                                            "white_space": "pre",
+                                            "display": "block",
+                                            "unicode_bidi": "embed"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -181,7 +176,9 @@
             }
         ]
     },
+    "matches": "block-in-inline-007-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": "When an inline box contains block boxes,     the inline box is broken around the blocks."
 }

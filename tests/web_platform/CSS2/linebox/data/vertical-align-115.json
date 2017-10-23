@@ -1,88 +1,105 @@
 {
-    "assert": "The 'vertical-align' property sets the keyword 'sub'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "span",
                                 "style": {
-                                    "border_left_color": "rgb(255, 165, 0)",
-                                    "border_right_color": "rgb(255, 165, 0)",
-                                    "border_bottom_color": "rgb(255, 165, 0)",
-                                    "border_top_color": "rgb(255, 165, 0)"
+                                    "vertical_align": "sub",
+                                    "color": "orange"
                                 }
                             },
                             {
+                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "span",
                                 "style": {
-                                    "border_left_color": "rgb(255, 255, 255)",
-                                    "border_right_color": "rgb(255, 255, 255)",
-                                    "border_bottom_color": "rgb(255, 255, 255)",
-                                    "border_top_color": "rgb(255, 255, 255)"
+                                    "font_weight": "normal",
+                                    "font_variant_caps": "normal",
+                                    "font_family": "Ahem",
+                                    "font_size": "96px",
+                                    "font_style": "normal",
+                                    "line_height": "1em",
+                                    "color": "white"
                                 }
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "97px",
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
                             "position": "relative",
-                            "width": "624px"
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "48px",
+                            "font_style": "normal",
+                            "line_height": "1em",
+                            "display": "block"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "top": "38px",
+                            "font_variant_caps": "normal",
                             "width": "48px",
-                            "border_top_style": "solid",
-                            "height": "48px",
-                            "display": "block",
-                            "border_top_width": "2px",
-                            "z_index": "1",
                             "position": "absolute",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "font_family": "Ahem",
+                            "font_size": "48px",
+                            "z_index": "1",
+                            "border_top_color": "blue",
+                            "font_weight": "normal",
+                            "font_style": "normal",
+                            "border_top_width": "2px",
+                            "unicode_bidi": "embed",
+                            "top": "38px",
+                            "border_top_style": "solid",
+                            "line_height": "1em",
+                            "height": "48px",
+                            "display": "block"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "97px",
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
                     "position": "relative",
-                    "width": "624px"
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "48px",
+                    "font_style": "normal",
+                    "line_height": "1em",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "97px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'vertical-align' property sets the keyword 'sub'.",
     "matches": null
 }

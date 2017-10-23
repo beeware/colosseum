@@ -5,11 +5,14 @@ from . import parser
 
 class Choices:
     "A class to define allowable data types for a property"
-    def __init__(self, *constants, length=False, percentage=False, integer=False, color=False):
+    def __init__(
+            self, *constants, length=False, percentage=False,
+            integer=False, number=False, color=False):
         self.constants = set(constants)
         self.length = length
         self.percentage = percentage
         self.integer = integer
+        self.number = number
         self.color = color
 
     def validate(self, value):
@@ -25,6 +28,11 @@ class Choices:
         if self.integer:
             try:
                 return int(value)
+            except (ValueError, TypeError):
+                pass
+        if self.number:
+            try:
+                return float(value)
             except (ValueError, TypeError):
                 pass
         if self.color:
@@ -48,6 +56,8 @@ class Choices:
             choices.append("<percentage>")
         if self.integer:
             choices.append("<integer>")
+        if self.number:
+            choices.append("<number>")
         if self.color:
             choices.append("<color>")
         return ", ".join(sorted(choices))
@@ -63,7 +73,8 @@ HTML5 = 'html5'
 ######################################################################
 
 AUTO = 'auto'
-
+COLUMN = 'column'
+ROW = 'row'
 TRANSPARENT = 'transparent'
 
 ######################################################################
@@ -132,6 +143,14 @@ TABLE_COLUMN = 'table-column'
 TABLE_CELL = 'table-cell'
 TABLE_CAPTION = 'table-caption'
 
+# CSS Flexbox
+FLEX = 'flex'
+INLINE_FLEX = 'inline-flex'
+
+# CSS Grid
+GRID = 'grid'
+INLINE_GRID = 'inline-grid'
+
 DISPLAY_CHOICES = Choices(
     None,
     INLINE,
@@ -148,6 +167,12 @@ DISPLAY_CHOICES = Choices(
     TABLE_COLUMN,
     TABLE_CELL,
     TABLE_CAPTION,
+
+    FLEX,
+    INLINE_FLEX,
+
+    GRID,
+    INLINE_GRID,
 )
 
 ######################################################################
@@ -200,5 +225,80 @@ UNICODE_BIDI_CHOICES = Choices(NORMAL, EMBED, BIDI_OVERRIDE)
 ######################################################################
 
 SIZE_CHOICES = Choices(AUTO, length=True, percentage=True)
-MIN_SIZE_CHOICES = Choices(length=True, percentage=True)
+MIN_SIZE_CHOICES = Choices(AUTO, length=True, percentage=True)
 MAX_SIZE_CHOICES = Choices(None, length=True, percentage=True)
+
+######################################################################
+# Flex flow (CSS-flexbox-1, Section 5)
+######################################################################
+
+ROW_REVERSE = 'row-reverse'
+COLUMN_REVERSE = 'column-reverse'
+
+FLEX_DIRECTION_CHOICES = Choices(ROW, ROW_REVERSE, COLUMN, COLUMN_REVERSE)
+
+NOWRAP = 'no-wrap'
+WRAP = 'wrap'
+WRAP_REVERSE = 'wrap-reverse'
+
+FLEX_WRAP_CHOICES = Choices(NOWRAP, WRAP, WRAP_REVERSE)
+
+ORDER_CHOICES = Choices(integer=True)
+
+######################################################################
+# Flexibility (CSS-flexbox-1, Section 7)
+######################################################################
+
+FLEX_GROW_CHOICES = Choices(number=True)
+FLEX_SHRINK_CHOICES = Choices(number=True)
+
+CONTENT = 'content'
+
+FLEX_BASIS_CHOICES = Choices(CONTENT, AUTO, length=True, percentage=True)
+
+######################################################################
+# Flex Alignment (CSS-flexbox-1, Section 8)
+######################################################################
+
+FLEX_START = 'flex-start'
+FLEX_END = 'flex-end'
+CENTER = 'center'
+SPACE_BETWEEN = 'space-between'
+SPACE_AROUND = 'space-around'
+
+JUSTIFY_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND)
+
+BASELINE = 'baseline'
+STRETCH = 'stretch'
+
+ALIGN_SELF_CHOICES = Choices(AUTO, FLEX_START, FLEX_END, CENTER, BASELINE, STRETCH)
+ALIGN_ITEMS_CHOICES = Choices(AUTO, FLEX_START, FLEX_END, CENTER, BASELINE, STRETCH)
+
+ALIGN_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND, STRETCH)
+
+
+######################################################################
+# Grid template (CSS-grid-1, Section 7)
+######################################################################
+
+GRID_TEMPLATE_CHOICES = Choices(None) #, track_list=True, auto_track_list=True)
+
+GRID_TEMPLATE_AREA_CHOICES = Choices(None) #, strings=True), initial=None
+
+GRID_AUTO_CHOICES = Choices(AUTO) #, track_sizes=True)
+
+DENSE = 'dense'
+
+GRID_AUTO_FLOW_CHOICES = Choices(ROW, COLUMN, DENSE)
+
+######################################################################
+# Grid placement (CSS-grid-1, Section 8)
+######################################################################
+
+GRID_PLACEMENT_CHOICES = Choices(AUTO) #, grid_line=True)
+
+######################################################################
+# Grid alignment (CSS-grid-1, Section 10)
+######################################################################
+
+GRID_GAP_CHOICES = Choices(percentage=True)

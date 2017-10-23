@@ -1,83 +1,87 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "div",
                                 "children": [
                                     {
+                                        "tag": "span",
                                         "children": [
                                             {
                                                 "text": "FAIL",
                                                 "style": {}
                                             }
                                         ],
-                                        "tag": "span",
                                         "style": {
-                                            "border_left_color": "rgb(255, 0, 0)",
-                                            "border_right_color": "rgb(255, 0, 0)",
-                                            "border_bottom_color": "rgb(255, 0, 0)",
-                                            "border_top_color": "rgb(255, 0, 0)"
+                                            "color": "red"
                                         }
                                     },
                                     {
+                                        "tag": "span",
                                         "children": [
                                             {
                                                 "text": "PASS",
                                                 "style": {}
                                             }
                                         ],
-                                        "tag": "span",
                                         "style": {
-                                            "border_left_color": "rgb(255, 255, 255)",
-                                            "border_right_color": "rgb(255, 255, 255)",
-                                            "border_bottom_color": "rgb(255, 255, 255)",
+                                            "background_position_x": "initial",
                                             "padding_top": "10px",
-                                            "border_top_color": "rgb(255, 255, 255)"
+                                            "background_origin": "initial",
+                                            "background_clip": "initial",
+                                            "background_color": "green",
+                                            "background_image": "initial",
+                                            "background_repeat_x": "initial",
+                                            "background_attachment": "initial",
+                                            "background_size": "initial",
+                                            "color": "white",
+                                            "background_repeat_y": "initial",
+                                            "background_position_y": "initial"
                                         }
                                     }
                                 ],
-                                "tag": "div",
                                 "style": {
-                                    "height": "20px",
-                                    "display": "block",
                                     "padding_top": "10px",
-                                    "width": "200px"
+                                    "font_size": "50px",
+                                    "width": "200px",
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 }
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "30px",
-                            "width": "624px"
+                            "line_height": "1em",
+                            "unicode_bidi": "embed",
+                            "display": "block"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "30px",
-                    "width": "624px"
+                    "font_size": "10px",
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "30px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": null,
     "matches": "line-height-125-ref.xht"
 }

@@ -1,52 +1,70 @@
 {
     "matches": "position-relative-038-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "right": "96px",
-                            "left": "192px",
-                            "height": "96px",
-                            "display": "block",
-                            "position": "relative",
-                            "direction": "rtl",
-                            "width": "96px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "border_left_width": "3px",
-                    "border_top_style": "solid",
-                    "direction": "rtl",
-                    "width": "192px",
-                    "border_left_style": "solid",
-                    "height": "96px",
-                    "border_right_width": "3px",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_right_style": "solid",
-                    "border_bottom_width": "3px",
-                    "border_bottom_style": "solid"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "102px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Relative positioning with left and right values and over-constrained situations when direction is right-to-left.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "1in",
+                            "right": "1in",
+                            "background_clip": "initial",
+                            "height": "1in",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "relative",
+                            "left": "2in",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "2in",
+                    "border_left_width": "3px",
+                    "border_bottom_style": "solid",
+                    "border_bottom_color": "initial",
+                    "border_image_repeat": "initial",
+                    "border_left_style": "solid",
+                    "border_left_color": "initial",
+                    "border_image_width": "initial",
+                    "direction": "rtl",
+                    "display": "block",
+                    "border_image_outset": "initial",
+                    "border_image_slice": "initial",
+                    "border_right_width": "3px",
+                    "border_top_color": "initial",
+                    "border_top_width": "3px",
+                    "border_right_style": "solid",
+                    "border_image_source": "initial",
+                    "border_right_color": "initial",
+                    "border_top_style": "solid",
+                    "unicode_bidi": "embed",
+                    "border_bottom_width": "3px"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

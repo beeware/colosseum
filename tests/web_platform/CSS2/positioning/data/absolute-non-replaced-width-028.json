@@ -1,87 +1,93 @@
 {
     "matches": null,
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test does not apply to such user agent."
-                    }
-                ],
-                "style": {
-                    "height": "36px",
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "Test passes if there is a filled green rectangle with inactive scrollbars and"
-                    },
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "no red"
-                            }
-                        ],
-                        "style": {},
-                        "tag": "strong"
-                    },
-                    {
-                        "style": {},
-                        "text": "."
-                    }
-                ],
-                "style": {
-                    "height": "18px",
-                    "margin_bottom": "16px",
-                    "display": "block",
-                    "margin_top": "16px",
-                    "width": "624px"
-                },
-                "tag": "p"
-            },
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "100px",
-                            "width": "500px"
-                        },
-                        "tag": "img"
-                    }
-                ],
-                "style": {
-                    "position": "absolute",
-                    "height": "100px",
-                    "display": "block",
-                    "width": "500px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "70px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "This test checks interaction of percentage height of an inline replaced element with its parent having scrollbars and with the parent's width determined by 'shrink-to-fit' width algorithm. In this test, the image height should be 100px minus scrollbar height since space taken up by generated scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars. Then the width of parent should be (used image height == 100px minus scrollbar) * (intrinsic ratio == 5width:1height).",
     "help": [
         "https://www.w3.org/TR/CSS21/visufx.html#overflow",
         "https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width",
         "https://www.w3.org/TR/CSS21/visudet.html#float-width"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "text": "PREREQUISITE: User agent needs to support scrollbars as the scrolling mechanism. If it does not, then this test does not apply to such user agent.",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "1.12em",
+                    "margin_top": "1.12em",
+                    "margin_right": "0",
+                    "margin_left": "0",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "text": "Test passes if there is a filled green rectangle with inactive scrollbars and",
+                        "style": {}
+                    },
+                    {
+                        "tag": "strong",
+                        "children": [
+                            {
+                                "text": "no red",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "font_weight": "bolder"
+                        }
+                    },
+                    {
+                        "text": ".",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_bottom": "1.12em",
+                    "margin_top": "1.12em",
+                    "margin_right": "0",
+                    "margin_left": "0",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "img",
+                        "style": {
+                            "vertical_align": "bottom",
+                            "height": "100%"
+                        }
+                    }
+                ],
+                "style": {
+                    "overflow_x": "scroll",
+                    "height": "100px",
+                    "position": "absolute",
+                    "overflow_y": "scroll",
+                    "background_color": "red",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

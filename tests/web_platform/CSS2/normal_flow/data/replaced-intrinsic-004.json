@@ -1,28 +1,33 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
+    "assert": "An inline replaced element with an intrinsic height only     and a specified width is drawn at the specified width and intrinsic height.",
+    "matches": "../reference/ref-filled-green-100px-square.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "border_top_style": "solid",
+                    "border_image_width": "initial",
                     "display": "block",
-                    "border_left_width": "20px",
-                    "border_bottom_style": "solid",
-                    "border_bottom_width": "20px",
-                    "position": "absolute",
-                    "height": "60px",
-                    "border_left_style": "solid",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "width": "60px",
-                    "border_top_width": "20px",
                     "border_right_width": "20px",
-                    "border_top_color": "rgb(0, 128, 0)",
                     "border_right_style": "solid",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_style": "solid"
+                    "border_left_width": "20px",
+                    "border_image_slice": "initial",
+                    "border_top_color": "green",
+                    "border_bottom_style": "solid",
+                    "border_image_outset": "initial",
+                    "border_bottom_color": "green",
+                    "border_top_width": "20px",
+                    "border_bottom_width": "20px",
+                    "height": "60px",
+                    "border_image_source": "initial",
+                    "border_left_style": "solid",
+                    "width": "60px",
+                    "border_image_repeat": "initial",
+                    "border_right_color": "green",
+                    "border_left_color": "green",
+                    "position": "absolute"
                 }
             },
             {
@@ -36,42 +41,55 @@
                         ],
                         "tag": "object",
                         "style": {
-                            "border_left_width": "20px",
-                            "border_bottom_style": "solid",
-                            "border_bottom_width": "20px",
-                            "height": "60px",
-                            "border_left_style": "solid",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "width": "60px",
-                            "border_top_width": "20px",
+                            "background_position_y": "initial",
+                            "border_bottom_color": "red",
+                            "border_image_width": "initial",
+                            "background_color": "green",
+                            "background_repeat_y": "initial",
                             "border_right_width": "20px",
-                            "border_top_color": "rgb(255, 0, 0)",
                             "border_right_style": "solid",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "border_bottom_color": "rgb(255, 0, 0)",
-                            "border_top_style": "solid"
+                            "border_left_width": "20px",
+                            "border_image_slice": "initial",
+                            "border_top_color": "red",
+                            "border_bottom_style": "solid",
+                            "border_image_outset": "initial",
+                            "background_clip": "initial",
+                            "border_top_style": "solid",
+                            "background_position_x": "initial",
+                            "background_origin": "initial",
+                            "background_size": "initial",
+                            "border_top_width": "20px",
+                            "background_attachment": "initial",
+                            "border_bottom_width": "20px",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "border_image_source": "initial",
+                            "border_left_style": "solid",
+                            "width": "60px",
+                            "border_image_repeat": "initial",
+                            "border_right_color": "red",
+                            "border_left_color": "red"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "104px",
-                    "width": "624px"
+                    "unicode_bidi": "embed",
+                    "display": "block"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "104px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "An inline replaced element with an intrinsic height only     and a specified width is drawn at the specified width and intrinsic height.",
-    "matches": "../reference/ref-filled-green-100px-square.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
 }

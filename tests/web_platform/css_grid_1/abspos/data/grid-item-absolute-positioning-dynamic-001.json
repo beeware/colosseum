@@ -1,65 +1,89 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ],
-    "matches": "../../reference/ref-filled-green-200px-square.html",
     "test_case": {
+        "tag": "BODY",
+        "style": {
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
+                "tag": "DIV",
+                "style": {
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "background_image": "initial",
+                    "position": "relative",
+                    "background_color": "red",
+                    "display": "block",
+                    "background_repeat_y": "initial",
+                    "width": "200px",
+                    "height": "200px",
+                    "background_size": "initial",
+                    "background_clip": "initial",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial",
+                    "background_position_y": "initial"
+                },
                 "children": [
                     {
+                        "tag": "DIV",
+                        "style": {
+                            "display": "grid",
+                            "unicode_bidi": "embed",
+                            "grid_template_areas": "none",
+                            "grid_row_gap": "initial",
+                            "grid_auto_rows": "initial",
+                            "grid_column_gap": "initial",
+                            "grid_template_rows": "100px",
+                            "grid_auto_flow": "initial",
+                            "grid_auto_columns": "initial",
+                            "grid_template_columns": "100px"
+                        },
                         "children": [
                             {
                                 "tag": "DIV",
                                 "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
+                                    "unicode_bidi": "embed",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "background_image": "initial",
+                                    "background_position_y": "initial",
+                                    "0": "position",
+                                    "background_color": "green",
                                     "display": "block",
-                                    "width": "100px",
-                                    "height": "100px",
-                                    "position": "absolute"
+                                    "background_repeat_y": "initial",
+                                    "background_size": "initial",
+                                    "height": "100%",
+                                    "width": "100%",
+                                    "background_clip": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial"
                                 }
                             }
-                        ],
-                        "tag": "DIV",
-                        "style": {
-                            "width": "200px",
-                            "height": "100px",
-                            "display": "grid"
-                        }
+                        ]
                     }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "width": "200px",
-                    "height": "200px",
-                    "position": "relative",
-                    "display": "block"
-                }
+                ]
             },
             {
+                "tag": "SCRIPT",
+                "style": {},
                 "children": [
                     {
-                        "text": "window.requestAnimationFrame(() => {\n    document.getElementById(\"item\").style.position = \"absolute\";\n    document.body.offsetLeft;\n    document.documentElement.classList.remove('reftest-wait');\n  });",
-                        "style": {}
+                        "style": {},
+                        "text": "window.requestAnimationFrame(() => {\n    document.getElementById(\"item\").style.position = \"absolute\";\n    document.body.offsetLeft;\n    document.documentElement.classList.remove('reftest-wait');\n  });"
                     }
-                ],
-                "tag": "SCRIPT",
-                "style": {
-                    "display": "none"
-                }
+                ]
             }
-        ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "height": "200px",
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_right": "8px"
-        }
+        ]
     },
-    "assert": "This test checks that a grid item which becomes an absolutelly positioned children of a grid."
+    "assert": "This test checks that a grid item which becomes an absolutelly positioned children of a grid.",
+    "matches": "../../reference/ref-filled-green-200px-square.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
 }

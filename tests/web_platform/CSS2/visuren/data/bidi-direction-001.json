@@ -1,56 +1,58 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "direction": "rtl",
-            "height": "52px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "margin_bottom": "16px",
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "text": "a b c!"
-                    }
-                ],
-                "tag": "p"
-            },
-            {
-                "style": {
-                    "margin_top": "16px",
-                    "display": "block",
-                    "height": "18px",
-                    "direction": "rtl",
-                    "margin_bottom": "16px",
-                    "width": "624px"
-                },
-                "children": [
-                    {
-                        "style": {},
-                        "text": "!a b c"
-                    }
-                ],
-                "tag": "p"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-direction",
         "http://www.w3.org/TR/CSS21/visuren.html#direction"
     ],
+    "matches": null,
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "text": "a b c!",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "text_align": "right",
+                    "margin_top": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
+                    "direction": "ltr"
+                },
+                "tag": "p"
+            },
+            {
+                "children": [
+                    {
+                        "text": "!a b c",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "margin_right": "0",
+                    "margin_top": "1.12em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0"
+                },
+                "tag": "p"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "direction": "rtl"
+        },
+        "tag": "body"
+    },
     "assert": "direction:rtl on body should inherit to paragraphs"
 }

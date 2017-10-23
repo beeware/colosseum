@@ -1,57 +1,72 @@
 {
-    "matches": "containing-block-020-ref.xht",
-    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest (closest) positioned ancestor.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "0px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "0px",
-                    "padding_bottom": "96px",
-                    "border_right_width": "3px",
-                    "padding_left": "96px",
-                    "border_bottom_width": "3px",
-                    "padding_right": "96px",
-                    "position": "absolute",
-                    "display": "block",
-                    "border_top_width": "3px",
-                    "border_bottom_style": "solid",
-                    "padding_top": "96px",
-                    "border_right_style": "solid",
-                    "border_left_style": "solid",
-                    "border_left_width": "3px",
-                    "height": "0px",
-                    "border_top_style": "solid"
-                },
                 "tag": "div",
+                "style": {
+                    "border_bottom_style": "solid",
+                    "position": "absolute",
+                    "border_right_color": "black",
+                    "unicode_bidi": "embed",
+                    "padding_left": "1in",
+                    "border_left_style": "solid",
+                    "border_top_color": "black",
+                    "border_image_source": "initial",
+                    "border_left_width": "initial",
+                    "border_top_style": "solid",
+                    "padding_right": "1in",
+                    "border_left_color": "black",
+                    "border_image_repeat": "initial",
+                    "border_bottom_color": "black",
+                    "width": "0px",
+                    "border_top_width": "initial",
+                    "border_image_slice": "initial",
+                    "padding_bottom": "1in",
+                    "border_right_style": "solid",
+                    "display": "block",
+                    "padding_top": "1in",
+                    "border_right_width": "initial",
+                    "border_image_outset": "initial",
+                    "border_image_width": "initial",
+                    "border_bottom_width": "initial"
+                },
                 "children": [
                     {
+                        "tag": "span",
                         "style": {
                             "direction": "rtl",
-                            "height": "0px",
-                            "width": "0px",
                             "display": "block"
                         },
-                        "tag": "span",
                         "children": [
                             {
+                                "tag": "span",
                                 "style": {
-                                    "direction": "rtl",
-                                    "height": "96px",
+                                    "background_position_y": "initial",
+                                    "background_size": "initial",
+                                    "top": "auto",
+                                    "height": "1in",
                                     "position": "absolute",
-                                    "width": "96px",
-                                    "display": "block"
-                                },
-                                "tag": "span"
+                                    "left": "auto",
+                                    "background_clip": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_position_x": "initial",
+                                    "width": "1in",
+                                    "background_attachment": "initial",
+                                    "background_origin": "initial",
+                                    "background_color": "blue",
+                                    "display": "block",
+                                    "background_image": "initial",
+                                    "background_repeat_y": "initial"
+                                }
                             }
                         ]
                     }
@@ -59,7 +74,9 @@
             }
         ]
     },
+    "matches": "containing-block-020-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#containing-block-details"
-    ]
+    ],
+    "assert": "When the nearest (closest within document containment hierarchy) positioned ancestor of an absolutely positioned element is a block-level element, then the containing block of such absolutely positioned element is formed by the padding edge of such nearest (closest) positioned ancestor."
 }

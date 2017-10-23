@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The 'min-width' property does not apply to elements with 'display' set to 'table-row-group'.",
+    "matches": "../reference/ref-if-there-is-no-red.xht",
     "test_case": {
         "children": [
             {
@@ -14,25 +12,22 @@
                                     {
                                         "tag": "div",
                                         "style": {
-                                            "display": "block",
-                                            "height": "0px",
-                                            "width": "0px"
+                                            "unicode_bidi": "embed",
+                                            "display": "block"
                                         }
                                     },
                                     {
                                         "tag": "div",
                                         "style": {
-                                            "display": "block",
-                                            "height": "0px",
-                                            "width": "0px"
+                                            "unicode_bidi": "embed",
+                                            "display": "block"
                                         }
                                     }
                                 ],
                                 "tag": "div",
                                 "style": {
-                                    "display": "block",
-                                    "height": "0px",
-                                    "width": "0px"
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 }
                             },
                             {
@@ -40,56 +35,55 @@
                                     {
                                         "tag": "div",
                                         "style": {
-                                            "display": "block",
-                                            "height": "0px",
-                                            "width": "0px"
+                                            "unicode_bidi": "embed",
+                                            "display": "block"
                                         }
                                     },
                                     {
                                         "tag": "div",
                                         "style": {
-                                            "display": "block",
-                                            "height": "0px",
-                                            "width": "0px"
+                                            "unicode_bidi": "embed",
+                                            "display": "block"
                                         }
                                     }
                                 ],
                                 "tag": "div",
                                 "style": {
-                                    "display": "block",
-                                    "height": "0px",
-                                    "width": "0px"
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 }
                             }
                         ],
                         "tag": "div",
                         "style": {
-                            "display": "table-row-group",
-                            "height": "0px",
-                            "width": "0px",
-                            "min_width": "96px"
+                            "unicode_bidi": "embed",
+                            "background_color": "red",
+                            "min_width": "1in",
+                            "display": "table-row-group"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "width": "0in",
                     "display": "table",
-                    "height": "0px",
-                    "width": "0px"
+                    "table_layout": "fixed"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "0px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-width' property does not apply to elements with 'display' set to 'table-row-group'.",
-    "matches": "../reference/ref-if-there-is-no-red.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

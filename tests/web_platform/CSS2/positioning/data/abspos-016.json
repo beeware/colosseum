@@ -1,55 +1,82 @@
 {
     "matches": "abspos-013-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "This block should be green."
-                    }
-                ],
-                "style": {
-                    "border_top_color": "rgb(255, 255, 255)",
-                    "height": "64px",
-                    "display": "block",
-                    "position": "fixed",
-                    "border_right_color": "rgb(255, 255, 255)",
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "z_index": "0",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "width": "320px"
-                },
-                "tag": "div"
-            },
-            {
-                "children": [
-                    {
-                        "style": {},
-                        "text": "FAIL"
-                    }
-                ],
-                "style": {
-                    "border_top_color": "rgb(255, 255, 0)",
-                    "height": "64px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "width": "320px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "height": "64px",
-            "display": "block",
-            "width": "620px"
-        },
-        "tag": "body"
-    },
     "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#comp-abspos"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "This block should be green.",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "width": "20em",
+                    "background_clip": "initial",
+                    "height": "4em",
+                    "background_color": "green",
+                    "background_position_y": "initial",
+                    "color": "white",
+                    "background_size": "initial",
+                    "top": "auto",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "left": "auto",
+                    "background_repeat_y": "initial",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "position": "fixed",
+                    "display": "block",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed"
+                }
+            },
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "text": "FAIL",
+                        "style": {}
+                    }
+                ],
+                "style": {
+                    "width": "20em",
+                    "background_clip": "initial",
+                    "height": "4em",
+                    "background_color": "red",
+                    "background_position_y": "initial",
+                    "color": "yellow",
+                    "background_size": "initial",
+                    "top": "10px",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "left": "10px",
+                    "background_repeat_y": "initial",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "position": "static",
+                    "display": "block",
+                    "background_position_x": "initial",
+                    "unicode_bidi": "embed"
+                }
+            }
+        ],
+        "style": {
+            "padding_bottom": "0px",
+            "margin_bottom": "0px",
+            "margin_top": "0px",
+            "margin_right": "0px",
+            "padding_right": "0px",
+            "padding_left": "0px",
+            "margin_left": "0px",
+            "padding_top": "0px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

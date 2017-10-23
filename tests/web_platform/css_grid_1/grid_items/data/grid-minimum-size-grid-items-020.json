@@ -1,61 +1,74 @@
 {
     "assert": "Checks that automatic minimum size is clamped if the grid item only spans fixed grid tracks.",
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "display": "block",
                     "width": "100px",
                     "position": "absolute",
+                    "height": "100px",
                     "z_index": "-1",
-                    "height": "100px"
-                }
+                    "display": "block",
+                    "background_color": "red",
+                    "unicode_bidi": "embed"
+                },
+                "tag": "DIV"
             },
             {
+                "style": {
+                    "grid_template_areas": "none",
+                    "grid_column_gap": "initial",
+                    "grid_auto_columns": "initial",
+                    "unicode_bidi": "embed",
+                    "grid_template_columns": "50px 30px 10%",
+                    "width": "200px",
+                    "grid_auto_flow": "initial",
+                    "height": "500px",
+                    "grid_auto_rows": "initial",
+                    "display": "grid",
+                    "grid_row_gap": "initial",
+                    "grid_template_rows": "10% 30px 20px"
+                },
                 "children": [
                     {
+                        "style": {
+                            "grid_row_end": "auto",
+                            "grid_column_end": "auto",
+                            "grid_column_start": "span 3",
+                            "display": "block",
+                            "grid_row_start": "span 3",
+                            "background_color": "green",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "tag": "DIV",
                                 "style": {
                                     "display": "block",
                                     "width": "200px",
-                                    "height": "200px"
-                                }
+                                    "height": "200px",
+                                    "unicode_bidi": "embed"
+                                },
+                                "tag": "DIV"
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "200px",
-                            "min_height": "auto",
-                            "height": "200px",
-                            "min_width": "auto"
-                        }
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "200px",
-                    "height": "500px"
-                }
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "500px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#min-size-auto"
-    ]
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
-    ],
+    "assert": "The margin top and bottom used values are '0' for block-level non-replaced elements in normal flow when 'overflow' computes to 'visible' and margin top and bottom both are 'auto'.",
+    "matches": "block-non-replaced-height-001-ref.xht",
     "test_case": {
         "children": [
             {
@@ -15,37 +14,48 @@
                         ],
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "background_attachment": "initial",
+                            "background_color": "blue",
                             "display": "block",
-                            "height": "18px",
-                            "width": "96px"
+                            "background_repeat_y": "initial",
+                            "margin_bottom": "auto",
+                            "background_repeat_x": "initial",
+                            "margin_top": "auto",
+                            "background_size": "initial",
+                            "background_origin": "initial",
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "border_top_style": "solid",
+                    "border_top_color": "orange",
+                    "border_bottom_color": "orange",
+                    "border_top_width": "initial",
+                    "width": "1in",
                     "display": "block",
-                    "border_bottom_width": "3px",
-                    "border_bottom_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "96px",
-                    "border_top_color": "rgb(255, 165, 0)",
-                    "height": "18px",
-                    "border_bottom_color": "rgb(255, 165, 0)",
-                    "border_top_style": "solid"
+                    "border_bottom_width": "initial",
+                    "border_bottom_style": "solid"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "24px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The margin top and bottom used values are '0' for block-level non-replaced elements in normal flow when 'overflow' computes to 'visible' and margin top and bottom both are 'auto'.",
-    "matches": "block-non-replaced-height-001-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#normal-block"
+    ]
 }

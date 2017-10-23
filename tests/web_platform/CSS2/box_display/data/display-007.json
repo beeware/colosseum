@@ -1,53 +1,46 @@
 {
-    "matches": "display-001-ref.xht",
-    "assert": "The property 'display' set to 'inline-table' behaves in layout as an inline table.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "height": "18px",
-                    "display": "block"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
                         "style": {},
                         "text": "Filler text"
                     },
                     {
-                        "style": {
-                            "width": "62.671875px",
-                            "height": "18px",
-                            "display": "inline-table"
-                        },
                         "tag": "div",
+                        "style": {
+                            "display": "inline-table",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "style": {
-                                    "width": "62.671875px",
-                                    "height": "18px",
-                                    "display": "table-row"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "table-row",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
-                                        "style": {
-                                            "width": "38.671875px",
-                                            "height": "18px",
-                                            "display": "table-cell"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "display": "table-cell",
+                                            "unicode_bidi": "embed"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -56,12 +49,11 @@
                                         ]
                                     },
                                     {
-                                        "style": {
-                                            "width": "24px",
-                                            "height": "18px",
-                                            "display": "table-cell"
-                                        },
                                         "tag": "div",
+                                        "style": {
+                                            "display": "table-cell",
+                                            "unicode_bidi": "embed"
+                                        },
                                         "children": [
                                             {
                                                 "style": {},
@@ -77,8 +69,10 @@
             }
         ]
     },
+    "matches": "display-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": "The property 'display' set to 'inline-table' behaves in layout as an inline table."
 }

@@ -1,65 +1,85 @@
 {
-    "assert": "Margins, borders and padding have no visual effect when inline boxes are split.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#inline-formatting"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "XXXXX XXXXX",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "margin_top": "20px",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_width": "10px",
-                            "border_bottom_style": "solid",
-                            "padding_right": "20px",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_width": "10px",
-                            "border_left_style": "solid",
-                            "margin_bottom": "20px",
-                            "border_top_color": "rgb(0, 0, 255)",
                             "border_right_style": "solid",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "padding_top": "20px",
-                            "padding_left": "20px",
+                            "border_image_repeat": "initial",
+                            "border_image_outset": "initial",
+                            "border_left_width": "0.5em",
+                            "margin_top": "1em",
+                            "border_top_color": "blue",
+                            "border_top_width": "0.5em",
+                            "border_right_color": "blue",
+                            "border_bottom_color": "blue",
+                            "border_left_color": "blue",
                             "border_top_style": "solid",
-                            "padding_bottom": "20px",
-                            "border_left_width": "10px",
-                            "border_right_width": "10px"
+                            "margin_right": "0px",
+                            "border_image_source": "initial",
+                            "margin_bottom": "1em",
+                            "border_image_width": "initial",
+                            "border_bottom_width": "0.5em",
+                            "padding_right": "1em",
+                            "padding_left": "1em",
+                            "border_right_width": "0.5em",
+                            "padding_top": "1em",
+                            "border_image_slice": "initial",
+                            "margin_left": "0px",
+                            "border_bottom_style": "solid",
+                            "border_left_style": "solid",
+                            "padding_bottom": "1em"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "margin_top": "40px",
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "display": "block",
-                    "border_top_color": "rgb(0, 0, 255)",
-                    "height": "100px",
-                    "width": "130px",
-                    "border_bottom_color": "rgb(0, 0, 255)"
+                    "background_position_x": "0px",
+                    "font_variant_caps": "normal",
+                    "width": "6.5em",
+                    "font_size": "15pt",
+                    "margin_top": "2em",
+                    "background_clip": "initial",
+                    "background_color": "initial",
+                    "background_image": "url(file:///Users/rkm/projects/web-platform-tests/css/CSS2/linebox/support/inline-formatting-context-022.png)",
+                    "background_repeat_x": "no-repeat",
+                    "background_attachment": "initial",
+                    "background_size": "initial",
+                    "unicode_bidi": "embed",
+                    "height": "5em",
+                    "background_repeat_y": "no-repeat",
+                    "background_origin": "initial",
+                    "font_family": "Ahem",
+                    "font_weight": "normal",
+                    "font_style": "normal",
+                    "line_height": "1em",
+                    "color": "blue",
+                    "background_position_y": "-1.5em",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "100px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "Margins, borders and padding have no visual effect when inline boxes are split.",
     "matches": "inline-formatting-context-022-ref.xht"
 }

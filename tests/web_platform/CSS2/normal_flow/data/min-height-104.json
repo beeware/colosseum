@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ],
+    "assert": "Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars.",
+    "matches": "max-height-107-ref.xht",
     "test_case": {
         "children": [
             {
@@ -14,11 +12,12 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
                     "display": "block",
-                    "width": "624px",
-                    "height": "36px",
-                    "margin_bottom": "16px"
+                    "margin_top": "1.12em"
                 }
             },
             {
@@ -35,7 +34,9 @@
                             }
                         ],
                         "tag": "strong",
-                        "style": {}
+                        "style": {
+                            "font_weight": "bolder"
+                        }
                     },
                     {
                         "text": ".",
@@ -44,11 +45,12 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
                     "display": "block",
-                    "width": "624px",
-                    "height": "18px",
-                    "margin_bottom": "16px"
+                    "margin_top": "1.12em"
                 }
             },
             {
@@ -60,38 +62,47 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "width": "200px",
+                    "unicode_bidi": "embed",
+                    "background_color": "red",
+                    "line_height": "1",
                     "min_height": "200px",
-                    "height": "200px",
-                    "border_left_color": "rgb(255, 0, 0)",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "border_top_color": "rgb(255, 0, 0)"
+                    "display": "block",
+                    "font_size": "100px",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "overflow_x": "auto",
+                    "font_weight": "normal",
+                    "color": "red",
+                    "width": "200px",
+                    "font_family": "Ahem",
+                    "overflow_y": "auto"
                 }
             },
             {
                 "tag": "div",
                 "style": {
-                    "display": "block",
+                    "unicode_bidi": "embed",
                     "top": "-200px",
-                    "position": "relative",
+                    "height": "200px",
                     "width": "200px",
-                    "height": "200px"
+                    "background_color": "green",
+                    "display": "block",
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "486px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars.",
-    "matches": "max-height-107-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ]
 }

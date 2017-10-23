@@ -1,59 +1,97 @@
 {
-    "assert": "The 'line-height' property sets a minimum plus one length value in 'ex' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
                                 "text": "X X",
                                 "style": {}
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "32px",
+                            "background_position_x": "initial",
+                            "font_variant_caps": "normal",
+                            "width": "1em",
                             "position": "relative",
-                            "width": "20px"
+                            "background_origin": "initial",
+                            "font_family": "Ahem",
+                            "font_size": "20px",
+                            "background_clip": "initial",
+                            "background_color": "black",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "font_weight": "normal",
+                            "background_size": "initial",
+                            "unicode_bidi": "embed",
+                            "background_attachment": "initial",
+                            "font_style": "normal",
+                            "line_height": "1ex",
+                            "background_repeat_y": "initial",
+                            "background_position_y": "initial",
+                            "display": "block"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "left": "22px",
+                            "background_position_x": "initial",
+                            "font_variant_caps": "normal",
+                            "width": "1em",
                             "position": "absolute",
-                            "top": "-2px",
+                            "font_size": "20px",
+                            "background_clip": "initial",
+                            "background_color": "black",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
+                            "background_size": "initial",
+                            "unicode_bidi": "embed",
                             "height": "36px",
-                            "display": "block",
-                            "width": "20px"
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "font_family": "Ahem",
+                            "left": "1.1em",
+                            "font_weight": "normal",
+                            "top": "-2px",
+                            "font_style": "normal",
+                            "line_height": "1",
+                            "background_position_y": "initial",
+                            "display": "block"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "32px",
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
+                    "width": "1em",
                     "position": "relative",
-                    "width": "20px"
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "20px",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "32px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'line-height' property sets a minimum plus one length value in 'ex' units.",
     "matches": "line-height-025-ref.xht"
 }

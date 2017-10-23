@@ -1,67 +1,121 @@
 {
-    "assert": "It is recommended that the 'normal' value for 'line-height' is set to 1.0 or 1.2 'em' units.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
                         "tag": "div",
                         "style": {
+                            "background_position_x": "initial",
+                            "font_variant_caps": "normal",
+                            "width": "1in",
+                            "position": "absolute",
+                            "font_size": "1in",
+                            "background_clip": "initial",
+                            "background_color": "orange",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
+                            "background_size": "initial",
+                            "unicode_bidi": "embed",
+                            "height": "1em",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "font_family": "Ahem",
                             "left": "0px",
-                            "position": "absolute",
+                            "font_weight": "normal",
                             "top": "0px",
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px"
+                            "font_style": "normal",
+                            "line_height": "normal",
+                            "background_position_y": "initial",
+                            "display": "block"
                         }
                     },
                     {
+                        "tag": "div",
                         "children": [],
-                        "tag": "div",
                         "style": {
-                            "left": "96px",
+                            "background_position_x": "initial",
+                            "font_variant_caps": "normal",
+                            "width": "1in",
                             "position": "absolute",
+                            "font_size": "1in",
+                            "background_clip": "initial",
+                            "background_color": "blue",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
+                            "background_size": "initial",
+                            "unicode_bidi": "embed",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "font_family": "Ahem",
+                            "left": "1in",
+                            "font_weight": "normal",
                             "top": "0px",
-                            "height": "96px",
-                            "display": "block",
-                            "width": "96px"
+                            "font_style": "normal",
+                            "line_height": "normal",
+                            "background_position_y": "initial",
+                            "display": "block"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
-                            "left": "192px",
+                            "background_position_x": "initial",
+                            "font_variant_caps": "normal",
+                            "width": "1in",
                             "position": "absolute",
+                            "font_size": "1in",
+                            "background_clip": "initial",
+                            "background_color": "orange",
+                            "background_image": "initial",
+                            "background_repeat_x": "initial",
+                            "background_attachment": "initial",
+                            "background_size": "initial",
+                            "unicode_bidi": "embed",
+                            "height": "1.2em",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "font_family": "Ahem",
+                            "left": "2in",
+                            "font_weight": "normal",
                             "top": "0px",
-                            "height": "115.1875px",
-                            "display": "block",
-                            "width": "96px"
+                            "font_style": "normal",
+                            "line_height": "normal",
+                            "background_position_y": "initial",
+                            "display": "block"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "0px",
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
                     "position": "relative",
-                    "width": "624px"
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "1in",
+                    "font_style": "normal",
+                    "line_height": "normal",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "0px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "It is recommended that the 'normal' value for 'line-height' is set to 1.0 or 1.2 'em' units.",
     "matches": null
 }

@@ -1,148 +1,94 @@
 {
     "assert": "Checks how alignment properties affect the size of the non-replaced vs replaced grid items.",
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Stretched button (200x200)"
-                            }
-                        ],
-                        "tag": "BUTTON",
-                        "style": {
-                            "width": "196px",
-                            "margin_left": "2px",
-                            "border_left_style": "outset",
-                            "border_right_width": "2px",
-                            "min_height": "15px",
-                            "margin_bottom": "2px",
-                            "border_right_style": "outset",
-                            "margin_top": "2px",
-                            "display": "block",
-                            "height": "196px",
-                            "border_right_color": "rgb(192, 192, 192)",
-                            "padding_top": "2px",
-                            "padding_bottom": "3px",
-                            "border_left_width": "2px",
-                            "border_left_color": "rgb(192, 192, 192)",
-                            "padding_right": "6px",
-                            "padding_left": "6px",
-                            "margin_right": "2px"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Stretched button (200x200)"
-                            }
-                        ],
-                        "tag": "BUTTON",
-                        "style": {
-                            "width": "196px",
-                            "margin_left": "2px",
-                            "border_left_style": "outset",
-                            "border_right_width": "2px",
-                            "min_height": "15px",
-                            "margin_bottom": "2px",
-                            "border_right_style": "outset",
-                            "margin_top": "2px",
-                            "display": "block",
-                            "height": "196px",
-                            "border_right_color": "rgb(192, 192, 192)",
-                            "padding_top": "2px",
-                            "padding_bottom": "3px",
-                            "border_left_width": "2px",
-                            "border_left_color": "rgb(192, 192, 192)",
-                            "padding_right": "6px",
-                            "padding_left": "6px",
-                            "margin_right": "2px"
-                        }
-                    },
-                    {
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "Regular button"
-                            }
-                        ],
-                        "tag": "BUTTON",
-                        "style": {
-                            "width": "93.484375px",
-                            "margin_left": "2px",
-                            "border_left_style": "outset",
-                            "border_right_width": "2px",
-                            "min_height": "15px",
-                            "margin_bottom": "2px",
-                            "border_right_style": "outset",
-                            "margin_top": "2px",
-                            "display": "block",
-                            "height": "18px",
-                            "border_right_color": "rgb(192, 192, 192)",
-                            "padding_top": "2px",
-                            "padding_bottom": "3px",
-                            "border_left_width": "2px",
-                            "border_left_color": "rgb(192, 192, 192)",
-                            "padding_right": "6px",
-                            "padding_left": "6px",
-                            "margin_right": "2px"
-                        }
-                    },
-                    {
-                        "tag": "IMG",
-                        "style": {
-                            "display": "block",
-                            "width": "200px",
-                            "min_height": "auto",
-                            "height": "200px",
-                            "min_width": "auto"
-                        }
-                    },
-                    {
-                        "tag": "IMG",
-                        "style": {
-                            "display": "block",
-                            "width": "200px",
-                            "min_height": "auto",
-                            "height": "200px",
-                            "min_width": "auto"
-                        }
-                    },
-                    {
-                        "tag": "IMG",
-                        "style": {
-                            "display": "block",
-                            "width": "50px",
-                            "min_height": "auto",
-                            "height": "50px",
-                            "min_width": "auto"
-                        }
-                    }
-                ],
-                "tag": "DIV",
                 "style": {
                     "display": "grid",
-                    "width": "624px",
-                    "height": "400px"
-                }
+                    "grid_template_columns": "200px 200px 200px",
+                    "unicode_bidi": "embed",
+                    "grid_auto_rows": "200px"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "display": "inline-block",
+                            "1": "justify-self",
+                            "0": "align-self"
+                        },
+                        "children": [
+                            {
+                                "text": "Stretched button (200x200)",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "BUTTON"
+                    },
+                    {
+                        "style": {
+                            "display": "inline-block",
+                            "1": "justify-self",
+                            "0": "align-self"
+                        },
+                        "children": [
+                            {
+                                "text": "Stretched button (200x200)",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "BUTTON"
+                    },
+                    {
+                        "style": {
+                            "display": "inline-block",
+                            "1": "justify-self",
+                            "0": "align-self"
+                        },
+                        "children": [
+                            {
+                                "text": "Regular button",
+                                "style": {}
+                            }
+                        ],
+                        "tag": "BUTTON"
+                    },
+                    {
+                        "style": {
+                            "1": "justify-self",
+                            "0": "align-self"
+                        },
+                        "tag": "IMG"
+                    },
+                    {
+                        "style": {
+                            "1": "justify-self",
+                            "0": "align-self"
+                        },
+                        "tag": "IMG"
+                    },
+                    {
+                        "style": {
+                            "1": "justify-self",
+                            "0": "align-self"
+                        },
+                        "tag": "IMG"
+                    }
+                ],
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "400px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "grid-items-sizing-alignment-001-ref.html",
     "help": [
         "https://www.w3.org/TR/css-grid-1/#grid-item-sizing"
-    ]
+    ],
+    "matches": "grid-items-sizing-alignment-001-ref.html"
 }

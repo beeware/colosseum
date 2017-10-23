@@ -1,65 +1,75 @@
 {
     "matches": null,
+    "assert": "Element following relatively positioned element show up in normal flow as if the relatively positioned element were not offset.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
+    ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "left": "0px",
-                            "top": "24px",
-                            "display": "block",
+                            "width": "200px",
+                            "background_clip": "initial",
                             "height": "2px",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "24px",
+                            "background_repeat_y": "initial",
+                            "display": "block",
                             "position": "relative",
-                            "width": "200px"
-                        },
-                        "tag": "div"
+                            "left": "0px",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
-                                "style": {},
-                                "text": "a"
+                                "text": "a",
+                                "style": {}
                             }
                         ],
                         "style": {
                             "position": "relative",
                             "top": "25px"
-                        },
-                        "tag": "span"
+                        }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
-                                "style": {},
-                                "text": "b"
+                                "text": "b",
+                                "style": {}
                             }
                         ],
-                        "style": {},
-                        "tag": "span"
+                        "style": {}
                     }
                 ],
                 "style": {
-                    "height": "22px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
             }
         ],
         "style": {
-            "margin_left": "8px",
-            "height": "22px",
-            "display": "block",
+            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": "Element following relatively positioned element show up in normal flow as if the relatively positioned element were not offset.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#relative-positioning"
-    ]
+            "margin_left": "8px",
+            "line_height": "1.25",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

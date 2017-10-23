@@ -1,41 +1,35 @@
 {
-    "matches": "display-001-ref.xht",
-    "assert": "The property 'display' set to 'table' behaves in layout as a table.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "18px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "129.3125px",
-                    "height": "18px",
-                    "display": "table"
-                },
                 "tag": "div",
+                "style": {
+                    "display": "table",
+                    "unicode_bidi": "embed"
+                },
                 "children": [
                     {
-                        "style": {
-                            "width": "129.3125px",
-                            "height": "18px",
-                            "display": "table-row"
-                        },
                         "tag": "div",
+                        "style": {
+                            "display": "table-row",
+                            "unicode_bidi": "embed"
+                        },
                         "children": [
                             {
-                                "style": {
-                                    "width": "66.65625px",
-                                    "height": "18px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "table-cell",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -44,12 +38,11 @@
                                 ]
                             },
                             {
-                                "style": {
-                                    "width": "62.65625px",
-                                    "height": "18px",
-                                    "display": "table-cell"
-                                },
                                 "tag": "div",
+                                "style": {
+                                    "display": "table-cell",
+                                    "unicode_bidi": "embed"
+                                },
                                 "children": [
                                     {
                                         "style": {},
@@ -63,8 +56,10 @@
             }
         ]
     },
+    "matches": "display-001-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-display",
         "http://www.w3.org/TR/CSS21/visuren.html#display-prop"
-    ]
+    ],
+    "assert": "The property 'display' set to 'table' behaves in layout as a table."
 }

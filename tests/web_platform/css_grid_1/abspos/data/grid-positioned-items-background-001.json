@@ -1,158 +1,197 @@
 {
-    "help": [
-        "https://drafts.csswg.org/css-grid-1/#abspos"
-    ],
-    "matches": "grid-positioned-items-background-001-ref.html",
     "test_case": {
+        "tag": "BODY",
+        "style": {
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "margin_top": "8px"
+        },
         "children": [
             {
+                "tag": "DIV",
+                "style": {
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "position": "relative",
+                    "float": "left"
+                },
                 "children": [
                     {
                         "tag": "DIV",
                         "style": {
-                            "top": "50px",
                             "display": "block",
-                            "height": "50px",
-                            "width": "100px",
-                            "left": "55px",
-                            "position": "absolute"
+                            "unicode_bidi": "embed",
+                            "position": "absolute",
+                            "1": "top",
+                            "2": "width",
+                            "3": "height",
+                            "0": "left",
+                            "background_color": "red"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "top": "50px",
                             "display": "block",
-                            "height": "20px",
-                            "width": "50px",
-                            "left": "290px",
-                            "position": "absolute"
+                            "unicode_bidi": "embed",
+                            "position": "absolute",
+                            "1": "top",
+                            "2": "width",
+                            "3": "height",
+                            "0": "left",
+                            "background_color": "red"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "top": "115px",
                             "display": "block",
-                            "height": "30px",
-                            "width": "50px",
-                            "left": "50px",
-                            "position": "absolute"
+                            "unicode_bidi": "embed",
+                            "position": "absolute",
+                            "1": "top",
+                            "2": "width",
+                            "3": "height",
+                            "0": "left",
+                            "background_color": "red"
                         }
                     },
                     {
                         "tag": "DIV",
                         "style": {
-                            "top": "135px",
                             "display": "block",
-                            "height": "75px",
-                            "width": "145px",
-                            "left": "175px",
-                            "position": "absolute"
+                            "unicode_bidi": "embed",
+                            "position": "absolute",
+                            "1": "top",
+                            "2": "width",
+                            "3": "height",
+                            "0": "left",
+                            "background_color": "red"
                         }
                     },
                     {
-                        "children": [
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "display": "block",
-                                    "height": "50px",
-                                    "width": "100px",
-                                    "left": "5px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "right": "10px",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "20px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "children": [],
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "top": "15px",
-                                    "display": "block",
-                                    "width": "50px",
-                                    "height": "30px",
-                                    "position": "absolute"
-                                }
-                            },
-                            {
-                                "tag": "DIV",
-                                "style": {
-                                    "min_width": "auto",
-                                    "min_height": "auto",
-                                    "right": "30px",
-                                    "top": "35px",
-                                    "display": "block",
-                                    "height": "75px",
-                                    "width": "145px",
-                                    "bottom": "40px",
-                                    "left": "25px",
-                                    "position": "absolute"
-                                }
-                            }
-                        ],
                         "tag": "DIV",
                         "style": {
                             "border_left_width": "5px",
-                            "margin_right": "30px",
-                            "border_bottom_width": "5px",
-                            "padding_top": "15px",
-                            "padding_bottom": "15px",
-                            "width": "500px",
-                            "margin_left": "30px",
-                            "height": "300px",
-                            "border_top_style": "solid",
-                            "border_right_style": "solid",
-                            "position": "relative",
-                            "border_right_width": "5px",
-                            "display": "grid",
-                            "border_bottom_style": "solid",
-                            "border_left_style": "solid",
-                            "margin_bottom": "30px",
-                            "border_top_width": "5px",
+                            "border_image_repeat": "initial",
+                            "border_image_slice": "initial",
                             "padding_right": "15px",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "black",
+                            "padding_top": "15px",
+                            "border_right_color": "black",
+                            "border_right_width": "5px",
+                            "margin_left": "30px",
+                            "border_top_style": "solid",
+                            "grid_template_columns": "100px 200px",
+                            "display": "grid",
+                            "margin_bottom": "30px",
+                            "margin_top": "30px",
+                            "border_right_style": "solid",
                             "padding_left": "15px",
-                            "margin_top": "30px"
-                        }
+                            "grid_template_rows": "50px 150px",
+                            "position": "relative",
+                            "border_bottom_style": "solid",
+                            "border_bottom_width": "5px",
+                            "background_color": "transparent",
+                            "unicode_bidi": "embed",
+                            "border_left_style": "solid",
+                            "width": "500px",
+                            "border_image_width": "initial",
+                            "height": "300px",
+                            "margin_right": "30px",
+                            "border_top_color": "black",
+                            "border_top_width": "5px",
+                            "padding_bottom": "15px",
+                            "border_left_color": "black",
+                            "border_image_source": "initial"
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "grid_row_end": "2",
+                                    "background_color": "green",
+                                    "font_family": "Ahem",
+                                    "font_size": "10px",
+                                    "position": "absolute",
+                                    "grid_column_end": "2",
+                                    "0": "left",
+                                    "font_style": "normal",
+                                    "display": "block",
+                                    "font_variant_caps": "normal",
+                                    "width": "100%",
+                                    "grid_column_start": "1",
+                                    "height": "100%",
+                                    "line_height": "1",
+                                    "font_weight": "normal",
+                                    "grid_row_start": "1"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_row_start": "1",
+                                    "0": "right",
+                                    "height": "20px",
+                                    "width": "50px",
+                                    "grid_row_end": "2",
+                                    "grid_column_end": "3",
+                                    "grid_column_start": "2",
+                                    "background_color": "green"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "display": "block",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_row_start": "2",
+                                    "0": "top",
+                                    "height": "20%",
+                                    "width": "50%",
+                                    "grid_row_end": "3",
+                                    "grid_column_end": "2",
+                                    "grid_column_start": "1",
+                                    "background_color": "green"
+                                },
+                                "children": []
+                            },
+                            {
+                                "tag": "DIV",
+                                "style": {
+                                    "top": "35px",
+                                    "unicode_bidi": "embed",
+                                    "position": "absolute",
+                                    "grid_column_end": "3",
+                                    "bottom": "40px",
+                                    "left": "25px",
+                                    "background_color": "green",
+                                    "display": "block",
+                                    "grid_column_start": "2",
+                                    "right": "30px",
+                                    "grid_row_end": "3",
+                                    "grid_row_start": "2"
+                                }
+                            }
+                        ]
                     }
-                ],
-                "tag": "DIV",
-                "style": {
-                    "float": "left",
-                    "width": "600px",
-                    "height": "400px",
-                    "position": "relative",
-                    "display": "block"
-                }
+                ]
             }
-        ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "height": "0px",
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "margin_right": "8px"
-        }
+        ]
     },
-    "assert": "This test checks that the background of positioned items is painted in the right position"
+    "assert": "This test checks that the background of positioned items is painted in the right position",
+    "matches": "grid-positioned-items-background-001-ref.html",
+    "help": [
+        "https://drafts.csswg.org/css-grid-1/#abspos"
+    ]
 }

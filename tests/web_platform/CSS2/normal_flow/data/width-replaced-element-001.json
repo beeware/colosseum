@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
+    "assert": "Replaced elements width may be scaled by the user agent when the value of the property is not 'auto'.",
+    "matches": null,
     "test_case": {
         "children": [
             {
@@ -9,44 +8,52 @@
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "background_position_x": "initial",
+                            "background_position_y": "initial",
+                            "background_attachment": "initial",
+                            "width": "15px",
+                            "background_color": "orange",
                             "display": "block",
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_size": "initial",
+                            "background_origin": "initial",
                             "height": "15px",
-                            "position": "relative",
-                            "width": "15px"
+                            "background_clip": "initial",
+                            "position": "relative"
                         }
                     },
                     {
                         "tag": "img",
                         "style": {
-                            "display": "block",
-                            "height": "96px",
-                            "position": "absolute",
-                            "width": "96px",
+                            "width": "1in",
+                            "left": "0.25in",
                             "top": "0px",
-                            "left": "24px"
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
                     "display": "block",
-                    "height": "15px",
-                    "position": "relative",
-                    "width": "624px"
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "15px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "Replaced elements width may be scaled by the user agent when the value of the property is not 'auto'.",
-    "matches": null
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

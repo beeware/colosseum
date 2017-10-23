@@ -1,142 +1,129 @@
 {
-    "test_case": {
-        "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "margin_left": "8px",
-            "margin_right": "8px",
-            "height": "96px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "children": [
-            {
-                "style": {
-                    "display": "table",
-                    "width": "96px",
-                    "height": "96px",
-                    "clear": "both"
-                },
-                "children": [
-                    {
-                        "style": {
-                            "display": "table-row",
-                            "width": "96px",
-                            "height": "24px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "width": "48px",
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "height": "24px",
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)"
-                                },
-                                "children": [
-                                    {
-                                        "style": {},
-                                        "text": "a"
-                                    }
-                                ],
-                                "tag": "div"
-                            },
-                            {
-                                "style": {
-                                    "width": "48px",
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "height": "24px",
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)"
-                                },
-                                "children": [
-                                    {
-                                        "style": {},
-                                        "text": "b"
-                                    }
-                                ],
-                                "tag": "div"
-                            }
-                        ],
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "display": "table-row",
-                            "width": "96px",
-                            "height": "24px"
-                        },
-                        "children": [
-                            {
-                                "style": {
-                                    "width": "48px",
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "height": "24px",
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)"
-                                },
-                                "children": [
-                                    {
-                                        "style": {},
-                                        "text": "c"
-                                    }
-                                ],
-                                "tag": "div"
-                            },
-                            {
-                                "style": {
-                                    "width": "48px",
-                                    "display": "table-cell",
-                                    "border_top_color": "rgb(0, 0, 255)",
-                                    "height": "24px",
-                                    "border_right_color": "rgb(0, 0, 255)",
-                                    "border_left_color": "rgb(0, 0, 255)",
-                                    "border_bottom_color": "rgb(0, 0, 255)"
-                                },
-                                "children": [
-                                    {
-                                        "style": {},
-                                        "text": "d"
-                                    }
-                                ],
-                                "tag": "div"
-                            }
-                        ],
-                        "tag": "div"
-                    },
-                    {
-                        "style": {
-                            "width": "96px",
-                            "display": "table-caption",
-                            "border_top_color": "rgb(0, 0, 255)",
-                            "height": "48px",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)"
-                        },
-                        "children": [
-                            {
-                                "style": {},
-                                "text": "cap"
-                            }
-                        ],
-                        "tag": "div"
-                    }
-                ],
-                "tag": "div"
-            }
-        ],
-        "tag": "body"
-    },
-    "matches": "../floats-clear/clear-applies-to-009-ref.xht",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#flow-control"
     ],
+    "matches": "../floats-clear/clear-applies-to-009-ref.xht",
+    "test_case": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "text": "a",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "color": "blue",
+                                    "height": "0.25in",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "text": "b",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "color": "blue",
+                                    "height": "0.25in",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "display": "table-row"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "text": "c",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "color": "blue",
+                                    "height": "0.25in",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "text": "d",
+                                        "style": {}
+                                    }
+                                ],
+                                "style": {
+                                    "unicode_bidi": "embed",
+                                    "color": "blue",
+                                    "height": "0.25in",
+                                    "display": "table-cell"
+                                },
+                                "tag": "div"
+                            }
+                        ],
+                        "style": {
+                            "unicode_bidi": "embed",
+                            "display": "table-row"
+                        },
+                        "tag": "div"
+                    },
+                    {
+                        "children": [
+                            {
+                                "text": "cap",
+                                "style": {}
+                            }
+                        ],
+                        "style": {
+                            "color": "blue",
+                            "caption_side": "bottom",
+                            "width": "1in",
+                            "display": "table-caption",
+                            "unicode_bidi": "embed",
+                            "background_color": "blue",
+                            "height": "0.5in"
+                        },
+                        "tag": "div"
+                    }
+                ],
+                "style": {
+                    "clear": "both",
+                    "width": "1in",
+                    "table_layout": "fixed",
+                    "unicode_bidi": "embed",
+                    "background_color": "blue",
+                    "display": "table"
+                },
+                "tag": "div"
+            }
+        ],
+        "style": {
+            "margin_right": "8px",
+            "margin_top": "8px",
+            "display": "block",
+            "unicode_bidi": "embed",
+            "margin_bottom": "8px",
+            "margin_left": "8px"
+        },
+        "tag": "body"
+    },
     "assert": "The 'clear' property apply to elements with a display of 'table' and is applied to the table wrapper box and not on the table box. In this test, the table wrapper box has a table caption placed after the table box."
 }

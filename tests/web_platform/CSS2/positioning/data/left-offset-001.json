@@ -1,43 +1,64 @@
 {
     "matches": "left-offset-001-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "position": "absolute",
-                            "left": "50px",
-                            "height": "50px",
-                            "display": "block",
-                            "width": "50px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "position": "relative",
-                    "height": "100px",
-                    "display": "block",
-                    "width": "100px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "100px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "Absolute positioned elements with a left offset, offsets the elements left margin edge from the left edge of the elements containing block.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "width": "50px",
+                            "background_clip": "initial",
+                            "height": "50px",
+                            "background_color": "white",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "background_repeat_y": "initial",
+                            "display": "block",
+                            "position": "absolute",
+                            "left": "50px",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
+                    }
+                ],
+                "style": {
+                    "width": "100px",
+                    "background_clip": "initial",
+                    "height": "100px",
+                    "background_color": "blue",
+                    "background_position_y": "initial",
+                    "background_size": "initial",
+                    "background_repeat_y": "initial",
+                    "display": "block",
+                    "position": "relative",
+                    "unicode_bidi": "embed",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "background_position_x": "initial",
+                    "background_attachment": "initial"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

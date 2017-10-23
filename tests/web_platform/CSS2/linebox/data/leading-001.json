@@ -1,46 +1,59 @@
 {
-    "assert": "Line-height can be different from the content area so space is above and below.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(255, 165, 0)",
-                            "border_right_color": "rgb(255, 165, 0)",
-                            "border_bottom_color": "rgb(255, 165, 0)",
-                            "border_top_color": "rgb(255, 165, 0)"
+                            "line_height": "200px",
+                            "color": "orange"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "200px",
-                    "width": "200px"
+                    "background_position_x": "initial",
+                    "font_variant_caps": "normal",
+                    "width": "200px",
+                    "background_origin": "initial",
+                    "font_family": "Ahem",
+                    "font_size": "100px",
+                    "background_clip": "initial",
+                    "background_color": "blue",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "font_weight": "normal",
+                    "background_size": "initial",
+                    "unicode_bidi": "embed",
+                    "background_attachment": "initial",
+                    "font_style": "normal",
+                    "line_height": "1em",
+                    "background_repeat_y": "initial",
+                    "background_position_y": "initial",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "200px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "Line-height can be different from the content area so space is above and below.",
     "matches": "leading-001-ref.xht"
 }

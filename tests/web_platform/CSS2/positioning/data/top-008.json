@@ -1,49 +1,47 @@
 {
     "matches": "top-007-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "height": "0px",
-                            "border_top_width": "3px",
-                            "display": "block",
-                            "margin_top": "-99px",
-                            "top": "96px",
-                            "position": "relative",
-                            "border_top_style": "solid",
-                            "width": "624px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "border_top_color": "rgb(255, 0, 0)",
-                    "border_top_width": "3px",
-                    "display": "block",
-                    "position": "relative",
-                    "height": "0px",
-                    "border_top_style": "solid",
-                    "width": "624px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "3px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "The 'top' property sets a positive nominal length value in pixels.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-top",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "display": "block",
+                            "margin_top": "-99px",
+                            "border_top_color": "black",
+                            "position": "relative",
+                            "border_top_style": "solid",
+                            "border_top_width": "3px",
+                            "top": "96px",
+                            "unicode_bidi": "embed"
+                        }
+                    }
+                ],
+                "style": {
+                    "display": "block",
+                    "border_top_color": "red",
+                    "position": "relative",
+                    "border_top_style": "solid",
+                    "border_top_width": "3px",
+                    "unicode_bidi": "embed"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

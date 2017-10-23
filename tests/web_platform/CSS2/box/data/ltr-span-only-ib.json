@@ -1,13 +1,51 @@
 {
     "assert": null,
-    "help": [
-        "http://www.w3.org/TR/CSS21/box.html#bidi-box-model"
-    ],
     "test_case": {
+        "style": {
+            "margin_bottom": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
+                "style": {
+                    "direction": "rtl",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                },
                 "children": [
                     {
+                        "style": {
+                            "margin_top": "0px",
+                            "border_image_width": "initial",
+                            "border_bottom_style": "solid",
+                            "border_right_width": "2px",
+                            "border_right_style": "solid",
+                            "border_left_color": "initial",
+                            "padding_bottom": "0px",
+                            "padding_left": "5px",
+                            "margin_bottom": "0px",
+                            "border_left_width": "2px",
+                            "margin_left": "30px",
+                            "border_image_repeat": "initial",
+                            "border_bottom_color": "initial",
+                            "direction": "ltr",
+                            "border_top_color": "initial",
+                            "margin_right": "60px",
+                            "border_image_outset": "initial",
+                            "border_top_style": "solid",
+                            "border_image_source": "initial",
+                            "padding_right": "10px",
+                            "padding_top": "0px",
+                            "border_bottom_width": "2px",
+                            "border_image_slice": "initial",
+                            "border_right_color": "initial",
+                            "border_top_width": "2px",
+                            "border_left_style": "solid"
+                        },
                         "children": [
                             {
                                 "style": {},
@@ -15,9 +53,8 @@
                             },
                             {
                                 "style": {
-                                    "width": "624px",
-                                    "display": "block",
-                                    "height": "0px"
+                                    "unicode_bidi": "embed",
+                                    "display": "block"
                                 },
                                 "tag": "div"
                             },
@@ -26,42 +63,16 @@
                                 "text": "Two"
                             }
                         ],
-                        "style": {
-                            "border_top_width": "2px",
-                            "padding_right": "10px",
-                            "border_right_width": "2px",
-                            "padding_left": "5px",
-                            "margin_left": "30px",
-                            "border_left_style": "solid",
-                            "border_bottom_style": "solid",
-                            "border_top_style": "solid",
-                            "border_bottom_width": "2px",
-                            "border_right_style": "solid",
-                            "border_left_width": "2px",
-                            "margin_right": "60px"
-                        },
                         "tag": "span"
                     }
                 ],
-                "style": {
-                    "width": "624px",
-                    "display": "block",
-                    "height": "36px",
-                    "direction": "rtl"
-                },
                 "tag": "div"
             }
         ],
-        "style": {
-            "display": "block",
-            "height": "36px",
-            "width": "624px",
-            "margin_bottom": "8px",
-            "margin_right": "8px",
-            "margin_top": "8px",
-            "margin_left": "8px"
-        },
         "tag": "body"
     },
+    "help": [
+        "http://www.w3.org/TR/CSS21/box.html#bidi-box-model"
+    ],
     "matches": "right-ltr-ref.xht"
 }

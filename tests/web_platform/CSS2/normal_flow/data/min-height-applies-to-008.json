@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
-    ],
+    "assert": "The 'min-height' property does not apply to elements with 'display' set to 'inline'.",
+    "matches": "../reference/ref-if-there-is-no-red.xht",
     "test_case": {
         "children": [
             {
@@ -14,25 +12,32 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "border_left_color": "rgb(255, 255, 255)",
-                    "border_right_color": "rgb(255, 255, 255)",
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
                     "min_height": "100px",
-                    "border_bottom_color": "rgb(255, 255, 255)",
-                    "border_top_color": "rgb(255, 255, 255)"
+                    "font_variant_caps": "normal",
+                    "font_family": "Ahem",
+                    "font_weight": "normal",
+                    "background_color": "red",
+                    "color": "white",
+                    "display": "inline",
+                    "line_height": "1",
+                    "font_size": "20px"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "20px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'min-height' property does not apply to elements with 'display' set to 'inline'.",
-    "matches": "../reference/ref-if-there-is-no-red.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights"
+    ]
 }

@@ -1,49 +1,89 @@
 {
-    "matches": "../reference/grid-layout-basic-ref.html",
-    "test_case": {
-        "tag": "BODY",
-        "children": [
-            {
-                "tag": "DIV",
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "children": [],
-                        "style": {
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "display": "block",
-                            "height": "18px",
-                            "width": "100px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "children": [],
-                        "style": {
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "display": "block",
-                            "height": "18px",
-                            "width": "50px"
-                        }
-                    }
-                ],
-                "style": {
-                    "display": "grid",
-                    "height": "18px",
-                    "width": "150px"
-                }
-            }
-        ],
-        "style": {
-            "display": "block",
-            "height": "18px",
-            "width": "640px"
-        }
-    },
+    "assert": "the layout should behave the same as reference.",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#track-sizing"
     ],
-    "assert": "the layout should behave the same as reference."
+    "matches": "../reference/grid-layout-basic-ref.html",
+    "test_case": {
+        "tag": "BODY",
+        "style": {
+            "margin_bottom": "0px",
+            "unicode_bidi": "embed",
+            "padding_left": "0px",
+            "padding_bottom": "0px",
+            "margin_left": "0px",
+            "padding_top": "0px",
+            "margin_top": "0px",
+            "margin_right": "0px",
+            "display": "block",
+            "padding_right": "0px"
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "style": {
+                    "background_repeat_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_color": "rgb(238, 238, 238)",
+                    "background_position_y": "initial",
+                    "width": "150px",
+                    "background_position_x": "initial",
+                    "background_clip": "initial",
+                    "background_repeat_x": "initial",
+                    "background_size": "initial",
+                    "background_attachment": "initial",
+                    "background_origin": "initial",
+                    "grid_template_columns": "100px 50px",
+                    "display": "grid",
+                    "background_image": "initial"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "grid_column_end": "auto",
+                            "background_repeat_y": "initial",
+                            "unicode_bidi": "embed",
+                            "grid_column_start": "1",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_clip": "initial",
+                            "background_position_x": "initial",
+                            "grid_row_start": "1",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "grid_row_end": "auto",
+                            "display": "block",
+                            "background_image": "initial"
+                        },
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "style": {
+                            "grid_column_end": "auto",
+                            "background_repeat_y": "initial",
+                            "unicode_bidi": "embed",
+                            "grid_column_start": "2",
+                            "background_color": "yellow",
+                            "background_position_y": "initial",
+                            "background_clip": "initial",
+                            "background_position_x": "initial",
+                            "grid_row_start": "1",
+                            "background_repeat_x": "initial",
+                            "background_size": "initial",
+                            "background_attachment": "initial",
+                            "background_origin": "initial",
+                            "grid_row_end": "auto",
+                            "display": "block",
+                            "background_image": "initial"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
 }

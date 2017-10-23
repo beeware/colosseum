@@ -1,55 +1,84 @@
 {
     "matches": "absolute-non-replaced-max-height-009-ref.xht",
+    "assert": "The 'height' is based on the content height, 'auto' values for 'margin-top' and 'margin-bottom' are set to '0' when 'height' and 'bottom' are 'auto' and 'top' is not 'auto'.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
+    ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "style": {
-                            "left": "100px",
-                            "top": "25px",
-                            "display": "block",
+                            "width": "100px",
+                            "background_clip": "initial",
                             "height": "50px",
+                            "background_color": "blue",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "top": "25px",
+                            "background_repeat_y": "initial",
+                            "display": "block",
                             "position": "absolute",
-                            "width": "100px"
-                        },
-                        "tag": "div"
+                            "left": "100px",
+                            "unicode_bidi": "embed",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "background_image": "initial",
+                            "background_position_x": "initial",
+                            "background_attachment": "initial"
+                        }
                     },
                     {
+                        "tag": "div",
                         "children": [],
                         "style": {
-                            "height": "50px",
+                            "width": "100px",
+                            "margin_bottom": "auto",
+                            "font_variant_caps": "normal",
+                            "background_size": "initial",
+                            "background_attachment": "initial",
                             "top": "25px",
+                            "line_height": "1",
                             "display": "block",
                             "max_height": "50px",
+                            "background_origin": "initial",
+                            "background_repeat_x": "initial",
+                            "font_family": "Ahem",
+                            "background_position_x": "initial",
+                            "font_size": "100px",
+                            "font_weight": "normal",
+                            "font_style": "normal",
+                            "margin_top": "auto",
+                            "background_clip": "initial",
+                            "height": "auto",
+                            "background_position_y": "initial",
+                            "background_color": "orange",
+                            "background_repeat_y": "initial",
+                            "background_image": "initial",
+                            "bottom": "auto",
                             "position": "absolute",
-                            "width": "100px"
-                        },
-                        "tag": "div"
+                            "unicode_bidi": "embed"
+                        }
                     }
                 ],
                 "style": {
                     "position": "relative",
-                    "height": "0px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
             }
         ],
         "style": {
-            "margin_left": "8px",
-            "height": "0px",
-            "display": "block",
+            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": "The 'height' is based on the content height, 'auto' values for 'margin-top' and 'margin-bottom' are set to '0' when 'height' and 'bottom' are 'auto' and 'top' is not 'auto'.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-height"
-    ]
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

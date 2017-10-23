@@ -1,54 +1,76 @@
 {
-    "test_case": {
-        "tag": "BODY",
-        "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
-            "margin_right": "8px",
-            "height": "120px"
-        },
-        "children": [
-            {
-                "tag": "DIV",
-                "style": {
-                    "width": "60px",
-                    "display": "flex",
-                    "border_right_width": "60px",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "border_right_style": "solid",
-                    "height": "120px"
-                },
-                "children": [
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "60px",
-                            "display": "block",
-                            "height": "120px"
-                        }
-                    },
-                    {
-                        "tag": "DIV",
-                        "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "60px",
-                            "display": "block",
-                            "height": "120px"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
     "help": [
         "http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"
     ],
     "matches": "reference/flexbox-flex-wrap-nowrap-ref.htm",
-    "assert": "Test checks that flex elements default to flex-wrap: nowrap if flex-wrap is not set. With wrapping disabled, the .green flex item should extend outside the bounds of its container, as it is set to flex:none."
+    "assert": "Test checks that flex elements default to flex-wrap: nowrap if flex-wrap is not set. With wrapping disabled, the .green flex item should extend outside the bounds of its container, as it is set to flex:none.",
+    "test_case": {
+        "style": {
+            "margin_right": "8px",
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
+        },
+        "tag": "BODY",
+        "children": [
+            {
+                "style": {
+                    "background_color": "green",
+                    "background_image": "initial",
+                    "width": "60px",
+                    "background_repeat_y": "initial",
+                    "border_right_style": "solid",
+                    "background_origin": "initial",
+                    "border_right_color": "red",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "background_clip": "initial",
+                    "display": "flex",
+                    "border_right_width": "60px",
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "height": "120px",
+                    "background_position_x": "initial"
+                },
+                "tag": "DIV",
+                "children": [
+                    {
+                        "style": {
+                            "display": "block",
+                            "flex_grow": "0",
+                            "width": "60px",
+                            "flex_shrink": "0",
+                            "flex_basis": "auto",
+                            "unicode_bidi": "embed"
+                        },
+                        "tag": "DIV"
+                    },
+                    {
+                        "style": {
+                            "background_color": "green",
+                            "display": "block",
+                            "width": "60px",
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "0",
+                            "background_origin": "initial",
+                            "flex_basis": "auto",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "flex_grow": "0",
+                            "background_clip": "initial",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial"
+                        },
+                        "tag": "DIV"
+                    }
+                ]
+            }
+        ]
+    }
 }

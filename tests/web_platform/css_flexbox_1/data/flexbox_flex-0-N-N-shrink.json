@@ -1,45 +1,83 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-property"
+    ],
+    "matches": "flexbox_flex-0-N-N-shrink-ref.html",
+    "assert": null,
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "130px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "margin_bottom": "16px",
-                    "margin_top": "16px",
-                    "border_top_style": "solid",
-                    "border_bottom_style": "solid",
-                    "border_right_width": "1px",
-                    "border_right_style": "solid",
-                    "display": "flex",
                     "border_bottom_width": "1px",
-                    "height": "128px",
+                    "border_image_repeat": "initial",
+                    "width": "12em",
+                    "border_bottom_style": "solid",
+                    "border_right_style": "solid",
+                    "margin_top": "1em",
                     "border_top_width": "1px",
-                    "border_left_width": "1px",
+                    "background_position_y": "initial",
+                    "border_right_color": "black",
+                    "background_size": "initial",
+                    "border_top_style": "solid",
+                    "margin_bottom": "1em",
+                    "background_image": "initial",
+                    "border_right_width": "1px",
+                    "background_attachment": "initial",
                     "border_left_style": "solid",
-                    "width": "192px"
+                    "border_image_outset": "initial",
+                    "border_bottom_color": "black",
+                    "margin_right": "0px",
+                    "border_top_color": "black",
+                    "border_left_width": "1px",
+                    "background_color": "blue",
+                    "margin_left": "0px",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "border_image_source": "initial",
+                    "unicode_bidi": "embed",
+                    "height": "8em",
+                    "background_clip": "initial",
+                    "display": "flex",
+                    "border_image_slice": "initial",
+                    "border_image_width": "initial",
+                    "background_repeat_x": "initial",
+                    "border_left_color": "black",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "margin_bottom": "16px",
-                            "margin_top": "16px",
-                            "min_height": "auto",
-                            "width": "48px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "96px"
+                            "margin_right": "0px",
+                            "background_color": "yellow",
+                            "margin_left": "0px",
+                            "width": "5em",
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "2",
+                            "margin_top": "1em",
+                            "flex_basis": "4em",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "flex_grow": "1",
+                            "background_clip": "initial",
+                            "margin_bottom": "1em",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "inline-block",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -48,16 +86,28 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "margin_bottom": "16px",
-                            "margin_top": "16px",
-                            "min_height": "auto",
-                            "width": "48px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "96px"
+                            "margin_right": "0px",
+                            "background_color": "pink",
+                            "margin_left": "0px",
+                            "width": "5em",
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "2",
+                            "margin_top": "1em",
+                            "flex_basis": "4em",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "flex_grow": "1",
+                            "background_clip": "initial",
+                            "margin_bottom": "1em",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "inline-block",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -66,16 +116,28 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "margin_bottom": "16px",
-                            "margin_top": "16px",
-                            "min_height": "auto",
-                            "width": "48px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "96px"
+                            "margin_right": "0px",
+                            "background_color": "lightblue",
+                            "margin_left": "0px",
+                            "width": "5em",
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "2",
+                            "margin_top": "1em",
+                            "flex_basis": "4em",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "flex_grow": "1",
+                            "background_clip": "initial",
+                            "margin_bottom": "1em",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "inline-block",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -84,16 +146,28 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "margin_bottom": "16px",
-                            "margin_top": "16px",
-                            "min_height": "auto",
-                            "width": "48px",
-                            "display": "block",
-                            "min_width": "auto",
-                            "height": "96px"
+                            "margin_right": "0px",
+                            "background_color": "grey",
+                            "margin_left": "0px",
+                            "width": "5em",
+                            "background_repeat_y": "initial",
+                            "flex_shrink": "2",
+                            "margin_top": "1em",
+                            "flex_basis": "4em",
+                            "background_position_y": "initial",
+                            "background_size": "initial",
+                            "flex_grow": "1",
+                            "background_clip": "initial",
+                            "margin_bottom": "1em",
+                            "background_image": "initial",
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "display": "inline-block",
+                            "background_origin": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -104,10 +178,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-property"
-    ],
-    "matches": "flexbox_flex-0-N-N-shrink-ref.html",
-    "assert": null
+    }
 }

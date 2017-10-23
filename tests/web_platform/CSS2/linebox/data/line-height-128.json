@@ -1,48 +1,68 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
                         "text": "XXXX",
                         "style": {}
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "float": "left",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_bottom_width": "60px",
-                    "border_top_width": "60px",
-                    "border_left_style": "solid",
-                    "border_bottom_style": "solid",
-                    "height": "60px",
-                    "width": "240px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
+                    "background_position_x": "initial",
+                    "font_variant_caps": "normal",
                     "border_right_style": "solid",
-                    "border_left_color": "rgb(0, 128, 0)",
+                    "border_image_repeat": "initial",
+                    "border_bottom_color": "initial",
+                    "border_left_width": "1em",
+                    "background_clip": "initial",
+                    "background_color": "red",
+                    "background_image": "initial",
+                    "background_repeat_x": "initial",
+                    "background_attachment": "initial",
+                    "font_size": "3.75em",
+                    "border_bottom_style": "solid",
+                    "background_size": "initial",
+                    "unicode_bidi": "embed",
+                    "border_left_color": "initial",
                     "border_top_style": "solid",
-                    "display": "block",
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "border_left_width": "60px",
-                    "border_right_width": "60px"
+                    "border_bottom_width": "1em",
+                    "border_top_color": "initial",
+                    "background_repeat_y": "initial",
+                    "border_left_style": "solid",
+                    "border_right_color": "initial",
+                    "border_image_source": "initial",
+                    "border_image_width": "initial",
+                    "background_origin": "initial",
+                    "font_family": "Ahem",
+                    "border_right_width": "1em",
+                    "float": "left",
+                    "font_weight": "normal",
+                    "border_image_slice": "initial",
+                    "border_image_outset": "initial",
+                    "font_style": "normal",
+                    "border_top_width": "1em",
+                    "line_height": "1",
+                    "color": "green",
+                    "background_position_y": "initial",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "0px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": null,
     "matches": "line-height-128-ref.xht"
 }

@@ -1,29 +1,28 @@
 {
-    "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#line-height"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
                         "text": "x",
                         "style": {}
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)",
-                            "border_bottom_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)"
+                            "font_size": "2em",
+                            "vertical_align": "bottom"
                         }
                     },
                     {
@@ -31,38 +30,41 @@
                         "style": {}
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "border_right_color": "rgb(0, 0, 128)",
-                    "border_left_color": "rgb(0, 0, 128)",
-                    "border_bottom_width": "3px",
+                    "text_align": "center",
+                    "font_variant_caps": "normal",
+                    "width": "6em",
+                    "border_bottom_width": "initial",
+                    "font_family": "Ahem",
+                    "font_size": "30px",
+                    "border_bottom_color": "blue",
+                    "font_weight": "normal",
                     "border_bottom_style": "solid",
-                    "display": "block",
-                    "border_top_color": "rgb(0, 0, 128)",
-                    "height": "60px",
-                    "width": "180px",
-                    "border_bottom_color": "rgb(0, 0, 255)"
+                    "unicode_bidi": "embed",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "color": "navy",
+                    "display": "block"
                 }
             },
             {
+                "tag": "div",
                 "children": [
                     {
                         "text": "x",
                         "style": {}
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(0, 0, 128)",
-                            "border_right_color": "rgb(0, 0, 128)",
-                            "border_bottom_color": "rgb(0, 0, 128)",
-                            "border_top_color": "rgb(0, 0, 128)"
+                            "font_size": "2em",
+                            "vertical_align": "top"
                         }
                     },
                     {
@@ -70,28 +72,30 @@
                         "style": {}
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "border_right_color": "rgb(0, 0, 128)",
-                    "border_left_color": "rgb(0, 0, 128)",
-                    "display": "block",
-                    "border_top_color": "rgb(0, 0, 128)",
-                    "height": "60px",
-                    "width": "180px",
-                    "border_bottom_color": "rgb(0, 0, 128)"
+                    "text_align": "center",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "width": "6em",
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "30px",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "color": "navy",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "123px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": null,
     "matches": "vertical-align-121-ref.xht"
 }

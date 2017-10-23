@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
-        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
-    ],
+    "assert": "'min-height' specifies a fixed minimum used height. If the element requires an horizontal scrollbar, then the horizontal scrollbar height should be subtracted from the height of its containing block so that the resulting used height continues to honor the declared min-height.",
+    "matches": "max-height-107-ref.xht",
     "test_case": {
         "children": [
             {
@@ -14,11 +12,12 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
                     "display": "block",
-                    "width": "624px",
-                    "height": "36px",
-                    "margin_bottom": "16px"
+                    "margin_top": "1.12em"
                 }
             },
             {
@@ -35,7 +34,9 @@
                             }
                         ],
                         "tag": "strong",
-                        "style": {}
+                        "style": {
+                            "font_weight": "bolder"
+                        }
                     },
                     {
                         "text": ".",
@@ -44,11 +45,12 @@
                 ],
                 "tag": "p",
                 "style": {
-                    "margin_top": "16px",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0",
+                    "margin_bottom": "1.12em",
+                    "margin_left": "0",
                     "display": "block",
-                    "width": "624px",
-                    "height": "18px",
-                    "margin_bottom": "16px"
+                    "margin_top": "1.12em"
                 }
             },
             {
@@ -60,15 +62,21 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "float": "left",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "width": "200px",
+                    "unicode_bidi": "embed",
                     "min_height": "200px",
-                    "height": "200px",
-                    "border_left_color": "rgb(255, 0, 0)",
-                    "border_bottom_color": "rgb(255, 0, 0)",
-                    "border_top_color": "rgb(255, 0, 0)"
+                    "float": "left",
+                    "width": "200px",
+                    "background_color": "red",
+                    "font_family": "Ahem",
+                    "display": "block",
+                    "font_size": "100px",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "color": "red",
+                    "line_height": "1",
+                    "overflow_x": "auto",
+                    "overflow_y": "auto"
                 }
             },
             {
@@ -80,30 +88,38 @@
                 ],
                 "tag": "div",
                 "style": {
-                    "display": "block",
-                    "clear": "left",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "width": "200px",
+                    "unicode_bidi": "embed",
                     "position": "relative",
                     "top": "-200px",
-                    "border_left_color": "rgb(0, 128, 0)",
+                    "width": "200px",
+                    "background_color": "green",
+                    "font_family": "Ahem",
+                    "display": "block",
+                    "font_size": "100px",
+                    "clear": "left",
+                    "font_style": "normal",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
                     "height": "200px",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)"
+                    "color": "green",
+                    "line_height": "1",
+                    "overflow_x": "auto",
+                    "overflow_y": "auto"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "486px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "'min-height' specifies a fixed minimum used height. If the element requires an horizontal scrollbar, then the horizontal scrollbar height should be subtracted from the height of its containing block so that the resulting used height continues to honor the declared min-height.",
-    "matches": "max-height-107-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-heights",
+        "http://www.w3.org/TR/CSS21/visufx.html#overflow"
+    ]
 }

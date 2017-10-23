@@ -1,51 +1,49 @@
 {
     "assert": "Checks that minimum size for grid items is the specified size for height (regardless the content size) and the transferred size of the image for width (even when content size is bigger).",
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "display": "block",
                     "width": "100px",
                     "position": "absolute",
+                    "height": "100px",
                     "z_index": "-1",
-                    "height": "100px"
-                }
+                    "display": "block",
+                    "background_color": "red",
+                    "unicode_bidi": "embed"
+                },
+                "tag": "DIV"
             },
             {
-                "children": [
-                    {
-                        "tag": "IMG",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "min_height": "auto",
-                            "height": "100px",
-                            "min_width": "auto"
-                        }
-                    }
-                ],
-                "tag": "DIV",
                 "style": {
                     "display": "grid",
                     "width": "10px",
-                    "height": "10px"
-                }
+                    "height": "10px",
+                    "unicode_bidi": "embed"
+                },
+                "children": [
+                    {
+                        "style": {
+                            "height": "100px"
+                        },
+                        "tag": "IMG"
+                    }
+                ],
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "10px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "ref-filled-green-100px-square-image.html",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#min-size-auto"
-    ]
+    ],
+    "matches": "ref-filled-green-100px-square-image.html"
 }

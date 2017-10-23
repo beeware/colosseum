@@ -1,50 +1,53 @@
 {
     "matches": "abspos-024-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "style": {
-                    "border_top_color": "rgb(0, 128, 0)",
-                    "height": "16px",
-                    "display": "block",
-                    "position": "absolute",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "width": "64px",
-                    "direction": "rtl"
-                },
-                "tag": "div"
-            },
-            {
-                "style": {
-                    "height": "16px",
-                    "border_right_width": "64px",
-                    "display": "block",
-                    "border_right_color": "rgb(255, 0, 0)",
-                    "border_right_style": "solid",
-                    "direction": "rtl",
-                    "width": "560px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "16px",
-            "display": "block",
-            "margin_top": "8px",
-            "position": "relative",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "direction": "rtl",
-            "width": "624px",
-            "unicode_bidi": "embed"
-        },
-        "tag": "body"
-    },
     "assert": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "style": {
+                    "width": "4em",
+                    "background_clip": "initial",
+                    "color": "green",
+                    "background_color": "green",
+                    "background_position_y": "initial",
+                    "height": "1em",
+                    "background_size": "initial",
+                    "background_repeat_y": "initial",
+                    "display": "block",
+                    "position": "absolute",
+                    "unicode_bidi": "embed",
+                    "background_origin": "initial",
+                    "background_repeat_x": "initial",
+                    "background_image": "initial",
+                    "background_position_x": "initial",
+                    "background_attachment": "initial"
+                }
+            },
+            {
+                "tag": "div",
+                "style": {
+                    "border_right_width": "4em",
+                    "border_right_style": "solid",
+                    "height": "1em",
+                    "display": "block",
+                    "unicode_bidi": "embed",
+                    "border_right_color": "red"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "position": "relative",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

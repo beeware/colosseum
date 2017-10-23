@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/text.html#white-space-model",
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ],
+    "assert": "If a space (U+0020) at the beginning of a line     has 'white-space' set to 'normal', then it is removed, even if there's padding.",
+    "matches": "inlines-016-ref.xht",
     "test_case": {
         "children": [
             {
@@ -16,27 +14,36 @@
                         ],
                         "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(0, 255, 255)",
-                            "border_right_color": "rgb(0, 255, 255)",
-                            "padding_left": "40px",
-                            "border_bottom_color": "rgb(0, 255, 255)",
-                            "border_top_color": "rgb(0, 255, 255)"
+                            "padding_left": "1em"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "margin_top": "40px",
+                    "unicode_bidi": "embed",
+                    "background_position_y": "initial",
+                    "font_size": "2.5em",
+                    "width": "4em",
+                    "background_color": "teal",
                     "display": "block",
-                    "border_right_color": "rgb(0, 255, 255)",
-                    "width": "160px",
-                    "margin_right": "40px",
-                    "margin_bottom": "40px",
-                    "height": "40px",
-                    "margin_left": "40px",
-                    "border_left_color": "rgb(0, 255, 255)",
-                    "border_bottom_color": "rgb(0, 255, 255)",
-                    "border_top_color": "rgb(0, 255, 255)"
+                    "background_repeat_y": "initial",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "background_origin": "initial",
+                    "color": "aqua",
+                    "background_clip": "initial",
+                    "background_position_x": "initial",
+                    "background_size": "initial",
+                    "background_attachment": "initial",
+                    "margin_bottom": "1em",
+                    "background_image": "initial",
+                    "margin_right": "1em",
+                    "font_style": "normal",
+                    "background_repeat_x": "initial",
+                    "font_family": "Ahem",
+                    "margin_left": "1em",
+                    "line_height": "1",
+                    "margin_top": "1em"
                 }
             },
             {
@@ -49,41 +56,51 @@
                             }
                         ],
                         "tag": "span",
-                        "style": {
-                            "border_left_color": "rgb(0, 255, 255)",
-                            "border_right_color": "rgb(0, 255, 255)",
-                            "border_bottom_color": "rgb(0, 255, 255)",
-                            "border_top_color": "rgb(0, 255, 255)"
-                        }
+                        "style": {}
                     }
                 ],
                 "tag": "div",
                 "style": {
-                    "margin_top": "40px",
+                    "unicode_bidi": "embed",
+                    "background_position_y": "initial",
+                    "font_size": "2.5em",
+                    "width": "4em",
+                    "background_color": "teal",
                     "display": "block",
-                    "border_right_color": "rgb(0, 255, 255)",
-                    "width": "160px",
-                    "margin_right": "40px",
-                    "margin_bottom": "40px",
-                    "height": "40px",
-                    "margin_left": "40px",
-                    "border_left_color": "rgb(0, 255, 255)",
-                    "border_bottom_color": "rgb(0, 255, 255)",
-                    "border_top_color": "rgb(0, 255, 255)"
+                    "background_repeat_y": "initial",
+                    "font_variant_caps": "normal",
+                    "font_weight": "normal",
+                    "background_origin": "initial",
+                    "color": "aqua",
+                    "background_clip": "initial",
+                    "background_position_x": "initial",
+                    "background_size": "initial",
+                    "background_attachment": "initial",
+                    "margin_bottom": "1em",
+                    "background_image": "initial",
+                    "margin_right": "1em",
+                    "font_style": "normal",
+                    "background_repeat_x": "initial",
+                    "font_family": "Ahem",
+                    "white_space": "pre",
+                    "margin_left": "1em",
+                    "line_height": "1",
+                    "margin_top": "1em"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "120px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "If a space (U+0020) at the beginning of a line     has 'white-space' set to 'normal', then it is removed, even if there's padding.",
-    "matches": "inlines-016-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/text.html#white-space-model",
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
+    ]
 }

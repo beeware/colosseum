@@ -1,51 +1,50 @@
 {
     "matches": "right-004-ref.xht",
-    "test_case": {
-        "children": [
-            {
-                "children": [
-                    {
-                        "style": {
-                            "right": "0px",
-                            "height": "96px",
-                            "border_right_width": "5px",
-                            "display": "block",
-                            "position": "relative",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_right_style": "solid",
-                            "direction": "rtl",
-                            "width": "614px"
-                        },
-                        "tag": "div"
-                    }
-                ],
-                "style": {
-                    "height": "96px",
-                    "border_right_width": "5px",
-                    "display": "block",
-                    "position": "relative",
-                    "border_right_color": "rgb(255, 165, 0)",
-                    "border_right_style": "solid",
-                    "direction": "rtl",
-                    "width": "619px"
-                },
-                "tag": "div"
-            }
-        ],
-        "style": {
-            "margin_left": "8px",
-            "height": "96px",
-            "display": "block",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
     "assert": "The 'right' property sets a positive zero length value in inches.",
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#propdef-right",
         "http://www.w3.org/TR/CSS21/visuren.html#position-props"
-    ]
+    ],
+    "test_case": {
+        "tag": "body",
+        "children": [
+            {
+                "tag": "div",
+                "children": [
+                    {
+                        "tag": "div",
+                        "style": {
+                            "right": "0in",
+                            "border_right_width": "5px",
+                            "direction": "rtl",
+                            "border_right_style": "solid",
+                            "height": "1in",
+                            "position": "relative",
+                            "border_right_color": "blue",
+                            "unicode_bidi": "embed",
+                            "display": "block"
+                        }
+                    }
+                ],
+                "style": {
+                    "border_right_width": "5px",
+                    "direction": "rtl",
+                    "border_right_style": "solid",
+                    "height": "1in",
+                    "position": "relative",
+                    "border_right_color": "orange",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
+            }
+        ],
+        "style": {
+            "margin_bottom": "8px",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

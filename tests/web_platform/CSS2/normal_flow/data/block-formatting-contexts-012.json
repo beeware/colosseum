@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
-    ],
+    "assert": "Elements with display table-caption establish a new block formatting context.",
+    "matches": "block-formatting-contexts-008-ref.xht",
     "test_case": {
         "children": [
             {
@@ -9,39 +8,59 @@
                     {
                         "tag": "span",
                         "style": {
+                            "background_position_x": "initial",
+                            "background_size": "initial",
+                            "background_attachment": "initial",
+                            "width": "200px",
+                            "background_color": "blue",
                             "display": "table-caption",
+                            "background_repeat_y": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_y": "initial",
+                            "background_origin": "initial",
                             "height": "100px",
-                            "width": "200px"
+                            "background_clip": "initial",
+                            "background_image": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "border_image_width": "initial",
+                    "border_right_color": "black",
+                    "border_top_style": "solid",
+                    "border_image_source": "initial",
+                    "border_bottom_color": "black",
                     "display": "block",
-                    "border_bottom_width": "3px",
-                    "border_left_style": "solid",
-                    "border_left_width": "3px",
+                    "border_bottom_width": "medium",
                     "border_bottom_style": "solid",
-                    "border_top_width": "3px",
-                    "width": "200px",
-                    "border_right_width": "3px",
-                    "border_right_style": "solid",
+                    "border_left_color": "black",
                     "height": "200px",
-                    "border_top_style": "solid"
+                    "border_right_style": "solid",
+                    "border_left_width": "medium",
+                    "border_image_slice": "initial",
+                    "border_image_repeat": "initial",
+                    "width": "200px",
+                    "border_top_color": "black",
+                    "border_right_width": "medium",
+                    "border_image_outset": "initial",
+                    "border_left_style": "solid",
+                    "border_top_width": "medium"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "206px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "Elements with display table-caption establish a new block formatting context.",
-    "matches": "block-formatting-contexts-008-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#block-formatting"
+    ]
 }

@@ -1,85 +1,104 @@
 {
-    "assert": "The 'vertical-align' property sets the keyword 'baseline'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "div",
                         "children": [
                             {
+                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "span",
                                 "style": {
-                                    "border_left_color": "rgb(255, 0, 0)",
-                                    "border_right_color": "rgb(255, 0, 0)",
-                                    "border_bottom_color": "rgb(255, 0, 0)",
-                                    "border_top_color": "rgb(255, 0, 0)"
+                                    "vertical_align": "baseline",
+                                    "color": "red"
                                 }
                             },
                             {
+                                "tag": "span",
                                 "children": [
                                     {
                                         "text": "X",
                                         "style": {}
                                     }
                                 ],
-                                "tag": "span",
-                                "style": {}
+                                "style": {
+                                    "font_weight": "normal",
+                                    "font_variant_caps": "normal",
+                                    "font_family": "Ahem",
+                                    "line_height": "1em",
+                                    "font_style": "normal",
+                                    "font_size": "1.5in"
+                                }
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "display": "block",
-                            "height": "144px",
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
                             "position": "relative",
-                            "width": "624px"
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "0.5in",
+                            "font_style": "normal",
+                            "line_height": "1em",
+                            "display": "block"
                         }
                     },
                     {
+                        "tag": "div",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "div",
                         "style": {
-                            "top": "-67.19999694824219px",
-                            "display": "block",
-                            "height": "48px",
+                            "font_weight": "normal",
+                            "font_variant_caps": "normal",
                             "position": "relative",
-                            "width": "624px"
+                            "font_family": "Ahem",
+                            "unicode_bidi": "embed",
+                            "font_size": "0.5in",
+                            "font_style": "normal",
+                            "line_height": "1em",
+                            "top": "-0.7in",
+                            "display": "block"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "192px",
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
                     "position": "relative",
-                    "width": "624px"
+                    "font_family": "Ahem",
+                    "unicode_bidi": "embed",
+                    "font_size": "0.5in",
+                    "font_style": "normal",
+                    "line_height": "1em",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "192px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'vertical-align' property sets the keyword 'baseline'.",
     "matches": null
 }

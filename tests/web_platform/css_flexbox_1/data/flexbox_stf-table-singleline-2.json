@@ -1,43 +1,66 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-items"
+    ],
+    "matches": "flexbox_stf-table-singleline-ref.html",
+    "assert": null,
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "50px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "4200px",
+                    "background_color": "blue",
+                    "background_image": "initial",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "background_size": "initial",
+                    "background_clip": "initial",
                     "display": "table",
-                    "height": "50px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
+                            "background_color": "red",
+                            "background_image": "initial",
                             "width": "0px",
+                            "background_repeat_y": "initial",
+                            "background_origin": "initial",
+                            "background_position_y": "initial",
+                            "unicode_bidi": "embed",
+                            "background_size": "initial",
+                            "background_clip": "initial",
                             "display": "flex",
-                            "height": "50px"
+                            "background_attachment": "initial",
+                            "background_repeat_x": "initial",
+                            "background_position_x": "initial"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_bottom": "16px",
-                                    "margin_top": "16px",
-                                    "min_height": "auto",
-                                    "width": "39.984375px",
+                                    "margin_right": "0px",
+                                    "margin_bottom": "1em",
                                     "display": "block",
-                                    "min_width": "auto",
-                                    "height": "18px"
+                                    "width": "200px",
+                                    "margin_top": "1em",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -46,16 +69,16 @@
                                 ]
                             },
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_bottom": "16px",
-                                    "margin_top": "16px",
-                                    "min_height": "auto",
-                                    "width": "39.984375px",
+                                    "margin_right": "0px",
+                                    "margin_bottom": "1em",
                                     "display": "block",
-                                    "min_width": "auto",
-                                    "height": "18px"
+                                    "width": "200px",
+                                    "margin_top": "1em",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -64,16 +87,16 @@
                                 ]
                             },
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_bottom": "16px",
-                                    "margin_top": "16px",
-                                    "min_height": "auto",
-                                    "width": "39.984375px",
+                                    "margin_right": "0px",
+                                    "margin_bottom": "1em",
                                     "display": "block",
-                                    "min_width": "auto",
-                                    "height": "18px"
+                                    "width": "200px",
+                                    "margin_top": "1em",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -82,16 +105,16 @@
                                 ]
                             },
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_bottom": "16px",
-                                    "margin_top": "16px",
-                                    "min_height": "auto",
-                                    "width": "39.984375px",
+                                    "margin_right": "0px",
+                                    "margin_bottom": "1em",
                                     "display": "block",
-                                    "min_width": "auto",
-                                    "height": "18px"
+                                    "width": "200px",
+                                    "margin_top": "1em",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -100,17 +123,16 @@
                                 ]
                             },
                             {
-                                "tag": "P",
                                 "style": {
-                                    "margin_bottom": "16px",
-                                    "margin_top": "16px",
-                                    "min_height": "auto",
-                                    "width": "39.984375px",
+                                    "margin_right": "200em",
+                                    "margin_bottom": "1em",
                                     "display": "block",
-                                    "margin_right": "3200px",
-                                    "min_width": "auto",
-                                    "height": "18px"
+                                    "width": "200px",
+                                    "margin_top": "1em",
+                                    "unicode_bidi": "embed",
+                                    "margin_left": "0px"
                                 },
+                                "tag": "P",
                                 "children": [
                                     {
                                         "style": {},
@@ -123,10 +145,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-items"
-    ],
-    "matches": "flexbox_stf-table-singleline-ref.html",
-    "assert": null
+    }
 }

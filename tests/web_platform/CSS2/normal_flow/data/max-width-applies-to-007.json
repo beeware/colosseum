@@ -1,8 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
-    ],
+    "assert": "The 'max-width' property applies to elements with 'display' set to 'table-cell'.",
+    "matches": "../../reference/pass_if_square_96px_black.html",
     "test_case": {
         "children": [
             {
@@ -12,40 +10,51 @@
                             {
                                 "tag": "div",
                                 "style": {
+                                    "unicode_bidi": "embed",
+                                    "background_position_x": "initial",
+                                    "max_width": "1in",
+                                    "background_position_y": "initial",
+                                    "background_attachment": "initial",
+                                    "width": "3in",
+                                    "background_color": "black",
                                     "display": "table-cell",
-                                    "max_width": "96px",
-                                    "width": "96px",
-                                    "height": "96px"
+                                    "background_repeat_y": "initial",
+                                    "background_repeat_x": "initial",
+                                    "background_size": "initial",
+                                    "background_origin": "initial",
+                                    "height": "1in",
+                                    "background_clip": "initial",
+                                    "background_image": "initial"
                                 }
                             }
                         ],
                         "tag": "div",
                         "style": {
-                            "display": "table-row",
-                            "height": "96px",
-                            "width": "96px"
+                            "unicode_bidi": "embed",
+                            "display": "table-row"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
                     "display": "table",
-                    "height": "96px",
-                    "width": "96px"
+                    "table_layout": "fixed"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "96px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'max-width' property applies to elements with 'display' set to 'table-cell'.",
-    "matches": "../../reference/pass_if_square_96px_black.html"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#min-max-widths"
+    ]
 }

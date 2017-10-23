@@ -1,13 +1,15 @@
 {
-    "assert": "Line-height can be different from the content area so there is space above and below.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "Filler Text",
@@ -22,32 +24,35 @@
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_bottom_width": "96px",
+                            "line_height": "0",
                             "border_bottom_style": "solid",
-                            "border_bottom_color": "rgb(0, 0, 255)"
+                            "border_bottom_width": "1in",
+                            "border_bottom_color": "blue"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "display": "block",
-                    "height": "96px",
-                    "width": "624px"
+                    "font_weight": "normal",
+                    "font_variant_caps": "normal",
+                    "font_family": "serif",
+                    "unicode_bidi": "embed",
+                    "font_size": "0.5in",
+                    "font_style": "normal",
+                    "line_height": "1em",
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "96px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "Line-height can be different from the content area so there is space above and below.",
     "matches": null
 }

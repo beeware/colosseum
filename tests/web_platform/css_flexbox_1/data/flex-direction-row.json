@@ -1,33 +1,36 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#flex-direction"
+    ],
+    "matches": null,
+    "assert": "This test checks that the main axis of the row flex-direction has the same orientation as the inline axis of the current writing mode",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "36px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "width": "48px",
-                    "display": "flex",
-                    "height": "18px"
+                    "width": "3em",
+                    "flex_direction": "row",
+                    "direction": "ltr",
+                    "unicode_bidi": "embed",
+                    "display": "flex"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px"
+                            "direction": "ltr",
+                            "width": "1em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -36,14 +39,11 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px"
+                            "direction": "ltr",
+                            "width": "1em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -52,14 +52,11 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px"
+                            "direction": "ltr",
+                            "width": "1em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -70,23 +67,21 @@
                 ]
             },
             {
-                "tag": "DIV",
                 "style": {
-                    "height": "18px",
+                    "width": "3em",
+                    "flex_direction": "row",
                     "direction": "rtl",
-                    "display": "flex",
-                    "width": "48px"
+                    "unicode_bidi": "embed",
+                    "display": "flex"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px"
+                            "direction": "ltr",
+                            "width": "1em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -95,14 +90,11 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px"
+                            "direction": "ltr",
+                            "width": "1em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -111,14 +103,11 @@
                         ]
                     },
                     {
-                        "tag": "SPAN",
                         "style": {
-                            "min_height": "auto",
-                            "min_width": "auto",
-                            "width": "16px",
-                            "display": "block",
-                            "height": "18px"
+                            "direction": "ltr",
+                            "width": "1em"
                         },
+                        "tag": "SPAN",
                         "children": [
                             {
                                 "style": {},
@@ -129,10 +118,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#flex-direction"
-    ],
-    "matches": null,
-    "assert": "This test checks that the main axis of the row flex-direction has the same orientation as the inline axis of the current writing mode"
+    }
 }

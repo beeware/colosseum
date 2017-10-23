@@ -1,30 +1,40 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
+    "assert": "The 'width' property sets a minimum plus one length value in centimeters.",
+    "matches": "max-width-036-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_x": "initial",
+                    "background_position_y": "initial",
+                    "background_attachment": "initial",
+                    "width": "1cm",
+                    "background_color": "black",
                     "display": "block",
-                    "height": "96px",
-                    "width": "37.78125px"
+                    "background_repeat_y": "initial",
+                    "background_repeat_x": "initial",
+                    "background_size": "initial",
+                    "background_origin": "initial",
+                    "height": "1in",
+                    "background_clip": "initial",
+                    "background_image": "initial"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "96px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "The 'width' property sets a minimum plus one length value in centimeters.",
-    "matches": "max-width-036-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#propdef-width",
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

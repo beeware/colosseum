@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
-    ],
+    "assert": "For inline-block replaced element that has no intrinsic ratio and a 'height' set to 'auto', the 'height' is set to the largest rectangle that has a 2:1 ratio that is not greater than 150px and has a 'width' not greater than the device width.",
+    "matches": "block-replaced-height-004-ref.xht",
     "test_case": {
         "children": [
             {
@@ -9,66 +8,76 @@
                     {
                         "tag": "iframe",
                         "style": {
+                            "border_image_width": "initial",
+                            "border_bottom_color": "red",
+                            "border_image_source": "initial",
+                            "border_right_width": "initial",
+                            "border_top_width": "initial",
+                            "border_left_color": "red",
                             "display": "inline-block",
-                            "border_left_width": "3px",
+                            "border_bottom_width": "initial",
                             "border_bottom_style": "solid",
-                            "border_bottom_width": "3px",
-                            "height": "150px",
-                            "border_left_style": "solid",
-                            "border_right_color": "rgb(255, 0, 0)",
-                            "width": "300px",
-                            "border_top_width": "3px",
-                            "border_right_width": "3px",
-                            "border_top_color": "rgb(255, 0, 0)",
+                            "height": "auto",
                             "border_right_style": "solid",
-                            "border_left_color": "rgb(255, 0, 0)",
-                            "border_bottom_color": "rgb(255, 0, 0)",
+                            "border_left_width": "initial",
+                            "border_image_slice": "initial",
+                            "border_image_repeat": "initial",
+                            "width": "auto",
+                            "border_top_color": "red",
+                            "border_right_color": "red",
+                            "border_image_outset": "initial",
+                            "border_left_style": "solid",
                             "border_top_style": "solid"
                         }
                     },
                     {
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "border_top_style": "solid",
+                            "border_image_width": "initial",
                             "display": "block",
-                            "border_left_width": "3px",
-                            "border_bottom_style": "solid",
-                            "border_bottom_width": "3px",
-                            "height": "150px",
-                            "position": "absolute",
-                            "top": "0px",
-                            "border_left_style": "solid",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "width": "300px",
-                            "border_top_width": "3px",
-                            "border_right_width": "3px",
-                            "border_top_color": "rgb(0, 128, 0)",
+                            "border_right_width": "initial",
                             "border_right_style": "solid",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_style": "solid"
+                            "border_left_width": "initial",
+                            "border_image_slice": "initial",
+                            "border_top_color": "green",
+                            "border_bottom_style": "solid",
+                            "border_image_outset": "initial",
+                            "border_bottom_color": "green",
+                            "top": "0px",
+                            "border_top_width": "initial",
+                            "border_bottom_width": "initial",
+                            "height": "150px",
+                            "border_image_source": "initial",
+                            "border_left_style": "solid",
+                            "width": "300px",
+                            "border_image_repeat": "initial",
+                            "border_right_color": "green",
+                            "border_left_color": "green",
+                            "position": "absolute"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
                     "display": "block",
-                    "height": "160px",
-                    "position": "relative",
-                    "width": "624px"
+                    "position": "relative"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "160px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": "For inline-block replaced element that has no intrinsic ratio and a 'height' set to 'auto', the 'height' is set to the largest rectangle that has a 2:1 ratio that is not greater than 150px and has a 'width' not greater than the device width.",
-    "matches": "block-replaced-height-004-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#inline-replaced-height"
+    ]
 }

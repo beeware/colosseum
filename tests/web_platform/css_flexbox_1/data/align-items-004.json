@@ -1,37 +1,58 @@
 {
+    "help": [
+        "http://www.w3.org/TR/css-flexbox-1/#align-items-property",
+        "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
+    ],
+    "matches": "reference/align-content-001-ref.html",
+    "assert": "This test checks that the flex container with 'align-items: baseline' places each flex item's margin box so that their baselines align.",
     "test_case": {
-        "tag": "BODY",
         "style": {
-            "margin_bottom": "8px",
-            "margin_left": "8px",
-            "margin_top": "8px",
-            "width": "624px",
-            "display": "block",
             "margin_right": "8px",
-            "height": "100px"
+            "margin_bottom": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "unicode_bidi": "embed",
+            "margin_left": "8px"
         },
+        "tag": "BODY",
         "children": [
             {
-                "tag": "DIV",
                 "style": {
+                    "align_items": "baseline",
+                    "background_color": "initial",
+                    "background_image": "linear-gradient(green 0px, green 16px, red 17px, red 35px, green 36px, green 66px, red 67px, red 85px, green 86px, green 100px)",
                     "width": "300px",
+                    "background_repeat_y": "initial",
+                    "background_origin": "initial",
+                    "background_position_y": "initial",
+                    "unicode_bidi": "embed",
+                    "height": "100px",
+                    "background_size": "initial",
+                    "flex_wrap": "wrap",
+                    "background_clip": "initial",
                     "display": "flex",
-                    "height": "100px"
+                    "background_attachment": "initial",
+                    "background_repeat_x": "initial",
+                    "flex_direction": "initial",
+                    "background_position_x": "initial"
                 },
+                "tag": "DIV",
                 "children": [
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "20px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -40,18 +61,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "20px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -60,18 +83,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "40px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "40px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -80,18 +105,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "20px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -100,18 +127,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "20px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -120,18 +149,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "20px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -140,18 +171,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "40px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "40px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -160,18 +193,20 @@
                         ]
                     },
                     {
-                        "tag": "DIV",
                         "style": {
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "min_height": "auto",
-                            "border_left_color": "rgb(0, 128, 0)",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "background_color": "green",
+                            "width": "75px",
                             "display": "block",
-                            "border_top_color": "rgb(0, 128, 0)",
-                            "height": "20px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "width": "75px"
+                            "font_weight": "normal",
+                            "line_height": "1em",
+                            "font_variant_caps": "normal",
+                            "font_size": "20px",
+                            "unicode_bidi": "embed",
+                            "font_style": "normal"
                         },
+                        "tag": "DIV",
                         "children": [
                             {
                                 "style": {},
@@ -182,11 +217,5 @@
                 ]
             }
         ]
-    },
-    "help": [
-        "http://www.w3.org/TR/css-flexbox-1/#align-items-property",
-        "http://www.w3.org/TR/css-flexbox-1/#align-items-property"
-    ],
-    "matches": "reference/align-content-001-ref.html",
-    "assert": "This test checks that the flex container with 'align-items: baseline' places each flex item's margin box so that their baselines align."
+    }
 }

@@ -1,27 +1,25 @@
 {
-    "matches": null,
-    "assert": "Resizing the viewport may change the layout of page.",
     "test_case": {
-        "style": {
-            "width": "624px",
-            "margin_bottom": "8px",
-            "height": "36px",
-            "margin_top": "8px",
-            "margin_right": "8px",
-            "margin_left": "8px",
-            "display": "block"
-        },
         "tag": "body",
+        "style": {
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "unicode_bidi": "embed",
+            "margin_right": "8px"
+        },
         "children": [
             {
-                "style": {
-                    "width": "624px",
-                    "margin_bottom": "16px",
-                    "height": "36px",
-                    "margin_top": "16px",
-                    "display": "block"
-                },
                 "tag": "p",
+                "style": {
+                    "margin_left": "0",
+                    "display": "block",
+                    "margin_top": "1.12em",
+                    "margin_bottom": "1.12em",
+                    "unicode_bidi": "embed",
+                    "margin_right": "0"
+                },
                 "children": [
                     {
                         "style": {},
@@ -31,7 +29,9 @@
             }
         ]
     },
+    "matches": null,
     "help": [
         "http://www.w3.org/TR/CSS21/visuren.html#viewport"
-    ]
+    ],
+    "assert": "Resizing the viewport may change the layout of page."
 }

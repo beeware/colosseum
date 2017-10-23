@@ -5,193 +5,442 @@ function dump_test_case(node) {
     }
 
     if (node.tagName) {
-        var style = window.getComputedStyle(node)
-        var defaultStyles = {
+        var styleNames = [
             // 8. Box model #######################################################
             // 8.3 Margin properties
-            'margin-top': '0px',
-            'margin-right': '0px',
-            'margin-bottom': '0px',
-            'margin-left': '0px',
+            'margin-top',
+            'margin-right',
+            'margin-bottom',
+            'margin-left',
 
             // 8.4 Padding properties
-            'padding-top': '0px',
-            'padding-right': '0px',
-            'padding-bottom': '0px',
-            'padding-left': '0px',
+            'padding-top',
+            'padding-right',
+            'padding-bottom',
+            'padding-left',
 
             // 8.5 Border properties
             // 8.5.1 Border width
-            'border-top-width': '0px',
-            'border-right-width': '0px',
-            'border-bottom-width': '0px',
-            'border-left-width': '0px',
+            'border-top-width',
+            'border-right-width',
+            'border-bottom-width',
+            'border-left-width',
 
             // 8.5.2 Border color
-            'border-top-color': 'rgb(0, 0, 0)',
-            'border-right-color': 'rgb(0, 0, 0)',
-            'border-bottom-color': 'rgb(0, 0, 0)',
-            'border-left-color': 'rgb(0, 0, 0)',
+            'border-top-color',
+            'border-right-color',
+            'border-bottom-color',
+            'border-left-color',
 
             // 8.5.3 Border style
-            'border-top-style': 'none',
-            'border-right-style': 'none',
-            'border-bottom-style': 'none',
-            'border-left-style': 'none',
+            'border-top-style',
+            'border-right-style',
+            'border-bottom-style',
+            'border-left-style',
 
             // 9. Visual formatting model #########################################
             // 9.2.4 The display property
-            'display': 'inline',
+            'display',
             // 9.3 Positioning schemes
-            'position': 'static',
+            'position',
 
             // 9.3.2 Box offsets
-            'top': 'auto',
-            'bottom': 'auto',
-            'left': 'auto',
-            'right': 'auto',
+            'top',
+            'bottom',
+            'left',
+            'right',
 
             // 9.5.1 Positioning the float
-            'float': 'none',
+            'float',
             // 9.5.2 Controlling flow next to floats
-            'clear': 'none',
+            'clear',
 
             // 9.9 Layered Presentation
-            'z-index': 'auto',
+            'z-index',
 
             // 9.10 Text Direction
-            'direction': 'ltr',
-            'unicode-bidi': 'normal',
+            'direction',
+            'unicode-bidi',
 
             // 10. Visual formatting model details ################################
             // 10.2 Content width
-            'width': 'auto',
+            'width',
 
             // 10.4 Minimum and maximum width
-            'min-width': '0px',
-            'max-width': 'none',
+            'min-width',
+            'max-width',
 
             // 10.5 Content height
-            'height': 'auto',
+            'height',
 
             // 10.7 Minimum and maximum heights
-            'min-height': '0px',
-            'max-height': 'none',
+            'min-height',
+            'max-height',
 
             // 10.8 Leading and half-leading
-            // line-height
-            // vertical-align
+            'line-height',
+            'vertical-align',
 
             // 11. Visual effects #################################################
             // 11.1.1 Overflow
-            // overflow
+            'overflow',
 
             // 11.1.2 Clip
-            // clip
+            'clip',
 
             // 11.2 Visibility
-            // visibility
+            'visibility',
 
             // 12. Visual effects #################################################
             // 12.2 The content property
-            // content
+            'content',
 
             // 12.3 Quotation marks
-            // quotes
+            'quotes',
 
             // 12.4 Automatic counters and numbering
-            // counter-reset
-            // counter-increment
+            'counter-reset',
+            'counter-increment',
 
             // 12.5 Lists
-            // list-style-type
-            // list-style-image
-            // list-style-position
+            'list-style-type',
+            'list-style-image',
+            'list-style-position',
 
             // 13. Paged media ####################################################
             // 13.3.1 Page break properties
-            // page-break-before
-            // page-break-after
-            // page-break-inside
+            'page-break-before',
+            'page-break-after',
+            'page-break-inside',
 
             // 13.3.2 Breaks inside elements
-            // orphans
-            // widows
+            'orphans',
+            'widows',
 
             // 14. Colors and backgrounds #########################################
             // 14.1 Foreground color
-            // color
+            'color',
 
             // 14.2.1 Background properties
-            // 'background-color': 'rgb(0, 0, 0, 0)',
-            // 'background-image': 'none',
-            // 'background-repeat': 'repeat',
-            // 'background-attachment': 'scroll',
-            // 'background-position': '0% 0%',
+            'background-color',
+            'background-image',
+            'background-repeat',
+            'background-attachment',
+            'background-position',
 
             // 15. Fonts ##########################################################
             // 15.3 Font family
-            // font-family
+            'font-family',
 
             // 15.4 Font Styling
-            // font-style
+            'font-style',
 
             // 15.5 Small-caps
-            // font-variant
+            'font-variant',
 
             // 15.6 Font boldness
-            // font-weight
+            'font-weight',
 
             // 15.7 Font size
-            // font-size
+            'font-size',
 
             // 16. Text ###########################################################
             // 16.1 Indentation
-            // text-indent
+            'text-indent',
 
             // 16.2 Alignment
-            // text-align
+            'text-align',
 
             // 16.3 Decoration
-            // text-decoration
+            // 'text-decoration',
 
             // 16.4 Letter and word spacing
-            // letter-spacing
-            // word-spacing
+            'letter-spacing',
+            'word-spacing',
 
             // 16.5 Capitalization
-            // text-transform
+            'text-transform',
 
             // 16.6 White space
-            // white-space
+            'white-space',
 
             // 17. Tables #########################################################
             // 17.4.1 Caption position and alignment
-            // caption-side
+            'caption-side',
 
             // 17.5.2 Table width algorithms
-            // table-layout
+            'table-layout',
 
             // 17.6 Borders
-            // border-collapse
-            // border-spacing
-            // empty-cells
+            'border-collapse',
+            'border-spacing',
+            'empty-cells',
 
             // 18. User interface #################################################
             // 18.1 Cursors
-            // cursor
+            'cursor',
 
             // 18.4 Dynamic outlines
-            // outline-width
-            // outline-style
-            // outline-color
+            'outline-width',
+            'outline-style',
+            'outline-color',
 
+            // #####################################################################
+            //  Flexbox properties
+            // #####################################################################
+            //  5. Ordering and orientation ########################################
+            //  5.1 Flex flow direction
+
+            'flex-direction',
+
+            // 5.2 Flex line wrapping
+            'flex-wrap',
+
+            // 5.4 Display order
+            'order',
+
+            // 7. Flexibility #####################################################
+            // 7.2 Components of flexibility
+            'flex-grow',
+            'flex-shrink',
+            'flex-basis',
+
+            // 8. Alignment #######################################################
+            // 8.2 Axis alignment
+            'justify-content',
+
+            // 8.3 Cros-axis alignment
+            'align-items',
+            'align-self',
+
+            // 8.4 Packing flex lines
+            'align-content',
+
+            // #####################################################################
+            //  Grid properties
+            // #####################################################################
+            //  7. Defining the grid ###############################################
+            //  7.2 Explicit track sizing
+            'grid-template-columns',
+            'grid-template-rows',
+
+            //  7.3 Named Areas
+            'grid-template-areas',
+
+            //  7.6 Implicit track sizing
+            'grid-auto-columns',
+            'grid-auto-rows',
+
+            //  7.7 Automatic placement
+            'grid-auto-flow',
+
+            //  8. Placing grid items ##############################################
+            //  8.3 Line-based placement
+            'grid-row-start',
+            'grid-column-start',
+            'grid-row-end',
+            'grid-column-end',
+
+            //  10. Alignment and spacing ##########################################
+            //  10.1 Gutters
+            'grid-row-gap',
+            'grid-column-gap'
+        ]
+
+        var defaultStyles = {
+            "html, address, blockquote, body, dd, div, dl, dt, fieldset, form,\
+                    frame, frameset, h1, h2, h3, h4, h5, h6, noframes, ol, p,\
+                    ul, center, dir, hr, menu, pre": {
+                'display': 'block',
+                'unicode_bidi': 'embed'
+            },
+            "li": {
+                'display': 'list-item'
+            },
+            "head": {
+                'display': 'none'
+            },
+            "table": {
+                'display': 'table'
+            },
+            "tr": {
+                'display': 'table-row'
+            },
+            "thead": {
+                'display': 'table-header-group'
+            },
+            "tbody": {
+                'display': 'table-row-group'
+            },
+            "tfoot": {
+                'display': 'table-footer-group'
+            },
+            "col": {
+                'display': 'table-column'
+            },
+            "colgroup": {
+                'display': 'table-column-group'
+            },
+            "td, th": {
+                'display': 'table-cell'
+            },
+            "caption": {
+                'display': 'table-caption'
+            },
+            "th": {
+                'font_weight': 'bolder',
+                'text_align': 'center'
+            },
+            "caption": {
+                'text_align': 'center'
+            },
+            "body": {
+                'margin_top': '8px',
+                'margin_right': '8px',
+                'margin_bottom': '8px',
+                'margin_left': '8px'
+            },
+            "h1": {
+                'font_size': '2em',
+                'margin_top': '.67em',
+                'margin_right': '0',
+                'margin_bottom': '.67em',
+                'margin_left': '0'
+            },
+            "h2": {
+                'font_size': '1.5em',
+                'margin_top': '.75em',
+                'margin_right': '0',
+                'margin_bottom': '.75em',
+                'margin_left': '0'
+            },
+            "h3": {
+                'font_size': '1.17em',
+                'margin_top': '.83em',
+                'margin_right': '0',
+                'margin_bottom': '.83em',
+                'margin_left': '0'
+            },
+            "h4, p, blockquote, ul, fieldset, form, ol, dl, dir, menu": {
+                'margin_top': '1.12em',
+                'margin_right': '0',
+                'margin_bottom': '1.12em',
+                'margin_left': '0'
+            },
+            "h5": {
+                'font_size': '.83em',
+                'margin_top': '1.5em',
+                'margin_right': '0',
+                'margin_bottom': '1.5em',
+                'margin_left': '0'
+            },
+            "h6": {
+                'font_size': '.75em',
+                'margin_top': '1.67em',
+                'margin_right': '0',
+                'margin_bottom': '1.67em',
+                'margin_left': '0'
+            },
+            "h1, h2, h3, h4, h5, h6, b, strong": {
+                'font_weight': 'bolder'
+            },
+            "blockquote": {
+                'margin_left': '40px',
+                'margin_right': '40px'
+            },
+            "i, cite, em, var, address": {
+                'font_style': 'italic'
+            },
+            "pre, tt, code, kbd, samp": {
+               'font_family': 'monospace'
+            },
+            "pre": {
+                'white_space': 'pre'
+            },
+            "button, textarea, input, select": {
+                'display': 'inline-block'
+            },
+            "big": {
+                'font_size': '1.17em'
+            },
+            "small, sub, sup": {
+                'font_size': '.83em'
+            },
+            "sub": {
+                'vertical_align': 'sub'
+            },
+            "sup": {
+                'vertical_align': 'super'
+            },
+            "table": {
+                'border_spacing': '2px'
+            },
+            "thead, tbody, tfoot": {
+                'vertical_align': 'middle'
+            },
+            "td, th, tr": {
+                'vertical_align': 'inherit'
+            },
+            "s, strike, del": {
+                'text_decoration': 'line-through'
+            },
+            "hr": {
+                'border': '1px inset'
+            },
+            "ol, ul, dir, menu, dd": {
+                'margin_left': '40px'
+            },
+            "ol": {
+                'list_style_type': 'decimal'
+            },
+            "ol ul, ul ol, ul ul, ol ol": {
+                'margin_top': '0',
+                'margin_bottom': '0'
+            },
+            "u, ins": {
+                'text_decoration': 'underline'
+            },
+            "br:before": {
+                'content': "\A",
+                'white_space': 'pre-line'
+            },
+            "center": {
+                'text_align': 'center'
+            },
+            ":link, :visited": {
+                'text_decoration': 'underline'
+            },
         }
 
-        // Copy over all computed styles that have been modified
-        for (var s in defaultStyles) {
-            if (style.getPropertyValue(s) !== defaultStyles[s]) {
-                result['style'][s.replace(/-/g, '_')] = style.getPropertyValue(s)
+        // Apply default stylesheet
+        var selector, ss, st, rule, styles
+        for (selector in defaultStyles) {
+            if (node.matches(selector)) {
+                for (st in defaultStyles[selector]) {
+                    result['style'][st] = defaultStyles[selector][st]
+                }
+            }
+        }
+
+        // Apply the stylesheets to the element
+        for (ss = 0; ss < document.styleSheets.length; ss++) {
+            for (rule = 0; rule < document.styleSheets[ss].rules.length; rule++) {
+                selector = document.styleSheets[ss].rules[rule].selectorText
+                if (selector) {
+                    if (selector.startsWith('@') || node.matches(selector)) {
+                        styles = document.styleSheets[ss].rules[rule].style
+                        for (st = 0; st < styles.length; st++) {
+                            result['style'][styles[st].replace(/-/g, '_')] = styles[styles[st]]
+                        }
+                    }
+                }
+            }
+        }
+
+        // Apply all styles that have been explicitly set on the element
+        for (st in styleNames) {
+            if (node.style[st] !== '') {
+                result['style'][st.replace(/-/g, '_')] = node.style[st]
             }
         }
 
@@ -352,30 +601,35 @@ function dump_reference(node, tagName) {
  * Mainline
  *******************************************************/
 
-// Evaluating the reference will modify the document, so
-// evaluate the test case first.
-var test_case = dump_test_case(document.body)
-var reference = dump_reference(document.body, document.body.tagName)
+try {
+    // Evaluating the reference will modify the document, so
+    // evaluate the test case first.
+    var test_case = dump_test_case(document.body)
+    var reference = dump_reference(document.body, document.body.tagName)
 
-var result = {
-    'help': [],
-    'test_case': test_case,
-    'reference': reference
-}
-
-// Read the document metadata, looking for key elements:
-//   <link rel='match' href="A test file that shows passing content">
-//   <link ref='help' href="The URL of the relevant sections of the spec">
-//   <meta name='assert' content='The description of what the test asserts'
-for (var n = 0; n < document.head.childElementCount; n++) {
-    var node = document.head.children[n]
-    if (node.tagName.toLowerCase() === 'link' && node.getAttribute('rel') === 'match') {
-        result.matches = node.getAttribute('href')
-    } else if (node.tagName.toLowerCase() === 'link' && node.getAttribute('rel') === 'help') {
-        result.help.push(node.getAttribute('href'))
-    } else if (node.tagName.toLowerCase() === 'meta' && node.getAttribute('name') === 'assert') {
-        result.assert = node.getAttribute('content')
+    var result = {
+        'help': [],
+        'test_case': test_case,
+        'reference': reference
     }
-}
 
-JSON.stringify(result)
+    // Read the document metadata, looking for key elements:
+    //   <link rel='match' href="A test file that shows passing content">
+    //   <link ref='help' href="The URL of the relevant sections of the spec">
+    //   <meta name='assert' content='The description of what the test asserts'
+    for (var n = 0; n < document.head.childElementCount; n++) {
+        var node = document.head.children[n]
+        if (node.tagName.toLowerCase() === 'link' && node.getAttribute('rel') === 'match') {
+            result.matches = node.getAttribute('href')
+        } else if (node.tagName.toLowerCase() === 'link' && node.getAttribute('rel') === 'help') {
+            result.help.push(node.getAttribute('href'))
+        } else if (node.tagName.toLowerCase() === 'meta' && node.getAttribute('name') === 'assert') {
+            result.assert = node.getAttribute('content')
+        }
+    }
+
+    JSON.stringify(result)
+
+} catch (err) {
+    err.message
+}

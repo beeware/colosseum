@@ -1,61 +1,72 @@
 {
     "assert": "Checks that automatic minimum size is not clamped if the grid item has not stretch alignment.",
     "test_case": {
+        "style": {
+            "margin_top": "8px",
+            "margin_bottom": "8px",
+            "margin_left": "8px",
+            "display": "block",
+            "margin_right": "8px",
+            "unicode_bidi": "embed"
+        },
         "children": [
             {
-                "tag": "DIV",
                 "style": {
-                    "display": "block",
                     "width": "100px",
                     "position": "absolute",
+                    "height": "100px",
                     "z_index": "-1",
-                    "height": "100px"
-                }
+                    "display": "block",
+                    "background_color": "red",
+                    "unicode_bidi": "embed"
+                },
+                "tag": "DIV"
             },
             {
+                "style": {
+                    "grid_template_columns": "10px",
+                    "grid_auto_columns": "initial",
+                    "grid_auto_flow": "initial",
+                    "grid_column_gap": "initial",
+                    "unicode_bidi": "embed",
+                    "grid_template_areas": "none",
+                    "grid_auto_rows": "initial",
+                    "display": "grid",
+                    "grid_row_gap": "initial",
+                    "grid_template_rows": "10px"
+                },
                 "children": [
                     {
+                        "style": {
+                            "align_self": "start",
+                            "font_variant_caps": "normal",
+                            "font_family": "Ahem",
+                            "color": "green",
+                            "font_weight": "normal",
+                            "font_style": "normal",
+                            "unicode_bidi": "embed",
+                            "justify_self": "start",
+                            "display": "block",
+                            "line_height": "1",
+                            "background_color": "green",
+                            "font_size": "50px"
+                        },
                         "children": [
                             {
-                                "style": {},
-                                "text": "IT E"
+                                "text": "IT E",
+                                "style": {}
                             }
                         ],
-                        "tag": "DIV",
-                        "style": {
-                            "display": "block",
-                            "width": "100px",
-                            "border_right_color": "rgb(0, 128, 0)",
-                            "height": "100px",
-                            "border_left_color": "rgb(0, 128, 0)",
-                            "min_width": "auto",
-                            "min_height": "auto",
-                            "border_bottom_color": "rgb(0, 128, 0)",
-                            "border_top_color": "rgb(0, 128, 0)"
-                        }
+                        "tag": "DIV"
                     }
                 ],
-                "tag": "DIV",
-                "style": {
-                    "display": "grid",
-                    "width": "624px",
-                    "height": "10px"
-                }
+                "tag": "DIV"
             }
         ],
-        "tag": "BODY",
-        "style": {
-            "display": "block",
-            "width": "624px",
-            "margin_left": "8px",
-            "height": "10px",
-            "margin_bottom": "8px",
-            "margin_top": "8px",
-            "margin_right": "8px"
-        }
+        "tag": "BODY"
     },
-    "matches": "../../reference/ref-filled-green-100px-square.xht",
     "help": [
         "http://www.w3.org/TR/css-grid-1/#min-size-auto"
-    ]
+    ],
+    "matches": "../../reference/ref-filled-green-100px-square.xht"
 }

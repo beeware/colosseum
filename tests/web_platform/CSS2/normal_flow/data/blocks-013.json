@@ -1,7 +1,6 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
-    ],
+    "assert": null,
+    "matches": "blocks-013-ref.xht",
     "test_case": {
         "children": [
             {
@@ -21,19 +20,29 @@
                         ],
                         "tag": "div",
                         "style": {
+                            "unicode_bidi": "embed",
+                            "padding_left": "0px",
+                            "font_size": "xx-large",
+                            "width": "auto",
                             "display": "block",
-                            "height": "37px",
-                            "margin_left": "64px",
-                            "width": "0px",
-                            "margin_right": "64px"
+                            "border_right_width": "initial",
+                            "margin_right": "2em",
+                            "border_right_style": "none",
+                            "border_left_width": "initial",
+                            "border_left_style": "none",
+                            "padding_right": "0px",
+                            "border_right_color": "initial",
+                            "margin_left": "2em",
+                            "border_left_color": "initial"
                         }
                     }
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "width": "3em",
                     "display": "block",
-                    "height": "37px",
-                    "width": "96px"
+                    "font_size": "xx-large"
                 }
             },
             {
@@ -51,24 +60,24 @@
                 ],
                 "tag": "div",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "padding_left": "2em",
                     "display": "block",
-                    "height": "37px",
-                    "width": "560px",
-                    "padding_left": "64px"
+                    "font_size": "xx-large"
                 }
             }
         ],
         "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "display": "block",
-            "width": "624px",
+            "unicode_bidi": "embed",
             "margin_right": "8px",
             "margin_bottom": "8px",
-            "height": "74px",
-            "margin_left": "8px"
+            "margin_left": "8px",
+            "display": "block",
+            "margin_top": "8px"
         }
     },
-    "assert": null,
-    "matches": "blocks-013-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visudet.html#the-width-property"
+    ]
 }

@@ -1,14 +1,15 @@
 {
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
-    ],
+    "assert": null,
+    "matches": "inlines-020-ref.xht",
     "test_case": {
         "children": [
             {
                 "tag": "div",
                 "style": {
-                    "border_left_color": "rgb(0, 128, 0)",
+                    "unicode_bidi": "embed",
+                    "border_left_color": "green",
                     "border_left_width": "20px",
+                    "display": "inline",
                     "border_left_style": "solid"
                 }
             },
@@ -21,13 +22,34 @@
                 ],
                 "tag": "p",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_y": "initial",
+                    "line_height": "1",
+                    "background_color": "red",
                     "display": "block",
-                    "border_right_color": "rgb(255, 255, 0)",
-                    "width": "80px",
-                    "height": "20px",
-                    "border_left_color": "rgb(255, 255, 0)",
-                    "border_bottom_color": "rgb(255, 255, 0)",
-                    "border_top_color": "rgb(255, 255, 0)"
+                    "background_repeat_y": "initial",
+                    "padding_bottom": "0px",
+                    "font_weight": "normal",
+                    "font_size": "20px",
+                    "color": "yellow",
+                    "font_family": "serif",
+                    "padding_left": "0px",
+                    "background_position_x": "initial",
+                    "background_origin": "initial",
+                    "background_size": "initial",
+                    "background_attachment": "initial",
+                    "padding_top": "0px",
+                    "background_image": "initial",
+                    "margin_right": "0px",
+                    "font_style": "normal",
+                    "background_repeat_x": "initial",
+                    "background_clip": "initial",
+                    "padding_right": "0px",
+                    "margin_bottom": "0px",
+                    "margin_left": "0px",
+                    "width": "4em",
+                    "margin_top": "0px",
+                    "font_variant_caps": "normal"
                 }
             },
             {
@@ -39,25 +61,59 @@
                 ],
                 "tag": "p",
                 "style": {
+                    "unicode_bidi": "embed",
+                    "background_position_y": "initial",
+                    "top": "1em",
+                    "line_height": "1",
+                    "background_color": "white",
                     "display": "block",
-                    "height": "20px",
-                    "border_right_color": "rgb(0, 128, 0)",
-                    "width": "590.078125px",
+                    "background_repeat_y": "initial",
+                    "padding_bottom": "0px",
+                    "font_weight": "normal",
+                    "font_size": "20px",
+                    "color": "green",
+                    "font_family": "serif",
+                    "padding_left": "0px",
+                    "background_position_x": "initial",
+                    "background_origin": "initial",
+                    "background_size": "initial",
+                    "background_attachment": "initial",
+                    "padding_top": "0px",
+                    "background_image": "initial",
+                    "margin_right": "0px",
+                    "font_style": "normal",
+                    "background_repeat_x": "initial",
+                    "background_clip": "initial",
+                    "padding_right": "0px",
+                    "margin_bottom": "0px",
                     "position": "absolute",
-                    "top": "20px",
-                    "border_left_color": "rgb(0, 128, 0)",
-                    "border_bottom_color": "rgb(0, 128, 0)",
-                    "border_top_color": "rgb(0, 128, 0)"
+                    "margin_left": "0px",
+                    "margin_top": "0px",
+                    "font_variant_caps": "normal"
                 }
             }
         ],
         "tag": "body",
         "style": {
+            "unicode_bidi": "embed",
+            "padding_left": "0px",
+            "padding_top": "0px",
+            "line_height": "1",
+            "font_family": "serif",
+            "font_style": "normal",
             "display": "block",
-            "height": "40px",
-            "width": "640px"
+            "margin_right": "0px",
+            "margin_bottom": "0px",
+            "padding_bottom": "0px",
+            "padding_right": "0px",
+            "font_weight": "normal",
+            "font_size": "20px",
+            "margin_left": "0px",
+            "margin_top": "0px",
+            "font_variant_caps": "normal"
         }
     },
-    "assert": null,
-    "matches": "inlines-020-ref.xht"
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#inline-boxes"
+    ]
 }

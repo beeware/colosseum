@@ -1,92 +1,22 @@
 {
-    "border": [
-        0,
-        0,
-        0,
-        0
-    ],
+    "tag": "body",
+    "id": "",
     "padding": [
         0,
         0,
         0,
         0
     ],
-    "padding_box": {
-        "size": [
-            624,
-            152
-        ],
-        "position": [
-            8,
-            20
-        ]
-    },
-    "tag": "body",
-    "border_box": {
-        "size": [
-            624,
-            152
-        ],
-        "position": [
-            8,
-            20
-        ]
-    },
-    "content": {
-        "size": [
-            624,
-            152
-        ],
-        "position": [
-            8,
-            20
-        ]
-    },
     "children": [
         {
-            "border": [
-                3,
-                3,
-                3,
-                3
-            ],
+            "tag": "div",
+            "id": "",
             "padding": [
                 0,
                 0,
                 0,
                 0
             ],
-            "padding_box": {
-                "size": [
-                    80,
-                    60
-                ],
-                "position": [
-                    31,
-                    23
-                ]
-            },
-            "tag": "div",
-            "border_box": {
-                "size": [
-                    86,
-                    66
-                ],
-                "position": [
-                    28,
-                    20
-                ]
-            },
-            "content": {
-                "size": [
-                    80,
-                    60
-                ],
-                "position": [
-                    31,
-                    23
-                ]
-            },
             "children": [
                 {
                     "size": [
@@ -96,49 +26,14 @@
                     "text": "\n    A"
                 },
                 {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
+                    "tag": "div",
+                    "id": "",
                     "padding": [
                         0,
                         0,
                         0,
                         0
                     ],
-                    "padding_box": {
-                        "size": [
-                            80,
-                            60
-                        ],
-                        "position": [
-                            71,
-                            23
-                        ]
-                    },
-                    "tag": "div",
-                    "border_box": {
-                        "size": [
-                            80,
-                            60
-                        ],
-                        "position": [
-                            71,
-                            23
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            80,
-                            60
-                        ],
-                        "position": [
-                            71,
-                            23
-                        ]
-                    },
                     "children": [
                         {
                             "size": [
@@ -148,29 +43,16 @@
                             "text": "B\n    "
                         },
                         {
-                            "border": [
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
+                            "tag": "div",
+                            "id": "",
                             "padding": [
                                 0,
                                 0,
                                 0,
                                 0
                             ],
-                            "padding_box": {
-                                "size": [
-                                    40,
-                                    20
-                                ],
-                                "position": [
-                                    71,
-                                    43
-                                ]
-                            },
-                            "tag": "div",
+                            "children": [],
+                            "text": "C",
                             "border_box": {
                                 "size": [
                                     80,
@@ -178,6 +60,16 @@
                                 ],
                                 "position": [
                                     31,
+                                    43
+                                ]
+                            },
+                            "padding_box": {
+                                "size": [
+                                    40,
+                                    20
+                                ],
+                                "position": [
+                                    71,
                                     43
                                 ]
                             },
@@ -191,9 +83,12 @@
                                     43
                                 ]
                             },
-                            "children": [],
-                            "text": "C",
-                            "id": ""
+                            "border": [
+                                0,
+                                0,
+                                0,
+                                0
+                            ]
                         },
                         {
                             "size": [
@@ -203,7 +98,42 @@
                             "text": "\n    B"
                         }
                     ],
-                    "id": ""
+                    "border_box": {
+                        "size": [
+                            80,
+                            60
+                        ],
+                        "position": [
+                            71,
+                            23
+                        ]
+                    },
+                    "padding_box": {
+                        "size": [
+                            80,
+                            60
+                        ],
+                        "position": [
+                            71,
+                            23
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            80,
+                            60
+                        ],
+                        "position": [
+                            71,
+                            23
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 },
                 {
                     "size": [
@@ -213,21 +143,16 @@
                     "text": "A\n  "
                 }
             ],
-            "id": ""
-        },
-        {
-            "border": [
-                3,
-                3,
-                3,
-                3
-            ],
-            "padding": [
-                0,
-                0,
-                0,
-                0
-            ],
+            "border_box": {
+                "size": [
+                    86,
+                    66
+                ],
+                "position": [
+                    28,
+                    20
+                ]
+            },
             "padding_box": {
                 "size": [
                     80,
@@ -235,10 +160,195 @@
                 ],
                 "position": [
                     31,
-                    109
+                    23
                 ]
             },
+            "content": {
+                "size": [
+                    80,
+                    60
+                ],
+                "position": [
+                    31,
+                    23
+                ]
+            },
+            "border": [
+                3,
+                3,
+                3,
+                3
+            ]
+        },
+        {
             "tag": "div",
+            "id": "",
+            "padding": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "children": [
+                {
+                    "size": [
+                        60,
+                        20
+                    ],
+                    "text": "\n    A\u00a0\u00a0"
+                },
+                {
+                    "tag": "span",
+                    "id": "",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "children": [],
+                    "text": "B",
+                    "border_box": {
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "position": [
+                            91,
+                            109
+                        ]
+                    },
+                    "padding_box": {
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "position": [
+                            91,
+                            109
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "position": [
+                            91,
+                            109
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "tag": "div",
+                    "id": "",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "children": [],
+                    "text": "C",
+                    "border_box": {
+                        "size": [
+                            80,
+                            20
+                        ],
+                        "position": [
+                            31,
+                            129
+                        ]
+                    },
+                    "padding_box": {
+                        "size": [
+                            40,
+                            20
+                        ],
+                        "position": [
+                            71,
+                            129
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            40,
+                            20
+                        ],
+                        "position": [
+                            71,
+                            129
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "size": [
+                        40,
+                        20
+                    ],
+                    "text": "\n    \u00a0A"
+                },
+                {
+                    "tag": "span",
+                    "id": "",
+                    "padding": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "children": [],
+                    "text": "B",
+                    "border_box": {
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "position": [
+                            71,
+                            149
+                        ]
+                    },
+                    "padding_box": {
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "position": [
+                            71,
+                            149
+                        ]
+                    },
+                    "content": {
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "position": [
+                            71,
+                            149
+                        ]
+                    },
+                    "border": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            ],
             "border_box": {
                 "size": [
                     86,
@@ -247,6 +357,16 @@
                 "position": [
                     28,
                     106
+                ]
+            },
+            "padding_box": {
+                "size": [
+                    80,
+                    60
+                ],
+                "position": [
+                    31,
+                    109
                 ]
             },
             "content": {
@@ -259,168 +379,48 @@
                     109
                 ]
             },
-            "children": [
-                {
-                    "size": [
-                        60,
-                        20
-                    ],
-                    "text": "\n    A\u00a0\u00a0"
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "size": [
-                            20,
-                            20
-                        ],
-                        "position": [
-                            91,
-                            109
-                        ]
-                    },
-                    "tag": "span",
-                    "border_box": {
-                        "size": [
-                            20,
-                            20
-                        ],
-                        "position": [
-                            91,
-                            109
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            20,
-                            20
-                        ],
-                        "position": [
-                            91,
-                            109
-                        ]
-                    },
-                    "children": [],
-                    "text": "B",
-                    "id": ""
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "size": [
-                            40,
-                            20
-                        ],
-                        "position": [
-                            71,
-                            129
-                        ]
-                    },
-                    "tag": "div",
-                    "border_box": {
-                        "size": [
-                            80,
-                            20
-                        ],
-                        "position": [
-                            31,
-                            129
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            40,
-                            20
-                        ],
-                        "position": [
-                            71,
-                            129
-                        ]
-                    },
-                    "children": [],
-                    "text": "C",
-                    "id": ""
-                },
-                {
-                    "size": [
-                        40,
-                        20
-                    ],
-                    "text": "\n    \u00a0A"
-                },
-                {
-                    "border": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "padding_box": {
-                        "size": [
-                            20,
-                            20
-                        ],
-                        "position": [
-                            71,
-                            149
-                        ]
-                    },
-                    "tag": "span",
-                    "border_box": {
-                        "size": [
-                            20,
-                            20
-                        ],
-                        "position": [
-                            71,
-                            149
-                        ]
-                    },
-                    "content": {
-                        "size": [
-                            20,
-                            20
-                        ],
-                        "position": [
-                            71,
-                            149
-                        ]
-                    },
-                    "children": [],
-                    "text": "B",
-                    "id": ""
-                }
-            ],
-            "id": ""
+            "border": [
+                3,
+                3,
+                3,
+                3
+            ]
         }
     ],
-    "id": ""
+    "border_box": {
+        "size": [
+            1008,
+            152
+        ],
+        "position": [
+            8,
+            20
+        ]
+    },
+    "padding_box": {
+        "size": [
+            1008,
+            152
+        ],
+        "position": [
+            8,
+            20
+        ]
+    },
+    "content": {
+        "size": [
+            1008,
+            152
+        ],
+        "position": [
+            8,
+            20
+        ]
+    },
+    "border": [
+        0,
+        0,
+        0,
+        0
+    ]
 }

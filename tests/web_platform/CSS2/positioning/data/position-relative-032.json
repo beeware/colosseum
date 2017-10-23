@@ -1,58 +1,57 @@
 {
     "matches": "position-relative-032-ref.xht",
+    "assert": "Offsetting a box with relative positioning has no effect on the boxes which follow.",
+    "help": [
+        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
+    ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
-                                "style": {},
-                                "text": "Filler Text1"
+                                "text": "Filler Text1",
+                                "style": {}
                             },
                             {
+                                "tag": "span",
                                 "children": [
                                     {
-                                        "style": {},
-                                        "text": "Filler Text2"
+                                        "text": "Filler Text2",
+                                        "style": {}
                                     }
                                 ],
                                 "style": {
                                     "position": "relative",
                                     "top": "25px"
-                                },
-                                "tag": "span"
+                                }
                             },
                             {
-                                "style": {},
-                                "text": "Filler Text3"
+                                "text": "Filler Text3",
+                                "style": {}
                             }
                         ],
-                        "style": {},
-                        "tag": "span"
+                        "style": {}
                     }
                 ],
                 "style": {
-                    "height": "20px",
-                    "display": "block",
-                    "width": "624px"
-                },
-                "tag": "div"
+                    "line_height": "1.25",
+                    "unicode_bidi": "embed",
+                    "display": "block"
+                }
             }
         ],
         "style": {
-            "margin_left": "8px",
-            "height": "20px",
-            "display": "block",
+            "margin_bottom": "8px",
             "margin_top": "8px",
             "margin_right": "8px",
-            "margin_bottom": "8px",
-            "width": "624px"
-        },
-        "tag": "body"
-    },
-    "assert": "Offsetting a box with relative positioning has no effect on the boxes which follow.",
-    "help": [
-        "http://www.w3.org/TR/CSS21/visuren.html#comp-relpos"
-    ]
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "display": "block"
+        }
+    }
 }

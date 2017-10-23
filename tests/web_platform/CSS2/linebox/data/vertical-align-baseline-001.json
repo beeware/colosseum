@@ -1,68 +1,65 @@
 {
-    "assert": "The 'vertical-align' property set to '0%' means the same as the 'baseline'.",
     "help": [
         "http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align",
         "http://www.w3.org/TR/CSS21/visudet.html#leading"
     ],
     "test_case": {
+        "tag": "body",
         "children": [
             {
+                "tag": "div",
                 "children": [
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "vertical_align": "0%"
                         }
                     },
                     {
+                        "tag": "span",
                         "children": [
                             {
                                 "text": "X",
                                 "style": {}
                             }
                         ],
-                        "tag": "span",
                         "style": {
-                            "border_left_color": "rgb(0, 0, 255)",
-                            "border_right_color": "rgb(0, 0, 255)",
-                            "border_bottom_color": "rgb(0, 0, 255)",
-                            "border_top_color": "rgb(0, 0, 255)"
+                            "vertical_align": "baseline"
                         }
                     }
                 ],
-                "tag": "div",
                 "style": {
-                    "border_right_color": "rgb(0, 0, 255)",
-                    "border_left_color": "rgb(0, 0, 255)",
-                    "border_bottom_width": "3px",
+                    "font_variant_caps": "normal",
+                    "border_bottom_width": "initial",
+                    "font_family": "Ahem",
+                    "font_size": "100px",
+                    "font_weight": "normal",
                     "border_bottom_style": "solid",
-                    "display": "block",
-                    "border_top_color": "rgb(0, 0, 255)",
+                    "border_bottom_color": "orange",
+                    "font_style": "normal",
+                    "line_height": "1",
+                    "color": "blue",
+                    "unicode_bidi": "embed",
                     "height": "100px",
-                    "width": "624px",
-                    "border_bottom_color": "rgb(255, 165, 0)"
+                    "display": "block"
                 }
             }
         ],
-        "tag": "body",
         "style": {
-            "margin_top": "8px",
-            "margin_left": "8px",
-            "display": "block",
-            "height": "103px",
-            "margin_right": "8px",
             "margin_bottom": "8px",
-            "width": "624px"
+            "margin_left": "8px",
+            "unicode_bidi": "embed",
+            "margin_top": "8px",
+            "margin_right": "8px",
+            "display": "block"
         }
     },
+    "assert": "The 'vertical-align' property set to '0%' means the same as the 'baseline'.",
     "matches": "vertical-align-baseline-001-ref.xht"
 }
