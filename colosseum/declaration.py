@@ -11,7 +11,7 @@ from .constants import (
     JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
     POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH, TRANSPARENT,
-    UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES, default,
+    UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES, default, VISIBLE, VISIBILITY_CHOICES,
 )
 
 _CSS_PROPERTIES = set()
@@ -232,7 +232,7 @@ class CSS:
     # clip
 
     # 11.2 Visibility
-    # visibility
+    visibility = validated_property('visibility', choices=VISIBILITY_CHOICES, initial=VISIBLE)
 
     # 12. Visual effects #################################################
     # 12.2 The content property

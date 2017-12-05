@@ -269,7 +269,12 @@ MAX_SIZE_CHOICES = Choices(None, length=True, percentage=True)
 ######################################################################
 # 11.2 Visibility
 ######################################################################
-# visibility
+
+VISIBLE = 'visible'
+HIDDEN = 'hidden'
+COLLAPSE = 'collapse'
+
+VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 
 ######################################################################
 # 12.2 The content property
