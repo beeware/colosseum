@@ -42,7 +42,7 @@ class TestNode:
 def build_document(data):
     if 'tag' in data:
         node = TestNode(name=data['tag'])
-        node.style.set(**{
+        node.style.update(**{
             attr: value
             for attr, value in data['style'].items()
             if hasattr(node.style, attr)

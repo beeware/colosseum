@@ -560,7 +560,7 @@ class CssDeclarationTests(TestCase):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
-        node.style.set(width=10, height=20)
+        node.style.update(width=10, height=20)
 
         self.assertEqual(node.style.width, 10)
         self.assertEqual(node.style.height, 20)
@@ -568,7 +568,7 @@ class CssDeclarationTests(TestCase):
         self.assertTrue(node.style.dirty)
 
         # Clear properties
-        node.style.set(width=None, top=30)
+        node.style.update(width=None, top=30)
 
         self.assertIs(node.style.width, AUTO)
         self.assertEqual(node.style.height, 20)
@@ -580,7 +580,7 @@ class CssDeclarationTests(TestCase):
 
         # Setting a non-property
         with self.assertRaises(NameError):
-            node.style.set(not_a_property=10)
+            node.style.update(not_a_property=10)
 
         self.assertFalse(node.style.dirty)
 
@@ -588,7 +588,7 @@ class CssDeclarationTests(TestCase):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
-        node.style.set(
+        node.style.update(
             width=10,
             height=20,
             margin=(30, 40, 50, 60),

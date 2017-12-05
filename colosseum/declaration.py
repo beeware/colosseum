@@ -129,7 +129,7 @@ def directional_property(name, initial):
 class CSS:
     def __init__(self, **style):
         self._node = None
-        self.set(**style)
+        self.update(**style)
 
     ######################################################################
     # Style properties
@@ -435,7 +435,7 @@ class CSS:
     ######################################################################
     # Style manipulation
     ######################################################################
-    def set(self, **styles):
+    def update(self, **styles):
         "Set multiple styles on the CSS definition."
         for name, value in styles.items():
             if not hasattr(self, name):
