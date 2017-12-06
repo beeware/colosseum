@@ -10,8 +10,9 @@ from .constants import (
     GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INLINE,
     JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
-    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH, TRANSPARENT,
-    UNICODE_BIDI_CHOICES, Z_INDEX_CHOICES, default, VISIBLE, VISIBILITY_CHOICES,
+    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
+    TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
+    Z_INDEX_CHOICES, default,
 )
 
 _CSS_PROPERTIES = set()
@@ -433,12 +434,13 @@ class CSS:
         return css_engine
 
     ######################################################################
-    # Style manipulation
+    # Provide a dict-like interface
     ######################################################################
     def update(self, **styles):
         "Set multiple styles on the CSS definition."
         for name, value in styles.items():
-            if not hasattr(self, name):
+            name = name.replace('-', '_')
+            if not name in _CSS_PROPERTIES:
                 raise NameError("Unknown CSS style '%s'" % name)
 
             if value is None:
@@ -456,6 +458,45 @@ class CSS:
             except AttributeError:
                 pass
         return dup
+
+    def __getitem__(self, name):
+        name = name.replace('-', '_')
+        if name in _CSS_PROPERTIES:
+            return getattr(self, name)
+        raise KeyError(name)
+
+    def __setitem__(self, name, value):
+        name = name.replace('-', '_')
+        if name in _CSS_PROPERTIES:
+            setattr(self, name, value)
+        else:
+            raise KeyError(name)
+
+    def __delitem__(self, name):
+        name = name.replace('-', '_')
+        if name in _CSS_PROPERTIES:
+            try:
+                delattr(self, name)
+            except AttributeError:
+                pass
+        else:
+            raise KeyError(name)
+
+    def items(self):
+        result = []
+        for name in _CSS_PROPERTIES:
+            try:
+                result.append((name, getattr(self, '_%s' % name)))
+            except AttributeError:
+                pass
+        return result
+
+    def keys(self):
+        result = set()
+        for name in _CSS_PROPERTIES:
+            if hasattr(self, '_%s' % name):
+                result.add(name)
+        return result
 
     ######################################################################
     # Get the rendered form of the style declaration
