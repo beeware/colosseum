@@ -14,12 +14,23 @@ Go to the `Colosseum repository on GitHub <https://github.com/pybee/colosseum>`_
 and fork the repository into your own Github account.
 
 Then, you need to set up your development environment. To work on Colosseum, you'll need Python 3.4+ installed on your computer. Create a virtual environment, and clone your Colosseum
-fork::
+fork.
 
+**Using venv** 
+::
     $ mkdir beeware
     $ cd beeware
     $ python3 -m venv venv
-    $ source venv/bin/activate.sh
+    $ source venv/bin/activate
+    $ git clone git@github.com:<your github username>/colosseum.git
+    $ cd colosseum
+**Using virtualenv** 
+::
+    $ mkdir beeware
+    $ cd beeware
+    $ pip3 install virtualenv
+    $ virtualenv -p python3 venv
+    $ source venv/bin/activate
     $ git clone git@github.com:<your github username>/colosseum.git
     $ cd colosseum
 
