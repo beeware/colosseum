@@ -14,7 +14,7 @@ objects. There is no required base class; Colosseum will duck-type
 any object providing the required API. The simplest possible DOM
 node is the following::
 
-    from colosseum import Size, Box
+    from colosseum.dimensions import Size, Box
 
     class MyDOMNode:
         def __init__(self, style):
