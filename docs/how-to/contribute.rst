@@ -25,7 +25,7 @@ fork::
 
 You can then run the test suite::
 
-    $ python setup.py test
+    $ python3 setup.py test
 
 This will run around 2300 tests - most of which are currently marked as
 "expected failures". This means that we have the test, but we *know* that
@@ -112,7 +112,7 @@ The first test run
 
 You can then run this single test out of the test suite::
 
-    $ python setup.py test -s tests.web_platform.CSS2.normal_flow.test_block_formatting_contexts.TestBlockFormattingContexts.test_block_formatting_contexts_006
+    $ python3 setup.py test -s tests.web_platform.CSS2.normal_flow.test_block_formatting_contexts.TestBlockFormattingContexts.test_block_formatting_contexts_006
 
 This will produce a lot of console output. This output will start with some
 lines that tells you that the test is being set up and run::
