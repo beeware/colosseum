@@ -40,5 +40,11 @@ setup(
         'Topic :: Software Development',
         'Topic :: Software Development :: User Interfaces',
     ],
-    test_suite='tests'
+    test_suite='tests',
+    package_urls={
+        'Funding': 'https://pybee.org/contributing/membership/',
+        'Documentation': 'https://colosseum.readthedocs.io/',
+        'Tracker': 'https://github.com/pybee/colosseum/issues',
+        'Source': 'https://github.com/pybee/colosseum',
+    },
 )
