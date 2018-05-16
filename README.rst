@@ -31,24 +31,25 @@ need to be laid out on a page (either physical or virtual)
 Tutorial
 --------
 
-Want to jump in and get started? We have a `hands-on tutorial for beginners <docs/tutorial>`__.
+Want to jump in and get started? We have a `hands-on tutorial for beginners`_
+
 
 How-to guides
 -------------
 
 Looking for guidance on how to solve a specific problems? We have `how-to
-guides and recipes <docs/how-to>`__ for common problems and tasks, including how to
+guides and recipes`_ for common problems and tasks, including how to
 contribute.
 
 Reference
 ---------
 
-Just want the raw technical details? Here's our `Technical reference <docs/reference>`__.
+Just want the raw technical details? Here's our `Technical reference`_.
 
 Background
 ----------
 
-Looking for explanations and discussion of key topics and concepts? Our `background <docs/background>`__ guides may help.
+Looking for explanations and discussion of key topics and concepts? Our `background`_ guides may help.
 
 
 Community
@@ -69,6 +70,10 @@ Contributing
 If you experience problems with Colosseum, `log them on GitHub`_. If you
 want to contribute code, please `fork the code`_ and `submit a pull request`_.
 
+.. _hands-on tutorial for beginners: http://colosseum.readthedocs.io/en/latest/tutorial/tutorial-1.html
+.. _how-to guides and recipes: http://colosseum.readthedocs.io/en/latest/how-to/index.html
+.. _background: http://colosseum.readthedocs.io/en/latest/background/index.html
+.. _Technical reference: http://colosseum.readthedocs.io/en/latest/reference/index.html
 .. _BeeWare suite: http://pybee.org
 .. _Read The Docs: https://colosseum.readthedocs.io
 .. _@pybeeware on Twitter: https://twitter.com/pybeeware
