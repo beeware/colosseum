@@ -98,7 +98,7 @@ some CSS3 tests (especially in the flexbox and grid modules) may be incorrect.
 Picking a test
 --------------
 
-All the tests are located under the tests directory.Each test directory contains 
+All the tests are located under the tests directory. Each test directory contains 
 a ``not_implemented`` file. This is a list of tests that are currently known to 
 fail - because the logic necessary to make the test pass isn't implemented. 
 Pick one of these tests, and delete it from the ``not_implemented`` file.
