@@ -171,7 +171,7 @@ def layout_box(display, node, containing_block, viewport, font):
         node.layout.border_right_width = calculate_size(node.style.border_right_width, vertical)
 
     if node.style.border_bottom_style is None:
-        node.layout.border_bttom_width = 0
+        node.layout.border_bottom_width = 0
     else:
         node.layout.border_bottom_width = calculate_size(node.style.border_bottom_width, horizontal)
 
