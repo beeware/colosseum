@@ -387,7 +387,7 @@ class W3CTestCase(LayoutTestCase):
             if group.endswith('-'):
                 found = '-'.join(filename.split('-')[:-1]) == group[:-1]
             else:
-                found = filename == group
+                found = '-'.join(filename.split('.')[:-1]) == group
             if found:
 
                 test_name, test_method = make_test(dirname, filename)

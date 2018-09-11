@@ -98,19 +98,20 @@ some CSS3 tests (especially in the flexbox and grid modules) may be incorrect.
 Picking a test
 --------------
 
-Each test directory contains a ``not_implemented`` file. This is a list of
-tests that are currently known to fail - because the logic necessary to make
-the test pass isn't implemented. Pick one of these tests, and delete it from
-the ``not_implemented`` file.
+All the tests are located under the tests directory. Each test directory contains 
+a ``not_implemented`` file. This is a list of tests that are currently known to 
+fail - because the logic necessary to make the test pass isn't implemented. 
+Pick one of these tests, and delete it from the ``not_implemented`` file.
 
 For the purposes of this example, we're going to pick the
-``block-formatting-contexts-006`` test in ``CSS2/normal_flow``. (You'll need
-to pick a different test, though - this one is now fixed!!)
+``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts``(this test is no longer available, as it has already been fixed). 
 
 The first test run
 ------------------
 
-You can then run this single test out of the test suite::
+Each test file contains a single test class. In order to run the test, you must specify
+the path to this class, separated by dots. For our example, you can run the single test 
+out of the test suite::
 
     $ python setup.py test -s tests.web_platform.CSS2.normal_flow.test_block_formatting_contexts.TestBlockFormattingContexts.test_block_formatting_contexts_006
 
