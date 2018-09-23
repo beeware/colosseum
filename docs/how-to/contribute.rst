@@ -61,7 +61,7 @@ test suite. It relies on a human loading a series of web pages, and comparing
 each page against a reference rendering. This is necessary in a web context,
 because browsers are allowed to have minor variations in rendering. However,
 it's a problem for Colosseum, for two reasons: firstly, because we want a
-fully automated test suite; but also because we're not targetting a web
+fully automated test suite; but also because we're not targeting a web
 browser, so "load this web page" isn't a test we can use.
 
 So - Colosseum's ``utils`` directory has a set of scripts that take the W3C
@@ -90,7 +90,7 @@ Colosseum will produce the same output as the web view - except that we don't
 ever have to draw anything on a screen. We're checking the layout at a basic
 mathematical level.
 
-Of course, this assumes that the web view that was used to render the document
+Of course, this assumes that the webview that was used to render the document
 is, itself, correct. The test suite was generated on a Mac using a Safari 11
 Webkit webview, so the CSS2 components **should** be fully compliant; however,
 some CSS3 tests (especially in the flexbox and grid modules) may be incorrect.
