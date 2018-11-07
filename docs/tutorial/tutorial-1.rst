@@ -69,7 +69,7 @@ Calling ``node.style.apply()`` forces the box model to be evaluated. Once
 evaluated, the layout will be cached. Modifying any CSS property on a node
 will mark the layout as dirty, and calling ``apply()`` again will cause the
 layout to be re-evaluated. For example, if we switch the outer node to be a
-"column" flex box, rather than a "row" flex box, you'll see the coordinates of
+"column" flex-box, rather than a "row" flex-box, you'll see the coordinates of
 the child boxes update to reflect a vertical, rather than horizontal layout::
 
     >>> node.style.flex_direction = COLUMN
