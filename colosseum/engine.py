@@ -221,7 +221,7 @@ def layout_box(display, node, containing_block, viewport, font):
                 else:
                     offset_top += max(bottom_margin, child.layout.margin_top)
 
-                # Offest the top of the child, relative to the parent.
+                # Offset the top of the child, relative to the parent.
                 child.layout.content_top += offset_top
 
                 # Increase the offset by the height of the box,
