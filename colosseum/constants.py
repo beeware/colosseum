@@ -65,6 +65,9 @@ class Choices:
             choices.append("<number>")
         if self.color:
             choices.append("<color>")
+        if self.explicit_defaulting_constants:
+            for item in self.explicit_defaulting_constants:
+                choices.append(item)
         return ", ".join(sorted(choices))
 
 ######################################################################
