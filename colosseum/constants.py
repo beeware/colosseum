@@ -7,8 +7,10 @@ class Choices:
     "A class to define allowable data types for a property"
     def __init__(
             self, *constants, length=False, percentage=False,
-            integer=False, number=False, color=False):
+            integer=False, number=False, color=False,
+            explicit_defaulting_constants=None):
         self.constants = set(constants)
+        self.explicit_defaulting_constants = explicit_defaulting_constants or []
         self.length = length
         self.percentage = percentage
         self.integer = integer
@@ -45,6 +47,9 @@ class Choices:
         for const in self.constants:
             if value == const:
                 return const
+        for const in self.explicit_defaulting_constants:
+            if value == const:
+                return const
 
         raise ValueError()
 
@@ -76,6 +81,15 @@ AUTO = 'auto'
 COLUMN = 'column'
 ROW = 'row'
 TRANSPARENT = 'transparent'
+
+######################################################################
+# Explicit defaulting constants
+######################################################################
+
+INITIAL = 'initial'
+INHERIT = 'inherit'
+UNSET = 'unset'
+REVERT = 'revert'
 
 ######################################################################
 # Margins
@@ -122,7 +136,7 @@ BORDER_STYLE_CHOICES = Choices(
     OUTSET,
 )
 
-BORDER_COLOR_CHOICES = Choices(TRANSPARENT, color=True)
+BORDER_COLOR_CHOICES = Choices(TRANSPARENT, color=True, explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT])
 
 ######################################################################
 # Display
