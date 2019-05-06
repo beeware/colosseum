@@ -42,8 +42,7 @@ That is, a node must provide:
 
 * a ``style`` attribute - generally a ``CSS`` declaration, bound to the node.
 
-With that a compliant DOM node definition, you can then and query the layout
-that results::
+With a compliant DOM node definition, you can create an instance of the DOM node class and query the layout that results::
 
     >>> from colosseum import CSS
     >>> node = MyDOMNode(style=CSS(width=1000, height=1000))
