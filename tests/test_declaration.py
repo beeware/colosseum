@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices
+from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
 
@@ -217,7 +217,8 @@ class PropertyChoiceTests(TestCase):
         class MyObject:
             prop = validated_property('prop', choices=Choices(
                 'a', 'b', None,
-                integer=True, length=True, percentage=True, color=True
+                integer=True, length=True, percentage=True, color=True,
+                explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT]
             ), initial=None)
 
         obj = MyObject()
@@ -231,6 +232,10 @@ class PropertyChoiceTests(TestCase):
         obj.prop = 'b'
         obj.prop = None
         obj.prop = 'none'
+        obj.prop = INITIAL
+        obj.prop = INHERIT
+        obj.prop = UNSET
+        obj.prop = REVERT
 
         # Check the error message
         try:
@@ -240,7 +245,8 @@ class PropertyChoiceTests(TestCase):
             self.assertEqual(
                 str(v),
                 "Invalid value 'invalid' for CSS property 'prop'; "
-                "Valid values are: <color>, <integer>, <length>, <percentage>, a, b, none"
+                "Valid values are: <color>, <integer>, <length>, <percentage>, "
+                "a, b, inherit, initial, none, revert, unset"
             )
 
     def test_string_symbol(self):
