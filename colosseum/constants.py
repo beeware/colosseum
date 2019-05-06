@@ -139,7 +139,8 @@ BORDER_STYLE_CHOICES = Choices(
     OUTSET,
 )
 
-BORDER_COLOR_CHOICES = Choices(TRANSPARENT, color=True, explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT])
+BORDER_COLOR_CHOICES = Choices(TRANSPARENT, color=True,
+                               explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT])
 
 ######################################################################
 # Display
