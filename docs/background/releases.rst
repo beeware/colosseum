@@ -1,10 +1,10 @@
 Release History
 ===============
 
-0.2.0 (in development)
-----------------------
+0.2.0
+-----
 
-From scratch rewrite.
+From scratch rewrite, using Travertino base classes.
 
 v0.1.6
 ------
