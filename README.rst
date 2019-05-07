@@ -17,8 +17,8 @@ Colosseum
 .. image:: https://img.shields.io/pypi/l/colosseum.svg
     :target: https://github.com/pybee/colosseum/blob/master/LICENSE
 
-.. image:: https://beekeeper.herokuapp.com/projects/pybee/colosseum/shield
-    :target: https://beekeeper.herokuapp.com/projects/pybee/colosseum
+.. image:: https://beekeeper.beeware.org/projects/beeware/colosseum/shield
+    :target: https://beekeeper.beeware.org/projects/beeware/colosseum
 
 .. image:: https://badges.gitter.im/pybee/general.svg
     :target: https://gitter.im/pybee/general
