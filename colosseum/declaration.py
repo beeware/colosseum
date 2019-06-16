@@ -1,5 +1,5 @@
 from . import engine as css_engine
-from .constants import (
+from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
     BACKGROUND_COLOR_CHOICES, BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES,
     BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES, COLOR_CHOICES,
@@ -440,7 +440,7 @@ class CSS:
         "Set multiple styles on the CSS definition."
         for name, value in styles.items():
             name = name.replace('-', '_')
-            if not name in _CSS_PROPERTIES:
+            if name not in _CSS_PROPERTIES:
                 raise NameError("Unknown CSS style '%s'" % name)
 
             if value is None:

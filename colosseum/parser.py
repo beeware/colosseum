@@ -1,4 +1,4 @@
-from .colors import Color, NAMED_COLOR, hsl, rgb
+from .colors import NAMED_COLOR, hsl, rgb
 from .units import Unit, px
 
 

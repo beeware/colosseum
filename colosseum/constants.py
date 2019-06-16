@@ -1,4 +1,5 @@
-from . import colors, parser, units
+from . import parser
+from . import units
 
 
 class Choices:
@@ -67,6 +68,7 @@ class Choices:
             for item in self.explicit_defaulting_constants:
                 choices.append(item)
         return ", ".join(sorted(choices))
+
 
 ######################################################################
 # Versions of the HTML standard
@@ -475,11 +477,11 @@ ALIGN_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPA
 # Grid template (CSS-grid-1, Section 7)
 ######################################################################
 
-GRID_TEMPLATE_CHOICES = Choices(None) #, track_list=True, auto_track_list=True)
+GRID_TEMPLATE_CHOICES = Choices(None)  # track_list=True, auto_track_list=True)
 
-GRID_TEMPLATE_AREA_CHOICES = Choices(None) #, strings=True), initial=None
+GRID_TEMPLATE_AREA_CHOICES = Choices(None)  # strings=True), initial=None
 
-GRID_AUTO_CHOICES = Choices(AUTO) #, track_sizes=True)
+GRID_AUTO_CHOICES = Choices(AUTO)  # track_sizes=True)
 
 DENSE = 'dense'
 
@@ -489,7 +491,7 @@ GRID_AUTO_FLOW_CHOICES = Choices(ROW, COLUMN, DENSE)
 # Grid placement (CSS-grid-1, Section 8)
 ######################################################################
 
-GRID_PLACEMENT_CHOICES = Choices(AUTO) #, grid_line=True)
+GRID_PLACEMENT_CHOICES = Choices(AUTO)  # grid_line=True)
 
 ######################################################################
 # Grid alignment (CSS-grid-1, Section 10)

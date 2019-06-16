@@ -14,6 +14,7 @@ def is_block_level_element(node):
         or node.style.display is TABLE
     )
 
+
 def is_block_container(node):
     # 9.2.1 P2
     return (
@@ -62,6 +63,7 @@ def establishes_inline_formatting_context(node):
     else:
         return True
 
+
 def establishes_table_formatting_context(node):
     return False  # TODO
 
@@ -71,8 +73,6 @@ class Viewport:
         self.display = display
         self.children = [root]
         self.layout = self.display
-
-
 
 
 def layout(display, node, standard=HTML5):
