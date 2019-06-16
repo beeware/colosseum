@@ -560,7 +560,7 @@ class CssDeclarationTests(TestCase):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
-        node.style.set(width=10, height=20)
+        node.style.update(width=10, height=20)
 
         self.assertEqual(node.style.width, 10)
         self.assertEqual(node.style.height, 20)
@@ -568,7 +568,7 @@ class CssDeclarationTests(TestCase):
         self.assertTrue(node.style.dirty)
 
         # Clear properties
-        node.style.set(width=None, top=30)
+        node.style.update(width=None, top=30)
 
         self.assertIs(node.style.width, AUTO)
         self.assertEqual(node.style.height, 20)
@@ -580,7 +580,7 @@ class CssDeclarationTests(TestCase):
 
         # Setting a non-property
         with self.assertRaises(NameError):
-            node.style.set(not_a_property=10)
+            node.style.update(not_a_property=10)
 
         self.assertFalse(node.style.dirty)
 
@@ -588,7 +588,7 @@ class CssDeclarationTests(TestCase):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
-        node.style.set(
+        node.style.update(
             width=10,
             height=20,
             margin=(30, 40, 50, 60),
@@ -601,3 +601,58 @@ class CssDeclarationTests(TestCase):
             "margin-bottom: 50px; margin-left: 60px; "
             "margin-right: 40px; margin-top: 30px; width: 10px"
         )
+
+    def test_dict(self):
+        "Style declarations expose a dict-like interface"
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.update(
+            width=10,
+            height=20,
+            margin=(30, 40, 50, 60),
+            display=BLOCK
+        )
+
+        self.assertEqual(
+            node.style.keys(),
+            {'display', 'height', 'margin_bottom', 'margin_left', 'margin_right', 'margin_top', 'width'}
+        )
+        self.assertEqual(
+            sorted(node.style.items()),
+            sorted([
+                ('display', BLOCK),
+                ('height', 20),
+                ('margin_bottom', 50),
+                ('margin_left', 60),
+                ('margin_right', 40),
+                ('margin_top', 30),
+                ('width', 10),
+            ])
+        )
+
+        # A property can be set, retrieved and cleared using the CSS attribute name
+        node.style['margin-bottom'] = 10
+        self.assertEqual(node.style['margin-bottom'], 10)
+        del node.style['margin-bottom']
+        self.assertEqual(node.style['margin-bottom'], 0)
+
+        # A property can be set, retrieved and cleared using the Python attribute name
+        node.style['margin_bottom'] = 10
+        self.assertEqual(node.style['margin_bottom'], 10)
+        del node.style['margin_bottom']
+        self.assertEqual(node.style['margin_bottom'], 0)
+
+        # Clearing a valid property isn't an error
+        del node.style['margin_bottom']
+        self.assertEqual(node.style['margin_bottom'], 0)
+
+        # Non-existent properties raise KeyError
+        with self.assertRaises(KeyError):
+            node.style['no-such-property'] = 'no-such-value'
+
+        with self.assertRaises(KeyError):
+            node.style['no-such-property']
+
+        with self.assertRaises(KeyError):
+            del node.style['no-such-property']

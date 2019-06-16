@@ -1,16 +1,18 @@
 from . import engine as css_engine
-from .constants import (
+from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
-    BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
-    BOX_OFFSET_CHOICES, CLEAR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
-    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
-    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
-    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
-    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INLINE, JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
-    MIN_SIZE_CHOICES, NORMAL, NOWRAP, PADDING_CHOICES, POSITION_CHOICES, ROW,
-    SIZE_CHOICES, STATIC, STRETCH, TRANSPARENT, UNICODE_BIDI_CHOICES,
-    Z_INDEX_CHOICES, ORDER_CHOICES
+    BACKGROUND_COLOR_CHOICES, BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES,
+    BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES, COLOR_CHOICES,
+    DIRECTION_CHOICES, DISPLAY_CHOICES, FLEX_BASIS_CHOICES,
+    FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START,
+    FLEX_WRAP_CHOICES, FLOAT_CHOICES, GRID_AUTO_CHOICES,
+    GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES,
+    GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INLINE,
+    JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
+    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
+    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
+    TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
+    Z_INDEX_CHOICES, default,
 )
 
 _CSS_PROPERTIES = set()
@@ -128,7 +130,7 @@ def directional_property(name, initial):
 class CSS:
     def __init__(self, **style):
         self._node = None
-        self.set(**style)
+        self.update(**style)
 
     ######################################################################
     # Style properties
@@ -231,7 +233,7 @@ class CSS:
     # clip
 
     # 11.2 Visibility
-    # visibility
+    visibility = validated_property('visibility', choices=VISIBILITY_CHOICES, initial=VISIBLE)
 
     # 12. Visual effects #################################################
     # 12.2 The content property
@@ -262,10 +264,10 @@ class CSS:
 
     # 14. Colors and backgrounds #########################################
     # 14.1 Foreground color
-    # color
+    color = validated_property('color', choices=COLOR_CHOICES, initial=default)
 
     # 14.2.1 Background properties
-    # background_color
+    background_color = validated_property('background_color', choices=BACKGROUND_COLOR_CHOICES, initial=default)
     # background_image
     # background_repeat
     # background_attachment
@@ -432,12 +434,13 @@ class CSS:
         return css_engine
 
     ######################################################################
-    # Style manipulation
+    # Provide a dict-like interface
     ######################################################################
-    def set(self, **styles):
+    def update(self, **styles):
         "Set multiple styles on the CSS definition."
         for name, value in styles.items():
-            if not hasattr(self, name):
+            name = name.replace('-', '_')
+            if name not in _CSS_PROPERTIES:
                 raise NameError("Unknown CSS style '%s'" % name)
 
             if value is None:
@@ -455,6 +458,45 @@ class CSS:
             except AttributeError:
                 pass
         return dup
+
+    def __getitem__(self, name):
+        name = name.replace('-', '_')
+        if name in _CSS_PROPERTIES:
+            return getattr(self, name)
+        raise KeyError(name)
+
+    def __setitem__(self, name, value):
+        name = name.replace('-', '_')
+        if name in _CSS_PROPERTIES:
+            setattr(self, name, value)
+        else:
+            raise KeyError(name)
+
+    def __delitem__(self, name):
+        name = name.replace('-', '_')
+        if name in _CSS_PROPERTIES:
+            try:
+                delattr(self, name)
+            except AttributeError:
+                pass
+        else:
+            raise KeyError(name)
+
+    def items(self):
+        result = []
+        for name in _CSS_PROPERTIES:
+            try:
+                result.append((name, getattr(self, '_%s' % name)))
+            except AttributeError:
+                pass
+        return result
+
+    def keys(self):
+        result = set()
+        for name in _CSS_PROPERTIES:
+            if hasattr(self, '_%s' % name):
+                result.add(name)
+        return result
 
     ######################################################################
     # Get the rendered form of the style declaration

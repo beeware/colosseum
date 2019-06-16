@@ -24,7 +24,7 @@ class hsl(Color):
     def __init__(self, h, s, l, a=1.0):
         self.h = h
         self.s = s
-        self.l = l
+        self.l = l  # noqa
         self.a = a
 
     def __repr__(self):
