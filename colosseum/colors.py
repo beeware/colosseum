@@ -3,44 +3,35 @@
 R: Red
 G: Green
 B: Blue
-
 These 3 components may be represented in hexadecimal. 
 A hexadecimal representation of the 3 components is called a triplet, or group of 3 numbers.
-
-          R G B    R     G     B
+         R G B    R     G     B
 Black:  #000000 0x00, 0x00, 0x00
 Red:    #FF0000 0xFF, 0x00, 0x00
 Green:  #00FF00 0x00, 0xFF, 0x00
 Blue:   #0000FF 0x00, 0x00, 0xFF
 White:  #FFFFFF 0xFF, 0xFF, 0xFF
-
 In decimal, the digits are 0-9.
 In hexadecimal, the digits are 0-F, which is equivalent to 0-15 in decimal.
-
 In decimal, the rightmost digit are the ones.
 Likewise in hexadecimal.
-
 In decimal, the 2nd digit from the right are the tens.
 In hexadecimal, however, these are the 16s.
-
 Each component is a two-digit hexadecimal value.
 0x00 is equivalent to 0:
   0 * 1   = 0
 + 0 * 16  = 0
 -------------
 = 0
-          
 0xFF is equivalent to 255:
   15 * 16 = 240
 + 15 * 1  =  15
 ---------------
 = 255
-
 From this simple conversion, we can easily figure out the total number of possible colors. 
 The digits are the powers of 16, with the least significant on the right, and most significant digit on the left.
-
 16^5 = 1048576s  16^4 = 65536s  16^3 = 4096s  16^2 = 256s  16^1 = 16s  16^0 = 1s
-              F              F             F            F           F          F
+           F              F             F            F           F          F
    15 * 1048576  = 15728640
    15 * 65536    =   983040
    15 * 4096     =    61440
