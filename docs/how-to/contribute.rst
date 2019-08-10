@@ -4,13 +4,13 @@
 How to contribute to Colosseum
 ==============================
 
-This guide will help walk you through the process of contributing your first
+This guide will help you walk through the process of contributing your first
 contribution to Colosseum.
 
-Set up your development environment
+Setting up your development environment
 ===================================
 
-Go to the `Colosseum repository on GitHub <https://github.com/pybee/colosseum>`__,
+Go to the Colosseum repository on GitHub <https://github.com/pybee/colosseum>`__,
 and fork the repository into your own Github account.
 
 Then, you need to set up your development environment. To work on Colosseum, you'll need Python 3.4+ installed on your computer. Create a virtual environment, and clone your Colosseum
@@ -81,7 +81,7 @@ recording the style, it records the size, position, borders, padding and
 margin of each element in the DOM.
 
 The test suite takes the data file, reconstructs the DOM nodes in Colosseum,
-and apply the test styles to those nodes. It then lays out the document, and
+and applies the test styles to those nodes. It then lays out the document, and
 evaluates if the size and position of each DOM node in the document matches
 that in the reference rendering.
 
@@ -240,8 +240,8 @@ Click on the link `to the W3C test
 
 .. image:: screenshots/w3c-test-suite.png
 
-Using this view, confirm that the test acutally passes. In this case, the page
-tells us to compare to the reference page; you can flick between the "Test
+Using this view, we confirm that the test actually passes. In this case, the page
+tells us to compare to the reference page; you can click between the "Test
 Case" tab and the "Reference Page" tab and confirm that the output is as
 expected.
 
