@@ -1,7 +1,8 @@
-'''HTML colors are broken into 3 components:
+'''
+
+HTML colors are broken into 3 components:
 R:Red G:Green B:Blue-These 3 components may be represented in hexadecimal. 
-A hexadecimal representation of the 3 components is called a triplet, or group of 3 numbers.
-R G B    R     G     B
+A hexadecimal representation of the 3 components is called a triplet, or group of 3 numbers.R G B    R     G     B
 Black:  #000000 0x00, 0x00, 0x00
 Red:    #FF0000 0xFF, 0x00, 0x00
 Green:  #00FF00 0x00, 0xFF, 0x00
@@ -23,13 +24,9 @@ Each component is a two-digit hexadecimal value.
 The digits are the powers of 16, with the least significant on the right, and most significant digit on the left.
 16^5=1048576s 16^4=65536s 16^3=4096s 16^2=256s 16^1=16s 16^0=1s
 F              F             F            F           F          F
-15*1048576=15728640
-15*65536=983040
-15*4096=61440
-15*256=3840
-15*16=240
-+15*1=15
-=16777215 color possibilities'''
+15*1048576=1572864 15*65536=983040 15*4096=61440 15*256=3840 15*16=240 +15*1=15 =16777215 color possibilities
+
+'''
 
 
 class Color:
