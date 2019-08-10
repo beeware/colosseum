@@ -28,13 +28,13 @@ Each component is a two-digit hexadecimal value.
   0 * 1   = 0
 + 0 * 16  = 0
 -------------
-          = 0
+= 0
           
 0xFF is equivalent to 255:
   15 * 16 = 240
 + 15 * 1  =  15
 ---------------
-          = 255
+= 255
 
 From this simple conversion, we can easily figure out the total number of possible colors. 
 The digits are the powers of 16, with the least significant on the right, and most significant digit on the left.
@@ -48,7 +48,7 @@ The digits are the powers of 16, with the least significant on the right, and mo
    15 * 16       =      240
 +  15 * 1        =       15
 ---------------------------
-                 = 16777215 color possibilities
+= 16777215 color possibilities
  
 '''
 
