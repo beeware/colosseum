@@ -40,7 +40,6 @@ jobs:
         pip install -e .
     - name: Test
       run: |
-        cd src/core
         python setup.py test
 
   python-versions:
@@ -63,5 +62,4 @@ jobs:
         pip install -e .
     - name: Test
       run: |
-        cd src/core
         python setup.py test
