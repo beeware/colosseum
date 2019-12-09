@@ -161,7 +161,7 @@ class Box:
     absolute_content_right: The right position of the box, relative to the block container
 
     """
-    def __init__(self, node, content_dimensions=(0,0)):
+    def __init__(self, node, content_dimensions=(0, 0)):
         self.node = node
         self._reset()
         self.content_width, self.content_height = content_dimensions
