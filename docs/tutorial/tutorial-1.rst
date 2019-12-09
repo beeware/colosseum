@@ -21,7 +21,7 @@ node is the following::
             self.parent = None
             self.children = []
             self.intrinsic = Size(self)
-            self.layout = Box(self)
+            self.layout = Box(self, (style.width, style.height))
             self.style = style.copy(self)
 
         def add(self, child):
