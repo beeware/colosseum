@@ -1,72 +1,46 @@
-from . import parser
-from . import units
+from .validators import (ColorValidator, IntegerValidator, LengthValidator,
+                         NumberValidator, PercentValidator)
 
 
 class Choices:
-    "A class to define allowable data types for a property"
+    "A class to define allowable data types for a property."
+
     def __init__(
-            self, *constants, length=False, percentage=False,
-            integer=False, number=False, color=False,
+            self, *constants, validators=None,
             explicit_defaulting_constants=None):
         self.constants = set(constants)
         self.explicit_defaulting_constants = explicit_defaulting_constants or []
-        self.length = length
-        self.percentage = percentage
-        self.integer = integer
-        self.number = number
-        self.color = color
+        self.validators = validators or []
 
     def validate(self, value):
-        if self.length or self.percentage:
-            try:
-                val = parser.units(value)
-                if self.length:
-                    return val
-                elif self.percentage and isinstance(val, units.Percent):
-                    return val
-            except ValueError:
-                pass
-        if self.integer:
-            try:
-                return int(value)
-            except (ValueError, TypeError):
-                pass
-        if self.number:
-            try:
-                return float(value)
-            except (ValueError, TypeError):
-                pass
-        if self.color:
-            try:
-                return parser.color(value)
-            except ValueError:
-                pass
+        for validator in self.validators:
+            error_msg, value = validator.validate(value)
+            if not error_msg:
+                return value
+
         if value == 'none':
             value = None
+
         for const in self.constants:
             if value == const:
                 return const
+
         for const in self.explicit_defaulting_constants:
             if value == const:
                 return const
+
 
         raise ValueError()
 
     def __str__(self):
         choices = [str(c).lower().replace('_', '-') for c in self.constants]
-        if self.length:
-            choices.append("<length>")
-        if self.percentage:
-            choices.append("<percentage>")
-        if self.integer:
-            choices.append("<integer>")
-        if self.number:
-            choices.append("<number>")
-        if self.color:
-            choices.append("<color>")
+        for validator in self.validators:
+            choices.append(validator.name)
+
         if self.explicit_defaulting_constants:
             for item in self.explicit_defaulting_constants:
                 choices.append(item)
+
         return ", ".join(sorted(choices))
 
 
@@ -100,13 +74,31 @@ REVERT = 'revert'
 # 8.3 Margin properties
 ######################################################################
 
-MARGIN_CHOICES = Choices(AUTO, length=True, percentage=True)
+MARGIN_CHOICES = Choices(
+    AUTO,
+    validators=[
+        LengthValidator,
+        PercentValidator,
+    ],
+)
+MARGIN_CHOICES = Choices(
+    AUTO,
+    validators=[
+        LengthValidator,
+        PercentValidator,
+    ],
+)
 
 ######################################################################
 # 8.4 Padding properties
 ######################################################################
 
-PADDING_CHOICES = Choices(length=True, percentage=True)
+PADDING_CHOICES = Choices(
+    validators=[
+        LengthValidator,
+        PercentValidator,
+    ],
+)
 
 ######################################################################
 # 8.5 Border properties
@@ -116,7 +108,14 @@ THIN = 'thin'
 MEDIUM = 'medium'
 THICK = 'thick'
 
-BORDER_WIDTH_CHOICES = Choices(THIN, MEDIUM, THICK, length=True)
+BORDER_WIDTH_CHOICES = Choices(
+    THIN,
+    MEDIUM,
+    THICK,
+    validators=[
+        LengthValidator,
+    ],
+)
 
 HIDDEN = 'hidden'
 DOTTED = 'dotted'
@@ -141,8 +140,11 @@ BORDER_STYLE_CHOICES = Choices(
     OUTSET,
 )
 
-BORDER_COLOR_CHOICES = Choices(TRANSPARENT, color=True,
-                               explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT])
+BORDER_COLOR_CHOICES = Choices(
+    TRANSPARENT,
+    validators=[ColorValidator],
+    explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT],
+)
 
 ######################################################################
 # 9.2.4 The display property
@@ -207,7 +209,10 @@ FIXED = 'fixed'
 
 POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
-BOX_OFFSET_CHOICES = Choices(AUTO, length=True, percentage=True)
+BOX_OFFSET_CHOICES = Choices(
+    AUTO,
+    validators=[LengthValidator, PercentValidator],
+)
 
 ######################################################################
 # 9.5.1 Positioning the float
@@ -225,7 +230,7 @@ CLEAR_CHOICES = Choices(None, LEFT, RIGHT, BOTH)
 # 9.9 Layered Presentation
 ######################################################################
 
-Z_INDEX_CHOICES = Choices(AUTO, integer=True)
+Z_INDEX_CHOICES = Choices(AUTO, validators=[IntegerValidator])
 
 ######################################################################
 # 9.10 Text Direction
@@ -248,9 +253,18 @@ UNICODE_BIDI_CHOICES = Choices(NORMAL, EMBED, BIDI_OVERRIDE)
 # 10.7 Minimum and maximum heights
 ######################################################################
 
-SIZE_CHOICES = Choices(AUTO, length=True, percentage=True)
-MIN_SIZE_CHOICES = Choices(AUTO, length=True, percentage=True)
-MAX_SIZE_CHOICES = Choices(None, length=True, percentage=True)
+SIZE_CHOICES = Choices(
+    AUTO,
+    validators=[LengthValidator, PercentValidator],
+)
+MIN_SIZE_CHOICES = Choices(
+    AUTO,
+    validators=[LengthValidator, PercentValidator],
+)
+MAX_SIZE_CHOICES = Choices(
+    None,
+    validators=[LengthValidator, PercentValidator],
+)
 
 ######################################################################
 # 10.8 Leading and half-leading
@@ -319,12 +333,16 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 # 14.1 Foreground color
 ######################################################################
-COLOR_CHOICES = Choices(default, color=True)
+COLOR_CHOICES = Choices(default, validators=[ColorValidator])
 
 ######################################################################
 # 14.2.1 Background properties
 ######################################################################
-BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, color=True)
+BACKGROUND_COLOR_CHOICES = Choices(
+    default,
+    TRANSPARENT,
+    validators=[ColorValidator],
+)
 
 # background_image
 # background_repeat
@@ -439,18 +457,22 @@ WRAP_REVERSE = 'wrap-reverse'
 
 FLEX_WRAP_CHOICES = Choices(NOWRAP, WRAP, WRAP_REVERSE)
 
-ORDER_CHOICES = Choices(integer=True)
+ORDER_CHOICES = Choices(validators=[IntegerValidator])
 
 ######################################################################
 # Flexibility (CSS-flexbox-1, Section 7)
 ######################################################################
 
-FLEX_GROW_CHOICES = Choices(number=True)
-FLEX_SHRINK_CHOICES = Choices(number=True)
+FLEX_GROW_CHOICES = Choices(validators=[NumberValidator])
+FLEX_SHRINK_CHOICES = Choices(validators=[NumberValidator])
 
 CONTENT = 'content'
 
-FLEX_BASIS_CHOICES = Choices(CONTENT, AUTO, length=True, percentage=True)
+FLEX_BASIS_CHOICES = Choices(
+    CONTENT,
+    AUTO,
+    validators=[LengthValidator, PercentValidator],
+)
 
 ######################################################################
 # Flex Alignment (CSS-flexbox-1, Section 8)
@@ -497,4 +519,8 @@ GRID_PLACEMENT_CHOICES = Choices(AUTO)  # grid_line=True)
 # Grid alignment (CSS-grid-1, Section 10)
 ######################################################################
 
-GRID_GAP_CHOICES = Choices(percentage=True)
+GRID_GAP_CHOICES = Choices(
+    validators=[
+        PercentValidator,
+    ],
+)

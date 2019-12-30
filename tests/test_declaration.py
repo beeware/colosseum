@@ -5,6 +5,8 @@ from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
 from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
+from colosseum.validators import (ColorValidator, IntegerValidator, LengthValidator,
+                                  NumberValidator, PercentValidator)
 
 from .utils import TestNode
 
@@ -46,7 +48,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_length(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(length=True), initial=0)
+            prop = validated_property('prop', choices=Choices(validators=[LengthValidator]), initial=0)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 0 * px)
@@ -79,7 +81,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_percentage(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(percentage=True), initial=99 * percent)
+            prop = validated_property('prop', choices=Choices(validators=[PercentValidator]), initial=99 * percent)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 99 * percent)
@@ -114,7 +116,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_integer(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(integer=True), initial=0)
+            prop = validated_property('prop', choices=Choices(validators=[IntegerValidator]), initial=0)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 0)
@@ -149,7 +151,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_color(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(color=True), initial='goldenrod')
+            prop = validated_property('prop', choices=Choices(validators=[ColorValidator]), initial='goldenrod')
 
         obj = MyObject()
         self.assertEqual(obj.prop, NAMED_COLOR[GOLDENROD])
@@ -217,7 +219,7 @@ class PropertyChoiceTests(TestCase):
         class MyObject:
             prop = validated_property('prop', choices=Choices(
                 'a', 'b', None,
-                integer=True, length=True, percentage=True, color=True,
+                validators=[IntegerValidator, LengthValidator, PercentValidator, ColorValidator],
                 explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT]
             ), initial=None)
 
