@@ -19,7 +19,10 @@ class Unit:
         return round(LU_PER_PIXEL * self.val)
 
     def px(self, display=None, font=None, size=None):
-        return self.lu(display=display, font=font, size=size) // LU_PER_PIXEL
+        logical_units = self.lu(display=display, font=font, size=size)
+        value = logical_units / LU_PER_PIXEL
+        int_value = int(value)
+        return int_value if value == int_value else value
 
     def __repr__(self):
         return '{}{}'.format(self.val, self.suffix)
