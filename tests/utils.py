@@ -23,7 +23,7 @@ class Display:
 
 
 class TestNode:
-    def __init__(self, name=None,style=None, children=None):
+    def __init__(self, name=None, style=None, children=None):
         self.name = name if name else 'div'
         self.parent = None
         self.children = []

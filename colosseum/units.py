@@ -116,7 +116,7 @@ em = FontUnit('em')
 ex = FontUnit('ex')
 ch = FontUnit('ch')
 
-pc = AbsoluteUnit('pc', 6)
+pc = AbsoluteUnit('pc', 12)
 pt = AbsoluteUnit('pt', 1)
 inch = AbsoluteUnit('in', 72)
 cm = AbsoluteUnit('cm', 28.3465)
