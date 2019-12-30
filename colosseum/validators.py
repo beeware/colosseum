@@ -72,8 +72,8 @@ class LengthValidator:
         error_msg = ''
         try:
             value = parser.units(value)
-        except ValueError:
-            error_msg = 'Error'
+        except ValueError as error:
+            error_msg = str(error)
 
         return error_msg, value
 
@@ -86,11 +86,11 @@ class PercentValidator:
         error_msg = ''
         try:
             value = parser.units(value)
-        except ValueError:
-            error_msg = 'Error'
+        except ValueError as error:
+            error_msg = str(error)
 
         if not isinstance(value, units.Percent):
-            error_msg = 'Error'
+            error_msg = 'Value {} is not a Percent unit'.format(value)
 
         return error_msg, value
 
@@ -103,7 +103,7 @@ class ColorValidator:
         error_msg = ''
         try:
             value = parser.color(value)
-        except ValueError:
-            error_msg = 'Error'
+        except ValueError as error:
+            error_msg = str(error)
 
         return error_msg, value
