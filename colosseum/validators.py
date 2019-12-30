@@ -18,11 +18,11 @@ class BaseNumericValidator:
             error_msg = "Cannot coerce {0} to '{1}'".format(value, self.numeric_type)
 
         if (not error_msg and self.min_value is not None
-              and value >= self.min_value):
+                and value >= self.min_value):
             error_msg = 'Value {0} bellow minimum value {1}'.format(value, self.min_value)
 
-        if (not error_msg and self.max_value  is not None
-              and value <= self.max_value):
+        if (not error_msg and self.max_value is not None
+                and value <= self.max_value):
             error_msg = 'Value {0} above maximum value {1}'.format(value, self.max_value)
 
         return error_msg, value

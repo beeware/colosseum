@@ -219,7 +219,7 @@ class PropertyChoiceTests(TestCase):
         class MyObject:
             prop = validated_property('prop', choices=Choices(
                 'a', 'b', None,
-                validators=[IntegerValidator, LengthValidator, PercentValidator, ColorValidator],
+                validators=[IntegerValidator, NumberValidator, LengthValidator, PercentValidator, ColorValidator],
                 explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT]
             ), initial=None)
 
@@ -247,7 +247,7 @@ class PropertyChoiceTests(TestCase):
             self.assertEqual(
                 str(v),
                 "Invalid value 'invalid' for CSS property 'prop'; "
-                "Valid values are: <color>, <integer>, <length>, <percentage>, "
+                "Valid values are: <color>, <integer>, <length>, <number>, <percentage>, "
                 "a, b, inherit, initial, none, revert, unset"
             )
 

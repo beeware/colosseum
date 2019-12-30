@@ -29,7 +29,6 @@ class Choices:
             if value == const:
                 return const
 
-
         raise ValueError()
 
     def __str__(self):
