@@ -55,15 +55,15 @@ class BaseUnitTests(TestCase):
 
         p = 0.2 * px
         self.assertEqual(p.lu(display=self.display), 13)
-        self.assertEqual(p.px(display=self.display), 0)
+        self.assertEqual(p.px(display=self.display), 0.203125)
 
         p = 0.5 * px
         self.assertEqual(p.lu(display=self.display), 32)
-        self.assertEqual(p.px(display=self.display), 0)
+        self.assertEqual(p.px(display=self.display), 0.5)
 
         p = 0.7 * px
         self.assertEqual(p.lu(display=self.display), 45)
-        self.assertEqual(p.px(display=self.display), 0)
+        self.assertEqual(p.px(display=self.display), 0.703125)
 
         p = 1 * px
         self.assertEqual(p.lu(display=self.display), 64)
@@ -71,15 +71,15 @@ class BaseUnitTests(TestCase):
 
         p = 1.2 * px
         self.assertEqual(p.lu(display=self.display), 77)
-        self.assertEqual(p.px(display=self.display), 1)
+        self.assertEqual(p.px(display=self.display), 1.203125)
 
         p = 1.5 * px
         self.assertEqual(p.lu(display=self.display), 96)
-        self.assertEqual(p.px(display=self.display), 1)
+        self.assertEqual(p.px(display=self.display), 1.5)
 
         p = 1.7 * px
         self.assertEqual(p.lu(display=self.display), 109)
-        self.assertEqual(p.px(display=self.display), 1)
+        self.assertEqual(p.px(display=self.display), 1.703125)
 
         p = 2 * px
         self.assertEqual(p.lu(display=self.display), 128)
@@ -142,14 +142,14 @@ class AbsoluteUnitTests(TestCase):
 
     def test_pica(self):
         p = 1 * pc
-        self.assertEqual(p.lu(display=self.simple), 512)
-        self.assertEqual(p.lu(display=self.print), 1600)
-        self.assertEqual(p.lu(display=self.hidpi), 1739)
+        self.assertEqual(p.lu(display=self.simple), 1024)
+        self.assertEqual(p.lu(display=self.print), 3200)
+        self.assertEqual(p.lu(display=self.hidpi), 3477)
 
         p = 5 * pc
-        self.assertEqual(p.lu(display=self.simple), 2560)
-        self.assertEqual(p.lu(display=self.print), 8000)
-        self.assertEqual(p.lu(display=self.hidpi), 8693)
+        self.assertEqual(p.lu(display=self.simple), 5120)
+        self.assertEqual(p.lu(display=self.print), 16000)
+        self.assertEqual(p.lu(display=self.hidpi), 17387)
 
         self.assertEqual(str(p), "5pc")
         self.assertEqual(repr(p), "5pc")
