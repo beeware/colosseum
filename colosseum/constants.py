@@ -1,5 +1,5 @@
 from .validators import (is_color, is_integer, is_length, is_number,
-                         is_percentage)
+                         is_percentage, ValidationError)
 
 
 class Choices:
@@ -14,9 +14,11 @@ class Choices:
 
     def validate(self, value):
         for validator in self.validators:
-            error_msg, value = validator(value)
-            if not error_msg:
+            try:
+                value = validator(value)
                 return value
+            except ValidationError:
+                pass
 
         if value == 'none':
             value = None

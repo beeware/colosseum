@@ -2,34 +2,40 @@ from . import parser
 from . import units
 
 
-def _numeric_validator(value, numeric_type, min_value, max_value):
-    error_msg = ''
+class ValidationError(ValueError):
+    pass
+
+
+def _numeric_validator(num_value, numeric_type, min_value, max_value):
     try:
-        value = numeric_type(value)
+        num_value = numeric_type(num_value)
     except (ValueError, TypeError):
-        error_msg = "Cannot coerce {value} to {numeric_type}".format(
-            value=value, numeric_type=numeric_type.__name__)
+        error_msg = "Cannot coerce {num_value} to {numeric_type}".format(
+            num_value=num_value, numeric_type=numeric_type.__name__)
+        raise ValidationError(error_msg)
 
-    if not error_msg and min_value is not None and value < min_value:
-        error_msg = 'Value {value} bellow minimum value {min_value}'.format(
-            value, min_value)
+    if min_value is not None and num_value < min_value:
+        error_msg = 'Value {num_value} below minimum value {min_value}'.format(
+            num_value=num_value, min_value=min_value)
+        raise ValidationError(error_msg)
 
-    if not error_msg and max_value is not None and value > max_value:
-        error_msg = 'Value {value} above maximum value {max_value}'.format(
-            value, max_value)
+    if max_value is not None and num_value > max_value:
+        error_msg = 'Value {num_value} above maximum value {max_value}'.format(
+            num_value=num_value, max_value=max_value)
+        raise ValidationError(error_msg)
 
-    return error_msg, value
+    return num_value
 
 
-def is_number(value, min_value=None, max_value=None):
+def is_number(value=None, min_value=None, max_value=None):
     """
     Validate that value is a valid float.
 
     If min_value or max_value are provided, range checks are performed.
     """
 
-    def validator(value):
-        return _numeric_validator(value, numeric_type=float, min_value=min_value, max_value=max_value)
+    def validator(num_value):
+        return _numeric_validator(num_value=num_value, numeric_type=float, min_value=min_value, max_value=max_value)
 
     if min_value is None and max_value is None:
         return validator(value)
@@ -40,15 +46,15 @@ def is_number(value, min_value=None, max_value=None):
 is_number.description = '<number>'
 
 
-def is_integer(value, min_value=None, max_value=None):
+def is_integer(value=None, min_value=None, max_value=None):
     """
     Validate that value is a valid integer.
 
     If min_value or max_value are provided, range checks are performed.
     """
 
-    def validator(value):
-        return _numeric_validator(value, numeric_type=int, min_value=min_value, max_value=max_value)
+    def validator(num_value):
+        return _numeric_validator(num_value=num_value, numeric_type=int, min_value=min_value, max_value=max_value)
 
     if min_value is None and max_value is None:
         return validator(value)
@@ -60,42 +66,40 @@ is_integer.description = '<integer>'
 
 
 def is_length(value):
-    error_msg = ''
     try:
         value = parser.units(value)
     except ValueError as error:
-        error_msg = str(error)
+        raise ValidationError(str(error))
 
-    return error_msg, value
+    return value
 
 
 is_length.description = '<length>'
 
 
 def is_percentage(value):
-    error_msg = ''
     try:
         value = parser.units(value)
     except ValueError as error:
-        error_msg = str(error)
+        raise ValidationError(str(error))
 
     if not isinstance(value, units.Percent):
         error_msg = 'Value {value} is not a Percent unit'.format(value=value)
+        raise ValidationError(error_msg)
 
-    return error_msg, value
+    return value
 
 
 is_percentage.description = '<percentage>'
 
 
 def is_color(value):
-    error_msg = ''
     try:
         value = parser.color(value)
     except ValueError as error:
-        error_msg = str(error)
+        raise ValidationError(str(error))
 
-    return error_msg, value
+    return value
 
 
 is_color.description = '<color>'
