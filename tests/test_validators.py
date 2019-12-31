@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from colosseum.validators import (is_color, is_integer, is_length, is_number,
-                                  is_percentage, ValidationError)
+from colosseum.validators import is_integer, is_number, ValidationError
+
 
 class NumericTests(TestCase):
 

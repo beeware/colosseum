@@ -92,12 +92,7 @@ THIN = 'thin'
 MEDIUM = 'medium'
 THICK = 'thick'
 
-BORDER_WIDTH_CHOICES = Choices(
-    THIN,
-    MEDIUM,
-    THICK,
-    validators=[is_length]
-)
+BORDER_WIDTH_CHOICES = Choices(THIN, MEDIUM, THICK, validators=[is_length])
 
 HIDDEN = 'hidden'
 DOTTED = 'dotted'
@@ -191,10 +186,7 @@ FIXED = 'fixed'
 
 POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
-BOX_OFFSET_CHOICES = Choices(
-    AUTO,
-    validators=[is_length, is_percentage],
-)
+BOX_OFFSET_CHOICES = Choices(AUTO, validators=[is_length, is_percentage])
 
 ######################################################################
 # 9.5.1 Positioning the float
@@ -235,18 +227,9 @@ UNICODE_BIDI_CHOICES = Choices(NORMAL, EMBED, BIDI_OVERRIDE)
 # 10.7 Minimum and maximum heights
 ######################################################################
 
-SIZE_CHOICES = Choices(
-    AUTO,
-    validators=[is_length, is_percentage],
-)
-MIN_SIZE_CHOICES = Choices(
-    AUTO,
-    validators=[is_length, is_percentage],
-)
-MAX_SIZE_CHOICES = Choices(
-    None,
-    validators=[is_length, is_percentage],
-)
+SIZE_CHOICES = Choices(AUTO, validators=[is_length, is_percentage])
+MIN_SIZE_CHOICES = Choices(AUTO, validators=[is_length, is_percentage])
+MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 
 ######################################################################
 # 10.8 Leading and half-leading
@@ -320,11 +303,7 @@ COLOR_CHOICES = Choices(default, validators=[is_color])
 ######################################################################
 # 14.2.1 Background properties
 ######################################################################
-BACKGROUND_COLOR_CHOICES = Choices(
-    default,
-    TRANSPARENT,
-    validators=[is_color],
-)
+BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 
 # background_image
 # background_repeat
@@ -450,11 +429,7 @@ FLEX_SHRINK_CHOICES = Choices(validators=[is_number])
 
 CONTENT = 'content'
 
-FLEX_BASIS_CHOICES = Choices(
-    CONTENT,
-    AUTO,
-    validators=[is_length, is_percentage],
-)
+FLEX_BASIS_CHOICES = Choices(CONTENT, AUTO, validators=[is_length, is_percentage])
 
 ######################################################################
 # Flex Alignment (CSS-flexbox-1, Section 8)
