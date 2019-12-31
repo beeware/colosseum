@@ -80,7 +80,7 @@ def is_percentage(value):
         error_msg = str(error)
 
     if not isinstance(value, units.Percent):
-        error_msg = 'Value {} is not a Percent unit'.format(value)
+        error_msg = 'Value {value} is not a Percent unit'.format(value=value)
 
     return error_msg, value
 
