@@ -5,6 +5,7 @@ from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
 from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
+from colosseum.validators import is_color, is_integer, is_length, is_number, is_percentage
 
 from .utils import TestNode
 
@@ -46,7 +47,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_length(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(length=True), initial=0)
+            prop = validated_property('prop', choices=Choices(validators=[is_length]), initial=0)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 0 * px)
@@ -79,7 +80,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_percentage(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(percentage=True), initial=99 * percent)
+            prop = validated_property('prop', choices=Choices(validators=[is_percentage]), initial=99 * percent)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 99 * percent)
@@ -114,7 +115,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_integer(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(integer=True), initial=0)
+            prop = validated_property('prop', choices=Choices(validators=[is_integer]), initial=0)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 0)
@@ -149,7 +150,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_color(self):
         class MyObject:
-            prop = validated_property('prop', choices=Choices(color=True), initial='goldenrod')
+            prop = validated_property('prop', choices=Choices(validators=[is_color]), initial='goldenrod')
 
         obj = MyObject()
         self.assertEqual(obj.prop, NAMED_COLOR[GOLDENROD])
@@ -217,7 +218,7 @@ class PropertyChoiceTests(TestCase):
         class MyObject:
             prop = validated_property('prop', choices=Choices(
                 'a', 'b', None,
-                integer=True, length=True, percentage=True, color=True,
+                validators=[is_integer, is_number, is_length, is_percentage, is_color],
                 explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT]
             ), initial=None)
 
@@ -245,7 +246,7 @@ class PropertyChoiceTests(TestCase):
             self.assertEqual(
                 str(v),
                 "Invalid value 'invalid' for CSS property 'prop'; "
-                "Valid values are: <color>, <integer>, <length>, <percentage>, "
+                "Valid values are: <color>, <integer>, <length>, <number>, <percentage>, "
                 "a, b, inherit, initial, none, revert, unset"
             )
 
