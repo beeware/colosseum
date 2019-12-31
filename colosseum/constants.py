@@ -1,5 +1,5 @@
-from .validators import (ColorValidator, IntegerValidator, LengthValidator,
-                         NumberValidator, PercentValidator)
+from .validators import (is_color, is_integer, is_length, is_number,
+                         is_percentage)
 
 
 class Choices:
@@ -14,7 +14,7 @@ class Choices:
 
     def validate(self, value):
         for validator in self.validators:
-            error_msg, value = validator.validate(value)
+            error_msg, value = validator(value)
             if not error_msg:
                 return value
 
@@ -32,13 +32,13 @@ class Choices:
         raise ValueError()
 
     def __str__(self):
-        choices = [str(c).lower().replace('_', '-') for c in self.constants]
+        choices = set([str(c).lower().replace('_', '-') for c in self.constants])
         for validator in self.validators:
-            choices.append(validator.name)
+            choices.add(validator.description)
 
         if self.explicit_defaulting_constants:
             for item in self.explicit_defaulting_constants:
-                choices.append(item)
+                choices.add(item)
 
         return ", ".join(sorted(choices))
 
@@ -73,31 +73,14 @@ REVERT = 'revert'
 # 8.3 Margin properties
 ######################################################################
 
-MARGIN_CHOICES = Choices(
-    AUTO,
-    validators=[
-        LengthValidator,
-        PercentValidator,
-    ],
-)
-MARGIN_CHOICES = Choices(
-    AUTO,
-    validators=[
-        LengthValidator,
-        PercentValidator,
-    ],
-)
+MARGIN_CHOICES = Choices(AUTO, validators=[is_length, is_percentage])
+MARGIN_CHOICES = Choices(AUTO, validators=[is_length, is_percentage])
 
 ######################################################################
 # 8.4 Padding properties
 ######################################################################
 
-PADDING_CHOICES = Choices(
-    validators=[
-        LengthValidator,
-        PercentValidator,
-    ],
-)
+PADDING_CHOICES = Choices(validators=[is_length, is_percentage])
 
 ######################################################################
 # 8.5 Border properties
@@ -111,9 +94,7 @@ BORDER_WIDTH_CHOICES = Choices(
     THIN,
     MEDIUM,
     THICK,
-    validators=[
-        LengthValidator,
-    ],
+    validators=[is_length]
 )
 
 HIDDEN = 'hidden'
@@ -141,7 +122,7 @@ BORDER_STYLE_CHOICES = Choices(
 
 BORDER_COLOR_CHOICES = Choices(
     TRANSPARENT,
-    validators=[ColorValidator],
+    validators=[is_color],
     explicit_defaulting_constants=[INITIAL, INHERIT, UNSET, REVERT],
 )
 
@@ -210,7 +191,7 @@ POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
 BOX_OFFSET_CHOICES = Choices(
     AUTO,
-    validators=[LengthValidator, PercentValidator],
+    validators=[is_length, is_percentage],
 )
 
 ######################################################################
@@ -229,7 +210,7 @@ CLEAR_CHOICES = Choices(None, LEFT, RIGHT, BOTH)
 # 9.9 Layered Presentation
 ######################################################################
 
-Z_INDEX_CHOICES = Choices(AUTO, validators=[IntegerValidator])
+Z_INDEX_CHOICES = Choices(AUTO, validators=[is_integer])
 
 ######################################################################
 # 9.10 Text Direction
@@ -254,15 +235,15 @@ UNICODE_BIDI_CHOICES = Choices(NORMAL, EMBED, BIDI_OVERRIDE)
 
 SIZE_CHOICES = Choices(
     AUTO,
-    validators=[LengthValidator, PercentValidator],
+    validators=[is_length, is_percentage],
 )
 MIN_SIZE_CHOICES = Choices(
     AUTO,
-    validators=[LengthValidator, PercentValidator],
+    validators=[is_length, is_percentage],
 )
 MAX_SIZE_CHOICES = Choices(
     None,
-    validators=[LengthValidator, PercentValidator],
+    validators=[is_length, is_percentage],
 )
 
 ######################################################################
@@ -332,7 +313,7 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 # 14.1 Foreground color
 ######################################################################
-COLOR_CHOICES = Choices(default, validators=[ColorValidator])
+COLOR_CHOICES = Choices(default, validators=[is_color])
 
 ######################################################################
 # 14.2.1 Background properties
@@ -340,7 +321,7 @@ COLOR_CHOICES = Choices(default, validators=[ColorValidator])
 BACKGROUND_COLOR_CHOICES = Choices(
     default,
     TRANSPARENT,
-    validators=[ColorValidator],
+    validators=[is_color],
 )
 
 # background_image
@@ -456,21 +437,21 @@ WRAP_REVERSE = 'wrap-reverse'
 
 FLEX_WRAP_CHOICES = Choices(NOWRAP, WRAP, WRAP_REVERSE)
 
-ORDER_CHOICES = Choices(validators=[IntegerValidator])
+ORDER_CHOICES = Choices(validators=[is_integer])
 
 ######################################################################
 # Flexibility (CSS-flexbox-1, Section 7)
 ######################################################################
 
-FLEX_GROW_CHOICES = Choices(validators=[NumberValidator])
-FLEX_SHRINK_CHOICES = Choices(validators=[NumberValidator])
+FLEX_GROW_CHOICES = Choices(validators=[is_number])
+FLEX_SHRINK_CHOICES = Choices(validators=[is_number])
 
 CONTENT = 'content'
 
 FLEX_BASIS_CHOICES = Choices(
     CONTENT,
     AUTO,
-    validators=[LengthValidator, PercentValidator],
+    validators=[is_length, is_percentage],
 )
 
 ######################################################################
@@ -518,8 +499,4 @@ GRID_PLACEMENT_CHOICES = Choices(AUTO)  # grid_line=True)
 # Grid alignment (CSS-grid-1, Section 10)
 ######################################################################
 
-GRID_GAP_CHOICES = Choices(
-    validators=[
-        PercentValidator,
-    ],
-)
+GRID_GAP_CHOICES = Choices(validators=[is_percentage])

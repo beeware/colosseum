@@ -2,108 +2,100 @@ from . import parser
 from . import units
 
 
-class BaseNumericValidator:
-    name = None
+def _numeric_validator(value, numeric_type, min_value, max_value):
+    error_msg = ''
+    try:
+        value = numeric_type(value)
+    except (ValueError, TypeError):
+        error_msg = "Cannot coerce {value} to {numeric_type}".format(
+            value=value, numeric_type=numeric_type.__name__)
 
-    def __init__(self, numeric_type, min_value=None, max_value=None):
-        self.numeric_type = numeric_type
-        self.min_value = min_value
-        self.max_value = max_value
+    if not error_msg and min_value is not None and value < min_value:
+        error_msg = 'Value {value} bellow minimum value {min_value}'.format(
+            value, min_value)
 
-    def validate(self, value):
-        error_msg = ''
-        try:
-            value = self.numeric_type(value)
-        except (ValueError, TypeError):
-            error_msg = "Cannot coerce {0} to '{1}'".format(value, self.numeric_type)
+    if not error_msg and max_value is not None and value > max_value:
+        error_msg = 'Value {value} above maximum value {max_value}'.format(
+            value, max_value)
 
-        if (not error_msg and self.min_value is not None
-                and value >= self.min_value):
-            error_msg = 'Value {0} bellow minimum value {1}'.format(value, self.min_value)
-
-        if (not error_msg and self.max_value is not None
-                and value <= self.max_value):
-            error_msg = 'Value {0} above maximum value {1}'.format(value, self.max_value)
-
-        return error_msg, value
+    return error_msg, value
 
 
-class NumberValidator(BaseNumericValidator):
-    name = '<number>'
+def is_number(value, min_value=None, max_value=None):
+    """
+    Validate that value is a valid float.
 
-    def __init__(self, min_value=None, max_value=None):
-        super().__init__(numeric_type=float, min_value=min_value,
-                         max_value=max_value)
-        self.validate = super().validate
+    If min_value or max_value are provided, range checks are performed.
+    """
 
-    @staticmethod
-    def validate(value):
-        error_msg = ''
-        try:
-            value = float(value)
-        except (ValueError, TypeError):
-            error_msg = "Cannot coerce {0} to float".format(value)
-        return error_msg, value
+    def validator(value):
+        return _numeric_validator(value, numeric_type=float, min_value=min_value, max_value=max_value)
+
+    if min_value is None and max_value is None:
+        return validator(value)
+    else:
+        return validator
 
 
-class IntegerValidator(BaseNumericValidator):
-    name = '<integer>'
-
-    def __init__(self, min_value=None, max_value=None):
-        super().__init__(numeric_type=int, min_value=min_value,
-                         max_value=max_value)
-        self.validate = super().validate
-
-    @staticmethod
-    def validate(value):
-        error_msg = ''
-        try:
-            value = int(value)
-        except (ValueError, TypeError):
-            error_msg = "Cannot coerce {0} to integer".format(value)
-        return error_msg, value
+is_number.description = '<number>'
 
 
-class LengthValidator:
-    name = '<length>'
+def is_integer(value, min_value=None, max_value=None):
+    """
+    Validate that value is a valid integer.
 
-    @staticmethod
-    def validate(value):
-        error_msg = ''
-        try:
-            value = parser.units(value)
-        except ValueError as error:
-            error_msg = str(error)
+    If min_value or max_value are provided, range checks are performed.
+    """
 
-        return error_msg, value
+    def validator(value):
+        return _numeric_validator(value, numeric_type=int, min_value=min_value, max_value=max_value)
 
-
-class PercentValidator:
-    name = '<percentage>'
-
-    @staticmethod
-    def validate(value):
-        error_msg = ''
-        try:
-            value = parser.units(value)
-        except ValueError as error:
-            error_msg = str(error)
-
-        if not isinstance(value, units.Percent):
-            error_msg = 'Value {} is not a Percent unit'.format(value)
-
-        return error_msg, value
+    if min_value is None and max_value is None:
+        return validator(value)
+    else:
+        return validator
 
 
-class ColorValidator:
-    name = '<color>'
+is_integer.description = '<integer>'
 
-    @staticmethod
-    def validate(value):
-        error_msg = ''
-        try:
-            value = parser.color(value)
-        except ValueError as error:
-            error_msg = str(error)
 
-        return error_msg, value
+def is_length(value):
+    error_msg = ''
+    try:
+        value = parser.units(value)
+    except ValueError as error:
+        error_msg = str(error)
+
+    return error_msg, value
+
+
+is_length.description = '<length>'
+
+
+def is_percentage(value):
+    error_msg = ''
+    try:
+        value = parser.units(value)
+    except ValueError as error:
+        error_msg = str(error)
+
+    if not isinstance(value, units.Percent):
+        error_msg = 'Value {} is not a Percent unit'.format(value)
+
+    return error_msg, value
+
+
+is_percentage.description = '<percentage>'
+
+
+def is_color(value):
+    error_msg = ''
+    try:
+        value = parser.color(value)
+    except ValueError as error:
+        error_msg = str(error)
+
+    return error_msg, value
+
+
+is_color.description = '<color>'
