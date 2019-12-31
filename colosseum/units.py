@@ -1,28 +1,21 @@
+import math
 
 __all__ = [
     'ch', 'cm', 'em', 'ex', 'inch', 'mm', 'pc', 'percent',
-    'pt', 'px', 'vh', 'vmax', 'vmin', 'vw',
+    'pt', 'px', 'vh', 'vmax', 'vmin', 'vw', 'deg', 'rad',
+    'grad', 'turn',
 ]
 
 LU_PER_PIXEL = 64
 
 
-class Unit:
+class BaseUnit:
     UNITS = []
 
     def __init__(self, suffix, val=None):
-        Unit.UNITS.append((suffix, self))
+        BaseUnit.UNITS.append((suffix, self))
         self.suffix = suffix
         self.val = val if val is not None else 1
-
-    def lu(self, display=None, font=None, size=None):
-        return round(LU_PER_PIXEL * self.val)
-
-    def px(self, display=None, font=None, size=None):
-        logical_units = self.lu(display=display, font=font, size=size)
-        value = logical_units / LU_PER_PIXEL
-        int_value = int(value)
-        return int_value if value == int_value else value
 
     def __repr__(self):
         return '{}{}'.format(self.val, self.suffix)
@@ -33,6 +26,36 @@ class Unit:
     def __rmul__(self, val):
         if isinstance(val, (int, float)):
             return self.dup(self.val * val)
+
+
+class Unit(BaseUnit):
+    def lu(self, display=None, font=None, size=None):
+        return round(LU_PER_PIXEL * self.val)
+
+    def px(self, display=None, font=None, size=None):
+        logical_units = self.lu(display=display, font=font, size=size)
+        value = logical_units / LU_PER_PIXEL
+        int_value = int(value)
+        return int_value if value == int_value else value
+
+
+class AngleUnit(BaseUnit):
+    def __init__(self, suffix, scale, val=None):
+        super().__init__(suffix, val)
+        self.scale = scale
+
+    def deg(self):
+        value = self.val * self.scale
+        value_int = int(value)
+        return value_int if value == value_int else value
+
+    def dup(self, val):
+        return AngleUnit(self.suffix, self.scale, val)
+
+    def __eq__(self, other):
+        if isinstance(other, AngleUnit):
+            return self.val == other.val and self.suffix == other.suffix
+        return False
 
 
 class PixelUnit(Unit):
@@ -131,3 +154,8 @@ vmin = ViewportUnit('vmin', lambda d: min(d.content_width, d.content_height))
 vw = ViewportUnit('vw', lambda d: d.content_width)
 
 percent = Percent()
+
+deg = AngleUnit('deg', 1)
+grad = AngleUnit('grad', 0.9)
+rad = AngleUnit('rad', 180/math.pi)
+turn = AngleUnit('turn', 360)

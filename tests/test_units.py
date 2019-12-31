@@ -1,7 +1,8 @@
+import math
 from unittest import TestCase
 
 from colosseum.units import (
-    ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
+    ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw, deg, rad, grad, turn,
 )
 
 from .utils import Display
@@ -427,3 +428,63 @@ class PercentUnitTests(TestCase):
         self.assertEqual(p, 5 * percent)
         self.assertNotEqual(p, 5 * px)
         self.assertNotEqual(p, 5)
+
+
+class AngleUnitTests(TestCase):
+    def test_deg(self):
+        p = 1 * deg
+        self.assertEqual(p.dup(90).deg(), 90)
+        self.assertEqual(p.dup(45.5).deg(), 45.5)
+
+        self.assertEqual(str(p), "1deg")
+        self.assertEqual(repr(p), "1deg")
+
+        p = 5 * deg
+        self.assertEqual(p, 5 * deg)
+        self.assertNotEqual(p, 5 * rad)
+        self.assertNotEqual(p, 5 * grad)
+        self.assertNotEqual(p, 5 * turn)
+
+    def test_grad(self):
+        p = 1 * grad
+        self.assertEqual(p.dup(100).deg(), 90)
+        self.assertEqual(p.dup(50).deg(), 45)
+
+        self.assertEqual(str(p), "1grad")
+        self.assertEqual(repr(p), "1grad")
+
+        p = 5 * grad
+        self.assertEqual(p, 5 * grad)
+        self.assertNotEqual(p, 5 * deg)
+        self.assertNotEqual(p, 5 * rad)
+        self.assertNotEqual(p, 5 * turn)
+
+    def test_rad(self):
+        p = 1 * rad
+        self.assertEqual(p.dup(math.pi).deg(), 180)
+        self.assertEqual(p.dup(math.pi/2).deg(), 90)
+        self.assertEqual(p.dup(math.pi*2).deg(), 360)
+
+        self.assertEqual(str(p), "1rad")
+        self.assertEqual(repr(p), "1rad")
+
+        p = 5 * rad
+        self.assertEqual(p, 5 * rad)
+        self.assertNotEqual(p, 5 * deg)
+        self.assertNotEqual(p, 5 * grad)
+        self.assertNotEqual(p, 5 * turn)
+
+    def test_turn(self):
+        p = 1 * turn
+        self.assertEqual(p.dup(.5).deg(), 180)
+        self.assertEqual(p.dup(1).deg(), 360)
+        self.assertEqual(p.dup(1.125).deg(), 405)
+
+        self.assertEqual(str(p), "1turn")
+        self.assertEqual(repr(p), "1turn")
+
+        p = 5 * turn
+        self.assertEqual(p, 5 * turn)
+        self.assertNotEqual(p, 5 * deg)
+        self.assertNotEqual(p, 5 * grad)
+        self.assertNotEqual(p, 5 * rad)
