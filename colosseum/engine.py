@@ -4,6 +4,7 @@ from .constants import (
     TABLE_CELL, THICK, THIN,
 )
 from .dimensions import Box
+from .units import pt
 
 
 def is_block_level_element(node):
@@ -75,9 +76,26 @@ class Viewport:
         self.layout = self.display
 
 
+class DummyFont:
+    def __init__(self, size):
+        self.size = size
+
+    @property
+    def em(self):
+        return self.size
+
+    @property
+    def ex(self):
+        return 0.65 * self.size
+
+    @property
+    def ch(self):
+        return 0.71 * self.size
+
+
 def layout(display, node, standard=HTML5):
     containing_block = Viewport(display, node)
-    font = None  # FIXME - default font
+    font = DummyFont(12)  # FIXME: default font
 
     node.layout.reset()
 
@@ -237,26 +255,45 @@ def layout_box(display, node, containing_block, viewport, font):
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
 
-    # print("END NODE", node)
-
-    # If position is relative, adjust the position
     if node.style.position is RELATIVE:
-        # Section 9.3.2 - box offsets
-        value = node.style.top
-        if value == AUTO:
-            pass
-        elif value == INHERIT:
-            node.layout.content_top = containing_block.layout.content_top
-        else:
-            node.layout.content_top += value.px(**vertical)
+        # Section 9.4.3 - relative positioning
+        # Left/Right
+        if node.style.left == AUTO and node.style.right == AUTO:  # P4
+            value_left = 0
+        elif node.style.left == AUTO:  # P5
+            if node.style.right == INHERIT:
+                value_left = -containing_block.layout.content_right
+            else:
+                value_left = -node.style.right.px(**horizontal)
+        elif node.style.right == AUTO:  # P6
+            if node.style.left == INHERIT:
+                value_left = containing_block.layout.content_left
+            else:
+                value_left = node.style.left.px(**horizontal)
+        else:  # P7
+            value_left = node.style.left.px(**horizontal)
 
-        value = node.style.left
-        if value == AUTO:
-            pass
-        elif value == INHERIT:
-            node.layout.content_left = containing_block.layout.content_left
+        node.layout.content_left += value_left
+
+        # Top/Bottom P8
+        if node.style.top == AUTO and node.style.bottom == AUTO:
+            value_top = 0
+        elif node.style.top == AUTO:
+            if node.style.bottom == INHERIT:
+                value_top = -containing_block.layout.content_bottom
+            else:
+                value_top = -node.style.bottom.px(**vertical)
+        elif node.style.bottom == AUTO:
+            if node.style.top == INHERIT:
+                value_top = containing_block.layout.content_top
+            else:
+                value_top = node.style.top.px(**vertical)
         else:
-            node.layout.content_left += value.px(**horizontal)
+            value_top = node.style.top.px(**vertical)
+
+        node.layout.content_top += value_top
+
+    # print("END NODE", node)
 
 
 def calculate_size(value, context):
