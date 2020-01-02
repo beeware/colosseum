@@ -435,7 +435,7 @@ INITIAL_FONT_VALUES = {
     'font_weight': NORMAL,
     'font_size': MEDIUM,
     'line_height': NORMAL,
-    'font_family': '',  # TODO: Depends on user agent. What to use?
+    'font_family': [INITIAL],  # TODO: Depends on user agent. What to use?
 }
 
 ######################################################################

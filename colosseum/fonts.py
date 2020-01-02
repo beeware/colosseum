@@ -20,6 +20,7 @@ def get_system_font(keyword):
 
 def construct_font_property(font):
     """Construct font property string from a dictionary of font properties."""
+    font['font_family'] = ', '.join(font['font_family'])
     return ('{font_style} {font_variant} {font_weight} '
             '{font_size}/{line_height} {font_family}').format(**font)
 

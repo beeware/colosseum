@@ -113,12 +113,12 @@ _CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
 
 def is_font_family(value=None, generic_family=None):
     """Validate that value is a valid font family."""
+    generic_family = generic_family or []
 
     def validator(font_value):
         font_value = ' '.join(font_value.strip().split())
         values = [v.strip() for v in font_value.split(',')]
         checked_values = []
-        generic_family = generic_family or []
         for val in values:
             if (val.startswith('"') and val.endswith('"')
                     or val.startswith("'") and val.endswith("'")):
@@ -144,7 +144,7 @@ def is_font_family(value=None, generic_family=None):
 
         return ', '.join(checked_values)
 
-    if generic_family is None:
+    if generic_family is []:
         return validator(value)
     else:
         return validator

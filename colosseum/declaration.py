@@ -28,19 +28,19 @@ def validated_font_property(name, initial):
     def getter(self):
         font = initial
         for property_name, initial_value in font.items():
-            font[property_name] = getattr(self, property_name, initial_value)
-        return getattr(self, name, construct_font_property(font))
+            font[property_name] = getattr(self, '_%s' % property_name, initial_value)
+        return getattr(self, '_%s' % name, construct_font_property(font))
 
     def setter(self, value):
         font = parse_font_property(value)
         for property_name, property_value in font.items():
-            setattr(self, property_name, property_value)
+            setattr(self, '_%s' % property_name, property_value)
             self.dirty = True
         setattr(self, name, value)
 
     def deleter(self):
         try:
-            delattr(self, name)
+            delattr(self, '_%s' % name)
             self.dirty = True
         except AttributeError:
             # Attribute doesn't exist
@@ -48,7 +48,7 @@ def validated_font_property(name, initial):
 
         for property_name in INITIAL_FONT_VALUES:
             try:
-                delattr(self, property_name)
+                delattr(self, '_%s' % property_name)
                 self.dirty = True
             except AttributeError:
                 # Attribute doesn't exist
@@ -64,7 +64,7 @@ def validated_list_property(name, choices, initial):
         raise ValueError('Initial value must be a list!')
 
     def getter(self):
-        return getattr(self, name, initial)
+        return getattr(self, '_%s' % name, initial)
 
     def setter(self, value):
         try:
@@ -79,13 +79,13 @@ def validated_list_property(name, choices, initial):
                 value, name, choices
             ))
 
-        if values != getattr(self, name, initial):
-            setattr(self, name, values)
+        if values != getattr(self, '_%s' % name, initial):
+            setattr(self, '_%s' % name, values)
             self.dirty = True
 
     def deleter(self):
         try:
-            delattr(self, name)
+            delattr(self, '_%s' % name)
             self.dirty = True
         except AttributeError:
             # Attribute doesn't exist
