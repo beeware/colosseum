@@ -1,7 +1,7 @@
 from .constants import (
-    ABSOLUTE, AUTO, BLOCK, FIXED, HTML5, INLINE, INLINE_BLOCK, INLINE_TABLE,
-    LIST_ITEM, LTR, MEDIUM, RELATIVE, TABLE, TABLE_CAPTION, TABLE_CELL, THICK,
-    THIN,
+    ABSOLUTE, AUTO, BLOCK, FIXED, HTML5, INHERIT, INLINE, INLINE_BLOCK,
+    INLINE_TABLE, LIST_ITEM, LTR, MEDIUM, RELATIVE, TABLE, TABLE_CAPTION,
+    TABLE_CELL, THICK, THIN,
 )
 from .dimensions import Box
 
@@ -190,6 +190,10 @@ def layout_box(display, node, containing_block, viewport, font):
     # Section 10.3 - evaluate height and margins
     calculate_width_and_margins(node, horizontal)
 
+    # Section 9.4.2 - relative positioning
+    if node.style.position is RELATIVE:
+        calculate_height_and_margins(node, vertical)
+
     if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
         raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
     elif node.style.float is not None:
@@ -235,9 +239,24 @@ def layout_box(display, node, containing_block, viewport, font):
 
     # print("END NODE", node)
 
-    # If position is relative, adjust the position.
+    # If position is relative, adjust the position
     if node.style.position is RELATIVE:
-        raise NotImplementedError("Section 9.4.2 - relative positioning")  # pragma: no cover
+        # Section 9.3.2 - box offsets
+        value = node.style.top
+        if value == AUTO:
+            pass
+        elif value == INHERIT:
+            node.layout.content_top = containing_block.layout.content_top
+        else:
+            node.layout.content_top += value.px(**vertical)
+
+        value = node.style.left
+        if value == AUTO:
+            pass
+        elif value == INHERIT:
+            node.layout.content_left = containing_block.layout.content_left
+        else:
+            node.layout.content_left += value.px(**horizontal)
 
 
 def calculate_size(value, context):

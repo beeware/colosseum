@@ -186,7 +186,7 @@ FIXED = 'fixed'
 
 POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
-BOX_OFFSET_CHOICES = Choices(AUTO, validators=[is_length, is_percentage])
+BOX_OFFSET_CHOICES = Choices(AUTO, validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 9.5.1 Positioning the float
