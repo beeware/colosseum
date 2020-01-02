@@ -27,6 +27,12 @@ class BaseUnit:
         if isinstance(val, (int, float)):
             return self.dup(self.val * val)
 
+    def __neg__(self):
+        if isinstance(self.val, int):
+            return self.dup(self.val * -1)
+        elif isinstance(self.val, float):
+            return self.dup(self.val * -1.0)
+
 
 class Unit(BaseUnit):
     def lu(self, display=None, font=None, size=None):
@@ -142,8 +148,8 @@ em = FontUnit('em')
 ex = FontUnit('ex')
 ch = FontUnit('ch')
 
-pc = AbsoluteUnit('pc', 12)
 pt = AbsoluteUnit('pt', 1)
+pc = AbsoluteUnit('pc', 12)
 inch = AbsoluteUnit('in', 72)
 cm = AbsoluteUnit('cm', 28.3465)
 mm = AbsoluteUnit('mm', 2.83465)
