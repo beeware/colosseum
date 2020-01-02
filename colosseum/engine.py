@@ -4,7 +4,6 @@ from .constants import (
     TABLE_CELL, THICK, THIN,
 )
 from .dimensions import Box
-from .units import pt
 
 
 def is_block_level_element(node):
