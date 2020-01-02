@@ -1,6 +1,7 @@
 from unittest import TestCase
 
-from colosseum.validators import is_integer, is_number, ValidationError
+from colosseum.validators import (ValidationError, is_font_family,
+                                  is_integer, is_number)
 
 
 class NumericTests(TestCase):
@@ -38,3 +39,23 @@ class NumericTests(TestCase):
 
         with self.assertRaises(ValidationError):
             validator('spam')
+
+
+class FontTests(TestCase):
+    def test_font_family_name(self):
+        validator = is_font_family
+        invalid_cases = [
+            'Red/Black, sans-serif',
+            '"Lucida" Grande, sans-serif',
+            'Ahem!, sans-serif',
+            'test@foo, sans-serif',
+            '#POUND, sans-serif',
+            'Hawaii 5-0, sans-serif',
+            '123',
+        ]
+        for case in invalid_cases:
+            with self.assertRaises(ValidationError):
+                validator(case)
+
+        self.assertEqual(validator('"New Century Schoolbook",  serif'), '"New Century Schoolbook", serif')
+        self.assertEqual(validator("'21st Century',fantasy"), "'21st Century', fantasy")
