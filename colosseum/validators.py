@@ -4,6 +4,7 @@ import re
 from . import parser
 from . import units
 
+
 class ValidationError(ValueError):
     pass
 
@@ -123,7 +124,7 @@ def is_font_family(value):
             try:
                 ast.literal_eval(val)
                 checked_values.append(val)
-            except:
+            except ValueError:
                 raise ValidationError
         elif val in generic_family:
             checked_values.append(val)
