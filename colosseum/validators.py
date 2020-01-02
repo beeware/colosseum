@@ -1,6 +1,8 @@
+import ast
+import re
+
 from . import parser
 from . import units
-
 
 class ValidationError(ValueError):
     pass
@@ -103,3 +105,39 @@ def is_color(value):
 
 
 is_color.description = '<color>'
+
+
+_CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
+
+
+def is_font_family(value):
+    """Validate that value is a valid font family."""
+    value = ' '.join(value.strip().split())
+    values = [v.strip() for v in value.split(',')]
+    checked_values = []
+    generic_family = ['serif', 'sans-serif', 'cursive', 'fantasy', 'monospace']
+    for val in values:
+        if (val.startswith('"') and val.endswith('"')
+                or val.startswith("'") and val.endswith("'")):
+            # TODO: Check that the font exists?
+            try:
+                ast.literal_eval(val)
+                checked_values.append(val)
+            except:
+                raise ValidationError
+        elif val in generic_family:
+            checked_values.append(val)
+        else:
+            # TODO: Check that the font exists?
+            if _CSS_IDENTIFIER_RE.match(val):
+                checked_values.append(val)
+            else:
+                raise ValidationError
+
+    if len(checked_values) != len(values):
+        raise ValidationError
+
+    return ', '.join(checked_values)
+
+
+is_font_family.description = '<family-name>, <generic-family>'

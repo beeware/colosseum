@@ -12,10 +12,51 @@ from .constants import (  # noqa
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
     POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    Z_INDEX_CHOICES, default,
+    Z_INDEX_CHOICES, default, FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
+    FONT_WEIGHT_CHOICES, FONT_SIZE_CHOICES, MEDIUM, FONT_FAMILY_CHOICES, INITIAL,
+    INITIAL_FONT_VALUES,
 )
+from .fonts import construct_font_property, parse_font_property
+
 
 _CSS_PROPERTIES = set()
+
+
+def validated_font_property(name, initial):
+    """Define the shorthand CSS font property."""
+
+    def getter(self):
+        font = initial
+        for property_name, initial_value in font.items():
+            font[property_name] = getattr(self, property_name, initial_value)
+        return getattr(self, name, construct_font_property(font))
+
+    def setter(self, value):
+        font = parse_font_property(value)
+        for property_name, property_value in font.items():
+            setattr(self, property_name, property_value)
+            self.dirty = True
+        setattr(self, name, value)
+
+    def deleter(self):
+        try:
+            delattr(self, name)
+            self.dirty = True
+        except AttributeError:
+            # Attribute doesn't exist
+            pass
+
+        # TODO: Should this delete all the other attributes?
+        for property_name in INITIAL_FONT_VALUES:
+            try:
+                delattr(self, property_name)
+                self.dirty = True
+            except AttributeError:
+                # Attribute doesn't exist
+                pass
+
+    _CSS_PROPERTIES.add(name)
+    return property(getter, setter, deleter)
 
 
 def unvalidated_property(name, choices, initial):
@@ -276,22 +317,22 @@ class CSS:
 
     # 15. Fonts ##########################################################
     # 15.3 Font family
-    # font_family
+    font_family = validated_property('font_family', choices=FONT_FAMILY_CHOICES, initial=INITIAL)  # TODO: initial?
 
     # 15.4 Font Styling
-    # font_style
+    font_style = validated_property('font_style', choices=FONT_STYLE_CHOICES, initial=NORMAL)
 
     # 15.5 Small-caps
-    # font_variant
+    font_variant = validated_property('font_variant', choices=FONT_VARIANT_CHOICES, initial=NORMAL)
 
     # 15.6 Font boldness
-    # font_weight
+    font_weight = validated_property('font_weight', choices=FONT_WEIGHT_CHOICES, initial=NORMAL)
 
     # 15.7 Font size
-    # font_size
+    font_size = validated_property('font_size', choices=FONT_SIZE_CHOICES, initial=MEDIUM)
 
     # 15.8 Shorthand font property
-    # font
+    font = validated_font_property('font', initial=INITIAL_FONT_VALUES)
 
     # 16. Text ###########################################################
     # 16.1 Indentation
