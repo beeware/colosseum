@@ -111,34 +111,43 @@ is_color.description = '<color>'
 _CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
 
 
-def is_font_family(value):
+def is_font_family(value=None, generic_family=None):
     """Validate that value is a valid font family."""
-    value = ' '.join(value.strip().split())
-    values = [v.strip() for v in value.split(',')]
-    checked_values = []
-    generic_family = ['serif', 'sans-serif', 'cursive', 'fantasy', 'monospace']
-    for val in values:
-        if (val.startswith('"') and val.endswith('"')
-                or val.startswith("'") and val.endswith("'")):
-            # TODO: Check that the font exists?
-            try:
-                ast.literal_eval(val)
-                checked_values.append(val)
-            except ValueError:
-                raise ValidationError
-        elif val in generic_family:
-            checked_values.append(val)
-        else:
-            # TODO: Check that the font exists?
-            if _CSS_IDENTIFIER_RE.match(val):
+
+    def validator(font_value):
+        font_value = ' '.join(font_value.strip().split())
+        values = [v.strip() for v in font_value.split(',')]
+        checked_values = []
+        generic_family = generic_family or []
+        for val in values:
+            if (val.startswith('"') and val.endswith('"')
+                    or val.startswith("'") and val.endswith("'")):
+                # TODO: Check that the font exists?
+                try:
+                    ast.literal_eval(val)
+                    checked_values.append(val)
+                except ValueError:
+                    raise ValidationError
+            elif val in generic_family:
                 checked_values.append(val)
             else:
-                raise ValidationError
+                # TODO: Check that the font exists?
+                if _CSS_IDENTIFIER_RE.match(val):
+                    checked_values.append(val)
+                else:
+                    raise ValidationError
 
-    if len(checked_values) != len(values):
-        raise ValidationError
+        if len(checked_values) != len(values):
+            invalid = set(values) - set(checked_values)
+            error_msg = 'Invalid font string "{invalid}"'.format(invalid=invalid)
+            raise ValidationError(error_msg)
 
-    return ', '.join(checked_values)
+        return ', '.join(checked_values)
+
+    if generic_family is None:
+        return validator(value)
+    else:
+        return validator
 
 
 is_font_family.description = '<family-name>, <generic-family>'

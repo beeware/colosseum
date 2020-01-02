@@ -59,8 +59,9 @@ def parse_font_property(string):
             pass
         else:
             if value not in SYSTEM_FONT_KEYWORDS:
-                # TODO: Should this be a different error, e.g. ParsingError?
-                raise ValidationError
+                error_msg = ('Font property value "{value}" '
+                             'not a system font keyword!'.format(value=value))
+                raise ValidationError(error_msg)
             font = get_system_font(value)
     elif len(parts) <= 5:
         font_properties, font_family = parts[:-1], parts[-1]
@@ -87,7 +88,7 @@ def parse_font_property(string):
         if '/' in font['font_size']:
             font['font_size'], font['line_height'] = font['font_size'].split('/')
     else:
-        # TODO: Should this be a different error, e.g. ParsingError?
-        raise ValidationError
+        error_msg = ('Font property shorthand contains too many parts!')
+        raise ValidationError(error_msg)
 
     return font

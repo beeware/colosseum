@@ -236,6 +236,8 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 # 10.8 Leading and half-leading
 ######################################################################
 # line_height
+LINE_HEIGHT_CHOICES = Choices(NORMAL, validators=[is_number, is_length, is_percentage],
+                              explicit_defaulting_constants=[INHERIT])
 # vertical_align
 
 ######################################################################
@@ -318,8 +320,16 @@ BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 ######################################################################
 # font_family
 
+SERIF = 'serif'
+SANS_SERIF = 'sans-serif'
+CURSIVE = 'cursive'
+FANTASY = 'fantasy'
+MONOSPACE = 'monospace'
+
+GENERIC_FAMILY_FONTS = [SERIF, SANS_SERIF, CURSIVE, FANTASY, MONOSPACE]
+
 FONT_FAMILY_CHOICES = Choices(
-    validators=[is_font_family],
+    validators=[is_font_family(generic_family=GENERIC_FAMILY_FONTS)],
     explicit_defaulting_constants=[INHERIT, INITIAL],
 )
 
@@ -409,7 +419,16 @@ FONT_SIZE_CHOICES = Choices(
 ######################################################################
 # 15.8 Font shorthand
 ######################################################################
-SYSTEM_FONT_KEYWORDS = ['caption', 'icon', 'menu', 'message-box', 'small-caption', 'status-bar']
+
+ICON = 'icon'
+CAPTION = 'caption'
+MENU = 'menu'
+MESSAGE_BOX = 'message-box'
+SMALL_CAPTION = 'small-caption'
+STATUS_BAR = 'status-bar'
+
+SYSTEM_FONT_KEYWORDS = [ICON, CAPTION, MENU, MESSAGE_BOX, SMALL_CAPTION, STATUS_BAR]
+
 INITIAL_FONT_VALUES = {
     'font_style': NORMAL,
     'font_variant': NORMAL,

@@ -14,7 +14,7 @@ from .constants import (  # noqa
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
     Z_INDEX_CHOICES, default, FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
     FONT_WEIGHT_CHOICES, FONT_SIZE_CHOICES, MEDIUM, FONT_FAMILY_CHOICES, INITIAL,
-    INITIAL_FONT_VALUES,
+    INITIAL_FONT_VALUES, LINE_HEIGHT_CHOICES,
 )
 from .fonts import construct_font_property, parse_font_property
 
@@ -46,7 +46,6 @@ def validated_font_property(name, initial):
             # Attribute doesn't exist
             pass
 
-        # TODO: Should this delete all the other attributes?
         for property_name in INITIAL_FONT_VALUES:
             try:
                 delattr(self, property_name)
@@ -59,21 +58,34 @@ def validated_font_property(name, initial):
     return property(getter, setter, deleter)
 
 
-def unvalidated_property(name, choices, initial):
-    "Define a simple CSS property attribute."
-    initial = choices.validate(initial)
+def validated_list_property(name, choices, initial):
+    """Define a property holding a list of comma separated values."""
+    if not isinstance(initial, list):
+        raise ValueError('Initial value must be a list!')
 
     def getter(self):
-        return getattr(self, '_%s' % name, initial)
+        return getattr(self, name, initial)
 
     def setter(self, value):
-        if value != getattr(self, '_%s' % name, initial):
-            setattr(self, '_%s' % name, value)
+        try:
+            if not isinstance(value, str):
+                value = ', '.join(value)
+
+            value = ' '.join(value.strip().split())
+            value = choices.validate(value)
+            values = [v.strip() for v in value.split(',')]
+        except ValueError:
+            raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
+                value, name, choices
+            ))
+
+        if values != getattr(self, name, initial):
+            setattr(self, name, values)
             self.dirty = True
 
     def deleter(self):
         try:
-            delattr(self, '_%s' % name)
+            delattr(self, name)
             self.dirty = True
         except AttributeError:
             # Attribute doesn't exist
@@ -165,6 +177,30 @@ def directional_property(name, initial):
     _CSS_PROPERTIES.add(name % '_right')
     _CSS_PROPERTIES.add(name % '_bottom')
     _CSS_PROPERTIES.add(name % '_left')
+    return property(getter, setter, deleter)
+
+
+def unvalidated_property(name, choices, initial):
+    "Define a simple CSS property attribute."
+    initial = choices.validate(initial)
+
+    def getter(self):
+        return getattr(self, '_%s' % name, initial)
+
+    def setter(self, value):
+        if value != getattr(self, '_%s' % name, initial):
+            setattr(self, '_%s' % name, value)
+            self.dirty = True
+
+    def deleter(self):
+        try:
+            delattr(self, '_%s' % name)
+            self.dirty = True
+        except AttributeError:
+            # Attribute doesn't exist
+            pass
+
+    _CSS_PROPERTIES.add(name)
     return property(getter, setter, deleter)
 
 
@@ -263,7 +299,7 @@ class CSS:
     max_height = validated_property('max_height', choices=MAX_SIZE_CHOICES, initial=None)
 
     # 10.8 Leading and half-leading
-    # line_height
+    line_height = validated_property('line_height', choices=LINE_HEIGHT_CHOICES, initial=NORMAL)
     # vertical_align
 
     # 11. Visual effects #################################################
@@ -317,7 +353,7 @@ class CSS:
 
     # 15. Fonts ##########################################################
     # 15.3 Font family
-    font_family = validated_property('font_family', choices=FONT_FAMILY_CHOICES, initial=INITIAL)  # TODO: initial?
+    font_family = validated_list_property('font_family', choices=FONT_FAMILY_CHOICES, initial=[INITIAL])
 
     # 15.4 Font Styling
     font_style = validated_property('font_style', choices=FONT_STYLE_CHOICES, initial=NORMAL)

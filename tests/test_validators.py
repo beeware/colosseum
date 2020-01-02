@@ -1,5 +1,6 @@
 from unittest import TestCase
 
+from colosseum.constants import GENERIC_FAMILY_FONTS
 from colosseum.validators import (ValidationError, is_font_family,
                                   is_integer, is_number)
 
@@ -43,7 +44,7 @@ class NumericTests(TestCase):
 
 class FontTests(TestCase):
     def test_font_family_name(self):
-        validator = is_font_family
+        validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS)
         invalid_cases = [
             'Red/Black, sans-serif',
             '"Lucida" Grande, sans-serif',
