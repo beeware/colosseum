@@ -94,7 +94,7 @@ class DummyFont:
 
 def layout(display, node, standard=HTML5):
     containing_block = Viewport(display, node)
-    font = DummyFont(12)  # FIXME: default font
+    font = DummyFont(-1)  # FIXME: default font
 
     node.layout.reset()
 
