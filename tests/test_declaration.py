@@ -267,7 +267,6 @@ class PropertyChoiceTests(TestCase):
         self.assertEqual(obj.prop, AUTO)
         self.assertIs(obj.prop, AUTO)
 
-
     def test_other_property(self):
         class MyObject:
             prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('other_prop'))
