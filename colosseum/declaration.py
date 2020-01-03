@@ -18,7 +18,7 @@ from .constants import (  # noqa
 _CSS_PROPERTIES = set()
 
 
-class Unspecified:
+class OtherProperty:
 
     def __init__(self, name):
         self.name = '_' + name
@@ -50,11 +50,11 @@ def unvalidated_property(name, choices, initial):
 
 def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
-    if not isinstance(initial, Unspecified):
+    if not isinstance(initial, OtherProperty):
         initial = choices.validate(initial)
 
     def getter(self):
-        initial_value = getattr(self, initial.name) if isinstance(initial, Unspecified) else initial
+        initial_value = getattr(self, initial.name) if isinstance(initial, OtherProperty) else initial
         print([initial_value])
         return getattr(self, '_%s' % name, initial_value)
 
@@ -169,10 +169,14 @@ class CSS:
     border_width = directional_property('border%s_width', initial=0)
 
     # 8.5.2 Border color
-    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES, initial=Unspecified('color'))
-    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES, initial=Unspecified('color'))
-    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES, initial=Unspecified('color'))
-    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES, initial=Unspecified('color'))
+    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES,
+                                          initial=OtherProperty('color'))
+    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES,
+                                            initial=OtherProperty('color'))
+    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES,
+                                             initial=OtherProperty('color'))
+    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES,
+                                           initial=OtherProperty('color'))
     border_color = directional_property('border%s_color', initial=0)
 
     # 8.5.3 Border style
