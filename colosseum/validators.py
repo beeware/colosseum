@@ -50,7 +50,6 @@ def is_number(value=None, min_value=None, max_value=None):
 is_number.description = '<number>'
 
 
-
 def is_integer(value=None, min_value=None, max_value=None):
     """
     Validate that value is a valid integer.

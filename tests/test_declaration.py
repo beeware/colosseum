@@ -691,7 +691,6 @@ class CssDeclarationTests(TestCase):
         with self.assertRaises(KeyError):
             del node.style['no-such-property']
 
-
     def test_font_shorthand_property(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
@@ -735,7 +734,7 @@ class CssDeclarationTests(TestCase):
         node.style.font_variant = 'small-caps'
         node.style.font_size = '10px'
         node.style.line_height = '1.5'
-        node.style.font_family = ['"Foo Bar Spam"', 'serif']      
+        node.style.font_family = ['"Foo Bar Spam"', 'serif']
         self.assertEqual(node.style.font, '9px serif')
 
         # Check invalid values
