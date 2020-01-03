@@ -12,16 +12,10 @@ from .constants import (  # noqa
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
     POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    Z_INDEX_CHOICES, default,
+    Z_INDEX_CHOICES, default, OtherProperty,
 )
 
 _CSS_PROPERTIES = set()
-
-
-class OtherProperty:
-
-    def __init__(self, name):
-        self.name = '_' + name
 
 
 def unvalidated_property(name, choices, initial):
@@ -50,12 +44,15 @@ def unvalidated_property(name, choices, initial):
 
 def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
-    if not isinstance(initial, OtherProperty):
-        initial = choices.validate(initial)
+    initial = choices.validate(initial)
 
     def getter(self):
-        initial_value = getattr(self, initial.name) if isinstance(initial, OtherProperty) else initial
-        print([initial_value])
+        try:
+            # Get initial value from other property value. See OtherProperty
+            initial_value = initial.value(self)
+        except AttributeError:
+            initial_value = initial
+
         return getattr(self, '_%s' % name, initial_value)
 
     def setter(self, value):

@@ -13,6 +13,9 @@ class Choices:
         self.validators = validators or []
 
     def validate(self, value):
+        if isinstance(value, OtherProperty):
+            return value
+
         for validator in self.validators:
             try:
                 value = validator(value)
@@ -43,6 +46,16 @@ class Choices:
                 choices.add(item)
 
         return ", ".join(sorted(choices))
+
+
+class OtherProperty:
+    """A class to refer to another property when specifying an initial value."""
+
+    def __init__(self, name):
+        self._name = name
+
+    def value(self, context):
+        return getattr(context, '_%s' % self._name)
 
 
 ######################################################################
