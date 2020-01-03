@@ -143,15 +143,16 @@ def is_font_family(value=None, generic_family=None, font_families=None):
                     raise ValidationError
 
                 if no_quotes_val not in font_families:
-                    print(font_families)
                     raise ValidationError('Font family "{font_value}"'
                                           ' not found on system!'.format(font_value=no_quotes_val))
 
             elif val in generic_family:
                 checked_values.append(val)
             else:
-                # TODO: Check that the font exists?
                 if _CSS_IDENTIFIER_RE.match(val):
+                    if val not in font_families:
+                        raise ValidationError('Font family "{font_value}"'
+                                              ' not found on system!'.format(font_value=val))
                     checked_values.append(val)
                 else:
                     raise ValidationError

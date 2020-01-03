@@ -442,15 +442,14 @@ class CssDeclarationTests(TestCase):
         self.assertEqual(node.style.font_family, ['initial'])
 
         # Check valid values
-        node.style.font_family = ['caption']
         node.style.font_family = ['serif']
         node.style.font_family = ["'Arial Black'", 'serif']
 
         # TODO: This will coerce to a list, is this a valid behavior?
-        node.style.font_family = 'just-a-string'
-        self.assertEqual(node.style.font_family, ['just-a-string'])
-        node.style.font_family = '  just-a-string  ,   caption '
-        self.assertEqual(node.style.font_family, ['just-a-string', 'caption'])
+        node.style.font_family = '"Arial Black"'
+        self.assertEqual(node.style.font_family, ['"Arial Black"'])
+        node.style.font_family = '  "   Arial    Black   "    ,   serif '
+        self.assertEqual(node.style.font_family, ['"Arial Black"', 'serif'])
 
         # Check invalid values
         with self.assertRaises(ValueError):

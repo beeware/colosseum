@@ -8,9 +8,9 @@ from .validators import ValidationError
 def get_system_font(keyword):
     """Return a font object from given system font keyword."""
     if keyword in SYSTEM_FONT_KEYWORDS:
+        return '"Arial Black"'
         # Get the system font
-        font = INITIAL_FONT_VALUES.copy()
-    return font
+    return None
 
 
 def construct_font_property(font):
