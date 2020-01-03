@@ -38,13 +38,13 @@ FONT_CASES = {
         'line_height': '120%',
         'font_family': ['fantasy'],
         },
-    r'x-large/110% "New  Century Schoolbook",serif': {
+    r'x-large/110% "Arial Black",serif': {
         'font_style': 'normal',
         'font_variant': 'normal',
         'font_weight': 'normal',
         'font_size': 'x-large',
         'line_height': '110%',
-        'font_family': ['"New Century Schoolbook"', 'serif'],
+        'font_family': ['"Arial Black"', 'serif'],
         },
 }
 
@@ -58,7 +58,7 @@ class FontTests(TestCase):
 
         # Test extra spaces
         parse_font_property(r'  normal    normal    normal    12px/12px   serif  ')
-        parse_font_property(r'  normal    normal    normal    12px/12px   "New   Foo   Bar",   serif  ')
+        parse_font_property(r'  normal    normal    normal    12px/12px   "  Arial   Black  ",   serif  ')
 
         # Test valid single part
         for part in SYSTEM_FONT_KEYWORDS:

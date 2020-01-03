@@ -444,7 +444,7 @@ class CssDeclarationTests(TestCase):
         # Check valid values
         node.style.font_family = ['caption']
         node.style.font_family = ['serif']
-        node.style.font_family = ["'Lucida Foo Bar'", 'serif']
+        node.style.font_family = ["'Arial Black'", 'serif']
 
         # TODO: This will coerce to a list, is this a valid behavior?
         node.style.font_family = 'just-a-string'
@@ -454,7 +454,7 @@ class CssDeclarationTests(TestCase):
 
         # Check invalid values
         with self.assertRaises(ValueError):
-            node.style.font_family = ['Lucida Foo Bar']
+            node.style.font_family = ['Arial Black']
 
         # Check the error message
         try:
@@ -712,9 +712,9 @@ class CssDeclarationTests(TestCase):
         node.style.font_variant = 'small-caps'
         node.style.font_size = '10px'
         node.style.line_height = '1.5'
-        node.style.font_family = ['"Foo Bar Spam"', 'serif']
+        node.style.font_family = ['"Arial Black"', 'serif']
         # TODO: Is this the behavior we want?
-        self.assertEqual(node.style.font, 'italic small-caps bold 10.0px/1.5 "Foo Bar Spam", serif')
+        self.assertEqual(node.style.font, 'italic small-caps bold 10.0px/1.5 "Arial Black", serif')
 
         # Check setting the shorthand resets values
         node.style.font = '9px serif'
@@ -734,7 +734,7 @@ class CssDeclarationTests(TestCase):
         node.style.font_variant = 'small-caps'
         node.style.font_size = '10px'
         node.style.line_height = '1.5'
-        node.style.font_family = ['"Foo Bar Spam"', 'serif']
+        node.style.font_family = ['"Arial Black"', 'serif']
         self.assertEqual(node.style.font, '9px serif')
 
         # Check invalid values

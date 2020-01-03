@@ -1,3 +1,5 @@
+import sys
+
 from .validators import (ValidationError, is_color, is_font_family,
                          is_integer, is_length,
                          is_number, is_percentage)
@@ -328,8 +330,30 @@ MONOSPACE = 'monospace'
 
 GENERIC_FAMILY_FONTS = [SERIF, SANS_SERIF, CURSIVE, FANTASY, MONOSPACE]
 
+
+def available_font_families():
+    """List available font family names."""
+    if sys.platform == 'darwin':
+        return _available_font_families_mac()
+    return []
+
+
+def _available_font_families_mac():
+    """List available font family names on mac."""
+    from ctypes import cdll, util
+    from rubicon.objc import ObjCClass
+    appkit = cdll.LoadLibrary(util.find_library('AppKit'))
+    NSFontManager = ObjCClass("NSFontManager")
+    NSFontManager.declare_class_property('sharedFontManager')
+    NSFontManager.declare_class_property("sharedFontManager")
+    NSFontManager.declare_property("availableFontFamilies")
+    manager = NSFontManager.sharedFontManager
+    return list(sorted(str(item) for item in manager.availableFontFamilies))
+
+
+AVAILABLE_FONT_FAMILIES = available_font_families()
 FONT_FAMILY_CHOICES = Choices(
-    validators=[is_font_family(generic_family=GENERIC_FAMILY_FONTS)],
+    validators=[is_font_family(generic_family=GENERIC_FAMILY_FONTS, font_families=AVAILABLE_FONT_FAMILIES)],
     explicit_defaulting_constants=[INHERIT, INITIAL],
 )
 

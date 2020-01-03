@@ -114,13 +114,14 @@ is_color.description = '<color>'
 _CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
 
 
-def is_font_family(value=None, generic_family=None):
+def is_font_family(value=None, generic_family=None, font_families=None):
     """
     Validate that value is a valid font family.
 
     This validator returns a list.
     """
     generic_family = generic_family or []
+    font_families = font_families or []
 
     def validator(font_value):
         font_value = ' '.join(font_value.strip().split())
@@ -135,12 +136,17 @@ def is_font_family(value=None, generic_family=None):
 
             if (val.startswith('"') and val.endswith('"')
                     or val.startswith("'") and val.endswith("'")):
-                # TODO: Check that the font exists?
                 try:
-                    ast.literal_eval(val)
+                    no_quotes_val = ast.literal_eval(val)
                     checked_values.append(val)
                 except ValueError:
                     raise ValidationError
+
+                if no_quotes_val not in font_families:
+                    print(font_families)
+                    raise ValidationError('Font family "{font_value}"'
+                                          ' not found on system!'.format(font_value=no_quotes_val))
+
             elif val in generic_family:
                 checked_values.append(val)
             else:
