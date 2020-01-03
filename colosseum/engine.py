@@ -1,7 +1,7 @@
 from .constants import (
-    ABSOLUTE, AUTO, BLOCK, FIXED, HTML5, INLINE, INLINE_BLOCK, INLINE_TABLE,
-    LIST_ITEM, LTR, MEDIUM, RELATIVE, TABLE, TABLE_CAPTION, TABLE_CELL, THICK,
-    THIN,
+    ABSOLUTE, AUTO, BLOCK, FIXED, HTML5, INHERIT, INLINE, INLINE_BLOCK,
+    INLINE_TABLE, LIST_ITEM, LTR, MEDIUM, RELATIVE, TABLE, TABLE_CAPTION,
+    TABLE_CELL, THICK, THIN,
 )
 from .dimensions import Box
 
@@ -75,9 +75,26 @@ class Viewport:
         self.layout = self.display
 
 
+class DummyFont:
+    def __init__(self, size):
+        self.size = size
+
+    @property
+    def em(self):
+        return self.size
+
+    @property
+    def ex(self):
+        return 0.65 * self.size
+
+    @property
+    def ch(self):
+        return 0.71 * self.size
+
+
 def layout(display, node, standard=HTML5):
     containing_block = Viewport(display, node)
-    font = None  # FIXME - default font
+    font = DummyFont(-1)  # FIXME: default font
 
     node.layout.reset()
 
@@ -190,6 +207,10 @@ def layout_box(display, node, containing_block, viewport, font):
     # Section 10.3 - evaluate height and margins
     calculate_width_and_margins(node, horizontal)
 
+    # Section 9.4.2 - relative positioning
+    if node.style.position is RELATIVE:
+        calculate_height_and_margins(node, vertical)
+
     if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
         raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
     elif node.style.float is not None:
@@ -233,11 +254,45 @@ def layout_box(display, node, containing_block, viewport, font):
     # Section 10.6 - evaluate height and margins
     calculate_height_and_margins(node, vertical)
 
-    # print("END NODE", node)
-
-    # If position is relative, adjust the position.
     if node.style.position is RELATIVE:
-        raise NotImplementedError("Section 9.4.2 - relative positioning")  # pragma: no cover
+        # Section 9.4.3 - relative positioning
+        # Left/Right
+        if node.style.left == AUTO and node.style.right == AUTO:  # P4
+            value_left = 0
+        elif node.style.left == AUTO:  # P5
+            if node.style.right == INHERIT:
+                value_left = -containing_block.layout.content_right
+            else:
+                value_left = -node.style.right.px(**horizontal)
+        elif node.style.right == AUTO:  # P6
+            if node.style.left == INHERIT:
+                value_left = containing_block.layout.content_left
+            else:
+                value_left = node.style.left.px(**horizontal)
+        else:  # P7
+            value_left = node.style.left.px(**horizontal)
+
+        node.layout.content_left += value_left
+
+        # Top/Bottom P8
+        if node.style.top == AUTO and node.style.bottom == AUTO:
+            value_top = 0
+        elif node.style.top == AUTO:
+            if node.style.bottom == INHERIT:
+                value_top = -containing_block.layout.content_bottom
+            else:
+                value_top = -node.style.bottom.px(**vertical)
+        elif node.style.bottom == AUTO:
+            if node.style.top == INHERIT:
+                value_top = containing_block.layout.content_top
+            else:
+                value_top = node.style.top.px(**vertical)
+        else:
+            value_top = node.style.top.px(**vertical)
+
+        node.layout.content_top += value_top
+
+    # print("END NODE", node)
 
 
 def calculate_size(value, context):

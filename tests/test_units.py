@@ -85,6 +85,15 @@ class BaseUnitTests(TestCase):
         self.assertEqual(p.lu(display=self.display), 128)
         self.assertEqual(p.px(display=self.display), 2)
 
+    def test_negation(self):
+        p = 1 * px
+        p = -px
+        self.assertEqual(p.px(display=self.display), -1)
+
+        p = 1.0 * px
+        p = -px
+        self.assertEqual(p.px(display=self.display), -1.0)
+
     def test_multiply(self):
         p1 = 5 * px
 
