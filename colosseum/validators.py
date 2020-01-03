@@ -43,10 +43,12 @@ def is_number(value=None, min_value=None, max_value=None):
     if min_value is None and max_value is None:
         return validator(value)
     else:
+        validator.description = '<number>'
         return validator
 
 
 is_number.description = '<number>'
+
 
 
 def is_integer(value=None, min_value=None, max_value=None):
@@ -62,6 +64,7 @@ def is_integer(value=None, min_value=None, max_value=None):
     if min_value is None and max_value is None:
         return validator(value)
     else:
+        validator.description = '<integer>'
         return validator
 
 
@@ -108,11 +111,16 @@ def is_color(value):
 is_color.description = '<color>'
 
 
+# https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier
 _CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
 
 
 def is_font_family(value=None, generic_family=None):
-    """Validate that value is a valid font family."""
+    """
+    Validate that value is a valid font family.
+
+    This validator returns a list.
+    """
     generic_family = generic_family or []
 
     def validator(font_value):
@@ -120,6 +128,12 @@ def is_font_family(value=None, generic_family=None):
         values = [v.strip() for v in font_value.split(',')]
         checked_values = []
         for val in values:
+            # Remove extra inner spaces
+            val = val.replace('" ', '"')
+            val = val.replace(' "', '"')
+            val = val.replace("' ", "'")
+            val = val.replace(" '", "'")
+
             if (val.startswith('"') and val.endswith('"')
                     or val.startswith("'") and val.endswith("'")):
                 # TODO: Check that the font exists?
@@ -142,11 +156,12 @@ def is_font_family(value=None, generic_family=None):
             error_msg = 'Invalid font string "{invalid}"'.format(invalid=invalid)
             raise ValidationError(error_msg)
 
-        return ', '.join(checked_values)
+        return checked_values
 
     if generic_family is []:
         return validator(value)
     else:
+        validator.description = '<family-name>, <generic-family>'
         return validator
 
 

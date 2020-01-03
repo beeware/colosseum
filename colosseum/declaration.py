@@ -24,19 +24,21 @@ _CSS_PROPERTIES = set()
 
 def validated_font_property(name, initial):
     """Define the shorthand CSS font property."""
+    assert isinstance(initial, dict)
+    initial = initial.copy()
 
     def getter(self):
         font = initial
-        for property_name, initial_value in font.items():
-            font[property_name] = getattr(self, '_%s' % property_name, initial_value)
+        for property_name in font:
+            font[property_name] = getattr(self, property_name)
         return getattr(self, '_%s' % name, construct_font_property(font))
 
     def setter(self, value):
         font = parse_font_property(value)
         for property_name, property_value in font.items():
-            setattr(self, '_%s' % property_name, property_value)
+            setattr(self, property_name, property_value)
             self.dirty = True
-        setattr(self, name, value)
+        setattr(self, '_%s' % name, value)
 
     def deleter(self):
         try:
@@ -48,7 +50,7 @@ def validated_font_property(name, initial):
 
         for property_name in INITIAL_FONT_VALUES:
             try:
-                delattr(self, '_%s' % property_name)
+                delattr(self, property_name)
                 self.dirty = True
             except AttributeError:
                 # Attribute doesn't exist
@@ -58,29 +60,32 @@ def validated_font_property(name, initial):
     return property(getter, setter, deleter)
 
 
-def validated_list_property(name, choices, initial):
-    """Define a property holding a list of comma separated values."""
+def validated_list_property(name, choices, initial, separator=','):
+    """Define a property holding a list values."""
     if not isinstance(initial, list):
         raise ValueError('Initial value must be a list!')
 
     def getter(self):
-        return getattr(self, '_%s' % name, initial)
+        # TODO: A copy is returned so if the user mutates it,
+        # it will not affect the stored value
+        return getattr(self, '_%s' % name, initial)[:]
 
     def setter(self, value):
         try:
             if not isinstance(value, str):
-                value = ', '.join(value)
+                value = separator.join(value)
 
-            value = ' '.join(value.strip().split())
-            value = choices.validate(value)
-            values = [v.strip() for v in value.split(',')]
+            # This should be a list of values
+            values = choices.validate(value)
+            if not isinstance(values, list):
+                values.split(separator)
         except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
             ))
 
         if values != getattr(self, '_%s' % name, initial):
-            setattr(self, '_%s' % name, values)
+            setattr(self, '_%s' % name, values[:])
             self.dirty = True
 
     def deleter(self):

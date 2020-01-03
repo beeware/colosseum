@@ -43,7 +43,13 @@ class NumericTests(TestCase):
 
 
 class FontTests(TestCase):
-    def test_font_family_name(self):
+    def test_font_family_name_valid(self):
+        validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS)
+        self.assertEqual(validator('"New Century Schoolbook", serif'), ['"New Century Schoolbook"', 'serif'])
+        self.assertEqual(validator("'21st Century',fantasy"), ["'21st Century'", 'fantasy'])
+        self.assertEqual(validator("  '   21st    Century   '   ,    fantasy  "), ["'21st Century'", 'fantasy'])
+
+    def test_font_family_name_invalid(self):
         validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS)
         invalid_cases = [
             'Red/Black, sans-serif',
@@ -57,6 +63,3 @@ class FontTests(TestCase):
         for case in invalid_cases:
             with self.assertRaises(ValidationError):
                 validator(case)
-
-        self.assertEqual(validator('"New Century Schoolbook",  serif'), '"New Century Schoolbook", serif')
-        self.assertEqual(validator("'21st Century',fantasy"), "'21st Century', fantasy")

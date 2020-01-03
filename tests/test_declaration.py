@@ -434,6 +434,39 @@ class CssDeclarationTests(TestCase):
         self.assertIs(node.style.display, INLINE)
         self.assertTrue(node.style.dirty)
 
+    def test_list_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value
+        self.assertEqual(node.style.font_family, ['initial'])
+
+        # Check valid values
+        node.style.font_family = ['caption']
+        node.style.font_family = ['serif']
+        node.style.font_family = ["'Lucida Foo Bar'", 'serif']
+
+        # TODO: This will coerce to a list, is this a valid behavior?
+        node.style.font_family = 'just-a-string'
+        self.assertEqual(node.style.font_family, ['just-a-string'])
+        node.style.font_family = '  just-a-string  ,   caption '
+        self.assertEqual(node.style.font_family, ['just-a-string', 'caption'])
+
+        # Check invalid values
+        with self.assertRaises(ValueError):
+            node.style.font_family = ['Lucida Foo Bar']
+
+        # Check the error message
+        try:
+            node.style.font_family = ['123']
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(
+                str(v),
+                ("Invalid value '123' for CSS property 'font_family'; Valid values are: "
+                 "<family-name>, <generic-family>, inherit, initial")
+            )
+
     def test_directional_property(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
@@ -657,3 +690,54 @@ class CssDeclarationTests(TestCase):
 
         with self.assertRaises(KeyError):
             del node.style['no-such-property']
+
+
+    def test_font_shorthand_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value
+        self.assertEqual(node.style.font, 'normal normal normal medium/normal initial')
+
+        # Check Initial values
+        self.assertEqual(node.style.font_style, 'normal')
+        self.assertEqual(node.style.font_weight, 'normal')
+        self.assertEqual(node.style.font_variant, 'normal')
+        self.assertEqual(node.style.font_size, 'medium')
+        self.assertEqual(node.style.line_height, 'normal')
+        self.assertEqual(node.style.font_family, ['initial'])
+
+        # Check individual properties update the unset shorthand
+        node.style.font_style = 'italic'
+        node.style.font_weight = 'bold'
+        node.style.font_variant = 'small-caps'
+        node.style.font_size = '10px'
+        node.style.line_height = '1.5'
+        node.style.font_family = ['"Foo Bar Spam"', 'serif']
+        # TODO: Is this the behavior we want?
+        self.assertEqual(node.style.font, 'italic small-caps bold 10.0px/1.5 "Foo Bar Spam", serif')
+
+        # Check setting the shorthand resets values
+        node.style.font = '9px serif'
+        self.assertEqual(node.style.font_style, 'normal')
+        self.assertEqual(node.style.font_weight, 'normal')
+        self.assertEqual(node.style.font_variant, 'normal')
+        self.assertEqual(node.style.line_height, 'normal')
+        self.assertEqual(str(node.style.font_size), '9.0px')
+        self.assertEqual(node.style.font_family, ['serif'])
+        self.assertEqual(node.style.font, '9px serif')
+
+        # Check individual properties do not update the set shorthand
+        # TODO: Is this the behavior we want?
+        node.style.font = '9px serif'
+        node.style.font_style = 'italic'
+        node.style.font_weight = 'bold'
+        node.style.font_variant = 'small-caps'
+        node.style.font_size = '10px'
+        node.style.line_height = '1.5'
+        node.style.font_family = ['"Foo Bar Spam"', 'serif']      
+        self.assertEqual(node.style.font, '9px serif')
+
+        # Check invalid values
+        with self.assertRaises(ValueError):
+            node.style.font = 'foobar'

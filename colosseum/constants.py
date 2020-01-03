@@ -35,15 +35,15 @@ class Choices:
         raise ValueError()
 
     def __str__(self):
-        choices = set([str(c).lower().replace('_', '-') for c in self.constants])
+        choices = [str(c).lower().replace('_', '-') for c in self.constants]
         for validator in self.validators:
-            choices.add(validator.description)
+            choices += validator.description.split(', ')
 
         if self.explicit_defaulting_constants:
             for item in self.explicit_defaulting_constants:
-                choices.add(item)
+                choices.append(item)
 
-        return ", ".join(sorted(choices))
+        return ", ".join(sorted(set(choices)))
 
 
 ######################################################################
