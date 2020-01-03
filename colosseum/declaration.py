@@ -63,7 +63,13 @@ def validated_property(name, choices, initial):
                 value, name, choices
             ))
 
-        if value != getattr(self, '_%s' % name, initial):
+        try:
+            # Get initial value from other property value. See OtherProperty
+            initial_value = initial.value(self)
+        except AttributeError:
+            initial_value = initial
+
+        if value != getattr(self, '_%s' % name, initial_value):
             setattr(self, '_%s' % name, value)
             self.dirty = True
 

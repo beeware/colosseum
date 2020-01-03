@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
+from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT, OtherProperty
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
 from colosseum.validators import is_color, is_integer, is_length, is_number, is_percentage
@@ -266,6 +266,24 @@ class PropertyChoiceTests(TestCase):
         # Both equality and instance checking should work.
         self.assertEqual(obj.prop, AUTO)
         self.assertIs(obj.prop, AUTO)
+
+
+    def test_other_property(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('other_prop'))
+            other_prop = validated_property('other_prop', choices=Choices(0, AUTO), initial=AUTO)
+
+        obj = MyObject()
+        self.assertEqual(obj.prop, AUTO)
+        self.assertEqual(obj.prop, obj.other_prop)
+
+        obj.other_prop = 0
+        self.assertEqual(obj.prop, 0)
+        self.assertEqual(obj.prop, obj.other_prop)
+
+        obj.prop = None
+        self.assertEqual(obj.prop, None)
+        self.assertNotEqual(obj.prop, obj.other_prop)
 
 
 class CssDeclarationTests(TestCase):

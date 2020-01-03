@@ -55,7 +55,13 @@ class OtherProperty:
         self._name = name
 
     def value(self, context):
-        return getattr(context, '_%s' % self._name)
+        return getattr(context, self._name)
+
+    def __str__(self):
+        return "OtherProperty('%s')" % self._name
+
+    def __repr__(self):
+        return "OtherProperty('%s')" % self._name
 
 
 ######################################################################
