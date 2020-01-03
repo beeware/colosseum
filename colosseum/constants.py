@@ -1,3 +1,4 @@
+import os
 import sys
 
 from .validators import (ValidationError, is_color, is_font_family,
@@ -333,8 +334,15 @@ GENERIC_FAMILY_FONTS = [SERIF, SANS_SERIF, CURSIVE, FANTASY, MONOSPACE]
 
 def available_font_families():
     """List available font family names."""
+    # TODO: for tests
+    if os.environ.get('GITHUB_ACTIONS', None) == 'true':
+        return ['Arial Black']
+
     if sys.platform == 'darwin':
         return _available_font_families_mac()
+    elif sys.platform.startswith('linux'):
+        return _available_font_families_unix()
+
     return []
 
 
@@ -342,13 +350,21 @@ def _available_font_families_mac():
     """List available font family names on mac."""
     from ctypes import cdll, util
     from rubicon.objc import ObjCClass
-    appkit = cdll.LoadLibrary(util.find_library('AppKit'))
+    appkit = cdll.LoadLibrary(util.find_library('AppKit'))  # noqa
     NSFontManager = ObjCClass("NSFontManager")
     NSFontManager.declare_class_property('sharedFontManager')
     NSFontManager.declare_class_property("sharedFontManager")
     NSFontManager.declare_property("availableFontFamilies")
     manager = NSFontManager.sharedFontManager
     return list(sorted(str(item) for item in manager.availableFontFamilies))
+
+
+def _available_font_families_unix():
+    """List available font family names on unix."""
+    import subprocess
+    p = subprocess.check_output(['fc-list', ':', 'family'])
+    fonts = p.decode().split('\n')
+    return list(sorted(set(fonts)))
 
 
 AVAILABLE_FONT_FAMILIES = available_font_families()

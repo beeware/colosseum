@@ -1,5 +1,3 @@
-import sys
-
 from .constants import (FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES,
                         FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
                         FONT_WEIGHT_CHOICES, INHERIT, INITIAL_FONT_VALUES,
