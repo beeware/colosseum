@@ -1,3 +1,4 @@
+import os
 import sys
 
 from .validators import (ValidationError, is_color, is_font_family,
@@ -337,6 +338,8 @@ def available_font_families():
         return _available_font_families_mac()
     elif sys.platform.startswith('linux'):
         return _available_font_families_unix()
+    elif os.name == 'nt':
+        return _available_font_families_win()
 
     return []
 
@@ -360,6 +363,21 @@ def _available_font_families_unix():
     p = subprocess.check_output(['fc-list', ':', 'family'])
     fonts = p.decode().split('\n')
     return list(sorted(set(item for item in fonts if item)))
+
+
+def _available_font_families_win():
+    """List available font family names on windows."""
+    import winreg
+    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,
+                         r"Software\Microsoft\Windows NT\CurrentVersion\Fonts",
+                         0,
+                         winreg.KEY_READ)
+    fonts = set()
+    for idx in range(0, winreg.QueryInfoKey(key)[1]):
+        font_name = winreg.EnumValue(key, idx)[0]
+        font_name = font_name.replace(' (TrueType)', '')
+        fonts.add(font_name)
+    return list(sorted(fonts))
 
 
 AVAILABLE_FONT_FAMILIES = available_font_families()
