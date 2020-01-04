@@ -44,10 +44,10 @@ class NumericTests(TestCase):
 
 class FontTests(TestCase):
     def test_font_family_name_valid(self):
-        validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS, font_families=['Arial Black'])
-        self.assertEqual(validator('"Arial Black", serif'), ['"Arial Black"', 'serif'])
-        self.assertEqual(validator("'Arial Black',fantasy"), ["'Arial Black'", 'fantasy'])
-        self.assertEqual(validator("  '   Arial    Black   '   ,    fantasy  "), ["'Arial Black'", 'fantasy'])
+        validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS, font_families=['DejaVu Sans'])
+        self.assertEqual(validator('"DejaVu Sans", serif'), ['"DejaVu Sans"', 'serif'])
+        self.assertEqual(validator("'DejaVu Sans',fantasy"), ["'DejaVu Sans'", 'fantasy'])
+        self.assertEqual(validator("  '   DejaVu   Sans   '   ,    fantasy  "), ["'DejaVu Sans'", 'fantasy'])
 
     def test_font_family_name_invalid(self):
         validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS)

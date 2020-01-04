@@ -1,4 +1,3 @@
-import os
 import sys
 
 from .validators import (ValidationError, is_color, is_font_family,
@@ -334,10 +333,6 @@ GENERIC_FAMILY_FONTS = [SERIF, SANS_SERIF, CURSIVE, FANTASY, MONOSPACE]
 
 def available_font_families():
     """List available font family names."""
-    # TODO: for tests
-    if os.environ.get('GITHUB_ACTIONS', None) == 'true':
-        return ['Arial Black']
-
     if sys.platform == 'darwin':
         return _available_font_families_mac()
     elif sys.platform.startswith('linux'):
@@ -356,7 +351,7 @@ def _available_font_families_mac():
     NSFontManager.declare_class_property("sharedFontManager")
     NSFontManager.declare_property("availableFontFamilies")
     manager = NSFontManager.sharedFontManager
-    return list(sorted(str(item) for item in manager.availableFontFamilies))
+    return list(sorted(str(item) for item in manager.availableFontFamilies if item))
 
 
 def _available_font_families_unix():
@@ -364,7 +359,7 @@ def _available_font_families_unix():
     import subprocess
     p = subprocess.check_output(['fc-list', ':', 'family'])
     fonts = p.decode().split('\n')
-    return list(sorted(set(fonts)))
+    return list(sorted(set(item for item in fonts if item)))
 
 
 AVAILABLE_FONT_FAMILIES = available_font_families()

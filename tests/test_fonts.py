@@ -22,13 +22,13 @@ FONT_CASES = {
         'line_height': 'normal',
         'font_family': ['sans-serif'],
         },
-    r'bold italic large Palatino, serif': {
+    r'bold italic large Ahem, serif': {
         'font_style': 'italic',
         'font_variant': 'normal',
         'font_weight': 'bold',
         'font_size': 'large',
         'line_height': 'normal',
-        'font_family': ['Palatino', 'serif'],
+        'font_family': ['Ahem', 'serif'],
         },
     r'normal small-caps 120%/120% fantasy': {
         'font_style': 'normal',
@@ -38,13 +38,13 @@ FONT_CASES = {
         'line_height': '120%',
         'font_family': ['fantasy'],
         },
-    r'x-large/110% "Arial Black",serif': {
+    r'x-large/110% "DejaVu Sans",serif': {
         'font_style': 'normal',
         'font_variant': 'normal',
         'font_weight': 'normal',
         'font_size': 'x-large',
         'line_height': '110%',
-        'font_family': ['"Arial Black"', 'serif'],
+        'font_family': ['"DejaVu Sans"', 'serif'],
         },
 }
 
@@ -58,7 +58,7 @@ class FontTests(TestCase):
 
         # Test extra spaces
         parse_font_property(r'  normal    normal    normal    12px/12px   serif  ')
-        parse_font_property(r'  normal    normal    normal    12px/12px   "  Arial   Black  ",   serif  ')
+        parse_font_property(r'  normal    normal    normal    12px/12px   "  DejaVu   Sans  ",   serif  ')
 
         # Test valid single part
         for part in SYSTEM_FONT_KEYWORDS:

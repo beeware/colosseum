@@ -30,6 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Copy Ahem font
+      run: |
+        mkdir -p ~/.local/share/fonts/
+        cp tests/fonts/ahem.ttf ~/.local/share/fonts/ahem.ttf
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -52,6 +56,10 @@ jobs:
         python-version: [3.5, 3.6]
     steps:
     - uses: actions/checkout@v1
+    - name: Copy Ahem font
+      run: |
+        mkdir -p ~/.local/share/fonts/
+        cp tests/fonts/ahem.ttf ~/.local/share/fonts/ahem.ttf
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
