@@ -187,3 +187,66 @@ class ParseColorTests(TestCase):
 
         with self.assertRaises(ValueError):
             parser.color('not a color')
+
+
+class ParseFontTests(TestCase):
+
+    def test_parse_font_part(self):
+        pass    
+        #  - <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
+        #  - <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
+
+
+    def test_parse_font(self):
+        pass
+        # 5 parts with line height
+        #  - <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
+        #  - <font-style> <font-weight> <font-variant> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
+        #  - <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        #  - <font-weight> <font-variant> <font-style> <font-size>/<line-height> <font-family>
+
+        # 5 parts
+        #  - <font-style> <font-variant> <font-weight> <font-size> <font-family>
+        #  - <font-style> <font-weight> <font-variant> <font-size> <font-family>
+        #  - <font-variant> <font-weight> <font-style> <font-size> <font-family>
+        #  - <font-variant> <font-style> <font-weight> <font-size> <font-family>
+        #  - <font-weight> <font-style> <font-variant> <font-size> <font-family>
+        #  - <font-weight> <font-variant> <font-style> <font-size> <font-family>
+
+        # 4 parts with height
+        #  - <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        #  - <font-style> <font-weight> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-weight> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-style> <font-size>/<line-height> <font-family>
+        #  - <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        #  - <font-weight> <font-variant> <font-size>/<line-height> <font-family>
+
+        # 4 parts
+        #  - <font-style> <font-variant> <font-size> <font-family>
+        #  - <font-style> <font-weight> <font-size> <font-family>
+        #  - <font-variant> <font-weight> <font-size> <font-family>
+        #  - <font-variant> <font-style> <font-size> <font-family>
+        #  - <font-weight> <font-style> <font-size> <font-family>
+        #  - <font-weight> <font-variant> <font-size> <font-family>
+
+        # 3 parts with height
+        #  - <font-style> <font-size>/<line-height> <font-family>
+        #  - <font-variant> <font-size>/<line-height> <font-family>
+        #  - <font-weight> <font-size>/<line-height> <font-family>
+
+        # 3 parts with height
+        #  - <font-style> <font-size> <font-family>
+        #  - <font-variant> <font-size> <font-family>
+        #  - <font-weight> <font-size> <font-family>
+
+        # 2 parts with height
+        #  - <font-size>/<line-height> <font-family>
+
+        # 2 parts
+        #  - <font-size> <font-family>
+
+        # 1 part

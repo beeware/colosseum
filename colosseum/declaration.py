@@ -5,19 +5,19 @@ from .constants import (  # noqa
     BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES, COLOR_CHOICES,
     DIRECTION_CHOICES, DISPLAY_CHOICES, FLEX_BASIS_CHOICES,
     FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START,
-    FLEX_WRAP_CHOICES, FLOAT_CHOICES, GRID_AUTO_CHOICES,
-    GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES,
-    GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INLINE,
-    JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
+    FLEX_WRAP_CHOICES, FLOAT_CHOICES, FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES,
+    FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES, FONT_WEIGHT_CHOICES,
+    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
+    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
+    INITIAL, INITIAL_FONT_VALUES, INLINE, JUSTIFY_CONTENT_CHOICES,
+    LINE_HEIGHT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM,
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
-    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
-    TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    Z_INDEX_CHOICES, default, FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
-    FONT_WEIGHT_CHOICES, FONT_SIZE_CHOICES, MEDIUM, FONT_FAMILY_CHOICES, INITIAL,
-    INITIAL_FONT_VALUES, LINE_HEIGHT_CHOICES,
+    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH, TRANSPARENT,
+    UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE, Z_INDEX_CHOICES,
+    default,
 )
-from .fonts import construct_font_property, parse_font_property
-
+from .exceptions import ValidationError
+from .parser import construct_font, parse_font
 
 _CSS_PROPERTIES = set()
 
@@ -28,13 +28,17 @@ def validated_font_property(name, initial):
     initial = initial.copy()
 
     def getter(self):
-        font = initial
+        font = initial.copy()
         for property_name in font:
             font[property_name] = getattr(self, property_name)
-        return getattr(self, '_%s' % name, construct_font_property(font))
+        return font
 
     def setter(self, value):
-        font = parse_font_property(value)
+        try:
+            font = parse_font(value)
+        except ValidationError:
+            raise ValueError("Invalid value '%s' for CSS property '%s'!" % (value, name))
+
         for property_name, property_value in font.items():
             setattr(self, property_name, property_value)
             self.dirty = True

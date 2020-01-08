@@ -1,95 +1,96 @@
-from .constants import (FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES,
-                        FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
-                        FONT_WEIGHT_CHOICES, INHERIT, INITIAL_FONT_VALUES,
-                        NORMAL, SYSTEM_FONT_KEYWORDS)
-from .validators import ValidationError
+"""Font utilities."""
+
+import os
+import sys
+
+from .exceptions import ValidationError
+
+
+class FontDatabase:
+    """
+    Provide information about the fonts available in the underlying system.
+    """
+    _FONTS_CACHE = {}
+
+    @classmethod
+    def validate_font_family(cls, value):
+        """
+        Validate a font family with the system found fonts.
+
+        Found fonts are cached for future usage.
+        """
+        if value in cls._FONTS_CACHE:
+            return value
+        else:
+            if check_font_family(value):
+                # TODO: to be filled with a font properties instance
+                cls._FONTS_CACHE[value] = None
+                return value
+
+        raise ValidationError('Font family "{value}" not found on system!'.format(value=value))
+
+
+def _check_font_family_mac(value):
+    """List available font family names on mac."""
+    from ctypes import cdll, util
+    from rubicon.objc import ObjCClass
+    appkit = cdll.LoadLibrary(util.find_library('AppKit'))  # noqa
+    NSFontManager = ObjCClass("NSFontManager")
+    NSFontManager.declare_class_property('sharedFontManager')
+    NSFontManager.declare_property("availableFontFamilies")
+    manager = NSFontManager.sharedFontManager
+    for item in manager.availableFontFamilies:
+        font_name = str(item)
+        if font_name == value:
+            return True
+
+    return False
+
+
+def _check_font_family_unix(value):
+    """List available font family names on unix."""
+    import subprocess
+    proc = subprocess.check_output(['fc-list', ':', 'family'])
+    fonts = proc.decode().split('\n')
+    for font_name in fonts:
+        if font_name == value:
+            return True
+
+    return False
+
+
+def _check_font_family_win(value):
+    """List available font family names on windows."""
+    import winreg
+    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,
+                         r"Software\Microsoft\Windows NT\CurrentVersion\Fonts",
+                         0,
+                         winreg.KEY_READ)
+    for idx in range(0, winreg.QueryInfoKey(key)[1]):
+        font_name = winreg.EnumValue(key, idx)[0]
+        font_name = font_name.replace(' (TrueType)', '')
+        if font_name == value:
+            return True
+
+    return False
+
+
+def check_font_family(value):
+    """List available font family names."""
+    if sys.platform == 'darwin':
+        return _check_font_family_mac(value)
+    elif sys.platform.startswith('linux'):
+        return _check_font_family_unix(value)
+    elif os.name == 'nt':
+        return _check_font_family_mac(value)
 
 
 def get_system_font(keyword):
     """Return a font object from given system font keyword."""
+    from .constants import SYSTEM_FONT_KEYWORDS
+
     if keyword in SYSTEM_FONT_KEYWORDS:
-        return '"Arial Black"'
         # Get the system font
+        return 'Ahem'
+
     return None
-
-
-def construct_font_property(font):
-    """Construct font property string from a dictionary of font properties."""
-    if isinstance(font['font_family'], list):
-        font['font_family'] = ', '.join(font['font_family'])
-
-    return ('{font_style} {font_variant} {font_weight} '
-            '{font_size}/{line_height} {font_family}').format(**font)
-
-
-def parse_font_property_part(value, font):
-    """Parse font shorthand property part for known properties."""
-    if value != NORMAL:
-        for property_name, choices in {'font_variant': FONT_VARIANT_CHOICES,
-                                       'font_weight': FONT_WEIGHT_CHOICES,
-                                       'font_style': FONT_STYLE_CHOICES}.items():
-            try:
-                value = choices.validate(value)
-                font[property_name] = value
-                return font
-            except (ValidationError, ValueError):
-                pass
-
-        # Maybe it is a font size
-        if '/' in value:
-            font['font_size'], font['line_height'] = value.split('/')
-            return font
-        else:
-            try:
-                FONT_SIZE_CHOICES.validate(value)
-                font['font_size'] = value
-                return font
-            except ValueError:
-                pass
-
-        raise ValidationError
-
-    return font
-
-
-def parse_font_property(string):
-    """
-    Parse font string into a dictionary of font properties.
-
-    Reference:
-    - https://www.w3.org/TR/CSS21/fonts.html#font-shorthand
-    - https://developer.mozilla.org/en-US/docs/Web/CSS/font
-    """
-    font = INITIAL_FONT_VALUES.copy()
-
-    # Remove extra spaces
-    string = ' '.join(string.strip().split())
-
-    parts = string.split(' ', 1)
-    if len(parts) == 1:
-        value = parts[0]
-        if value == INHERIT:
-            # TODO: ??
-            pass
-        else:
-            if value not in SYSTEM_FONT_KEYWORDS:
-                error_msg = ('Font property value "{value}" '
-                             'not a system font keyword!'.format(value=value))
-                raise ValidationError(error_msg)
-            font = get_system_font(value)
-    else:
-        for _ in range(5):
-            value = parts[0]
-            try:
-                font = parse_font_property_part(value, font)
-                parts = parts[-1].split(' ', 1)
-            except ValidationError:
-                break
-        else:
-            # Font family can have a maximum of 4 parts before the font_family part
-            raise ValidationError('Font property shorthand contains too many parts!')
-
-        value = ' '.join(parts)
-        font['font_family'] = FONT_FAMILY_CHOICES.validate(value)
-
-    return font

@@ -2,10 +2,15 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
+from colosseum.constants import (
+    AUTO, BLOCK, INHERIT, INITIAL, INITIAL_FONT_VALUES, INLINE, REVERT, TABLE,
+    UNSET, Choices,
+)
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
-from colosseum.validators import is_color, is_integer, is_length, is_number, is_percentage
+from colosseum.validators import (
+    is_color, is_integer, is_length, is_number, is_percentage,
+)
 
 from .utils import TestNode
 
@@ -443,18 +448,18 @@ class CssDeclarationTests(TestCase):
 
         # Check valid values
         node.style.font_family = ['serif']
-        node.style.font_family = ["'DejaVu Sans'", 'serif']
+        node.style.font_family = ["Ahem", 'serif']
 
         # TODO: This will coerce to a list, is this a valid behavior?
-        node.style.font_family = '"DejaVu Sans"'
-        self.assertEqual(node.style.font_family, ['"DejaVu Sans"'])
-        node.style.font_family = '  "   DejaVu   Sans   "    ,   serif '
-        self.assertEqual(node.style.font_family, ['"DejaVu Sans"', 'serif'])
+        node.style.font_family = 'Ahem'
+        self.assertEqual(node.style.font_family, ['Ahem'])
+        node.style.font_family = '     Ahem       ,   serif '
+        self.assertEqual(node.style.font_family, ['Ahem', 'serif'])
 
         # Check invalid values
         with self.assertRaises(ValueError):
-            node.style.font_family = ['DejaVu Sans']
-
+            node.style.font_family = ['DejaVu Sans']  # Should have additional quotes
+        
         # Check the error message
         try:
             node.style.font_family = ['123']
@@ -695,7 +700,7 @@ class CssDeclarationTests(TestCase):
         node.layout.dirty = None
 
         # Check initial value
-        self.assertEqual(node.style.font, 'normal normal normal medium/normal initial')
+        self.assertEqual(node.style.font, INITIAL_FONT_VALUES)
 
         # Check Initial values
         self.assertEqual(node.style.font_style, 'normal')
@@ -711,9 +716,19 @@ class CssDeclarationTests(TestCase):
         node.style.font_variant = 'small-caps'
         node.style.font_size = '10px'
         node.style.line_height = '1.5'
-        node.style.font_family = ['"DejaVu Sans"', 'serif']
-        # TODO: Is this the behavior we want?
-        self.assertEqual(node.style.font, 'italic small-caps bold 10.0px/1.5 "DejaVu Sans", serif')
+        node.style.font_family = ['Ahem', 'serif']
+        expected_font = {
+            'font_style': 'italic',
+            'font_weight': 'bold',
+            'font_variant': 'small-caps',
+            'font_size': '10px',
+            'line_height': '1.5',
+            'font_family': ['Ahem', 'serif'],
+        }
+        font = node.style.font
+        font['font_size'] = str(font['font_size'])
+        font['line_height'] = str(font['line_height'])
+        self.assertEqual(font, expected_font)
 
         # Check setting the shorthand resets values
         node.style.font = '9px serif'
@@ -721,21 +736,29 @@ class CssDeclarationTests(TestCase):
         self.assertEqual(node.style.font_weight, 'normal')
         self.assertEqual(node.style.font_variant, 'normal')
         self.assertEqual(node.style.line_height, 'normal')
-        self.assertEqual(str(node.style.font_size), '9.0px')
+        self.assertEqual(str(node.style.font_size), '9px')
         self.assertEqual(node.style.font_family, ['serif'])
-        self.assertEqual(node.style.font, '9px serif')
 
         # Check individual properties do not update the set shorthand
-        # TODO: Is this the behavior we want?
         node.style.font = '9px serif'
         node.style.font_style = 'italic'
         node.style.font_weight = 'bold'
         node.style.font_variant = 'small-caps'
         node.style.font_size = '10px'
         node.style.line_height = '1.5'
-        node.style.font_family = ['"DejaVu Sans"', 'serif']
-        self.assertEqual(node.style.font, '9px serif')
+        expected_font = {
+            'font_style': 'italic',
+            'font_weight': 'bold',
+            'font_variant': 'small-caps',
+            'font_size': '10px',
+            'line_height': '1.5',
+            'font_family': ['serif'],
+        }
+        font = node.style.font
+        font['font_size'] = str(font['font_size'])
+        font['line_height'] = str(font['line_height'])
+        self.assertEqual(font, expected_font)
 
         # Check invalid values
         with self.assertRaises(ValueError):
-            node.style.font = 'foobar'
+            node.style.font = 'ThisIsDefinitelyNotAFontName'

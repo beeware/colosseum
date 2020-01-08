@@ -1,8 +1,8 @@
 from unittest import TestCase
 
 from colosseum.constants import GENERIC_FAMILY_FONTS
-from colosseum.validators import (ValidationError, is_font_family,
-                                  is_integer, is_number)
+from colosseum.exceptions import ValidationError
+from colosseum.validators import is_font_family, is_integer, is_number
 
 
 class NumericTests(TestCase):
@@ -43,14 +43,13 @@ class NumericTests(TestCase):
 
 
 class FontTests(TestCase):
+
     def test_font_family_name_valid(self):
-        validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS, font_families=['DejaVu Sans'])
-        self.assertEqual(validator('"DejaVu Sans", serif'), ['"DejaVu Sans"', 'serif'])
-        self.assertEqual(validator("'DejaVu Sans',fantasy"), ["'DejaVu Sans'", 'fantasy'])
-        self.assertEqual(validator("  '   DejaVu   Sans   '   ,    fantasy  "), ["'DejaVu Sans'", 'fantasy'])
+        self.assertEqual(is_font_family('Ahem, serif'), ['Ahem', 'serif'])
+        self.assertEqual(is_font_family("Ahem,fantasy"), ["Ahem", 'fantasy'])
+        self.assertEqual(is_font_family("  Ahem   ,    fantasy  "), ["Ahem", 'fantasy'])
 
     def test_font_family_name_invalid(self):
-        validator = is_font_family(generic_family=GENERIC_FAMILY_FONTS)
         invalid_cases = [
             'Red/Black, sans-serif',
             '"Lucida" Grande, sans-serif',
@@ -62,4 +61,4 @@ class FontTests(TestCase):
         ]
         for case in invalid_cases:
             with self.assertRaises(ValidationError):
-                validator(case)
+                is_font_family(case)

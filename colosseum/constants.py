@@ -1,9 +1,5 @@
-import os
-import sys
-
-from .validators import (ValidationError, is_color, is_font_family,
-                         is_integer, is_length,
-                         is_number, is_percentage)
+from .exceptions import ValidationError
+from .validators import is_color, is_font_family, is_integer, is_length, is_number, is_percentage
 
 
 class Choices:
@@ -38,13 +34,13 @@ class Choices:
         raise ValueError()
 
     def __str__(self):
-        choices = [str(c).lower().replace('_', '-') for c in self.constants]
+        choices = set([str(c).lower().replace('_', '-') for c in self.constants])
         for validator in self.validators:
-            choices += validator.description.split(', ')
+            choices.update(validator.description.split(', '))
 
         if self.explicit_defaulting_constants:
             for item in self.explicit_defaulting_constants:
-                choices.append(item)
+                choices.add(item)
 
         return ", ".join(sorted(set(choices)))
 
@@ -331,58 +327,8 @@ MONOSPACE = 'monospace'
 
 GENERIC_FAMILY_FONTS = [SERIF, SANS_SERIF, CURSIVE, FANTASY, MONOSPACE]
 
-
-def available_font_families():
-    """List available font family names."""
-    if sys.platform == 'darwin':
-        return _available_font_families_mac()
-    elif sys.platform.startswith('linux'):
-        return _available_font_families_unix()
-    elif os.name == 'nt':
-        return _available_font_families_win()
-
-    return []
-
-
-def _available_font_families_mac():
-    """List available font family names on mac."""
-    from ctypes import cdll, util
-    from rubicon.objc import ObjCClass
-    appkit = cdll.LoadLibrary(util.find_library('AppKit'))  # noqa
-    NSFontManager = ObjCClass("NSFontManager")
-    NSFontManager.declare_class_property('sharedFontManager')
-    NSFontManager.declare_class_property("sharedFontManager")
-    NSFontManager.declare_property("availableFontFamilies")
-    manager = NSFontManager.sharedFontManager
-    return list(sorted(str(item) for item in manager.availableFontFamilies if item))
-
-
-def _available_font_families_unix():
-    """List available font family names on unix."""
-    import subprocess
-    p = subprocess.check_output(['fc-list', ':', 'family'])
-    fonts = p.decode().split('\n')
-    return list(sorted(set(item for item in fonts if item)))
-
-
-def _available_font_families_win():
-    """List available font family names on windows."""
-    import winreg
-    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,
-                         r"Software\Microsoft\Windows NT\CurrentVersion\Fonts",
-                         0,
-                         winreg.KEY_READ)
-    fonts = set()
-    for idx in range(0, winreg.QueryInfoKey(key)[1]):
-        font_name = winreg.EnumValue(key, idx)[0]
-        font_name = font_name.replace(' (TrueType)', '')
-        fonts.add(font_name)
-    return list(sorted(fonts))
-
-
-AVAILABLE_FONT_FAMILIES = available_font_families()
 FONT_FAMILY_CHOICES = Choices(
-    validators=[is_font_family(generic_family=GENERIC_FAMILY_FONTS, font_families=AVAILABLE_FONT_FAMILIES)],
+    validators=[is_font_family],
     explicit_defaulting_constants=[INHERIT, INITIAL],
 )
 

@@ -1,8 +1,8 @@
 from unittest import TestCase
 
 from colosseum.constants import SYSTEM_FONT_KEYWORDS
-from colosseum.fonts import parse_font_property
-from colosseum.validators import ValidationError
+from colosseum.parser import parse_font
+from colosseum.exceptions import ValidationError
 
 
 FONT_CASES = {
@@ -38,38 +38,39 @@ FONT_CASES = {
         'line_height': '120%',
         'font_family': ['fantasy'],
         },
-    r'x-large/110% "DejaVu Sans",serif': {
+    r'x-large/110% Ahem,serif': {
         'font_style': 'normal',
         'font_variant': 'normal',
         'font_weight': 'normal',
         'font_size': 'x-large',
         'line_height': '110%',
-        'font_family': ['"DejaVu Sans"', 'serif'],
+        'font_family': ['Ahem', 'serif'],
         },
 }
 
 
 class FontTests(TestCase):
+
     def test_parse_font_shorthand(self):
         for case in sorted(FONT_CASES):
             expected_output = FONT_CASES[case]
-            font = parse_font_property(case)
+            font = parse_font(case)
             self.assertEqual(font, expected_output)
 
         # Test extra spaces
-        parse_font_property(r'  normal    normal    normal    12px/12px   serif  ')
-        parse_font_property(r'  normal    normal    normal    12px/12px   "  DejaVu   Sans  ",   serif  ')
+        parse_font(r'  normal    normal    normal    12px/12px   serif  ')
+        parse_font(r'  normal    normal    normal    12px/12px     Ahem  ,   serif  ')
 
         # Test valid single part
         for part in SYSTEM_FONT_KEYWORDS:
-            parse_font_property(part)
+            parse_font(part)
 
     def test_parse_font_shorthand_invalid(self):
         # This font string has too many parts
         with self.assertRaises(ValidationError):
-            parse_font_property(r'normal normal normal normal 12px/12px serif')
+            parse_font(r'normal normal normal normal 12px/12px serif')
 
         # This invalid single part
         for part in ['normal', 'foobar']:
             with self.assertRaises(ValidationError):
-                parse_font_property(part)
+                parse_font(part)

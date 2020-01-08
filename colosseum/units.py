@@ -18,10 +18,14 @@ class BaseUnit:
         self.val = val if val is not None else 1
 
     def __repr__(self):
-        return '{}{}'.format(self.val, self.suffix)
+        int_value = int(self.val)
+        value = int_value if self.val == int_value else self.val
+        return '{}{}'.format(value, self.suffix)
 
     def __str__(self):
-        return '{}{}'.format(self.val, self.suffix)
+        int_value = int(self.val)
+        value = int_value if self.val == int_value else self.val
+        return '{}{}'.format(value, self.suffix)
 
     def __rmul__(self, val):
         if isinstance(val, (int, float)):
