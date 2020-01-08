@@ -2,9 +2,11 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
-from colosseum.units import (
-    ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
-)
+from colosseum.constants import SYSTEM_FONT_KEYWORDS
+from colosseum.exceptions import ValidationError
+from colosseum.parser import parse_font
+from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
+                             vmax, vmin, vw)
 
 
 class ParseUnitTests(TestCase):
@@ -190,14 +192,79 @@ class ParseColorTests(TestCase):
 
 
 class ParseFontTests(TestCase):
+    TEST_CASES = {
+        r'12px/14px sans-serif': {
+            'font_style': 'normal',
+            'font_variant': 'normal',
+            'font_weight': 'normal',
+            'font_size': '12px',
+            'line_height': '14px',
+            'font_family': ['sans-serif'],
+            },
+        r'80% sans-serif': {
+            'font_style': 'normal',
+            'font_variant': 'normal',
+            'font_weight': 'normal',
+            'font_size': '80%',
+            'line_height': 'normal',
+            'font_family': ['sans-serif'],
+            },
+        r'bold italic large Ahem, serif': {
+            'font_style': 'italic',
+            'font_variant': 'normal',
+            'font_weight': 'bold',
+            'font_size': 'large',
+            'line_height': 'normal',
+            'font_family': ['Ahem', 'serif'],
+            },
+        r'normal small-caps 120%/120% fantasy': {
+            'font_style': 'normal',
+            'font_variant': 'small-caps',
+            'font_weight': 'normal',
+            'font_size': '120%',
+            'line_height': '120%',
+            'font_family': ['fantasy'],
+            },
+        r'x-large/110% Ahem,serif': {
+            'font_style': 'normal',
+            'font_variant': 'normal',
+            'font_weight': 'normal',
+            'font_size': 'x-large',
+            'line_height': '110%',
+            'font_family': ['Ahem', 'serif'],
+            },
+    }
+
+    def test_parse_font_shorthand(self):
+        for case in sorted(self.TEST_CASES):
+            expected_output = self.TEST_CASES[case]
+            font = parse_font(case)
+            self.assertEqual(font, expected_output)
+
+        # Test extra spaces
+        parse_font(r'  normal    normal    normal    12px/12px   serif  ')
+        parse_font(r'  normal    normal    normal    12px/12px     Ahem  ,   serif  ')
+
+        # Test valid single part
+        for part in SYSTEM_FONT_KEYWORDS:
+            parse_font(part)
+
+    def test_parse_font_shorthand_invalid(self):
+        # This font string has too many parts
+        with self.assertRaises(ValidationError):
+            parse_font(r'normal normal normal normal 12px/12px serif')
+
+        # This invalid single part
+        for part in ['normal', 'foobar']:
+            with self.assertRaises(ValidationError):
+                parse_font(part)
 
     def test_parse_font_part(self):
-        pass    
+        pass
         #  - <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
         #  - <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
         #  - <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
         #  - <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
-
 
     def test_parse_font(self):
         pass

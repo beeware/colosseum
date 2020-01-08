@@ -140,8 +140,7 @@ def is_font_family(value):
 
             if not font_database.validate_font_family(no_quotes_val):
                 raise exceptions.ValidationError('Font family "{font_value}"'
-                                                    ' not found on system!'.format(font_value=no_quotes_val))
-
+                                                 ' not found on system!'.format(font_value=no_quotes_val))
         elif val in generic_family:
             checked_values.append(val)
         else:

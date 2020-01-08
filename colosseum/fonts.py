@@ -5,6 +5,9 @@ import sys
 
 from .exceptions import ValidationError
 
+# Constants
+_GTK_WINDOW = None
+
 
 class FontDatabase:
     """
@@ -14,11 +17,7 @@ class FontDatabase:
 
     @classmethod
     def validate_font_family(cls, value):
-        """
-        Validate a font family with the system found fonts.
-
-        Found fonts are cached for future usage.
-        """
+        """Validate a font family with the system found fonts."""
         if value in cls._FONTS_CACHE:
             return value
         else:
@@ -47,16 +46,28 @@ def _check_font_family_mac(value):
     return False
 
 
-def _check_font_family_unix(value):
-    """List available font family names on unix."""
-    import subprocess
-    proc = subprocess.check_output(['fc-list', ':', 'family'])
-    fonts = proc.decode().split('\n')
-    for font_name in fonts:
-        if font_name == value:
-            return True
+def _check_font_family_linux(value):
+    """List available font family names on linux."""
+    import gi  # noqa
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk  # noqa
 
-    return False
+    class Window(Gtk.Window):
+        """Use Pango to get system fonts names."""
+
+        def check_system_font(self, value):
+            """Check if font family exists on system."""
+            context = self.create_pango_context()
+            for fam in context.list_families():
+                if fam.get_name() == value:
+                    return True
+            return False
+
+    global _GTK_WINDOW  # noqa
+    if _GTK_WINDOW is None:
+        _GTK_WINDOW = Window()
+
+    return _GTK_WINDOW.check_system_font(value)
 
 
 def _check_font_family_win(value):
@@ -80,14 +91,16 @@ def check_font_family(value):
     if sys.platform == 'darwin':
         return _check_font_family_mac(value)
     elif sys.platform.startswith('linux'):
-        return _check_font_family_unix(value)
+        return _check_font_family_linux(value)
     elif os.name == 'nt':
         return _check_font_family_mac(value)
+    else:
+        raise NotImplementedError('Cannot request fonts on this system!')
 
 
 def get_system_font(keyword):
     """Return a font object from given system font keyword."""
-    from .constants import SYSTEM_FONT_KEYWORDS
+    from .constants import SYSTEM_FONT_KEYWORDS  # noqa
 
     if keyword in SYSTEM_FONT_KEYWORDS:
         # Get the system font

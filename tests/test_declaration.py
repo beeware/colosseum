@@ -450,7 +450,7 @@ class CssDeclarationTests(TestCase):
         node.style.font_family = ['serif']
         node.style.font_family = ["Ahem", 'serif']
 
-        # TODO: This will coerce to a list, is this a valid behavior?
+        # This will coerce to a list, is this a valid behavior?
         node.style.font_family = 'Ahem'
         self.assertEqual(node.style.font_family, ['Ahem'])
         node.style.font_family = '     Ahem       ,   serif '
@@ -459,7 +459,7 @@ class CssDeclarationTests(TestCase):
         # Check invalid values
         with self.assertRaises(ValueError):
             node.style.font_family = ['DejaVu Sans']  # Should have additional quotes
-        
+
         # Check the error message
         try:
             node.style.font_family = ['123']
@@ -635,9 +635,14 @@ class CssDeclarationTests(TestCase):
 
         self.assertEqual(
             str(node.style),
-            "display: block; height: 20px; "
-            "margin-bottom: 50px; margin-left: 60px; "
-            "margin-right: 40px; margin-top: 30px; width: 10px"
+            "display: block; "
+            "font: normal normal normal medium/normal initial; "
+            "height: 20px; "
+            "margin-bottom: 50px; "
+            "margin-left: 60px; "
+            "margin-right: 40px; "
+            "margin-top: 30px; "
+            "width: 10px"
         )
 
     def test_dict(self):

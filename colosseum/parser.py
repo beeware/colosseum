@@ -130,9 +130,8 @@ def color(value):
     raise ValueError('Unknown color %s' % value)
 
 
-
 ##############################################################################
-# # Font handling
+# Font handling
 ##############################################################################
 def _parse_font_property_part(value, font_dict):
     """Parse font shorthand property part for known properties."""

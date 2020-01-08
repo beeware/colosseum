@@ -70,23 +70,21 @@ def validated_list_property(name, choices, initial, separator=','):
         raise ValueError('Initial value must be a list!')
 
     def getter(self):
-        # TODO: A copy is returned so if the user mutates it,
-        # it will not affect the stored value
-        return getattr(self, '_%s' % name, initial)[:]
+        return getattr(self, '_%s' % name, initial).copy()
 
     def setter(self, value):
+        if not isinstance(value, str):
+            value = separator.join(value)
         try:
-            if not isinstance(value, str):
-                value = separator.join(value)
-
             # This should be a list of values
             values = choices.validate(value)
-            if not isinstance(values, list):
-                values.split(separator)
         except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
             ))
+
+        if not isinstance(values, list):
+            values.split(separator)
 
         if values != getattr(self, '_%s' % name, initial):
             setattr(self, '_%s' % name, values[:])
@@ -590,13 +588,16 @@ class CSS:
     def __str__(self):
         non_default = []
         for name in _CSS_PROPERTIES:
-            try:
-                non_default.append((
-                    name.replace('_', '-'),
-                    getattr(self, '_%s' % name)
-                ))
-            except AttributeError:
-                pass
+            if name == 'font':
+                non_default.append((name, construct_font(getattr(self, name))))
+            else:
+                try:
+                    non_default.append((
+                        name.replace('_', '-'),
+                        getattr(self, '_%s' % name)
+                    ))
+                except AttributeError:
+                    pass
 
         return "; ".join(
             "%s: %s" % (name, value)

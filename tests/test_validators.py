@@ -1,6 +1,5 @@
 from unittest import TestCase
 
-from colosseum.constants import GENERIC_FAMILY_FONTS
 from colosseum.exceptions import ValidationError
 from colosseum.validators import is_font_family, is_integer, is_number
 
