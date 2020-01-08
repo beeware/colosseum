@@ -3,7 +3,8 @@ from unittest import TestCase
 from colosseum.shapes import Rect
 from colosseum.units import px
 from colosseum.validators import (ValidationError, is_border_spacing,
-                                  is_integer, is_number, is_quote, is_rect)
+                                  is_integer, is_number, is_quote, is_rect,
+                                  is_uri)
 from colosseum.wrappers import Quotes
 
 
@@ -164,3 +165,34 @@ class QuotesTests(TestCase):
     def test_quote_invalid(self):
         with self.assertRaises(ValidationError):
             is_quote("'<' '>' '{'")
+
+
+class UrlTests(TestCase):
+
+    def test_uri(self):
+        self.assertEqual(is_uri("url('com')"), "url('com')")
+        self.assertEqual(is_uri("url('com')"), "url('com')")
+        self.assertEqual(is_uri("url('com')"), "url('com')")
+        self.assertEqual(is_uri("url('com')"), "url('com')")
+
+        self.assertEqual(is_uri("url(\"com\")"), "url(\"com\")")
+        self.assertEqual(is_uri("url( \"com\")"), "url( \"com\")")
+        self.assertEqual(is_uri("url(\"com\" )"), "url(\"com\" )")
+        self.assertEqual(is_uri("url( \"com\" )"), "url( \"com\" )")
+
+        self.assertEqual(is_uri("url(com)"), "url(com)")
+        self.assertEqual(is_uri("url( com)"), "url( com)")
+        self.assertEqual(is_uri("url(com )"), "url(com )")
+        self.assertEqual(is_uri("url( com )"), "url( com )")
+
+        with self.assertRaises(ValidationError):
+            is_uri("url( ' com '  )")
+
+        with self.assertRaises(ValidationError):
+            is_uri("url( \" com  \"  )")
+
+        with self.assertRaises(ValidationError):
+            is_uri("url( com  )")
+
+        with self.assertRaises(ValidationError):
+            is_uri("com")

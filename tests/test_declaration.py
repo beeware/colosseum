@@ -5,10 +5,11 @@ from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
 from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
                                  REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
                                  OtherProperty)
-from colosseum.declaration import CSS, validated_property
+from colosseum.declaration import (CSS, validated_list_property,
+                                   validated_property)
 from colosseum.units import percent, px
 from colosseum.validators import (is_color, is_integer, is_length, is_number,
-                                  is_percentage)
+                                  is_percentage, is_uri)
 from colosseum.wrappers import BorderSpacing, Quotes
 
 from .utils import TestNode
@@ -184,6 +185,38 @@ class PropertyChoiceTests(TestCase):
             self.assertEqual(
                 str(v),
                 "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <color>"
+            )
+
+    def test_allow_uri(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(validators=[is_uri]), initial='url(google.com)')
+
+        obj = MyObject()
+        self.assertEqual(obj.prop, 'url(google.com)')
+
+        with self.assertRaises(ValueError):
+            obj.prop = 10
+        with self.assertRaises(ValueError):
+            obj.prop = 20 * px
+        with self.assertRaises(ValueError):
+            obj.prop = 30 * percent
+        with self.assertRaises(ValueError):
+            obj.prop = 'a'
+        with self.assertRaises(ValueError):
+            obj.prop = 'b'
+        with self.assertRaises(ValueError):
+            obj.prop = None
+        with self.assertRaises(ValueError):
+            obj.prop = 'none'
+
+        # Check the error message
+        try:
+            obj.prop = 'invalid'
+            self.fail('Should raise ValueError')
+        except ValueError as v:
+            self.assertEqual(
+                str(v),
+                "Invalid value 'invalid' for CSS property 'prop'; Valid values are: <uri>"
             )
 
     def test_values(self):
@@ -741,6 +774,32 @@ class CssDeclarationTests(TestCase):
         self.assertEqual(node.style.margin_bottom, 0)
         self.assertEqual(node.style.margin_left, 0)
         self.assertTrue(node.style.dirty)
+
+    def test_list_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Default value is [AUTO]
+        self.assertEqual(node.style.cursor, [AUTO])
+
+        # Set values
+        node.style.cursor = ["url('test')", AUTO]
+        self.assertEqual(node.style.cursor, ["url('test')", AUTO])
+
+        node.style.cursor = ["url('test')", "url('test2')", AUTO]
+        self.assertEqual(node.style.cursor, ["url('test')", "url('test2')", AUTO])
+
+        # Set invalid values
+        with self.assertRaises(ValueError):
+            node.style.cursor = ['boom']
+
+        # Set invalid values
+        with self.assertRaises(ValueError):
+            node.style.cursor = ['url( "bla)']
+
+        # Set invalid value not a list
+        with self.assertRaises(ValueError):
+            node.style.cursor = AUTO
 
     def test_set_multiple_properties(self):
         node = TestNode(style=CSS())
