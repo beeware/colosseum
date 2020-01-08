@@ -1,22 +1,21 @@
-from . import engine as css_engine
-from . import parser
+from . import engine as css_engine, parser
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
     BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
     BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
     BOX_OFFSET_CHOICES, CAPTION_SIDE_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
-    COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, EMPTY_CELLS_CHOICES,
-    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
-    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
-    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
+    COLOR_CHOICES, CURSOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
+    EMPTY_CELLS_CHOICES, FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES,
+    FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES,
+    FLOAT_CHOICES, GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
     GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
     INITIAL, INLINE, INVERT, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES,
     LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL,
     NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
     OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES, OVERFLOW_CHOICES,
     PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
-    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW,
-    SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW, SEPARATE,
+    SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
     TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES,
     TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT, UNICODE_BIDI_CHOICES,
     VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
@@ -24,7 +23,9 @@ from .constants import (  # noqa
     TextAlignInitialValue, default,
 )
 from .exceptions import ValidationError
-from .wrappers import Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline
+from .wrappers import (
+    Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline,
+)
 
 _CSS_PROPERTIES = set()
 
@@ -70,6 +71,40 @@ def validated_shorthand_property(name, parser, wrapper):
             except AttributeError:
                 # Attribute doesn't exist
                 pass
+
+
+def validated_list_property(name, choices, initial):
+    """Define a property holding a list values."""
+    if not isinstance(initial, list):
+        raise ValueError('Initial value must be a list!')
+
+    def getter(self):
+        return getattr(self, '_%s' % name, initial).copy()
+
+    def setter(self, values):
+        if not isinstance(values, list):
+            raise ValueError('Value must be a list!')
+
+        validated_values = []
+        for value in values:
+            try:
+                validated_values.append(choices.validate(value))
+            except ValueError:
+                raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
+                    value, name, choices
+                ))
+
+        if validated_values != getattr(self, '_%s' % name, initial):
+            setattr(self, '_%s' % name, validated_values)
+            self.dirty = True
+
+    def deleter(self):
+        try:
+            delattr(self, '_%s' % name)
+            self.dirty = True
+        except AttributeError:
+            # Attribute doesn't exist
+            pass
 
     _CSS_PROPERTIES.add(name)
     return property(getter, setter, deleter)
@@ -410,7 +445,7 @@ class CSS:
 
     # 18. User interface #################################################
     # 18.1 Cursors
-    # cursor
+    cursor = validated_list_property('cursor', CURSOR_CHOICES, initial=[AUTO])
 
     # 18.4 Dynamic outlines
     outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)

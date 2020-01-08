@@ -2,6 +2,8 @@
 Validate values of different css properties.
 """
 
+import re
+
 from . import parser
 from . import units
 from .exceptions import ValidationError
@@ -142,8 +144,25 @@ def is_quote(value):
         value = parser.quotes(value)
     except ValueError:
         raise ValidationError('Value {value} is not a valid quote'.format(value=value))
+URI_RE = re.compile(r"""(
+    (?:url\(\s?'[A-Za-z0-9\./\:\?]*'\s?\))  # Single quotes and optional spaces
+    |
+    (?:url\(\s?"[A-Za-z0-9\./\:\?]*"\s?\))  # Double quotes and optional spaces
+    |
+    (?:url\(\s?[A-Za-z0-9\./\:\?]*\s?\))    # No quotes and optional spaces
+)""", re.VERBOSE)
+
+
+is_quote.description = '[<string> <string>]+'
+
+
+def is_uri(value):
+    try:
+        value = URI_RE.match(value).groups()[0]
+    except Exception:
+        raise ValidationError('Uri "{value}" not valid!'.format(value=value))
 
     return value
 
 
-is_quote.description = '[<string> <string>]+'
+is_uri.description = '<uri>'
