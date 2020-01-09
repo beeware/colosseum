@@ -28,6 +28,31 @@ class FontDatabase:
 
         raise ValidationError('Font family "{value}" not found on system!'.format(value=value))
 
+    @staticmethod
+    def fonts_path(system=False):
+        """Return the path for cross platform user fonts."""
+        if os.name == 'nt':
+            import winreg
+            if system:
+                fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings(r'%windir%'), 'Fonts')
+            else:
+                fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings(r'%LocalAppData%'),
+                                         'Microsoft', 'Windows', 'Fonts')
+        elif sys.platform == 'darwin':
+            if system:
+                fonts_dir = os.path.expanduser('/Library/Fonts')
+            else:
+                fonts_dir = os.path.expanduser('~/Library/Fonts')
+        elif sys.platform.startswith('linux'):
+            if system:
+                fonts_dir = os.path.expanduser('/usr/local/share/fonts')
+            else:
+                fonts_dir = os.path.expanduser('~/.local/share/fonts/')
+        else:
+            raise NotImplementedError('System not supported!')
+
+        return fonts_dir
+
 
 def _check_font_family_mac(value):
     """List available font family names on mac."""
@@ -58,9 +83,11 @@ def _check_font_family_linux(value):
         def check_system_font(self, value):
             """Check if font family exists on system."""
             context = self.create_pango_context()
-            for fam in context.list_families():
-                if fam.get_name() == value:
+            for font_family in context.list_families():
+                font_name = font_family.get_name()
+                if font_name == value:
                     return True
+
             return False
 
     global _GTK_WINDOW  # noqa
@@ -72,16 +99,17 @@ def _check_font_family_linux(value):
 
 def _check_font_family_win(value):
     """List available font family names on windows."""
-    import winreg
-    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,
-                         r"Software\Microsoft\Windows NT\CurrentVersion\Fonts",
-                         0,
-                         winreg.KEY_READ)
-    for idx in range(0, winreg.QueryInfoKey(key)[1]):
-        font_name = winreg.EnumValue(key, idx)[0]
-        font_name = font_name.replace(' (TrueType)', '')
-        if font_name == value:
-            return True
+    import winreg  # noqa
+    for base in [winreg.HKEY_LOCAL_MACHINE, winreg.HKEY_CURRENT_USER]:
+        key = winreg.OpenKey(base,
+                             r"Software\Microsoft\Windows NT\CurrentVersion\Fonts",
+                             0,
+                             winreg.KEY_READ)
+        for idx in range(0, winreg.QueryInfoKey(key)[1]):
+            font_name = winreg.EnumValue(key, idx)[0]
+            font_name = font_name.replace(' (TrueType)', '')
+            if font_name == value:
+                return True
 
     return False
 
@@ -95,7 +123,7 @@ def check_font_family(value):
     elif os.name == 'nt':
         return _check_font_family_win(value)
     else:
-        raise NotImplementedError('Cannot request fonts on this system!')
+        raise NotImplementedError('Cannot check font existence on this system!')
 
 
 def get_system_font(keyword):
@@ -103,7 +131,7 @@ def get_system_font(keyword):
     from .constants import SYSTEM_FONT_KEYWORDS  # noqa
 
     if keyword in SYSTEM_FONT_KEYWORDS:
-        # Get the system font
+        # TODO: Get the system font that corresponds
         return 'Ahem'
 
     return None

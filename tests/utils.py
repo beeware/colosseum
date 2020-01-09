@@ -156,44 +156,60 @@ def output_layout(layout, depth=1):
         return ('  ' * depth + "* '{text}'\n".format(text=layout['text'].strip()))
 
 
-def fonts_path(system=False):
-    """Return the path for cross platform user fonts."""
-    if os.name == 'nt':
-        import winreg
-        fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings('%windir%'), 'fonts')
-    elif sys.platform == 'darwin':
-        if system:
-            fonts_dir = os.path.expanduser('/Library/Fonts')
-        else:
-            fonts_dir = os.path.expanduser('~/Library/Fonts')
-    elif sys.platform.startswith('linux'):
-        fonts_dir = os.path.expanduser('~/.local/share/fonts/')
-    else:
-        raise NotImplementedError('System not supported!')
-
-    return fonts_dir
-
-
 def copy_fonts(system=False):
     """Copy needed files for running tests."""
-    fonts_folder = fonts_path(system=system)
+    fonts_folder = FontDatabase.fonts_path(system=system)
+
     if not os.path.isdir(fonts_folder):
         os.makedirs(fonts_folder)
+
     fonts_data_path = os.path.join(HERE, 'data', 'fonts')
     font_files = sorted([item for item in os.listdir(fonts_data_path) if item.endswith('.ttf')])
     for font_file in font_files:
         font_file_data_path = os.path.join(fonts_data_path, font_file)
         font_file_path = os.path.join(fonts_folder, font_file)
+
         if not os.path.isfile(font_file_path):
             shutil.copyfile(font_file_data_path, font_file_path)
+        # Register font
+
+        if os.name == 'nt':
+            import winreg  # noqa
+            base_key = winreg.HKEY_LOCAL_MACHINE if system else winreg.HKEY_CURRENT_USER
+            key_path = r"Software\Microsoft\Windows NT\CurrentVersion\Fonts"
+
+            if '_' in font_file:
+                font_name = font_file.split('_')[-1].split('.')[0]
+            else:
+                font_name = font_file.split('.')[0]
+
+            # This font has a space in its system name
+            if font_name == 'WhiteSpace':
+                font_name = 'White Space'
+
+            font_name = font_name + ' (TrueType)'
+
+            with winreg.OpenKey(base_key, key_path, 0, winreg.KEY_ALL_ACCESS) as reg_key:
+                value = None
+                try:
+                    # Query if it exists
+                    value = winreg.QueryValueEx(reg_key, font_name)
+                except FileNotFoundError:
+                    pass
+
+                # If it does not exists, add value
+                if value != font_file_path:
+                    winreg.SetValueEx(reg_key, font_name, 0, winreg.REG_SZ, font_file_path)
 
 
 class ColosseumTestCase(TestCase):
     """Install test fonts before running tests that use them."""
+    _FONTS_ACTIVE = False
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.copy_fonts()
+        if self._FONTS_ACTIVE is False:
+            self.copy_fonts()
 
     def copy_fonts(self):
         copy_fonts()
@@ -203,6 +219,8 @@ class ColosseumTestCase(TestCase):
         except ValidationError:
             raise Exception('\n\nTesting fonts (Ahem & Ahem Extra) are not active.\n'
                             '\nPlease run the test suite one more time.\n')
+
+        ColosseumTestCase._FONTS_ACTIVE = True
 
 
 class LayoutTestCase(ColosseumTestCase):
@@ -451,7 +469,9 @@ class W3CTestCase(LayoutTestCase):
 
 
 if __name__ == '__main__':
-    print('Copying test fonts...')
-    print(fonts_path(system=True))
-    copy_fonts(system=True)
-    print(list(sorted(os.listdir(fonts_path()))))
+    # On CI we use system font locations except for linux containers
+    system = bool(os.environ.get('GITHUB_WORKSPACE', None))
+    if sys.platform.startswith('linux'):
+        system = False
+    print('Copying test fonts to "{path}"...'.format(path=FontDatabase.fonts_path(system=system)))
+    copy_fonts(system=system)
