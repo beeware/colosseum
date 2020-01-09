@@ -27,7 +27,10 @@ setup(
     url='https://github.com/pybee/colosseum',
     packages=find_packages(exclude=['tests', 'utils']),
     python_requires='>=3.5',
-    install_requires=[],
+    install_requires=[
+        'pygobject>=3.14.0;sys_platform=="linux"',
+        'rubicon-objc;sys_platform=="darwin"',
+    ],
     license='New BSD',
     classifiers=[
         'Development Status :: 4 - Beta',

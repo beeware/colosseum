@@ -1,5 +1,4 @@
 from unittest import TestCase
-
 from colosseum import parser
 from colosseum.colors import hsl, rgb
 from colosseum.constants import SYSTEM_FONT_KEYWORDS
@@ -7,6 +6,7 @@ from colosseum.exceptions import ValidationError
 from colosseum.parser import parse_font
 from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
                              vmax, vmin, vw)
+from .utils import ColosseumTestCase
 
 
 class ParseUnitTests(TestCase):
@@ -191,7 +191,7 @@ class ParseColorTests(TestCase):
             parser.color('not a color')
 
 
-class ParseFontTests(TestCase):
+class ParseFontTests(ColosseumTestCase):
     TEST_CASES = {
         r'12px/14px sans-serif': {
             'font_style': 'normal',

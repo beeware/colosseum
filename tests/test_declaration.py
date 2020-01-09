@@ -12,7 +12,7 @@ from colosseum.validators import (
     is_color, is_integer, is_length, is_number, is_percentage,
 )
 
-from .utils import TestNode
+from .utils import ColosseumTestCase, TestNode
 
 
 class PropertyChoiceTests(TestCase):
@@ -273,7 +273,7 @@ class PropertyChoiceTests(TestCase):
         self.assertIs(obj.prop, AUTO)
 
 
-class CssDeclarationTests(TestCase):
+class CssDeclarationTests(ColosseumTestCase):
     def test_engine(self):
         node = TestNode(style=CSS())
         self.assertEqual(node.style.engine(), css_engine)

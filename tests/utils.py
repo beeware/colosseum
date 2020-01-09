@@ -1,11 +1,19 @@
 import json
 import os
+import shutil
+import sys
+import time
 from unittest import TestCase, expectedFailure
 
 from colosseum.constants import BLOCK, HTML4, MEDIUM, THICK, THIN
 from colosseum.declaration import CSS
 from colosseum.dimensions import Box, Size
 from colosseum.engine import layout
+from colosseum.exceptions import ValidationError
+from colosseum.fonts import FontDatabase
+
+# Constants
+HERE = os.path.abspath(os.path.dirname(__file__))
 
 
 class Display:
@@ -152,7 +160,46 @@ def output_layout(layout, depth=1):
         )
 
 
-class LayoutTestCase(TestCase):
+class ColosseumTestCase(TestCase):
+    """Install test fonts before running tests that use them."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.copy_fonts()
+
+    def fonts_path(self):
+        """Return the path for cross platform user fonts."""
+        if os.name == 'nt':
+            import winreg
+            fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings('%windir%'), 'fonts')
+        elif sys.platform == 'darwin':
+            fonts_dir = os.path.expanduser('~/Library/Fonts')
+        elif sys.platform.startswith('linux'):
+            fonts_dir = os.path.expanduser('~/.local/share/fonts/')
+        else:
+            raise NotImplementedError('System not supported!')
+
+        return fonts_dir
+
+    def copy_fonts(self):
+        """Copy needed files for running tests."""
+        fonts_path = self.fonts_path()
+        fonts_data_path = os.path.join(HERE, 'data', 'fonts')
+        font_files = sorted([item for item in os.listdir(fonts_data_path) if item.endswith('.ttf')])
+        for font_file in font_files:
+            font_file_data_path = os.path.join(fonts_data_path, font_file)
+            font_file_path = os.path.join(fonts_path, font_file)
+            if not os.path.isfile(font_file_path):
+                shutil.copyfile(font_file_data_path, font_file_path)
+
+        try:
+            FontDatabase.validate_font_family('Ahem')
+        except ValidationError:
+            raise Exception('\n\nTesting fonts (Ahem & Ahem Extra) are not active.\n'
+                            '\nPlease run the test suite one more time.\n')
+
+
+class LayoutTestCase(ColosseumTestCase):
     def setUp(self):
         self.maxDiff = None
         self.display = Display(dpi=96, width=1024, height=768)
