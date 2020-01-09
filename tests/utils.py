@@ -2,7 +2,6 @@ import json
 import os
 import shutil
 import sys
-import time
 from unittest import TestCase, expectedFailure
 
 from colosseum.constants import BLOCK, HTML4, MEDIUM, THICK, THIN
@@ -133,31 +132,60 @@ def clean_layout(layout):
 def output_layout(layout, depth=1):
     if 'tag' in layout:
         return ('  ' * depth
-            + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
-              ' @ ({n[content][position][0]}, {n[content][position][1]})'
-              '\n'.format(
-                    n=layout,
-                    tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
-                    # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
-                )
-            # + '  ' * depth
-            # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
-            #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
-            #   '\n'.format(n=layout)
-            # + '  ' * depth
-            # + '  border: {n[border_box][size][0]}x{n[border_box][size][1]}'
-            #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
-            #   '\n'.format(n=layout)
-            + ''.join(
-                    output_layout(child, depth=depth + 1)
-                    for child in layout.get('children', [])
-                ) if layout else ''
-            + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
-        )
+                + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
+                ' @ ({n[content][position][0]}, {n[content][position][1]})'
+                '\n'.format(
+                        n=layout,
+                        tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
+                        # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
+                    )
+                # + '  ' * depth
+                # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
+                #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
+                #   '\n'.format(n=layout)
+                # + '  ' * depth
+                # + '  border: {n[border_box][size][0]}x{n[border_box][size][1]}'
+                #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
+                #   '\n'.format(n=layout)
+                + ''.join(
+                        output_layout(child, depth=depth + 1)
+                        for child in layout.get('children', [])
+                    ) if layout else ''
+                + ('\n' if layout and layout.get('children', None) and depth > 1 else ''))
     else:
-        return ('  ' * depth
-            + "* '{text}'\n".format(text=layout['text'].strip())
-        )
+        return ('  ' * depth + "* '{text}'\n".format(text=layout['text'].strip()))
+
+
+def fonts_path(system=False):
+    """Return the path for cross platform user fonts."""
+    if os.name == 'nt':
+        import winreg
+        fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings('%windir%'), 'fonts')
+    elif sys.platform == 'darwin':
+        if system:
+            fonts_dir = os.path.expanduser('/Library/Fonts')
+        else:
+            fonts_dir = os.path.expanduser('~/Library/Fonts')
+    elif sys.platform.startswith('linux'):
+        fonts_dir = os.path.expanduser('~/.local/share/fonts/')
+    else:
+        raise NotImplementedError('System not supported!')
+
+    return fonts_dir
+
+
+def copy_fonts(system=False):
+    """Copy needed files for running tests."""
+    fonts_folder = fonts_path(system=system)
+    if not os.path.isdir(fonts_folder):
+        os.makedirs(fonts_folder)
+    fonts_data_path = os.path.join(HERE, 'data', 'fonts')
+    font_files = sorted([item for item in os.listdir(fonts_data_path) if item.endswith('.ttf')])
+    for font_file in font_files:
+        font_file_data_path = os.path.join(fonts_data_path, font_file)
+        font_file_path = os.path.join(fonts_folder, font_file)
+        if not os.path.isfile(font_file_path):
+            shutil.copyfile(font_file_data_path, font_file_path)
 
 
 class ColosseumTestCase(TestCase):
@@ -167,30 +195,8 @@ class ColosseumTestCase(TestCase):
         super().__init__(*args, **kwargs)
         self.copy_fonts()
 
-    def fonts_path(self):
-        """Return the path for cross platform user fonts."""
-        if os.name == 'nt':
-            import winreg
-            fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings('%windir%'), 'fonts')
-        elif sys.platform == 'darwin':
-            fonts_dir = os.path.expanduser('~/Library/Fonts')
-        elif sys.platform.startswith('linux'):
-            fonts_dir = os.path.expanduser('~/.local/share/fonts/')
-        else:
-            raise NotImplementedError('System not supported!')
-
-        return fonts_dir
-
     def copy_fonts(self):
-        """Copy needed files for running tests."""
-        fonts_path = self.fonts_path()
-        fonts_data_path = os.path.join(HERE, 'data', 'fonts')
-        font_files = sorted([item for item in os.listdir(fonts_data_path) if item.endswith('.ttf')])
-        for font_file in font_files:
-            font_file_data_path = os.path.join(fonts_data_path, font_file)
-            font_file_path = os.path.join(fonts_path, font_file)
-            if not os.path.isfile(font_file_path):
-                shutil.copyfile(font_file_data_path, font_file_path)
+        copy_fonts()
 
         try:
             FontDatabase.validate_font_family('Ahem')
@@ -442,3 +448,10 @@ class W3CTestCase(LayoutTestCase):
                     tests[test_name] = test_method
 
         return tests
+
+
+if __name__ == '__main__':
+    print('Copying test fonts...')
+    print(fonts_path(system=True))
+    copy_fonts(system=True)
+    print(list(sorted(os.listdir(fonts_path()))))

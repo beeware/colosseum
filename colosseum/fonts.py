@@ -93,7 +93,7 @@ def check_font_family(value):
     elif sys.platform.startswith('linux'):
         return _check_font_family_linux(value)
     elif os.name == 'nt':
-        return _check_font_family_mac(value)
+        return _check_font_family_win(value)
     else:
         raise NotImplementedError('Cannot request fonts on this system!')
 
