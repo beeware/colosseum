@@ -216,6 +216,7 @@ class ColosseumTestCase(TestCase):
 
         try:
             FontDatabase.validate_font_family('Ahem')
+            FontDatabase.clear_cache()
         except ValidationError:
             raise Exception('\n\nTesting fonts (Ahem & Ahem Extra) are not active.\n'
                             '\nPlease run the test suite one more time.\n')

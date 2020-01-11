@@ -456,9 +456,12 @@ class CssDeclarationTests(ColosseumTestCase):
         node.style.font_family = '     Ahem       ,   serif '
         self.assertEqual(node.style.font_family, ['Ahem', 'serif'])
 
-        # Check invalid values
-        with self.assertRaises(ValueError):
-            node.style.font_family = ['DejaVu Sans']  # Should have additional quotes
+        # Check valid value without extra quotes
+        node.style.font_family = ['White Space']
+
+        # Check extra quotes are removed
+        node.style.font_family = ['"White Space"']
+        self.assertEqual(node.style.font_family, ['White Space'])
 
         # Check the error message
         try:
