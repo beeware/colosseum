@@ -627,27 +627,65 @@ class ParseFontTests(ColosseumTestCase):
     ])
     CASE_1_INVALID = set([
         # <system-font> | inherit
-        'Ahem'
-        '"White Space"'
+        'Ahem',
         '<NotValid>',
         '20',
         20,
     ])
     CASE_EXTRAS_INVALID = set([
         # Space between font-size and line-height
-        'small-caps oblique normal 1.2em /3 Ahem'
-        'small-caps oblique normal 1.2em/ 3 Ahem'
-        'small-caps oblique normal 1.2em / 3 Ahem'
+        'small-caps oblique normal 1.2em /3 Ahem',
+        'small-caps oblique normal 1.2em/ 3 Ahem',
+        'small-caps oblique normal 1.2em / 3 Ahem',
 
         # Too many parts
-        'normal normal normal normal 12px/12px serif'
-        'normal normal normal normal normal 12px/12px serif'
+        'normal normal normal normal 12px/12px serif',
+        'normal normal normal normal normal 12px/12px serif',
 
         # No quotes with spaces
-        'small-caps oblique normal 1.2em/3 Ahem, White Space'
+        'small-caps oblique normal 1.2em/3 Ahem, White Space',
 
         # No commas
-        'small-caps oblique normal 1.2em/3 Ahem "White Space"'
+        'small-caps oblique normal 1.2em/3 Ahem "White Space"',
+
+        # Incorrect order
+        '1.2em/3 small-caps oblique bold Ahem',
+        '1.2em/3 oblique bold small-caps Ahem',
+        '1.2em/3 bold small-caps oblique Ahem',
+        '1.2em/3 small-caps bold oblique Ahem',
+
+        '1.2em small-caps oblique bold Ahem',
+        '1.2em oblique bold small-caps Ahem',
+        '1.2em bold small-caps oblique Ahem',
+        '1.2em small-caps bold oblique Ahem',
+
+        'small-caps 1.2em/3 oblique bold Ahem',
+        'small-caps 1.2em/3 bold oblique Ahem',
+        'bold 1.2em/3 small-caps oblique Ahem',
+        'bold 1.2em/3 oblique small-caps Ahem',
+        'oblique 1.2em/3 small-caps bold Ahem',
+        'oblique 1.2em/3 bold small-caps Ahem',
+
+        'small-caps 1.2em oblique bold Ahem',
+        'small-caps 1.2em bold oblique Ahem',
+        'bold 1.2em small-caps oblique Ahem',
+        'bold 1.2em oblique small-caps Ahem',
+        'oblique 1.2em small-caps bold Ahem',
+        'oblique 1.2em bold small-caps Ahem',
+
+        'small-caps bold 1.2em/3 oblique Ahem',
+        'bold small-caps  1.2em/3 oblique Ahem',
+        'oblique small-caps 1.2em/3 bold Ahem',
+        'small-caps oblique 1.2em/3 bold Ahem',
+        'oblique bold 1.2em/3 small-caps Ahem',
+        'bold oblique 1.2em/3 small-caps Ahem',
+
+        'normal normal 1.2em/3 normal Ahem',
+        'normal 1.2em/3 normal normal Ahem',
+        'normal 1.2em/3 normal Ahem',
+        '1.2em/3 normal Ahem',
+        '1.2em/3 normal normal Ahem',
+        '1.2em/3 normal normal normal Ahem',
     ])
 
     # Font construction test cases

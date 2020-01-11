@@ -145,7 +145,7 @@ def _parse_font_property_part(value, font_dict):
             try:
                 value = choices.validate(value)
                 font_dict[property_name] = value
-                return font_dict
+                return font_dict, False
             except (ValidationError, ValueError):
                 pass
 
@@ -154,19 +154,19 @@ def _parse_font_property_part(value, font_dict):
             font_dict['font_size'], font_dict['line_height'] = value.split('/')
             FONT_SIZE_CHOICES.validate(font_dict['font_size'])
             LINE_HEIGHT_CHOICES.validate(font_dict['line_height'])
-            return font_dict
+            return font_dict, True
         else:
             # Or just a font size
             try:
                 FONT_SIZE_CHOICES.validate(value)
                 font_dict['font_size'] = value
-                return font_dict
+                return font_dict, True
             except ValueError:
                 pass
 
         raise ValidationError('Font value "{value}" not valid!'.format(value=value))
 
-    return font_dict
+    return font_dict, False
 
 
 def parse_font(string):
@@ -187,7 +187,7 @@ def parse_font(string):
 
     # Remove extra spaces
     string = ' '.join(str(string).strip().split())
-
+    print('\n' + string)
     parts = string.split(' ', 1)
     if len(parts) == 1:
         # If font is specified as a system keyword, it must be one of:
@@ -216,10 +216,15 @@ def parse_font(string):
         # We iteratively split by the first left hand space found and try to validate if that part
         # is a valid <font-style> or <font-variant> or <font-weight> (which can come in any order)
         # or <font-size>/<line-height> (which has to come after all the other properties)
+        old_is_font_size = False  # Need to check that some properties come after font-size
         for _ in range(5):
             value = parts[0]
             try:
-                font_dict = _parse_font_property_part(value, font_dict)
+                font_dict, is_font_size = _parse_font_property_part(value, font_dict)
+                print(old_is_font_size, is_font_size, font_dict)
+                if is_font_size is False and old_is_font_size:
+                    raise ValueError('TODO')
+                old_is_font_size = is_font_size
                 parts = parts[-1].split(' ', 1)
             except ValidationError:
                 break

@@ -8,6 +8,7 @@ class ParseFontTests(ColosseumTestCase):
 
     def test_font_database(self):
         # Check empty cache
+        FontDatabase.clear_cache()
         self.assertEqual(FontDatabase._FONTS_CACHE, {})  # noqa
 
         # Check populated cache
