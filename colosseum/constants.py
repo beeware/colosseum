@@ -510,10 +510,46 @@ EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT
 ######################################################################
 # 18.4 Dynamic outlines
 ######################################################################
+
 # outline_width
+OUTLINE_WIDTH_CHOICES = Choices(
+    THIN,
+    MEDIUM,
+    THICK,
+    validators=[is_length],
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # outline_style
+OUTLINE_STYLE_CHOICES = Choices(
+    None,
+    HIDDEN,
+    DOTTED,
+    DASHED,
+    SOLID,
+    DOUBLE,
+    GROOVE,
+    RIDGE,
+    INSET,
+    OUTSET,
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # outline_color
+INVERT = 'invert'
+
+OUTLINE_COLOR_CHOICES = Choices(
+    INVERT,
+    validators=[is_color],
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # outline
+INITIAL_OUTLINE_VALUES = {
+    'outline_color': INVERT,
+    'outline_style': None,
+    'outline_width': MEDIUM,
+}
 
 ######################################################################
 # Flex flow (CSS-flexbox-1, Section 5)

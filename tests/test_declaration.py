@@ -826,6 +826,76 @@ class CssDeclarationTests(TestCase):
             class MyObject:
                 prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
 
+    def test_shorthand_valid_outline_property_initial_values(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        self.assertEqual(str(node.style.outline), 'invert None medium')
+
+    def test_shorthand_valid_outline_subproperties_set_shorthand_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.outline_color = "black"
+        node.style.outline_style = "solid"
+        node.style.outline_width = "thick"
+
+        self.assertEqual(str(node.style.outline), 'rgba(0, 0, 0, 1.0) solid thick')
+        self.assertEqual(str(node.style),
+                         "outline-color: rgba(0, 0, 0, 1.0); outline-style: solid; outline-width: thick")
+
+    def test_shorthand_valid_outline_property_str_sets_shorthand_subproperties(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.outline = "black solid thick"
+
+        self.assertEqual(str(node.style.outline_color), 'rgba(0, 0, 0, 1.0)')
+        self.assertEqual(str(node.style.outline_style), 'solid')
+        self.assertEqual(str(node.style.outline_width), 'thick')
+
+    def test_shorthand_valid_outline_property_list_sets_shorthand_subproperties(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.outline = "black", "solid", "thick"
+
+        self.assertEqual(str(node.style.outline_color), 'rgba(0, 0, 0, 1.0)')
+        self.assertEqual(str(node.style.outline_style), 'solid')
+        self.assertEqual(str(node.style.outline_width), 'thick')
+
+    def test_shorthand_valid_outline_property_resets(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.outline_color = "black"
+        node.style.outline_style = "solid"
+        node.style.outline_width = "thick"
+
+        self.assertEqual(str(node.style.outline), 'rgba(0, 0, 0, 1.0) solid thick')
+        self.assertEqual(str(node.style),
+                         "outline-color: rgba(0, 0, 0, 1.0); outline-style: solid; outline-width: thick")
+
+        # This should reset all other properties to their initial values
+        node.style.outline = "black"
+
+        self.assertEqual(str(node.style.outline_color), "rgba(0, 0, 0, 1.0)")
+        self.assertEqual(node.style.outline_style, None)
+        self.assertEqual(node.style.outline_width, "medium")
+
+        self.assertEqual(str(node.style.outline), 'rgba(0, 0, 0, 1.0)')
+        self.assertEqual(str(node.style), "outline-color: rgba(0, 0, 0, 1.0)")
+
+    def test_shorthand_invalid_outline_property_values(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.outline = "foo bar spam"
+
+        with self.assertRaises(ValueError):
+            node.style.outline = "foo", "bar", "spam"
+
     def test_str(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None

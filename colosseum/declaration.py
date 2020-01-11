@@ -1,27 +1,85 @@
 from . import engine as css_engine
+from . import parser
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
     BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
     BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
     BOX_OFFSET_CHOICES, CAPTION_SIDE_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
-    COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, EMPTY_CELLS_CHOICES,
-    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
-    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
-    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
-    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INLINE, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES, LTR,
-    MARGIN_CHOICES, MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL, NOWRAP,
-    ORDER_CHOICES, ORPHANS_CHOICES, OVERFLOW_CHOICES, PADDING_CHOICES,
+    COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
+    EMPTY_CELLS_CHOICES, FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES,
+    FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES,
+    FLOAT_CHOICES, GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES,
+    GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES,
+    GRID_TEMPLATE_CHOICES, INITIAL_OUTLINE_VALUES, INLINE, INVERT,
+    JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES, LTR, MARGIN_CHOICES,
+    MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES,
+    ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES, OUTLINE_STYLE_CHOICES,
+    OUTLINE_WIDTH_CHOICES, OVERFLOW_CHOICES, PADDING_CHOICES,
     PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
     PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, ROW, SEPARATE, SHOW,
     SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES, TEXT_ALIGN_CHOICES,
     TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES, TOP,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    WHITE_SPACE_CHOICES, WIDOWS_CHOICES, WORD_SPACING_CHOICES, Z_INDEX_CHOICES,
-    OtherProperty, TextAlignInitialValue, default,
+    WHITE_SPACE_CHOICES, WIDOWS_CHOICES, WORD_SPACING_CHOICES,
+    Z_INDEX_CHOICES, OtherProperty, TextAlignInitialValue, default,
 )
+from .exceptions import ValidationError
+from .wrappers import Outline
 
 _CSS_PROPERTIES = set()
+
+
+def validated_shorthand_property(name, initial, parser, storage_class):
+    """Define the shorthand CSS font property."""
+    if not isinstance(initial, dict):
+        raise ValueError('Initial values for shorthand property must be of type dict!')
+
+    initial = storage_class(**initial)
+
+    def getter(self):
+        shorthand = storage_class()
+        for property_name in initial:
+            try:
+                property_value = getattr(self, '_%s' % property_name)
+                shorthand[property_name] = property_value
+            except AttributeError:
+                pass
+
+        if shorthand:
+            return shorthand
+        else:
+            # It no property has been defined for the outline, return initial values
+            return initial.copy()
+
+    def setter(self, value):
+        try:
+            shorthand = storage_class(**parser(value))
+        except ValidationError:
+            raise ValueError("Invalid value '%s' for CSS property '%s'!" % (value, name))
+
+        # Reset non declared properties to initial values
+        used_properties = shorthand.keys()
+        for property_name, property_value in initial.items():
+            if property_name in used_properties:
+                setattr(self, property_name, shorthand[property_name])
+            else:
+                delattr(self, property_name)
+
+        # We do not explicitely set shorthand properties
+        # setattr(self, '_%s' % name, value)
+        self.dirty = True
+
+    def deleter(self):
+        for property_name in initial:
+            try:
+                delattr(self, property_name)
+                self.dirty = True
+            except AttributeError:
+                # Attribute doesn't exist
+                pass
+
+    _CSS_PROPERTIES.add(name)
+    return property(getter, setter, deleter)
 
 
 def unvalidated_property(name, choices, initial):
@@ -360,10 +418,11 @@ class CSS:
     # cursor
 
     # 18.4 Dynamic outlines
-    # outline_width
-    # outline_style
-    # outline_color
-    # outline
+    outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)
+    outline_style = validated_property('outline_style', choices=OUTLINE_STYLE_CHOICES, initial=None)
+    outline_color = validated_property('outline_color', choices=OUTLINE_COLOR_CHOICES, initial=INVERT)
+    outline = validated_shorthand_property('outline', initial=INITIAL_OUTLINE_VALUES, parser=parser.outline,
+                                           storage_class=Outline)
 
     ######################################################################
     # Flexbox properties
@@ -535,10 +594,8 @@ class CSS:
         non_default = []
         for name in _CSS_PROPERTIES:
             try:
-                non_default.append((
-                    name.replace('_', '-'),
-                    getattr(self, '_%s' % name)
-                ))
+                getattr(self, '_%s' % name)
+                non_default.append((name.replace('_', '-'), getattr(self, name)))
             except AttributeError:
                 pass
 
