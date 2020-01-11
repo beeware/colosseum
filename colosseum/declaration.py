@@ -75,7 +75,7 @@ def validated_list_property(name, choices, initial, separator=',', add_quotes=Fa
         quoted_values = []
         for value in values:
             if (' ' in value and not (value.startswith('"') and value.endswith('"'))
-                  and not (value.startswith("'") and value.endswith("'"))):
+                    and not (value.startswith("'") and value.endswith("'"))):
                 value = '"{value}"'.format(value=value)
             quoted_values.append(value)
 
