@@ -1,3 +1,5 @@
+import ast
+
 from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .fonts import get_system_font
@@ -149,13 +151,15 @@ def _parse_font_property_part(value, font_dict):
             except (ValidationError, ValueError):
                 pass
 
-        # Maybe it is a font size
+        
         if '/' in value:
+            # Maybe it is a font size with line height
             font_dict['font_size'], font_dict['line_height'] = value.split('/')
             FONT_SIZE_CHOICES.validate(font_dict['font_size'])
             LINE_HEIGHT_CHOICES.validate(font_dict['line_height'])
             return font_dict
         else:
+            # Or just a font size
             try:
                 FONT_SIZE_CHOICES.validate(value)
                 font_dict['font_size'] = value
@@ -185,7 +189,7 @@ def parse_font(string):
     font_dict = INITIAL_FONT_VALUES.copy()
 
     # Remove extra spaces
-    string = ' '.join(string.strip().split())
+    string = ' '.join(str(string).strip().split())
 
     parts = string.split(' ', 1)
     if len(parts) == 1:
@@ -199,7 +203,7 @@ def parse_font(string):
             if value not in SYSTEM_FONT_KEYWORDS:
                 error_msg = ('Font property value "{value}" '
                              'not a system font keyword!'.format(value=value))
-                raise ValidationError(error_msg)
+                raise ValueError(error_msg)
             font_dict = get_system_font(value)
     else:
         # If font is specified as a shorthand for several font-related properties, then:
@@ -225,7 +229,7 @@ def parse_font(string):
         else:
             # Font family can have a maximum of 4 parts before the font_family part.
             # <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
-            raise ValidationError('Font property shorthand contains too many parts!')
+            raise ValueError('Font property shorthand contains too many parts!')
 
         value = ' '.join(parts)
         font_dict['font_family'] = FONT_FAMILY_CHOICES.validate(value)
@@ -235,8 +239,21 @@ def parse_font(string):
 
 def construct_font(font_dict):
     """Construct font property string from a dictionary of font properties."""
-    if isinstance(font_dict['font_family'], list):
-        font_dict['font_family'] = ', '.join(font_dict['font_family'])
+    font_dict_copy = font_dict.copy()
+    font_dict_copy['font_family'] = construct_font_family(font_dict_copy['font_family'])
 
     return ('{font_style} {font_variant} {font_weight} '
-            '{font_size}/{line_height} {font_family}').format(**font_dict)
+            '{font_size}/{line_height} {font_family}').format(**font_dict_copy)
+
+
+def construct_font_family(font_family):
+    """Construct a font family property from a list of font families."""
+    assert isinstance(font_family, list)
+    checked_font_family = []
+    for family in font_family:
+        if ' ' in family:
+            family = '"{value}"'.format(value=family)
+
+        checked_font_family.append(family)
+
+    return ', '.join(checked_font_family)

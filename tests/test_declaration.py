@@ -636,7 +636,6 @@ class CssDeclarationTests(ColosseumTestCase):
         self.assertEqual(
             str(node.style),
             "display: block; "
-            "font: normal normal normal medium/normal initial; "
             "height: 20px; "
             "margin-bottom: 50px; "
             "margin-left: 60px; "
@@ -745,7 +744,7 @@ class CssDeclarationTests(ColosseumTestCase):
         self.assertEqual(node.style.font_family, ['serif'])
 
         # Check individual properties do not update the set shorthand
-        node.style.font = '9px serif'
+        node.style.font = '9px "White Space", serif'
         node.style.font_style = 'italic'
         node.style.font_weight = 'bold'
         node.style.font_variant = 'small-caps'
@@ -757,7 +756,97 @@ class CssDeclarationTests(ColosseumTestCase):
             'font_variant': 'small-caps',
             'font_size': '10px',
             'line_height': '1.5',
-            'font_family': ['serif'],
+            'font_family': ['White Space', 'serif'],
+        }
+        font = node.style.font
+        font['font_size'] = str(font['font_size'])
+        font['line_height'] = str(font['line_height'])
+        self.assertEqual(font, expected_font)
+
+        # Check string
+        self.assertEqual(str(node.style), (
+            'font: italic small-caps bold 10px/1.5 "White Space", serif; '
+            'font-family: "White Space", serif; '
+            'font-size: 10px; '
+            'font-style: italic; '
+            'font-variant: small-caps; '
+            'font-weight: bold; '
+            'line-height: 1.5'
+        ))
+        node.style.font = '9px "White Space", serif'
+        self.assertEqual(str(node.style), (
+            'font: normal normal normal 9px/normal "White Space", serif; '
+            'font-family: "White Space", serif; '
+            'font-size: 9px; '
+            'font-style: normal; '
+            'font-variant: normal; '
+            'font-weight: normal; '
+            'line-height: normal'
+        ))
+
+        # Check invalid values
+        with self.assertRaises(ValueError):
+            node.style.font = 'ThisIsDefinitelyNotAFontName'
+
+    def test_font_family_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value
+        self.assertEqual(node.style.font, INITIAL_FONT_VALUES)
+
+        # Check Initial values
+        self.assertEqual(node.style.font_style, 'normal')
+        self.assertEqual(node.style.font_weight, 'normal')
+        self.assertEqual(node.style.font_variant, 'normal')
+        self.assertEqual(node.style.font_size, 'medium')
+        self.assertEqual(node.style.line_height, 'normal')
+        self.assertEqual(node.style.font_family, ['initial'])
+
+        # Check individual properties update the unset shorthand
+        node.style.font_style = 'italic'
+        node.style.font_weight = 'bold'
+        node.style.font_variant = 'small-caps'
+        node.style.font_size = '10px'
+        node.style.line_height = '1.5'
+        node.style.font_family = ['Ahem', 'serif']
+        expected_font = {
+            'font_style': 'italic',
+            'font_weight': 'bold',
+            'font_variant': 'small-caps',
+            'font_size': '10px',
+            'line_height': '1.5',
+            'font_family': ['Ahem', 'serif'],
+        }
+        font = node.style.font
+        font['font_size'] = str(font['font_size'])
+        font['line_height'] = str(font['line_height'])
+        self.assertEqual(font, expected_font)
+
+        # Check setting the shorthand resets values
+        node.style.font = '9px serif'
+        self.assertEqual(node.style.font_style, 'normal')
+        self.assertEqual(node.style.font_weight, 'normal')
+        self.assertEqual(node.style.font_variant, 'normal')
+        self.assertEqual(node.style.line_height, 'normal')
+        self.assertEqual(str(node.style.font_size), '9px')
+        self.assertEqual(node.style.font_family, ['serif'])
+
+        # Check individual properties do not update the set shorthand
+        node.style.font = '9px "White Space", Ahem, serif'
+        node.style.font_style = 'italic'
+        node.style.font_weight = 'bold'
+        node.style.font_variant = 'small-caps'
+        node.style.font_size = '10px'
+        node.style.line_height = '1.5'
+        node.style.font_family =  ['White Space', 'serif']
+        expected_font = {
+            'font_style': 'italic',
+            'font_weight': 'bold',
+            'font_variant': 'small-caps',
+            'font_size': '10px',
+            'line_height': '1.5',
+            'font_family': ['White Space', 'serif'],
         }
         font = node.style.font
         font['font_size'] = str(font['font_size'])

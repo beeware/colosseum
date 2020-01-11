@@ -365,21 +365,30 @@ FONT_VARIANT_CHOICES = Choices(
 BOLD = 'bold'
 BOLDER = 'bolder'
 LIGHTER = 'lighter'
+WEIGHT_100 = '100'
+WEIGHT_200 = '200'
+WEIGHT_300 = '300'
+WEIGHT_400 = '400'
+WEIGHT_500 = '500'
+WEIGHT_600 = '600'
+WEIGHT_700 = '700'
+WEIGHT_800 = '800'
+WEIGHT_900 = '900'
 
 FONT_WEIGHT_CHOICES = Choices(
     NORMAL,
     BOLD,
     BOLDER,
     LIGHTER,
-    100,
-    200,
-    300,
-    400,
-    500,
-    600,
-    700,
-    800,
-    900,
+    WEIGHT_100,
+    WEIGHT_200,
+    WEIGHT_300,
+    WEIGHT_400,
+    WEIGHT_500,
+    WEIGHT_600,
+    WEIGHT_700,
+    WEIGHT_800,
+    WEIGHT_900,
     explicit_defaulting_constants=[INHERIT],
 )
 

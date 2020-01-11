@@ -1,11 +1,14 @@
 from unittest import TestCase
+
 from colosseum import parser
 from colosseum.colors import hsl, rgb
 from colosseum.constants import SYSTEM_FONT_KEYWORDS
 from colosseum.exceptions import ValidationError
-from colosseum.parser import parse_font
-from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
-                             vmax, vmin, vw)
+from colosseum.parser import construct_font, construct_font_family, parse_font
+from colosseum.units import (
+    ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
+)
+
 from .utils import ColosseumTestCase
 
 
@@ -192,128 +195,513 @@ class ParseColorTests(TestCase):
 
 
 class ParseFontTests(ColosseumTestCase):
-    TEST_CASES = {
-        r'12px/14px sans-serif': {
-            'font_style': 'normal',
-            'font_variant': 'normal',
-            'font_weight': 'normal',
-            'font_size': '12px',
-            'line_height': '14px',
-            'font_family': ['sans-serif'],
-            },
-        r'80% sans-serif': {
-            'font_style': 'normal',
-            'font_variant': 'normal',
-            'font_weight': 'normal',
-            'font_size': '80%',
-            'line_height': 'normal',
-            'font_family': ['sans-serif'],
-            },
-        r'bold italic large Ahem, serif': {
-            'font_style': 'italic',
-            'font_variant': 'normal',
-            'font_weight': 'bold',
-            'font_size': 'large',
-            'line_height': 'normal',
-            'font_family': ['Ahem', 'serif'],
-            },
-        r'normal small-caps 120%/120% fantasy': {
-            'font_style': 'normal',
-            'font_variant': 'small-caps',
-            'font_weight': 'normal',
-            'font_size': '120%',
-            'line_height': '120%',
-            'font_family': ['fantasy'],
-            },
-        r'x-large/110% Ahem,serif': {
-            'font_style': 'normal',
-            'font_variant': 'normal',
-            'font_weight': 'normal',
-            'font_size': 'x-large',
-            'line_height': '110%',
-            'font_family': ['Ahem', 'serif'],
-            },
+    CASE_5 = {
+        # <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
+        'oblique small-caps bold 1.2em/3 Ahem': ('oblique', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'normal small-caps bold 1.2em/3 Ahem': ('normal', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'oblique normal bold 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'oblique small-caps normal 1.2em/3 Ahem': ('oblique', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'normal small-caps normal 1.2em/3 Ahem': ('normal', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'oblique normal normal 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        'normal normal bold 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'normal normal normal 1.2em/3 Ahem': ('normal', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+
+        # <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        'bold oblique small-caps 1.2em/3 Ahem': ('oblique', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'normal oblique small-caps 1.2em/3 Ahem': ('oblique', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'bold normal small-caps 1.2em/3 Ahem': ('normal', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'bold oblique normal 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'normal oblique normal 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        'bold normal normal 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'normal normal small-caps 1.2em/3 Ahem': ('normal', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+
+        # <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        'small-caps bold oblique 1.2em/3 Ahem': ('oblique', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'normal bold oblique 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'small-caps normal oblique 1.2em/3 Ahem': ('oblique', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'small-caps bold normal 1.2em/3 Ahem': ('normal', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'normal bold normal 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'small-caps normal normal 1.2em/3 Ahem': ('normal', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'normal normal oblique 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+
+        # <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
+        'small-caps oblique bold 1.2em/3 Ahem': ('oblique', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'normal oblique bold 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'small-caps normal bold 1.2em/3 Ahem': ('normal', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'small-caps oblique normal 1.2em/3 Ahem': ('oblique', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+    }
+    CASE_4 = {
+        # <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        'oblique small-caps 1.2em/3 Ahem': ('oblique', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'oblique normal 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        'normal small-caps 1.2em/3 Ahem': ('normal', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'normal normal 1.2em/3 Ahem': ('normal', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+
+        #  <font-style> <font-weight> <font-size>/<line-height> <font-family>
+        'oblique bold 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'normal bold 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+
+        # <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        'bold oblique 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'bold normal 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'normal oblique 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+
+        # <font-weight> <font-variant> <font-size>/<line-height> <font-family>
+        'bold small-caps 1.2em/3 Ahem': ('normal', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+    }
+    CASE_3 = {
+        # <font-style> <font-size>/<line-height> <font-family>
+        'oblique 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        'normal 1.2em/3 Ahem': ('normal', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+
+        # <font-variant> <font-size>/<line-height> <font-family>
+        'small-caps 1.2em/3 Ahem': ('normal', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+
+        # <font-weight> <font-size>/<line-height> <font-family>
+        'bold 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+
+        # <font-style> <font-size> <font-family>
+        'oblique 1.2em Ahem': ('oblique', 'normal', 'normal', '1.2em', 'normal', ['Ahem']),
+
+        # <font-variant> <font-size> <font-family>
+        'small-caps 1.2em Ahem': ('normal', 'small-caps', 'normal', '1.2em', 'normal', ['Ahem']),
+
+        # <font-weight> <font-size> <font-family>
+        'bold 1.2em Ahem': ('normal', 'normal', 'bold', '1.2em', 'normal', ['Ahem']),
+    }
+    CASE_2 = {
+        #  <font-size>/<line-height> <font-family>
+        '1.2em/3 Ahem': ('normal', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        '1.2em/3 Ahem, "White Space"': ('normal', 'normal', 'normal', '1.2em', '3',
+                                        ['Ahem', 'White Space']),
+        '1.2em/3 Ahem, "White Space", serif': ('normal', 'normal', 'normal', '1.2em', '3',
+                                               ['Ahem', 'White Space', 'serif']),
+
+        #  <font-size> <font-family>
+        '1.2em Ahem': ('normal', 'normal', 'normal', '1.2em', 'normal', ['Ahem']),
+        '1.2em Ahem, "White Space"': ('normal', 'normal', 'normal', '1.2em', 'normal',
+                                      ['Ahem', 'White Space']),
+        '1.2em Ahem, "White Space", serif': ('normal', 'normal', 'normal', '1.2em', 'normal',
+                                             ['Ahem', 'White Space', 'serif']),
+    }
+    CASE_1 = {
+        #  <system-font> | inherit
+        'caption': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+        'icon': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+        'menu': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+        'message-box': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+        'small-caption': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+        'status-bar': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+        'inherit': ('normal', 'normal', 'normal', 'medium', 'normal', ['initial']),
+    }
+    CASE_EXTRAS = {
+        # Spaces in family
+        'normal normal normal 1.2em/3 Ahem, "White Space"': ('normal', 'normal', 'normal', '1.2em', '3',
+                                                             ['Ahem', 'White Space']),
+        "normal normal normal 1.2em/3 Ahem, 'White Space'": ('normal', 'normal', 'normal', '1.2em', '3',
+                                                             ['Ahem', 'White Space']),
+        # Extra spaces
+        " normal  normal  normal  1.2em/3  Ahem,   '  White   Space ' ": ('normal', 'normal', 'normal', '1.2em', '3',
+                                                                          ['Ahem', 'White Space']),
+    }
+    CASE_5_INVALID = set([
+        # <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
+        '<NotValid> small-caps bold 1.2em/3 Ahem',
+        '<NotValid> small-caps bold 1.2em/3 Ahem',
+        '<NotValid> normal bold 1.2em/3 Ahem',
+        '<NotValid> small-caps normal 1.2em/3 Ahem',
+        '<NotValid> small-caps normal 1.2em/3 Ahem',
+        '<NotValid> normal normal 1.2em/3 Ahem',
+        '<NotValid> normal bold 1.2em/3 Ahem',
+
+        'oblique <NotValid> bold 1.2em/3 Ahem',
+        'normal <NotValid> bold 1.2em/3 Ahem',
+        'oblique <NotValid> 1.2em/3 Ahem',
+        'oblique <NotValid> normal 1.2em/3 Ahem',
+        'normal <NotValid> normal 1.2em/3 Ahem',
+        'oblique <NotValid> normal 1.2em/3 Ahem',
+        'normal <NotValid> normal 1.2em/3 Ahem',
+
+        'oblique small-caps <NotValid> 1.2em/3 Ahem',
+        'normal small-caps <NotValid> 1.2em/3 Ahem',
+        'oblique normal <NotValid> 1.2em/3 Ahem',
+        'oblique small-caps <NotValid> 1.2em/3 Ahem',
+        'normal small-caps <NotValid> 1.2em/3 Ahem',
+        'oblique normal <NotValid> 1.2em/3 Ahem',
+        'normal normal <NotValid> 1.2em/3 Ahem',
+
+        'oblique small-caps bold <NotValid>/3 Ahem',
+        'normal small-caps bold <NotValid>/3 Ahem',
+        'oblique normal bold <NotValid>/3 Ahem',
+        'oblique small-caps normal <NotValid>/3 Ahem',
+        'normal small-caps normal <NotValid>/3 Ahem',
+        'oblique normal normal <NotValid>/3 Ahem',
+        'normal normal bold <NotValid>/3 Ahem',
+
+        'oblique small-caps bold 1.2em/3 <NotValid>',
+        'normal small-caps bold 1.2em/3 <NotValid>',
+        'oblique normal bold 1.2em/3 <NotValid>',
+        'oblique small-caps normal 1.2em/3 <NotValid>',
+        'normal small-caps normal 1.2em/3 <NotValid>',
+        'oblique normal normal 1.2em/3 <NotValid>',
+
+        # <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        '<NotValid> oblique small-caps 1.2em/3 Ahem',
+        '<NotValid> oblique small-caps 1.2em/3 Ahem',
+        '<NotValid> normal small-caps 1.2em/3 Ahem',
+        '<NotValid> oblique normal 1.2em/3 Ahem',
+        '<NotValid> oblique normal 1.2em/3 Ahem',
+        '<NotValid> normal normal 1.2em/3 Ahem',
+        '<NotValid> normal small-caps 1.2em/3 Ahem',
+
+        'bold <NotValid> small-caps 1.2em/3 Ahem',
+        'normal <NotValid> small-caps 1.2em/3 Ahem',
+        'bold <NotValid> small-caps 1.2em/3 Ahem',
+        'bold <NotValid> normal 1.2em/3 Ahem',
+        'normal <NotValid> normal 1.2em/3 Ahem',
+        'bold <NotValid> normal 1.2em/3 Ahem',
+        'normal <NotValid> small-caps 1.2em/3 Ahem',
+
+        'bold oblique <NotValid> 1.2em/3 Ahem',
+        'normal oblique <NotValid> 1.2em/3 Ahem',
+        'bold normal <NotValid> 1.2em/3 Ahem',
+        'bold oblique <NotValid> 1.2em/3 Ahem',
+        'normal oblique <NotValid> 1.2em/3 Ahem',
+        'bold normal <NotValid> 1.2em/3 Ahem',
+        'normal normal <NotValid> 1.2em/3 Ahem',
+
+        'bold oblique small-caps <NotValid>/3 Ahem',
+        'normal oblique small-caps <NotValid>/3 Ahem',
+        'bold normal small-caps <NotValid>/3 Ahem',
+        'bold oblique normal <NotValid>/3 Ahem',
+        'normal oblique normal <NotValid>/3 Ahem',
+        'bold normal normal <NotValid>/3 Ahem',
+        'normal normal small-caps <NotValid>/3 Ahem',
+
+        'bold oblique small-caps 1.2em/<NotValid> Ahem',
+        'normal oblique small-caps 1.2em/<NotValid> Ahem',
+        'bold normal small-caps 1.2em/<NotValid> Ahem',
+        'bold oblique normal 1.2em/<NotValid> Ahem',
+        'normal oblique normal 1.2em/<NotValid> Ahem',
+        'bold normal normal 1.2em/<NotValid> Ahem',
+        'normal normal small-caps 1.2em/<NotValid> Ahem',
+
+        'bold oblique small-caps 1.2em/3 <NotValid>',
+        'normal oblique small-caps 1.2em/3 <NotValid>',
+        'bold normal small-caps 1.2em/3 <NotValid>',
+        'bold oblique normal 1.2em/3 <NotValid>',
+        'normal oblique normal 1.2em/3 <NotValid>',
+        'bold normal normal 1.2em/3 <NotValid>',
+        'normal normal small-caps 1.2em/3 <NotValid>',
+
+        # <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        '<NotValid> bold oblique 1.2em/3 Ahem',
+        '<NotValid> bold oblique 1.2em/3 Ahem',
+        '<NotValid> normal oblique 1.2em/3 Ahem',
+        '<NotValid> bold normal 1.2em/3 Ahem',
+        '<NotValid> bold normal 1.2em/3 Ahem',
+        '<NotValid> normal normal 1.2em/3 Ahem',
+        '<NotValid> normal oblique 1.2em/3 Ahem',
+
+        'small-caps <NotValid> oblique 1.2em/3 Ahem',
+        'normal <NotValid> oblique 1.2em/3 Ahem',
+        'small-caps <NotValid> oblique 1.2em/3 Ahem',
+        'small-caps <NotValid> normal 1.2em/3 Ahem',
+        'normal <NotValid> normal 1.2em/3 Ahem',
+        'small-caps <NotValid> normal 1.2em/3 Ahem',
+        'normal <NotValid> oblique 1.2em/3 Ahem',
+
+        'small-caps bold <NotValid> 1.2em/3 Ahem',
+        'normal bold <NotValid> 1.2em/3 Ahem',
+        'small-caps normal <NotValid> 1.2em/3 Ahem',
+        'small-caps bold <NotValid> 1.2em/3 Ahem',
+        'normal bold <NotValid> 1.2em/3 Ahem',
+        'small-caps normal <NotValid> 1.2em/3 Ahem',
+        'normal normal <NotValid> 1.2em/3 Ahem',
+
+        'small-caps bold oblique <NotValid>em/3 Ahem',
+        'normal bold oblique <NotValid>/3 Ahem',
+        'small-caps normal oblique <NotValid>/3 Ahem',
+        'small-caps bold normal <NotValid>/3 Ahem',
+        'normal bold normal <NotValid>/3 Ahem',
+        'small-caps normal normal <NotValid>/3 Ahem',
+        'normal normal oblique <NotValid>/3 Ahem',
+
+        'small-caps bold oblique <NotValid>/3 Ahem',
+        'normal bold oblique <NotValid>/3 Ahem',
+        'small-caps normal oblique <NotValid>/3 Ahem',
+        'small-caps bold normal <NotValid>/3 Ahem',
+        'normal bold normal <NotValid>/3 Ahem',
+        'small-caps normal normal <NotValid>/3 Ahem',
+        'normal normal oblique <NotValid>/3 Ahem',
+
+        'small-caps bold oblique 1.2em/<NotValid> Ahem',
+        'normal bold oblique 1.2em/<NotValid> Ahem',
+        'small-caps normal oblique 1.2em/<NotValid> Ahem',
+        'small-caps bold normal 1.2em/<NotValid> Ahem',
+        'normal bold normal 1.2em/<NotValid> Ahem',
+        'small-caps normal normal 1.2em/<NotValid> Ahem',
+        'normal normal oblique 1.2em/<NotValid> Ahem',
+
+        'small-caps bold oblique 1.2em/3 <NotValid>',
+        'normal bold oblique 1.2em/3 <NotValid>',
+        'small-caps normal oblique 1.2em/3 <NotValid>',
+        'small-caps bold normal 1.2em/3 <NotValid>',
+        'normal bold normal 1.2em/3 <NotValid>',
+        'small-caps normal normal 1.2em/3 <NotValid>',
+        'normal normal oblique 1.2em/3 <NotValid>',
+
+        # <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
+        '<NotValid> oblique bold 1.2em/3 Ahem',
+        '<NotValid> oblique bold 1.2em/3 Ahem',
+        '<NotValid> normal bold 1.2em/3 Ahem',
+        '<NotValid> oblique normal 1.2em/3 Ahem',
+
+        'small-caps <NotValid> bold 1.2em/3 Ahem',
+        'normal <NotValid> bold 1.2em/3 Ahem',
+        'small-caps <NotValid> bold 1.2em/3 Ahem',
+        'small-caps <NotValid> normal 1.2em/3 Ahem',
+
+        'small-caps oblique <NotValid> 1.2em/3 Ahem',
+        'normal oblique <NotValid> 1.2em/3 Ahem',
+        'small-caps normal <NotValid> 1.2em/3 Ahem',
+        'small-caps oblique <NotValid> 1.2em/3 Ahem',
+
+        'small-caps oblique bold <NotValid>/3 Ahem',
+        'normal oblique bold <NotValid>/3 Ahem',
+        'small-caps normal bold <NotValid>/3 Ahem',
+        'small-caps oblique normal <NotValid>/3 Ahem',
+
+        'small-caps oblique bold <NotValid>/3 Ahem',
+        'normal oblique bold <NotValid>/3 Ahem',
+        'small-caps normal bold <NotValid>/3 Ahem',
+        'small-caps oblique normal <NotValid>/3 Ahem',
+
+        'small-caps oblique bold 1.2em/<NotValid> Ahem',
+        'normal oblique bold 1.2em/<NotValid> Ahem',
+        'small-caps normal bold 1.2em/<NotValid> Ahem',
+        'small-caps oblique normal 1.2em/<NotValid> Ahem',
+
+        'small-caps oblique bold 1.2em/3 <NotValid>',
+        'normal oblique bold 1.2em/3 <NotValid>',
+        'small-caps normal bold 1.2em/3 <NotValid>',
+        'small-caps oblique normal 1.2em/3 <NotValid>',
+    ])
+    CASE_4_INVALID = set([
+        # <font-style> <font-variant> <font-size>/<line-height> <font-family>
+        '<NotValid> small-caps 1.2em/3 Ahem',
+        '<NotValid> normal 1.2em/3 Ahem',
+        '<NotValid> small-caps 1.2em/3 Ahem',
+        '<NotValid> normal 1.2em/3 Ahem',
+
+        'oblique <NotValid> 1.2em/3 Ahem',
+        'oblique <NotValid> 1.2em/3 Ahem',
+        'normal <NotValid> 1.2em/3 Ahem',
+        'normal <NotValid> 1.2em/3 Ahem',
+
+        'oblique small-caps <NotValid>/3 Ahem',
+        'oblique normal <NotValid>/3 Ahem',
+        'normal small-caps <NotValid>/3 Ahem',
+        'normal normal <NotValid>/3 Ahem',
+
+        'oblique small-caps 1.2em/<NotValid> Ahem',
+        'oblique normal 1.2em/<NotValid> Ahem',
+        'normal small-caps 1.2em/<NotValid> Ahem',
+        'normal normal 1.2em/<NotValid> Ahem',
+
+        'oblique small-caps 1.2em/3 <NotValid>',
+        'oblique normal 1.2em/3 <NotValid>',
+        'normal small-caps 1.2em/3 <NotValid>',
+        'normal normal 1.2em/3 <NotValid>',
+
+        #  <font-style> <font-weight> <font-size>/<line-height> <font-family>
+        '<NotValid> bold 1.2em/3 Ahem',
+        '<NotValid> bold 1.2em/3 Ahem',
+
+        'oblique <NotValid> 1.2em/3 Ahem',
+        'normal <NotValid> 1.2em/3 Ahem',
+
+        'oblique bold <NotValid>/3 Ahem',
+        'normal bold <NotValid>/3 Ahem',
+
+        'oblique bold 1.2em/<NotValid> Ahem',
+        'normal bold 1.2em/<NotValid> Ahem',
+
+        'oblique bold 1.2em/3 <NotValid>',
+        'normal bold 1.2em/3 <NotValid>',
+
+        # <font-weight> <font-style> <font-size>/<line-height> <font-family>
+        '<NotValid> oblique 1.2em/3 Ahem',
+        '<NotValid> normal 1.2em/3 Ahem',
+        '<NotValid> oblique 1.2em/3 Ahem',
+
+        'bold <NotValid> 1.2em/3 Ahem',
+        'bold <NotValid> 1.2em/3 Ahem',
+        'normal <NotValid> 1.2em/3 Ahem',
+
+        'bold oblique <NotValid>/3 Ahem',
+        'bold normal <NotValid>/3 Ahem',
+        'normal oblique <NotValid>/3 Ahem',
+
+        'bold oblique 1.2em/<NotValid> Ahem',
+        'bold normal 1.2em/<NotValid> Ahem',
+        'normal oblique 1.2em/<NotValid> Ahem',
+
+        'bold oblique 1.2em/3 <NotValid>',
+        'bold normal 1.2em/3 <NotValid>',
+        'normal oblique 1.2em/3 <NotValid>',
+
+        # <font-weight> <font-variant> <font-size>/<line-height> <font-family>
+        '<NotValid> small-caps 1.2em/3 Ahem',
+
+        'bold <NotValid> 1.2em/3 Ahem',
+
+        'bold small-caps <NotValid>/3 Ahem',
+
+        'bold small-caps 1.2em/<NotValid> Ahem',
+
+        'bold small-caps 1.2em/3 <NotValid>',
+    ])
+    CASE_3_INVALID = set([
+        # <font-style> <font-size>/<line-height> <font-family>
+        '<NotValid> 1.2em/3 Ahem',
+
+        'oblique <NotValid>/3 Ahem',
+
+        'oblique 1.2em/<NotValid> Ahem',
+
+        'oblique 1.2em/3 <NotValid>',
+
+        # <font-variant> <font-size>/<line-height> <font-family>
+        '<NotValid> 1.2em/3 Ahem',
+
+        'small-caps <NotValid>/3 Ahem',
+
+        'small-caps 1.2em/<NotValid> Ahem',
+
+        'small-caps 1.2em/3 <NotValid>',
+
+        # <font-weight> <font-size>/<line-height> <font-family>
+        '<NotValid> 1.2em/3 Ahem',
+
+        'bold <NotValid>/3 Ahem',
+
+        'bold 1.2em/<NotValid> Ahem',
+
+        'bold 1.2em/3 <NotValid>',
+
+        # <font-style> <font-size> <font-family>
+        '<NotValid> 1.2em Ahem',
+
+        'oblique <NotValid> Ahem',
+
+        'oblique 1.2em <NotValid>',
+
+        # <font-variant> <font-size> <font-family>
+        '<NotValid> 1.2em Ahem',
+
+        'small-caps <NotValid> Ahem',
+
+        'small-caps 1.2em <NotValid>',
+
+        # <font-weight> <font-size> <font-family>
+        '<NotValid> 1.2em Ahem',
+
+        'bold <NotValid> Ahem',
+
+        'bold 1.2em <NotValid>',
+    ])
+    CASE_2_INVALID = set([
+        #  <font-size>/<line-height> <font-family>
+        '<NotValid>/3 Ahem',
+        '1.2em/<NotValid> Ahem, "White Space"',
+        '1.2em/3 <NotValid>, "White Space", serif',
+        '1.2em/3 Ahem, "<NotValid>", serif',
+        '1.2em/3 Ahem, <NotValid>, serif',
+        '1.2em/3 Ahem, "White Space", <NotValid>',
+
+        #  <font-size> <font-family>
+        '<NotValid> Ahem',
+        '1.2em <NotValid>, "White Space"',
+        '1.2em Ahem, "<NotValid>", serif',
+        '1.2em Ahem, <NotValid>, serif',
+        '1.2em Ahem, "White Space", <NotValid>',
+    ])
+    CASE_1_INVALID = set([
+        # <system-font> | inherit
+        'Ahem'
+        '"White Space"'
+        '<NotValid>',
+        '20',
+        20,
+    ])
+    CASE_EXTRAS_INVALID = set([
+        # Space between font-size and line-height
+        'small-caps oblique normal 1.2em /3 Ahem'
+        'small-caps oblique normal 1.2em/ 3 Ahem'
+        'small-caps oblique normal 1.2em / 3 Ahem'
+
+        # Too many parts
+        'normal normal normal normal 12px/12px serif'
+        'normal normal normal normal normal 12px/12px serif'
+
+        # No quotes with spaces
+        'small-caps oblique normal 1.2em/3 Ahem, White Space'
+
+        # No commas
+        'small-caps oblique normal 1.2em/3 Ahem "White Space"'
+    ])
+
+    # Font construction test cases
+    CASE_CONSTRUCT = {
+        # <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
+        'oblique small-caps bold 1.2em/3 Ahem': ('oblique', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'normal small-caps bold 1.2em/3 Ahem': ('normal', 'small-caps', 'bold', '1.2em', '3', ['Ahem']),
+        'oblique normal bold 1.2em/3 Ahem': ('oblique', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'oblique small-caps normal 1.2em/3 Ahem': ('oblique', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'normal small-caps normal 1.2em/3 Ahem': ('normal', 'small-caps', 'normal', '1.2em', '3', ['Ahem']),
+        'oblique normal normal 1.2em/3 Ahem': ('oblique', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        'normal normal bold 1.2em/3 Ahem': ('normal', 'normal', 'bold', '1.2em', '3', ['Ahem']),
+        'normal normal normal 1.2em/3 Ahem': ('normal', 'normal', 'normal', '1.2em', '3', ['Ahem']),
+        'normal normal 900 1.2em/3 Ahem': ('normal', 'normal', '900', '1.2em', '3', ['Ahem']),
+    }
+    CASE_CONSTRUCT_FAMILY = {
+        'Ahem': ['Ahem'],
+        'Ahem, "White Space"': ['Ahem', 'White Space'],
+        'Ahem, "White Space", serif': ['Ahem', 'White Space', 'serif'],
     }
 
+    @staticmethod
+    def tuple_to_font_dict(tup):
+        """Helper to convert a tuple to a font dict to check for valid outputs."""
+        font_dict = {}
+        for idx, key in enumerate(('font_style', 'font_variant', 'font_weight',
+                                 'font_size', 'line_height', 'font_family')):
+            font_dict[key] = tup[idx]
+
+        return font_dict
+
     def test_parse_font_shorthand(self):
-        for case in sorted(self.TEST_CASES):
-            expected_output = self.TEST_CASES[case]
-            font = parse_font(case)
-            self.assertEqual(font, expected_output)
-
-        # Test extra spaces
-        parse_font(r'  normal    normal    normal    12px/12px   serif  ')
-        parse_font(r'  normal    normal    normal    12px/12px     Ahem  ,   serif  ')
-
-        # Test valid single part
-        for part in SYSTEM_FONT_KEYWORDS:
-            parse_font(part)
+        for cases in [self.CASE_5, self.CASE_4, self.CASE_3, self.CASE_2, self.CASE_1, self.CASE_EXTRAS]:
+            for case in sorted(cases):
+                expected_output = self.tuple_to_font_dict(cases[case])
+                font = parse_font(case)
+                self.assertEqual(font, expected_output)
 
     def test_parse_font_shorthand_invalid(self):
-        # This font string has too many parts
-        with self.assertRaises(ValidationError):
-            parse_font(r'normal normal normal normal 12px/12px serif')
+        for cases in [self.CASE_5_INVALID, self.CASE_4_INVALID, self.CASE_3_INVALID, self.CASE_2_INVALID,
+                      self.CASE_1_INVALID, self.CASE_EXTRAS_INVALID]:
+            for case in cases:
+                with self.assertRaises(ValueError):
+                    parse_font(case)
 
-        # This invalid single part
-        for part in ['normal', 'foobar']:
-            with self.assertRaises(ValidationError):
-                parse_font(part)
+    def test_construct_font_shorthand(self):
+        for expected_output, tup in sorted(self.CASE_CONSTRUCT.items()):
+            case = self.tuple_to_font_dict(tup)
+            font = construct_font(case)
+            self.assertEqual(font, expected_output)
 
-    def test_parse_font_part(self):
-        pass
-        #  - <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
-        #  - <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
-
-    def test_parse_font(self):
-        pass
-        # 5 parts with line height
-        #  - <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
-        #  - <font-style> <font-weight> <font-variant> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-weight> <font-style> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-style> <font-weight> <font-size>/<line-height> <font-family>
-        #  - <font-weight> <font-style> <font-variant> <font-size>/<line-height> <font-family>
-        #  - <font-weight> <font-variant> <font-style> <font-size>/<line-height> <font-family>
-
-        # 5 parts
-        #  - <font-style> <font-variant> <font-weight> <font-size> <font-family>
-        #  - <font-style> <font-weight> <font-variant> <font-size> <font-family>
-        #  - <font-variant> <font-weight> <font-style> <font-size> <font-family>
-        #  - <font-variant> <font-style> <font-weight> <font-size> <font-family>
-        #  - <font-weight> <font-style> <font-variant> <font-size> <font-family>
-        #  - <font-weight> <font-variant> <font-style> <font-size> <font-family>
-
-        # 4 parts with height
-        #  - <font-style> <font-variant> <font-size>/<line-height> <font-family>
-        #  - <font-style> <font-weight> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-weight> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-style> <font-size>/<line-height> <font-family>
-        #  - <font-weight> <font-style> <font-size>/<line-height> <font-family>
-        #  - <font-weight> <font-variant> <font-size>/<line-height> <font-family>
-
-        # 4 parts
-        #  - <font-style> <font-variant> <font-size> <font-family>
-        #  - <font-style> <font-weight> <font-size> <font-family>
-        #  - <font-variant> <font-weight> <font-size> <font-family>
-        #  - <font-variant> <font-style> <font-size> <font-family>
-        #  - <font-weight> <font-style> <font-size> <font-family>
-        #  - <font-weight> <font-variant> <font-size> <font-family>
-
-        # 3 parts with height
-        #  - <font-style> <font-size>/<line-height> <font-family>
-        #  - <font-variant> <font-size>/<line-height> <font-family>
-        #  - <font-weight> <font-size>/<line-height> <font-family>
-
-        # 3 parts with height
-        #  - <font-style> <font-size> <font-family>
-        #  - <font-variant> <font-size> <font-family>
-        #  - <font-weight> <font-size> <font-family>
-
-        # 2 parts with height
-        #  - <font-size>/<line-height> <font-family>
-
-        # 2 parts
-        #  - <font-size> <font-family>
-
-        # 1 part
+    def test_construct_font_family(self):
+        for expected_output, case in sorted(self.CASE_CONSTRUCT_FAMILY.items()):
+            font_family = construct_font_family(case)
+            self.assertEqual(font_family, expected_output)

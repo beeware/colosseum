@@ -120,8 +120,11 @@ def is_font_family(value):
     """
     from .constants import GENERIC_FAMILY_FONTS as generic_family
     font_database = fonts.FontDatabase
+
+    # Remove extra outer spaces
     font_value = ' '.join(value.strip().split())
     values = [v.strip() for v in font_value.split(',')]
+
     checked_values = []
     for val in values:
         # Remove extra inner spaces
@@ -129,18 +132,17 @@ def is_font_family(value):
         val = val.replace(' "', '"')
         val = val.replace("' ", "'")
         val = val.replace(" '", "'")
-
         if (val.startswith('"') and val.endswith('"')
                 or val.startswith("'") and val.endswith("'")):
             try:
                 no_quotes_val = ast.literal_eval(val)
-                checked_values.append(val)
             except ValueError:
                 raise exceptions.ValidationError
 
             if not font_database.validate_font_family(no_quotes_val):
                 raise exceptions.ValidationError('Font family "{font_value}"'
                                                  ' not found on system!'.format(font_value=no_quotes_val))
+            checked_values.append(no_quotes_val)
         elif val in generic_family:
             checked_values.append(val)
         else:
@@ -156,7 +158,7 @@ def is_font_family(value):
         invalid = set(values) - set(checked_values)
         error_msg = 'Invalid font string "{invalid}"'.format(invalid=invalid)
         raise exceptions.ValidationError(error_msg)
-
+        
     return checked_values
 
 

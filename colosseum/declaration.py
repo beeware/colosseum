@@ -17,7 +17,7 @@ from .constants import (  # noqa
     default,
 )
 from .exceptions import ValidationError
-from .parser import construct_font, parse_font
+from .parser import construct_font, construct_font_family, parse_font
 
 _CSS_PROPERTIES = set()
 
@@ -41,8 +41,9 @@ def validated_font_property(name, initial):
 
         for property_name, property_value in font.items():
             setattr(self, property_name, property_value)
-            self.dirty = True
+
         setattr(self, '_%s' % name, value)
+        self.dirty = True
 
     def deleter(self):
         try:
@@ -64,20 +65,36 @@ def validated_font_property(name, initial):
     return property(getter, setter, deleter)
 
 
-def validated_list_property(name, choices, initial, separator=','):
+def validated_list_property(name, choices, initial, separator=',', add_quotes=False):
     """Define a property holding a list values."""
     if not isinstance(initial, list):
         raise ValueError('Initial value must be a list!')
+
+    def _add_quotes(values):
+        """Add quotes to items that contain spaces."""
+        quoted_values = []
+        for value in values:
+            if ' ' in value:
+                value = '"{value}"'.format(value=value)
+            quoted_values.append(value)
+
+        return quoted_values
 
     def getter(self):
         return getattr(self, '_%s' % name, initial).copy()
 
     def setter(self, value):
         if not isinstance(value, str):
+            if add_quotes:
+                value = _add_quotes(value)
             value = separator.join(value)
         try:
-            # This should be a list of values
+            # The validator must validate all the values at once
+            # because the order of parameters might be important.
             values = choices.validate(value)
+
+            # The validator must return a list
+            assert isinstance(values, list)
         except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
@@ -360,7 +377,8 @@ class CSS:
 
     # 15. Fonts ##########################################################
     # 15.3 Font family
-    font_family = validated_list_property('font_family', choices=FONT_FAMILY_CHOICES, initial=[INITIAL])
+    font_family = validated_list_property('font_family', choices=FONT_FAMILY_CHOICES, initial=[INITIAL],
+                                          add_quotes=True)
 
     # 15.4 Font Styling
     font_style = validated_property('font_style', choices=FONT_STYLE_CHOICES, initial=NORMAL)
@@ -589,7 +607,16 @@ class CSS:
         non_default = []
         for name in _CSS_PROPERTIES:
             if name == 'font':
-                non_default.append((name, construct_font(getattr(self, name))))
+                try:
+                    if getattr(self, '_%s' % name, None):
+                        non_default.append((name, construct_font(getattr(self, name))))
+                except AttributeError:
+                    pass
+            elif name == 'font_family':
+                try:
+                    non_default.append((name.replace('_', '-'), construct_font_family(getattr(self, '_%s' % name))))
+                except AttributeError:
+                    pass
             else:
                 try:
                     non_default.append((

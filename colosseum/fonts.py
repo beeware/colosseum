@@ -16,6 +16,10 @@ class FontDatabase:
     _FONTS_CACHE = {}
 
     @classmethod
+    def clear_cache(cls):
+        cls._FONTS_CACHE = {}
+
+    @classmethod
     def validate_font_family(cls, value):
         """Validate a font family with the system found fonts."""
         if value in cls._FONTS_CACHE:
@@ -128,10 +132,10 @@ def check_font_family(value):
 
 def get_system_font(keyword):
     """Return a font object from given system font keyword."""
-    from .constants import SYSTEM_FONT_KEYWORDS  # noqa
+    from .constants import INITIAL_FONT_VALUES, SYSTEM_FONT_KEYWORDS  # noqa
 
     if keyword in SYSTEM_FONT_KEYWORDS:
         # TODO: Get the system font that corresponds
-        return 'Ahem'
+        return INITIAL_FONT_VALUES.copy()
 
     return None

@@ -47,6 +47,10 @@ class FontTests(TestCase):
         self.assertEqual(is_font_family('Ahem, serif'), ['Ahem', 'serif'])
         self.assertEqual(is_font_family("Ahem,fantasy"), ["Ahem", 'fantasy'])
         self.assertEqual(is_font_family("  Ahem   ,    fantasy  "), ["Ahem", 'fantasy'])
+        self.assertEqual(is_font_family("Ahem,'White Space'"), ["Ahem", 'White Space'])
+        self.assertEqual(is_font_family("Ahem, 'White Space'"), ["Ahem", 'White Space'])
+        self.assertEqual(is_font_family("  Ahem   ,    ' White Space '  "), ["Ahem", 'White Space'])
+        self.assertEqual(is_font_family("  Ahem   ,    \" White Space \"  "), ["Ahem", 'White Space'])
 
     def test_font_family_name_invalid(self):
         invalid_cases = [
@@ -57,6 +61,7 @@ class FontTests(TestCase):
             '#POUND, sans-serif',
             'Hawaii 5-0, sans-serif',
             '123',
+            'ThisIsDefintelyNotAFont'
         ]
         for case in invalid_cases:
             with self.assertRaises(ValidationError):
