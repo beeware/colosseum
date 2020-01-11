@@ -187,7 +187,6 @@ def parse_font(string):
 
     # Remove extra spaces
     string = ' '.join(str(string).strip().split())
-    print('\n' + string)
     parts = string.split(' ', 1)
     if len(parts) == 1:
         # If font is specified as a system keyword, it must be one of:
@@ -221,7 +220,6 @@ def parse_font(string):
             value = parts[0]
             try:
                 font_dict, is_font_size = _parse_font_property_part(value, font_dict)
-                print(old_is_font_size, is_font_size, font_dict)
                 if is_font_size is False and old_is_font_size:
                     raise ValueError('TODO')
                 old_is_font_size = is_font_size
