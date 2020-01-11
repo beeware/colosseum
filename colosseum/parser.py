@@ -1,5 +1,3 @@
-import ast
-
 from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .fonts import get_system_font
@@ -151,7 +149,6 @@ def _parse_font_property_part(value, font_dict):
             except (ValidationError, ValueError):
                 pass
 
-        
         if '/' in value:
             # Maybe it is a font size with line height
             font_dict['font_size'], font_dict['line_height'] = value.split('/')

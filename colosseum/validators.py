@@ -158,7 +158,7 @@ def is_font_family(value):
         invalid = set(values) - set(checked_values)
         error_msg = 'Invalid font string "{invalid}"'.format(invalid=invalid)
         raise exceptions.ValidationError(error_msg)
-        
+
     return checked_values
 
 

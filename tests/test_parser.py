@@ -2,8 +2,6 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
-from colosseum.constants import SYSTEM_FONT_KEYWORDS
-from colosseum.exceptions import ValidationError
 from colosseum.parser import construct_font, construct_font_family, parse_font
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
@@ -675,8 +673,8 @@ class ParseFontTests(ColosseumTestCase):
     def tuple_to_font_dict(tup):
         """Helper to convert a tuple to a font dict to check for valid outputs."""
         font_dict = {}
-        for idx, key in enumerate(('font_style', 'font_variant', 'font_weight',
-                                 'font_size', 'line_height', 'font_family')):
+        for idx, key in enumerate(['font_style', 'font_variant', 'font_weight',
+                                   'font_size', 'line_height', 'font_family']):
             font_dict[key] = tup[idx]
 
         return font_dict

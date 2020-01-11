@@ -839,7 +839,7 @@ class CssDeclarationTests(ColosseumTestCase):
         node.style.font_variant = 'small-caps'
         node.style.font_size = '10px'
         node.style.line_height = '1.5'
-        node.style.font_family =  ['White Space', 'serif']
+        node.style.font_family = ['White Space', 'serif']
         expected_font = {
             'font_style': 'italic',
             'font_weight': 'bold',
