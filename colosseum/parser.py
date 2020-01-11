@@ -221,7 +221,8 @@ def parse_font(string):
             try:
                 font_dict, is_font_size = _parse_font_property_part(value, font_dict)
                 if is_font_size is False and old_is_font_size:
-                    raise ValueError('TODO')
+                    raise ValueError('Font property shorthand does not follow the correct order!'
+                                     '<font-style> or <font-variant> or <font-weight> must come before <font-size>')
                 old_is_font_size = is_font_size
                 parts = parts[-1].split(' ', 1)
             except ValidationError:

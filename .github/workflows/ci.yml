@@ -25,7 +25,7 @@ jobs:
         beefore --username github-actions --repository ${{ github.repository }} --pull-request ${{ github.event.number }} --commit ${{ github.event.pull_request.head.sha }} ${{ matrix.task }} .
 
   smoke:
-    name: Smoke test (Linux)
+    name: Smoke test (Linux) (3.7)
     needs: beefore
     runs-on: ubuntu-latest
     steps:
