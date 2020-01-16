@@ -11,7 +11,7 @@ from colosseum.units import percent, px
 from colosseum.validators import (
     is_color, is_integer, is_length, is_number, is_percentage,
 )
-from colosseum.wrappers import FontFamily, FontShorthand, ImmutableList
+from colosseum.wrappers import FontFamily, FontShorthand
 
 from .utils import ColosseumTestCase, TestNode
 
@@ -800,7 +800,7 @@ class CssDeclarationTests(ColosseumTestCase):
 
         # Check type
         self.assertTrue(isinstance(node.style.font_family, FontFamily))
-        
+
         # Check Initial values
         self.assertEqual(node.style.font_family, FontFamily([INITIAL]))
 

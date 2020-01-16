@@ -6,11 +6,10 @@ from colosseum import parser
 from colosseum.colors import hsl, rgb
 from colosseum.constants import INITIAL_FONT_VALUES
 from colosseum.parser import parse_font
-from colosseum.wrappers import FontFamily, FontShorthand
+from colosseum.wrappers import FontFamily
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
 )
-from .utils import ColosseumTestCase
 
 
 class ParseUnitTests(TestCase):

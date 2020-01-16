@@ -110,23 +110,35 @@ class FontShorthandTests(TestCase):
         # Check initial
         font = FontShorthand()
         self.assertEqual(str(font), 'normal normal normal medium/normal initial')
-        self.assertEqual(repr(font), ("FontShorthand(font_style='normal', font_variant='normal', font_weight='normal', "
-                                      "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))"))
+        self.assertEqual(
+            repr(font),
+            ("FontShorthand(font_style='normal', font_variant='normal', font_weight='normal', "
+             "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))")
+        )
 
         font = FontShorthand(font_weight='bold')
         self.assertEqual(str(font), 'normal normal bold medium/normal initial')
-        self.assertEqual(repr(font), ("FontShorthand(font_style='normal', font_variant='normal', font_weight='bold', "
-                                      "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))"))
+        self.assertEqual(
+            repr(font),
+            ("FontShorthand(font_style='normal', font_variant='normal', font_weight='bold', "
+             "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))")
+        )
 
         font = FontShorthand(font_variant='small-caps')
         self.assertEqual(str(font), 'normal small-caps normal medium/normal initial')
-        self.assertEqual(repr(font), ("FontShorthand(font_style='normal', font_variant='small-caps', font_weight='normal', "
-                                      "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))"))
+        self.assertEqual(
+            repr(font),
+            ("FontShorthand(font_style='normal', font_variant='small-caps', font_weight='normal', "
+             "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))")
+        )
 
         font = FontShorthand(font_style='oblique')
         self.assertEqual(str(font), 'oblique normal normal medium/normal initial')
-        self.assertEqual(repr(font), ("FontShorthand(font_style='oblique', font_variant='normal', font_weight='normal', "
-                                      "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))"))
+        self.assertEqual(
+            repr(font),
+            ("FontShorthand(font_style='oblique', font_variant='normal', font_weight='normal', "
+             "font_size='medium', line_height='normal', font_family=FontFamily(['initial']))")
+        )
         # Check invalid key
         with self.assertRaises(KeyError):
             font['invalid-key'] = 2
