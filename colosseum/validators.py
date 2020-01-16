@@ -119,7 +119,7 @@ def is_font_family(value):
     This validator returns a list.
     """
     from .constants import GENERIC_FAMILY_FONTS as generic_family
-    font_database = fonts.FontDatabase
+    FontDatabase = fonts.FontDatabase
 
     # Remove extra outer spaces
     font_value = ' '.join(value.strip().split())
@@ -139,7 +139,7 @@ def is_font_family(value):
             except ValueError:
                 raise exceptions.ValidationError
 
-            if not font_database.validate_font_family(no_quotes_val):
+            if not FontDatabase.validate_font_family(no_quotes_val):
                 raise exceptions.ValidationError('Font family "{font_value}"'
                                                  ' not found on system!'.format(font_value=no_quotes_val))
             checked_values.append(no_quotes_val)
@@ -148,7 +148,7 @@ def is_font_family(value):
         else:
             error_msg = 'Font family "{font_value}" not found on system!'.format(font_value=val)
             if _CSS_IDENTIFIER_RE.match(val):
-                if not font_database.validate_font_family(val):
+                if not FontDatabase.validate_font_family(val):
                     raise exceptions.ValidationError(error_msg)
                 checked_values.append(val)
             else:

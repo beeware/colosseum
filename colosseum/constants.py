@@ -1,5 +1,6 @@
 from .exceptions import ValidationError
 from .validators import is_color, is_font_family, is_integer, is_length, is_number, is_percentage
+from .wrappers import FontFamily
 
 
 class Choices:
@@ -443,7 +444,7 @@ INITIAL_FONT_VALUES = {
     'font_weight': NORMAL,
     'font_size': MEDIUM,
     'line_height': NORMAL,
-    'font_family': [INITIAL],  # TODO: Depends on user agent. What to use?
+    'font_family': FontFamily([INITIAL]),  # TODO: Depends on user agent. What to use?
 }
 
 ######################################################################

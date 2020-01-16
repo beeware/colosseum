@@ -2,6 +2,7 @@ from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .fonts import get_system_font
 from .units import Unit, px
+from .wrappers import FontFamily
 
 
 def units(value):
@@ -134,20 +135,42 @@ def color(value):
 # Font handling
 ##############################################################################
 def _parse_font_property_part(value, font_dict):
-    """Parse font shorthand property part for known properties."""
+    """
+    Parse font shorthand property part for known properties.
+
+    `value` corresponds to a piece (or part) of a font shorthand property that can
+    look like:
+     - '<font-style> <font-variant> <font-weight> <font-size>/<line-height> ...
+     - '<font-size>/<line-height> ...'
+     - '<font-weight> <font-style> <font-size>/<line-height> ...'
+     - ...
+
+    Each part can then correspond to one of these values:
+    <font-style>, <font-variant>, <font-weight>, <font-size>/<line-height>
+
+    The `font_dict` keeps track fo parts that have been already parse so that we
+    can check that a part is duplicated like:
+     - '<font-style> <font-style> <font-size>/<line-height>'
+    """
     from .constants import (FONT_SIZE_CHOICES, FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
                             FONT_WEIGHT_CHOICES, LINE_HEIGHT_CHOICES, NORMAL)
-    font_dict = font_dict.copy()
     if value != NORMAL:
         for property_name, choices in {'font_variant': FONT_VARIANT_CHOICES,
                                        'font_weight': FONT_WEIGHT_CHOICES,
                                        'font_style': FONT_STYLE_CHOICES}.items():
             try:
                 value = choices.validate(value)
-                font_dict[property_name] = value
-                return font_dict, False
             except (ValidationError, ValueError):
-                pass
+                continue
+
+            # If a property has been already parsed, finding the same property is an error
+            if property_name in font_dict:
+                raise ValueError('Font value "{value}" includes several "{property_name}" values!'
+                                 ''.format(value=value, property_name=property_name))
+
+            font_dict[property_name] = value
+
+            return font_dict, False
 
         if '/' in value:
             # Maybe it is a font size with line height
@@ -183,7 +206,6 @@ def parse_font(string):
     - https://developer.mozilla.org/en-US/docs/Web/CSS/font
     """
     from .constants import INHERIT, INITIAL_FONT_VALUES, SYSTEM_FONT_KEYWORDS, FONT_FAMILY_CHOICES  # noqa
-    font_dict = INITIAL_FONT_VALUES.copy()
 
     # Remove extra spaces
     string = ' '.join(str(string).strip().split())
@@ -212,17 +234,20 @@ def parse_font(string):
         #  - line-height must immediately follow font-size, preceded by "/", like this: "16px/3"
         #  - font-family must be the last value specified.
 
+        # Need to check that some properties come after font-size
+        old_is_font_size = False
+        font_dict = {}
+
         # We iteratively split by the first left hand space found and try to validate if that part
         # is a valid <font-style> or <font-variant> or <font-weight> (which can come in any order)
         # or <font-size>/<line-height> (which has to come after all the other properties)
-        old_is_font_size = False  # Need to check that some properties come after font-size
         for _ in range(5):
             value = parts[0]
             try:
                 font_dict, is_font_size = _parse_font_property_part(value, font_dict)
                 if is_font_size is False and old_is_font_size:
                     raise ValueError('Font property shorthand does not follow the correct order!'
-                                     '<font-style> or <font-variant> or <font-weight> must come before <font-size>')
+                                     '<font-style>, <font-variant> and <font-weight> must come before <font-size>')
                 old_is_font_size = is_font_size
                 parts = parts[-1].split(' ', 1)
             except ValidationError:
@@ -233,28 +258,9 @@ def parse_font(string):
             raise ValueError('Font property shorthand contains too many parts!')
 
         value = ' '.join(parts)
-        font_dict['font_family'] = FONT_FAMILY_CHOICES.validate(value)
+        font_dict['font_family'] = FontFamily(FONT_FAMILY_CHOICES.validate(value))
 
-    return font_dict
+    full_font_dict = INITIAL_FONT_VALUES.copy()
+    full_font_dict.update(font_dict)
 
-
-def construct_font(font_dict):
-    """Construct font property string from a dictionary of font properties."""
-    font_dict_copy = font_dict.copy()
-    font_dict_copy['font_family'] = construct_font_family(font_dict_copy['font_family'])
-
-    return ('{font_style} {font_variant} {font_weight} '
-            '{font_size}/{line_height} {font_family}').format(**font_dict_copy)
-
-
-def construct_font_family(font_family):
-    """Construct a font family property from a list of font families."""
-    assert isinstance(font_family, list)
-    checked_font_family = []
-    for family in font_family:
-        if ' ' in family:
-            family = '"{value}"'.format(value=family)
-
-        checked_font_family.append(family)
-
-    return ', '.join(checked_font_family)
+    return full_font_dict

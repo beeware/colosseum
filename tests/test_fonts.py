@@ -1,5 +1,6 @@
+from colosseum.constants import INITIAL_FONT_VALUES, SYSTEM_FONT_KEYWORDS
+from colosseum.exceptions import ValidationError
 from colosseum.fonts import FontDatabase, get_system_font
-from colosseum.constants import INITIAL_FONT_VALUES
 
 from .utils import ColosseumTestCase
 
@@ -24,5 +25,10 @@ class ParseFontTests(ColosseumTestCase):
         self.assertTrue(bool(FontDatabase.fonts_path(system=True)))
         self.assertTrue(bool(FontDatabase.fonts_path(system=False)))
 
+        # Check invalid
+        with self.assertRaises(ValidationError):
+            FontDatabase.validate_font_family('IAmDefinitelyNotAFontFamilyName')
+
     def test_get_system_font(self):
-        self.assertEqual(get_system_font('status-bar'), INITIAL_FONT_VALUES)
+        for keyword in SYSTEM_FONT_KEYWORDS:
+            self.assertEqual(get_system_font(keyword), INITIAL_FONT_VALUES)

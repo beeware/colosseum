@@ -156,8 +156,8 @@ def output_layout(layout, depth=1):
         return ('  ' * depth + "* '{text}'\n".format(text=layout['text'].strip()))
 
 
-def copy_fonts(system=False):
-    """Copy needed files for running tests."""
+def install_fonts(system=False):
+    """Install needed files for running tests."""
     fonts_folder = FontDatabase.fonts_path(system=system)
 
     if not os.path.isdir(fonts_folder):
@@ -171,9 +171,9 @@ def copy_fonts(system=False):
 
         if not os.path.isfile(font_file_path):
             shutil.copyfile(font_file_data_path, font_file_path)
-        # Register font
 
         if os.name == 'nt':
+            # Register font
             import winreg  # noqa
             base_key = winreg.HKEY_LOCAL_MACHINE if system else winreg.HKEY_CURRENT_USER
             key_path = r"Software\Microsoft\Windows NT\CurrentVersion\Fonts"
@@ -209,10 +209,10 @@ class ColosseumTestCase(TestCase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self._FONTS_ACTIVE is False:
-            self.copy_fonts()
+            self.install_fonts()
 
-    def copy_fonts(self):
-        copy_fonts()
+    def install_fonts(self):
+        install_fonts()
 
         try:
             FontDatabase.validate_font_family('Ahem')
@@ -475,4 +475,4 @@ if __name__ == '__main__':
     if sys.platform.startswith('linux'):
         system = False
     print('Copying test fonts to "{path}"...'.format(path=FontDatabase.fonts_path(system=system)))
-    copy_fonts(system=system)
+    install_fonts(system=system)

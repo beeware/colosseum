@@ -25,8 +25,9 @@ class FontDatabase:
         if value in cls._FONTS_CACHE:
             return value
         else:
-            if check_font_family(value):
-                # TODO: to be filled with a font properties instance
+            font_exists = check_font_family(value)
+            if font_exists:
+                # TODO: to be filled with a cross-platform font properties instance
                 cls._FONTS_CACHE[value] = None
                 return value
 
@@ -35,7 +36,7 @@ class FontDatabase:
     @staticmethod
     def fonts_path(system=False):
         """Return the path for cross platform user fonts."""
-        if os.name == 'nt':
+        if sys.platform == 'win32':
             import winreg
             if system:
                 fonts_dir = os.path.join(winreg.ExpandEnvironmentStrings(r'%windir%'), 'Fonts')
@@ -59,38 +60,34 @@ class FontDatabase:
 
 
 def _check_font_family_mac(value):
-    """List available font family names on mac."""
+    """Get font by family name and size on mac."""
     from ctypes import cdll, util
     from rubicon.objc import ObjCClass
     appkit = cdll.LoadLibrary(util.find_library('AppKit'))  # noqa
-    NSFontManager = ObjCClass("NSFontManager")
-    NSFontManager.declare_class_property('sharedFontManager')
-    NSFontManager.declare_property("availableFontFamilies")
-    manager = NSFontManager.sharedFontManager
-    for item in manager.availableFontFamilies:
-        font_name = str(item)
-        if font_name == value:
-            return True
-
-    return False
+    NSFont = ObjCClass('NSFont')
+    return bool(NSFont.fontWithName(value, size=0))  # size=0 returns defautl size
 
 
 def _check_font_family_linux(value):
     """List available font family names on linux."""
     import gi  # noqa
     gi.require_version("Gtk", "3.0")
+    gi.require_version("Pango", "1.0")
     from gi.repository import Gtk  # noqa
+    from gi.repository import Pango  # noqa
 
     class Window(Gtk.Window):
         """Use Pango to get system fonts names."""
 
-        def check_system_font(self, value):
-            """Check if font family exists on system."""
+        def get_font(self, value):
+            """Get font from the system."""
             context = self.create_pango_context()
-            for font_family in context.list_families():
-                font_name = font_family.get_name()
-                if font_name == value:
-                    return True
+            font = context.load_font(Pango.FontDescription(value))
+
+            # Pango always loads something close to the requested so we need to check
+            # the actual loaded font is the requested one.
+            if font.describe().to_string().startswith(value):
+                return True  # TODO: Wrap on a font cross platform wrapper
 
             return False
 
@@ -104,18 +101,20 @@ def _check_font_family_linux(value):
 def _check_font_family_win(value):
     """List available font family names on windows."""
     import winreg  # noqa
-    for base in [winreg.HKEY_LOCAL_MACHINE, winreg.HKEY_CURRENT_USER]:
-        key = winreg.OpenKey(base,
-                             r"Software\Microsoft\Windows NT\CurrentVersion\Fonts",
-                             0,
-                             winreg.KEY_READ)
-        for idx in range(0, winreg.QueryInfoKey(key)[1]):
-            font_name = winreg.EnumValue(key, idx)[0]
-            font_name = font_name.replace(' (TrueType)', '')
-            if font_name == value:
-                return True
 
-    return False
+    font_name = value + ' (TrueType)'  # TODO: check other options
+    font = False
+    key_path = r"Software\Microsoft\Windows NT\CurrentVersion\Fonts"
+    for base in [winreg.HKEY_LOCAL_MACHINE, winreg.HKEY_CURRENT_USER]:
+        with winreg.OpenKey(base, key_path, 0, winreg.KEY_READ) as reg_key:
+            try:
+                # Query if it exists
+                font = winreg.QueryValueEx(reg_key, font_name)
+                return True
+            except FileNotFoundError:
+                pass
+
+    return font
 
 
 def check_font_family(value):
@@ -124,7 +123,7 @@ def check_font_family(value):
         return _check_font_family_mac(value)
     elif sys.platform.startswith('linux'):
         return _check_font_family_linux(value)
-    elif os.name == 'nt':
+    elif sys.platform == 'win32':
         return _check_font_family_win(value)
     else:
         raise NotImplementedError('Cannot check font existence on this system!')

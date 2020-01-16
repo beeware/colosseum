@@ -1,3 +1,5 @@
+import collections
+
 from . import engine as css_engine
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
@@ -9,33 +11,33 @@ from .constants import (  # noqa
     FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES, FONT_WEIGHT_CHOICES,
     GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
     GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INITIAL, INITIAL_FONT_VALUES, INLINE, JUSTIFY_CONTENT_CHOICES,
-    LINE_HEIGHT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM,
-    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
-    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH, TRANSPARENT,
-    UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE, Z_INDEX_CHOICES,
-    default,
+    INITIAL, INLINE, JUSTIFY_CONTENT_CHOICES, LINE_HEIGHT_CHOICES, LTR,
+    MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL, NOWRAP,
+    ORDER_CHOICES, PADDING_CHOICES, POSITION_CHOICES, ROW, SIZE_CHOICES,
+    STATIC, STRETCH, TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES,
+    VISIBLE, Z_INDEX_CHOICES, default,
 )
 from .exceptions import ValidationError
-from .parser import construct_font, construct_font_family, parse_font
+from .parser import parse_font
+from .wrappers import FontFamily, FontShorthand
 
 _CSS_PROPERTIES = set()
 
 
 def validated_font_property(name, initial):
     """Define the shorthand CSS font property."""
-    assert isinstance(initial, dict)
+    assert isinstance(initial, FontShorthand)
     initial = initial.copy()
 
     def getter(self):
         font = initial.copy()
-        for property_name in font:
+        for property_name in font.keys():
             font[property_name] = getattr(self, property_name)
         return font
 
     def setter(self, value):
         try:
-            font = parse_font(value)
+            font = FontShorthand(**parse_font(value))
         except ValidationError:
             raise ValueError("Invalid value '%s' for CSS property '%s'!" % (value, name))
 
@@ -53,7 +55,7 @@ def validated_font_property(name, initial):
             # Attribute doesn't exist
             pass
 
-        for property_name in INITIAL_FONT_VALUES:
+        for property_name in initial:
             try:
                 delattr(self, property_name)
                 self.dirty = True
@@ -67,8 +69,6 @@ def validated_font_property(name, initial):
 
 def validated_list_property(name, choices, initial, separator=',', add_quotes=False):
     """Define a property holding a list values."""
-    if not isinstance(initial, list):
-        raise ValueError('Initial value must be a list!')
 
     def _add_quotes(values):
         """Add quotes to items that contain spaces."""
@@ -82,15 +82,21 @@ def validated_list_property(name, choices, initial, separator=',', add_quotes=Fa
         return quoted_values
 
     def getter(self):
-        return getattr(self, '_%s' % name, initial).copy()
+        # We return an immutable list subclass
+        return getattr(self, '_%s' % name, initial)
 
     def setter(self, value):
-        if not isinstance(value, str):
+        if isinstance(value, collections.Sequence) and not isinstance(value, str):
             if add_quotes:
                 value = _add_quotes(value)
             value = separator.join(value)
+        elif isinstance(value, str):
+            pass
+        else:
+            raise ValueError('Invalid value for CSS property!')
+
         try:
-            # The validator must validate all the values at once
+            # The validator must validate the string version (all values at once)
             # because the order of parameters might be important.
             values = choices.validate(value)
 
@@ -101,11 +107,9 @@ def validated_list_property(name, choices, initial, separator=',', add_quotes=Fa
                 value, name, choices
             ))
 
-        if not isinstance(values, list):
-            values.split(separator)
-
-        if values != getattr(self, '_%s' % name, initial):
-            setattr(self, '_%s' % name, values[:])
+        if values != getattr(self, '_%s' % name, list(initial)):
+            # We use the initial type to make an instance with the set values
+            setattr(self, '_%s' % name, initial.__class__(values))
             self.dirty = True
 
     def deleter(self):
@@ -378,7 +382,7 @@ class CSS:
 
     # 15. Fonts ##########################################################
     # 15.3 Font family
-    font_family = validated_list_property('font_family', choices=FONT_FAMILY_CHOICES, initial=[INITIAL],
+    font_family = validated_list_property('font_family', choices=FONT_FAMILY_CHOICES, initial=FontFamily([INITIAL]),
                                           add_quotes=True)
 
     # 15.4 Font Styling
@@ -394,7 +398,7 @@ class CSS:
     font_size = validated_property('font_size', choices=FONT_SIZE_CHOICES, initial=MEDIUM)
 
     # 15.8 Shorthand font property
-    font = validated_font_property('font', initial=INITIAL_FONT_VALUES)
+    font = validated_font_property('font', initial=FontShorthand())
 
     # 16. Text ###########################################################
     # 16.1 Indentation
@@ -606,16 +610,18 @@ class CSS:
     ######################################################################
     def __str__(self):
         non_default = []
+
+        # Other shorthand properties have to be included here
+        shorthand_properties = ['border', 'border_top', 'border_right', 'border_bottom', 'border_left', 'font']
+
         for name in _CSS_PROPERTIES:
-            if name == 'font':
+            # Shorthand values are constructed on demand since they depend on
+            # other properties, we have to use getattr(self, name) instead of
+            # getattr(self, '_%s' % name)
+            if name in shorthand_properties:
                 try:
                     if getattr(self, '_%s' % name, None):
-                        non_default.append((name, construct_font(getattr(self, name))))
-                except AttributeError:
-                    pass
-            elif name == 'font_family':
-                try:
-                    non_default.append((name.replace('_', '-'), construct_font_family(getattr(self, '_%s' % name))))
+                        non_default.append((name, getattr(self, name)))
                 except AttributeError:
                     pass
             else:
