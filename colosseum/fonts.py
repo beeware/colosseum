@@ -95,7 +95,7 @@ def _check_font_family_linux(value):
     if _GTK_WINDOW is None:
         _GTK_WINDOW = Window()
 
-    return _GTK_WINDOW.check_system_font(value)
+    return _GTK_WINDOW.get_font(value)
 
 
 def _check_font_family_win(value):
