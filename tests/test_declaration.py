@@ -434,6 +434,47 @@ class CssDeclarationTests(TestCase):
         self.assertIs(node.style.display, INLINE)
         self.assertTrue(node.style.dirty)
 
+    def test_property_with_storage_class(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Initial value
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(0px)')
+        self.assertEqual(str(node.style.border_spacing), '0px')
+
+        # Text value
+        node.style.border_spacing = 'inherit'
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing("inherit")')
+        self.assertEqual(str(node.style.border_spacing), 'inherit')
+
+        # Tuple
+        node.style.border_spacing = (1, 2)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+
+        # String with two values
+        node.style.border_spacing = '1 2'
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+
+        # String with one value
+        node.style.border_spacing = '1'
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px)')
+        self.assertEqual(str(node.style.border_spacing), '1px')
+        self.assertEqual(node.style.border_spacing.vertical, 1 * px)
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+
+        # Check error
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = 'a'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = '1 2 3'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = 1, 2, 3
+
     def test_directional_property(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None

@@ -12,9 +12,15 @@ from .constants import (  # noqa
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
     POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
+    Z_INDEX_CHOICES, default,
     Z_INDEX_CHOICES, PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_AFTER_CHOICES,
     PAGE_BREAK_INSIDE_CHOICES, ORPHANS_CHOICES, WIDOWS_CHOICES, default,
+    Z_INDEX_CHOICES, TOP, SEPARATE, SHOW, CAPTION_SIDE_CHOICES,
+    TABLE_LAYOUT_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_SPACING_CHOICES,
+    EMPTY_CELLS_CHOICES, default,
 )
+from .wrappers import BorderSpacing
+
 
 _CSS_PROPERTIES = set()
 
@@ -43,9 +49,12 @@ def unvalidated_property(name, choices, initial):
     return property(getter, setter, deleter)
 
 
-def validated_property(name, choices, initial):
+def validated_property(name, choices, initial, storage_class=None):
     "Define a simple CSS property attribute."
     initial = choices.validate(initial)
+
+    if storage_class is not None:
+        initial = storage_class(initial)
 
     def getter(self):
         return getattr(self, '_%s' % name, initial)
@@ -53,6 +62,10 @@ def validated_property(name, choices, initial):
     def setter(self, value):
         try:
             value = choices.validate(value)
+
+            if storage_class is not None:
+                value = storage_class(value)
+
         except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
@@ -316,15 +329,16 @@ class CSS:
 
     # 17. Tables #########################################################
     # 17.4.1 Caption position and alignment
-    # caption_side
+    caption_side = validated_property('caption_side', choices=CAPTION_SIDE_CHOICES, initial=TOP)
 
     # 17.5.2 Table width algorithms
-    # table_layout
+    table_layout = validated_property('table_layout', choices=TABLE_LAYOUT_CHOICES, initial=AUTO)
 
     # 17.6 Borders
-    # border_collapse
-    # border_spacing
-    # empty_cells
+    border_collapse = validated_property('border_collapse', choices=BORDER_COLLAPSE_CHOICES, initial=SEPARATE)
+    border_spacing = validated_property('border_spacing', choices=BORDER_SPACING_CHOICES, initial=0,
+                                        storage_class=BorderSpacing)
+    empty_cells = validated_property('empty_cells', choices=EMPTY_CELLS_CHOICES, initial=SHOW)
 
     # 18. User interface #################################################
     # 18.1 Cursors
