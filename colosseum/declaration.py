@@ -14,6 +14,7 @@ from .constants import (  # noqa
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
     Z_INDEX_CHOICES, PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_AFTER_CHOICES,
     PAGE_BREAK_INSIDE_CHOICES, ORPHANS_CHOICES, WIDOWS_CHOICES, default,
+    Z_INDEX_CHOICES, default, OVERFLOW_CHOICES, CLIP_CHOICES,
 )
 
 _CSS_PROPERTIES = set()
@@ -228,10 +229,10 @@ class CSS:
 
     # 11. Visual effects #################################################
     # 11.1.1 Overflow
-    # overflow
+    overflow = validated_property('overflow', choices=OVERFLOW_CHOICES, initial=VISIBLE)
 
     # 11.1.2 Clip
-    # clip
+    clip = validated_property('clip', choices=CLIP_CHOICES, initial=AUTO)
 
     # 11.2 Visibility
     visibility = validated_property('visibility', choices=VISIBILITY_CHOICES, initial=VISIBLE)
