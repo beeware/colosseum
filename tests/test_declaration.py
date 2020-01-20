@@ -2,10 +2,12 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
+from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
+                                 REVERT, RIGHT, RTL, TABLE, UNSET, Choices)
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
-from colosseum.validators import is_color, is_integer, is_length, is_number, is_percentage
+from colosseum.validators import (is_color, is_integer, is_length, is_number,
+                                  is_percentage)
 
 from .utils import TestNode
 
@@ -584,6 +586,17 @@ class CssDeclarationTests(TestCase):
             node.style.update(not_a_property=10)
 
         self.assertFalse(node.style.dirty)
+
+    def test_other_property_callable(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value LTR
+        self.assertEqual(node.style.text_align, LEFT)
+
+        # Change direction to RTL
+        node.style.update(direction=RTL)
+        self.assertEqual(node.style.text_align, RIGHT)
 
     def test_str(self):
         node = TestNode(style=CSS())

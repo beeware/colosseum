@@ -48,7 +48,14 @@ def validated_property(name, choices, initial):
     initial = choices.validate(initial)
 
     def getter(self):
-        return getattr(self, '_%s' % name, initial)
+        try:
+            # Get initial value from other property value or callable.
+            # See OtherPropertyCallable
+            initial_value = initial.value(self)
+        except AttributeError:
+            initial_value = initial
+
+        return getattr(self, '_%s' % name, initial_value)
 
     def setter(self, value):
         try:
@@ -296,23 +303,24 @@ class CSS:
 
     # 16. Text ###########################################################
     # 16.1 Indentation
-    # text_indent
+    text_indent = validated_property('text_indent', choices=TEXT_INDENT_CHOICES, initial=0)
 
     # 16.2 Alignment
-    # text_align
+    text_align = validated_property('text_align', choices=TEXT_ALIGN_CHOICES,
+                                    initial=OtherPropertyCallable(text_align_initial_value))
 
     # 16.3 Decoration
-    # text_decoration
+    text_decoration = validated_property('text_decoration', choices=TEXT_DECORATION_CHOICES, initial=None)
 
     # 16.4 Letter and word spacing
-    # letter_spacing
-    # word_spacing
+    letter_spacing = validated_property('letter_spacing', choices=LETTER_SPACING_CHOICES, initial=NORMAL)
+    word_spacing = validated_property('word_spacing', choices=WORD_SPACING_CHOICES, initial=NORMAL)
 
     # 16.5 Capitalization
-    # text_transform
+    text_transform = validated_property('text_transform', choices=TEXT_TRANSFORM_CHOICES, initial=None)
 
     # 16.6 White space
-    # white_space
+    white_space = validated_property('white_space', choices=WHITE_SPACE_CHOICES, initial=NORMAL)
 
     # 17. Tables #########################################################
     # 17.4.1 Caption position and alignment

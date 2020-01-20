@@ -1,3 +1,5 @@
+from collections import Callable
+
 from .validators import (is_color, is_integer, is_length, is_number,
                          is_percentage, ValidationError)
 
@@ -13,6 +15,9 @@ class Choices:
         self.validators = validators or []
 
     def validate(self, value):
+        if isinstance(value, OtherPropertyCallable):
+            return value
+
         for validator in self.validators:
             try:
                 value = validator(value)
@@ -43,6 +48,25 @@ class Choices:
                 choices.add(item)
 
         return ", ".join(sorted(choices))
+
+
+class OtherPropertyCallable:
+    """A class to refer to a callable to perform operations with other properties."""
+
+    def __init__(self, func):
+        if not isinstance(func, Callable):
+            raise TypeError('Must provide a callable!')
+
+        self._func = func
+
+    def value(self, context):
+        return self._func(context)
+
+    def __str__(self):
+        return repr(self)
+
+    def __repr__(self):
+        return "OtherPropertyCallable(%s)" % self._func.__name__
 
 
 ######################################################################
@@ -358,33 +382,81 @@ BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 ######################################################################
 # 16.1 Indentation
 ######################################################################
+
 # text_indent
+TEXT_INDENT_CHOICES = Choices(validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.2 Alignment
 ######################################################################
+
 # text_align
+LEFT = 'left'
+RIGHT = 'right'
+CENTER = 'center'
+JUSTIFY = 'justify'
+
+TEXT_ALIGN_CHOICES = Choices(LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT])
+
+
+def text_align_initial_value(context):
+    """Return the initial alignment valu based on direction."""
+    direction = getattr(context, 'direction')
+    if direction is LTR:
+        return LEFT
+
+    if direction is RTL:
+        return RIGHT
+
+    raise ValueError('Undefined value "{value}" for direction property!'.format(value=direction))
+
 
 ######################################################################
 # 16.3 Decoration
 ######################################################################
+
 # text_decoration
+UNDERLINE = 'underline'
+OVERLINE = 'overline'
+LINE_TRHOUGH = 'line-through'
+BLINK = 'blink'
+
+TEXT_DECORATION_CHOICES = Choices(None, UNDERLINE, OVERLINE, LINE_TRHOUGH, BLINK,
+                                  explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.4 Letter and word spacing
 ######################################################################
+
 # letter_spacing
+LETTER_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
+
 # word_spacing
+WORD_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.5 Capitalization
 ######################################################################
+
 # text_transform
+CAPITALIZE = 'capitalize'
+UPPERCASE = 'uppercase'
+LOWERCASE = 'lowercase'
+
+TEXT_TRANSFORM_CHOICES = Choices(CAPITALIZE, UPPERCASE, LOWERCASE, None, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.6 White space
 ######################################################################
+
 # white_space
+# NORMAL = 'normal'
+PRE = 'pre'
+NOWRAP = 'nowrap'
+PRE_WRAP = 'pre-wrap'
+PRE_LINE = 'pre-line'
+
+WHITE_SPACE_CHOICES = Choices(NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17. Tables
