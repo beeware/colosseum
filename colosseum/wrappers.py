@@ -2,12 +2,15 @@ from collections.abc import Sequence
 
 
 class ImmutableList(Sequence):
+    """
+    Immutable list to store list properties like outline and font family.
+    """
 
     def __init__(self, iterable=()):
         self._data = tuple(iterable)
 
     def _get_error_message(self, err):
-        return str(err).replace('list', self.__class__.__name__, 1)
+        return str(err).replace('tuple', self.__class__.__name__, 1)
 
     def __eq__(self, other):
         return other.__class__ == self.__class__ and self._data == other._data
@@ -43,7 +46,7 @@ class ImmutableList(Sequence):
 
 
 class FontFamily(ImmutableList):
-    """List like wrapper to hold font families."""
+    """Immutable list like wrapper to store font families."""
 
     def __init__(self, iterable=()):
         try:
@@ -117,6 +120,9 @@ class Shorthand:
 
     def __str__(self):
         return repr(self)
+
+    def __iter__(self):
+        return iter(self.VALID_KEYS) if self.VALID_KEYS else iter(self._map)
 
     def keys(self):
         return self._map.keys()

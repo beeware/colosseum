@@ -445,7 +445,6 @@ class CssDeclarationTests(ColosseumTestCase):
         node.layout.dirty = None
 
         # Check initial value
-        print(node.style.font_family)
         self.assertEqual(node.style.font_family, FontFamily(['initial']))
 
         # Check valid values
@@ -465,16 +464,12 @@ class CssDeclarationTests(ColosseumTestCase):
         node.style.font_family = ['"White Space"']
         self.assertEqual(node.style.font_family, FontFamily(['White Space']))
 
-        # Check the error message
+        # Check it raises
         try:
             node.style.font_family = ['123']
             self.fail('Should raise ValueError')
-        except ValueError as v:
-            self.assertEqual(
-                str(v),
-                ("Invalid value '123' for CSS property 'font_family'; Valid values are: "
-                 "<family-name>, <generic-family>, inherit, initial")
-            )
+        except ValueError:
+            pass
 
     def test_directional_property(self):
         node = TestNode(style=CSS())

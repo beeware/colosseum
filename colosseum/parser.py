@@ -257,8 +257,8 @@ def parse_font(string):
             # <font-style> <font-variant> <font-weight> <font-size>/<line-height> <font-family>
             raise ValueError('Font property shorthand contains too many parts!')
 
-        value = ' '.join(parts)
-        font_dict['font_family'] = FontFamily(FONT_FAMILY_CHOICES.validate(value))
+        values = ' '.join(parts).split(',')
+        font_dict['font_family'] = FontFamily(FONT_FAMILY_CHOICES.validate(values))
 
     full_font_dict = INITIAL_FONT_VALUES.copy()
     full_font_dict.update(font_dict)

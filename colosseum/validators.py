@@ -1,3 +1,4 @@
+from collections import Sequence
 import ast
 import re
 
@@ -112,30 +113,27 @@ is_color.description = '<color>'
 _CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
 
 
-def is_font_family(value):
-    """
-    Validate that value is a valid font family.
-
-    This validator returns a list.
-    """
+def is_font_family(values):
+    """Validate that values are a valid list of font families."""
     from .constants import GENERIC_FAMILY_FONTS as generic_family
     FontDatabase = fonts.FontDatabase
 
+    assert isinstance(values, Sequence) and not isinstance(values, str)
+
     # Remove extra outer spaces
-    font_value = ' '.join(value.strip().split())
-    values = [v.strip() for v in font_value.split(',')]
+    values = [value.strip() for value in values]
 
     checked_values = []
-    for val in values:
+    for value in values:
         # Remove extra inner spaces
-        val = val.replace('" ', '"')
-        val = val.replace(' "', '"')
-        val = val.replace("' ", "'")
-        val = val.replace(" '", "'")
-        if (val.startswith('"') and val.endswith('"')
-                or val.startswith("'") and val.endswith("'")):
+        value = value.replace('" ', '"')
+        value = value.replace(' "', '"')
+        value = value.replace("' ", "'")
+        value = value.replace(" '", "'")
+        if (value.startswith('"') and value.endswith('"')
+                or value.startswith("'") and value.endswith("'")):
             try:
-                no_quotes_val = ast.literal_eval(val)
+                no_quotes_val = ast.literal_eval(value)
             except ValueError:
                 raise exceptions.ValidationError
 
@@ -143,14 +141,14 @@ def is_font_family(value):
                 raise exceptions.ValidationError('Font family "{font_value}"'
                                                  ' not found on system!'.format(font_value=no_quotes_val))
             checked_values.append(no_quotes_val)
-        elif val in generic_family:
-            checked_values.append(val)
+        elif value in generic_family:
+            checked_values.append(value)
         else:
-            error_msg = 'Font family "{font_value}" not found on system!'.format(font_value=val)
-            if _CSS_IDENTIFIER_RE.match(val):
-                if not FontDatabase.validate_font_family(val):
+            error_msg = 'Font family "{font_value}" not found on system!'.format(font_value=value)
+            if _CSS_IDENTIFIER_RE.match(value):
+                if not FontDatabase.validate_font_family(value):
                     raise exceptions.ValidationError(error_msg)
-                checked_values.append(val)
+                checked_values.append(value)
             else:
                 raise exceptions.ValidationError(error_msg)
 
