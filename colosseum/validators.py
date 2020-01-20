@@ -115,7 +115,7 @@ _CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
 
 def is_font_family(values):
     """Validate that values are a valid list of font families."""
-    from .constants import GENERIC_FAMILY_FONTS as generic_family
+    from .constants import GENERIC_FAMILY_FONTS, INITIAL
     FontDatabase = fonts.FontDatabase
 
     assert isinstance(values, Sequence) and not isinstance(values, str)
@@ -141,7 +141,9 @@ def is_font_family(values):
                 raise exceptions.ValidationError('Font family "{font_value}"'
                                                  ' not found on system!'.format(font_value=no_quotes_val))
             checked_values.append(no_quotes_val)
-        elif value in generic_family:
+        elif value in GENERIC_FAMILY_FONTS:
+            checked_values.append(value)
+        elif value in INITIAL:
             checked_values.append(value)
         else:
             error_msg = 'Font family "{font_value}" not found on system!'.format(font_value=value)
