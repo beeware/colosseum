@@ -16,7 +16,7 @@ from .constants import (  # noqa
     TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
     WHITE_SPACE_CHOICES, WIDOWS_CHOICES, WORD_SPACING_CHOICES, Z_INDEX_CHOICES,
-    TextAlignInitialValue, default,
+    TextAlignInitialValue, OtherProperty, default,
 )
 
 _CSS_PROPERTIES = set()
@@ -170,10 +170,14 @@ class CSS:
     border_width = directional_property('border%s_width', initial=0)
 
     # 8.5.2 Border color
-    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
-    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
-    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
-    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
+    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES,
+                                          initial=OtherProperty('color'))
+    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES,
+                                            initial=OtherProperty('color'))
+    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES,
+                                             initial=OtherProperty('color'))
+    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES,
+                                           initial=OtherProperty('color'))
     border_color = directional_property('border%s_color', initial=0)
 
     # 8.5.3 Border style

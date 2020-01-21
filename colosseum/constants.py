@@ -49,17 +49,38 @@ class Choices:
 
 
 class OtherProperty:
-    """A class to refer to a callable to perform operations with other properties."""
+    """
+    A class to refer to a callable to perform operations with other properties.
 
-    def value(self, context):
-        """Override in a sublcass to provide specific functionality."""
-        raise NotImplementedError
+    If `name` is provided, the value of that property will be used.
+
+    If a more complex operation is required, subclass and override the `value` method.
+    """
+
+    def __init__(self, name=None):
+        if name is not None and not isinstance(name, str):
+            raise TypeError('`name` must be a valid CSS property string!')
+
+        self._name = name
 
     def __str__(self):
         return repr(self)
 
     def __repr__(self):
-        return '{class_name}()'.format(class_name=self.__class__.__name__)
+        if self._name is not None:
+            string = '{class_name}("{name}")'.format(class_name=self.__class__.__name__, name=self._name)
+        else:
+            string = '{class_name}()'.format(class_name=self.__class__.__name__)
+
+        return string
+
+    def value(self, context):
+        """Override in a sublcass to provide specific functionality."""
+        if self._name is not None:
+            return getattr(context, self._name)
+
+        raise NotImplementedError('If `name` was not provided on initialization, '
+                                  'must subclass and override this method!')
 
 
 ######################################################################
@@ -413,10 +434,10 @@ class TextAlignInitialValue(OtherProperty):
 # text_decoration
 UNDERLINE = 'underline'
 OVERLINE = 'overline'
-LINE_TRHOUGH = 'line-through'
+LINE_THROUGH = 'line-through'
 BLINK = 'blink'
 
-TEXT_DECORATION_CHOICES = Choices(None, UNDERLINE, OVERLINE, LINE_TRHOUGH, BLINK,
+TEXT_DECORATION_CHOICES = Choices(None, UNDERLINE, OVERLINE, LINE_THROUGH, BLINK,
                                   explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
