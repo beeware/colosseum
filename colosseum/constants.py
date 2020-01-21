@@ -1,5 +1,3 @@
-from collections import Callable
-
 from .validators import (is_color, is_integer, is_length, is_number,
                          is_percentage, ValidationError)
 
@@ -15,7 +13,7 @@ class Choices:
         self.validators = validators or []
 
     def validate(self, value):
-        if isinstance(value, OtherPropertyCallable):
+        if isinstance(value, OtherProperty):
             return value
 
         for validator in self.validators:
@@ -50,23 +48,18 @@ class Choices:
         return ", ".join(sorted(choices))
 
 
-class OtherPropertyCallable:
+class OtherProperty:
     """A class to refer to a callable to perform operations with other properties."""
 
-    def __init__(self, func):
-        if not isinstance(func, Callable):
-            raise TypeError('Must provide a callable!')
-
-        self._func = func
-
     def value(self, context):
-        return self._func(context)
+        """Override in a sublcass to provide specific functionality."""
+        raise NotImplementedError
 
     def __str__(self):
         return repr(self)
 
     def __repr__(self):
-        return "OtherPropertyCallable(%s)" % self._func.__name__
+        return '{class_name}()'.format(class_name=self.__class__.__name__)
 
 
 ######################################################################
@@ -399,16 +392,18 @@ JUSTIFY = 'justify'
 TEXT_ALIGN_CHOICES = Choices(LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT])
 
 
-def text_align_initial_value(context):
-    """Return the initial alignment valu based on direction."""
-    direction = getattr(context, 'direction')
-    if direction is LTR:
-        return LEFT
+class TextAlignInitialValue(OtherProperty):
 
-    if direction is RTL:
-        return RIGHT
+    def value(self, context):
+        """Return the initial alignment value based on direction."""
+        direction = getattr(context, 'direction')
+        if direction is LTR:
+            return LEFT
 
-    raise ValueError('Undefined value "{value}" for direction property!'.format(value=direction))
+        if direction is RTL:
+            return RIGHT
+
+        raise ValueError('Undefined value "{value}" for direction property!'.format(value=direction))
 
 
 ######################################################################

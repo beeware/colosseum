@@ -8,12 +8,15 @@ from .constants import (  # noqa
     FLEX_WRAP_CHOICES, FLOAT_CHOICES, GRID_AUTO_CHOICES,
     GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES,
     GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INLINE,
-    JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
-    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
-    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
+    JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES, LTR, MARGIN_CHOICES,
+    MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES,
+    ORPHANS_CHOICES, PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES,
+    PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES,
+    ROW, SIZE_CHOICES, STATIC, STRETCH, TEXT_ALIGN_CHOICES,
+    TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    Z_INDEX_CHOICES, PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_AFTER_CHOICES,
-    PAGE_BREAK_INSIDE_CHOICES, ORPHANS_CHOICES, WIDOWS_CHOICES, default,
+    WHITE_SPACE_CHOICES, WIDOWS_CHOICES, WORD_SPACING_CHOICES, Z_INDEX_CHOICES,
+    TextAlignInitialValue, default,
 )
 
 _CSS_PROPERTIES = set()
@@ -49,8 +52,7 @@ def validated_property(name, choices, initial):
 
     def getter(self):
         try:
-            # Get initial value from other property value or callable.
-            # See OtherPropertyCallable
+            # Get initial value from other property value. See OtherProperty.
             initial_value = initial.value(self)
         except AttributeError:
             initial_value = initial
@@ -307,7 +309,7 @@ class CSS:
 
     # 16.2 Alignment
     text_align = validated_property('text_align', choices=TEXT_ALIGN_CHOICES,
-                                    initial=OtherPropertyCallable(text_align_initial_value))
+                                    initial=TextAlignInitialValue())
 
     # 16.3 Decoration
     text_decoration = validated_property('text_decoration', choices=TEXT_DECORATION_CHOICES, initial=None)
