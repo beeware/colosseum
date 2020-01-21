@@ -285,15 +285,31 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 # 13.3.1 Page break properties
 ######################################################################
+
+AUTO = 'auto'
+ALWAYS = 'always'
+AVOID = 'avoid'
+LEFT = 'left'
+RIGHT = 'right'
+
 # page_break_before
+PAGE_BREAK_BEFORE_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
+
 # page_break_after
+PAGE_BREAK_AFTER_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
+
 # page_break_inside
+PAGE_BREAK_INSIDE_CHOICES = Choices(AUTO, AVOID, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 13.3.2 Breaks inside elements
 ######################################################################
+
 # orphans
+ORPHANS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
+
 # widows
+WIDOWS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 14.1 Foreground color

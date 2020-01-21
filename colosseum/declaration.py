@@ -12,7 +12,8 @@ from .constants import (  # noqa
     MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
     POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
     TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    Z_INDEX_CHOICES, default,
+    Z_INDEX_CHOICES, PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_AFTER_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, ORPHANS_CHOICES, WIDOWS_CHOICES, default,
 )
 
 _CSS_PROPERTIES = set()
@@ -254,13 +255,13 @@ class CSS:
 
     # 13. Paged media ####################################################
     # 13.3.1 Page break properties
-    # page_break_before
-    # page_break_after
-    # page_break_inside
+    page_break_before = validated_property('page_break_before', choices=PAGE_BREAK_BEFORE_CHOICES, initial=AUTO)
+    page_break_after = validated_property('page_break_after', choices=PAGE_BREAK_AFTER_CHOICES, initial=AUTO)
+    page_break_inside = validated_property('page_break_inside', choices=PAGE_BREAK_INSIDE_CHOICES, initial=AUTO)
 
     # 13.3.2 Breaks inside elements
-    # orphans
-    # widows
+    orphans = validated_property('orphans', choices=ORPHANS_CHOICES, initial=2)
+    widows = validated_property('widows', choices=WIDOWS_CHOICES, initial=2)
 
     # 14. Colors and backgrounds #########################################
     # 14.1 Foreground color
