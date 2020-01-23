@@ -3,7 +3,6 @@ Validate values of different css properties.
 """
 
 from . import parser
-from . import shapes
 from . import units
 from .exceptions import ValidationError
 
@@ -110,26 +109,11 @@ is_color.description = '<color>'
 def is_shape(value):
     """Check if given value is a shape."""
     try:
-        # Remove extra outer  spaces
-        value = value.strip()
-
-        if value.startswith('rect'):
-            value = value.replace('rect(', '').replace(')', '')
-
-            # Remove extra inner spaces
-            value = ' '.join(value.split()).strip()
-
-            if ',' in value and value.count(',') == 3:
-                values = value.split(',')
-                return shapes.Rect(*values)
-
-            if ',' not in value and value.count(' ') == 3:
-                values = value.split(' ')
-                return shapes.Rect(*values)
-
-        raise ValidationError('Unknown shape %s' % value)
+        value = parser.rect(value)
     except ValueError:
-        raise ValidationError('Unknown shape %s' % value)
+        raise ValidationError('Value {value} is not a shape'.format(value=value))
+
+    return value
 
 
 is_shape.description = '<shape>'

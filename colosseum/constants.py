@@ -5,9 +5,8 @@ from .validators import (ValidationError, is_color, is_integer, is_length,
 class Choices:
     "A class to define allowable data types for a property."
 
-    def __init__(
-            self, *constants, validators=None,
-            explicit_defaulting_constants=None):
+    def __init__(self, *constants, validators=None,
+                 explicit_defaulting_constants=None):
         self.constants = set(constants)
         self.explicit_defaulting_constants = explicit_defaulting_constants or []
         self.validators = validators or []

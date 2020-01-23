@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
+from colosseum.shapes import Rect
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
 )
@@ -187,3 +188,60 @@ class ParseColorTests(TestCase):
 
         with self.assertRaises(ValueError):
             parser.color('not a color')
+
+
+class ParseRectTests(TestCase):
+
+    def test_rect_valid(self):
+        # Comma separated
+        self.assertEqual(parser.rect('rect(1px, 3px, 2px, 4px)'), Rect(1, 3, 2, 4))
+
+        # Comma separated with extra spaces
+        self.assertEqual(parser.rect('  rect(  1px  ,  3px  ,  2px,  4px  )  '), Rect(1, 3, 2, 4))
+
+        # Space separated
+        self.assertEqual(parser.rect('rect(1px 3px 2px 4px)'), Rect(1, 3, 2, 4))
+
+        # Space separated with extra spaces
+        self.assertEqual(parser.rect('  rect(  1px  3px  2px  4px  )  '), Rect(1, 3, 2, 4))
+
+    def test_rect_invalid(self):
+        # Mix of commas and spaces
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px 4px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a b, c d)')
+
+        # Incorrect number of elements
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect()')
+
+        # Missing parens
+        with self.assertRaises(ValueError):
+            parser.rect('rect a b c d)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a b c d')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect a b c d')
+
+        # Other values
+        with self.assertRaises(ValueError):
+            parser.rect('(1px, 3px, 2px, 4px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('1px, 3px, 2px, 4px')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a, b, c, d)')

@@ -42,41 +42,15 @@ class NumericTests(TestCase):
 
 
 class ShapeTests(TestCase):
+    """
+    Comprehensive shape tests are found in the parser tests.
+
+    This test check basic cases work as expected.
+    """
 
     def test_shape_valid(self):
-        # Comma separated
         self.assertEqual(is_shape('rect(1px, 3px, 2px, 4px)'), Rect(1, 3, 2, 4))
 
-        # Comma separated with extra spaces
-        self.assertEqual(is_shape(' rect( 1px,  3px,  2px,  4px ) '), Rect(1, 3, 2, 4))
-
-        # Space separated
-        self.assertEqual(is_shape('rect(1px 3px 2px 4px)'), Rect(1, 3, 2, 4))
-
-        # Space separated with extra spaces
-        self.assertEqual(is_shape(' rect( 1px  3px  2px  4px ) '), Rect(1, 3, 2, 4))
-
     def test_shape_invalid(self):
-        # Mix of commas and spaces
         with self.assertRaises(ValidationError):
-            is_shape('rect(1px, 3px, 2px 4px)')
-
-        # Incorrect number of elements
-        with self.assertRaises(ValidationError):
-            is_shape('rect(1px, 3px, 2px)')
-
-        with self.assertRaises(ValidationError):
-            is_shape('rect(1px, 3px)')
-
-        with self.assertRaises(ValidationError):
-            is_shape('rect(1px)')
-
-        with self.assertRaises(ValidationError):
-            is_shape('rect()')
-
-        # Other values
-        with self.assertRaises(ValidationError):
-            is_shape('(1px, 3px, 2px, 4px)')
-
-        with self.assertRaises(ValidationError):
-            is_shape('rect(a, b, c, d)')
+            is_shape('1px, 3px 2px, 4px')
