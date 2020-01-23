@@ -136,15 +136,14 @@ def rect(value):
         value = value.replace('rect(', '')
         value = value.replace(')', '').strip()
 
+        values = None
         if value.count(',') == 3:
             values = value.split(',')
-            values = [units(val.strip()) for val in values]
-            return Rect(*values)
         elif value.count(',') == 0 and value.count(' ') == 3:
             values = value.split(' ')
+
+        if values is not None:
             values = [units(val.strip()) for val in values]
             return Rect(*values)
-        else:
-            raise ValueError('Unknown shape %s' % value)
 
     raise ValueError('Unknown shape %s' % value)
