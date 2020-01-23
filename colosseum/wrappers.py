@@ -1,39 +1,53 @@
+from collections import Sequence
+
 from .constants import INHERIT
 
 
 class BorderSpacing:
-    """Border spacing wrapper."""
+    """
+    Border spacing wrapper.
 
-    def __init__(self, values):
-        if values == INHERIT:
-            self._data = (values, )
-        else:
-            if len(values) in [1, 2]:
-                self._data = values
-            else:
-                raise TypeError('Invalid argument "{values}" for border spacing!'.format(values=values))
+    Examples:
+        BorderSpacing('inherit')
+        BorderSpacing(1px)
+        BorderSpacing(1px, 2px)
+    """
 
-    def __len__(self):
-        return len(self._data)
+    def __init__(self, horizontal, vertical=None):
+        if isinstance(horizontal, Sequence) and not isinstance(horizontal, str):
+            raise TypeError('Invalid argument type for "horizontal"')
+
+        if isinstance(vertical, Sequence) and not isinstance(vertical, str):
+            raise TypeError('Invalid argument type for "vertical"')
+
+        self._horizontal = horizontal
+        self._vertical = vertical
 
     def __repr__(self):
-        if self._data[0] == INHERIT:
-            return 'BorderSpacing("{horizontal}")'.format(horizontal=self.horizontal)
-        elif len(self._data) == 1:
-            return 'BorderSpacing({horizontal})'.format(horizontal=self.horizontal)
+        if self._horizontal == INHERIT:
+            string = 'BorderSpacing("{horizontal}")'.format(horizontal=self._horizontal)
+        elif self._vertical is None:
+            string = 'BorderSpacing({horizontal})'.format(horizontal=repr(self._horizontal))
         else:
-            return 'BorderSpacing({horizontal}, {vertical})'.format(horizontal=self.horizontal,
-                                                                    vertical=self.vertical)
+            string = 'BorderSpacing({horizontal}, {vertical})'.format(horizontal=repr(self._horizontal),
+                                                                      vertical=repr(self._vertical))
+        return string
 
     def __str__(self):
-        return ' '.join(str(item) for item in self._data)
+        if self._vertical is not None:
+            string = '{horizontal} {vertical}'.format(horizontal=self._horizontal,
+                                                      vertical=self._vertical)
+        else:
+            string = '{horizontal}'.format(horizontal=self._horizontal)
+
+        return string
 
     @property
     def horizontal(self):
         """Return the horizontal border spacing."""
-        return self._data[0]
+        return self._horizontal
 
     @property
     def vertical(self):
         """Return the vertical border spacing."""
-        return self._data[0] if len(self) == 1 else self._data[1]
+        return self._horizontal if self._vertical is None else self._vertical

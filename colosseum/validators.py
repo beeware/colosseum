@@ -111,7 +111,7 @@ def is_border_spacing(value):
     """
     Check if value is corresponds to a border spacing.
 
-    <lenght> <lenght>?
+    <length> <length>?
 
     Returns a tuple with horizontal and vertical spacing.
     """
@@ -120,7 +120,7 @@ def is_border_spacing(value):
     elif isinstance(value, (int, float)):
         values = (value, )
     else:
-        values = ' '.join(value.strip().split()).split(' ')
+        values = [x.strip() for x in value.split()]
 
     if len(values) == 1:
         try:
@@ -136,7 +136,7 @@ def is_border_spacing(value):
         except ValueError as error:
             raise ValidationError(str(error))
     else:
-        raise ValidationError('Should provide 1 or 2 <lenght> values!')
+        raise ValidationError('Should provide 1 or 2 <length> values!')
 
 
-is_border_spacing.description = '<length> <lenght>?'
+is_border_spacing.description = '<length> <length>?'

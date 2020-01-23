@@ -1,26 +1,25 @@
+from collections import Sequence
+
 from . import engine as css_engine
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
-    BACKGROUND_COLOR_CHOICES, BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES,
-    BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES, COLOR_CHOICES,
-    DIRECTION_CHOICES, DISPLAY_CHOICES, FLEX_BASIS_CHOICES,
-    FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START,
-    FLEX_WRAP_CHOICES, FLOAT_CHOICES, GRID_AUTO_CHOICES,
-    GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES,
-    GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INLINE,
-    JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
-    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, PADDING_CHOICES,
-    POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC, STRETCH,
-    TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
+    BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
+    BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
+    BOX_OFFSET_CHOICES, CAPTION_SIDE_CHOICES, CLEAR_CHOICES, COLOR_CHOICES,
+    DIRECTION_CHOICES, DISPLAY_CHOICES, EMPTY_CELLS_CHOICES,
+    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
+    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
+    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
+    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
+    INLINE, JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
+    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES,
+    PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, ROW, SEPARATE, SHOW,
+    SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES, TOP, TRANSPARENT,
+    UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE, WIDOWS_CHOICES,
     Z_INDEX_CHOICES, default,
-    Z_INDEX_CHOICES, PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_AFTER_CHOICES,
-    PAGE_BREAK_INSIDE_CHOICES, ORPHANS_CHOICES, WIDOWS_CHOICES, default,
-    Z_INDEX_CHOICES, TOP, SEPARATE, SHOW, CAPTION_SIDE_CHOICES,
-    TABLE_LAYOUT_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_SPACING_CHOICES,
-    EMPTY_CELLS_CHOICES, default,
 )
 from .wrappers import BorderSpacing
-
 
 _CSS_PROPERTIES = set()
 
@@ -51,21 +50,24 @@ def unvalidated_property(name, choices, initial):
 
 def validated_property(name, choices, initial, storage_class=None):
     "Define a simple CSS property attribute."
-    initial = choices.validate(initial)
 
-    if storage_class is not None:
-        initial = storage_class(initial)
+    def wrap_storage_class(value):
+        if storage_class is not None:
+            if isinstance(value, Sequence) and not isinstance(value, str):
+                value = storage_class(*value)
+            else:
+                value = storage_class(value)
+
+        return value
+
+    initial = wrap_storage_class(choices.validate(initial))
 
     def getter(self):
         return getattr(self, '_%s' % name, initial)
 
     def setter(self, value):
         try:
-            value = choices.validate(value)
-
-            if storage_class is not None:
-                value = storage_class(value)
-
+            value = wrap_storage_class(choices.validate(value))
         except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
