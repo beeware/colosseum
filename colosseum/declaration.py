@@ -48,7 +48,11 @@ def unvalidated_property(name, choices, initial):
 
 def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
-    initial = choices.validate(initial)
+    try:
+        initial = choices.validate(initial)
+    except ValueError:
+        # The initial value might be a OtherProperty or Custom class with a value method
+        pass
 
     def getter(self):
         try:

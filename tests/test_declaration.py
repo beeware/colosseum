@@ -607,13 +607,6 @@ class CssDeclarationTests(TestCase):
         self.assertEqual(obj.prop, None)
         self.assertNotEqual(obj.prop, obj.other_prop)
 
-        # Check invalid (must be str)
-        with self.assertRaises(TypeError):
-            OtherProperty(1)
-
-        with self.assertRaises(TypeError):
-            OtherProperty(['12', 1])
-
         # Check raises
         with self.assertRaises(TypeError):
             prop = OtherProperty()

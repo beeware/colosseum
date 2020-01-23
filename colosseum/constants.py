@@ -13,12 +13,6 @@ class Choices:
         self.validators = validators or []
 
     def validate(self, value):
-        try:
-            if callable(value.value):
-                return value
-        except AttributeError:
-            pass
-
         for validator in self.validators:
             try:
                 value = validator(value)
@@ -55,9 +49,6 @@ class OtherProperty:
     """A class to refer to another prroperty."""
 
     def __init__(self, name):
-        if not isinstance(name, str):
-            raise TypeError('`name` must be a valid CSS property string!')
-
         self._name = name
 
     def __str__(self):
