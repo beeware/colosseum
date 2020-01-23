@@ -133,19 +133,20 @@ def color(value):
 RECT_PATTERN = re.compile(r'''
     # Check for item with commas
     \s*rect\(\s*
-        ([0-9A-Za-z]+)\s*,\s*
-        ([0-9A-Za-z]+)\s*,\s*
-        ([0-9A-Za-z]+)\s*,\s*
-        ([0-9A-Za-z]+)
+        ([0-9a-z]+)\s*,\s*
+        ([0-9a-z]+)\s*,\s*
+        ([0-9a-z]+)\s*,\s*
+        ([0-9a-z]+)
     \s*\)\s*
     |
     # Check for item with spaces
     \s*rect\(\s*
-        ([0-9A-Za-z]+)\s+
-        ([0-9A-Za-z]+)\s+
-        ([0-9A-Za-z]+)\s+
-        ([0-9A-Za-z]+)
-    \s*\)\s*''', re.VERBOSE | re.IGNORECASE)
+        ([0-9a-z]+)\s+
+        ([0-9a-z]+)\s+
+        ([0-9a-z]+)\s+
+        ([0-9a-z]+)
+    \s*\)\s*
+    ''', re.VERBOSE)
 
 
 def rect(value):

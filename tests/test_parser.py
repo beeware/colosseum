@@ -245,3 +245,10 @@ class ParseRectTests(TestCase):
 
         with self.assertRaises(ValueError):
             parser.rect('rect(a, b, c, d)')
+
+        # Test uppercase
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1PX, 3px, 2px, 4px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('RECT(1px, 3px, 2px, 4px)')
