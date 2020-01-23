@@ -146,6 +146,8 @@ RECT_PATTERN = re.compile(r'''
         ([0-9A-Za-z]+)\s+
         ([0-9A-Za-z]+)
     \s*\)\s*''', re.VERBOSE | re.IGNORECASE)
+
+
 def rect(value):
     """Parse a given rect shape."""
     from .shapes import Rect
