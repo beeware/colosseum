@@ -615,7 +615,7 @@ class CssDeclarationTests(TestCase):
             OtherProperty(['12', 1])
 
         # Check raises
-        with self.assertRaises(NotImplementedError):
+        with self.assertRaises(TypeError):
             prop = OtherProperty()
             prop.value({})
 

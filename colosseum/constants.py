@@ -13,8 +13,11 @@ class Choices:
         self.validators = validators or []
 
     def validate(self, value):
-        if isinstance(value, OtherProperty):
-            return value
+        try:
+            if callable(value.value):
+                return value
+        except AttributeError:
+            pass
 
         for validator in self.validators:
             try:
@@ -49,16 +52,10 @@ class Choices:
 
 
 class OtherProperty:
-    """
-    A class to refer to a callable to perform operations with other properties.
+    """A class to refer to another prroperty."""
 
-    If `name` is provided, the value of that property will be used.
-
-    If a more complex operation is required, subclass and override the `value` method.
-    """
-
-    def __init__(self, name=None):
-        if name is not None and not isinstance(name, str):
+    def __init__(self, name):
+        if not isinstance(name, str):
             raise TypeError('`name` must be a valid CSS property string!')
 
         self._name = name
@@ -67,20 +64,10 @@ class OtherProperty:
         return repr(self)
 
     def __repr__(self):
-        if self._name is not None:
-            string = '{class_name}("{name}")'.format(class_name=self.__class__.__name__, name=self._name)
-        else:
-            string = '{class_name}()'.format(class_name=self.__class__.__name__)
-
-        return string
+        return '{class_name}("{name}")'.format(class_name=self.__class__.__name__, name=self._name)
 
     def value(self, context):
-        """Override in a sublcass to provide specific functionality."""
-        if self._name is not None:
-            return getattr(context, self._name)
-
-        raise NotImplementedError('If `name` was not provided on initialization, '
-                                  'must subclass and override this method!')
+        return getattr(context, self._name)
 
 
 ######################################################################
@@ -413,7 +400,7 @@ JUSTIFY = 'justify'
 TEXT_ALIGN_CHOICES = Choices(LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT])
 
 
-class TextAlignInitialValue(OtherProperty):
+class TextAlignInitialValue:
 
     def value(self, context):
         """Return the initial alignment value based on direction."""
