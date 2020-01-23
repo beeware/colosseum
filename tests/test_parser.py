@@ -249,6 +249,15 @@ class ParseRectTests(TestCase):
         with self.assertRaises(ValueError):
             parser.rect('rect a b c d')
 
+    def test_rect_invalid_extra_parens(self):
+        # Missing parens
+        with self.assertRaises(ValueError):
+            parser.rect('rect((a b c d)')
+
+        # Missing parens
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a b c d))')
+
     def test_rect_invalid_missing_rect(self):
         # Other values
         with self.assertRaises(ValueError):
