@@ -1,6 +1,5 @@
-import re
-
 from .colors import NAMED_COLOR, hsl, rgb
+from .shapes import Rect
 from .units import Unit, px
 
 
@@ -130,32 +129,22 @@ def color(value):
     raise ValueError('Unknown color %s' % value)
 
 
-RECT_PATTERN = re.compile(r'''
-    # Check for item with commas
-    \s*rect\(\s*
-        ([0-9a-z]+)\s*,\s*
-        ([0-9a-z]+)\s*,\s*
-        ([0-9a-z]+)\s*,\s*
-        ([0-9a-z]+)
-    \s*\)\s*
-    |
-    # Check for item with spaces
-    \s*rect\(\s*
-        ([0-9a-z]+)\s+
-        ([0-9a-z]+)\s+
-        ([0-9a-z]+)\s+
-        ([0-9a-z]+)
-    \s*\)\s*
-    ''', re.VERBOSE)
-
-
 def rect(value):
     """Parse a given rect shape."""
-    from .shapes import Rect
+    value = ' '.join([val.strip() for val in value.split()])
+    if value.startswith('rect(') and value.endswith(')'):
+        value = value.replace('rect(', '')
+        value = value.replace(')', '').strip()
 
-    matches = RECT_PATTERN.findall(value)
-    if matches:
-        values = [val for val in matches[0] if val]
-        return Rect(*values)
+        if value.count(',') == 3:
+            values = value.split(',')
+            values = [units(val.strip()) for val in values]
+            return Rect(*values)
+        elif value.count(',') == 0 and value.count(' ') == 3:
+            values = value.split(' ')
+            values = [units(val.strip()) for val in values]
+            return Rect(*values)
+        else:
+            raise ValueError('Unknown shape %s' % value)
 
     raise ValueError('Unknown shape %s' % value)

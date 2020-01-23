@@ -107,7 +107,7 @@ is_color.description = '<color>'
 
 
 def is_shape(value):
-    """Check if given value is a shape."""
+    """Check if given value is a shape and return it."""
     try:
         value = parser.rect(value)
     except ValueError:
