@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from colosseum.shapes import Rect
-from colosseum.validators import is_integer, is_number, is_shape, ValidationError
+from colosseum.validators import is_integer, is_number, is_rect, ValidationError
 
 
 class NumericTests(TestCase):
@@ -49,8 +49,8 @@ class ShapeTests(TestCase):
     """
 
     def test_shape_valid(self):
-        self.assertEqual(is_shape('rect(1px, 3px, 2px, 4px)'), Rect(1, 3, 2, 4))
+        self.assertEqual(is_rect('rect(1px, 3px, 2px, 4px)'), Rect(1, 3, 2, 4))
 
     def test_shape_invalid(self):
         with self.assertRaises(ValidationError):
-            is_shape('1px, 3px 2px, 4px')
+            is_rect('1px, 3px 2px, 4px')

@@ -8,7 +8,11 @@ class Rect:
         self._bottom = bottom
 
     def __eq__(self, other):
-        return other.__class__ == self.__class__ and other.to_tuple() == self.to_tuple()
+        return (other.__class__ == self.__class__
+                and other._top == self._top
+                and other._right == self._right
+                and other._left == self._left
+                and other._bottom == self._bottom)
 
     def __repr__(self):
         return 'rect({top}, {right}, {left}, {bottom})'.format(
@@ -17,9 +21,6 @@ class Rect:
 
     def __str__(self):
         return repr(self)
-
-    def to_tuple(self):
-        return self._top, self._right, self._left, self._bottom
 
     @property
     def top(self):

@@ -131,7 +131,7 @@ def color(value):
 
 def rect(value):
     """Parse a given rect shape."""
-    value = ' '.join([val.strip() for val in value.split()])
+    value = ' '.join(val.strip() for val in value.split())
     if (value.startswith('rect(') and value.endswith(')') and
             value.count('rect(') == 1 and value.count(')') == 1):
         value = value.replace('rect(', '')

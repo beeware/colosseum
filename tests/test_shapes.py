@@ -15,7 +15,7 @@ class ShapeUnitTests(TestCase):
 
     def test_shape_methods(self):
         rect = Rect(1, 3, 2, 4)
-        self.assertEqual(rect.to_tuple(), (1, 3, 2, 4))
+        self.assertEqual(rect, Rect(1, 3, 2, 4))
 
     def test_shape_equality(self):
         rect1 = Rect(1 * px, 3 * px, 2 * px, 4 * px)

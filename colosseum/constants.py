@@ -1,5 +1,5 @@
 from .validators import (ValidationError, is_color, is_integer, is_length,
-                         is_number, is_percentage, is_shape)
+                         is_number, is_percentage, is_rect)
 
 
 class Choices:
@@ -251,7 +251,7 @@ OVERFLOW_CHOICES = Choices(VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_co
 ######################################################################
 # clip
 
-CLIP_CHOICES = Choices(AUTO, validators=[is_shape], explicit_defaulting_constants=[INHERIT])
+CLIP_CHOICES = Choices(AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 11.2 Visibility

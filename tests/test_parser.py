@@ -224,19 +224,25 @@ class ParseRectTests(TestCase):
         with self.assertRaises(ValueError):
             parser.rect('rect(a b, c d)')
 
-    def test_rect_invalid_number_of_arguments(self):
-        # Incorrect number of elements
+    def test_rect_invalid_number_of_arguments_empty(self):
         with self.assertRaises(ValueError):
-            parser.rect('rect(1px, 3px, 2px)')
+            parser.rect('rect()')
 
-        with self.assertRaises(ValueError):
-            parser.rect('rect(1px, 3px)')
-
+    def test_rect_invalid_number_of_arguments_1_arg(self):
         with self.assertRaises(ValueError):
             parser.rect('rect(1px)')
 
+    def test_rect_invalid_number_of_arguments_2_args(self):
         with self.assertRaises(ValueError):
-            parser.rect('rect()')
+            parser.rect('rect(1px, 3px)')
+
+    def test_rect_invalid_number_of_arguments_3_args(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px)')
+
+    def test_rect_invalid_number_of_arguments_5_args(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px, 5px, 7px)')
 
     def test_rect_invalid_missing_parens(self):
         # Missing parens
@@ -266,12 +272,17 @@ class ParseRectTests(TestCase):
         with self.assertRaises(ValueError):
             parser.rect('1px, 3px, 2px, 4px')
 
+        with self.assertRaises(ValueError):
+            parser.rect('1px 3px 2px 4px')
+
+        with self.assertRaises(ValueError):
+            parser.rect('(1px 3px 2px 4px)')
+
     def test_rect_invalid_units(self):
         with self.assertRaises(ValueError):
             parser.rect('rect(a, b, c, d)')
 
     def test_rect_invalid_case(self):
-        # Test uppercase
         with self.assertRaises(ValueError):
             parser.rect('rect(1PX, 3px, 2px, 4px)')
 

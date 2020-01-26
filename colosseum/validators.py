@@ -106,14 +106,14 @@ def is_color(value):
 is_color.description = '<color>'
 
 
-def is_shape(value):
-    """Check if given value is a shape and return it."""
+def is_rect(value):
+    """Check if given value is a rect shape and return it."""
     try:
         value = parser.rect(value)
     except ValueError:
-        raise ValidationError('Value {value} is not a shape'.format(value=value))
+        raise ValidationError('Value {value} is not a rect shape'.format(value=value))
 
     return value
 
 
-is_shape.description = '<shape>'
+is_rect.description = '<rect>'
