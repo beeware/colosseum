@@ -1,3 +1,6 @@
+from collections import Sequence
+from .wrappers import BorderSpacing
+
 from .colors import NAMED_COLOR, hsl, rgb
 from .units import Unit, px
 
@@ -126,3 +129,31 @@ def color(value):
                 pass
 
     raise ValueError('Unknown color %s' % value)
+
+
+def border_spacing(value):
+    """
+    Parse a border spacing value.
+
+    Accepts:
+    * A sequence object different that a string.
+    * An integer (interpreted as pixels).
+    * A float (interpreted as pixels).
+    * A string with of 1 or 2 length items separated by spaces.
+    """
+    if isinstance(value, Sequence) and not isinstance(value, str):
+        values = value
+    elif isinstance(value, (int, float)):
+        values = (value, )
+    else:
+        values = [x.strip() for x in value.split()]
+
+    if len(values) == 1:
+        horizontal = units(values[0])
+        return BorderSpacing(horizontal)
+    elif len(values) == 2:
+        horizontal = units(values[0])
+        vertical = units(values[1])
+        return BorderSpacing(horizontal, vertical)
+
+    raise ValueError('Unknown border spacing %s' % str(value))

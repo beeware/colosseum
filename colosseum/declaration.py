@@ -1,5 +1,3 @@
-from collections import Sequence
-
 from . import engine as css_engine
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
@@ -19,7 +17,6 @@ from .constants import (  # noqa
     UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE, WIDOWS_CHOICES,
     Z_INDEX_CHOICES, default,
 )
-from .wrappers import BorderSpacing
 
 _CSS_PROPERTIES = set()
 
@@ -48,26 +45,16 @@ def unvalidated_property(name, choices, initial):
     return property(getter, setter, deleter)
 
 
-def validated_property(name, choices, initial, storage_class=None):
+def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
-
-    def wrap_storage_class(value):
-        if storage_class is not None:
-            if isinstance(value, Sequence) and not isinstance(value, str):
-                value = storage_class(*value)
-            else:
-                value = storage_class(value)
-
-        return value
-
-    initial = wrap_storage_class(choices.validate(initial))
+    initial = choices.validate(initial)
 
     def getter(self):
         return getattr(self, '_%s' % name, initial)
 
     def setter(self, value):
         try:
-            value = wrap_storage_class(choices.validate(value))
+            value = choices.validate(value)
         except ValueError:
             raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
                 value, name, choices
@@ -338,8 +325,7 @@ class CSS:
 
     # 17.6 Borders
     border_collapse = validated_property('border_collapse', choices=BORDER_COLLAPSE_CHOICES, initial=SEPARATE)
-    border_spacing = validated_property('border_spacing', choices=BORDER_SPACING_CHOICES, initial=0,
-                                        storage_class=BorderSpacing)
+    border_spacing = validated_property('border_spacing', choices=BORDER_SPACING_CHOICES, initial=0)
     empty_cells = validated_property('empty_cells', choices=EMPTY_CELLS_CHOICES, initial=SHOW)
 
     # 18. User interface #################################################

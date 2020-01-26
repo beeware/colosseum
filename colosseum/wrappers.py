@@ -1,14 +1,11 @@
 from collections import Sequence
 
-from .constants import INHERIT
-
 
 class BorderSpacing:
     """
     Border spacing wrapper.
 
     Examples:
-        BorderSpacing('inherit')
         BorderSpacing(1px)
         BorderSpacing(1px, 2px)
     """
@@ -24,9 +21,7 @@ class BorderSpacing:
         self._vertical = vertical
 
     def __repr__(self):
-        if self._horizontal == INHERIT:
-            string = 'BorderSpacing("{horizontal}")'.format(horizontal=self._horizontal)
-        elif self._vertical is None:
+        if self._vertical is None:
             string = 'BorderSpacing({horizontal})'.format(horizontal=repr(self._horizontal))
         else:
             string = 'BorderSpacing({horizontal}, {vertical})'.format(horizontal=repr(self._horizontal),

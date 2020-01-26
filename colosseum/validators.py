@@ -1,5 +1,3 @@
-from collections import Sequence
-
 from . import parser
 from . import units
 
@@ -112,31 +110,14 @@ def is_border_spacing(value):
     Check if value is corresponds to a border spacing.
 
     <length> <length>?
-
-    Returns a tuple with horizontal and vertical spacing.
     """
-    if isinstance(value, Sequence) and not isinstance(value, str):
-        values = value
-    elif isinstance(value, (int, float)):
-        values = (value, )
-    else:
-        values = [x.strip() for x in value.split()]
+    try:
+        value = parser.border_spacing(value)
+    except ValueError as error:
+        print(error)
+        raise ValidationError(str(error))
 
-    if len(values) == 1:
-        try:
-            horizontal = is_length(values[0])
-            return (horizontal, )
-        except ValueError as error:
-            raise ValidationError(str(error))
-    elif len(values) == 2:
-        try:
-            horizontal = is_length(values[0])
-            vertical = is_length(values[1])
-            return (horizontal, vertical)
-        except ValueError as error:
-            raise ValidationError(str(error))
-    else:
-        raise ValidationError('Should provide 1 or 2 <length> values!')
+    return value
 
 
 is_border_spacing.description = '<length> <length>?'
