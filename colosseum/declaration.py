@@ -51,8 +51,11 @@ def validated_property(name, choices, initial):
     try:
         initial = choices.validate(initial)
     except ValueError:
-        # The initial value might be a OtherProperty or Custom class with a value method
-        pass
+        try:
+            # The initial value might be a OtherProperty or Custom class with a value method
+            initial.value
+        except AttributeError:
+            raise ValueError('Initial value "%s" must provide a `value` method!' % initial)
 
     def getter(self):
         try:

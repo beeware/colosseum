@@ -46,7 +46,7 @@ class Choices:
 
 
 class OtherProperty:
-    """A class to refer to another prroperty."""
+    """A class to refer to another property."""
 
     def __init__(self, name):
         self._name = name
@@ -58,7 +58,10 @@ class OtherProperty:
         return '{class_name}("{name}")'.format(class_name=self.__class__.__name__, name=self._name)
 
     def value(self, context):
-        return getattr(context, self._name)
+        try:
+            return getattr(context, self._name)
+        except AttributeError:
+            raise ValueError('Property "%s" not found!' % self._name)
 
 
 ######################################################################

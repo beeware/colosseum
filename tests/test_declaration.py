@@ -590,7 +590,7 @@ class CssDeclarationTests(TestCase):
 
         self.assertFalse(node.style.dirty)
 
-    def test_other_property(self):
+    def test_other_property_valid(self):
         class MyObject:
             prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('other_prop'))
             other_prop = validated_property('other_prop', choices=Choices(0, AUTO), initial=AUTO)
@@ -607,12 +607,19 @@ class CssDeclarationTests(TestCase):
         self.assertEqual(obj.prop, None)
         self.assertNotEqual(obj.prop, obj.other_prop)
 
-        # Check raises
+    def test_other_property_invalid_no_name_argument(self):
         with self.assertRaises(TypeError):
-            prop = OtherProperty()
-            prop.value({})
+            OtherProperty()
 
-    def test_other_property_callable(self):
+    def test_other_property_invalid_incorrect_property_name(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('foobar'))
+
+        obj = MyObject()
+        with self.assertRaises(ValueError):
+            obj.prop
+
+    def test_other_property_callable_valid(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
@@ -622,6 +629,11 @@ class CssDeclarationTests(TestCase):
         # Change direction to RTL
         node.style.update(direction=RTL)
         self.assertEqual(node.style.text_align, RIGHT)
+
+    def test_other_property_callable_invalid_no_value_method(self):
+        with self.assertRaises(ValueError):
+            class MyObject:
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=object())
 
     def test_str(self):
         node = TestNode(style=CSS())
