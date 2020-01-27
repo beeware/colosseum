@@ -2,10 +2,13 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import AUTO, BLOCK, INLINE, TABLE, Choices, INITIAL, INHERIT, UNSET, REVERT
+from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
+                                 REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
+                                 OtherProperty)
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
-from colosseum.validators import is_color, is_integer, is_length, is_number, is_percentage
+from colosseum.validators import (is_color, is_integer, is_length, is_number,
+                                  is_percentage)
 from colosseum.wrappers import BorderSpacing
 
 from .utils import TestNode
@@ -766,6 +769,62 @@ class CssDeclarationTests(TestCase):
             node.style.update(not_a_property=10)
 
         self.assertFalse(node.style.dirty)
+
+    def test_other_property_valid(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('other_prop'))
+            other_prop = validated_property('other_prop', choices=Choices(0, AUTO), initial=AUTO)
+
+        obj = MyObject()
+        self.assertEqual(obj.prop, AUTO)
+        self.assertEqual(obj.prop, obj.other_prop)
+
+        obj.other_prop = 0
+        self.assertEqual(obj.prop, 0)
+        self.assertEqual(obj.prop, obj.other_prop)
+
+        obj.prop = None
+        self.assertEqual(obj.prop, None)
+        self.assertNotEqual(obj.prop, obj.other_prop)
+
+    def test_other_property_invalid_no_name_argument(self):
+        with self.assertRaises(TypeError):
+            OtherProperty()
+
+    def test_other_property_invalid_incorrect_property_name(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('foobar'))
+
+        obj = MyObject()
+        with self.assertRaises(ValueError):
+            obj.prop
+
+    def test_other_property_callable_valid(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value LTR
+        self.assertEqual(node.style.text_align, LEFT)
+
+        # Change direction to RTL
+        node.style.update(direction=RTL)
+        self.assertEqual(node.style.text_align, RIGHT)
+
+    def test_other_property_invalid_no_value_attr(self):
+        class SomeProperty:
+            boo = None
+
+        with self.assertRaises(ValueError):
+            class MyObject:
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
+
+    def test_other_property_callable_invalid_value_not_a_method(self):
+        class SomeProperty:
+            value = None
+
+        with self.assertRaises(ValueError):
+            class MyObject:
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
 
     def test_str(self):
         node = TestNode(style=CSS())

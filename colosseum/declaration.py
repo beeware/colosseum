@@ -9,13 +9,16 @@ from .constants import (  # noqa
     FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
     GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
     GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INLINE, JUSTIFY_CONTENT_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES,
-    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES,
-    OVERFLOW_CHOICES, PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES,
-    PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES,
-    ROW, SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
-    TOP, TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    WIDOWS_CHOICES, Z_INDEX_CHOICES, default,
+    INLINE, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES, LTR,
+    MARGIN_CHOICES, MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL, NOWRAP,
+    ORDER_CHOICES, ORPHANS_CHOICES, OVERFLOW_CHOICES, PADDING_CHOICES,
+    PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, ROW, SEPARATE, SHOW,
+    SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES, TEXT_ALIGN_CHOICES,
+    TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES, TOP,
+    TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
+    WHITE_SPACE_CHOICES, WIDOWS_CHOICES, WORD_SPACING_CHOICES, Z_INDEX_CHOICES,
+    OtherProperty, TextAlignInitialValue, default,
 )
 
 _CSS_PROPERTIES = set()
@@ -47,10 +50,29 @@ def unvalidated_property(name, choices, initial):
 
 def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
-    initial = choices.validate(initial)
+    try:
+        initial = choices.validate(initial)
+    except ValueError:
+        # The initial value might be a OtherProperty or Custom class with a value method
+        try:
+            # Check it has a value attribute
+            value_attr = getattr(initial, 'value')
+
+            # Check the value attribute is a callable
+            if not callable(value_attr):
+                raise ValueError('Initial value "%s" `value` attribute is not callable!' % initial)
+
+        except AttributeError:
+            raise ValueError('Initial value "%s" does not have a value attribute!' % initial)
 
     def getter(self):
-        return getattr(self, '_%s' % name, initial)
+        try:
+            # Get initial value from other property value. See OtherProperty.
+            initial_value = initial.value(self)
+        except AttributeError:
+            initial_value = initial
+
+        return getattr(self, '_%s' % name, initial_value)
 
     def setter(self, value):
         try:
@@ -163,10 +185,14 @@ class CSS:
     border_width = directional_property('border%s_width', initial=0)
 
     # 8.5.2 Border color
-    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
-    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
-    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
-    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES, initial=TRANSPARENT)
+    border_top_color = validated_property('border_top_color', choices=BORDER_COLOR_CHOICES,
+                                          initial=OtherProperty('color'))
+    border_right_color = validated_property('border_right_color', choices=BORDER_COLOR_CHOICES,
+                                            initial=OtherProperty('color'))
+    border_bottom_color = validated_property('border_bottom_color', choices=BORDER_COLOR_CHOICES,
+                                             initial=OtherProperty('color'))
+    border_left_color = validated_property('border_left_color', choices=BORDER_COLOR_CHOICES,
+                                           initial=OtherProperty('color'))
     border_color = directional_property('border%s_color', initial=0)
 
     # 8.5.3 Border style
@@ -298,23 +324,24 @@ class CSS:
 
     # 16. Text ###########################################################
     # 16.1 Indentation
-    # text_indent
+    text_indent = validated_property('text_indent', choices=TEXT_INDENT_CHOICES, initial=0)
 
     # 16.2 Alignment
-    # text_align
+    text_align = validated_property('text_align', choices=TEXT_ALIGN_CHOICES,
+                                    initial=TextAlignInitialValue())
 
     # 16.3 Decoration
-    # text_decoration
+    text_decoration = validated_property('text_decoration', choices=TEXT_DECORATION_CHOICES, initial=None)
 
     # 16.4 Letter and word spacing
-    # letter_spacing
-    # word_spacing
+    letter_spacing = validated_property('letter_spacing', choices=LETTER_SPACING_CHOICES, initial=NORMAL)
+    word_spacing = validated_property('word_spacing', choices=WORD_SPACING_CHOICES, initial=NORMAL)
 
     # 16.5 Capitalization
-    # text_transform
+    text_transform = validated_property('text_transform', choices=TEXT_TRANSFORM_CHOICES, initial=None)
 
     # 16.6 White space
-    # white_space
+    white_space = validated_property('white_space', choices=WHITE_SPACE_CHOICES, initial=NORMAL)
 
     # 17. Tables #########################################################
     # 17.4.1 Caption position and alignment
