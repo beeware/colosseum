@@ -6,7 +6,6 @@ from colosseum.validators import (ValidationError, is_border_spacing,
                                   is_integer, is_number, is_rect)
 
 
-
 class NumericTests(TestCase):
 
     def test_integer(self):

@@ -134,4 +134,3 @@ def is_rect(value):
 
 
 is_rect.description = '<rect>'
-

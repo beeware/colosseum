@@ -51,30 +51,3 @@ class BorderSpacingTests(TestCase):
     def test_invalid_arg_number(self):
         with self.assertRaises(TypeError):
             BorderSpacing(1, 2, 3)
-
-    def test_invalid_arg_type_sequence_1_item(self):
-        # List
-        with self.assertRaises(TypeError):
-            BorderSpacing([1])
-
-        # Tuple
-        with self.assertRaises(TypeError):
-            BorderSpacing((1, ))
-
-    def test_invalid_arg_type_sequence_2_items(self):
-        # List
-        with self.assertRaises(TypeError):
-            BorderSpacing([1, 2])
-
-        # Tuple
-        with self.assertRaises(TypeError):
-            BorderSpacing((1, 2))
-
-    def test_invalid_arg_type_2_items_sequence(self):
-        # List
-        with self.assertRaises(TypeError):
-            BorderSpacing([1], [2])
-
-        # Tuple
-        with self.assertRaises(TypeError):
-            BorderSpacing((1, ), (2, ))

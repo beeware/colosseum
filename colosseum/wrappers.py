@@ -1,6 +1,3 @@
-from collections import Sequence
-
-
 class BorderSpacing:
     """
     Border spacing wrapper.
