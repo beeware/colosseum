@@ -114,7 +114,6 @@ def is_border_spacing(value):
     try:
         value = parser.border_spacing(value)
     except ValueError as error:
-        print(error)
         raise ValidationError(str(error))
 
     return value

@@ -11,12 +11,6 @@ class BorderSpacing:
     """
 
     def __init__(self, horizontal, vertical=None):
-        if isinstance(horizontal, Sequence) and not isinstance(horizontal, str):
-            raise TypeError('Invalid argument type for "horizontal"')
-
-        if isinstance(vertical, Sequence) and not isinstance(vertical, str):
-            raise TypeError('Invalid argument type for "vertical"')
-
         self._horizontal = horizontal
         self._vertical = vertical
 
