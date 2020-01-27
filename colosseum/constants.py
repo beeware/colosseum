@@ -1,5 +1,6 @@
-from .validators import (ValidationError, is_color, is_integer, is_length,
-                         is_number, is_percentage, is_rect)
+from .validators import (ValidationError, is_border_spacing, is_color,
+                         is_integer, is_length, is_number, is_percentage,
+                         is_rect)
 
 
 class Choices:
@@ -276,6 +277,7 @@ CLIP_CHOICES = Choices(AUTO, validators=[is_rect], explicit_defaulting_constants
 # 11.2 Visibility
 ######################################################################
 
+VISIBLE = 'visible'
 HIDDEN = 'hidden'
 COLLAPSE = 'collapse'
 
@@ -465,19 +467,39 @@ WHITE_SPACE_CHOICES = Choices(NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_
 ######################################################################
 # 17.4.1 Caption position and alignment
 ######################################################################
+
+TOP = 'top'
+BOTTOM = 'bottom'
+
 # caption_side
+CAPTION_SIDE_CHOICES = Choices(TOP, BOTTOM, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17.5.2 Table width algorithms
 ######################################################################
+
 # table_layout
+TABLE_LAYOUT_CHOICES = Choices(AUTO, FIXED, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17.6 Borders
 ######################################################################
+
+
 # border_collapse
+COLLAPSE = 'collapse'
+SEPARATE = 'separate'
+
+BORDER_COLLAPSE_CHOICES = Choices(COLLAPSE, SEPARATE, explicit_defaulting_constants=[INHERIT])
+
 # border_spacing
+BORDER_SPACING_CHOICES = Choices(validators=[is_border_spacing], explicit_defaulting_constants=[INHERIT])
+
 # empty_cells
+SHOW = 'show'
+HIDE = 'hide'
+
+EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 18. User interface #################################################
