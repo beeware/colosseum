@@ -192,7 +192,7 @@ class PropertyChoiceTests(TestCase):
             prop = validated_property('prop', choices=Choices(validators=[is_uri]), initial='url(google.com)')
 
         obj = MyObject()
-        self.assertEqual(obj.prop, 'url(google.com)')
+        self.assertEqual(str(obj.prop), 'url("google.com")')
 
         with self.assertRaises(ValueError):
             obj.prop = 10
@@ -775,31 +775,56 @@ class CssDeclarationTests(TestCase):
         self.assertEqual(node.style.margin_left, 0)
         self.assertTrue(node.style.dirty)
 
-    def test_list_property(self):
+    def test_validated_property_cursor_default_value(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
-        # Default value is [AUTO]
-        self.assertEqual(node.style.cursor, [AUTO])
+        self.assertEqual(str(node.style.cursor), AUTO)
 
-        # Set values
+    def test_validated_property_cursor_set_valid_values(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.cursor = 'url(test), auto'
+        self.assertEqual(str(node.style.cursor), 'url("test"), auto')
+
+        node.style.cursor = "url('test')", AUTO
+        self.assertEqual(str(node.style.cursor), 'url("test"), auto')
+
         node.style.cursor = ["url('test')", AUTO]
-        self.assertEqual(node.style.cursor, ["url('test')", AUTO])
+        self.assertEqual(str(node.style.cursor), 'url("test"), auto')
 
         node.style.cursor = ["url('test')", "url('test2')", AUTO]
-        self.assertEqual(node.style.cursor, ["url('test')", "url('test2')", AUTO])
+        self.assertEqual(str(node.style.cursor), 'url("test"), url("test2"), auto')
 
-        # Set invalid values
+    def test_validated_property_cursor_set_invalid_str_values(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.cursor = 'boom'
+
+        with self.assertRaises(ValueError):
+            node.style.cursor = 'url( "bla)'
+
+        with self.assertRaises(ValueError):
+            node.style.cursor = 'auto, url(google.com)'
+
+        with self.assertRaises(ValueError):
+            node.style.cursor = 'auto url(google.com)'
+
+    def test_validated_property_cursor_set_invalid_list_values(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
         with self.assertRaises(ValueError):
             node.style.cursor = ['boom']
 
-        # Set invalid values
         with self.assertRaises(ValueError):
             node.style.cursor = ['url( "bla)']
 
-        # Set invalid value not a list
         with self.assertRaises(ValueError):
-            node.style.cursor = AUTO
+            node.style.cursor = [AUTO, 'url(google.com)']
 
     def test_set_multiple_properties(self):
         node = TestNode(style=CSS())
@@ -1208,10 +1233,12 @@ class CssDeclarationTests(TestCase):
             height=20,
             margin=(30, 40, 50, 60),
             display=BLOCK,
+            cursor=['url(some.cursor.uri)', AUTO]            
         )
 
         self.assertEqual(
             str(node.style),
+            'cursor: url("some.cursor.uri"), auto; '
             "display: block; "
             "height: 20px; "
             "margin-bottom: 50px; "

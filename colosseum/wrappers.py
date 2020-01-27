@@ -1,4 +1,5 @@
 from collections import OrderedDict
+from collections.abc import Sequence
 
 
 class BorderSpacing:
@@ -151,3 +152,67 @@ class BorderLeft(Shorthand):
 
 class Border(Shorthand):
     VALID_KEYS = ['border_width', 'border_style', 'border_color']
+
+
+
+class Uri:
+    """Wrapper for a url."""
+
+    def __init__(self, url):
+        self._url = url
+
+    def __repr__(self):
+        return 'url("%s")' % self._url
+
+    def __str__(self):
+        return repr(self)
+
+    @property
+    def url(self):
+        return self._url
+
+
+class ImmutableList(Sequence):
+    """Immutable list to store list properties."""
+
+    def __init__(self, iterable=()):
+        self._data = tuple(iterable)
+
+    def _get_error_message(self, err):
+        return str(err).replace('tuple', self.__class__.__name__, 1)
+
+    def __eq__(self, other):
+        return other.__class__ == self.__class__ and self._data == other._data
+
+    def __getitem__(self, index):
+        try:
+            return self._data[index]
+        except Exception as err:
+            error_msg = self._get_error_message(err)
+            raise err.__class__(error_msg)
+
+    def __len__(self):
+        return len(self._data)
+
+    def __hash__(self):
+        return hash((self.__class__.__name__, self._data))
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        if len(self._data) > 1:
+            text = '{class_name}([{data}])'.format(data=str(self._data)[1:-1], class_name=class_name)
+        elif len(self._data) == 1:
+            text = '{class_name}([{data}])'.format(data=str(self._data)[1:-2], class_name=class_name)
+        else:
+            text = '{class_name}()'.format(class_name=class_name)
+        return text
+
+    def __str__(self):
+        return ', '.join(str(v) for v in self._data)
+
+    def copy(self):
+        return self.__class__(self._data)
+
+
+class Cursor(ImmutableList):
+    """Immutable list to store cursor property."""

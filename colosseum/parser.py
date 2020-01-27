@@ -5,7 +5,7 @@ from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .shapes import Rect
 from .units import Unit, px
-from .wrappers import BorderSpacing, Quotes
+from .wrappers import BorderSpacing, Cursor, Quotes, Uri
 
 
 def units(value):
@@ -369,3 +369,131 @@ def border_bottom(value):
 def border_top(value):
     """Parse border string into a dictionary of outline properties."""
     return border(value, direction='top')
+
+
+##############################################################################
+# Uri
+##############################################################################
+def uri(value):
+    """Parse a url from a value.
+
+    Accepts:
+    * url("<url>")
+    * url( "<url>" )
+    * url('<url>')
+    * url( '<url>' )
+    * url(<url>)
+    * url( <url> )
+    """
+    if isinstance(value, str):
+        value = value.strip()
+    else:
+        raise ValueError('Value {value} must be a string')
+
+    if value.startswith('url(') and value.endswith(')'):
+        # Remove the url word
+        value = value[3:]
+
+        # Single quotes and optional spaces
+        if value.startswith("('") and value.endswith("')"):
+            # "('some.url')"
+            return Uri(value[2:-2])
+        elif value.startswith("( '") and value.endswith("')"):
+            # "( 'some.url')"
+            return Uri(value[3:-2])
+        elif value.startswith("('") and value.endswith("' )"):
+            # "('some.url' )"
+            return Uri(value[2:-3])
+        elif value.startswith("( '") and value.endswith("' )"):
+            # "( 'some.url' )"
+            return Uri(value[3:-3])
+        # Double quotes and optional spaces
+        elif value.startswith('("') and value.endswith('")'):
+            # '("some.url")'
+            return Uri(value[2:-2])
+        elif value.startswith('( "') and value.endswith('")'):
+            # '( "some.url")'
+            return Uri(value[3:-2])
+        elif value.startswith('("') and value.endswith('" )'):
+            # '("some.url" )'
+            return Uri(value[2:-3])
+        elif value.startswith('( "') and value.endswith('" )'):
+            # '( "some.url" )'
+            return Uri(value[3:-3].strip())
+        # No quotes and optional spaces
+        elif value.startswith('( ') and value.endswith(' )'):
+            # '( some.url )'
+            value = value[2:-2]
+            if value != value.strip():
+                raise ValueError('Invalid url %s' % value)
+
+            return Uri(value)
+        elif value.startswith('( ') and value.endswith(')'):
+            # '( some.url)'
+            value = value[2:-1]
+            if value != value.strip() or value[-1] in ['"', "'"] or value[0] in ['"', "'"]:
+                raise ValueError('Invalid url %s' % value)
+
+            return Uri(value)
+        elif value.startswith('(') and value.endswith(' )'):
+            # '(some.url )'
+            value = value[1:-2]
+            if value != value.strip() or value[-1] in ['"', "'"] or value[0] in ['"', "'"]:
+                raise ValueError('Invalid url %s' % value)
+
+            return Uri(value)
+        elif value[1:-1] == value[1:-1].strip():
+            # '(some.url)'
+            value = value[1:-1]
+
+            # Some characters appearing in an unquoted URI, such as parentheses, white space characters,
+            # single quotes (') and double quotes ("), must be escaped with a backslash so that the
+            # resulting URI value is a URI token: '\(', '\)'
+            escape_chars = ['(', ')', ' ', "'", '"']
+            for char in escape_chars:
+                if char in value and '\{char}'.format(char=char) not in value:
+                    raise ValueError('Invalid url %s' % value)
+
+            return Uri(value)
+
+    raise ValueError('Invalid url %s' % value)
+
+
+
+##############################################################################
+# Cursor
+##############################################################################
+def cursor(values):
+    """Parse a cursor from a value."""
+    from .constants import CURSOR_OPTIONS
+
+    if isinstance(values, str):
+        values = [val.strip() for val in values.split(',')]
+
+    validated_values = []
+    has_cursor_option = False
+    option_count = 0
+    for value in values:
+        if value in CURSOR_OPTIONS:
+            has_cursor_option = True
+            validated_values.append(value)
+            option_count += 1
+
+            if option_count > 1:
+                raise ValueError('There can only be one cursor option in {values}!'.format(values=values))
+
+            continue
+        else:
+            if has_cursor_option:
+                raise ValueError('Values {values} are in incorrect order. '
+                                 'Cursor option must come last!'.format(values=values))
+            try:
+                value = uri(value)
+                validated_values.append(value)
+                continue
+            except ValueError:
+                raise ValueError('Value {value} is not a valid url value'.format(value=value))
+
+        raise ValueError('Value {value} is not a valid cursor value'.format(value=value))
+
+    return Cursor(validated_values)

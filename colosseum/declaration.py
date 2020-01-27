@@ -445,7 +445,7 @@ class CSS:
 
     # 18. User interface #################################################
     # 18.1 Cursors
-    cursor = validated_list_property('cursor', CURSOR_CHOICES, initial=[AUTO])
+    cursor = validated_property('cursor', CURSOR_CHOICES, initial=AUTO)
 
     # 18.4 Dynamic outlines
     outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)
@@ -621,14 +621,10 @@ class CSS:
     ######################################################################
     def __str__(self):
         non_default = []
+        empty = '<EMPTY>'
         for name in _CSS_PROPERTIES:
-            try:
-                non_default.append((
-                    name.replace('_', '-'),
-                    getattr(self, '_%s' % name)
-                ))
-            except AttributeError:
-                pass
+            if getattr(self, '_%s' % name, empty) != empty: 
+                non_default.append((name.replace('_', '-'), getattr(self, name)))
 
         return "; ".join(
             "%s: %s" % (name, value)

@@ -1,6 +1,6 @@
 from .validators import (ValidationError, is_border_spacing, is_color,
-                         is_integer, is_length, is_number, is_percentage,
-                         is_quote, is_rect, is_uri)
+                         is_cursor, is_integer, is_length, is_number,
+                         is_percentage, is_quote, is_rect, is_uri)
 
 
 class Choices:
@@ -530,27 +530,8 @@ HELP = 'help'
 CURSOR_OPTIONS = [AUTO, CROSSHAIR, DEFAULT, POINTER, MOVE, E_RESIZE, NE_RESIZE, NW_RESIZE, N_RESIZE, SE_RESIZE,
                   SW_RESIZE, S_RESIZE, W_RESIZE, TEXT, WAIT, PROGRESS, HELP]
 
-CURSOR_CHOICES = Choices(
-    AUTO,
-    CROSSHAIR,
-    DEFAULT,
-    POINTER,
-    MOVE,
-    E_RESIZE,
-    NE_RESIZE,
-    NW_RESIZE,
-    N_RESIZE,
-    SE_RESIZE,
-    SW_RESIZE,
-    S_RESIZE,
-    W_RESIZE,
-    TEXT,
-    WAIT,
-    PROGRESS,
-    HELP,
-    TRANSPARENT,
-    validators=[is_uri],
-    explicit_defaulting_constants=[INHERIT])
+# Since the order is important, the cursor options are used in the is_cursor validator
+CURSOR_CHOICES = Choices(validators=[is_cursor], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 18.4 Dynamic outlines

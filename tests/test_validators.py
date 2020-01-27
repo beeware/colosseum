@@ -3,8 +3,8 @@ from unittest import TestCase
 from colosseum.shapes import Rect
 from colosseum.units import px
 from colosseum.validators import (ValidationError, is_border_spacing,
-                                  is_integer, is_number, is_quote, is_rect,
-                                  is_uri)
+                                  is_cursor, is_integer, is_number, is_quote,
+                                  is_rect, is_uri)
 from colosseum.wrappers import Quotes
 
 
@@ -167,32 +167,111 @@ class QuotesTests(TestCase):
             is_quote("'<' '>' '{'")
 
 
-class UrlTests(TestCase):
+class UriTests(TestCase):
+    """Comprehensive tests are found on test_parser.py."""
 
-    def test_uri(self):
-        self.assertEqual(is_uri("url('com')"), "url('com')")
-        self.assertEqual(is_uri("url('com')"), "url('com')")
-        self.assertEqual(is_uri("url('com')"), "url('com')")
-        self.assertEqual(is_uri("url('com')"), "url('com')")
+    def test_url_valid(self):
+        url = is_uri("url(some.url)")
+        self.assertEqual(str(url), 'url("some.url")')
 
-        self.assertEqual(is_uri("url(\"com\")"), "url(\"com\")")
-        self.assertEqual(is_uri("url( \"com\")"), "url( \"com\")")
-        self.assertEqual(is_uri("url(\"com\" )"), "url(\"com\" )")
-        self.assertEqual(is_uri("url( \"com\" )"), "url( \"com\" )")
+        url = is_uri(" url(some.url) ")
+        self.assertEqual(str(url), 'url("some.url")')
 
-        self.assertEqual(is_uri("url(com)"), "url(com)")
-        self.assertEqual(is_uri("url( com)"), "url( com)")
-        self.assertEqual(is_uri("url(com )"), "url(com )")
-        self.assertEqual(is_uri("url( com )"), "url( com )")
+        url = is_uri(r"url(some.\ url)")
+        self.assertEqual(str(url), r'url("some.\ url")')
+
+        url = is_uri("url('some.url')")
+        self.assertEqual(str(url), 'url("some.url")')
+
+        url = is_uri("url( 'some.url' )")
+        self.assertEqual(str(url), 'url("some.url")')
+
+        url = is_uri('url("some.url")')
+        self.assertEqual(str(url), 'url("some.url")')
+
+        url = is_uri('url( "some.url" )')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_invalid(self):
+        with self.assertRaises(ValidationError):
+            is_uri("url(some. url)")
 
         with self.assertRaises(ValidationError):
-            is_uri("url( ' com '  )")
+            is_uri("url(  some.url  )")
 
         with self.assertRaises(ValidationError):
-            is_uri("url( \" com  \"  )")
+            is_uri("url(  'some.url'  )")
 
         with self.assertRaises(ValidationError):
-            is_uri("url( com  )")
+            is_uri('url(  "some.url"  )')
+
+
+class CursorTests(TestCase):
+    """Comprehensive tests are found on test_parser.py."""
+
+    def test_cursor_valid_1_item(self):
+        cursor = is_cursor("url(some.url)")
+        self.assertEqual(str(cursor), 'url("some.url")')
+
+        cursor = is_cursor(" url(some.url) ")
+        self.assertEqual(str(cursor), 'url("some.url")')
+
+        cursor = is_cursor("url('some.url')")
+        self.assertEqual(str(cursor), 'url("some.url")')
+
+        cursor = is_cursor("url( 'some.url' )")
+        self.assertEqual(str(cursor), 'url("some.url")')
+
+        cursor = is_cursor('url("some.url")')
+        self.assertEqual(str(cursor), 'url("some.url")')
+
+        cursor = is_cursor('url( "some.url" )')
+        self.assertEqual(str(cursor), 'url("some.url")')
+
+    def test_cursor_valid_2_items(self):
+        cursor = is_cursor("url(some.url), url(some.url2)")
+        self.assertEqual(str(cursor), 'url("some.url"), url("some.url2")')
+
+        cursor = is_cursor("url(some.url), auto")
+        self.assertEqual(str(cursor), 'url("some.url"), auto')
+
+        cursor = is_cursor(["url(some.url)", "url(some.url2)"])
+        self.assertEqual(str(cursor), 'url("some.url"), url("some.url2")')
+
+        cursor = is_cursor(["url(some.url)", "auto"])
+        self.assertEqual(str(cursor), 'url("some.url"), auto')
+
+    def test_cursor_invalid_1_item(self):
+        with self.assertRaises(ValidationError):
+            is_cursor("foobar")
 
         with self.assertRaises(ValidationError):
-            is_uri("com")
+            is_cursor("url(  something  )")
+
+        with self.assertRaises(ValidationError):
+            is_cursor(["foobar"])
+
+        with self.assertRaises(ValidationError):
+            is_cursor(["url(  something  )"])
+
+    def test_cursor_invalid_2_items(self):
+        with self.assertRaises(ValidationError):
+            is_cursor("foobar, blah")
+
+        with self.assertRaises(ValidationError):
+            is_cursor("url(something), url(  something  )")
+
+        with self.assertRaises(ValidationError):
+            is_cursor("auto, url( something )")
+
+        with self.assertRaises(ValidationError):
+            is_cursor(["foobar", 'blah'])
+
+        with self.assertRaises(ValidationError):
+            is_cursor(["url(something)", "url(  something  )"])
+
+        with self.assertRaises(ValidationError):
+            is_cursor(["auto", "url(something)"])
+
+        with self.assertRaises(ValidationError):
+            is_cursor(["url(something)", "auto", "url(something)"])

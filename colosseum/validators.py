@@ -4,8 +4,7 @@ Validate values of different css properties.
 
 import re
 
-from . import parser
-from . import units
+from . import parser, units
 from .exceptions import ValidationError
 
 
@@ -157,12 +156,32 @@ is_quote.description = '[<string> <string>]+'
 
 
 def is_uri(value):
+    """Validate value is <uri>."""
     try:
-        value = URI_RE.match(value).groups()[0]
-    except Exception:
-        raise ValidationError('Uri "{value}" not valid!'.format(value=value))
+        value = parser.uri(value)
+    except ValueError as error:
+        raise ValidationError(str(error))
 
     return value
 
 
 is_uri.description = '<uri>'
+
+
+def is_cursor(value):
+    """
+    Validate if values are correct cursor values and in correct order and quantity.
+
+    This validator returns a list.
+    """
+    try:
+        value = parser.cursor(value)
+    except ValueError as error:
+        raise ValidationError(str(error))
+
+    return value
+
+
+is_cursor.description = ('[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize '
+                         '| ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize '
+                         '| w-resize | text | wait | help | progress ] ]')
