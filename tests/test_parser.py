@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
+from colosseum.shapes import Rect
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
 )
@@ -187,3 +188,103 @@ class ParseColorTests(TestCase):
 
         with self.assertRaises(ValueError):
             parser.color('not a color')
+
+
+class ParseRectTests(TestCase):
+
+    def test_rect_valid_commas(self):
+        expected_rect = Rect(1 * px, 3 * px, 2 * px, 4 * px)
+
+        # Comma separated without units
+        self.assertEqual(parser.rect('rect(1, 3, 2, 4)'), expected_rect)
+
+        # Comma separated with units
+        self.assertEqual(parser.rect('rect(1px, 3px, 2px, 4px)'), expected_rect)
+
+        # Comma separated with units and extra spaces
+        self.assertEqual(parser.rect('  rect(  1px  ,  3px  ,  2px,  4px  )  '), expected_rect)
+
+    def test_rect_valid_spaces(self):
+        expected_rect = Rect(1 * px, 3 * px, 2 * px, 4 * px)
+
+        # Space separated without units
+        self.assertEqual(parser.rect('rect(1 3 2 4)'), expected_rect)
+
+        # Space separated wit units
+        self.assertEqual(parser.rect('rect(1px 3px 2px 4px)'), expected_rect)
+
+        # Space separated with units and extra spaces
+        self.assertEqual(parser.rect('  rect(  1px  3px  2px  4px  )  '), expected_rect)
+
+    def test_rect_invalid_mix_commas_spaces(self):
+        # Mix of commas and spaces
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px 4px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a b, c d)')
+
+    def test_rect_invalid_number_of_arguments_empty(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect()')
+
+    def test_rect_invalid_number_of_arguments_1_arg(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px)')
+
+    def test_rect_invalid_number_of_arguments_2_args(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px)')
+
+    def test_rect_invalid_number_of_arguments_3_args(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px)')
+
+    def test_rect_invalid_number_of_arguments_5_args(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1px, 3px, 2px, 5px, 7px)')
+
+    def test_rect_invalid_missing_parens(self):
+        # Missing parens
+        with self.assertRaises(ValueError):
+            parser.rect('rect a b c d)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a b c d')
+
+        with self.assertRaises(ValueError):
+            parser.rect('rect a b c d')
+
+    def test_rect_invalid_extra_parens(self):
+        # Missing parens
+        with self.assertRaises(ValueError):
+            parser.rect('rect((a b c d)')
+
+        # Missing parens
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a b c d))')
+
+    def test_rect_invalid_missing_rect(self):
+        # Other values
+        with self.assertRaises(ValueError):
+            parser.rect('(1px, 3px, 2px, 4px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('1px, 3px, 2px, 4px')
+
+        with self.assertRaises(ValueError):
+            parser.rect('1px 3px 2px 4px')
+
+        with self.assertRaises(ValueError):
+            parser.rect('(1px 3px 2px 4px)')
+
+    def test_rect_invalid_units(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(a, b, c, d)')
+
+    def test_rect_invalid_case(self):
+        with self.assertRaises(ValueError):
+            parser.rect('rect(1PX, 3px, 2px, 4px)')
+
+        with self.assertRaises(ValueError):
+            parser.rect('RECT(1px, 3px, 2px, 4px)')

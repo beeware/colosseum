@@ -1,9 +1,10 @@
+"""
+Validate values of different css properties.
+"""
+
 from . import parser
 from . import units
-
-
-class ValidationError(ValueError):
-    pass
+from .exceptions import ValidationError
 
 
 def _numeric_validator(num_value, numeric_type, min_value, max_value):
@@ -103,3 +104,16 @@ def is_color(value):
 
 
 is_color.description = '<color>'
+
+
+def is_rect(value):
+    """Check if given value is a rect shape and return it."""
+    try:
+        value = parser.rect(value)
+    except ValueError:
+        raise ValidationError('Value {value} is not a rect shape'.format(value=value))
+
+    return value
+
+
+is_rect.description = '<rect>'
