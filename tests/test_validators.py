@@ -3,9 +3,8 @@ from unittest import TestCase
 from colosseum.exceptions import ValidationError
 from colosseum.shapes import Rect
 from colosseum.units import px
-from colosseum.validators import (ValidationError, is_border_spacing,
-                                  is_font_family, is_integer, is_number,
-                                  is_rect)
+from colosseum.validators import (is_border_spacing, is_font_family, is_integer,
+                                  is_number, is_rect)
 
 
 class NumericTests(TestCase):

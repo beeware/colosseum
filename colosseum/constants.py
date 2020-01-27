@@ -1,7 +1,7 @@
 from .exceptions import ValidationError
-from .validators import (ValidationError, is_border_spacing, is_color,
-                         is_font_family, is_integer, is_length, is_number,
-                         is_percentage, is_rect)
+from .validators import (is_border_spacing, is_color, is_font_family,
+                         is_integer, is_length, is_number, is_percentage,
+                         is_rect)
 from .wrappers import FontFamily
 
 
