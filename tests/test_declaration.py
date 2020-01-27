@@ -2,16 +2,15 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import (
-    AUTO, BLOCK, INHERIT, INITIAL, INITIAL_FONT_VALUES, INLINE, REVERT, TABLE,
-    UNSET, Choices,
-)
+from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL,
+                                 INITIAL_FONT_VALUES, INLINE, LEFT, REVERT,
+                                 RIGHT, RTL, TABLE, UNSET, Choices,
+                                 OtherProperty)
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
-from colosseum.validators import (
-    is_color, is_integer, is_length, is_number, is_percentage,
-)
-from colosseum.wrappers import FontFamily, FontShorthand
+from colosseum.validators import (is_color, is_integer, is_length, is_number,
+                                  is_percentage)
+from colosseum.wrappers import BorderSpacing, FontFamily, FontShorthand
 
 from .utils import ColosseumTestCase, TestNode
 
@@ -471,6 +470,187 @@ class CssDeclarationTests(ColosseumTestCase):
         except ValueError:
             pass
 
+    def test_property_border_spacing_valid_str_1_item_inherit(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Text value
+        node.style.border_spacing = 'inherit'
+        self.assertEqual(node.style.border_spacing, 'inherit')
+        self.assertEqual(node.style.border_spacing, 'inherit')
+        self.assertNotIsInstance(node.style.border_spacing, BorderSpacing)
+
+    def test_property_border_spacing_valid_str_1_item(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.border_spacing = '1'
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 1 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px)')
+        self.assertEqual(str(node.style.border_spacing), '1px')
+
+        node.style.border_spacing = '1px'
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 1 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px)')
+        self.assertEqual(str(node.style.border_spacing), '1px')
+
+    def test_property_border_spacing_valid_str_1_item_spaces(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.border_spacing = '  1  '
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 1 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px)')
+        self.assertEqual(str(node.style.border_spacing), '1px')
+
+        node.style.border_spacing = '  1px  '
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 1 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px)')
+        self.assertEqual(str(node.style.border_spacing), '1px')
+
+    def test_property_border_spacing_valid_str_2_items_numbers(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.border_spacing = '1 2'
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+        node.style.border_spacing = '1.0 2.0'
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+    def test_property_border_spacing_valid_str_2_items_px(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.border_spacing = '1px 2px'
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+    def test_property_border_spacing_valid_str_2_items_numbers_spaces(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.border_spacing = '  1  2  '
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+        node.style.border_spacing = '  1.0  2.0  '
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+    def test_property_border_spacing_valid_sequence_2_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # List of strings
+        node.style.border_spacing = ['1', '2']
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+        # List
+        node.style.border_spacing = [1, 2]
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+        # Tuple
+        node.style.border_spacing = (1, 2)
+        self.assertEqual(node.style.border_spacing.horizontal, 1 * px)
+        self.assertEqual(node.style.border_spacing.vertical, 2 * px)
+        self.assertEqual(repr(node.style.border_spacing), 'BorderSpacing(1px, 2px)')
+        self.assertEqual(str(node.style.border_spacing), '1px 2px')
+
+    def test_property_border_spacing_invalid_empty_item(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = ''
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = ()
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = []
+
+    def test_property_border_spacing_invalid_value_1_item(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = 'foobar'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = ['foobar']
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = ('foobar', )
+
+    def test_property_border_spacing_invalid_value_2_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = 'foobar spam'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = ['foobar', 'spam']
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = ('foobar', 'spam')
+
+    def test_property_border_spacing_invalid_amount_of_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = '1 2 3'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = 1, 2, 3,
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = [1, 2, 3]
+
+    def test_property_border_spacing_invalid_separator_str_1_item(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = '1,'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = '1;'
+
+    def test_property_border_spacing_invalid_separator_str_2_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = '1, 2'
+
+        with self.assertRaises(ValueError):
+            node.style.border_spacing = '1; 2'
+
     def test_directional_property(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
@@ -621,6 +801,62 @@ class CssDeclarationTests(ColosseumTestCase):
             node.style.update(not_a_property=10)
 
         self.assertFalse(node.style.dirty)
+
+    def test_other_property_valid(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('other_prop'))
+            other_prop = validated_property('other_prop', choices=Choices(0, AUTO), initial=AUTO)
+
+        obj = MyObject()
+        self.assertEqual(obj.prop, AUTO)
+        self.assertEqual(obj.prop, obj.other_prop)
+
+        obj.other_prop = 0
+        self.assertEqual(obj.prop, 0)
+        self.assertEqual(obj.prop, obj.other_prop)
+
+        obj.prop = None
+        self.assertEqual(obj.prop, None)
+        self.assertNotEqual(obj.prop, obj.other_prop)
+
+    def test_other_property_invalid_no_name_argument(self):
+        with self.assertRaises(TypeError):
+            OtherProperty()
+
+    def test_other_property_invalid_incorrect_property_name(self):
+        class MyObject:
+            prop = validated_property('prop', choices=Choices(AUTO, None), initial=OtherProperty('foobar'))
+
+        obj = MyObject()
+        with self.assertRaises(ValueError):
+            obj.prop
+
+    def test_other_property_callable_valid(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value LTR
+        self.assertEqual(node.style.text_align, LEFT)
+
+        # Change direction to RTL
+        node.style.update(direction=RTL)
+        self.assertEqual(node.style.text_align, RIGHT)
+
+    def test_other_property_invalid_no_value_attr(self):
+        class SomeProperty:
+            boo = None
+
+        with self.assertRaises(ValueError):
+            class MyObject:
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
+
+    def test_other_property_callable_invalid_value_not_a_method(self):
+        class SomeProperty:
+            value = None
+
+        with self.assertRaises(ValueError):
+            class MyObject:
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
 
     def test_str(self):
         node = TestNode(style=CSS())

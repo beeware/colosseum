@@ -113,6 +113,23 @@ def is_color(value):
 is_color.description = '<color>'
 
 
+def is_border_spacing(value):
+    """
+    Check if value is corresponds to a border spacing.
+
+    <length> <length>?
+    """
+    try:
+        value = parser.border_spacing(value)
+    except ValueError as error:
+        raise ValidationError(str(error))
+
+    return value
+
+
+is_border_spacing.description = '<length> <length>?'
+
+
 def is_rect(value):
     """Check if given value is a rect shape and return it."""
     try:

@@ -23,9 +23,7 @@ class BaseUnit:
         return '{}{}'.format(value, self.suffix)
 
     def __str__(self):
-        int_value = int(self.val)
-        value = int_value if self.val == int_value else self.val
-        return '{}{}'.format(value, self.suffix)
+        return repr(self)
 
     def __rmul__(self, val):
         if isinstance(val, (int, float)):

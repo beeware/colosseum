@@ -1,6 +1,7 @@
 from .exceptions import ValidationError
-from .validators import (ValidationError, is_color, is_font_family, is_integer,
-                         is_length, is_number, is_percentage, is_rect)
+from .validators import (ValidationError, is_border_spacing, is_color,
+                         is_font_family, is_integer, is_length, is_number,
+                         is_percentage, is_rect)
 from .wrappers import FontFamily
 
 
@@ -44,6 +45,25 @@ class Choices:
                 choices.add(item)
 
         return ", ".join(sorted(set(choices)))
+
+
+class OtherProperty:
+    """A class to refer to another property."""
+
+    def __init__(self, name):
+        self._name = name
+
+    def __str__(self):
+        return repr(self)
+
+    def __repr__(self):
+        return '{class_name}("{name}")'.format(class_name=self.__class__.__name__, name=self._name)
+
+    def value(self, context):
+        try:
+            return getattr(context, self._name)
+        except AttributeError:
+            raise ValueError('Property "%s" not found!' % self._name)
 
 
 ######################################################################
@@ -480,52 +500,122 @@ INITIAL_FONT_VALUES = {
 ######################################################################
 # 16.1 Indentation
 ######################################################################
+
 # text_indent
+TEXT_INDENT_CHOICES = Choices(validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.2 Alignment
 ######################################################################
+
 # text_align
+LEFT = 'left'
+RIGHT = 'right'
+CENTER = 'center'
+JUSTIFY = 'justify'
+
+TEXT_ALIGN_CHOICES = Choices(LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT])
+
+
+class TextAlignInitialValue:
+
+    def value(self, context):
+        """Return the initial alignment value based on direction."""
+        direction = getattr(context, 'direction')
+        if direction is LTR:
+            return LEFT
+
+        if direction is RTL:
+            return RIGHT
+
+        raise ValueError('Undefined value "{value}" for direction property!'.format(value=direction))
+
 
 ######################################################################
 # 16.3 Decoration
 ######################################################################
+
 # text_decoration
+UNDERLINE = 'underline'
+OVERLINE = 'overline'
+LINE_THROUGH = 'line-through'
+BLINK = 'blink'
+
+TEXT_DECORATION_CHOICES = Choices(None, UNDERLINE, OVERLINE, LINE_THROUGH, BLINK,
+                                  explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.4 Letter and word spacing
 ######################################################################
+
 # letter_spacing
+LETTER_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
+
 # word_spacing
+WORD_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.5 Capitalization
 ######################################################################
+
 # text_transform
+CAPITALIZE = 'capitalize'
+UPPERCASE = 'uppercase'
+LOWERCASE = 'lowercase'
+
+TEXT_TRANSFORM_CHOICES = Choices(CAPITALIZE, UPPERCASE, LOWERCASE, None, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.6 White space
 ######################################################################
+
 # white_space
+# NORMAL = 'normal'
+PRE = 'pre'
+NOWRAP = 'nowrap'
+PRE_WRAP = 'pre-wrap'
+PRE_LINE = 'pre-line'
+
+WHITE_SPACE_CHOICES = Choices(NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17. Tables
 ######################################################################
 # 17.4.1 Caption position and alignment
 ######################################################################
+
+TOP = 'top'
+BOTTOM = 'bottom'
+
 # caption_side
+CAPTION_SIDE_CHOICES = Choices(TOP, BOTTOM, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17.5.2 Table width algorithms
 ######################################################################
+
 # table_layout
+TABLE_LAYOUT_CHOICES = Choices(AUTO, FIXED, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17.6 Borders
 ######################################################################
+
+
 # border_collapse
+COLLAPSE = 'collapse'
+SEPARATE = 'separate'
+
+BORDER_COLLAPSE_CHOICES = Choices(COLLAPSE, SEPARATE, explicit_defaulting_constants=[INHERIT])
+
 # border_spacing
+BORDER_SPACING_CHOICES = Choices(validators=[is_border_spacing], explicit_defaulting_constants=[INHERIT])
+
 # empty_cells
+SHOW = 'show'
+HIDE = 'hide'
+
+EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 18. User interface #################################################
