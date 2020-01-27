@@ -146,7 +146,7 @@ def validated_property(name, choices, initial):
 
             # Check the value attribute is a callable
             if not callable(value_attr):
-                raise ValueError('Initial value "%s" `value` attribute is not callable!' % initial)
+                raise ValueError('Initial value "%s" attribute is not callable!' % initial)
 
         except AttributeError:
             raise ValueError('Initial value "%s" does not have a value attribute!' % initial)
