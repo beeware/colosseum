@@ -1,4 +1,5 @@
 from .colors import NAMED_COLOR, hsl, rgb
+from .shapes import Rect
 from .units import Unit, px
 
 
@@ -126,3 +127,24 @@ def color(value):
                 pass
 
     raise ValueError('Unknown color %s' % value)
+
+
+def rect(value):
+    """Parse a given rect shape."""
+    value = ' '.join(val.strip() for val in value.split())
+    if (value.startswith('rect(') and value.endswith(')') and
+            value.count('rect(') == 1 and value.count(')') == 1):
+        value = value.replace('rect(', '')
+        value = value.replace(')', '').strip()
+
+        values = None
+        if value.count(',') == 3:
+            values = value.split(',')
+        elif value.count(',') == 0 and value.count(' ') == 3:
+            values = value.split(' ')
+
+        if values is not None:
+            values = [units(val.strip()) for val in values]
+            return Rect(*values)
+
+    raise ValueError('Unknown shape %s' % value)

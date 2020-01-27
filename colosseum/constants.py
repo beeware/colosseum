@@ -1,13 +1,12 @@
-from .validators import (is_color, is_integer, is_length, is_number,
-                         is_percentage, ValidationError)
+from .validators import (ValidationError, is_color, is_integer, is_length,
+                         is_number, is_percentage, is_rect)
 
 
 class Choices:
     "A class to define allowable data types for a property."
 
-    def __init__(
-            self, *constants, validators=None,
-            explicit_defaulting_constants=None):
+    def __init__(self, *constants, validators=None,
+                 explicit_defaulting_constants=None):
         self.constants = set(constants)
         self.explicit_defaulting_constants = explicit_defaulting_constants or []
         self.validators = validators or []
@@ -261,16 +260,22 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 ######################################################################
 # overflow
 
+SCROLL = 'scroll'
+VISIBLE = 'visible'
+
+OVERFLOW_CHOICES = Choices(VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_constants=[INHERIT])
+
 ######################################################################
 # 11.1.2 Clip
 ######################################################################
 # clip
 
+CLIP_CHOICES = Choices(AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT])
+
 ######################################################################
 # 11.2 Visibility
 ######################################################################
 
-VISIBLE = 'visible'
 HIDDEN = 'hidden'
 COLLAPSE = 'collapse'
 
