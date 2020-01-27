@@ -59,10 +59,11 @@ def validated_property(name, choices, initial):
             value_attr = getattr(initial, 'value')
 
             # Check the value attribute is a callable
-            assert callable(value_attr)
+            if not callable(value_attr):
+                raise ValueError('Initial value "%s" `value` attribute is not callable!' % initial)
 
-        except (AttributeError, AssertionError):
-            raise ValueError('Initial value "%s" must provide a `value` method!' % initial)
+        except AttributeError:
+            raise ValueError('Initial value "%s" does not have a value attribute!' % initial)
 
     def getter(self):
         try:
