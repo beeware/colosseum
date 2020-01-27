@@ -621,10 +621,12 @@ class CSS:
     ######################################################################
     def __str__(self):
         non_default = []
-        empty = '<EMPTY>'
         for name in _CSS_PROPERTIES:
-            if getattr(self, '_%s' % name, empty) != empty:
+            try:
+                getattr(self, '_%s' % name)
                 non_default.append((name.replace('_', '-'), getattr(self, name)))
+            except AttributeError:
+                pass
 
         return "; ".join(
             "%s: %s" % (name, value)

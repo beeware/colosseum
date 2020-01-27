@@ -379,11 +379,11 @@ def uri(value):
 
     Accepts:
     * url("<url>")
-    * url( "<url>" )
+    * url(  "<url>"  )
     * url('<url>')
-    * url( '<url>' )
+    * url(  '<url>'  )
     * url(<url>)
-    * url( <url> )
+    * url(  <url>  )
     """
     if isinstance(value, str):
         value = value.strip()
@@ -391,61 +391,18 @@ def uri(value):
         raise ValueError('Value {value} must be a string')
 
     if value.startswith('url(') and value.endswith(')'):
-        # Remove the url word
-        value = value[3:]
+        # Remove the 'url(' and ')'
+        value = value[4:-1].strip()
 
         # Single quotes and optional spaces
-        if value.startswith("('") and value.endswith("')"):
-            # "('some.url')"
-            return Uri(value[2:-2])
-        elif value.startswith("( '") and value.endswith("')"):
-            # "( 'some.url')"
-            return Uri(value[3:-2])
-        elif value.startswith("('") and value.endswith("' )"):
-            # "('some.url' )"
-            return Uri(value[2:-3])
-        elif value.startswith("( '") and value.endswith("' )"):
-            # "( 'some.url' )"
-            return Uri(value[3:-3])
+        if value.startswith("'") and value.endswith("'"):
+            return Uri(value[1:-1])
         # Double quotes and optional spaces
-        elif value.startswith('("') and value.endswith('")'):
+        elif value.startswith('"') and value.endswith('"'):
             # '("some.url")'
-            return Uri(value[2:-2])
-        elif value.startswith('( "') and value.endswith('")'):
-            # '( "some.url")'
-            return Uri(value[3:-2])
-        elif value.startswith('("') and value.endswith('" )'):
-            # '("some.url" )'
-            return Uri(value[2:-3])
-        elif value.startswith('( "') and value.endswith('" )'):
-            # '( "some.url" )'
-            return Uri(value[3:-3].strip())
+            return Uri(value[1:-1])
         # No quotes and optional spaces
-        elif value.startswith('( ') and value.endswith(' )'):
-            # '( some.url )'
-            value = value[2:-2]
-            if value != value.strip():
-                raise ValueError('Invalid url %s' % value)
-
-            return Uri(value)
-        elif value.startswith('( ') and value.endswith(')'):
-            # '( some.url)'
-            value = value[2:-1]
-            if value != value.strip() or value[-1] in ['"', "'"] or value[0] in ['"', "'"]:
-                raise ValueError('Invalid url %s' % value)
-
-            return Uri(value)
-        elif value.startswith('(') and value.endswith(' )'):
-            # '(some.url )'
-            value = value[1:-2]
-            if value != value.strip() or value[-1] in ['"', "'"] or value[0] in ['"', "'"]:
-                raise ValueError('Invalid url %s' % value)
-
-            return Uri(value)
-        elif value[1:-1] == value[1:-1].strip():
-            # '(some.url)'
-            value = value[1:-1]
-
+        else:
             # Some characters appearing in an unquoted URI, such as parentheses, white space characters,
             # single quotes (') and double quotes ("), must be escaped with a backslash so that the
             # resulting URI value is a URI token: '\(', '\)'

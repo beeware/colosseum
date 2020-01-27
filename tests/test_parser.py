@@ -688,15 +688,15 @@ class ParseUriTests(TestCase):
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_single_quotes_spaces_url_left(self):
-        url = parser.uri("url( 'some.url')")
+        url = parser.uri("url(  'some.url')")
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_single_quotes_spaces_url_right(self):
-        url = parser.uri("url('some.url' )")
+        url = parser.uri("url('some.url'  )")
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_single_quotes_spaces_url_left_right(self):
-        url = parser.uri("url( 'some.url' )")
+        url = parser.uri("url(  'some.url'  )")
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_double_quotes_url(self):
@@ -704,27 +704,27 @@ class ParseUriTests(TestCase):
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_double_quotes_spaces_url_left(self):
-        url = parser.uri('url( "some.url")')
+        url = parser.uri('url(  "some.url")')
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_double_quotes_spaces_url_right(self):
-        url = parser.uri('url("some.url" )')
+        url = parser.uri('url("some.url"  )')
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_double_quotes_spaces_url_left_right(self):
-        url = parser.uri('url( "some.url" )')
+        url = parser.uri('url(  "some.url"  )')
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_no_quotes_spaces_url_left_right(self):
-        url = parser.uri('url( some.url )')
+        url = parser.uri('url(  some.url  )')
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_no_quotes_spaces_url_left(self):
-        url = parser.uri('url( some.url)')
+        url = parser.uri('url(  some.url)')
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_no_quotes_spaces_url_right(self):
-        url = parser.uri('url(some.url )')
+        url = parser.uri('url(some.url  )')
         self.assertEqual(str(url), 'url("some.url")')
 
     def test_url_valid_no_quotes_url(self):
@@ -781,49 +781,13 @@ class ParseUriTests(TestCase):
             parser.cursor("url( some.url\")")
 
         with self.assertRaises(ValueError):
-            parser.cursor('url( "bla)')
+            parser.cursor('url(  "bla)')
 
         with self.assertRaises(ValueError):
-            parser.cursor('url( \'bla)')
+            parser.cursor('url(  \'bla)')
 
         with self.assertRaises(ValueError):
-            parser.cursor('url(bla\' )')
-
-    def test_url_invalid_single_quotes_too_many_spaces_url_left(self):
-        with self.assertRaises(ValueError):
-            parser.uri("url(  'some.url')")
-
-    def test_url_invalid_single_quotes_too_many_spaces_url_right(self):
-        with self.assertRaises(ValueError):
-            parser.uri("url('some.url'  )")
-
-    def test_url_invalid_single_quotes_too_many_spaces_url_left_right(self):
-        with self.assertRaises(ValueError):
-            parser.uri("url(  'some.url'  )")
-
-    def test_url_invalid_double_quotes_too_many_spaces_url_left(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url(  "some.url")')
-
-    def test_url_invalid_double_quotes_too_many_spaces_url_right(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url("some.url"  )')
-
-    def test_url_invalid_double_quotes_too_many_spaces_url_left_right(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url(  "some.url"  )')
-
-    def test_url_invalid_no_quotes_too_many_spaces_url_left(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url(  some.url)')
-
-    def test_url_invalid_no_quotes_too_many_spaces_url_right(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url(some.url  )')
-
-    def test_url_invalid_no_quotes_too_many_spaces_url_left_right(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url(  some.url  )')
+            parser.cursor('url(bla\'  )')
 
     def test_url_invalid_no_quotes_not_escaped_chars(self):
         with self.assertRaises(ValueError):
@@ -913,10 +877,6 @@ class ParseCursorTests(TestCase):
         with self.assertRaises(ValueError):
             parser.cursor("foobar")
 
-    def test_cursor_invalid_order_string_1_item_invalid_uri(self):
-        with self.assertRaises(ValueError):
-            parser.cursor("url(  some.uri  )")
-
     def test_cursor_invalid_order_string_2_items_uri_1_option_1_invalid_uri(self):
         with self.assertRaises(ValueError):
             parser.cursor("auto, url(  some.uri  )")
@@ -963,10 +923,6 @@ class ParseCursorTests(TestCase):
     def test_cursor_invalid_order_list_1_item_invalid_value(self):
         with self.assertRaises(ValueError):
             parser.cursor(["foobar"])
-
-    def test_cursor_invalid_order_list_1_item_invalid_uri(self):
-        with self.assertRaises(ValueError):
-            parser.cursor(["url(  some.uri  )"])
 
     def test_cursor_invalid_order_list_2_items_uri_1_option_1_invalid_uri(self):
         with self.assertRaises(ValueError):

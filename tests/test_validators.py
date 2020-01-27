@@ -196,13 +196,13 @@ class UriTests(TestCase):
             is_uri("url(some. url)")
 
         with self.assertRaises(ValidationError):
-            is_uri("url(  some.url  )")
+            is_uri("url(  some.url(  )")
 
         with self.assertRaises(ValidationError):
-            is_uri("url(  'some.url'  )")
+            is_uri("url(  )'some.url'  )")
 
         with self.assertRaises(ValidationError):
-            is_uri('url(  "some.url"  )')
+            is_uri('url(  "some.url"\'  )')
 
 
 class CursorTests(TestCase):
@@ -245,29 +245,29 @@ class CursorTests(TestCase):
             is_cursor("foobar")
 
         with self.assertRaises(ValidationError):
-            is_cursor("url(  something  )")
+            is_cursor("url(  (something  )")
 
         with self.assertRaises(ValidationError):
             is_cursor(["foobar"])
 
         with self.assertRaises(ValidationError):
-            is_cursor(["url(  something  )"])
+            is_cursor(["url(  'something  )"])
 
     def test_cursor_invalid_2_items(self):
         with self.assertRaises(ValidationError):
             is_cursor("foobar, blah")
 
         with self.assertRaises(ValidationError):
-            is_cursor("url(something), url(  something  )")
+            is_cursor("url(something), url(  something'  )")
 
         with self.assertRaises(ValidationError):
-            is_cursor("auto, url( something )")
+            is_cursor("auto, url( something' )")
 
         with self.assertRaises(ValidationError):
             is_cursor(["foobar", 'blah'])
 
         with self.assertRaises(ValidationError):
-            is_cursor(["url(something)", "url(  something  )"])
+            is_cursor(["url(something)", "url(  'something  )"])
 
         with self.assertRaises(ValidationError):
             is_cursor(["auto", "url(something)"])
