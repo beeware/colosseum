@@ -1,14 +1,14 @@
 from .exceptions import ValidationError
-from .validators import is_color, is_font_family, is_integer, is_length, is_number, is_percentage
+from .validators import (ValidationError, is_color, is_font_family, is_integer,
+                         is_length, is_number, is_percentage, is_rect)
 from .wrappers import FontFamily
 
 
 class Choices:
     "A class to define allowable data types for a property."
 
-    def __init__(
-            self, *constants, validators=None,
-            explicit_defaulting_constants=None):
+    def __init__(self, *constants, validators=None,
+                 explicit_defaulting_constants=None):
         self.constants = set(constants)
         self.explicit_defaulting_constants = explicit_defaulting_constants or []
         self.validators = validators or []
@@ -250,10 +250,17 @@ LINE_HEIGHT_CHOICES = Choices(NORMAL, validators=[is_number, is_length, is_perce
 ######################################################################
 # overflow
 
+SCROLL = 'scroll'
+VISIBLE = 'visible'
+
+OVERFLOW_CHOICES = Choices(VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_constants=[INHERIT])
+
 ######################################################################
 # 11.1.2 Clip
 ######################################################################
 # clip
+
+CLIP_CHOICES = Choices(AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 11.2 Visibility
@@ -293,15 +300,31 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 # 13.3.1 Page break properties
 ######################################################################
+
+AUTO = 'auto'
+ALWAYS = 'always'
+AVOID = 'avoid'
+LEFT = 'left'
+RIGHT = 'right'
+
 # page_break_before
+PAGE_BREAK_BEFORE_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
+
 # page_break_after
+PAGE_BREAK_AFTER_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
+
 # page_break_inside
+PAGE_BREAK_INSIDE_CHOICES = Choices(AUTO, AVOID, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 13.3.2 Breaks inside elements
 ######################################################################
+
 # orphans
+ORPHANS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
+
 # widows
+WIDOWS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 14.1 Foreground color

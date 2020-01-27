@@ -39,6 +39,7 @@ class BaseUnit:
 
 
 class Unit(BaseUnit):
+
     def lu(self, display=None, font=None, size=None):
         return round(LU_PER_PIXEL * self.val)
 

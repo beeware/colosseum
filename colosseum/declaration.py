@@ -4,18 +4,21 @@ from . import engine as css_engine
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
     BACKGROUND_COLOR_CHOICES, BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES,
-    BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES, COLOR_CHOICES,
-    DIRECTION_CHOICES, DISPLAY_CHOICES, FLEX_BASIS_CHOICES,
-    FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START,
-    FLEX_WRAP_CHOICES, FLOAT_CHOICES, FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES,
-    FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES, FONT_WEIGHT_CHOICES,
-    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
-    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INITIAL, INLINE, JUSTIFY_CONTENT_CHOICES, LINE_HEIGHT_CHOICES, LTR,
-    MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL, NOWRAP,
-    ORDER_CHOICES, PADDING_CHOICES, POSITION_CHOICES, ROW, SIZE_CHOICES,
-    STATIC, STRETCH, TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES,
-    VISIBLE, Z_INDEX_CHOICES, default, INITIAL_FONT_VALUES, EMPTY,
+    BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
+    COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, EMPTY,
+    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
+    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
+    FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES, FONT_STYLE_CHOICES,
+    FONT_VARIANT_CHOICES, FONT_WEIGHT_CHOICES, GRID_AUTO_CHOICES,
+    GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES,
+    GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INITIAL,
+    INITIAL_FONT_VALUES, INLINE, JUSTIFY_CONTENT_CHOICES, LINE_HEIGHT_CHOICES,
+    LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL,
+    NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES, OVERFLOW_CHOICES, PADDING_CHOICES,
+    PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, ROW, SIZE_CHOICES, STATIC,
+    STRETCH, TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
+    WIDOWS_CHOICES, Z_INDEX_CHOICES, default,
 )
 from .exceptions import ValidationError
 from .parser import parse_font
@@ -326,10 +329,10 @@ class CSS:
 
     # 11. Visual effects #################################################
     # 11.1.1 Overflow
-    # overflow
+    overflow = validated_property('overflow', choices=OVERFLOW_CHOICES, initial=VISIBLE)
 
     # 11.1.2 Clip
-    # clip
+    clip = validated_property('clip', choices=CLIP_CHOICES, initial=AUTO)
 
     # 11.2 Visibility
     visibility = validated_property('visibility', choices=VISIBILITY_CHOICES, initial=VISIBLE)
@@ -353,13 +356,13 @@ class CSS:
 
     # 13. Paged media ####################################################
     # 13.3.1 Page break properties
-    # page_break_before
-    # page_break_after
-    # page_break_inside
+    page_break_before = validated_property('page_break_before', choices=PAGE_BREAK_BEFORE_CHOICES, initial=AUTO)
+    page_break_after = validated_property('page_break_after', choices=PAGE_BREAK_AFTER_CHOICES, initial=AUTO)
+    page_break_inside = validated_property('page_break_inside', choices=PAGE_BREAK_INSIDE_CHOICES, initial=AUTO)
 
     # 13.3.2 Breaks inside elements
-    # orphans
-    # widows
+    orphans = validated_property('orphans', choices=ORPHANS_CHOICES, initial=2)
+    widows = validated_property('widows', choices=WIDOWS_CHOICES, initial=2)
 
     # 14. Colors and backgrounds #########################################
     # 14.1 Foreground color

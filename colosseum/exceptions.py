@@ -1,3 +1,5 @@
+"""Colosseum exceptions."""
 
-class ValidationError(Exception):
+
+class ValidationError(ValueError):
     pass
