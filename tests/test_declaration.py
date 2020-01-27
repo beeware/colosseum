@@ -630,10 +630,21 @@ class CssDeclarationTests(TestCase):
         node.style.update(direction=RTL)
         self.assertEqual(node.style.text_align, RIGHT)
 
-    def test_other_property_callable_invalid_no_value_method(self):
+    def test_other_property_invalid_no_value_attr(self):
+        class SomeProperty:
+            boo = None
+
         with self.assertRaises(ValueError):
             class MyObject:
-                prop = validated_property('prop', choices=Choices(AUTO, None), initial=object())
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
+
+    def test_other_property_callable_invalid_value_not_a_method(self):
+        class SomeProperty:
+            value = None
+
+        with self.assertRaises(ValueError):
+            class MyObject:
+                prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
 
     def test_str(self):
         node = TestNode(style=CSS())

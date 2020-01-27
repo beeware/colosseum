@@ -51,10 +51,15 @@ def validated_property(name, choices, initial):
     try:
         initial = choices.validate(initial)
     except ValueError:
+        # The initial value might be a OtherProperty or Custom class with a value method
         try:
-            # The initial value might be a OtherProperty or Custom class with a value method
-            initial.value
-        except AttributeError:
+            # Check it has a value attribute
+            value_attr = getattr(initial, 'value')
+
+            # Check the value attribute is a callable
+            assert callable(value_attr)
+
+        except (AttributeError, AssertionError):
             raise ValueError('Initial value "%s" must provide a `value` method!' % initial)
 
     def getter(self):
