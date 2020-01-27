@@ -1233,7 +1233,7 @@ class CssDeclarationTests(TestCase):
             height=20,
             margin=(30, 40, 50, 60),
             display=BLOCK,
-            cursor=['url(some.cursor.uri)', AUTO]            
+            cursor=['url(some.cursor.uri)', AUTO]
         )
 
         self.assertEqual(

@@ -925,10 +925,6 @@ class ParseCursorTests(TestCase):
         with self.assertRaises(ValueError):
             parser.cursor("foobar, url(some.uri)")
 
-    def test_cursor_invalid_order_string_2_items_uri_1_option_1_invalid_uri(self):
-        with self.assertRaises(ValueError):
-            parser.cursor("auto, url(  some.uri  )")
-
     def test_cursor_invalid_order_string_2_items_uri_1_option_1(self):
         for option in CURSOR_OPTIONS:
             with self.assertRaises(ValueError):
@@ -953,7 +949,7 @@ class ParseCursorTests(TestCase):
         for (option1, option2, option3) in perms:
             with self.assertRaises(ValueError):
                 parser.cursor("{option1}, {option2}, {option3}".format(option1=option1, option2=option2,
-                                                                   option3=option3))
+                                                                       option3=option3))
 
     def test_cursor_invalid_order_string_3_items_option_2_uri_1(self):
         perms = permutations(CURSOR_OPTIONS, 2)

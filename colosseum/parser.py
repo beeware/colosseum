@@ -451,7 +451,7 @@ def uri(value):
             # resulting URI value is a URI token: '\(', '\)'
             escape_chars = ['(', ')', ' ', "'", '"']
             for char in escape_chars:
-                if char in value and '\{char}'.format(char=char) not in value:
+                if char in value and r'\{char}'.format(char=char) not in value:
                     raise ValueError('Invalid url %s' % value)
 
             return Uri(value)

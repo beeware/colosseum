@@ -623,7 +623,7 @@ class CSS:
         non_default = []
         empty = '<EMPTY>'
         for name in _CSS_PROPERTIES:
-            if getattr(self, '_%s' % name, empty) != empty: 
+            if getattr(self, '_%s' % name, empty) != empty:
                 non_default.append((name.replace('_', '-'), getattr(self, name)))
 
         return "; ".join(
