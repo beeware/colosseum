@@ -134,3 +134,16 @@ def is_rect(value):
 
 
 is_rect.description = '<rect>'
+
+
+def is_quote(value):
+    """Check if given value is of content quotes and return it."""
+    try:
+        value = parser.quotes(value)
+    except ValueError:
+        raise ValidationError('Value {value} is not a valid quote'.format(value=value))
+
+    return value
+
+
+is_quote.description = '[<string> <string>]+'

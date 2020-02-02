@@ -9,7 +9,7 @@ from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
 from colosseum.validators import (is_color, is_integer, is_length, is_number,
                                   is_percentage)
-from colosseum.wrappers import BorderSpacing
+from colosseum.wrappers import BorderSpacing, Quotes
 
 from .utils import TestNode
 
@@ -826,6 +826,87 @@ class CssDeclarationTests(TestCase):
             class MyObject:
                 prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
 
+
+    def test_quotes_valid_str_2_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = "'<' '>'"
+        self.assertEqual(node.style.quotes, Quotes([('<', '>')]))
+
+    def test_quotes_valid_str_4_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = "'<' '>' '{' '}'"
+        self.assertEqual(node.style.quotes, Quotes([('<', '>'), ('{', '}')]))
+
+    def test_quotes_valid_sequence_2_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = '<', '>'
+        self.assertEqual(node.style.quotes, Quotes([('<', '>')]))
+
+    def test_quotes_valid_sequence_4_items(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = '<', '>', '{', '}'
+        self.assertEqual(node.style.quotes, Quotes([('<', '>'), ('{', '}')]))
+
+    def test_quotes_valid_list_1_pair(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = [('<', '>')]
+        self.assertEqual(node.style.quotes, Quotes([('<', '>')]))
+
+    def test_quotes_valid_list_2_pairs(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = [('<', '>'), ('{', '}')]
+        self.assertEqual(node.style.quotes, Quotes([('<', '>'), ('{', '}')]))
+
+    def test_quotes_valid_str(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        node.style.quotes = [('<', '>'), ('{', '}')]
+        self.assertEqual(str(node.style), "quotes: '<' '>' '{' '}'")
+
+    def test_quotes_invalid_empty(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+        with self.assertRaises(ValueError):
+            node.style.quotes = ''
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = []
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = [()]
+
+    def test_quotes_invalid_1_item(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = '">"'
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = '>'
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = '>',
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = ['>']
+
+        with self.assertRaises(ValueError):
+            node.style.quotes = [('>')]
+
     def test_shorthand_valid_outline_property_initial_values(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
@@ -904,14 +985,18 @@ class CssDeclarationTests(TestCase):
             width=10,
             height=20,
             margin=(30, 40, 50, 60),
-            display=BLOCK
+            display=BLOCK,
         )
 
         self.assertEqual(
             str(node.style),
-            "display: block; height: 20px; "
-            "margin-bottom: 50px; margin-left: 60px; "
-            "margin-right: 40px; margin-top: 30px; width: 10px"
+            "display: block; "
+            "height: 20px; "
+            "margin-bottom: 50px; "
+            "margin-left: 60px; "
+            "margin-right: 40px; "
+            "margin-top: 30px; "
+            "width: 10px"
         )
 
     def test_dict(self):

@@ -292,6 +292,91 @@ class ParseRectTests(TestCase):
             parser.rect('RECT(1px, 3px, 2px, 4px)')
 
 
+class ParseQuotesTests(TestCase):
+
+    # Valid cases
+    def test_quotes_valid_string_2_items(self):
+        value = "'«' '»'"
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), value)
+
+    def test_quotes_valid_string_4_items(self):
+        value = "'«' '»' '(' ')'"
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), value)
+
+    def test_quotes_valid_sequence_2_items(self):
+        expected_output = "'«' '»'"
+
+        value = ['«', '»']
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), expected_output)
+
+        value = ('«', '»')
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), expected_output)
+
+    def test_quotes_valid_sequence_4_items(self):
+        expected_output = "'«' '»' '(' ')'"
+
+        value = ['«', '»', '(', ')']
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), expected_output)
+
+        value = ('«', '»', '(', ')')
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), expected_output)
+
+    def test_quotes_valid_list_1_pair(self):
+        value = [('«', '»')]
+        expected_output = "'«' '»'"
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), expected_output)
+
+    def test_quotes_valid_list_2_pairs(self):
+        value = [('«', '»'), ('(', ')')]
+        expected_output = "'«' '»' '(' ')'"
+        quotes = parser.quotes(value)
+        self.assertEqual(str(quotes), expected_output)
+
+    # Invalid cases
+    def test_quotes_invalid_string_empty_item(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('')
+
+    def test_quotes_invalid_string_empty_pair(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('"" ""')
+
+    def test_quotes_invalid_list_empty_pair(self):
+        with self.assertRaises(ValueError):
+            parser.quotes([('', '')])
+
+    def test_quotes_invalid_string_1_item(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('"«"')
+
+    def test_quotes_invalid_string_1_item_incomplete_quotes(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('"«')
+
+    def test_quotes_invalid_string_3_item(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('"«" ">" "<"')
+
+    def test_quotes_invalid_string_3_item_incomplete_quotes(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('"«" ">" "<')
+
+    def test_quotes_invalid_string_2_items_no_quotes(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('< >')
+
+    def test_quotes_invalid_string_4_items_no_quotes(self):
+        with self.assertRaises(ValueError):
+            parser.quotes('< > { }')
+
+
 class ParseOutlineTests(TestCase):
 
     # Valid cases
