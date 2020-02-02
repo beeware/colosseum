@@ -124,7 +124,7 @@ class Shorthand(MutableMapping):
             if key in self.VALID_KEYS:
                 self._map.pop(key)
         else:
-            self._map.pop(key)        
+            self._map.pop(key)
 
     def __len__(self):
         return len(self._map)

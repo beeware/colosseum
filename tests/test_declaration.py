@@ -826,7 +826,6 @@ class CssDeclarationTests(TestCase):
             class MyObject:
                 prop = validated_property('prop', choices=Choices(AUTO, None), initial=SomeProperty())
 
-
     def test_quotes_valid_str_2_items(self):
         node = TestNode(style=CSS())
         node.layout.dirty = None
