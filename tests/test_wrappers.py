@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from colosseum.units import px
-from colosseum.wrappers import BorderSpacing
+from colosseum.wrappers import BorderSpacing, Quotes
 
 
 class BorderSpacingTests(TestCase):
@@ -51,3 +51,37 @@ class BorderSpacingTests(TestCase):
     def test_invalid_arg_number(self):
         with self.assertRaises(TypeError):
             BorderSpacing(1, 2, 3)
+
+
+class QuotesTests(TestCase):
+
+    # Valid cases
+    def test_quotes_valid_1_pair(self):
+        quotes = Quotes([('<', '>')])
+
+        self.assertEqual(quotes.opening(level=0), '<')
+        self.assertEqual(quotes.closing(level=0), '>')
+        self.assertEqual(len(quotes), 1)
+        self.assertEqual(str(quotes), "'<' '>'")
+        self.assertEqual(repr(quotes), "Quotes([('<', '>')])")
+
+    def test_quotes_valid_2_pairs(self):
+        quotes = Quotes([('<', '>'), ('{', '}')])
+
+        self.assertEqual(quotes.opening(level=0), '<')
+        self.assertEqual(quotes.closing(level=0), '>')
+        self.assertEqual(quotes.opening(level=1), '{')
+        self.assertEqual(quotes.closing(level=1), '}')
+        self.assertEqual(len(quotes), 2)
+        self.assertEqual(str(quotes), "'<' '>' '{' '}'")
+        self.assertEqual(repr(quotes), "Quotes([('<', '>'), ('{', '}')])")
+
+    # Invalid cases
+    def test_quotes_invalid_1_pair_level(self):
+        quotes = Quotes([('<', '>')])
+
+        with self.assertRaises(IndexError):
+            quotes.opening(level=1)
+
+        with self.assertRaises(IndexError):
+            quotes.closing(level=1)

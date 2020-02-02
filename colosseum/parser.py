@@ -1,9 +1,10 @@
+from ast import literal_eval
 from collections import Sequence
-from .wrappers import BorderSpacing
 
 from .colors import NAMED_COLOR, hsl, rgb
 from .shapes import Rect
 from .units import Unit, px
+from .wrappers import BorderSpacing, Quotes
 
 
 def units(value):
@@ -179,3 +180,43 @@ def rect(value):
             return Rect(*values)
 
     raise ValueError('Unknown shape %s' % value)
+
+
+def quotes(value):
+    """Parse content quotes.
+
+    Accepts:
+    * A string: "'<' '>' '{' '}'"
+    * A sequence: ('<', '>') or ['{', '}']
+    * A list of 2 item tuples: [('<', '>'), ('{', '}')]
+    """
+    if isinstance(value, str):
+        values = [val.strip() for val in value.split()]
+    elif isinstance(value, Sequence):
+        # Flatten list of tuples
+        values = [repr(item) for sublist in value for item in sublist]
+    else:
+        raise ValueError('Unknown quote %s' % value)
+
+    # Length must be a multiple of 2
+    if len(values) > 0 and len(values) % 2 == 0:
+        parsed_values = []
+        for idx in range(len(values) // 2):
+            start = idx * 2
+            end = start + 2
+            opening, closing = values[start:end]
+
+            try:
+                opening = literal_eval(opening)
+                closing = literal_eval(closing)
+                parsed_values.append((opening, closing))
+
+                if len(opening) == 0 or len(closing) == 0:
+                    raise ValueError('Invalid quotes %s' % value)
+
+            except SyntaxError:
+                raise ValueError('Invalid quotes %s' % value)
+
+        return Quotes(parsed_values)
+
+    raise ValueError('Length of quote items must be a multiple of 2!')

@@ -1,6 +1,6 @@
 from .validators import (ValidationError, is_border_spacing, is_color,
                          is_integer, is_length, is_number, is_percentage,
-                         is_rect)
+                         is_quote, is_rect)
 
 
 class Choices:
@@ -291,7 +291,9 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 # 12.3 Quotation marks
 ######################################################################
+
 # quotes
+QUOTES_CHOICES = Choices(None, INITIAL, validators=[is_quote], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 12.4 Automatic counters and numbering
