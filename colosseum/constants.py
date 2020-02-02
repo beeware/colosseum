@@ -547,11 +547,6 @@ OUTLINE_COLOR_CHOICES = Choices(
 )
 
 # outline
-INITIAL_OUTLINE_VALUES = {
-    'outline_color': INVERT,
-    'outline_style': None,
-    'outline_width': MEDIUM,
-}
 
 ######################################################################
 # Flex flow (CSS-flexbox-1, Section 5)

@@ -10,17 +10,17 @@ from .constants import (  # noqa
     FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
     GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
     GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INITIAL, INITIAL_OUTLINE_VALUES, INLINE, INVERT, JUSTIFY_CONTENT_CHOICES,
-    LETTER_SPACING_CHOICES, LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM,
-    MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES,
-    OUTLINE_COLOR_CHOICES, OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES,
-    OVERFLOW_CHOICES, PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES,
-    PAGE_BREAK_BEFORE_CHOICES, PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES,
-    QUOTES_CHOICES, ROW, SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH,
-    TABLE_LAYOUT_CHOICES, TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES,
-    TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT,
-    UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES,
-    WIDOWS_CHOICES, WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
+    INITIAL, INLINE, INVERT, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES,
+    LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL,
+    NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
+    OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES, OVERFLOW_CHOICES,
+    PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW,
+    SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
+    TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES,
+    TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT, UNICODE_BIDI_CHOICES,
+    VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
+    WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
     TextAlignInitialValue, default,
 )
 from .exceptions import ValidationError
@@ -29,19 +29,16 @@ from .wrappers import Outline
 _CSS_PROPERTIES = set()
 
 
-def validated_shorthand_property(name, initial, parser, storage_class):
+def validated_shorthand_property(name, parser, storage_class):
     """Define the shorthand CSS font property."""
-    if not isinstance(initial, dict):
-        raise ValueError('Initial values for shorthand property must be of type dict!')
 
     def getter(self):
         # This is the only place we use the storage class as a convenience for the user
         # and to correctly display the string representation
         shorthand = storage_class()
-        for property_name in initial:
+        for property_name in storage_class.properties():
             try:
-                property_value = getattr(self, '_%s' % property_name)
-                shorthand[property_name] = property_value
+                shorthand[property_name] = getattr(self, '_%s' % property_name)
             except AttributeError:
                 pass
 
@@ -49,7 +46,12 @@ def validated_shorthand_property(name, initial, parser, storage_class):
             return shorthand
         else:
             # It no property has been defined for the outline, return initial values
-            shorthand.update(initial)
+            for property_name in storage_class.properties():
+                try:
+                    shorthand[property_name] = getattr(self, '%s' % property_name)
+                except AttributeError:
+                    pass
+
             return shorthand
 
     def setter(self, value):
@@ -61,7 +63,7 @@ def validated_shorthand_property(name, initial, parser, storage_class):
 
         # Reset non declared properties to initial values
         used_properties = shorthand_dict.keys()
-        for property_name, property_value in initial.items():
+        for property_name in storage_class.properties():
             if property_name in used_properties:
                 setattr(self, property_name, shorthand_dict[property_name])
             else:
@@ -73,7 +75,7 @@ def validated_shorthand_property(name, initial, parser, storage_class):
         self.dirty = True
 
     def deleter(self):
-        for property_name in initial:
+        for property_name in storage_class.properties():
             try:
                 delattr(self, property_name)
                 self.dirty = True
@@ -424,8 +426,7 @@ class CSS:
     outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)
     outline_style = validated_property('outline_style', choices=OUTLINE_STYLE_CHOICES, initial=None)
     outline_color = validated_property('outline_color', choices=OUTLINE_COLOR_CHOICES, initial=INVERT)
-    outline = validated_shorthand_property('outline', initial=INITIAL_OUTLINE_VALUES, parser=parser.outline,
-                                           storage_class=Outline)
+    outline = validated_shorthand_property('outline', parser=parser.outline, storage_class=Outline)
 
     ######################################################################
     # Flexbox properties

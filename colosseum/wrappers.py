@@ -155,6 +155,11 @@ class Shorthand(MutableMapping):
     def to_dict(self):
         return self._map.copy()
 
+    @classmethod
+    def properties(cls):
+        """Return the css property keys this shorthand defines."""
+        return iter(cls.VALID_KEYS)
+
 
 class Outline(Shorthand):
     """Dictionary-like wrapper to hold outline shorthand property."""
