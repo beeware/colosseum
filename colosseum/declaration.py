@@ -34,9 +34,9 @@ def validated_shorthand_property(name, initial, parser, storage_class):
     if not isinstance(initial, dict):
         raise ValueError('Initial values for shorthand property must be of type dict!')
 
-    initial = storage_class(**initial)
-
     def getter(self):
+        # This is the only place we use the storage class as a convenience for the user
+        # and to correctly display the string representation
         shorthand = storage_class()
         for property_name in initial:
             try:
@@ -49,23 +49,26 @@ def validated_shorthand_property(name, initial, parser, storage_class):
             return shorthand
         else:
             # It no property has been defined for the outline, return initial values
-            return initial.copy()
+            shorthand.update(initial)
+            return shorthand
 
     def setter(self, value):
         try:
-            shorthand = storage_class(**parser(value))
+            # A shorthand parser must return a dictionary
+            shorthand_dict = parser(value)
         except ValidationError:
             raise ValueError("Invalid value '%s' for CSS property '%s'!" % (value, name))
 
         # Reset non declared properties to initial values
-        used_properties = shorthand.keys()
+        used_properties = shorthand_dict.keys()
         for property_name, property_value in initial.items():
             if property_name in used_properties:
-                setattr(self, property_name, shorthand[property_name])
+                setattr(self, property_name, shorthand_dict[property_name])
             else:
                 delattr(self, property_name)
 
-        # We do not explicitely set shorthand properties
+        # We do not explicitely set the shorthand property as it is stored in the
+        # individual properties it represents
         # setattr(self, '_%s' % name, value)
         self.dirty = True
 

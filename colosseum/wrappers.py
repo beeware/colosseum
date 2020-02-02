@@ -1,4 +1,4 @@
-from abc import ABC
+from collections import MutableMapping
 
 
 class BorderSpacing:
@@ -42,7 +42,7 @@ class BorderSpacing:
         return self._horizontal if self._vertical is None else self._vertical
 
 
-class Shorthand(ABC):
+class Shorthand(MutableMapping):
     """Dictionary-like wrapper to hold shorthand data."""
     VALID_KEYS = []
 
@@ -75,6 +75,19 @@ class Shorthand(ABC):
 
         raise KeyError('Valid keys are: {keys}'.format(keys=self.VALID_KEYS))
 
+    def __delitem__(self, key):
+        if self.VALID_KEYS:
+            if key in self.VALID_KEYS:
+                self._map.pop(key)
+        else:
+            self._map.pop(key)        
+
+    def __len__(self):
+        return len(self._map)
+
+    def __iter__(self):
+        return iter(self.VALID_KEYS) if self.VALID_KEYS else iter(self._map)
+
     def __repr__(self):
         map_copy = self._map.copy()
         items = []
@@ -86,17 +99,8 @@ class Shorthand(ABC):
         string = "{class_name}({items})".format(class_name=class_name, items=', '.join(items))
         return string.format(**map_copy)
 
-    def __len__(self):
-        return len(self._map)
-
     def __str__(self):
         return repr(self)
-
-    def __iter__(self):
-        return iter(self.VALID_KEYS) if self.VALID_KEYS else iter(self._map)
-
-    def keys(self):
-        return sorted(self._map.keys())
 
     def items(self):
         return sorted(self._map.items())
