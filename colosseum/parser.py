@@ -283,3 +283,64 @@ def outline(value):
         outline_dict = _parse_outline_property_part(part, outline_dict)
 
     return outline_dict
+
+
+##############################################################################
+# Border shorthands
+##############################################################################
+def _parse_border_property_part(value, border_dict):
+    """Parse border shorthand property part for known properties."""
+    from .constants import (  # noqa
+        BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES
+    )
+
+    for property_name, choices in {'border_width': BORDER_WIDTH_CHOICES,
+                                   'border_style': BORDER_STYLE_CHOICES,
+                                   'border_color': BORDER_COLOR_CHOICES}.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in border_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        border_dict[property_name] = value
+        return border_dict
+
+    raise ValueError('Border value "{value}" not valid!'.format(value=value))
+
+
+def border(value):
+    """
+    Parse border string into a dictionary of outline properties.
+
+    The font CSS property is a shorthand for border-width-style, border-style, and border-color.
+
+    Reference:
+    - https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#border-properties
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown border %s ' % value)
+    else:
+        raise ValueError('Unknown border %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <border-width> or <border-style> or <border-color> (which can come in any order)
+
+    # We us this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    border_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Border can have a maximum of 3 parts
+            raise ValueError('Border property shorthand contains too many parts!')
+
+        border_dict = _parse_border_property_part(part, border_dict)
+
+    return border_dict
