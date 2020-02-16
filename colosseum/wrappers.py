@@ -110,6 +110,13 @@ class Shorthand:
         string = "{class_name}({items})".format(class_name=class_name, items=', '.join(items))
         return string.format(**properties)
 
+    def __str__(self):
+        parts = []
+        for key, value in self.to_dict().items():
+            parts.append(str(value))
+
+        return ' '.join(parts)
+
     def to_dict(self):
         """Return dictionary of the defined properties."""
         properties = OrderedDict()
@@ -122,10 +129,3 @@ class Shorthand:
 
 class Outline(Shorthand):
     VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
-
-    def __str__(self):
-        parts = []
-        for key, value in self.to_dict().items():
-            parts.append(str(value))
-
-        return ' '.join(parts)

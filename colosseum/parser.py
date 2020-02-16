@@ -243,7 +243,7 @@ def _parse_outline_property_part(value, outline_dict):
         if property_name in outline_dict:
             raise ValueError('Invalid duplicated property!')
 
-        outline_dict[property_name] = str(value)  # FIXME: use rgb() on tests?
+        outline_dict[property_name] = value
         return outline_dict
 
     raise ValueError('Outline value "{value}" not valid!'.format(value=value))

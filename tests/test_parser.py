@@ -3,7 +3,7 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
-from colosseum.parser import outline
+from colosseum.parser import color, outline
 from colosseum.shapes import Rect
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
@@ -383,7 +383,7 @@ class ParseOutlineTests(TestCase):
     def test_parse_outline_shorthand_valid_str_3_parts(self):
         expected_output = {
             'outline_style': 'solid',
-            'outline_color': 'rgba(0, 0, 0, 1.0)',
+            'outline_color': color('black'),
             'outline_width': 'thick',
         }
         perms = permutations(['black', 'solid', 'thick'], 3)
@@ -393,9 +393,10 @@ class ParseOutlineTests(TestCase):
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_str_2_parts(self):
+        black = color('black')
         expected_outputs = {
-            ('black', 'solid'): {'outline_color': 'rgba(0, 0, 0, 1.0)', 'outline_style': 'solid'},
-            ('black', 'thick'): {'outline_color': 'rgba(0, 0, 0, 1.0)', 'outline_width': 'thick'},
+            ('black', 'solid'): {'outline_color': black, 'outline_style': 'solid'},
+            ('black', 'thick'): {'outline_color': black, 'outline_width': 'thick'},
             ('solid', 'thick'): {'outline_style': 'solid', 'outline_width': 'thick'},
         }
         perms = permutations(['black', 'solid', 'thick'], 2)
@@ -407,7 +408,7 @@ class ParseOutlineTests(TestCase):
 
     def test_parse_outline_shorthand_valid_str_1_part(self):
         expected_outputs = {
-            'black': {'outline_color': 'rgba(0, 0, 0, 1.0)'},
+            'black': {'outline_color': color('black')},
             'solid': {'outline_style': 'solid'},
             'thick': {'outline_width': 'thick'},
         }
@@ -421,7 +422,7 @@ class ParseOutlineTests(TestCase):
     def test_parse_outline_shorthand_valid_list_3_parts(self):
         expected_output = {
             'outline_style': 'solid',
-            'outline_color': 'rgba(0, 0, 0, 1.0)',
+            'outline_color': color('black'),
             'outline_width': 'thick',
         }
         perms = permutations(['black', 'solid', 'thick'], 3)
@@ -431,9 +432,10 @@ class ParseOutlineTests(TestCase):
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_list_2_parts(self):
+        black = color('black')
         expected_outputs = {
-            ('black', 'solid'): {'outline_color': 'rgba(0, 0, 0, 1.0)', 'outline_style': 'solid'},
-            ('black', 'thick'): {'outline_color': 'rgba(0, 0, 0, 1.0)', 'outline_width': 'thick'},
+            ('black', 'solid'): {'outline_color': black, 'outline_style': 'solid'},
+            ('black', 'thick'): {'outline_color': black, 'outline_width': 'thick'},
             ('solid', 'thick'): {'outline_style': 'solid', 'outline_width': 'thick'},
         }
         perms = permutations(['black', 'solid', 'thick'], 2)
@@ -445,7 +447,7 @@ class ParseOutlineTests(TestCase):
 
     def test_parse_outline_shorthand_valid_list_1_part(self):
         expected_outputs = {
-            'black': {'outline_color': 'rgba(0, 0, 0, 1.0)'},
+            'black': {'outline_color': color('black')},
             'solid': {'outline_style': 'solid'},
             'thick': {'outline_width': 'thick'},
         }
