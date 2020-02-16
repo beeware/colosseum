@@ -254,10 +254,10 @@ class CSS:
     border_style = directional_property('border%s_style', initial=None)
 
     # 8.5.4 Border shorthand properties
-    border_top = validated_shorthand_property('border_top', parser=parser.border, wrapper=BorderTop)
-    border_right = validated_shorthand_property('border_right', parser=parser.border, wrapper=BorderRight)
-    border_bottom = validated_shorthand_property('border_bottom', parser=parser.border, wrapper=BorderBottom)
-    border_left = validated_shorthand_property('border_left', parser=parser.border, wrapper=BorderLeft)
+    border_top = validated_shorthand_property('border_top', parser=parser.border_top, wrapper=BorderTop)
+    border_right = validated_shorthand_property('border_right', parser=parser.border_right, wrapper=BorderRight)
+    border_bottom = validated_shorthand_property('border_bottom', parser=parser.border_bottom, wrapper=BorderBottom)
+    border_left = validated_shorthand_property('border_left', parser=parser.border_left, wrapper=BorderLeft)
     border = validated_shorthand_property('border', parser=parser.border, wrapper=Border)
 
     # 9. Visual formatting model #########################################

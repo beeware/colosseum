@@ -96,6 +96,8 @@ class Shorthand:
                     raise ValueError('Invalid key "{key}". Valid keys are {keys}'.format(key=key,
                                                                                          keys=self.VALID_KEYS))
                 setattr(self, key, kwargs[key])
+        else:
+            raise ValueError('Shorthand must define `VALID_KEYS`')
 
     def __eq__(self, other):
         return other.__class__ == self.__class__ and self.to_dict() == other.to_dict()

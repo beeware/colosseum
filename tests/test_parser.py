@@ -3,11 +3,11 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
-from colosseum.parser import color, outline
+from colosseum.parser import (border, border_bottom, border_left, border_right,
+                              border_top, color, outline)
 from colosseum.shapes import Rect
-from colosseum.units import (
-    ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
-)
+from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
+                             vmax, vmin, vw)
 
 
 class ParseUnitTests(TestCase):
@@ -506,3 +506,176 @@ class ParseOutlineTests(TestCase):
 
         with self.assertRaises(ValueError):
             outline('black solid thick black thick')
+
+
+class ParseBorderTests(TestCase):
+
+    # Valid cases
+    def test_parse_border_shorthand_valid_str_3_parts(self):
+        for direction, func in {'bottom_': border_bottom,
+                                'left_': border_left,
+                                'right_': border_right,
+                                'top_': border_top,
+                                '': border}.items():
+            expected_output = {
+                'border_{direction}width'.format(direction=direction): 'thick',
+                'border_{direction}style'.format(direction=direction): 'solid',
+                'border_{direction}color'.format(direction=direction): color('black'),
+            }
+            perms = permutations(['black', 'solid', 'thick'], 3)
+            for perm in perms:
+                value = ' '.join(perm)
+                output = func(value)
+                self.assertEqual(output, expected_output)
+
+    def test_parse_border_shorthand_valid_str_2_parts(self):
+        black = color('black')
+        for direction, func in {'bottom_': border_bottom,
+                                'left_': border_left,
+                                'right_': border_right,
+                                'top_': border_top,
+                                '': border}.items():
+            expected_outputs = {
+                ('black', 'solid'): {'border_{direction}color'.format(direction=direction): black,
+                                     'border_{direction}style'.format(direction=direction): 'solid'},
+                ('black', 'thick'): {'border_{direction}color'.format(direction=direction): black,
+                                     'border_{direction}width'.format(direction=direction): 'thick'},
+                ('solid', 'thick'): {'border_{direction}style'.format(direction=direction): 'solid',
+                                     'border_{direction}width'.format(direction=direction): 'thick'},
+            }
+            perms = permutations(['black', 'solid', 'thick'], 2)
+            for perm in perms:
+                expected_output = expected_outputs[tuple(sorted(perm))]
+                value = ' '.join(perm)
+                output = func(value)
+                self.assertEqual(output, expected_output)
+
+    def test_parse_border_shorthand_valid_str_1_part(self):
+        for direction, func in {'bottom_': border_bottom,
+                                'left_': border_left,
+                                'right_': border_right,
+                                'top_': border_top,
+                                '': border}.items():
+            expected_outputs = {
+                'black': {'border_{direction}color'.format(direction=direction): color('black')},
+                'solid': {'border_{direction}style'.format(direction=direction): 'solid'},
+                'thick': {'border_{direction}width'.format(direction=direction): 'thick'},
+            }
+            perms = permutations(['black', 'solid', 'thick'], 1)
+            for perm in perms:
+                value = ' '.join(perm)
+                expected_output = expected_outputs[value]
+                output = func(value)
+                self.assertEqual(output, expected_output)
+
+    def test_parse_border_shorthand_valid_list_3_parts(self):
+        for direction, func in {'bottom_': border_bottom,
+                                'left_': border_left,
+                                'right_': border_right,
+                                'top_': border_top,
+                                '': border}.items():
+            expected_output = {
+                'border_{direction}style'.format(direction=direction): 'solid',
+                'border_{direction}color'.format(direction=direction): color('black'),
+                'border_{direction}width'.format(direction=direction): 'thick',
+            }
+            perms = permutations(['black', 'solid', 'thick'], 3)
+            for perm in perms:
+                value = perm
+                output = func(value)
+                self.assertEqual(output, expected_output)
+
+    def test_parse_border_shorthand_valid_list_2_parts(self):
+        black = color('black')
+        for direction, func in {'bottom_': border_bottom,
+                                'left_': border_left,
+                                'right_': border_right,
+                                'top_': border_top,
+                                '': border}.items():
+            expected_outputs = {
+                ('black', 'solid'): {'border_{direction}color'.format(direction=direction): black,
+                                     'border_{direction}style'.format(direction=direction): 'solid'},
+                ('black', 'thick'): {'border_{direction}color'.format(direction=direction): black,
+                                     'border_{direction}width'.format(direction=direction): 'thick'},
+                ('solid', 'thick'): {'border_{direction}style'.format(direction=direction): 'solid',
+                                     'border_{direction}width'.format(direction=direction): 'thick'},
+            }
+            perms = permutations(['black', 'solid', 'thick'], 2)
+            for perm in perms:
+                expected_output = expected_outputs[tuple(sorted(perm))]
+                value = perm
+                output = func(value)
+                self.assertEqual(output, expected_output)
+
+    def test_parse_border_shorthand_valid_list_1_part(self):
+        for direction, func in {'bottom_': border_bottom,
+                                'left_': border_left,
+                                'right_': border_right,
+                                'top_': border_top,
+                                '': border}.items():
+            expected_outputs = {
+                'black': {'border_{direction}color'.format(direction=direction): color('black')},
+                'solid': {'border_{direction}style'.format(direction=direction): 'solid'},
+                'thick': {'border_{direction}width'.format(direction=direction): 'thick'},
+            }
+            perms = permutations(['black', 'solid', 'thick'], 1)
+            for perm in perms:
+                value = perm
+                expected_output = expected_outputs[value[0]]
+                output = func(value)
+                self.assertEqual(output, expected_output)
+
+    # Invalid cases
+    def test_parse_border_shorthand_invalid_empty(self):
+        for func in [border, border_bottom, border_left, border_right, border_top]:
+            with self.assertRaises(ValueError):
+                border('')
+
+            with self.assertRaises(ValueError):
+                border([])
+
+    def test_parse_border_shorthand_invalid_value(self):
+        for func in [border, border_bottom, border_left, border_right, border_top]:
+            with self.assertRaises(ValueError):
+                border('foobar')
+
+            with self.assertRaises(ValueError):
+                border(2)
+
+            with self.assertRaises(ValueError):
+                border("#f")
+
+    def test_parse_border_shorthand_invalid_duplicates_color(self):
+        for func in [border, border_bottom, border_left, border_right, border_top]:
+            with self.assertRaises(ValueError):
+                func('black black')
+
+            with self.assertRaises(ValueError):
+                func('black black black')
+
+            with self.assertRaises(ValueError):
+                func('black red blue')
+
+    def test_parse_border_shorthand_invalid_duplicates_style(self):
+        for func in [border, border_bottom, border_left, border_right, border_top]:
+            with self.assertRaises(ValueError):
+                func('solid solid')
+
+            with self.assertRaises(ValueError):
+                func('solid solid solid')
+
+    def test_parse_border_shorthand_invalid_duplicates_width(self):
+        for func in [border, border_bottom, border_left, border_right, border_top]:
+            with self.assertRaises(ValueError):
+                func('thick thick')
+
+            with self.assertRaises(ValueError):
+                func('thick thick thick')
+
+    def test_parse_border_shorthand_invalid_too_many_items(self):
+        for func in [border, border_bottom, border_left, border_right, border_top]:
+            with self.assertRaises(ValueError):
+                func('black solid thick black')
+
+            with self.assertRaises(ValueError):
+                func('black solid thick black thick')

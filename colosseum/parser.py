@@ -272,7 +272,7 @@ def outline(value):
     # We iteratively split by the first left hand space found and try to validate if that part
     # is a valid <outline-style> or <outline-color> or <ourline-width> (which can come in any order)
 
-    # We us this dictionary to store parsed values and check that values properties are not
+    # We use this dictionary to store parsed values and check that values properties are not
     # duplicated
     outline_dict = {}
     for idx, part in enumerate(values):
@@ -288,15 +288,20 @@ def outline(value):
 ##############################################################################
 # Border shorthands
 ##############################################################################
-def _parse_border_property_part(value, border_dict):
+def _parse_border_property_part(value, border_dict, direction=None):
     """Parse border shorthand property part for known properties."""
     from .constants import (  # noqa
         BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES
     )
 
-    for property_name, choices in {'border_width': BORDER_WIDTH_CHOICES,
-                                   'border_style': BORDER_STYLE_CHOICES,
-                                   'border_color': BORDER_COLOR_CHOICES}.items():
+    direction = '' if direction is None else direction + '_'
+    property_validators = {
+        'border_{direction}width'.format(direction=direction): BORDER_WIDTH_CHOICES,
+        'border_{direction}style'.format(direction=direction): BORDER_STYLE_CHOICES,
+        'border_{direction}color'.format(direction=direction): BORDER_COLOR_CHOICES,
+    }
+
+    for property_name, choices in property_validators.items():
         try:
             value = choices.validate(value)
         except (ValueError, ValidationError):
@@ -311,11 +316,11 @@ def _parse_border_property_part(value, border_dict):
     raise ValueError('Border value "{value}" not valid!'.format(value=value))
 
 
-def border(value):
+def border(value, direction=None):
     """
     Parse border string into a dictionary of outline properties.
 
-    The font CSS property is a shorthand for border-width-style, border-style, and border-color.
+    The font CSS property is a shorthand for border-width, border-style, and border-color.
 
     Reference:
     - https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#border-properties
@@ -333,7 +338,7 @@ def border(value):
     # We iteratively split by the first left hand space found and try to validate if that part
     # is a valid <border-width> or <border-style> or <border-color> (which can come in any order)
 
-    # We us this dictionary to store parsed values and check that values properties are not
+    # We use this dictionary to store parsed values and check that values properties are not
     # duplicated
     border_dict = {}
     for idx, part in enumerate(values):
@@ -341,6 +346,26 @@ def border(value):
             # Border can have a maximum of 3 parts
             raise ValueError('Border property shorthand contains too many parts!')
 
-        border_dict = _parse_border_property_part(part, border_dict)
+        border_dict = _parse_border_property_part(part, border_dict, direction=direction)
 
     return border_dict
+
+
+def border_right(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='right')
+
+
+def border_left(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='left')
+
+
+def border_bottom(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='bottom')
+
+
+def border_top(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='top')
