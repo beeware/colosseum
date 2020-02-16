@@ -1,7 +1,8 @@
+from itertools import permutations
 from unittest import TestCase
 
 from colosseum.units import px
-from colosseum.wrappers import BorderSpacing, Quotes
+from colosseum.wrappers import BorderSpacing, Outline, Quotes
 
 
 class BorderSpacingTests(TestCase):
@@ -85,3 +86,70 @@ class QuotesTests(TestCase):
 
         with self.assertRaises(IndexError):
             quotes.closing(level=1)
+
+
+class TestShorthandOutline(TestCase):
+
+    def test_shorthand_outline_valid_empty(self):
+        outline = Outline()
+        self.assertEqual(str(outline), '')
+        self.assertEqual(repr(outline), 'Outline()')
+
+    def test_shorthand_outline_valid_1_kwargs(self):
+        for property_name in ['outline_color', 'outline_style', 'outline_width']:
+            outline = Outline(**{property_name: 1})
+            self.assertEqual(str(outline), '1')
+            self.assertEqual(getattr(outline, property_name), 1)
+
+    def test_shorthand_outline_valid_2_kwargs(self):
+        perms = permutations(['outline_color', 'outline_style', 'outline_width'], 2)
+        for (prop_1, prop_2) in perms:
+            kwargs = {prop_1: 1, prop_2: 2}
+            outline = Outline(**kwargs)
+            self.assertEqual(str(outline), ' '.join(str(v[1]) for v in sorted(kwargs.items())))
+
+    def test_shorthand_outline_valid_3_kwargs(self):
+        perms = permutations(['outline_color', 'outline_style', 'outline_width'])
+        for (prop_1, prop_2, prop_3) in perms:
+            kwargs = {prop_1: 1, prop_2: 2, prop_3: 3}
+            outline = Outline(**kwargs)
+            self.assertEqual(str(outline), ' '.join(str(v[1]) for v in sorted(kwargs.items())))
+
+    def test_shorthand_outline_valid_get_values(self):
+        perms = permutations(['outline_color', 'outline_style', 'outline_width'])
+        for (prop_1, prop_2, prop_3) in perms:
+            kwargs = {prop_1: 1, prop_2: 2, prop_3: 3}
+            outline = Outline(**kwargs)
+            self.assertEqual(getattr(outline, prop_1), kwargs[prop_1])
+            self.assertEqual(getattr(outline, prop_2), kwargs[prop_2])
+            self.assertEqual(getattr(outline, prop_3), kwargs[prop_3])
+
+    def test_shorthand_outline_valid_set_values(self):
+        perms = permutations(['outline_color', 'outline_style', 'outline_width'])
+        for (prop_1, prop_2, prop_3) in perms:
+            kwargs = {prop_1: 1, prop_2: 2, prop_3: 3}
+            outline = Outline(**kwargs)
+            self.assertEqual(getattr(outline, prop_1), kwargs[prop_1])
+            self.assertEqual(getattr(outline, prop_2), kwargs[prop_2])
+            self.assertEqual(getattr(outline, prop_3), kwargs[prop_3])
+
+    def test_shorthand_outline_equality(self):
+        perms = permutations(['outline_color', 'outline_style', 'outline_width'])
+        for (prop_1, prop_2, prop_3) in perms:
+            kwargs = {prop_1: 1, prop_2: 2, prop_3: 3}
+            outline1 = Outline(**kwargs)
+            outline2 = Outline(**kwargs)
+            self.assertEqual(outline1, outline2)
+
+    def test_shorthand_outline_valid_to_dict(self):
+        expected_output = ['outline_color', 'outline_style', 'outline_width']
+        perms = permutations(expected_output)
+        for (prop_1, prop_2, prop_3) in perms:
+            kwargs = {prop_1: 1, prop_2: 2, prop_3: 3}
+            outline = Outline(**kwargs)
+            self.assertEqual(outline.to_dict(), kwargs)
+
+    # Invalid cases
+    def test_shorthand_outline_invalid_kwargs(self):
+        with self.assertRaises(ValueError):
+            Outline(foobar='foobar')

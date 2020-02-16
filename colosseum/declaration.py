@@ -1,4 +1,5 @@
 from . import engine as css_engine
+from . import parser
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
     BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
@@ -9,20 +10,69 @@ from .constants import (  # noqa
     FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
     GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
     GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INLINE, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES, LTR,
-    MARGIN_CHOICES, MAX_SIZE_CHOICES, MIN_SIZE_CHOICES, NORMAL, NOWRAP,
-    ORDER_CHOICES, ORPHANS_CHOICES, OVERFLOW_CHOICES, PADDING_CHOICES,
-    PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+    INITIAL, INLINE, INVERT, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES,
+    LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL,
+    NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
+    OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES, OVERFLOW_CHOICES,
+    PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
     PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW,
     SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
     TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES,
     TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT, UNICODE_BIDI_CHOICES,
     VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
     WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
-    TextAlignInitialValue, default, INITIAL,
+    TextAlignInitialValue, default,
 )
+from .exceptions import ValidationError
+from .wrappers import Outline
 
 _CSS_PROPERTIES = set()
+
+
+def validated_shorthand_property(name, parser, wrapper):
+    """Define the shorthand CSS font property."""
+
+    def getter(self):
+        properties = {}
+        for property_name in wrapper.VALID_KEYS:
+            try:
+                properties[property_name] = getattr(self, '_%s' % property_name)
+            except AttributeError:
+                pass
+
+        # This is the only place we use the wrapper as a convenience for the user
+        return wrapper(**properties) if properties else ''
+
+    def setter(self, value):
+        try:
+            # A shorthand parser must return a dictionary
+            shorthand_dict = parser(value)
+        except ValidationError:
+            raise ValueError("Invalid value '%s' for CSS property '%s'!" % (value, name))
+
+        # Reset non declared properties to initial values
+        used_properties = shorthand_dict.keys()
+        for property_name in wrapper.VALID_KEYS:
+            if property_name in used_properties:
+                setattr(self, property_name, shorthand_dict[property_name])
+            else:
+                delattr(self, property_name)
+
+        # We do not explicitely set the shorthand property as it is stored in the
+        # individual properties it represents
+        self.dirty = True
+
+    def deleter(self):
+        for property_name in wrapper.VALID_KEYS:
+            try:
+                delattr(self, property_name)
+                self.dirty = True
+            except AttributeError:
+                # Attribute doesn't exist
+                pass
+
+    _CSS_PROPERTIES.add(name)
+    return property(getter, setter, deleter)
 
 
 def unvalidated_property(name, choices, initial):
@@ -361,10 +411,10 @@ class CSS:
     # cursor
 
     # 18.4 Dynamic outlines
-    # outline_width
-    # outline_style
-    # outline_color
-    # outline
+    outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)
+    outline_style = validated_property('outline_style', choices=OUTLINE_STYLE_CHOICES, initial=None)
+    outline_color = validated_property('outline_color', choices=OUTLINE_COLOR_CHOICES, initial=INVERT)
+    outline = validated_shorthand_property('outline', parser=parser.outline, wrapper=Outline)
 
     ######################################################################
     # Flexbox properties

@@ -1,7 +1,9 @@
+from itertools import permutations
 from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
+from colosseum.parser import color, outline
 from colosseum.shapes import Rect
 from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw,
@@ -373,3 +375,134 @@ class ParseQuotesTests(TestCase):
     def test_quotes_invalid_string_4_items_no_quotes(self):
         with self.assertRaises(ValueError):
             parser.quotes('< > { }')
+
+
+class ParseOutlineTests(TestCase):
+
+    # Valid cases
+    def test_parse_outline_shorthand_valid_str_3_parts(self):
+        expected_output = {
+            'outline_style': 'solid',
+            'outline_color': color('black'),
+            'outline_width': 'thick',
+        }
+        perms = permutations(['black', 'solid', 'thick'], 3)
+        for perm in perms:
+            value = ' '.join(perm)
+            output = outline(value)
+            self.assertEqual(output, expected_output)
+
+    def test_parse_outline_shorthand_valid_str_2_parts(self):
+        black = color('black')
+        expected_outputs = {
+            ('black', 'solid'): {'outline_color': black, 'outline_style': 'solid'},
+            ('black', 'thick'): {'outline_color': black, 'outline_width': 'thick'},
+            ('solid', 'thick'): {'outline_style': 'solid', 'outline_width': 'thick'},
+        }
+        perms = permutations(['black', 'solid', 'thick'], 2)
+        for perm in perms:
+            expected_output = expected_outputs[tuple(sorted(perm))]
+            value = ' '.join(perm)
+            output = outline(value)
+            self.assertEqual(output, expected_output)
+
+    def test_parse_outline_shorthand_valid_str_1_part(self):
+        expected_outputs = {
+            'black': {'outline_color': color('black')},
+            'solid': {'outline_style': 'solid'},
+            'thick': {'outline_width': 'thick'},
+        }
+        perms = permutations(['black', 'solid', 'thick'], 1)
+        for perm in perms:
+            value = ' '.join(perm)
+            expected_output = expected_outputs[value]
+            output = outline(value)
+            self.assertEqual(output, expected_output)
+
+    def test_parse_outline_shorthand_valid_list_3_parts(self):
+        expected_output = {
+            'outline_style': 'solid',
+            'outline_color': color('black'),
+            'outline_width': 'thick',
+        }
+        perms = permutations(['black', 'solid', 'thick'], 3)
+        for perm in perms:
+            value = perm
+            output = outline(value)
+            self.assertEqual(output, expected_output)
+
+    def test_parse_outline_shorthand_valid_list_2_parts(self):
+        black = color('black')
+        expected_outputs = {
+            ('black', 'solid'): {'outline_color': black, 'outline_style': 'solid'},
+            ('black', 'thick'): {'outline_color': black, 'outline_width': 'thick'},
+            ('solid', 'thick'): {'outline_style': 'solid', 'outline_width': 'thick'},
+        }
+        perms = permutations(['black', 'solid', 'thick'], 2)
+        for perm in perms:
+            expected_output = expected_outputs[tuple(sorted(perm))]
+            value = perm
+            output = outline(value)
+            self.assertEqual(output, expected_output)
+
+    def test_parse_outline_shorthand_valid_list_1_part(self):
+        expected_outputs = {
+            'black': {'outline_color': color('black')},
+            'solid': {'outline_style': 'solid'},
+            'thick': {'outline_width': 'thick'},
+        }
+        perms = permutations(['black', 'solid', 'thick'], 1)
+        for perm in perms:
+            value = perm
+            expected_output = expected_outputs[value[0]]
+            output = outline(value)
+            self.assertEqual(output, expected_output)
+
+    # Invalid cases
+    def test_parse_outline_shorthand_invalid_empty(self):
+        with self.assertRaises(ValueError):
+            outline('')
+
+        with self.assertRaises(ValueError):
+            outline([])
+
+    def test_parse_outline_shorthand_invalid_value(self):
+        with self.assertRaises(ValueError):
+            outline('foobar')
+
+        with self.assertRaises(ValueError):
+            outline(2)
+
+        with self.assertRaises(ValueError):
+            outline("#f")
+
+    def test_parse_outline_shorthand_invalid_duplicates_color(self):
+        with self.assertRaises(ValueError):
+            outline('black black')
+
+        with self.assertRaises(ValueError):
+            outline('black black black')
+
+        with self.assertRaises(ValueError):
+            outline('black red blue')
+
+    def test_parse_outline_shorthand_invalid_duplicates_style(self):
+        with self.assertRaises(ValueError):
+            outline('solid solid')
+
+        with self.assertRaises(ValueError):
+            outline('solid solid solid')
+
+    def test_parse_outline_shorthand_invalid_duplicates_width(self):
+        with self.assertRaises(ValueError):
+            outline('thick thick')
+
+        with self.assertRaises(ValueError):
+            outline('thick thick thick')
+
+    def test_parse_outline_shorthand_invalid_too_many_items(self):
+        with self.assertRaises(ValueError):
+            outline('black solid thick black')
+
+        with self.assertRaises(ValueError):
+            outline('black solid thick black thick')

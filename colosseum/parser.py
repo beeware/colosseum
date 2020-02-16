@@ -2,6 +2,7 @@ from ast import literal_eval
 from collections import Sequence
 
 from .colors import NAMED_COLOR, hsl, rgb
+from .exceptions import ValidationError
 from .shapes import Rect
 from .units import Unit, px
 from .wrappers import BorderSpacing, Quotes
@@ -220,3 +221,65 @@ def quotes(value):
         return Quotes(parsed_values)
 
     raise ValueError('Length of quote items must be a multiple of 2!')
+
+
+##############################################################################
+# Outline shorthand
+##############################################################################
+def _parse_outline_property_part(value, outline_dict):
+    """Parse outline shorthand property part for known properties."""
+    from .constants import (  # noqa
+        OUTLINE_COLOR_CHOICES, OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES,
+    )
+
+    for property_name, choices in {'outline_color': OUTLINE_COLOR_CHOICES,
+                                   'outline_style': OUTLINE_STYLE_CHOICES,
+                                   'outline_width': OUTLINE_WIDTH_CHOICES}.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in outline_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        outline_dict[property_name] = value
+        return outline_dict
+
+    raise ValueError('Outline value "{value}" not valid!'.format(value=value))
+
+
+def outline(value):
+    """
+    Parse outline string into a dictionary of outline properties.
+
+    The font CSS property is a shorthand for outline-style, outline-width, and outline-color.
+
+    Reference:
+    - https://www.w3.org/TR/2011/REC-CSS2-20110607/ui.html#dynamic-outlines
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/outline
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown outline %s ' % value)
+    else:
+        raise ValueError('Unknown outline %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <outline-style> or <outline-color> or <ourline-width> (which can come in any order)
+
+    # We us this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    outline_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Outline can have a maximum of 3 parts
+            raise ValueError('Outline property shorthand contains too many parts!')
+
+        outline_dict = _parse_outline_property_part(part, outline_dict)
+
+    return outline_dict

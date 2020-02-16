@@ -1,3 +1,6 @@
+from collections import OrderedDict
+
+
 class BorderSpacing:
     """
     Border spacing wrapper.
@@ -81,3 +84,48 @@ class Quotes:
             return self._quotes[level][-1]
         except IndexError:
             raise IndexError('Quotes level out of range')
+
+
+class Shorthand:
+    VALID_KEYS = []
+
+    def __init__(self, **kwargs):
+        if self.VALID_KEYS:
+            for key in kwargs:
+                if key not in self.VALID_KEYS:
+                    raise ValueError('Invalid key "{key}". Valid keys are {keys}'.format(key=key,
+                                                                                         keys=self.VALID_KEYS))
+                setattr(self, key, kwargs[key])
+
+    def __eq__(self, other):
+        return other.__class__ == self.__class__ and self.to_dict() == other.to_dict()
+
+    def __repr__(self):
+        items = []
+        properties = self.to_dict()
+        for key, value in properties.items():
+            items.append("{key}={value}".format(key=key, value=repr(value)))
+
+        class_name = self.__class__.__name__
+        string = "{class_name}({items})".format(class_name=class_name, items=', '.join(items))
+        return string.format(**properties)
+
+    def __str__(self):
+        parts = []
+        for key, value in self.to_dict().items():
+            parts.append(str(value))
+
+        return ' '.join(parts)
+
+    def to_dict(self):
+        """Return dictionary of the defined properties."""
+        properties = OrderedDict()
+        for key in self.VALID_KEYS:
+            if key in self.__dict__:
+                properties[key] = self.__dict__[key]
+
+        return properties
+
+
+class Outline(Shorthand):
+    VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
