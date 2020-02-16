@@ -910,7 +910,7 @@ class CssDeclarationTests(TestCase):
         node = TestNode(style=CSS())
         node.layout.dirty = None
 
-        self.assertEqual(str(node.style.outline), 'invert None medium')
+        self.assertEqual(str(node.style.outline), '')
 
     def test_shorthand_valid_outline_subproperties_set_shorthand_property(self):
         node = TestNode(style=CSS())
@@ -965,6 +965,24 @@ class CssDeclarationTests(TestCase):
 
         self.assertEqual(str(node.style.outline), 'rgba(0, 0, 0, 1.0)')
         self.assertEqual(str(node.style), "outline-color: rgba(0, 0, 0, 1.0)")
+
+    def test_shorthand_valid_outline_property_delete(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # This should reset all other properties to their initial values
+        node.style.outline = "black"
+
+        self.assertEqual(str(node.style.outline_color), "rgba(0, 0, 0, 1.0)")
+        self.assertEqual(node.style.outline_style, None)
+        self.assertEqual(node.style.outline_width, "medium")
+
+        # This should reset all properties to their initial values
+        del node.style.outline
+        self.assertEqual(node.style.outline, '')
+        self.assertEqual(str(node.style.outline_color), 'invert')
+        self.assertEqual(node.style.outline_style, None)
+        self.assertEqual(node.style.outline_width, "medium")
 
     def test_shorthand_invalid_outline_property_values(self):
         node = TestNode(style=CSS())

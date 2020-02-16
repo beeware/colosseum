@@ -29,30 +29,19 @@ from .wrappers import Outline
 _CSS_PROPERTIES = set()
 
 
-def validated_shorthand_property(name, parser, storage_class):
+def validated_shorthand_property(name, parser, wrapper):
     """Define the shorthand CSS font property."""
 
     def getter(self):
-        # This is the only place we use the storage class as a convenience for the user
-        # and to correctly display the string representation
-        shorthand = storage_class()
-        for property_name in storage_class.properties():
+        properties = {}
+        for property_name in wrapper.VALID_KEYS:
             try:
-                shorthand[property_name] = getattr(self, '_%s' % property_name)
+                properties[property_name] = getattr(self, '_%s' % property_name)
             except AttributeError:
                 pass
 
-        if shorthand:
-            return shorthand
-        else:
-            # It no property has been defined for the outline, return initial values
-            for property_name in storage_class.properties():
-                try:
-                    shorthand[property_name] = getattr(self, '%s' % property_name)
-                except AttributeError:
-                    pass
-
-            return shorthand
+        # This is the only place we use the wrapper as a convenience for the user
+        return wrapper(**properties) if properties else ''
 
     def setter(self, value):
         try:
@@ -63,7 +52,7 @@ def validated_shorthand_property(name, parser, storage_class):
 
         # Reset non declared properties to initial values
         used_properties = shorthand_dict.keys()
-        for property_name in storage_class.properties():
+        for property_name in wrapper.VALID_KEYS:
             if property_name in used_properties:
                 setattr(self, property_name, shorthand_dict[property_name])
             else:
@@ -71,11 +60,10 @@ def validated_shorthand_property(name, parser, storage_class):
 
         # We do not explicitely set the shorthand property as it is stored in the
         # individual properties it represents
-        # setattr(self, '_%s' % name, value)
         self.dirty = True
 
     def deleter(self):
-        for property_name in storage_class.properties():
+        for property_name in wrapper.VALID_KEYS:
             try:
                 delattr(self, property_name)
                 self.dirty = True
@@ -426,7 +414,7 @@ class CSS:
     outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)
     outline_style = validated_property('outline_style', choices=OUTLINE_STYLE_CHOICES, initial=None)
     outline_color = validated_property('outline_color', choices=OUTLINE_COLOR_CHOICES, initial=INVERT)
-    outline = validated_shorthand_property('outline', parser=parser.outline, storage_class=Outline)
+    outline = validated_shorthand_property('outline', parser=parser.outline, wrapper=Outline)
 
     ######################################################################
     # Flexbox properties
@@ -598,8 +586,7 @@ class CSS:
         non_default = []
         for name in _CSS_PROPERTIES:
             try:
-                getattr(self, '_%s' % name)
-                non_default.append((name.replace('_', '-'), getattr(self, name)))
+                non_default.append((name.replace('_', '-'), getattr(self, '_%s' % name)))
             except AttributeError:
                 pass
 

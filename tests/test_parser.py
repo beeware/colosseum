@@ -390,7 +390,6 @@ class ParseOutlineTests(TestCase):
         for perm in perms:
             value = ' '.join(perm)
             output = outline(value)
-            print(value, output, expected_output)
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_str_2_parts(self):
@@ -404,7 +403,6 @@ class ParseOutlineTests(TestCase):
             expected_output = expected_outputs[tuple(sorted(perm))]
             value = ' '.join(perm)
             output = outline(value)
-            print(value, output, expected_output)
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_str_1_part(self):
@@ -418,7 +416,6 @@ class ParseOutlineTests(TestCase):
             value = ' '.join(perm)
             expected_output = expected_outputs[value]
             output = outline(value)
-            print(value, output, expected_output)
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_list_3_parts(self):
@@ -431,7 +428,6 @@ class ParseOutlineTests(TestCase):
         for perm in perms:
             value = perm
             output = outline(value)
-            print(value, output, expected_output)
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_list_2_parts(self):
@@ -445,7 +441,6 @@ class ParseOutlineTests(TestCase):
             expected_output = expected_outputs[tuple(sorted(perm))]
             value = perm
             output = outline(value)
-            print(value, output, expected_output)
             self.assertEqual(output, expected_output)
 
     def test_parse_outline_shorthand_valid_list_1_part(self):
@@ -459,7 +454,6 @@ class ParseOutlineTests(TestCase):
             value = perm
             expected_output = expected_outputs[value[0]]
             output = outline(value)
-            print(value, output, expected_output)
             self.assertEqual(output, expected_output)
 
     # Invalid cases

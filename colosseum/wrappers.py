@@ -1,4 +1,4 @@
-from collections import MutableMapping
+from collections import OrderedDict
 
 
 class BorderSpacing:
@@ -86,8 +86,7 @@ class Quotes:
             raise IndexError('Quotes level out of range')
 
 
-class Shorthand(MutableMapping):
-    """Dictionary-like wrapper to hold shorthand data."""
+class Shorthand:
     VALID_KEYS = []
 
     def __init__(self, **kwargs):
@@ -96,79 +95,37 @@ class Shorthand(MutableMapping):
                 if key not in self.VALID_KEYS:
                     raise ValueError('Invalid key "{key}". Valid keys are {keys}'.format(key=key,
                                                                                          keys=self.VALID_KEYS))
-        self._map = kwargs
+                setattr(self, key, kwargs[key])
 
     def __eq__(self, other):
-        return other.__class__ == self.__class__ and self._map == other._map
-
-    def __setitem__(self, key, value):
-        if self.VALID_KEYS:
-            if key in self.VALID_KEYS:
-                self._map[key] = value
-            else:
-                raise KeyError('Valid keys are: {keys}'.format(keys=self.VALID_KEYS))
-        else:
-            self._map[key] = value
-
-    def __getitem__(self, key):
-        if self.VALID_KEYS:
-            if key in self.VALID_KEYS:
-                return self._map[key]
-        else:
-            return self._map[key]
-
-        raise KeyError('Valid keys are: {keys}'.format(keys=self.VALID_KEYS))
-
-    def __delitem__(self, key):
-        if self.VALID_KEYS:
-            if key in self.VALID_KEYS:
-                self._map.pop(key)
-        else:
-            self._map.pop(key)
-
-    def __len__(self):
-        return len(self._map)
-
-    def __iter__(self):
-        return iter(self.VALID_KEYS) if self.VALID_KEYS else iter(self._map)
+        return other.__class__ == self.__class__ and self.to_dict() == other.to_dict()
 
     def __repr__(self):
-        map_copy = self._map.copy()
         items = []
-        for key in self.VALID_KEYS:
-            if key in map_copy:
-                items.append("{key}={value}".format(key=key, value=repr(map_copy[key])))
+        properties = self.to_dict()
+        for key, value in properties.items():
+            items.append("{key}={value}".format(key=key, value=repr(value)))
 
         class_name = self.__class__.__name__
         string = "{class_name}({items})".format(class_name=class_name, items=', '.join(items))
-        return string.format(**map_copy)
-
-    def __str__(self):
-        return repr(self)
-
-    def items(self):
-        return sorted(self._map.items())
-
-    def copy(self):
-        return self.__class__(**self._map)
+        return string.format(**properties)
 
     def to_dict(self):
-        return self._map.copy()
+        """Return dictionary of the defined properties."""
+        properties = OrderedDict()
+        for key in self.VALID_KEYS:
+            if key in self.__dict__:
+                properties[key] = self.__dict__[key]
 
-    @classmethod
-    def properties(cls):
-        """Return the css property keys this shorthand defines."""
-        return iter(cls.VALID_KEYS)
+        return properties
 
 
 class Outline(Shorthand):
-    """Dictionary-like wrapper to hold outline shorthand property."""
     VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
 
     def __str__(self):
         parts = []
-        for key in self.VALID_KEYS:
-            if key in self._map:
-                parts.append(str(self._map[key]))
+        for key, value in self.to_dict().items():
+            parts.append(str(value))
 
         return ' '.join(parts)
