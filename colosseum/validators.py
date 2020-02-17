@@ -183,9 +183,22 @@ def is_cursor(value):
     except ValueError as error:
         raise ValidationError(str(error))
 
-    return value
-
 
 is_cursor.description = ('[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize '
                          '| ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize '
                          '| w-resize | text | wait | help | progress ] ]')
+
+
+def is_position(value):
+    """Check if given value is of content quotes and return it."""
+    try:
+        value = parser.position(value)
+    except ValueError:
+        raise ValidationError('Value {value} is not a valid position'.format(value=value))
+
+    return value
+
+
+is_position.description = ('[ [ <percentage> | <length> | left | center | right ] '
+                           '[ <percentage> | <length> | top | center | bottom ]? ] | '
+                           '[ [ left | center | right ] || [ top | center | bottom ] ]')

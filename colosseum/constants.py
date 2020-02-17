@@ -1,6 +1,6 @@
 from .validators import (ValidationError, is_border_spacing, is_color,
                          is_cursor, is_integer, is_length, is_number,
-                         is_percentage, is_quote, is_rect)
+                         is_percentage, is_position, is_quote, is_rect, is_uri)
 
 
 class Choices:
@@ -350,9 +350,25 @@ COLOR_CHOICES = Choices(default, validators=[is_color])
 BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 
 # background_image
+BACKGROUND_IMAGE_CHOICES = Choices(validators=[is_uri], explicit_defaulting_constants=[INHERIT])
+
 # background_repeat
+REPEAT = 'repeat'
+REPEAT_X = 'repeat-x'
+REPEAT_Y = 'repeat-y'
+NO_REPEAT = 'no-repeat'
+
+BACKGROUND_REPEAT_CHOICES = Choices(REPEAT, REPEAT_X, REPEAT_Y, NO_REPEAT, explicit_defaulting_constants=[INHERIT])
+
 # background_attachment
+SCROLL = 'scroll'
+FIXED = 'fixed'
+
+BACKGROUND_ATTACHMENT_CHOICES = Choices(SCROLL, FIXED, explicit_defaulting_constants=[INHERIT])
+
 # background_position
+BACKGROUND_POSITION_CHOICES = Choices(validators=is_position, explicit_defaulting_constants=[INHERIT])
+
 # background
 
 ######################################################################

@@ -5,7 +5,7 @@ from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .shapes import Rect
 from .units import Unit, px
-from .wrappers import BorderSpacing, Cursor, Quotes, Uri
+from .wrappers import BorderSpacing, Cursor, Position, Quotes, Uri
 
 
 def units(value):
@@ -286,7 +286,7 @@ def outline(value):
 
 
 ##############################################################################
-# Border shorthands
+# # Border shorthands
 ##############################################################################
 def _parse_border_property_part(value, border_dict, direction=None):
     """Parse border shorthand property part for known properties."""
@@ -445,3 +445,129 @@ def cursor(values):
         raise ValueError('Value {value} is not a valid cursor value'.format(value=value))
 
     return Cursor(validated_values)
+
+
+##############################################################################
+# Background
+##############################################################################
+def position(value):
+    """
+    [[ <percentage> | <length> | left | center | right ][ <percentage> | <length> | top | center | bottom ]? ] |
+    [[ left | center | right ] || [ top | center | bottom ]]
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown position %s ' % value)
+    else:
+        raise ValueError('Unknown position %s ' % value)
+
+    if len(values) == 1:
+        # If only one value is specified, the second value is assumed to be 'center'.
+        # If at least one value is not a keyword, then the first value represents the horizontal
+        # position and the second represents the vertical position. Negative <percentage> and
+        # <length> values are allowed.
+        try:
+            return Position(horizontal=units(values[0]))
+        except ValueError as error:
+            if values[0] in ['left', 'right', 'center']:
+                return Position(horizontal=values[0])
+
+            if values[0] in ['top', 'bottom']:
+                return Position(vertical=values[0])
+
+    elif len(values) == 2:
+        horizontal, vertical = None, None
+
+        # Check first value
+        try:
+            horizontal = units(values[0])
+        except ValueError as error:
+            if values[0] in ['left', 'center', 'right']:
+                horizontal = values[0]
+
+            if values[0] in ['top', 'center', 'bottom']:
+                vertical = values[0]
+
+        # Check second value
+        try:
+            vertical = units(values[1])
+        except ValueError as error:
+            if values[1] in ['left', 'center', 'right']:
+                horizontal = values[1]
+
+            if values[1] in ['top', 'center', 'bottom']:
+                vertical = values[1]
+
+        return Position(horizontal=horizontal, vertical=vertical)
+
+    raise ValueError('Position contains too many parts!')
+
+
+##############################################################################
+# Background shorthand
+##############################################################################
+def _parse_background_property_part(value, outline_dict):
+    """Parse background shorthand property part for known properties."""
+    from .constants import (  # noqa
+        BACKGROUND_ATTACHMENT_CHOICES, BACKGROUND_COLOR_CHOICES, BACKGROUND_IMAGE_CHOICES,
+        BACKGROUND_POSITION_CHOICES, BACKGROUND_REPEAT_CHOICES
+    )
+
+    for property_name, choices in {'background_color': BACKGROUND_COLOR_CHOICES,
+                                   'background_image': BACKGROUND_IMAGE_CHOICES,
+                                   'background_repeat': BACKGROUND_REPEAT_CHOICES,
+                                   'background_attachment': BACKGROUND_ATTACHMENT_CHOICES,
+                                   'background_position': BACKGROUND_POSITION_CHOICES}.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in border_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        border_dict[property_name] = value
+        return border_dict
+
+    raise ValueError('Background value "{value}" not valid!'.format(value=value))
+
+
+def background(value):
+    """
+    Parse background string into a dictionary of background properties.
+
+    The font CSS property is a shorthand for background-color, background-image,
+    background-repeat, background-attachment, and background-position.
+
+    Reference:
+    - https://www.w3.org/TR/2011/REC-CSS2-20110607/colors.html#background-properties
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown background %s ' % value)
+    else:
+        raise ValueError('Unknown background %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <background-color> or <background-image> or <background-repeat> or
+    # <background-attachment> or <background-position> (which can come in any order)
+
+    # We us this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    background_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Outline can have a maximum of 3 parts
+            raise ValueError('Background property shorthand contains too many parts!')
+
+        background_dict = _parse_background_property_part(part, background_dict)
+
+    return background_dict
