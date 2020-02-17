@@ -403,14 +403,6 @@ def uri(value):
             return Uri(value[1:-1])
         # No quotes and optional spaces
         else:
-            # Some characters appearing in an unquoted URI, such as parentheses, white space characters,
-            # single quotes (') and double quotes ("), must be escaped with a backslash so that the
-            # resulting URI value is a URI token: '\(', '\)'
-            escape_chars = ['(', ')', ' ', "'", '"']
-            for char in escape_chars:
-                if char in value and r'\{char}'.format(char=char) not in value:
-                    raise ValueError('Invalid url %s' % value)
-
             return Uri(value)
 
     raise ValueError('Invalid url %s' % value)

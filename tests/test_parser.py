@@ -747,64 +747,6 @@ class ParseUriTests(TestCase):
         url = parser.uri(r"url(some.\'url)")
         self.assertEqual(str(url), r'url("some.\'url")')
 
-    def test_cursor_invalid_order_string_1_item_incomplete_quotes(self):
-        with self.assertRaises(ValueError):
-            parser.cursor("url('some.url)")
-
-        with self.assertRaises(ValueError):
-            parser.cursor("url(some.url')")
-
-        with self.assertRaises(ValueError):
-            parser.cursor('url("some.url)')
-
-        with self.assertRaises(ValueError):
-            parser.cursor('url(some.url")')
-
-    def test_cursor_invalid_order_string_1_item_mixed_quotes(self):
-        with self.assertRaises(ValueError):
-            parser.cursor("url(\"some.url')")
-
-        with self.assertRaises(ValueError):
-            parser.cursor("url('some.url\")")
-
-    def test_cursor_invalid_order_string_1_item_incomplete_quotes_with_spaces(self):
-        with self.assertRaises(ValueError):
-            parser.cursor("url('some.url )")
-
-        with self.assertRaises(ValueError):
-            parser.cursor("url(\"some.url )")
-
-        with self.assertRaises(ValueError):
-            parser.cursor("url( some.url')")
-
-        with self.assertRaises(ValueError):
-            parser.cursor("url( some.url\")")
-
-        with self.assertRaises(ValueError):
-            parser.cursor('url(  "bla)')
-
-        with self.assertRaises(ValueError):
-            parser.cursor('url(  \'bla)')
-
-        with self.assertRaises(ValueError):
-            parser.cursor('url(bla\'  )')
-
-    def test_url_invalid_no_quotes_not_escaped_chars(self):
-        with self.assertRaises(ValueError):
-            parser.uri('url(some.(url)')
-
-        with self.assertRaises(ValueError):
-            parser.uri('url(some.)url)')
-
-        with self.assertRaises(ValueError):
-            parser.uri('url(some. url)')
-
-        with self.assertRaises(ValueError):
-            parser.uri('url(some."url)')
-
-        with self.assertRaises(ValueError):
-            parser.uri("url(some.'url)")
-
 
 class ParseCursorTests(TestCase):
 

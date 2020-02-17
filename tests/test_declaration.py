@@ -805,9 +805,6 @@ class CssDeclarationTests(TestCase):
             node.style.cursor = 'boom'
 
         with self.assertRaises(ValueError):
-            node.style.cursor = 'url( "bla)'
-
-        with self.assertRaises(ValueError):
             node.style.cursor = 'auto, url(google.com)'
 
         with self.assertRaises(ValueError):
@@ -819,9 +816,6 @@ class CssDeclarationTests(TestCase):
 
         with self.assertRaises(ValueError):
             node.style.cursor = ['boom']
-
-        with self.assertRaises(ValueError):
-            node.style.cursor = ['url( "bla)']
 
         with self.assertRaises(ValueError):
             node.style.cursor = [AUTO, 'url(google.com)']
@@ -1235,6 +1229,8 @@ class CssDeclarationTests(TestCase):
             display=BLOCK,
             cursor=['url(some.cursor.uri)', AUTO]
         )
+
+        print(str(node.style))
 
         self.assertEqual(
             str(node.style),
