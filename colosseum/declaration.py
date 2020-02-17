@@ -623,8 +623,10 @@ class CSS:
         non_default = []
         for name in _CSS_PROPERTIES:
             try:
-                getattr(self, '_%s' % name)
-                non_default.append((name.replace('_', '-'), getattr(self, name)))
+                non_default.append((
+                    name.replace('_', '-'),
+                    getattr(self, '_%s' % name)
+                ))
             except AttributeError:
                 pass
 
