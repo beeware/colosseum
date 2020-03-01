@@ -96,6 +96,8 @@ class Shorthand:
                     raise ValueError('Invalid key "{key}". Valid keys are {keys}'.format(key=key,
                                                                                          keys=self.VALID_KEYS))
                 setattr(self, key, kwargs[key])
+        else:
+            raise ValueError('Shorthand must define `VALID_KEYS`')
 
     def __eq__(self, other):
         return other.__class__ == self.__class__ and self.to_dict() == other.to_dict()
@@ -129,3 +131,23 @@ class Shorthand:
 
 class Outline(Shorthand):
     VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
+
+
+class BorderTop(Shorthand):
+    VALID_KEYS = ['border_top_width', 'border_top_style', 'border_top_color']
+
+
+class BorderRight(Shorthand):
+    VALID_KEYS = ['border_right_width', 'border_right_style', 'border_right_color']
+
+
+class BorderBottom(Shorthand):
+    VALID_KEYS = ['border_bottom_width', 'border_bottom_style', 'border_bottom_color']
+
+
+class BorderLeft(Shorthand):
+    VALID_KEYS = ['border_left_width', 'border_left_style', 'border_left_color']
+
+
+class Border(Shorthand):
+    VALID_KEYS = ['border_width', 'border_style', 'border_color']

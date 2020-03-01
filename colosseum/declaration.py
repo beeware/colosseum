@@ -24,7 +24,7 @@ from .constants import (  # noqa
     TextAlignInitialValue, default,
 )
 from .exceptions import ValidationError
-from .wrappers import Outline
+from .wrappers import Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline
 
 _CSS_PROPERTIES = set()
 
@@ -254,15 +254,16 @@ class CSS:
     border_style = directional_property('border%s_style', initial=None)
 
     # 8.5.4 Border shorthand properties
-    # border_top
-    # border_right
-    # border_bottom
-    # border_left
-    # border
+    border_top = validated_shorthand_property('border_top', parser=parser.border_top, wrapper=BorderTop)
+    border_right = validated_shorthand_property('border_right', parser=parser.border_right, wrapper=BorderRight)
+    border_bottom = validated_shorthand_property('border_bottom', parser=parser.border_bottom, wrapper=BorderBottom)
+    border_left = validated_shorthand_property('border_left', parser=parser.border_left, wrapper=BorderLeft)
+    border = validated_shorthand_property('border', parser=parser.border, wrapper=Border)
 
     # 9. Visual formatting model #########################################
     # 9.2.4 The display property
     display = validated_property('display', choices=DISPLAY_CHOICES, initial=INLINE)
+
     # 9.3 Positioning schemes
     position = validated_property('position', choices=POSITION_CHOICES, initial=STATIC)
 
@@ -274,6 +275,7 @@ class CSS:
 
     # 9.5.1 Positioning the float
     float = validated_property('float', choices=FLOAT_CHOICES, initial=None)
+
     # 9.5.2 Controlling flow next to floats
     clear = validated_property('clear', choices=CLEAR_CHOICES, initial=None)
 
