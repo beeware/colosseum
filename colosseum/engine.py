@@ -398,6 +398,10 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
     "Implements S10.3.3"
     if node.style.width is not AUTO:  # P2
         content_width = node.style.width.px(**context)
+        if node.style.min_width is not AUTO:  # 10.4 Minimum width
+            content_min_width = node.style.min_width.px(**context)
+            if content_width < content_min_width:
+                content_width = content_min_width
         size = (
             node.layout.border_left_width
             + node.layout.padding_left
