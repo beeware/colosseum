@@ -5,7 +5,7 @@ from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .shapes import Rect
 from .units import Unit, px
-from .wrappers import BorderSpacing, Quotes
+from .wrappers import BorderSpacing, Cursor, Quotes, Uri
 
 
 def units(value):
@@ -369,3 +369,79 @@ def border_bottom(value):
 def border_top(value):
     """Parse border string into a dictionary of outline properties."""
     return border(value, direction='top')
+
+
+##############################################################################
+# Uri
+##############################################################################
+def uri(value):
+    """Parse a url from a value.
+
+    Accepts:
+    * url("<url>")
+    * url(  "<url>"  )
+    * url('<url>')
+    * url(  '<url>'  )
+    * url(<url>)
+    * url(  <url>  )
+    """
+    if isinstance(value, str):
+        value = value.strip()
+    else:
+        raise ValueError('Value {value} must be a string')
+
+    if value.startswith('url(') and value.endswith(')'):
+        # Remove the 'url(' and ')'
+        value = value[4:-1].strip()
+
+        # Single quotes and optional spaces
+        if value.startswith("'") and value.endswith("'"):
+            return Uri(value[1:-1])
+        # Double quotes and optional spaces
+        elif value.startswith('"') and value.endswith('"'):
+            # '("some.url")'
+            return Uri(value[1:-1])
+        # No quotes and optional spaces
+        else:
+            return Uri(value)
+
+    raise ValueError('Invalid url %s' % value)
+
+
+##############################################################################
+# Cursor
+##############################################################################
+def cursor(values):
+    """Parse a cursor from a value."""
+    from .constants import CURSOR_OPTIONS
+
+    if isinstance(values, str):
+        values = [val.strip() for val in values.split(',')]
+
+    validated_values = []
+    has_cursor_option = False
+    option_count = 0
+    for value in values:
+        if value in CURSOR_OPTIONS:
+            has_cursor_option = True
+            validated_values.append(value)
+            option_count += 1
+
+            if option_count > 1:
+                raise ValueError('There can only be one cursor option in {values}!'.format(values=values))
+
+            continue
+        else:
+            if has_cursor_option:
+                raise ValueError('Values {values} are in incorrect order. '
+                                 'Cursor option must come last!'.format(values=values))
+            try:
+                value = uri(value)
+                validated_values.append(value)
+                continue
+            except ValueError:
+                raise ValueError('Value {value} is not a valid url value'.format(value=value))
+
+        raise ValueError('Value {value} is not a valid cursor value'.format(value=value))
+
+    return Cursor(validated_values)

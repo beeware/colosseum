@@ -151,3 +151,87 @@ class BorderLeft(Shorthand):
 
 class Border(Shorthand):
     VALID_KEYS = ['border_width', 'border_style', 'border_color']
+
+
+class Uri:
+    """Wrapper for a url."""
+
+    def __init__(self, url):
+        self._url = url
+
+    def __repr__(self):
+        return 'url("%s")' % self._url
+
+    def __str__(self):
+        return repr(self)
+
+    @property
+    def url(self):
+        return self._url
+
+
+class ImmutableList(list):
+    """Immutable list to store list properties."""
+
+    def __init__(self, iterable=()):
+        super().__init__(iterable)
+
+    def _get_error_message(self, err):
+        return str(err).replace('list', self.__class__.__name__, 1)
+
+    # def __eq__(self, other):
+    #     return other.__class__ == self.__class__ and self == other
+
+    def __getitem__(self, index):
+        try:
+            return super().__getitem__(index)
+        except Exception as err:
+            error_msg = self._get_error_message(err)
+            raise err.__class__(error_msg)
+
+    def __setitem__(self, index, value):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def __hash__(self):
+        return hash((self.__class__.__name__, tuple(self)))
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        if len(self) != 0:
+            text = '{class_name}([{data}])'.format(data=repr(list(self))[1:-1], class_name=class_name)
+        else:
+            text = '{class_name}()'.format(class_name=class_name)
+
+        return text
+
+    def __str__(self):
+        return ', '.join(str(v) for v in self)
+
+    def copy(self):
+        return self.__class__(self)
+
+    # Disable mutating methods
+    def append(self, object):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def extend(self, iterable):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def insert(self, index, object):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def pop(self, index=None):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def remove(self, value):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def reverse(self):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+    def sort(self, cmp=None, key=None, reverse=False):
+        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+
+
+class Cursor(ImmutableList):
+    """Immutable list to store cursor property."""

@@ -1,6 +1,6 @@
 from .validators import (ValidationError, is_border_spacing, is_color,
-                         is_integer, is_length, is_number, is_percentage,
-                         is_quote, is_rect)
+                         is_cursor, is_integer, is_length, is_number,
+                         is_percentage, is_quote, is_rect)
 
 
 class Choices:
@@ -508,6 +508,30 @@ EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT
 ######################################################################
 # 18.1 Cursors
 # cursor
+
+AUTO = 'auto'
+CROSSHAIR = 'crosshair'
+DEFAULT = 'default'
+POINTER = 'pointer'
+MOVE = 'move'
+E_RESIZE = 'e-resize'
+NE_RESIZE = 'ne-resize'
+NW_RESIZE = 'nw-resize'
+N_RESIZE = 'n-resize'
+SE_RESIZE = 'se-resize'
+SW_RESIZE = 'sw-resize'
+S_RESIZE = 's-resize'
+W_RESIZE = 'w-resize'
+TEXT = 'text'
+WAIT = 'wait'
+PROGRESS = 'progress'
+HELP = 'help'
+
+CURSOR_OPTIONS = [AUTO, CROSSHAIR, DEFAULT, POINTER, MOVE, E_RESIZE, NE_RESIZE, NW_RESIZE, N_RESIZE, SE_RESIZE,
+                  SW_RESIZE, S_RESIZE, W_RESIZE, TEXT, WAIT, PROGRESS, HELP]
+
+# Since the order is important, the cursor options are used in the is_cursor validator
+CURSOR_CHOICES = Choices(validators=[is_cursor], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 18.4 Dynamic outlines

@@ -3,11 +3,13 @@ from unittest import TestCase
 
 from colosseum import parser
 from colosseum.colors import hsl, rgb
+from colosseum.constants import CURSOR_OPTIONS
 from colosseum.parser import (border, border_bottom, border_left, border_right,
                               border_top, color, outline)
 from colosseum.shapes import Rect
 from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
                              vmax, vmin, vw)
+from colosseum.wrappers import Cursor
 
 
 class ParseUnitTests(TestCase):
@@ -679,3 +681,231 @@ class ParseBorderTests(TestCase):
 
             with self.assertRaises(ValueError):
                 func('black solid thick black thick')
+
+
+class ParseUriTests(TestCase):
+
+    def test_url_valid_single_quotes_url(self):
+        url = parser.uri("url('some.url')")
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_single_quotes_spaces_url_left(self):
+        url = parser.uri("url(  'some.url')")
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_single_quotes_spaces_url_right(self):
+        url = parser.uri("url('some.url'  )")
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_single_quotes_spaces_url_left_right(self):
+        url = parser.uri("url(  'some.url'  )")
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_double_quotes_url(self):
+        url = parser.uri('url("some.url")')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_double_quotes_spaces_url_left(self):
+        url = parser.uri('url(  "some.url")')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_double_quotes_spaces_url_right(self):
+        url = parser.uri('url("some.url"  )')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_double_quotes_spaces_url_left_right(self):
+        url = parser.uri('url(  "some.url"  )')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_no_quotes_spaces_url_left_right(self):
+        url = parser.uri('url(  some.url  )')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_no_quotes_spaces_url_left(self):
+        url = parser.uri('url(  some.url)')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_no_quotes_spaces_url_right(self):
+        url = parser.uri('url(some.url  )')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_no_quotes_url(self):
+        url = parser.uri('url(some.url)')
+        self.assertEqual(str(url), 'url("some.url")')
+
+    def test_url_valid_no_quotes_escaped_chars(self):
+        url = parser.uri(r'url(some.\(url)')
+        self.assertEqual(str(url), r'url("some.\(url")')
+
+        url = parser.uri(r'url(some.\)url)')
+        self.assertEqual(str(url), r'url("some.\)url")')
+
+        url = parser.uri(r'url(some.\ url)')
+        self.assertEqual(str(url), r'url("some.\ url")')
+
+        url = parser.uri(r"url(some.\"url)")
+        self.assertEqual(str(url), r'url("some.\"url")')
+
+        url = parser.uri(r"url(some.\'url)")
+        self.assertEqual(str(url), r'url("some.\'url")')
+
+
+class ParseCursorTests(TestCase):
+
+    def test_cursor_valid_string_1_item_option(self):
+        for option in CURSOR_OPTIONS:
+            cursor = parser.cursor(option)
+            self.assertIsInstance(cursor, Cursor)
+            self.assertEqual(cursor, Cursor([option]))
+
+    def test_cursor_valid_string_1_item_uri_1(self):
+        cursor = parser.cursor('url("some.uri")')
+        self.assertIsInstance(cursor, Cursor)
+        self.assertEqual(str(cursor[0]), 'url("some.uri")')
+
+    def test_cursor_valid_string_2_items_uri_2(self):
+        cursor = parser.cursor("url(some.uri), url(some.uri2)")
+        self.assertIsInstance(cursor, Cursor)
+        self.assertEqual(str(cursor[0]), 'url("some.uri")')
+        self.assertEqual(str(cursor[1]), 'url("some.uri2")')
+
+    def test_cursor_valid_string_2_items_uri_1_option_1(self):
+        for option in CURSOR_OPTIONS:
+            cursor = parser.cursor("url(some.uri), {option}".format(option=option))
+            self.assertIsInstance(cursor, Cursor)
+            self.assertEqual(str(cursor[0]), 'url("some.uri")')
+            self.assertEqual(str(cursor[1]), option)
+
+    def test_cursor_valid_string_3_items_uri_2_option_1(self):
+        for option in CURSOR_OPTIONS:
+            cursor = parser.cursor("url(some.uri), url(some.uri2), {option}".format(option=option))
+            self.assertIsInstance(cursor, Cursor)
+            self.assertEqual(str(cursor[0]), 'url("some.uri")')
+            self.assertEqual(str(cursor[1]), 'url("some.uri2")')
+            self.assertEqual(str(cursor[2]), option)
+
+    def test_cursor_valid_list_1_item_option(self):
+        for option in CURSOR_OPTIONS:
+            cursor = parser.cursor([option])
+            self.assertIsInstance(cursor, Cursor)
+            self.assertEqual(cursor, Cursor([option]))
+
+    def test_cursor_valid_list_1_item_uri_1(self):
+        cursor = parser.cursor(["url(some.uri)"])
+        self.assertIsInstance(cursor, Cursor)
+        self.assertEqual(str(cursor[0]), 'url("some.uri")')
+
+    def test_cursor_valid_list_2_items_uri_2(self):
+        cursor = parser.cursor(["url(some.uri)", "url(some.uri2)"])
+        self.assertIsInstance(cursor, Cursor)
+        self.assertEqual(str(cursor[0]), 'url("some.uri")')
+        self.assertEqual(str(cursor[1]), 'url("some.uri2")')
+
+    def test_cursor_valid_list_2_items_uri_1_option_1(self):
+        for option in CURSOR_OPTIONS:
+            cursor = parser.cursor(["url(some.uri)", option])
+            self.assertIsInstance(cursor, Cursor)
+            self.assertEqual(str(cursor[0]), 'url("some.uri")')
+            self.assertEqual(str(cursor[1]), option)
+
+    def test_cursor_valid_list_3_items_uri_2_option_1(self):
+        for option in CURSOR_OPTIONS:
+            cursor = parser.cursor(["url(some.uri)", "url(some.uri2)", option])
+            self.assertIsInstance(cursor, Cursor)
+            self.assertEqual(str(cursor[0]), 'url("some.uri")')
+            self.assertEqual(str(cursor[1]), 'url("some.uri2")')
+            self.assertEqual(str(cursor[2]), option)
+
+    # Invalid cases
+    def test_cursor_invalid_order_string_1_item_invalid_value(self):
+        with self.assertRaises(ValueError):
+            parser.cursor("foobar")
+
+    def test_cursor_invalid_order_string_2_items_uri_1_option_1_invalid_uri(self):
+        with self.assertRaises(ValueError):
+            parser.cursor("auto, url(  some.uri  )")
+
+    def test_cursor_invalid_order_string_2_items_uri_1_option_1_invalid_option(self):
+        with self.assertRaises(ValueError):
+            parser.cursor("foobar, url(some.uri)")
+
+    def test_cursor_invalid_order_string_2_items_uri_1_option_1(self):
+        for option in CURSOR_OPTIONS:
+            with self.assertRaises(ValueError):
+                parser.cursor("{option}, url(some.uri)".format(option=option))
+
+    def test_cursor_invalid_order_string_3_items_uri_2_option_1(self):
+        for option in CURSOR_OPTIONS:
+            with self.assertRaises(ValueError):
+                parser.cursor("url(some.uri), {option}, url(some.uri)".format(option=option))
+
+            with self.assertRaises(ValueError):
+                parser.cursor("{option}, url(some.uri), url(some.uri)".format(option=option))
+
+    def test_cursor_invalid_order_string_2_items_option_2(self):
+        perms = permutations(CURSOR_OPTIONS, 2)
+        for (option1, option2) in perms:
+            with self.assertRaises(ValueError):
+                parser.cursor("{option1}, {option2}".format(option1=option1, option2=option2))
+
+    def test_cursor_invalid_order_string_3_items_option_3(self):
+        perms = permutations(CURSOR_OPTIONS, 3)
+        for (option1, option2, option3) in perms:
+            with self.assertRaises(ValueError):
+                parser.cursor("{option1}, {option2}, {option3}".format(option1=option1, option2=option2,
+                                                                       option3=option3))
+
+    def test_cursor_invalid_order_string_3_items_option_2_uri_1(self):
+        perms = permutations(CURSOR_OPTIONS, 2)
+        for (option1, option2) in perms:
+            with self.assertRaises(ValueError):
+                parser.cursor("{option1}, {option2}, url(some.url)".format(option1=option1, option2=option2))
+
+            with self.assertRaises(ValueError):
+                parser.cursor("{option1}, url(some.url), {option2}".format(option1=option1, option2=option2))
+
+    def test_cursor_invalid_order_list_1_item_invalid_value(self):
+        with self.assertRaises(ValueError):
+            parser.cursor(["foobar"])
+
+    def test_cursor_invalid_order_list_2_items_uri_1_option_1_invalid_uri(self):
+        with self.assertRaises(ValueError):
+            parser.cursor(["auto", "url(  some.uri  )"])
+
+    def test_cursor_invalid_order_list_2_items_uri_1_option_1_invalid_option(self):
+        with self.assertRaises(ValueError):
+            parser.cursor(["foobar", "url(some.uri)"])
+
+    def test_cursor_invalid_order_list_2_items_uri_1_option_1(self):
+        for option in CURSOR_OPTIONS:
+            with self.assertRaises(ValueError):
+                parser.cursor([option, "url(some.uri)"])
+
+    def test_cursor_invalid_order_list_3_items_uri_2_option_1(self):
+        for option in CURSOR_OPTIONS:
+            with self.assertRaises(ValueError):
+                parser.cursor(["url(some.uri)", option, "url(some.uri)"])
+
+            with self.assertRaises(ValueError):
+                parser.cursor([option, "url(some.uri)", "url(some.uri)"])
+
+    def test_cursor_invalid_order_list_2_items_option_2(self):
+        perms = permutations(CURSOR_OPTIONS, 2)
+        for (option1, option2) in perms:
+            with self.assertRaises(ValueError):
+                parser.cursor([option1, option2])
+
+    def test_cursor_invalid_order_list_3_items_option_3(self):
+        perms = permutations(CURSOR_OPTIONS, 3)
+        for (option1, option2, option3) in perms:
+            with self.assertRaises(ValueError):
+                parser.cursor([option1, option2, option3])
+
+    def test_cursor_invalid_order_list_3_items_option_2_uri_1(self):
+        perms = permutations(CURSOR_OPTIONS, 2)
+        for (option1, option2) in perms:
+            with self.assertRaises(ValueError):
+                parser.cursor([option1, option2, "url(some.url)"])
+
+            with self.assertRaises(ValueError):
+                parser.cursor([option1, "url(some.url)", option2])

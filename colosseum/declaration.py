@@ -21,7 +21,7 @@ from .constants import (  # noqa
     TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT, UNICODE_BIDI_CHOICES,
     VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
     WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
-    TextAlignInitialValue, default,
+    TextAlignInitialValue, default, CURSOR_CHOICES,
 )
 from .exceptions import ValidationError
 from .wrappers import Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline
@@ -410,7 +410,7 @@ class CSS:
 
     # 18. User interface #################################################
     # 18.1 Cursors
-    # cursor
+    cursor = validated_property('cursor', CURSOR_CHOICES, initial=AUTO)
 
     # 18.4 Dynamic outlines
     outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)

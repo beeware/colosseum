@@ -4,8 +4,8 @@ from unittest import TestCase
 
 from colosseum.units import px
 from colosseum.wrappers import (Border, BorderBottom, BorderLeft, BorderRight,
-                                BorderSpacing, BorderTop, Outline, Quotes,
-                                Shorthand)
+                                BorderSpacing, BorderTop, Cursor,
+                                ImmutableList, Outline, Quotes, Shorthand)
 
 
 class BorderSpacingTests(TestCase):
@@ -328,3 +328,92 @@ class TestShorthandBorder(TestCase):
         for wrapper_class in [Border, BorderBottom, BorderLeft, BorderRight, BorderTop]:
             with self.assertRaises(ValueError):
                 wrapper_class(foobar='foobar')
+
+
+class ImmutableListTests(TestCase):
+
+    def test_immutable_list_initial(self):
+        # Check initial
+        ilist = ImmutableList()
+        self.assertEqual(str(ilist), '')
+        self.assertEqual(repr(ilist), 'ImmutableList()')
+        self.assertEqual(len(ilist), 0)
+
+    def test_immutable_list_creation(self):
+        # Check value
+        ilist = ImmutableList([1])
+        self.assertEqual(str(ilist), "1")
+        self.assertEqual(repr(ilist), "ImmutableList([1])")
+        self.assertEqual(len(ilist), 1)
+
+        # Check values
+        ilist = ImmutableList(['1', '2'])
+        self.assertEqual(str(ilist), "1, 2")
+        self.assertEqual(repr(ilist), "ImmutableList(['1', '2'])")
+        self.assertEqual(len(ilist), 2)
+
+    def test_immutable_list_get_item(self):
+        # Check get item
+        ilist = ImmutableList(['1', '2'])
+        self.assertEqual(ilist[0], '1')
+        self.assertEqual(ilist[-1], '2')
+
+    def test_immutable_list_set_item(self):
+        # Check immutable
+        ilist = ImmutableList()
+        with self.assertRaises(TypeError):
+            ilist[0] = 'initial'
+
+    def test_immutable_list_equality(self):
+        # Check equality
+        ilist1 = ImmutableList(['1', 2])
+        ilist2 = ImmutableList(['1', 2])
+        ilist3 = ImmutableList([2, '1'])
+        self.assertEqual(ilist1, ilist2)
+        self.assertNotEqual(ilist1, ilist3)
+
+    def test_immutable_list_hash(self):
+        # Check hash
+        ilist1 = ImmutableList(['1', 2])
+        ilist2 = ImmutableList(['1', 2])
+
+        self.assertEqual(hash(ilist1), hash(ilist2))
+
+    def test_immutable_list_id(self):
+        # Check id
+        ilist1 = ImmutableList(['1', 2])
+        ilist2 = ImmutableList(['1', 2])
+        self.assertNotEqual(id(ilist1), id(ilist2))
+        self.assertNotEqual(id(ilist1), id(ilist1.copy()))
+        self.assertNotEqual(id(ilist2), id(ilist1.copy()))
+
+    def test_immutable_list_copy(self):
+        # Check copy
+        ilist1 = ImmutableList(['1', 2])
+        ilist2 = ImmutableList(['1', 2])
+
+        self.assertEqual(hash(ilist2), hash(ilist1.copy()))
+        self.assertEqual(ilist1, ilist1.copy())
+
+
+class CursorTests(TestCase):
+
+    def test_cursor_initial(self):
+        # Check initial
+        ilist = Cursor()
+        self.assertEqual(str(ilist), '')
+        self.assertEqual(repr(ilist), 'Cursor()')
+        self.assertEqual(len(ilist), 0)
+
+    def test_cursor_creation(self):
+        # Check value
+        ilist = Cursor([1])
+        self.assertEqual(str(ilist), "1")
+        self.assertEqual(repr(ilist), "Cursor([1])")
+        self.assertEqual(len(ilist), 1)
+
+        # Check values
+        ilist = Cursor(['1', '2'])
+        self.assertEqual(str(ilist), "1, 2")
+        self.assertEqual(repr(ilist), "Cursor(['1', '2'])")
+        self.assertEqual(len(ilist), 2)
