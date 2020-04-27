@@ -1,9 +1,14 @@
 """
 Validate values of different css properties.
 """
+from collections import Sequence
+import ast
+import re
 
+from . import exceptions
 from . import parser
 from . import units
+from . import fonts
 from .exceptions import ValidationError
 
 
@@ -41,6 +46,7 @@ def is_number(value=None, min_value=None, max_value=None):
     if min_value is None and max_value is None:
         return validator(value)
     else:
+        validator.description = '<number>'
         return validator
 
 
@@ -60,6 +66,7 @@ def is_integer(value=None, min_value=None, max_value=None):
     if min_value is None and max_value is None:
         return validator(value)
     else:
+        validator.description = '<integer>'
         return validator
 
 
@@ -134,6 +141,62 @@ def is_rect(value):
 
 
 is_rect.description = '<rect>'
+
+
+# https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#value-def-identifier
+_CSS_IDENTIFIER_RE = re.compile(r'^[a-zA-Z][a-zA-Z0-9\-\_]+$')
+
+
+def is_font_family(values):
+    """Validate that values are a valid list of font families."""
+    from .constants import GENERIC_FAMILY_FONTS, INITIAL
+    FontDatabase = fonts.FontDatabase
+
+    assert isinstance(values, Sequence) and not isinstance(values, str)
+
+    # Remove extra outer spaces
+    values = [value.strip() for value in values]
+
+    checked_values = []
+    for value in values:
+        # Remove extra inner spaces
+        value = value.replace('" ', '"')
+        value = value.replace(' "', '"')
+        value = value.replace("' ", "'")
+        value = value.replace(" '", "'")
+        if (value.startswith('"') and value.endswith('"')
+                or value.startswith("'") and value.endswith("'")):
+            try:
+                no_quotes_val = ast.literal_eval(value)
+            except ValueError:
+                raise exceptions.ValidationError
+
+            if not FontDatabase.validate_font_family(no_quotes_val):
+                raise exceptions.ValidationError('Font family "{font_value}"'
+                                                 ' not found on system!'.format(font_value=no_quotes_val))
+            checked_values.append(no_quotes_val)
+        elif value in GENERIC_FAMILY_FONTS:
+            checked_values.append(value)
+        elif value in INITIAL:
+            checked_values.append(value)
+        else:
+            error_msg = 'Font family "{font_value}" not found on system!'.format(font_value=value)
+            if _CSS_IDENTIFIER_RE.match(value):
+                if not FontDatabase.validate_font_family(value):
+                    raise exceptions.ValidationError(error_msg)
+                checked_values.append(value)
+            else:
+                raise exceptions.ValidationError(error_msg)
+
+    if len(checked_values) != len(values):
+        invalid = set(values) - set(checked_values)
+        error_msg = 'Invalid font string "{invalid}"'.format(invalid=invalid)
+        raise exceptions.ValidationError(error_msg)
+
+    return checked_values
+
+
+is_font_family.description = '<family-name>, <generic-family>'
 
 
 def is_quote(value):

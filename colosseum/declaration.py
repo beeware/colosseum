@@ -1,30 +1,44 @@
+import collections
+
 from . import engine as css_engine
 from . import parser
-from .constants import (  # noqa
-    ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
-    BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
-    BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
-    BOX_OFFSET_CHOICES, CAPTION_SIDE_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
-    COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, EMPTY_CELLS_CHOICES,
-    FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
-    FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES, FLOAT_CHOICES,
-    GRID_AUTO_CHOICES, GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
-    GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES,
-    INITIAL, INLINE, INVERT, JUSTIFY_CONTENT_CHOICES, LETTER_SPACING_CHOICES,
-    LTR, MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL,
-    NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
-    OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES, OVERFLOW_CHOICES,
-    PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
-    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW,
-    SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
-    TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES,
-    TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT, UNICODE_BIDI_CHOICES,
-    VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
-    WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
-    TextAlignInitialValue, default,
-)
+from .constants import (ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES,  # noqa
+                        ALIGN_SELF_CHOICES, AUTO, BACKGROUND_COLOR_CHOICES,
+                        BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
+                        BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES,
+                        BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES,
+                        CAPTION_SIDE_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
+                        COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
+                        EMPTY, EMPTY_CELLS_CHOICES, FLEX_BASIS_CHOICES,
+                        FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
+                        FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES,
+                        FLOAT_CHOICES, FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES,
+                        FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
+                        FONT_WEIGHT_CHOICES, GRID_AUTO_CHOICES,
+                        GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
+                        GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES,
+                        GRID_TEMPLATE_CHOICES, INITIAL, INITIAL_FONT_VALUES,
+                        INLINE, INVERT, JUSTIFY_CONTENT_CHOICES,
+                        LETTER_SPACING_CHOICES, LINE_HEIGHT_CHOICES, LTR,
+                        MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM,
+                        MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES,
+                        ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
+                        OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES,
+                        OVERFLOW_CHOICES, PADDING_CHOICES,
+                        PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+                        PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES,
+                        QUOTES_CHOICES, ROW, SEPARATE, SHOW, SIZE_CHOICES,
+                        STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
+                        TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES,
+                        TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES, TOP,
+                        TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES,
+                        VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
+                        WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
+                        TextAlignInitialValue, default)
 from .exceptions import ValidationError
-from .wrappers import Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline
+from .parser import parse_font
+from .wrappers import (Border, BorderBottom, BorderLeft, BorderRight,
+                       BorderTop, Outline)
 
 _CSS_PROPERTIES = set()
 
@@ -70,30 +84,6 @@ def validated_shorthand_property(name, parser, wrapper):
             except AttributeError:
                 # Attribute doesn't exist
                 pass
-
-    _CSS_PROPERTIES.add(name)
-    return property(getter, setter, deleter)
-
-
-def unvalidated_property(name, choices, initial):
-    "Define a simple CSS property attribute."
-    initial = choices.validate(initial)
-
-    def getter(self):
-        return getattr(self, '_%s' % name, initial)
-
-    def setter(self, value):
-        if value != getattr(self, '_%s' % name, initial):
-            setattr(self, '_%s' % name, value)
-            self.dirty = True
-
-    def deleter(self):
-        try:
-            delattr(self, '_%s' % name)
-            self.dirty = True
-        except AttributeError:
-            # Attribute doesn't exist
-            pass
 
     _CSS_PROPERTIES.add(name)
     return property(getter, setter, deleter)
@@ -203,6 +193,30 @@ def directional_property(name, initial):
     return property(getter, setter, deleter)
 
 
+def unvalidated_property(name, choices, initial):
+    "Define a simple CSS property attribute."
+    initial = choices.validate(initial)
+
+    def getter(self):
+        return getattr(self, '_%s' % name, initial)
+
+    def setter(self, value):
+        if value != getattr(self, '_%s' % name, initial):
+            setattr(self, '_%s' % name, value)
+            self.dirty = True
+
+    def deleter(self):
+        try:
+            delattr(self, '_%s' % name)
+            self.dirty = True
+        except AttributeError:
+            # Attribute doesn't exist
+            pass
+
+    _CSS_PROPERTIES.add(name)
+    return property(getter, setter, deleter)
+
+
 class CSS:
     def __init__(self, **style):
         self._node = None
@@ -304,7 +318,7 @@ class CSS:
     max_height = validated_property('max_height', choices=MAX_SIZE_CHOICES, initial=None)
 
     # 10.8 Leading and half-leading
-    # line_height
+    line_height = validated_property('line_height', choices=LINE_HEIGHT_CHOICES, initial=NORMAL)
     # vertical_align
 
     # 11. Visual effects #################################################
@@ -358,22 +372,24 @@ class CSS:
 
     # 15. Fonts ##########################################################
     # 15.3 Font family
-    # font_family
+    font_family = validated_list_property('font_family', choices=FONT_FAMILY_CHOICES, storage_class=FontFamily,
+                                          initial=[INITIAL], add_quotes=True)
 
     # 15.4 Font Styling
-    # font_style
+    font_style = validated_property('font_style', choices=FONT_STYLE_CHOICES, initial=NORMAL)
 
     # 15.5 Small-caps
-    # font_variant
+    font_variant = validated_property('font_variant', choices=FONT_VARIANT_CHOICES, initial=NORMAL)
 
     # 15.6 Font boldness
-    # font_weight
+    font_weight = validated_property('font_weight', choices=FONT_WEIGHT_CHOICES, initial=NORMAL)
 
     # 15.7 Font size
-    # font_size
+    font_size = validated_property('font_size', choices=FONT_SIZE_CHOICES, initial=MEDIUM)
 
     # 15.8 Shorthand font property
-    # font
+    font = validated_shorthand_property('font', initial=INITIAL_FONT_VALUES, parser=parse_font,
+                                        storage_class=FontShorthand)
 
     # 16. Text ###########################################################
     # 16.1 Indentation
@@ -586,14 +602,13 @@ class CSS:
     ######################################################################
     def __str__(self):
         non_default = []
+
         for name in _CSS_PROPERTIES:
-            try:
+            if getattr(self, '_%s' % name, EMPTY) != EMPTY:
                 non_default.append((
                     name.replace('_', '-'),
-                    getattr(self, '_%s' % name)
+                    getattr(self, name)
                 ))
-            except AttributeError:
-                pass
 
         return "; ".join(
             "%s: %s" % (name, value)

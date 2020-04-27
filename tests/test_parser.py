@@ -1,13 +1,17 @@
 from itertools import permutations
 from unittest import TestCase
 
+import pytest
+
 from colosseum import parser
 from colosseum.colors import hsl, rgb
+from colosseum.constants import INITIAL_FONT_VALUES
 from colosseum.parser import (border, border_bottom, border_left, border_right,
-                              border_top, color, outline)
+                              border_top, color, outline, parse_font)
 from colosseum.shapes import Rect
 from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
                              vmax, vmin, vw)
+from colosseum.wrappers import FontFamily
 
 
 class ParseUnitTests(TestCase):
@@ -290,6 +294,228 @@ class ParseRectTests(TestCase):
 
         with self.assertRaises(ValueError):
             parser.rect('RECT(1px, 3px, 2px, 4px)')
+
+
+##############################################################################
+# Font tests with pytest parametrization
+##############################################################################
+
+# Constants
+EMPTY = '<EMPTY>'
+INVALID = '<INVALID>'
+
+
+def tuple_to_font_dict(tup, font_dict, remove_empty=False):
+    """Helper to convert a tuple to a font dict to check for valid outputs."""
+    for idx, key in enumerate(('font_style', 'font_variant', 'font_weight',
+                               'font_size', 'line_height', 'font_family')):
+        value = tup[idx]
+
+        if remove_empty:
+            if value is not EMPTY:
+                font_dict[key] = value
+        else:
+            font_dict[key] = value
+
+        if key == 'font_family':
+            font_dict[key] = FontFamily(value)
+
+    return font_dict
+
+
+# Test helpers
+def construct_font(font_dict, order=0):
+    """Construct font property string from a dictionary of font properties."""
+    font_dict_copy = font_dict.copy()
+    for key in font_dict:
+        val = font_dict[key]
+        if val == EMPTY:
+            val = ''
+
+        if key == 'line_height' and val != '':
+            val = '/' + val
+
+        font_dict_copy[key] = val
+
+    font_dict_copy['font_family'] = FontFamily(font_dict_copy['font_family'])
+
+    strings = {
+        # Valid default order
+        0: '{font_style} {font_variant} {font_weight} {font_size}{line_height} {font_family}',
+
+        # Valid non default order
+        1: '{font_style} {font_weight} {font_variant} {font_size}{line_height} {font_family}',
+        2: '{font_weight} {font_variant} {font_style} {font_size}{line_height} {font_family}',
+        3: '{font_weight} {font_style} {font_variant} {font_size}{line_height} {font_family}',
+        4: '{font_variant} {font_weight} {font_style} {font_size}{line_height} {font_family}',
+        5: '{font_variant} {font_style} {font_weight} {font_size}{line_height} {font_family}',
+
+        # Invalid order
+        10: '{font_size}{line_height} {font_style} {font_weight} {font_variant} {font_family}',
+        11: '{font_weight} {font_size}{line_height} {font_variant} {font_style} {font_family}',
+        12: '{font_weight} {font_style} {font_size}{line_height} {font_variant} {font_family}',
+        13: '{font_style} {font_weight} {font_size}{line_height} {font_variant} {font_family}',
+        14: '{font_weight} {font_variant} {font_size}{line_height} {font_style} {font_family}',
+        15: '{font_variant} {font_weight} {font_size}{line_height} {font_style} {font_family}',
+        16: '{font_style} {font_variant} {font_size}{line_height} {font_weight} {font_family}',
+        17: '{font_variant} {font_style} {font_size}{line_height} {font_weight} {font_family}',
+        18: '{font_variant} {font_style} {font_family} {font_size}{line_height} {font_weight}',
+        19: '{font_family} {font_variant} {font_style} {font_size}{line_height} {font_weight}',
+    }
+    string = ' '.join(str(strings[order].format(**font_dict_copy)).strip().split())
+    return string
+
+
+def helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    font_with_empty_values = tuple_to_font_dict(
+        (font_style, font_variant, font_weight, font_size, line_height, font_family),
+        INITIAL_FONT_VALUES.copy(),
+        remove_empty=False)
+
+    font_properties = set()
+    for order in range(6):
+        font_property = construct_font(font_with_empty_values, order)
+        if font_property not in font_properties:
+            font_properties.add(font_property)
+            with pytest.raises(Exception):
+                print(font_with_empty_values)
+                print('Font: ' + font_property)
+                parse_font(font_property)
+
+
+# Tests
+@pytest.mark.parametrize('font_style', [EMPTY, 'normal', 'oblique'])
+@pytest.mark.parametrize('font_variant', [EMPTY, 'normal', 'small-caps'])
+@pytest.mark.parametrize('font_weight', [EMPTY, 'normal', 'bold', '500'])
+@pytest.mark.parametrize('font_size', ['medium', '9px'])
+@pytest.mark.parametrize('line_height', [EMPTY, 'normal', '2'])
+@pytest.mark.parametrize('font_family', [['Ahem'], ['Ahem', 'White Space']])
+def test_parse_font_shorthand_2_to_5_parts(font_style, font_variant, font_weight, font_size, line_height,
+                                           font_family):
+    font_with_empty_values = tuple_to_font_dict(
+        (font_style, font_variant, font_weight, font_size, line_height, font_family),
+        INITIAL_FONT_VALUES.copy(),
+        remove_empty=False)
+
+    expected_output = tuple_to_font_dict(
+        (font_style, font_variant, font_weight, font_size, line_height, font_family),
+        INITIAL_FONT_VALUES.copy(),
+        remove_empty=True)
+
+    # Valid
+    font_properties = set()
+    for order in range(6):
+        font_property = construct_font(font_with_empty_values, order)
+        if font_property not in font_properties:
+            font_properties.add(font_property)
+            font = parse_font(font_property)
+            print('\nfont:     ', font_property)
+            print('parsed:   ', sorted(font.items()))
+            print('expected: ', sorted(expected_output.items()))
+            assert font == expected_output
+
+    # Invalid
+    font_properties_invalid = set()
+    for order in range(10, 20):
+        font_property = construct_font(font_with_empty_values, order)
+        if font_property not in font_properties:
+            font_properties_invalid.add(font_property)
+            print('\nfont:     ', font_property)
+            with pytest.raises(Exception):
+                font = parse_font(font_property)
+
+
+@pytest.mark.parametrize('font_style', [INVALID])
+@pytest.mark.parametrize('font_variant', [EMPTY, 'normal', 'small-caps'])
+@pytest.mark.parametrize('font_weight', [EMPTY, 'normal', 'bold', '500'])
+@pytest.mark.parametrize('font_size', ['medium', '9px'])
+@pytest.mark.parametrize('line_height', [EMPTY, 'normal', '2'])
+@pytest.mark.parametrize('font_family', [['Ahem'], ['Ahem', 'White Space']])
+def test_parse_font_shorthand_invalid_1(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family)
+
+
+@pytest.mark.parametrize('font_style', [EMPTY, 'normal', 'oblique'])
+@pytest.mark.parametrize('font_variant', [INVALID])
+@pytest.mark.parametrize('font_weight', [EMPTY, 'normal', 'bold', '500'])
+@pytest.mark.parametrize('font_size', ['medium', '9px'])
+@pytest.mark.parametrize('line_height', [EMPTY, 'normal', '2'])
+@pytest.mark.parametrize('font_family', [['Ahem'], ['Ahem', 'White Space']])
+def test_parse_font_shorthand_invalid_2(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family)
+
+
+@pytest.mark.parametrize('font_style', [EMPTY, 'normal', 'oblique'])
+@pytest.mark.parametrize('font_variant', [EMPTY, 'normal', 'small-caps'])
+@pytest.mark.parametrize('font_weight', [INVALID])
+@pytest.mark.parametrize('font_size', ['medium', '9px'])
+@pytest.mark.parametrize('line_height', [EMPTY, 'normal', '2'])
+@pytest.mark.parametrize('font_family', [['Ahem'], ['Ahem', 'White Space']])
+def test_parse_font_shorthand_invalid_3(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family)
+
+
+@pytest.mark.parametrize('font_style', [EMPTY, 'normal', 'oblique'])
+@pytest.mark.parametrize('font_variant', [EMPTY, 'normal', 'small-caps'])
+@pytest.mark.parametrize('font_weight', [EMPTY, 'normal', 'bold', '500'])
+@pytest.mark.parametrize('font_size', [INVALID])
+@pytest.mark.parametrize('line_height', [EMPTY, 'normal', '2'])
+@pytest.mark.parametrize('font_family', [['Ahem'], ['Ahem', 'White Space']])
+def test_parse_font_shorthand_invalid_4(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family)
+
+
+@pytest.mark.parametrize('font_style', [EMPTY, 'normal', 'oblique'])
+@pytest.mark.parametrize('font_variant', [EMPTY, 'normal', 'small-caps'])
+@pytest.mark.parametrize('font_weight', [EMPTY, 'normal', 'bold', '500'])
+@pytest.mark.parametrize('font_size', ['medium', '9px'])
+@pytest.mark.parametrize('line_height', [INVALID])
+@pytest.mark.parametrize('font_family', [['Ahem'], ['Ahem', 'White Space']])
+def test_parse_font_shorthand_invalid_5(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family)
+
+
+@pytest.mark.parametrize('font_style', [EMPTY, 'normal', 'oblique'])
+@pytest.mark.parametrize('font_variant', [EMPTY, 'normal', 'small-caps'])
+@pytest.mark.parametrize('font_weight', [EMPTY, 'normal', 'bold', '500'])
+@pytest.mark.parametrize('font_size', ['medium', '9px'])
+@pytest.mark.parametrize('line_height', [EMPTY, 'normal', '2'])
+@pytest.mark.parametrize('font_family', [[INVALID], ['Ahem', INVALID]])
+def test_parse_font_shorthand_invalid_6(font_style, font_variant, font_weight, font_size, line_height, font_family):
+    helper_test_font_invalid(font_style, font_variant, font_weight, font_size, line_height, font_family)
+
+
+@pytest.mark.parametrize('font_property_string', [
+    INVALID,
+    # Space between font-size and line-height
+    'small-caps oblique normal 1.2em /3 Ahem',
+    'small-caps oblique normal 1.2em/ 3 Ahem',
+    'small-caps oblique normal 1.2em / 3 Ahem',
+
+    # Too many parts
+    'normal normal normal normal 12px/12px serif',
+    'normal normal normal normal normal 12px/12px serif',
+
+    # No quotes with spaces
+    'small-caps oblique normal 1.2em/3 Ahem, White Space',
+
+    # No commas
+    'small-caps oblique normal 1.2em/3 Ahem "White Space"',
+
+    # Repeated options
+    'bold 500 oblique 9px/2 Ahem',
+    'bigger smaller Ahem',
+
+    # <system-font> | inherit
+    'Ahem',
+    '<NotValid>',
+    '20',
+    20,
+])
+def test_parse_font_shorthand_invalid_extras(font_property_string):
+    with pytest.raises(Exception):
+        print('Font: ' + font_property_string)
+        parse_font(font_property_string)
 
 
 class ParseQuotesTests(TestCase):

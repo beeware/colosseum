@@ -2,16 +2,17 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
-                                 REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
+from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL,
+                                 INITIAL_FONT_VALUES, INLINE, LEFT, REVERT,
+                                 RIGHT, RTL, TABLE, UNSET, Choices,
                                  OtherProperty)
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
 from colosseum.validators import (is_color, is_integer, is_length, is_number,
                                   is_percentage)
-from colosseum.wrappers import BorderSpacing, Quotes
+from colosseum.wrappers import BorderSpacing, FontFamily, FontShorthand, Quotes
 
-from .utils import TestNode
+from .utils import ColosseumTestCase, TestNode
 
 
 class PropertyChoiceTests(TestCase):
@@ -272,7 +273,7 @@ class PropertyChoiceTests(TestCase):
         self.assertIs(obj.prop, AUTO)
 
 
-class CssDeclarationTests(TestCase):
+class CssDeclarationTests(ColosseumTestCase):
     def test_engine(self):
         node = TestNode(style=CSS())
         self.assertEqual(node.style.engine(), css_engine)
@@ -437,6 +438,37 @@ class CssDeclarationTests(TestCase):
         del node.style.display
         self.assertIs(node.style.display, INLINE)
         self.assertTrue(node.style.dirty)
+
+    def test_list_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value
+        self.assertEqual(node.style.font_family, FontFamily(['initial']))
+
+        # Check valid values
+        node.style.font_family = ['serif']
+        node.style.font_family = ["Ahem", 'serif']
+
+        # This will coerce to a list, is this a valid behavior?
+        node.style.font_family = 'Ahem'
+        self.assertEqual(node.style.font_family, FontFamily(['Ahem']))
+        node.style.font_family = '     Ahem       ,   serif '
+        self.assertEqual(node.style.font_family, FontFamily(['Ahem', 'serif']))
+
+        # Check valid value without extra quotes
+        node.style.font_family = ['White Space']
+
+        # Check extra quotes are removed
+        node.style.font_family = ['"White Space"']
+        self.assertEqual(node.style.font_family, FontFamily(['White Space']))
+
+        # Check it raises
+        try:
+            node.style.font_family = ['123']
+            self.fail('Should raise ValueError')
+        except ValueError:
+            pass
 
     def test_property_border_spacing_valid_str_1_item_inherit(self):
         node = TestNode(style=CSS())
@@ -1216,3 +1248,128 @@ class CssDeclarationTests(TestCase):
 
         with self.assertRaises(KeyError):
             del node.style['no-such-property']
+
+    def test_font_shorthand_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check initial value
+        self.assertTrue(isinstance(node.style.font, FontShorthand))
+        self.assertEqual(node.style.font.to_dict(), INITIAL_FONT_VALUES)
+
+        # Check Initial values
+        self.assertEqual(node.style.font_style, 'normal')
+        self.assertEqual(node.style.font_weight, 'normal')
+        self.assertEqual(node.style.font_variant, 'normal')
+        self.assertEqual(node.style.font_size, 'medium')
+        self.assertEqual(node.style.line_height, 'normal')
+        self.assertEqual(node.style.font_family, FontFamily(['initial']))
+
+        # Check individual properties update the unset shorthand
+        node.style.font_style = 'italic'
+        node.style.font_weight = 'bold'
+        node.style.font_variant = 'small-caps'
+        node.style.font_size = '10px'
+        node.style.line_height = '1.5'
+        node.style.font_family = ['Ahem', 'serif']
+        expected_font = {
+            'font_style': 'italic',
+            'font_weight': 'bold',
+            'font_variant': 'small-caps',
+            'font_size': '10px',
+            'line_height': '1.5',
+            'font_family': FontFamily(['Ahem', 'serif']),
+        }
+        font = node.style.font.to_dict()
+        font['font_size'] = str(font['font_size'])
+        font['line_height'] = str(font['line_height'])
+        self.assertEqual(font, expected_font)
+
+        # Check setting the shorthand resets values
+        node.style.font = '9px serif'
+        self.assertEqual(node.style.font_style, 'normal')
+        self.assertEqual(node.style.font_weight, 'normal')
+        self.assertEqual(node.style.font_variant, 'normal')
+        self.assertEqual(node.style.line_height, 'normal')
+        self.assertEqual(str(node.style.font_size), '9px')
+        self.assertEqual(node.style.font_family, FontFamily(['serif']))
+
+        # Check individual properties do not update the set shorthand
+        node.style.font = '9px "White Space", serif'
+        node.style.font_style = 'italic'
+        node.style.font_weight = 'bold'
+        node.style.font_variant = 'small-caps'
+        node.style.font_size = '10px'
+        node.style.line_height = '1.5'
+        expected_font = {
+            'font_style': 'italic',
+            'font_weight': 'bold',
+            'font_variant': 'small-caps',
+            'font_size': '10px',
+            'line_height': '1.5',
+            'font_family': FontFamily(['White Space', 'serif']),
+        }
+        font = node.style.font.to_dict()
+        font['font_size'] = str(font['font_size'])
+        font['line_height'] = str(font['line_height'])
+        self.assertEqual(font, expected_font)
+
+        # Check string
+        self.assertEqual(str(node.style), (
+            'font: italic small-caps bold 10px/1.5 "White Space", serif; '
+            'font-family: "White Space", serif; '
+            'font-size: 10px; '
+            'font-style: italic; '
+            'font-variant: small-caps; '
+            'font-weight: bold; '
+            'line-height: 1.5'
+        ))
+        node.style.font = '9px "White Space", serif'
+        self.assertEqual(str(node.style), (
+            'font: normal normal normal 9px/normal "White Space", serif; '
+            'font-family: "White Space", serif; '
+            'font-size: 9px; '
+            'font-style: normal; '
+            'font-variant: normal; '
+            'font-weight: normal; '
+            'line-height: normal'
+        ))
+
+        # Check invalid values
+        with self.assertRaises(ValueError):
+            node.style.font = 'ThisIsDefinitelyNotAFontName'
+
+    def test_font_family_property(self):
+        node = TestNode(style=CSS())
+        node.layout.dirty = None
+
+        # Check type
+        self.assertTrue(isinstance(node.style.font_family, FontFamily))
+
+        # Check Initial values
+        self.assertEqual(node.style.font_family, FontFamily([INITIAL]))
+
+        # Check lists as input
+        node.style.font_family = ['Ahem', 'White Space', 'serif']
+        self.assertTrue(isinstance(node.style.font_family, FontFamily))
+        self.assertEqual(node.style.font_family, FontFamily(['Ahem', 'White Space', 'serif']))
+
+        # Check strings as input
+        node.style.font_family = 'Ahem, "White Space", serif'
+        self.assertTrue(isinstance(node.style.font_family, FontFamily))
+        self.assertEqual(node.style.font_family, FontFamily(['Ahem', 'White Space', 'serif']))
+
+        # Check string
+        self.assertEqual(str(node.style.font_family), 'Ahem, "White Space", serif')
+        self.assertEqual(str(node.style), 'font-family: Ahem, "White Space", serif')
+
+        # # Check resets value
+        del node.style.font_family
+        self.assertEqual(node.style.font_family, FontFamily([INITIAL]))
+
+        # Check invalid values
+        with self.assertRaises(ValueError):
+            node.style.font_family = 1
+
+        with self.assertRaises(ValueError):
+            node.style.font_family = {1}

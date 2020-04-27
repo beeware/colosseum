@@ -1,6 +1,8 @@
-from .validators import (ValidationError, is_border_spacing, is_color,
+from .exceptions import ValidationError
+from .validators import (is_border_spacing, is_color, is_font_family,
                          is_integer, is_length, is_number, is_percentage,
                          is_quote, is_rect)
+from .wrappers import FontFamily
 
 
 class Choices:
@@ -36,13 +38,13 @@ class Choices:
     def __str__(self):
         choices = set([str(c).lower().replace('_', '-') for c in self.constants])
         for validator in self.validators:
-            choices.add(validator.description)
+            choices.update(validator.description.split(', '))
 
         if self.explicit_defaulting_constants:
             for item in self.explicit_defaulting_constants:
                 choices.add(item)
 
-        return ", ".join(sorted(choices))
+        return ", ".join(sorted(set(choices)))
 
 
 class OtherProperty:
@@ -69,6 +71,11 @@ class OtherProperty:
 ######################################################################
 HTML4 = 'html4'
 HTML5 = 'html5'
+
+######################################################################
+# Other constants
+######################################################################
+EMPTY = '<empty>'
 
 ######################################################################
 # Common constants
@@ -254,6 +261,8 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 # 10.8 Leading and half-leading
 ######################################################################
 # line_height
+LINE_HEIGHT_CHOICES = Choices(NORMAL, validators=[is_number, is_length, is_percentage],
+                              explicit_defaulting_constants=[INHERIT])
 # vertical_align
 
 ######################################################################
@@ -361,25 +370,132 @@ BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 ######################################################################
 # font_family
 
+SERIF = 'serif'
+SANS_SERIF = 'sans-serif'
+CURSIVE = 'cursive'
+FANTASY = 'fantasy'
+MONOSPACE = 'monospace'
+
+GENERIC_FAMILY_FONTS = [SERIF, SANS_SERIF, CURSIVE, FANTASY, MONOSPACE]
+
+FONT_FAMILY_CHOICES = Choices(
+    validators=[is_font_family],
+    explicit_defaulting_constants=[INHERIT, INITIAL],
+)
+
 ######################################################################
 # 15.4 Font Styling
 ######################################################################
 # font_style
+NORMAL = 'normal'
+ITALIC = 'italic'
+OBLIQUE = 'oblique'
+
+FONT_STYLE_CHOICES = Choices(
+    NORMAL,
+    ITALIC,
+    OBLIQUE,
+    explicit_defaulting_constants=[INHERIT],
+)
 
 ######################################################################
 # 15.5 Small-caps
 ######################################################################
 # font_variant
+SMALL_CAPS = 'small-caps'
+FONT_VARIANT_CHOICES = Choices(
+    NORMAL,
+    SMALL_CAPS,
+    explicit_defaulting_constants=[INHERIT],
+)
 
 ######################################################################
 # 15.6 Font boldness
 ######################################################################
 # font_weight
+BOLD = 'bold'
+BOLDER = 'bolder'
+LIGHTER = 'lighter'
+WEIGHT_100 = '100'
+WEIGHT_200 = '200'
+WEIGHT_300 = '300'
+WEIGHT_400 = '400'
+WEIGHT_500 = '500'
+WEIGHT_600 = '600'
+WEIGHT_700 = '700'
+WEIGHT_800 = '800'
+WEIGHT_900 = '900'
+
+FONT_WEIGHT_CHOICES = Choices(
+    NORMAL,
+    BOLD,
+    BOLDER,
+    LIGHTER,
+    WEIGHT_100,
+    WEIGHT_200,
+    WEIGHT_300,
+    WEIGHT_400,
+    WEIGHT_500,
+    WEIGHT_600,
+    WEIGHT_700,
+    WEIGHT_800,
+    WEIGHT_900,
+    explicit_defaulting_constants=[INHERIT],
+)
 
 ######################################################################
 # 15.7 Font size
 ######################################################################
 # font_size
+
+# <absolute-size>
+XX_SMALL = 'xx-small'
+X_SMALL = 'x-small'
+SMALL = 'small'
+MEDIUM = 'medium'
+LARGE = 'large'
+X_LARGE = 'x-large'
+XX_LARGE = 'xx-large'
+
+# <relative-size>
+LARGER = 'larger'
+SMALLER = 'smaller'
+
+FONT_SIZE_CHOICES = Choices(
+    XX_SMALL,
+    X_SMALL,
+    SMALL,
+    MEDIUM,
+    LARGE,
+    X_LARGE,
+    XX_LARGE,
+    LARGER,
+    SMALLER,
+    validators=[is_length, is_percentage],
+    explicit_defaulting_constants=[INHERIT],
+)
+
+######################################################################
+# 15.8 Font shorthand
+######################################################################
+
+ICON = 'icon'
+CAPTION = 'caption'
+MENU = 'menu'
+MESSAGE_BOX = 'message-box'
+SMALL_CAPTION = 'small-caption'
+STATUS_BAR = 'status-bar'
+
+SYSTEM_FONT_KEYWORDS = [ICON, CAPTION, MENU, MESSAGE_BOX, SMALL_CAPTION, STATUS_BAR]
+
+INITIAL_FONT_VALUES = {
+    'font_style': NORMAL,
+    'font_variant': NORMAL,
+    'font_weight': NORMAL,
+    'font_size': MEDIUM,
+    'line_height': NORMAL,
+    'font_family': FontFamily([INITIAL]),  # TODO: Depends on user agent. What to use?
+}
 
 ######################################################################
 # 16. Text ###########################################################

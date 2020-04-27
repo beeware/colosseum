@@ -1,8 +1,9 @@
 from unittest import TestCase
 
+from colosseum.exceptions import ValidationError
 from colosseum.shapes import Rect
 from colosseum.units import px
-from colosseum.validators import (ValidationError, is_border_spacing,
+from colosseum.validators import (is_border_spacing, is_font_family,
                                   is_integer, is_number, is_quote, is_rect)
 from colosseum.wrappers import Quotes
 
@@ -149,6 +150,32 @@ class RectTests(TestCase):
     def test_rect_invalid(self):
         with self.assertRaises(ValidationError):
             is_rect('1px, 3px 2px, 4px')
+
+
+class FontTests(TestCase):
+
+    def test_font_family_name_valid(self):
+        self.assertEqual(is_font_family(['Ahem', 'serif']), ['Ahem', 'serif'])
+        self.assertEqual(is_font_family(["  Ahem  ", "  fantasy  "]), ["Ahem", 'fantasy'])
+        self.assertEqual(is_font_family(["Ahem", "'White Space'"]), ["Ahem", 'White Space'])
+        self.assertEqual(is_font_family(["Ahem", '"White Space"']), ["Ahem", 'White Space'])
+        self.assertEqual(is_font_family(["  Ahem   ", "    ' White Space '  "]), ["Ahem", 'White Space'])
+        self.assertEqual(is_font_family(["  Ahem   ", '    \" White Space \"  ']), ["Ahem", 'White Space'])
+
+    def test_font_family_name_invalid(self):
+        invalid_cases = [
+            'Red/Black, sans-serif',
+            '"Lucida" Grande, sans-serif',
+            'Ahem!, sans-serif',
+            'test@foo, sans-serif',
+            '#POUND, sans-serif',
+            'Hawaii 5-0, sans-serif',
+            '123',
+            'ThisIsDefintelyNotAFontFamily'
+        ]
+        for case in invalid_cases:
+            with self.assertRaises(ValidationError):
+                is_font_family([case])
 
 
 class QuotesTests(TestCase):

@@ -1,11 +1,18 @@
 import json
 import os
+import shutil
+import sys
 from unittest import TestCase, expectedFailure
 
 from colosseum.constants import BLOCK, HTML4, MEDIUM, THICK, THIN
 from colosseum.declaration import CSS
 from colosseum.dimensions import Box, Size
 from colosseum.engine import layout
+from colosseum.exceptions import ValidationError
+from colosseum.fonts import FontDatabase
+
+# Constants
+HERE = os.path.abspath(os.path.dirname(__file__))
 
 
 class Display:
@@ -125,34 +132,99 @@ def clean_layout(layout):
 def output_layout(layout, depth=1):
     if 'tag' in layout:
         return ('  ' * depth
-            + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
-              ' @ ({n[content][position][0]}, {n[content][position][1]})'
-              '\n'.format(
-                    n=layout,
-                    tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
-                    # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
-                )
-            # + '  ' * depth
-            # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
-            #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
-            #   '\n'.format(n=layout)
-            # + '  ' * depth
-            # + '  border: {n[border_box][size][0]}x{n[border_box][size][1]}'
-            #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
-            #   '\n'.format(n=layout)
-            + ''.join(
-                    output_layout(child, depth=depth + 1)
-                    for child in layout.get('children', [])
-                ) if layout else ''
-            + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
-        )
+                + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
+                ' @ ({n[content][position][0]}, {n[content][position][1]})'
+                '\n'.format(
+                        n=layout,
+                        tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
+                        # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
+                    )
+                # + '  ' * depth
+                # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
+                #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
+                #   '\n'.format(n=layout)
+                # + '  ' * depth
+                # + '  border: {n[border_box][size][0]}x{n[border_box][size][1]}'
+                #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
+                #   '\n'.format(n=layout)
+                + ''.join(
+                        output_layout(child, depth=depth + 1)
+                        for child in layout.get('children', [])
+                    ) if layout else ''
+                + ('\n' if layout and layout.get('children', None) and depth > 1 else ''))
     else:
-        return ('  ' * depth
-            + "* '{text}'\n".format(text=layout['text'].strip())
-        )
+        return ('  ' * depth + "* '{text}'\n".format(text=layout['text'].strip()))
 
 
-class LayoutTestCase(TestCase):
+def install_fonts(system=False):
+    """Install needed files for running tests."""
+    fonts_folder = FontDatabase.fonts_path(system=system)
+
+    if not os.path.isdir(fonts_folder):
+        os.makedirs(fonts_folder)
+
+    fonts_data_path = os.path.join(HERE, 'data', 'fonts')
+    font_files = sorted([item for item in os.listdir(fonts_data_path) if item.endswith('.ttf')])
+    for font_file in font_files:
+        font_file_data_path = os.path.join(fonts_data_path, font_file)
+        font_file_path = os.path.join(fonts_folder, font_file)
+
+        if not os.path.isfile(font_file_path):
+            shutil.copyfile(font_file_data_path, font_file_path)
+
+        if os.name == 'nt':
+            # Register font
+            import winreg  # noqa
+            base_key = winreg.HKEY_LOCAL_MACHINE if system else winreg.HKEY_CURRENT_USER
+            key_path = r"Software\Microsoft\Windows NT\CurrentVersion\Fonts"
+
+            if '_' in font_file:
+                font_name = font_file.split('_')[-1].split('.')[0]
+            else:
+                font_name = font_file.split('.')[0]
+
+            # This font has a space in its system name
+            if font_name == 'WhiteSpace':
+                font_name = 'White Space'
+
+            font_name = font_name + ' (TrueType)'
+
+            with winreg.OpenKey(base_key, key_path, 0, winreg.KEY_ALL_ACCESS) as reg_key:
+                value = None
+                try:
+                    # Query if it exists
+                    value = winreg.QueryValueEx(reg_key, font_name)
+                except FileNotFoundError:
+                    pass
+
+                # If it does not exists, add value
+                if value != font_file_path:
+                    winreg.SetValueEx(reg_key, font_name, 0, winreg.REG_SZ, font_file_path)
+
+
+class ColosseumTestCase(TestCase):
+    """Install test fonts before running tests that use them."""
+    _FONTS_ACTIVE = False
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self._FONTS_ACTIVE is False:
+            self.install_fonts()
+
+    def install_fonts(self):
+        install_fonts()
+
+        try:
+            FontDatabase.validate_font_family('Ahem')
+            FontDatabase.clear_cache()
+        except ValidationError:
+            raise Exception('\n\nTesting fonts (Ahem & Ahem Extra) are not active.\n'
+                            '\nPlease run the test suite one more time.\n')
+
+        ColosseumTestCase._FONTS_ACTIVE = True
+
+
+class LayoutTestCase(ColosseumTestCase):
     def setUp(self):
         self.maxDiff = None
         self.display = Display(dpi=96, width=1024, height=768)
@@ -395,3 +467,12 @@ class W3CTestCase(LayoutTestCase):
                     tests[test_name] = test_method
 
         return tests
+
+
+if __name__ == '__main__':
+    # On CI we use system font locations except for linux containers
+    system = bool(os.environ.get('GITHUB_WORKSPACE', None))
+    if sys.platform.startswith('linux'):
+        system = False
+    print('Copying test fonts to "{path}"...'.format(path=FontDatabase.fonts_path(system=system)))
+    install_fonts(system=system)
