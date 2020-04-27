@@ -143,6 +143,13 @@ def is_quote(value):
         value = parser.quotes(value)
     except ValueError:
         raise ValidationError('Value {value} is not a valid quote'.format(value=value))
+
+    return value
+
+
+is_quote.description = '[<string> <string>]+'
+
+
 URI_RE = re.compile(r"""(
     (?:url\(\s?'[A-Za-z0-9\./\:\?]*'\s?\))  # Single quotes and optional spaces
     |
@@ -150,9 +157,6 @@ URI_RE = re.compile(r"""(
     |
     (?:url\(\s?[A-Za-z0-9\./\:\?]*\s?\))    # No quotes and optional spaces
 )""", re.VERBOSE)
-
-
-is_quote.description = '[<string> <string>]+'
 
 
 def is_uri(value):

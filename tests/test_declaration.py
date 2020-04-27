@@ -5,8 +5,7 @@ from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
 from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
                                  REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
                                  OtherProperty)
-from colosseum.declaration import (CSS, validated_list_property,
-                                   validated_property)
+from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
 from colosseum.validators import (is_color, is_integer, is_length, is_number,
                                   is_percentage, is_uri)

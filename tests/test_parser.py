@@ -681,6 +681,8 @@ class ParseBorderTests(TestCase):
 
             with self.assertRaises(ValueError):
                 func('black solid thick black thick')
+
+
 class ParseUriTests(TestCase):
 
     def test_url_valid_single_quotes_url(self):
