@@ -129,47 +129,6 @@ class Shorthand:
         return properties
 
 
-class Outline(Shorthand):
-    VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
-
-
-class BorderTop(Shorthand):
-    VALID_KEYS = ['border_top_width', 'border_top_style', 'border_top_color']
-
-
-class BorderRight(Shorthand):
-    VALID_KEYS = ['border_right_width', 'border_right_style', 'border_right_color']
-
-
-class BorderBottom(Shorthand):
-    VALID_KEYS = ['border_bottom_width', 'border_bottom_style', 'border_bottom_color']
-
-
-class BorderLeft(Shorthand):
-    VALID_KEYS = ['border_left_width', 'border_left_style', 'border_left_color']
-
-
-class Border(Shorthand):
-    VALID_KEYS = ['border_width', 'border_style', 'border_color']
-
-
-class Uri:
-    """Wrapper for a url."""
-
-    def __init__(self, url):
-        self._url = url
-
-    def __repr__(self):
-        return 'url("%s")' % self._url
-
-    def __str__(self):
-        return repr(self)
-
-    @property
-    def url(self):
-        return self._url
-
-
 class ImmutableList(list):
     """Immutable list to store list properties."""
 
@@ -233,5 +192,50 @@ class ImmutableList(list):
         raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
 
 
+class Outline(Shorthand):
+    VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
+
+
+class BorderTop(Shorthand):
+    VALID_KEYS = ['border_top_width', 'border_top_style', 'border_top_color']
+
+
+class BorderRight(Shorthand):
+    VALID_KEYS = ['border_right_width', 'border_right_style', 'border_right_color']
+
+
+class BorderBottom(Shorthand):
+    VALID_KEYS = ['border_bottom_width', 'border_bottom_style', 'border_bottom_color']
+
+
+class BorderLeft(Shorthand):
+    VALID_KEYS = ['border_left_width', 'border_left_style', 'border_left_color']
+
+
+class Border(Shorthand):
+    VALID_KEYS = ['border_width', 'border_style', 'border_color']
+
+
+class Uri:
+    """Wrapper for a url."""
+
+    def __init__(self, url):
+        self._url = url
+
+    def __repr__(self):
+        return 'url("%s")' % self._url
+
+    def __str__(self):
+        return repr(self)
+
+    @property
+    def url(self):
+        return self._url
+
+
 class Cursor(ImmutableList):
     """Immutable list to store cursor property."""
+
+
+class ListStyle(Shorthand):
+    VALID_KEYS = ['list_style_type', 'list_style_image', 'list_style_position']
