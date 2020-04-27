@@ -254,6 +254,12 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 # 10.8 Leading and half-leading
 ######################################################################
 # line_height
+LINE_HEIGHT_CHOICES = Choices(
+    NORMAL,
+    validators=[is_number, is_length, is_percentage],
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # vertical_align
 
 ######################################################################
