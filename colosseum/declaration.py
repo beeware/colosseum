@@ -26,7 +26,8 @@ from .constants import (  # noqa
 )
 from .exceptions import ValidationError
 from .wrappers import (
-    Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline,
+    Background, Border, BorderBottom, BorderLeft, BorderRight, BorderTop,
+    Outline,
 )
 
 _CSS_PROPERTIES = set()
@@ -115,7 +116,6 @@ def validated_property(name, choices, initial):
             # Check the value attribute is a callable
             if not callable(value_attr):
                 raise ValueError('Initial value "%s" `value` attribute is not callable!' % initial)
-
         except AttributeError:
             raise ValueError('Initial value "%s" does not have a value attribute!' % initial)
 

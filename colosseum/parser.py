@@ -286,7 +286,7 @@ def outline(value):
 
 
 ##############################################################################
-# # Border shorthands
+# Border shorthands
 ##############################################################################
 def _parse_border_property_part(value, border_dict, direction=None):
     """Parse border shorthand property part for known properties."""
@@ -454,7 +454,14 @@ def position(value):
     """
     [[ <percentage> | <length> | left | center | right ][ <percentage> | <length> | top | center | bottom ]? ] |
     [[ left | center | right ] || [ top | center | bottom ]]
+
+    Reference:
+    -  https://www.w3.org/TR/2011/REC-CSS2-20110607/colors.html#background-properties
     """
+    from .constants import (  # noqa
+        BOTTOM, CENTER, LEFT, RIGHT, TOP,
+    )
+
     if value:
         if isinstance(value, str):
             values = [val.strip() for val in value.split()]
@@ -472,11 +479,11 @@ def position(value):
         # <length> values are allowed.
         try:
             return Position(horizontal=units(values[0]))
-        except ValueError as error:
-            if values[0] in ['left', 'right', 'center']:
+        except ValueError:
+            if values[0] in [LEFT, RIGHT, CENTER]:
                 return Position(horizontal=values[0])
 
-            if values[0] in ['top', 'bottom']:
+            if values[0] in [TOP, BOTTOM]:
                 return Position(vertical=values[0])
 
     elif len(values) == 2:
@@ -485,21 +492,21 @@ def position(value):
         # Check first value
         try:
             horizontal = units(values[0])
-        except ValueError as error:
-            if values[0] in ['left', 'center', 'right']:
+        except ValueError:
+            if values[0] in [LEFT, CENTER, RIGHT]:
                 horizontal = values[0]
 
-            if values[0] in ['top', 'center', 'bottom']:
+            if values[0] in [TOP, CENTER, BOTTOM]:
                 vertical = values[0]
 
         # Check second value
         try:
             vertical = units(values[1])
-        except ValueError as error:
-            if values[1] in ['left', 'center', 'right']:
+        except ValueError:
+            if values[1] in [LEFT, CENTER, RIGHT]:
                 horizontal = values[1]
 
-            if values[1] in ['top', 'center', 'bottom']:
+            if values[1] in [TOP, CENTER, BOTTOM]:
                 vertical = values[1]
 
         return Position(horizontal=horizontal, vertical=vertical)
@@ -510,7 +517,7 @@ def position(value):
 ##############################################################################
 # Background shorthand
 ##############################################################################
-def _parse_background_property_part(value, outline_dict):
+def _parse_background_property_part(value, background_dict):
     """Parse background shorthand property part for known properties."""
     from .constants import (  # noqa
         BACKGROUND_ATTACHMENT_CHOICES, BACKGROUND_COLOR_CHOICES, BACKGROUND_IMAGE_CHOICES,
@@ -527,11 +534,11 @@ def _parse_background_property_part(value, outline_dict):
         except (ValueError, ValidationError):
             continue
 
-        if property_name in border_dict:
+        if property_name in background_dict:
             raise ValueError('Invalid duplicated property!')
 
-        border_dict[property_name] = value
-        return border_dict
+        background_dict[property_name] = value
+        return background_dict
 
     raise ValueError('Background value "{value}" not valid!'.format(value=value))
 

@@ -350,7 +350,8 @@ COLOR_CHOICES = Choices(default, validators=[is_color])
 BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 
 # background_image
-BACKGROUND_IMAGE_CHOICES = Choices(validators=[is_uri], explicit_defaulting_constants=[INHERIT])
+# TODO: tests fail if INITIAL is not used, but INITIAL does not seem to be a valid value
+BACKGROUND_IMAGE_CHOICES = Choices(None, validators=[is_uri], explicit_defaulting_constants=[INHERIT, INITIAL])
 
 # background_repeat
 REPEAT = 'repeat'
@@ -364,10 +365,11 @@ BACKGROUND_REPEAT_CHOICES = Choices(REPEAT, REPEAT_X, REPEAT_Y, NO_REPEAT, expli
 SCROLL = 'scroll'
 FIXED = 'fixed'
 
-BACKGROUND_ATTACHMENT_CHOICES = Choices(SCROLL, FIXED, explicit_defaulting_constants=[INHERIT])
+# TODO: tests fail if INITIAL is not used, but INITIAL does not seem to be a valid value
+BACKGROUND_ATTACHMENT_CHOICES = Choices(SCROLL, FIXED, explicit_defaulting_constants=[INHERIT, INITIAL])
 
 # background_position
-BACKGROUND_POSITION_CHOICES = Choices(validators=is_position, explicit_defaulting_constants=[INHERIT])
+BACKGROUND_POSITION_CHOICES = Choices(validators=[is_position], explicit_defaulting_constants=[INHERIT])
 
 # background
 

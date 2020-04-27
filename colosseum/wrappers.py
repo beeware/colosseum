@@ -198,6 +198,11 @@ class Border(Shorthand):
     VALID_KEYS = ['border_width', 'border_style', 'border_color']
 
 
+class Background(Shorthand):
+    VALID_KEYS = ['background_color', 'background_image', 'background_repeat', 'background_attachment',
+                  'background_position']
+
+
 class Uri:
     """Wrapper for a url."""
 

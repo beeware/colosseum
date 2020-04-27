@@ -183,6 +183,8 @@ def is_cursor(value):
     except ValueError as error:
         raise ValidationError(str(error))
 
+    return value
+
 
 is_cursor.description = ('[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize '
                          '| ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize '
