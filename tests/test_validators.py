@@ -3,8 +3,10 @@ from unittest import TestCase
 from colosseum.exceptions import ValidationError
 from colosseum.shapes import Rect
 from colosseum.units import px
-from colosseum.validators import (is_border_spacing, is_font_family, is_integer,
-                                  is_number, is_rect)
+from colosseum.validators import (ValidationError, is_border_spacing,
+                                  is_font_family, is_integer, is_number,
+                                  is_quote, is_rect)
+from colosseum.wrappers import Quotes
 
 
 class NumericTests(TestCase):
@@ -136,17 +138,17 @@ class BorderSpacingTests(TestCase):
             is_border_spacing((1, 2, 3))
 
 
-class ShapeTests(TestCase):
+class RectTests(TestCase):
     """
-    Comprehensive shape tests are found in the parser tests.
+    Comprehensive rect tests are found in the parser tests.
 
-    This test check basic cases work as expected.
+    This test checks basic cases work as expected.
     """
 
-    def test_shape_valid(self):
+    def test_rect_valid(self):
         self.assertEqual(is_rect('rect(1px, 3px, 2px, 4px)'), Rect(1, 3, 2, 4))
 
-    def test_shape_invalid(self):
+    def test_rect_invalid(self):
         with self.assertRaises(ValidationError):
             is_rect('1px, 3px 2px, 4px')
 
@@ -175,3 +177,18 @@ class FontTests(TestCase):
         for case in invalid_cases:
             with self.assertRaises(ValidationError):
                 is_font_family([case])
+
+
+class QuotesTests(TestCase):
+    """
+    Comprehensive quotes tests are found in the parser tests.
+
+    This test checks basic cases work as expected.
+    """
+
+    def test_quote_valid(self):
+        self.assertEqual(is_quote("'<' '>' '{' '}'"), Quotes([('<', '>'), ('{', '}')]))
+
+    def test_quote_invalid(self):
+        with self.assertRaises(ValidationError):
+            is_quote("'<' '>' '{'")

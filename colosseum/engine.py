@@ -398,6 +398,14 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
     "Implements S10.3.3"
     if node.style.width is not AUTO:  # P2
         content_width = node.style.width.px(**context)
+        if node.style.max_width is not None:  # 10.4 Maximum width
+            content_max_width = node.style.max_width.px(**context)
+            if content_width > content_max_width:
+                content_width = content_max_width
+        if node.style.min_width is not AUTO:  # 10.4 Minimum width
+            content_min_width = node.style.min_width.px(**context)
+            if content_width < content_min_width:
+                content_width = content_min_width
         size = (
             node.layout.border_left_width
             + node.layout.padding_left
@@ -639,9 +647,17 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
         # elif node.children and node.children[-1] top margin non collapsing with bottom margin:
         #     content_height = bottom border edge of bottom margin
         else:
-            content_height = 0
+            if node.style.min_height is not AUTO:  # 10.4 Minimum height
+                content_height = node.style.min_height.px(**context)
+            else:
+                content_height = 0
+
     else:
         content_height = node.style.height.px(**context)
+        if node.style.max_height is not None:  # 10.4 Maximum height
+            content_max_height = node.style.max_height.px(**context)
+            if content_height > content_max_height:
+                content_height = content_max_height
 
     node.layout.content_height = content_height
     node.layout.content_top += node.layout.border_top_width + node.layout.padding_top

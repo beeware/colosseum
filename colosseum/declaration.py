@@ -1,68 +1,83 @@
 import collections
 
 from . import engine as css_engine
-from .constants import (  # noqa
-    ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
-    BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
-    BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES,
-    BOX_OFFSET_CHOICES, CAPTION_SIDE_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
-    COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES, EMPTY,
-    EMPTY_CELLS_CHOICES, FLEX_BASIS_CHOICES, FLEX_DIRECTION_CHOICES,
-    FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES,
-    FLOAT_CHOICES, FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES, FONT_STYLE_CHOICES,
-    FONT_VARIANT_CHOICES, FONT_WEIGHT_CHOICES, GRID_AUTO_CHOICES,
-    GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES, GRID_PLACEMENT_CHOICES,
-    GRID_TEMPLATE_AREA_CHOICES, GRID_TEMPLATE_CHOICES, INITIAL,
-    INITIAL_FONT_VALUES, INLINE, JUSTIFY_CONTENT_CHOICES,
-    LETTER_SPACING_CHOICES, LINE_HEIGHT_CHOICES, LTR, MARGIN_CHOICES,
-    MAX_SIZE_CHOICES, MEDIUM, MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES,
-    ORPHANS_CHOICES, OVERFLOW_CHOICES, PADDING_CHOICES,
-    PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
-    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, ROW, SEPARATE, SHOW,
-    SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES, TEXT_ALIGN_CHOICES,
-    TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES, TOP,
-    TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES, VISIBLE,
-    WHITE_SPACE_CHOICES, WIDOWS_CHOICES, WORD_SPACING_CHOICES,
-    Z_INDEX_CHOICES, OtherProperty, TextAlignInitialValue, default,
-)
+from . import parser
+from .constants import (ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES,  # noqa
+                        ALIGN_SELF_CHOICES, AUTO, BACKGROUND_COLOR_CHOICES,
+                        BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
+                        BORDER_SPACING_CHOICES, BORDER_STYLE_CHOICES,
+                        BORDER_WIDTH_CHOICES, BOX_OFFSET_CHOICES,
+                        CAPTION_SIDE_CHOICES, CLEAR_CHOICES, CLIP_CHOICES,
+                        COLOR_CHOICES, DIRECTION_CHOICES, DISPLAY_CHOICES,
+                        EMPTY, EMPTY_CELLS_CHOICES, FLEX_BASIS_CHOICES,
+                        FLEX_DIRECTION_CHOICES, FLEX_GROW_CHOICES,
+                        FLEX_SHRINK_CHOICES, FLEX_START, FLEX_WRAP_CHOICES,
+                        FLOAT_CHOICES, FONT_FAMILY_CHOICES, FONT_SIZE_CHOICES,
+                        FONT_STYLE_CHOICES, FONT_VARIANT_CHOICES,
+                        FONT_WEIGHT_CHOICES, GRID_AUTO_CHOICES,
+                        GRID_AUTO_FLOW_CHOICES, GRID_GAP_CHOICES,
+                        GRID_PLACEMENT_CHOICES, GRID_TEMPLATE_AREA_CHOICES,
+                        GRID_TEMPLATE_CHOICES, INITIAL, INITIAL_FONT_VALUES,
+                        INLINE, INVERT, JUSTIFY_CONTENT_CHOICES,
+                        LETTER_SPACING_CHOICES, LINE_HEIGHT_CHOICES, LTR,
+                        MARGIN_CHOICES, MAX_SIZE_CHOICES, MEDIUM,
+                        MIN_SIZE_CHOICES, NORMAL, NOWRAP, ORDER_CHOICES,
+                        ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
+                        OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES,
+                        OVERFLOW_CHOICES, PADDING_CHOICES,
+                        PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
+                        PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES,
+                        QUOTES_CHOICES, ROW, SEPARATE, SHOW, SIZE_CHOICES,
+                        STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
+                        TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES,
+                        TEXT_INDENT_CHOICES, TEXT_TRANSFORM_CHOICES, TOP,
+                        TRANSPARENT, UNICODE_BIDI_CHOICES, VISIBILITY_CHOICES,
+                        VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
+                        WORD_SPACING_CHOICES, Z_INDEX_CHOICES, OtherProperty,
+                        TextAlignInitialValue, default)
 from .exceptions import ValidationError
 from .parser import parse_font
-from .wrappers import FontFamily, FontShorthand
+from .wrappers import (Border, BorderBottom, BorderLeft, BorderRight,
+                       BorderTop, Outline)
 
 _CSS_PROPERTIES = set()
 
 
-def validated_shorthand_property(name, initial, parser, storage_class):
+def validated_shorthand_property(name, parser, wrapper):
     """Define the shorthand CSS font property."""
-    initial = storage_class(**initial)
 
     def getter(self):
-        shorthand = initial.copy()
-        for property_name in shorthand:
-            shorthand[property_name] = getattr(self, property_name)
-        return shorthand
+        properties = {}
+        for property_name in wrapper.VALID_KEYS:
+            try:
+                properties[property_name] = getattr(self, '_%s' % property_name)
+            except AttributeError:
+                pass
+
+        # This is the only place we use the wrapper as a convenience for the user
+        return wrapper(**properties) if properties else ''
 
     def setter(self, value):
         try:
-            shorthand = storage_class(**parser(value))
+            # A shorthand parser must return a dictionary
+            shorthand_dict = parser(value)
         except ValidationError:
             raise ValueError("Invalid value '%s' for CSS property '%s'!" % (value, name))
 
-        for property_name, property_value in shorthand.items():
-            setattr(self, property_name, property_value)
+        # Reset non declared properties to initial values
+        used_properties = shorthand_dict.keys()
+        for property_name in wrapper.VALID_KEYS:
+            if property_name in used_properties:
+                setattr(self, property_name, shorthand_dict[property_name])
+            else:
+                delattr(self, property_name)
 
-        setattr(self, '_%s' % name, value)
+        # We do not explicitely set the shorthand property as it is stored in the
+        # individual properties it represents
         self.dirty = True
 
     def deleter(self):
-        try:
-            delattr(self, '_%s' % name)
-            self.dirty = True
-        except AttributeError:
-            # Attribute doesn't exist
-            pass
-
-        for property_name in initial:
+        for property_name in wrapper.VALID_KEYS:
             try:
                 delattr(self, property_name)
                 self.dirty = True
@@ -74,20 +89,9 @@ def validated_shorthand_property(name, initial, parser, storage_class):
     return property(getter, setter, deleter)
 
 
-def validated_list_property(name, choices, initial, storage_class, separator=',', add_quotes=False):
-    """Define a property holding a list values."""
-    initial = storage_class(choices.validate(initial))
-
-    def _add_quotes(values):
-        """Add quotes to items that contain spaces."""
-        quoted_values = []
-        for value in values:
-            if (' ' in value and not (value.startswith('"') and value.endswith('"'))
-                    and not (value.startswith("'") and value.endswith("'"))):
-                value = '"{value}"'.format(value=value)
-            quoted_values.append(value)
-
-        return quoted_values
+def unvalidated_property(name, choices, initial):
+    "Define a simple CSS property attribute."
+    initial = choices.validate(initial)
 
     def getter(self):
         # We return an immutable list subclass
@@ -304,15 +308,16 @@ class CSS:
     border_style = directional_property('border%s_style', initial=None)
 
     # 8.5.4 Border shorthand properties
-    # border_top
-    # border_right
-    # border_bottom
-    # border_left
-    # border
+    border_top = validated_shorthand_property('border_top', parser=parser.border_top, wrapper=BorderTop)
+    border_right = validated_shorthand_property('border_right', parser=parser.border_right, wrapper=BorderRight)
+    border_bottom = validated_shorthand_property('border_bottom', parser=parser.border_bottom, wrapper=BorderBottom)
+    border_left = validated_shorthand_property('border_left', parser=parser.border_left, wrapper=BorderLeft)
+    border = validated_shorthand_property('border', parser=parser.border, wrapper=Border)
 
     # 9. Visual formatting model #########################################
     # 9.2.4 The display property
     display = validated_property('display', choices=DISPLAY_CHOICES, initial=INLINE)
+
     # 9.3 Positioning schemes
     position = validated_property('position', choices=POSITION_CHOICES, initial=STATIC)
 
@@ -324,6 +329,7 @@ class CSS:
 
     # 9.5.1 Positioning the float
     float = validated_property('float', choices=FLOAT_CHOICES, initial=None)
+
     # 9.5.2 Controlling flow next to floats
     clear = validated_property('clear', choices=CLEAR_CHOICES, initial=None)
 
@@ -370,7 +376,7 @@ class CSS:
     # content
 
     # 12.3 Quotation marks
-    # quotes
+    quotes = validated_property('quotes', choices=QUOTES_CHOICES, initial=INITIAL)  # TODO: Depends on user agent
 
     # 12.4 Automatic counters and numbering
     # counter-reset
@@ -463,10 +469,10 @@ class CSS:
     # cursor
 
     # 18.4 Dynamic outlines
-    # outline_width
-    # outline_style
-    # outline_color
-    # outline
+    outline_width = validated_property('outline_width', choices=OUTLINE_WIDTH_CHOICES, initial=MEDIUM)
+    outline_style = validated_property('outline_style', choices=OUTLINE_STYLE_CHOICES, initial=None)
+    outline_color = validated_property('outline_color', choices=OUTLINE_COLOR_CHOICES, initial=INVERT)
+    outline = validated_shorthand_property('outline', parser=parser.outline, wrapper=Outline)
 
     ######################################################################
     # Flexbox properties

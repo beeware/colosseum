@@ -1,12 +1,12 @@
+from ast import literal_eval
 from collections import Sequence
-from .wrappers import BorderSpacing
 
 from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
 from .fonts import get_system_font
 from .shapes import Rect
 from .units import Unit, px
-from .wrappers import FontFamily
+from .wrappers import BorderSpacing, FontFamily, Quotes
 
 
 def units(value):
@@ -317,3 +317,191 @@ def parse_font(string):
     full_font_dict.update(font_dict)
 
     return full_font_dict
+
+
+def quotes(value):
+    """Parse content quotes.
+
+    Accepts:
+    * A string: "'<' '>' '{' '}'"
+    * A sequence: ('<', '>') or ['{', '}']
+    * A list of 2 item tuples: [('<', '>'), ('{', '}')]
+    """
+    if isinstance(value, str):
+        values = [val.strip() for val in value.split()]
+    elif isinstance(value, Sequence):
+        # Flatten list of tuples
+        values = [repr(item) for sublist in value for item in sublist]
+    else:
+        raise ValueError('Unknown quote %s' % value)
+
+    # Length must be a multiple of 2
+    if len(values) > 0 and len(values) % 2 == 0:
+        parsed_values = []
+        for idx in range(len(values) // 2):
+            start = idx * 2
+            end = start + 2
+            opening, closing = values[start:end]
+
+            try:
+                opening = literal_eval(opening)
+                closing = literal_eval(closing)
+                parsed_values.append((opening, closing))
+
+                if len(opening) == 0 or len(closing) == 0:
+                    raise ValueError('Invalid quotes %s' % value)
+
+            except SyntaxError:
+                raise ValueError('Invalid quotes %s' % value)
+
+        return Quotes(parsed_values)
+
+    raise ValueError('Length of quote items must be a multiple of 2!')
+
+
+##############################################################################
+# Outline shorthand
+##############################################################################
+def _parse_outline_property_part(value, outline_dict):
+    """Parse outline shorthand property part for known properties."""
+    from .constants import (  # noqa
+        OUTLINE_COLOR_CHOICES, OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES,
+    )
+
+    for property_name, choices in {'outline_color': OUTLINE_COLOR_CHOICES,
+                                   'outline_style': OUTLINE_STYLE_CHOICES,
+                                   'outline_width': OUTLINE_WIDTH_CHOICES}.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in outline_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        outline_dict[property_name] = value
+        return outline_dict
+
+    raise ValueError('Outline value "{value}" not valid!'.format(value=value))
+
+
+def outline(value):
+    """
+    Parse outline string into a dictionary of outline properties.
+
+    The font CSS property is a shorthand for outline-style, outline-width, and outline-color.
+
+    Reference:
+    - https://www.w3.org/TR/2011/REC-CSS2-20110607/ui.html#dynamic-outlines
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/outline
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown outline %s ' % value)
+    else:
+        raise ValueError('Unknown outline %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <outline-style> or <outline-color> or <ourline-width> (which can come in any order)
+
+    # We use this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    outline_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Outline can have a maximum of 3 parts
+            raise ValueError('Outline property shorthand contains too many parts!')
+
+        outline_dict = _parse_outline_property_part(part, outline_dict)
+
+    return outline_dict
+
+
+##############################################################################
+# Border shorthands
+##############################################################################
+def _parse_border_property_part(value, border_dict, direction=None):
+    """Parse border shorthand property part for known properties."""
+    from .constants import (  # noqa
+        BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES
+    )
+
+    direction = '' if direction is None else direction + '_'
+    property_validators = {
+        'border_{direction}width'.format(direction=direction): BORDER_WIDTH_CHOICES,
+        'border_{direction}style'.format(direction=direction): BORDER_STYLE_CHOICES,
+        'border_{direction}color'.format(direction=direction): BORDER_COLOR_CHOICES,
+    }
+
+    for property_name, choices in property_validators.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in border_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        border_dict[property_name] = value
+        return border_dict
+
+    raise ValueError('Border value "{value}" not valid!'.format(value=value))
+
+
+def border(value, direction=None):
+    """
+    Parse border string into a dictionary of outline properties.
+
+    The font CSS property is a shorthand for border-width, border-style, and border-color.
+
+    Reference:
+    - https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#border-properties
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown border %s ' % value)
+    else:
+        raise ValueError('Unknown border %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <border-width> or <border-style> or <border-color> (which can come in any order)
+
+    # We use this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    border_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Border can have a maximum of 3 parts
+            raise ValueError('Border property shorthand contains too many parts!')
+
+        border_dict = _parse_border_property_part(part, border_dict, direction=direction)
+
+    return border_dict
+
+
+def border_right(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='right')
+
+
+def border_left(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='left')
+
+
+def border_bottom(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='bottom')
+
+
+def border_top(value):
+    """Parse border string into a dictionary of outline properties."""
+    return border(value, direction='top')

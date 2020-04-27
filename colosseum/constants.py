@@ -1,8 +1,9 @@
 from .exceptions import ValidationError
 from .validators import (is_border_spacing, is_color, is_font_family,
                          is_integer, is_length, is_number, is_percentage,
-                         is_rect)
+                         is_quote, is_rect)
 from .wrappers import FontFamily
+
 
 
 class Choices:
@@ -300,7 +301,9 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 # 12.3 Quotation marks
 ######################################################################
+
 # quotes
+QUOTES_CHOICES = Choices(None, INITIAL, validators=[is_quote], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 12.4 Automatic counters and numbering
@@ -626,9 +629,40 @@ EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT
 ######################################################################
 # 18.4 Dynamic outlines
 ######################################################################
+
 # outline_width
+OUTLINE_WIDTH_CHOICES = Choices(
+    THIN,
+    MEDIUM,
+    THICK,
+    validators=[is_length],
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # outline_style
+OUTLINE_STYLE_CHOICES = Choices(
+    None,
+    HIDDEN,
+    DOTTED,
+    DASHED,
+    SOLID,
+    DOUBLE,
+    GROOVE,
+    RIDGE,
+    INSET,
+    OUTSET,
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # outline_color
+INVERT = 'invert'
+
+OUTLINE_COLOR_CHOICES = Choices(
+    INVERT,
+    validators=[is_color],
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # outline
 
 ######################################################################
