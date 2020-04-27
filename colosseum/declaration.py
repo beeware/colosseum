@@ -89,46 +89,6 @@ def validated_shorthand_property(name, parser, wrapper):
     return property(getter, setter, deleter)
 
 
-def unvalidated_property(name, choices, initial):
-    "Define a simple CSS property attribute."
-    initial = choices.validate(initial)
-
-    def getter(self):
-        # We return an immutable list subclass
-        return getattr(self, '_%s' % name, initial)
-
-    def setter(self, value):
-        if isinstance(value, collections.Sequence) and not isinstance(value, str):
-            if add_quotes:
-                values = _add_quotes(value)
-        elif isinstance(value, str):
-            values = value.split(separator)
-        else:
-            raise ValueError('Invalid value for CSS property!')
-
-        try:
-            values = storage_class(choices.validate(values))
-        except ValueError:
-            raise ValueError("Invalid value '%s' for CSS property '%s'; Valid values are: %s" % (
-                value, name, choices
-            ))
-
-        if values != getattr(self, '_%s' % name, initial):
-            setattr(self, '_%s' % name, values)
-            self.dirty = True
-
-    def deleter(self):
-        try:
-            delattr(self, '_%s' % name)
-            self.dirty = True
-        except AttributeError:
-            # Attribute doesn't exist
-            pass
-
-    _CSS_PROPERTIES.add(name)
-    return property(getter, setter, deleter)
-
-
 def validated_property(name, choices, initial):
     "Define a simple CSS property attribute."
     try:

@@ -247,6 +247,8 @@ class FontShorthandTests(TestCase):
         for prop in font:
             keys.append(prop)
         self.assertEqual(len(keys), 6)
+
+
 class QuotesTests(TestCase):
 
     # Valid cases

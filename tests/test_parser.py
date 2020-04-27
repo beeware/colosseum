@@ -516,6 +516,8 @@ def test_parse_font_shorthand_invalid_extras(font_property_string):
     with pytest.raises(Exception):
         print('Font: ' + font_property_string)
         parse_font(font_property_string)
+
+
 class ParseQuotesTests(TestCase):
 
     # Valid cases

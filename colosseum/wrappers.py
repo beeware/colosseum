@@ -193,6 +193,8 @@ class FontShorthand(Shorthand):
     def __str__(self):
         string = '{font_style} {font_variant} {font_weight} {font_size}/{line_height} {font_family}'
         return string.format(**self._map)
+
+
 class Quotes:
     """
     Content opening and closing quotes wrapper.

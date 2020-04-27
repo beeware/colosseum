@@ -5,7 +5,6 @@ from .validators import (is_border_spacing, is_color, is_font_family,
 from .wrappers import FontFamily
 
 
-
 class Choices:
     "A class to define allowable data types for a property."
 
