@@ -254,7 +254,29 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 # 10.8 Leading and half-leading
 ######################################################################
 # line_height
+
 # vertical_align
+BASELINE = 'baseline'
+SUB = 'sub'
+SUPER = 'super'
+TOP = 'top'
+TEXT_TOP = 'text-top'
+MIDDLE = 'middle'
+BOTTOM = 'bottom'
+TEXT_BOTTOM = 'text-bottom'
+
+VERTICAL_ALIGN_CHOICES = Choices(
+    BASELINE,
+    SUB,
+    SUPER,
+    TOP,
+    TEXT_TOP,
+    MIDDLE,
+    BOTTOM,
+    TEXT_BOTTOM,
+    validators=[is_percentage, is_length],
+    explicit_defaulting_constants=[INHERIT],
+)
 
 ######################################################################
 # 11.1.1 Overflow
