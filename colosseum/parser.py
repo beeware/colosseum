@@ -445,3 +445,128 @@ def cursor(values):
         raise ValueError('Value {value} is not a valid cursor value'.format(value=value))
 
     return Cursor(validated_values)
+
+
+##############################################################################
+# Flex Flow
+##############################################################################
+def _parse_flex_flow_property_part(value, flex_flow_dict):
+    """Parse flex_flow shorthand property part for known properties."""
+    from .constants import FLEX_DIRECTION_CHOICES, FLEX_WRAP_CHOICES
+
+    property_validators = {
+        'flex_direction': FLEX_DIRECTION_CHOICES,
+        'flex_wrap': FLEX_WRAP_CHOICES,
+    }
+
+    for property_name, choices in property_validators.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in flex_flow_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        flex_flow_dict[property_name] = value
+        return flex_flow_dict
+
+    raise ValueError('Flex flow value "{value}" not valid!'.format(value=value))
+
+
+def flex_flow(value):
+    """
+    Parse flex flow string into a dictionary of properties.
+
+    The font CSS property is a shorthand for flex-wrap and flex-direction.
+
+    Reference:
+    - https://www.w3.org/TR/css-flexbox-1/#flex-flow-property
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown flex flow %s ' % value)
+    else:
+        raise ValueError('Unknown flex flow %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <flex-wrap> or <flex-direction> (which can come in any order)
+
+    # We use this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    flex_flow_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 1:
+            # Flex flow can have a maximum of 2 parts
+            raise ValueError('Flex flow property shorthand contains too many parts!')
+
+        flex_flow_dict = _parse_flex_flow_property_part(part, flex_flow_dict)
+
+    return flex_flow_dict
+
+
+##############################################################################
+# Flex
+##############################################################################
+def _parse_flex_property_part(value, flex_dict):
+    """Parse flex shorthand property part for known properties."""
+    from .constants import FLEX_GROW_CHOICES, FLEX_SHRINK_CHOICES, FLEX_BASIS_CHOICES
+
+    property_validators = {
+        'flex_grow': FLEX_GROW_CHOICES,
+        'flex_shrink': FLEX_SHRINK_CHOICES,
+        'flex_basis': FLEX_BASIS_CHOICES,
+    }
+
+    for property_name, choices in property_validators.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in flex_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        flex_dict[property_name] = value
+        return flex_dict
+
+    raise ValueError('Flex value "{value}" not valid!'.format(value=value))
+
+
+def flex(value):
+    """
+    Parse flex string into a dictionary of properties.
+
+    The font CSS property is a shorthand for flex-grow, flex-shrink and flex-basis.
+
+    Reference:
+    - https://www.w3.org/TR/css-flexbox-1/#flex-property
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown flex %s ' % value)
+    else:
+        raise ValueError('Unknown flex %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <flex-grow> or <flex-shrink> or <flex-basis> (which can come in any order)
+
+    # We use this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    flex_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Flex can have a maximum of 3 parts
+            raise ValueError('Flex property shorthand contains too many parts!')
+
+        flex_dict = _parse_flex_property_part(part, flex_dict)
+
+    return flex_dict

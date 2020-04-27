@@ -114,7 +114,7 @@ class Shorthand:
 
     def __str__(self):
         parts = []
-        for key, value in self.to_dict().items():
+        for __, value in self.to_dict().items():
             parts.append(str(value))
 
         return ' '.join(parts)
@@ -235,3 +235,14 @@ class ImmutableList(list):
 
 class Cursor(ImmutableList):
     """Immutable list to store cursor property."""
+
+
+##############################################################################
+# Flex
+##############################################################################
+class FlexFlow(Shorthand):
+    VALID_KEYS = ['flex_direction', 'flex_wrap']
+
+
+class Flex(Shorthand):
+    VALID_KEYS = ['flex_grow', 'flex_shrink', 'flex_basis']
