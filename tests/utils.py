@@ -162,6 +162,7 @@ class LayoutTestCase(TestCase):
         layout(self.display, root)
 
     def _assertLayout(self, actual, expected, output, depth=0):
+        tolerance = 0.05
         found_problem = False
         tag = ('<' + expected['tag'] + '> ') if 'tag' in expected else ''
         output.append(
@@ -175,13 +176,20 @@ class LayoutTestCase(TestCase):
             )
         )
 
-        content_match = (
-            expected['content']['size'][0] == actual.layout.content_width
-            and expected['content']['size'][1] == actual.layout.content_height
-            and expected['content']['position'][0] == actual.layout.absolute_content_left
-            and expected['content']['position'][1] == actual.layout.absolute_content_top
-        )
-        if not content_match:
+        try:
+            self.assertAlmostEqual(
+                expected['content']['size'][0], actual.layout.content_width, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['content']['size'][1], actual.layout.content_height, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['content']['position'][0], actual.layout.absolute_content_left, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['content']['position'][1], actual.layout.absolute_content_top, delta=tolerance
+            )
+        except AssertionError:
             found_problem = True
             output.append(
                 '>>  '
@@ -203,13 +211,20 @@ class LayoutTestCase(TestCase):
                 )
         )
 
-        content_match = (
-            expected['padding_box']['size'][0] == actual.layout.padding_box_width
-            and expected['padding_box']['size'][1] == actual.layout.padding_box_height
-            and expected['padding_box']['position'][0] == actual.layout.absolute_padding_box_left
-            and expected['padding_box']['position'][1] == actual.layout.absolute_padding_box_top
-        )
-        if not content_match:
+        try:
+            self.assertAlmostEqual(
+                expected['padding_box']['size'][0], actual.layout.padding_box_width, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['padding_box']['size'][1], actual.layout.padding_box_height, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['padding_box']['position'][0], actual.layout.absolute_padding_box_left, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['padding_box']['position'][1], actual.layout.absolute_padding_box_top, delta=tolerance
+            )
+        except AssertionError:
             found_problem = True
             output.append(
                 '>>  '
@@ -231,13 +246,20 @@ class LayoutTestCase(TestCase):
                 )
         )
 
-        content_match = (
-            expected['border_box']['size'][0] == actual.layout.border_box_width
-            and expected['border_box']['size'][1] == actual.layout.border_box_height
-            and expected['border_box']['position'][0] == actual.layout.absolute_border_box_left
-            and expected['border_box']['position'][1] == actual.layout.absolute_border_box_top
-        )
-        if not content_match:
+        try:
+            self.assertAlmostEqual(
+                expected['border_box']['size'][0], actual.layout.border_box_width, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['border_box']['size'][1], actual.layout.border_box_height, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['border_box']['position'][0], actual.layout.absolute_border_box_left, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['border_box']['position'][1], actual.layout.absolute_border_box_top, delta=tolerance
+            )
+        except AssertionError:
             found_problem = True
             output.append(
                 '>>  '
