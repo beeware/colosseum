@@ -124,14 +124,15 @@ def clean_layout(layout):
 
 def output_layout(layout, depth=1):
     if 'tag' in layout:
-        return ('  ' * depth
+        return (
+            '  ' * depth
             + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
               ' @ ({n[content][position][0]}, {n[content][position][1]})'
               '\n'.format(
-                    n=layout,
-                    tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
-                    # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
-                )
+                  n=layout,
+                  tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
+                  # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
+              )
             # + '  ' * depth
             # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
             #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
@@ -141,13 +142,14 @@ def output_layout(layout, depth=1):
             #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
             #   '\n'.format(n=layout)
             + ''.join(
-                    output_layout(child, depth=depth + 1)
-                    for child in layout.get('children', [])
-                ) if layout else ''
+                  output_layout(child, depth=depth + 1)
+                  for child in layout.get('children', [])
+              ) if layout else ''
             + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
         )
     else:
-        return ('  ' * depth
+        return (
+            '  ' * depth
             + "* '{text}'\n".format(text=layout['text'].strip())
         )
 
@@ -162,6 +164,7 @@ class LayoutTestCase(TestCase):
         layout(self.display, root)
 
     def _assertLayout(self, actual, expected, output, depth=0):
+        tolerance = 0.05
         found_problem = False
         tag = ('<' + expected['tag'] + '> ') if 'tag' in expected else ''
         output.append(
@@ -169,19 +172,29 @@ class LayoutTestCase(TestCase):
             + '    ' * depth
             + '* {tag}{n[size][0]}x{n[size][1]}'
               ' @ ({n[position][0]}, {n[position][1]})'.format(
-                    n=expected['content'],
-                    tag=tag,
-                    text=(": '" + expected['text'] + "'") if 'text' in expected else ''
-            )
+                  n=expected['content'],
+                  tag=tag,
+              )
         )
 
-        content_match = (
-            expected['content']['size'][0] == actual.layout.content_width
-            and expected['content']['size'][1] == actual.layout.content_height
-            and expected['content']['position'][0] == actual.layout.absolute_content_left
-            and expected['content']['position'][1] == actual.layout.absolute_content_top
-        )
-        if not content_match:
+        try:
+            self.assertAlmostEqual(
+                expected['content']['size'][0], actual.layout.content_width,
+                delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['content']['size'][1], actual.layout.content_height,
+                delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['content']['position'][0], actual.layout.absolute_content_left,
+                delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['content']['position'][1], actual.layout.absolute_content_top,
+                delta=tolerance
+            )
+        except AssertionError:
             found_problem = True
             output.append(
                 '>>  '
@@ -203,13 +216,20 @@ class LayoutTestCase(TestCase):
                 )
         )
 
-        content_match = (
-            expected['padding_box']['size'][0] == actual.layout.padding_box_width
-            and expected['padding_box']['size'][1] == actual.layout.padding_box_height
-            and expected['padding_box']['position'][0] == actual.layout.absolute_padding_box_left
-            and expected['padding_box']['position'][1] == actual.layout.absolute_padding_box_top
-        )
-        if not content_match:
+        try:
+            self.assertAlmostEqual(
+                expected['padding_box']['size'][0], actual.layout.padding_box_width, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['padding_box']['size'][1], actual.layout.padding_box_height, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['padding_box']['position'][0], actual.layout.absolute_padding_box_left, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['padding_box']['position'][1], actual.layout.absolute_padding_box_top, delta=tolerance
+            )
+        except AssertionError:
             found_problem = True
             output.append(
                 '>>  '
@@ -231,13 +251,20 @@ class LayoutTestCase(TestCase):
                 )
         )
 
-        content_match = (
-            expected['border_box']['size'][0] == actual.layout.border_box_width
-            and expected['border_box']['size'][1] == actual.layout.border_box_height
-            and expected['border_box']['position'][0] == actual.layout.absolute_border_box_left
-            and expected['border_box']['position'][1] == actual.layout.absolute_border_box_top
-        )
-        if not content_match:
+        try:
+            self.assertAlmostEqual(
+                expected['border_box']['size'][0], actual.layout.border_box_width, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['border_box']['size'][1], actual.layout.border_box_height, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['border_box']['position'][0], actual.layout.absolute_border_box_left, delta=tolerance
+            )
+            self.assertAlmostEqual(
+                expected['border_box']['position'][1], actual.layout.absolute_border_box_top, delta=tolerance
+            )
+        except AssertionError:
             found_problem = True
             output.append(
                 '>>  '
@@ -262,8 +289,9 @@ class LayoutTestCase(TestCase):
                 '>>  '
                 + '    ' * depth
                 + '  Found {} children, expected {}'.format(
-                n_actual, n_expected
-            ))
+                      n_actual, n_expected
+                  )
+            )
 
         return found_problem
 
