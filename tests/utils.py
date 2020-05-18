@@ -124,14 +124,15 @@ def clean_layout(layout):
 
 def output_layout(layout, depth=1):
     if 'tag' in layout:
-        return ('  ' * depth
+        return (
+            '  ' * depth
             + '* {tag}{n[content][size][0]}x{n[content][size][1]}'
               ' @ ({n[content][position][0]}, {n[content][position][1]})'
               '\n'.format(
-                    n=layout,
-                    tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
-                    # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
-                )
+                  n=layout,
+                  tag=('<' + layout['tag'] + '> ') if 'tag' in layout else '',
+                  # text=(": '" + layout['text'] + "'") if 'text' in layout else ''
+              )
             # + '  ' * depth
             # + '  padding: {n[padding_box][size][0]}x{n[padding_box][size][1]}'
             #   ' @ ({n[padding_box][position][0]}, {n[padding_box][position][1]})'
@@ -141,13 +142,14 @@ def output_layout(layout, depth=1):
             #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
             #   '\n'.format(n=layout)
             + ''.join(
-                    output_layout(child, depth=depth + 1)
-                    for child in layout.get('children', [])
-                ) if layout else ''
+                  output_layout(child, depth=depth + 1)
+                  for child in layout.get('children', [])
+              ) if layout else ''
             + ('\n' if layout and layout.get('children', None) and depth > 1 else '')
         )
     else:
-        return ('  ' * depth
+        return (
+            '  ' * depth
             + "* '{text}'\n".format(text=layout['text'].strip())
         )
 
@@ -170,24 +172,28 @@ class LayoutTestCase(TestCase):
             + '    ' * depth
             + '* {tag}{n[size][0]}x{n[size][1]}'
               ' @ ({n[position][0]}, {n[position][1]})'.format(
-                    n=expected['content'],
-                    tag=tag,
-                    text=(": '" + expected['text'] + "'") if 'text' in expected else ''
-            )
+                  n=expected['content'],
+                  tag=tag,
+                  text=(": '" + expected['text'] + "'") if 'text' in expected else ''
+              )
         )
 
         try:
             self.assertAlmostEqual(
-                expected['content']['size'][0], actual.layout.content_width, delta=tolerance
+                expected['content']['size'][0], actual.layout.content_width,
+                delta=tolerance
             )
             self.assertAlmostEqual(
-                expected['content']['size'][1], actual.layout.content_height, delta=tolerance
+                expected['content']['size'][1], actual.layout.content_height,
+                delta=tolerance
             )
             self.assertAlmostEqual(
-                expected['content']['position'][0], actual.layout.absolute_content_left, delta=tolerance
+                expected['content']['position'][0], actual.layout.absolute_content_left,
+                delta=tolerance
             )
             self.assertAlmostEqual(
-                expected['content']['position'][1], actual.layout.absolute_content_top, delta=tolerance
+                expected['content']['position'][1], actual.layout.absolute_content_top,
+                delta=tolerance
             )
         except AssertionError:
             found_problem = True
@@ -284,8 +290,9 @@ class LayoutTestCase(TestCase):
                 '>>  '
                 + '    ' * depth
                 + '  Found {} children, expected {}'.format(
-                n_actual, n_expected
-            ))
+                      n_actual, n_expected
+                  )
+            )
 
         return found_problem
 
