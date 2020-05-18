@@ -174,7 +174,6 @@ class LayoutTestCase(TestCase):
               ' @ ({n[position][0]}, {n[position][1]})'.format(
                   n=expected['content'],
                   tag=tag,
-                  text=(": '" + expected['text'] + "'") if 'text' in expected else ''
               )
         )
 
