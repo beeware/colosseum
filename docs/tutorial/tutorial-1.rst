@@ -69,7 +69,7 @@ You can then ask for a layout to be computed, and query the results::
     <Box (1000x2000 @ 0,0)>
     >>> node.layout.content_width
     1000
-    >>> node.layout.content_width
+    >>> node.layout.content_height
     2000
     >>> node.layout.content_top
     0
@@ -98,10 +98,10 @@ style attribute. The value of the property will revert to the default::
     >>> node.style.update(margin_top=10, margin_left=20)
     >>> layout(page, node)
     >>> print(node.layout)
-    <Box (1500x800 @ 20,10)>
+    <Box (1500x1990 @ 20,10)>
     >>> del(node.style.margin_left)
-    >>> layout(display, node)
+    >>> layout(page, node)
     >>> print(node.style.margin_left)
-    0
+    0px
     >>> print(node.layout)
-    <Box (1500x800 @ 0,10)>
+    <Box (1500x1990 @ 0,10)>
