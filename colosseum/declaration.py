@@ -1,5 +1,4 @@
-from . import engine as css_engine
-from . import parser
+from . import engine as css_engine, parser
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES, ALIGN_ITEMS_CHOICES, ALIGN_SELF_CHOICES, AUTO,
     BACKGROUND_COLOR_CHOICES, BORDER_COLLAPSE_CHOICES, BORDER_COLOR_CHOICES,
@@ -15,8 +14,8 @@ from .constants import (  # noqa
     NOWRAP, ORDER_CHOICES, ORPHANS_CHOICES, OUTLINE_COLOR_CHOICES,
     OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES, OVERFLOW_CHOICES,
     PADDING_CHOICES, PAGE_BREAK_AFTER_CHOICES, PAGE_BREAK_BEFORE_CHOICES,
-    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW,
-    SEPARATE, SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
+    PAGE_BREAK_INSIDE_CHOICES, POSITION_CHOICES, QUOTES_CHOICES, ROW, SEPARATE,
+    SHOW, SIZE_CHOICES, STATIC, STRETCH, TABLE_LAYOUT_CHOICES,
     TEXT_ALIGN_CHOICES, TEXT_DECORATION_CHOICES, TEXT_INDENT_CHOICES,
     TEXT_TRANSFORM_CHOICES, TOP, TRANSPARENT, UNICODE_BIDI_CHOICES,
     VISIBILITY_CHOICES, VISIBLE, WHITE_SPACE_CHOICES, WIDOWS_CHOICES,
@@ -24,7 +23,10 @@ from .constants import (  # noqa
     TextAlignInitialValue, default, CURSOR_CHOICES,
 )
 from .exceptions import ValidationError
-from .wrappers import Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Outline
+from .wrappers import (  # noqa
+    Border, BorderBottom, BorderLeft, BorderRight, BorderTop, Flex, FlexFlow,
+    Outline
+)
 
 _CSS_PROPERTIES = set()
 
@@ -424,36 +426,36 @@ class CSS:
 
     # 5. Ordering and orientation ########################################
     # 5.1 Flex flow direction
-    # flex_direction = validated_property('flex_direction', choices=FLEX_DIRECTION_CHOICES, initial=ROW)
+    flex_direction = validated_property('flex_direction', choices=FLEX_DIRECTION_CHOICES, initial=ROW)
 
     # 5.2 Flex line wrapping
-    # flex_wrap = validated_property('flex_wrap', choices=FLEX_WRAP_CHOICES, initial=NOWRAP)
+    flex_wrap = validated_property('flex_wrap', choices=FLEX_WRAP_CHOICES, initial=NOWRAP)
 
     # 5.3 Flex direction and wrap
-    # flex_flow =
+    flex_flow = validated_shorthand_property('flex_flow', parser=parser.flex_flow, wrapper=FlexFlow)
 
     # 5.4 Display order
-    # order = validated_property('order', choices=ORDER_CHOICES, initial=0)
+    order = validated_property('order', choices=ORDER_CHOICES, initial=0)
 
     # 7. Flexibility #####################################################
     # 7.2 Components of flexibility
-    # flex_grow = validated_property('flex_grow', choices=FLEX_GROW_CHOICES, initial=0)
-    # flex_shrink = validated_property('flex_shrink', choices=FLEX_SHRINK_CHOICES, initial=1)
-    # flex_basis = validated_property('flex_basis', choices=FLEX_BASIS_CHOICES, initial=AUTO)
+    flex_grow = validated_property('flex_grow', choices=FLEX_GROW_CHOICES, initial=0)
+    flex_shrink = validated_property('flex_shrink', choices=FLEX_SHRINK_CHOICES, initial=1)
+    flex_basis = validated_property('flex_basis', choices=FLEX_BASIS_CHOICES, initial=AUTO)
 
     # 7.1 The 'flex' shorthand
-    # flex =
+    flex = validated_shorthand_property('flex', parser=parser.flex, wrapper=Flex)
 
     # 8. Alignment #######################################################
     # 8.2 Axis alignment
-    # justify_content = validated_property('justify_content', choices=JUSTIFY_CONTENT_CHOICES, initial=FLEX_START)
+    justify_content = validated_property('justify_content', choices=JUSTIFY_CONTENT_CHOICES, initial=FLEX_START)
 
     # 8.3 Cros-axis alignment
-    # align_items = validated_property('align_items', choices=ALIGN_ITEMS_CHOICES, initial=STRETCH)
-    # align_self = validated_property('align_self', choices=ALIGN_SELF_CHOICES, initial=AUTO)
+    align_items = validated_property('align_items', choices=ALIGN_ITEMS_CHOICES, initial=STRETCH)
+    align_self = validated_property('align_self', choices=ALIGN_SELF_CHOICES, initial=AUTO)
 
     # 8.4 Packing flex lines
-    # align_content = validated_property('align_content', choices=ALIGN_CONTENT_CHOICES, initial=STRETCH)
+    align_content = validated_property('align_content', choices=ALIGN_CONTENT_CHOICES, initial=STRETCH)
 
     ######################################################################
     # Grid properties
