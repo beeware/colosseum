@@ -42,6 +42,51 @@ class BorderSpacing:
         return self._horizontal if self._vertical is None else self._vertical
 
 
+class Position:
+    """
+    Position wrapper.
+
+    Examples:
+        Position(1px)
+        Position(1px, 2px)
+        Position('center', 2px)
+        Position('center', 'top')
+    """
+
+    def __init__(self, horizontal=None, vertical=None):
+        self._horizontal = horizontal
+        self._vertical = vertical
+
+    def __repr__(self):
+        pass
+        # if self._vertical is None:
+        #     string = 'Position({horizontal})'.format(horizontal=repr(self._horizontal))
+        # else:
+        #     string = 'Position({horizontal}, {vertical})'.format(horizontal=repr(self._horizontal),
+        #                                                          vertical=repr(self._vertical))
+        # return string
+
+    def __str__(self):
+        pass
+        # if self._vertical is not None:
+        #     string = '{horizontal} {vertical}'.format(horizontal=self._horizontal,
+        #                                               vertical=self._vertical)
+        # else:
+        #     string = '{horizontal}'.format(horizontal=self._horizontal)
+
+        # return string
+
+    @property
+    def horizontal(self):
+        """Return the horizontal position."""
+        return 'center' if self._horizontal is None else self._horizontal
+
+    @property
+    def vertical(self):
+        """Return the vertical position."""
+        return 'center' if self._vertical is None else self._vertical
+
+
 class Quotes:
     """
     Content opening and closing quotes wrapper.
@@ -151,6 +196,11 @@ class BorderLeft(Shorthand):
 
 class Border(Shorthand):
     VALID_KEYS = ['border_width', 'border_style', 'border_color']
+
+
+class Background(Shorthand):
+    VALID_KEYS = ['background_color', 'background_image', 'background_repeat', 'background_attachment',
+                  'background_position']
 
 
 class Uri:
