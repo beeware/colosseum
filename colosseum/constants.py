@@ -1,6 +1,6 @@
 from .validators import (ValidationError, is_border_spacing, is_color,
                          is_cursor, is_integer, is_length, is_number,
-                         is_percentage, is_quote, is_rect)
+                         is_percentage, is_quote, is_rect, is_uri)
 
 
 class Choices:
@@ -305,8 +305,60 @@ QUOTES_CHOICES = Choices(None, INITIAL, validators=[is_quote], explicit_defaulti
 # 12.5 Lists
 ######################################################################
 # list_style_type
+DISC = 'disc'
+CIRCLE = 'circle'
+SQUARE = 'square'
+DECIMAL = 'decimal'
+DECIMAL_LEADING_ZERO = 'decimal-leading-zero'
+LOWER_ROMAN = 'lower-roman'
+UPPER_ROMAN = 'upper-roman'
+LOWER_GREEK = 'lower-greek'
+LOWER_LATIN = 'lower-latin'
+UPPER_LATIN = 'upper-latin'
+ARMENIAN = 'armenian'
+GEORGIAN = 'georgian'
+LOWER_ALPHA = 'lower-alpha'
+UPPER_ALPHA = 'upper-alpha'
+
+
+LIST_TYPE_CHOICES = Choices(
+    DISC,
+    CIRCLE,
+    SQUARE,
+    DECIMAL,
+    DECIMAL_LEADING_ZERO,
+    LOWER_ROMAN,
+    UPPER_ROMAN,
+    LOWER_GREEK,
+    LOWER_LATIN,
+    UPPER_LATIN,
+    ARMENIAN,
+    GEORGIAN,
+    LOWER_ALPHA,
+    UPPER_ALPHA,
+    None,
+    explicit_defaulting_constants=[INHERIT],
+)
+
 # list_style_image
+LIST_IMAGE_CHOICES = Choices(
+    None,
+    validators=[is_uri],
+    explicit_defaulting_constants=[INHERIT],
+)
+
+
 # list_style_position
+INSIDE = 'inside'
+OUTSIDE = 'outside'
+
+LIST_POSITION_CHOICES = Choices(
+    INSIDE,
+    OUTSIDE,
+    explicit_defaulting_constants=[INHERIT],
+)
+
+
 # list_style
 
 # 13. Paged media ####################################################

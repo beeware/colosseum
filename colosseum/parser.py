@@ -445,3 +445,64 @@ def cursor(values):
         raise ValueError('Value {value} is not a valid cursor value'.format(value=value))
 
     return Cursor(validated_values)
+
+
+##############################################################################
+# List shorthands
+##############################################################################
+def _parse_list_style_property_part(value, list_style_dict):
+    """Parse list style shorthand property part for known properties."""
+    from .constants import (  # noqa
+        LIST_TYPE_CHOICES, LIST_IMAGE_CHOICES, LIST_POSITION_CHOICES
+    )
+
+    for property_name, choices in {'list_style_type': LIST_TYPE_CHOICES,
+                                   'list_style_image': LIST_IMAGE_CHOICES,
+                                   'list_style_position': LIST_POSITION_CHOICES}.items():
+        try:
+            value = choices.validate(value)
+        except (ValueError, ValidationError):
+            continue
+
+        if property_name in list_style_dict:
+            raise ValueError('Invalid duplicated property!')
+
+        list_style_dict[property_name] = value
+        return list_style_dict
+
+    raise ValueError('List style value "{value}" not valid!'.format(value=value))
+
+
+def list_style(value):
+    """
+    Parse list style string into a dictionary of list style properties.
+
+    The font CSS property is a shorthand for list-style-type, list-style-image, and list-style-position.
+
+    Reference:
+    - https://www.w3.org/TR/2011/REC-CSS2-20110607/generate.html#lists
+    """
+    if value:
+        if isinstance(value, str):
+            values = [val.strip() for val in value.split()]
+        elif isinstance(value, Sequence):
+            values = value
+        else:
+            raise ValueError('Unknown list style %s ' % value)
+    else:
+        raise ValueError('Unknown list style %s ' % value)
+
+    # We iteratively split by the first left hand space found and try to validate if that part
+    # is a valid <list-style-type> or <list-style-image> or <list-style-position> (which can come in any order)
+
+    # We use this dictionary to store parsed values and check that values properties are not
+    # duplicated
+    list_style_dict = {}
+    for idx, part in enumerate(values):
+        if idx > 2:
+            # Outline can have a maximum of 3 parts
+            raise ValueError('List style property shorthand contains too many parts!')
+
+        list_style_dict = _parse_list_style_property_part(part, list_style_dict)
+
+    return list_style_dict
