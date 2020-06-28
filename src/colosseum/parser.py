@@ -60,32 +60,7 @@ def color(value):
 
     elif isinstance(value, str):
         if value[0] == '#':
-            if len(value) == 4:
-                return rgb(
-                    r=int(value[1] + value[1], 16),
-                    g=int(value[2] + value[2], 16),
-                    b=int(value[3] + value[3], 16),
-                )
-            elif len(value) == 5:
-                return rgb(
-                    r=int(value[1] + value[1], 16),
-                    g=int(value[2] + value[2], 16),
-                    b=int(value[3] + value[3], 16),
-                    a=int(value[4] + value[4], 16) / 0xff,
-                )
-            elif len(value) == 7:
-                return rgb(
-                    r=int(value[1:3], 16),
-                    g=int(value[3:5], 16),
-                    b=int(value[5:7], 16),
-                )
-            elif len(value) == 9:
-                return rgb(
-                    r=int(value[1:3], 16),
-                    g=int(value[3:5], 16),
-                    b=int(value[5:7], 16),
-                    a=int(value[7:9], 16) / 0xff,
-                )
+            return pound_sign_color(value)
         elif value.startswith('rgba'):
             try:
                 values = value[5:-1].split(',')
@@ -134,6 +109,46 @@ def color(value):
     raise ValueError('Unknown color %s' % value)
 
 
+def pound_sign_color(value):
+    """Help with parsing color values prefixed with pound signs.
+
+    Accepts:
+    * '#RGB'
+    * '#RGBA'
+    * '#RRGGBB'
+    * '#RRGGBBAA'
+    """
+
+    if len(value) == 4:
+        return rgb(
+            r=int(value[1] + value[1], 16),
+            g=int(value[2] + value[2], 16),
+            b=int(value[3] + value[3], 16),
+        )
+    elif len(value) == 5:
+        return rgb(
+            r=int(value[1] + value[1], 16),
+            g=int(value[2] + value[2], 16),
+            b=int(value[3] + value[3], 16),
+            a=int(value[4] + value[4], 16) / 0xff,
+        )
+    elif len(value) == 7:
+        return rgb(
+            r=int(value[1:3], 16),
+            g=int(value[3:5], 16),
+            b=int(value[5:7], 16),
+        )
+    elif len(value) == 9:
+        return rgb(
+            r=int(value[1:3], 16),
+            g=int(value[3:5], 16),
+            b=int(value[5:7], 16),
+            a=int(value[7:9], 16) / 0xff,
+        )
+    else:
+        raise ValueError('Unknown color %s' % value)
+
+
 def border_spacing(value):
     """
     Parse a border spacing value.
@@ -165,8 +180,8 @@ def border_spacing(value):
 def rect(value):
     """Parse a given rect shape."""
     value = ' '.join(val.strip() for val in value.split())
-    if (value.startswith('rect(') and value.endswith(')') and
-            value.count('rect(') == 1 and value.count(')') == 1):
+    if (value.startswith('rect(') and value.endswith(')')
+            and value.count('rect(') == 1 and value.count(')') == 1):
         value = value.replace('rect(', '')
         value = value.replace(')', '').strip()
 

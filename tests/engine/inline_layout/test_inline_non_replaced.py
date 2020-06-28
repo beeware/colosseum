@@ -1,5 +1,5 @@
-from colosseum.constants import AUTO, INLINE
-from colosseum.declaration import CSS
+from src.colosseum.constants import AUTO, INLINE
+from src.colosseum.declaration import CSS
 
 from ...utils import LayoutTestCase, TestNode
 

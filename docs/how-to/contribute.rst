@@ -362,12 +362,12 @@ margin box hasn't received the correct size.
 Fixing the problem
 ------------------
 
-At this point, you're in bug country! Every bug will have a slightly slightly
+At this point, you're in bug country! Every bug will have a slightly
 different cause, and it's your job to find out what is going on.
 
 The entry point for rendering is the ``layout()`` method in
-``colosseum/engine.py``. This method calls ``layout_box()`` recursively on the
-document being rendered. The code in ``colosseum/engine.py`` is extensively
+``src/colosseum/engine.py``. This method calls ``layout_box()`` recursively on the
+document being rendered. The code in ``src/colosseum/engine.py`` is extensively
 documented with references to the `CSS specification
 <https://www.w3.org/TR/CSS/>`__ - especially the `CSS2.2 Specification
 <https://www.w3.org/TR/CSS22/>`__, the `Flexible Box Layout Module

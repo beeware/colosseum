@@ -7,6 +7,7 @@ from colosseum.validators import (ValidationError, is_border_spacing,
                                   is_rect, is_uri)
 from colosseum.wrappers import Quotes
 
+
 class NumericTests(TestCase):
 
     def test_integer(self):

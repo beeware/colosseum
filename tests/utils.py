@@ -202,8 +202,8 @@ class LayoutTestCase(TestCase):
                 + ' ' * len(tag)
                 + '  {n.content_width}x{n.content_height}'
                   ' @ ({n.absolute_content_left}, {n.absolute_content_top})'.format(
-                        n=actual.layout
-                    )
+                    n=actual.layout
+                )
             )
 
         output.append(
@@ -212,8 +212,8 @@ class LayoutTestCase(TestCase):
             + ' ' * len(tag)
             + '  padding: {n[size][0]}x{n[size][1]}'
               ' @ ({n[position][0]}, {n[position][1]})'.format(
-                    n=expected['padding_box']
-                )
+                n=expected['padding_box']
+            )
         )
 
         try:
@@ -237,8 +237,8 @@ class LayoutTestCase(TestCase):
                 + ' ' * len(tag)
                 + '  padding: {n.padding_box_width}x{n.padding_box_height}'
                   ' @ ({n.absolute_padding_box_left}, {n.absolute_padding_box_top})'.format(
-                        n=actual.layout
-                    )
+                    n=actual.layout
+                )
             )
 
         output.append(
@@ -247,8 +247,8 @@ class LayoutTestCase(TestCase):
             + ' ' * len(tag)
             + '  border: {n[size][0]}x{n[size][1]}'
               ' @ ({n[position][0]}, {n[position][1]})'.format(
-                    n=expected['border_box']
-                )
+                n=expected['border_box']
+            )
         )
 
         try:
@@ -272,8 +272,8 @@ class LayoutTestCase(TestCase):
                 + ' ' * len(tag)
                 + '  border: {n.border_box_width}x{n.border_box_height}'
                   ' @ ({n.absolute_border_box_left}, {n.absolute_border_box_top})'.format(
-                        n=actual.layout
-                    )
+                    n=actual.layout
+                )
             )
 
         expected_children = expected.pop('children', [])
@@ -289,8 +289,8 @@ class LayoutTestCase(TestCase):
                 '>>  '
                 + '    ' * depth
                 + '  Found {} children, expected {}'.format(
-                      n_actual, n_expected
-                  )
+                    n_actual, n_expected
+                )
             )
 
         return found_problem

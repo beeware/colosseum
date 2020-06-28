@@ -1,5 +1,5 @@
-from colosseum.constants import BLOCK, MEDIUM, SOLID, THICK, THIN
-from colosseum.declaration import CSS
+from src.colosseum.constants import BLOCK, MEDIUM, SOLID, THICK, THIN
+from src.colosseum.declaration import CSS
 
 from ..utils import LayoutTestCase, TestNode
 

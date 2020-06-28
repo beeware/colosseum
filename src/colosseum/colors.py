@@ -21,7 +21,7 @@ class rgb(Color):
 
 class hsl(Color):
     "A representation of an HSLA color"
-    def __init__(self, h, s, l, a=1.0):
+    def __init__(self, h, s, l, a=1.0):  # noqa: E741
         self.h = h
         self.s = s
         self.l = l  # noqa

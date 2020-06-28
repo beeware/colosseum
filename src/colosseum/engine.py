@@ -177,25 +177,10 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.margin_bottom = calculate_size(node.style.margin_bottom, vertical)
     node.layout.margin_left = calculate_size(node.style.margin_left, horizontal)
 
-    if node.style.border_top_style is None:
-        node.layout.border_top_width = 0
-    else:
-        node.layout.border_top_width = calculate_size(node.style.border_top_width, horizontal)
-
-    if node.style.border_right_style is None:
-        node.layout.border_right_width = 0
-    else:
-        node.layout.border_right_width = calculate_size(node.style.border_right_width, vertical)
-
-    if node.style.border_bottom_style is None:
-        node.layout.border_bottom_width = 0
-    else:
-        node.layout.border_bottom_width = calculate_size(node.style.border_bottom_width, horizontal)
-
-    if node.style.border_left_style is None:
-        node.layout.border_left_width = 0
-    else:
-        node.layout.border_left_width = calculate_size(node.style.border_left_width, vertical)
+    node.layout.border_top_width = calculate_size(node.style.border_top_width, horizontal)
+    node.layout.border_right_width = calculate_size(node.style.border_right_width, vertical)
+    node.layout.border_bottom_width = calculate_size(node.style.border_bottom_width, horizontal)
+    node.layout.border_left_width = calculate_size(node.style.border_left_width, vertical)
 
     node.layout.padding_top = calculate_size(node.style.padding_top, horizontal)
     node.layout.padding_right = calculate_size(node.style.padding_right, vertical)
@@ -300,7 +285,7 @@ def calculate_size(value, context):
         return value
     if value is THIN or value is MEDIUM or value is THICK:
         return context['display'].fixed_size(value)
-    if value == 0:
+    if value == 0 or value is None:
         # This will also catch 0px, so we need to return 0 literally
         # to ensure that the calulated size is either an integer or AUTO
         return 0

@@ -153,7 +153,7 @@ class Evaluator(NSObject):
                             'assert': result.get('assert', None),
                             'help': result['help'],
                             'matches': result.get('matches', None),
-                        }, indent=4))
+                            }, indent=4))
 
                 # Output reference rendering data
                 test_refdir = os.path.join(test_dir, 'ref')
@@ -191,7 +191,7 @@ class W3CTestExtractor(toga.App):
 
         self.main_window.content = webview
 
-        files = []
+        # files = []
         filenames = [
             os.path.join(self.root, 'css', self.path, f)
             for f in os.listdir(os.path.join(self.root, 'css', self.path))
