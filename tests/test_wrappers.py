@@ -4,8 +4,8 @@ from unittest import TestCase
 
 from src.colosseum.units import px
 from src.colosseum.wrappers import (Border, BorderBottom, BorderLeft, BorderRight,
-                                BorderSpacing, BorderTop, Cursor,
-                                ImmutableList, Outline, Quotes, Shorthand)
+                                    BorderSpacing, BorderTop, Cursor,
+                                    ImmutableList, Outline, Quotes, Shorthand)
 
 
 class BorderSpacingTests(TestCase):

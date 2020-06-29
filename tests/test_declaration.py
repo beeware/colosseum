@@ -3,12 +3,12 @@ from unittest import TestCase
 from src.colosseum import engine as css_engine
 from src.colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
 from src.colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
-                                 REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
-                                 OtherProperty)
+                                     REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
+                                     OtherProperty)
 from src.colosseum.declaration import CSS, validated_property
 from src.colosseum.units import percent, px
 from src.colosseum.validators import (is_color, is_integer, is_length, is_number,
-                                  is_percentage, is_uri)
+                                      is_percentage, is_uri)
 from src.colosseum.wrappers import BorderSpacing, Quotes
 
 from .utils import TestNode

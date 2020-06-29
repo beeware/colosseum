@@ -5,10 +5,10 @@ from src.colosseum import parser
 from src.colosseum.colors import hsl, rgb
 from src.colosseum.constants import CURSOR_OPTIONS
 from src.colosseum.parser import (border, border_bottom, border_left, border_right,
-                              border_top, color, outline)
+                                  border_top, color, outline)
 from src.colosseum.shapes import Rect
 from src.colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
-                             vmax, vmin, vw)
+                                 vmax, vmin, vw)
 from src.colosseum.wrappers import Cursor
 
 
