@@ -39,9 +39,10 @@ class TestNode:
         return '<{}:{} {}>'.format(self.name, id(self), str(self.layout))
 
 
-def build_document(data):
+def build_document(data, parent=None):
     if 'tag' in data:
         node = TestNode(name=data['tag'])
+        node.parent = parent
         node.style.update(**{
             attr: value
             for attr, value in data['style'].items()
@@ -50,7 +51,7 @@ def build_document(data):
 
         if 'children' in data:
             for child in data['children']:
-                subdocument = build_document(child)
+                subdocument = build_document(child, parent=node)
                 if subdocument:
                     node.children.append(subdocument)
     else:
