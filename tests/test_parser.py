@@ -1,15 +1,15 @@
 from itertools import permutations
 from unittest import TestCase
 
-from colosseum import parser
-from colosseum.colors import hsl, rgb
-from colosseum.constants import CURSOR_OPTIONS
-from colosseum.parser import (border, border_bottom, border_left, border_right,
+from src.colosseum import parser
+from src.colosseum.colors import hsl, rgb
+from src.colosseum.constants import CURSOR_OPTIONS
+from src.colosseum.parser import (border, border_bottom, border_left, border_right,
                               border_top, color, outline)
-from colosseum.shapes import Rect
-from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
+from src.colosseum.shapes import Rect
+from src.colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
                              vmax, vmin, vw)
-from colosseum.wrappers import Cursor
+from src.colosseum.wrappers import Cursor
 
 
 class ParseUnitTests(TestCase):

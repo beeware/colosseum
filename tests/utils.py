@@ -2,10 +2,10 @@ import json
 import os
 from unittest import TestCase, expectedFailure
 
-from colosseum.constants import BLOCK, HTML4, MEDIUM, THICK, THIN
-from colosseum.declaration import CSS
-from colosseum.dimensions import Box, Size
-from colosseum.engine import layout
+from src.colosseum.constants import BLOCK, HTML4, MEDIUM, THICK, THIN
+from src.colosseum.declaration import CSS
+from src.colosseum.dimensions import Box, Size
+from src.colosseum.engine import layout
 
 
 class Display:

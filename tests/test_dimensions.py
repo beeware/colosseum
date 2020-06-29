@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from colosseum.dimensions import Box
+from src.colosseum.dimensions import Box
 from .utils import TestNode
 
 
