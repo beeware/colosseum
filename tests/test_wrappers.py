@@ -3,7 +3,19 @@ from itertools import permutations
 from unittest import TestCase
 
 from colosseum.units import px
-from colosseum.wrappers import Border, BorderBottom, BorderLeft, BorderRight, BorderSpacing, BorderTop, Cursor, ImmutableList, Outline, Quotes, Shorthand
+from colosseum.wrappers import (
+    Border,
+    BorderBottom,
+    BorderLeft,
+    BorderRight,
+    BorderSpacing,
+    BorderTop,
+    Cursor,
+    ImmutableList,
+    Outline,
+    Quotes,
+    Shorthand,
+)
 
 
 class BorderSpacingTests(TestCase):

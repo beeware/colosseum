@@ -2,8 +2,24 @@ import math
 from unittest import TestCase
 
 from colosseum.units import (
-    ch, cm, deg, em, ex, grad, inch, mm, pc, percent, pt, px, rad, turn, vh,
-    vmax, vmin, vw,
+    ch,
+    cm,
+    deg,
+    em,
+    ex,
+    grad,
+    inch,
+    mm,
+    pc,
+    percent,
+    pt,
+    px,
+    rad,
+    turn,
+    vh,
+    vmax,
+    vmin,
+    vw,
 )
 
 from .utils import Display

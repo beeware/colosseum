@@ -1,7 +1,22 @@
 from .constants import (
-    ABSOLUTE, AUTO, BLOCK, FIXED, HTML5, INHERIT, INLINE, INLINE_BLOCK,
-    INLINE_TABLE, LIST_ITEM, LTR, MEDIUM, RELATIVE, TABLE, TABLE_CAPTION,
-    TABLE_CELL, THICK, THIN,
+    ABSOLUTE,
+    AUTO,
+    BLOCK,
+    FIXED,
+    HTML5,
+    INHERIT,
+    INLINE,
+    INLINE_BLOCK,
+    INLINE_TABLE,
+    LIST_ITEM,
+    LTR,
+    MEDIUM,
+    RELATIVE,
+    TABLE,
+    TABLE_CAPTION,
+    TABLE_CELL,
+    THICK,
+    THIN,
 )
 from .dimensions import Box
 

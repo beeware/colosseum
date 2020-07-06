@@ -4,10 +4,8 @@ import os
 import sys
 
 import toga
-
 # For the moment, this is Cocoa specific.
-from toga_cocoa.libs import NSObject, NSTimer, objc_method, SEL
-
+from toga_cocoa.libs import SEL, NSObject, NSTimer, objc_method
 
 CLEANSE = open(
     os.path.join(os.path.dirname(__file__), 'cleanse.js')

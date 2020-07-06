@@ -1,6 +1,15 @@
-from .validators import (ValidationError, is_border_spacing, is_color,
-                         is_cursor, is_integer, is_length, is_number,
-                         is_percentage, is_quote, is_rect)
+from .validators import (
+    ValidationError,
+    is_border_spacing,
+    is_color,
+    is_cursor,
+    is_integer,
+    is_length,
+    is_number,
+    is_percentage,
+    is_quote,
+    is_rect,
+)
 
 
 class Choices:
