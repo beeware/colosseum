@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from src.colosseum.units import px
-from src.colosseum.shapes import Rect
+from colosseum.units import px
+from colosseum.shapes import Rect
 
 
 class ShapeUnitTests(TestCase):

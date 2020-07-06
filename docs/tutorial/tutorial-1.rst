@@ -13,7 +13,7 @@ apply them to any DOM-like tree of objects. There is no required base class;
 Colosseum will duck-type any object providing the required API. The simplest
 possible DOM node is the following::
 
-    from src.colosseum.dimensions import Size, Box
+    from colosseum.dimensions import Size, Box
 
     class MyDOMNode:
         def __init__(self, style):
@@ -54,8 +54,8 @@ duck-type any class that has the required API::
 With a compliant DOM node definition, you can create a content page, an
 instance of the DOM node class, and some children for that node::
 
-    >>> from src.colosseum import CSS
-    >>> from src.colosseum.constants import BLOCK
+    >>> from colosseum import CSS
+    >>> from colosseum.constants import BLOCK
     >>> page = Page(2000, 2000)
     >>> node = MyDOMNode(style=CSS(display=BLOCK, width=1000, height=1000))
     >>> node.add(MyDOMNode(style=CSS(display=BLOCK, width=100, height=200)))
@@ -63,7 +63,7 @@ instance of the DOM node class, and some children for that node::
 
 You can then ask for a layout to be computed, and query the results::
 
-    >>> from src.colosseum.engine import layout
+    >>> from colosseum.engine import layout
     >>> layout(page, node)
     >>> print(node.layout)
     <Box (1000x2000 @ 0,0)>

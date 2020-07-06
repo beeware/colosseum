@@ -1,7 +1,7 @@
 import math
 from unittest import TestCase
 
-from src.colosseum.units import (
+from colosseum.units import (
     ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh, vmax, vmin, vw, deg, rad, grad, turn,
 )
 

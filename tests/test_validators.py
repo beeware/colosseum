@@ -1,11 +1,11 @@
 from unittest import TestCase
 
-from src.colosseum.shapes import Rect
-from src.colosseum.units import px
-from src.colosseum.validators import (ValidationError, is_border_spacing,
+from colosseum.shapes import Rect
+from colosseum.units import px
+from colosseum.validators import (ValidationError, is_border_spacing,
                                       is_cursor, is_integer, is_number, is_quote,
                                       is_rect, is_uri)
-from src.colosseum.wrappers import Quotes
+from colosseum.wrappers import Quotes
 
 
 class NumericTests(TestCase):

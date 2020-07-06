@@ -1,9 +1,9 @@
 # from unittest import expectedFailure
 
-# from src.colosseum.constants import AUTO, BLOCK, RTL, SOLID
-from src.colosseum.constants import BLOCK
-from src.colosseum.declaration import CSS
-from src.colosseum.engine import layout
+# from colosseum.constants import AUTO, BLOCK, RTL, SOLID
+from colosseum.constants import BLOCK
+from colosseum.declaration import CSS
+from colosseum.engine import layout
 
 from ...utils import LayoutTestCase, TestNode
 
