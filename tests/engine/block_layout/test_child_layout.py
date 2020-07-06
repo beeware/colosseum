@@ -1,6 +1,3 @@
-# from unittest import expectedFailure
-
-# from colosseum.constants import AUTO, BLOCK, RTL, SOLID
 from colosseum.constants import BLOCK
 from colosseum.declaration import CSS
 from colosseum.engine import layout

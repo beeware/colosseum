@@ -191,7 +191,6 @@ class W3CTestExtractor(toga.App):
 
         self.main_window.content = webview
 
-        # files = []
         filenames = [
             os.path.join(self.root, 'css', self.path, f)
             for f in os.listdir(os.path.join(self.root, 'css', self.path))
