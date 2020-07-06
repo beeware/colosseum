@@ -6,7 +6,6 @@ from ...utils import LayoutTestCase, TestNode
 # from colosseum.engine import layout
 
 
-
 class WidthTests(LayoutTestCase):
     def test_auto_left_margin(self):
         node = TestNode(
