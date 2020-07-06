@@ -2,13 +2,10 @@ from unittest import TestCase
 
 from colosseum import engine as css_engine
 from colosseum.colors import GOLDENROD, NAMED_COLOR, REBECCAPURPLE
-from colosseum.constants import (AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT,
-                                     REVERT, RIGHT, RTL, TABLE, UNSET, Choices,
-                                     OtherProperty)
+from colosseum.constants import AUTO, BLOCK, INHERIT, INITIAL, INLINE, LEFT, REVERT, RIGHT, RTL, TABLE, UNSET, Choices, OtherProperty
 from colosseum.declaration import CSS, validated_property
 from colosseum.units import percent, px
-from colosseum.validators import (is_color, is_integer, is_length, is_number,
-                                      is_percentage, is_uri)
+from colosseum.validators import is_color, is_integer, is_length, is_number, is_percentage, is_uri
 from colosseum.wrappers import BorderSpacing, Quotes
 
 from .utils import TestNode
