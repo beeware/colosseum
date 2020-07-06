@@ -651,9 +651,14 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
                 content_height = node.style.min_height.px(**context)
             else:
                 content_height = 0
-
     else:
-        content_height = node.style.height.px(**context)
+        if node.parent is not None and node.parent.style.height is not AUTO:
+            parent_height = node.parent.style.height.px(**context)
+            content_height = node.style.height.px(
+                display=context['display'], font=context['font'], size=parent_height
+            )
+        else:
+            content_height = node.style.height.px(**context)
         if node.style.max_height is not None:  # 10.7 Maximum height
             content_max_height = node.style.max_height.px(**context)
             if content_height > content_max_height:
