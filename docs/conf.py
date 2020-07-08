@@ -51,7 +51,7 @@ master_doc = 'index'
 project = u'Colosseum'
 copyright = u'2013, Russell Keith-Magee'
 
-with io.open('../colosseum/__init__.py', encoding='utf8') as version_file:
+with io.open('../src/colosseum/__init__.py', encoding='utf8') as version_file:
     version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file.read(), re.M)
     if version_match:
         release = version_match.group(1)
