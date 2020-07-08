@@ -15,14 +15,14 @@ Colosseum
     :target: https://pypi.python.org/pypi/colosseum
 
 .. image:: https://img.shields.io/pypi/l/colosseum.svg
-    :target: https://github.com/pybee/colosseum/blob/master/LICENSE
+    :target: https://github.com/beeware/colosseum/blob/master/LICENSE
 
-.. image:: https://github.com/beeware/colosseum/workflows/Build%20status/badge.svg
+.. image:: https://github.com/beeware/colosseum/workflows/CI/badge.svg?branch=master
    :target: https://github.com/beeware/colosseum/actions
    :alt: Build Status
 
-.. image:: https://badges.gitter.im/pybee/general.svg
-    :target: https://gitter.im/pybee/general
+.. image:: https://badges.gitter.im/beeware/general.svg
+    :target: https://gitter.im/beeware/general
 
 An independent implementation of the CSS layout algorithm. This
 implementation is completely standalone - it isn't dependent on
@@ -60,7 +60,7 @@ Colosseum is part of the `BeeWare suite`_. You can talk to the community through
 
 * `@pybeeware on Twitter`_
 
-* The `pybee/general`_ channel on Gitter.
+* The `beeware/general`_ channel on Gitter.
 
 We foster a welcoming and respectful community as described in our
 `BeeWare Community Code of Conduct`_.
@@ -75,11 +75,11 @@ want to contribute code, please `fork the code`_ and `submit a pull request`_.
 .. _how-to guides and recipes: http://colosseum.readthedocs.io/en/latest/how-to/index.html
 .. _background: http://colosseum.readthedocs.io/en/latest/background/index.html
 .. _Technical reference: http://colosseum.readthedocs.io/en/latest/reference/index.html
-.. _BeeWare suite: http://pybee.org
+.. _BeeWare suite: http://beeware.org
 .. _Read The Docs: https://colosseum.readthedocs.io
 .. _@pybeeware on Twitter: https://twitter.com/pybeeware
-.. _pybee/general: https://gitter.im/pybee/general
-.. _BeeWare Community Code of Conduct: http://pybee.org/community/behavior/
-.. _log them on Github: https://github.com/pybee/colosseum/issues
-.. _fork the code: https://github.com/pybee/colosseum
-.. _submit a pull request: https://github.com/pybee/colosseum/pulls
+.. _beeware/general: https://gitter.im/beeware/general
+.. _BeeWare Community Code of Conduct: http://beeware.org/community/behavior/
+.. _log them on Github: https://github.com/beeware/colosseum/issues
+.. _fork the code: https://github.com/beeware/colosseum
+.. _submit a pull request: https://github.com/beeware/colosseum/pulls

@@ -4,11 +4,32 @@ from unittest import TestCase
 from colosseum import parser
 from colosseum.colors import hsl, rgb
 from colosseum.constants import CURSOR_OPTIONS
-from colosseum.parser import (border, border_bottom, border_left, border_right,
-                              border_top, color, outline)
+from colosseum.parser import (
+    border,
+    border_bottom,
+    border_left,
+    border_right,
+    border_top,
+    color,
+    outline,
+)
 from colosseum.shapes import Rect
-from colosseum.units import (ch, cm, em, ex, inch, mm, pc, percent, pt, px, vh,
-                             vmax, vmin, vw)
+from colosseum.units import (
+    ch,
+    cm,
+    em,
+    ex,
+    inch,
+    mm,
+    pc,
+    percent,
+    pt,
+    px,
+    vh,
+    vmax,
+    vmin,
+    vw,
+)
 from colosseum.wrappers import Cursor
 
 

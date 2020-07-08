@@ -104,7 +104,7 @@ fail - because the logic necessary to make the test pass isn't implemented.
 Pick one of these tests, and delete it from the ``not_implemented`` file.
 
 For the purposes of this example, we're going to pick the
-``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts``(this test is no longer available, as it has already been fixed). 
+``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts`` (this test is no longer available, as it has already been fixed). 
 
 The first test run
 ------------------
@@ -362,12 +362,12 @@ margin box hasn't received the correct size.
 Fixing the problem
 ------------------
 
-At this point, you're in bug country! Every bug will have a slightly slightly
+At this point, you're in bug country! Every bug will have a slightly
 different cause, and it's your job to find out what is going on.
 
 The entry point for rendering is the ``layout()`` method in
-``colosseum/engine.py``. This method calls ``layout_box()`` recursively on the
-document being rendered. The code in ``colosseum/engine.py`` is extensively
+``src/colosseum/engine.py``. This method calls ``layout_box()`` recursively on the
+document being rendered. The code in ``src/colosseum/engine.py`` is extensively
 documented with references to the `CSS specification
 <https://www.w3.org/TR/CSS/>`__ - especially the `CSS2.2 Specification
 <https://www.w3.org/TR/CSS22/>`__, the `Flexible Box Layout Module
@@ -444,3 +444,20 @@ might be incorrect. If you look at the test suite output, and it doesn't match
 what you see in a browser, open a ticket describing what you've found. This
 may indicate a bug in the reference rendering; which will require a fix to the
 script that generates the test data.
+
+Add change information for release notes
+========================================
+
+Colosseum uses `towncrier <https://pypi.org/project/towncrier/>`__ to automate
+building release notes. To support this, every pull request needs to have a
+corresponding file in the ``changes/`` directory that provides a short
+description of the change implemented by the pull request.
+
+This description should be a high level summary of the change from the
+perspective of the user, not a deep technical description or implementation
+detail. It should also be written in past tense (i.e., "Added an option to
+enable X" or "Fixed handling of Y").
+
+See `News Fragments <https://pypi.org/project/towncrier/#news-fragments>`__
+for more details on the types of news fragments you can add. You can also see
+existing examples of news fragments in the ``changes/`` folder.

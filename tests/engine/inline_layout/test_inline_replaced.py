@@ -1,8 +1,9 @@
 from colosseum.constants import AUTO, INLINE
 from colosseum.declaration import CSS
-from colosseum.engine import layout
 
 from ...utils import LayoutTestCase, TestNode
+
+# from colosseum.engine import layout
 
 
 class WidthTests(LayoutTestCase):

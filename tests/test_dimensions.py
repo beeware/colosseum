@@ -1,6 +1,7 @@
 from unittest import TestCase
 
 from colosseum.dimensions import Box
+
 from .utils import TestNode
 
 

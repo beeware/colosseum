@@ -1,13 +1,25 @@
+include CHANGELOG.rst
 include CONTRIBUTING.md
 include README.rst
 include AUTHORS
 include LICENSE
-recursive-include colosseum *.py
+include docs/spelling_wordlist
+include pyproject.toml
+include tox.ini
+recursive-include changes *.rst
+recursive-include src *.py
 recursive-include docs *.bat
+recursive-include docs *.png
 recursive-include docs *.py
 recursive-include docs *.rst
+recursive-include docs *.txt
 recursive-include docs Makefile
+recursive-exclude docs/_build *
 recursive-include tests *.py
 recursive-include tests *.json
+recursive-include tests not_implemented
+recursive-include utils *.js
 recursive-include utils *.py
 recursive-include utils *.rst
+recursive-include utils *.sh
+recursive-include utils *.tpy
