@@ -104,7 +104,7 @@ fail - because the logic necessary to make the test pass isn't implemented.
 Pick one of these tests, and delete it from the ``not_implemented`` file.
 
 For the purposes of this example, we're going to pick the
-``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts``(this test is no longer available, as it has already been fixed). 
+``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts`` (this test is no longer available, as it has already been fixed). 
 
 The first test run
 ------------------

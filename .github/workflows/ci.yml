@@ -15,6 +15,7 @@ jobs:
         task:
           - 'flake8'
           - 'towncrier-check'
+          - 'docs'
           - 'package'
     steps:
     - uses: actions/checkout@v1
