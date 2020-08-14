@@ -25,7 +25,7 @@ fork::
 
 You can then run the test suite::
 
-    $ python setup.py test
+    $ python setup.py test -s tests
 
 This will run around 2300 tests - most of which are currently marked as
 "expected failures". This means that we have the test, but we *know* that
