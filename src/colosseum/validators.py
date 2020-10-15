@@ -89,6 +89,10 @@ def is_percentage(value):
         error_msg = 'Value {value} is not a Percent unit'.format(value=value)
         raise ValidationError(error_msg)
 
+    if value < units.Percent(0):
+        error_msg = 'Value {value} can not negative'.format(value=value);
+        raise ValidationError(error_msg)
+
     return value
 
 
