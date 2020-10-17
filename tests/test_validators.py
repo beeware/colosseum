@@ -15,19 +15,19 @@ from colosseum.validators import (
 )
 from colosseum.wrappers import Quotes
 
+
 class PercentTests(TestCase):
     def test_percentage(self):
-        percent_value = is_percentage("100%");
+        percent_value = is_percentage("100%")
 
         self.assertEqual(percent_value, 100*percent)
-        # import pdb;pdb.set_trace()
         self.assertEqual(type(percent_value), type(percent))
 
         with self.assertRaises(ValidationError):
-            is_percentage("-100%");
+            is_percentage("-100%")
 
         with self.assertRaises(ValidationError):
-            is_percentage("100");
+            is_percentage("100")
 
         with self.assertRaises(ValidationError):
             is_percentage('spam')
