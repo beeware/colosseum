@@ -34,7 +34,7 @@ jobs:
 
   python-versions:
     name: Python compatibility test
-    needs: smoke
+    needs: beefore
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
