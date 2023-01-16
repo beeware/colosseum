@@ -15,9 +15,9 @@ Colosseum
     :target: https://pypi.python.org/pypi/colosseum
 
 .. image:: https://img.shields.io/pypi/l/colosseum.svg
-    :target: https://github.com/beeware/colosseum/blob/master/LICENSE
+    :target: https://github.com/beeware/colosseum/blob/main/LICENSE
 
-.. image:: https://github.com/beeware/colosseum/workflows/CI/badge.svg?branch=master
+.. image:: https://github.com/beeware/colosseum/workflows/CI/badge.svg?branch=main
    :target: https://github.com/beeware/colosseum/actions
    :alt: Build Status
 
