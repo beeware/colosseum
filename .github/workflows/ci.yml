@@ -18,7 +18,14 @@ jobs:
           - 'docs'
           - 'package'
     steps:
+    # Fetch main branch for comparison, then check out current branch.
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: main
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: Set up Python
       uses: actions/setup-python@v4.5.0
       with:
