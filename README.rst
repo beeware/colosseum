@@ -21,9 +21,10 @@ Colosseum
    :target: https://github.com/beeware/colosseum/actions
    :alt: Build Status
 
-.. image:: https://badges.gitter.im/beeware/general.svg
-    :target: https://gitter.im/beeware/general
-
+.. image:: https://img.shields.io/discord/836455665257021440?label=Discord%20Chat&logo=discord&style=plastic
+   :target: https://beeware.org/bee/chat/
+   :alt: Discord server
+   
 An independent implementation of the CSS layout algorithm. This
 implementation is completely standalone - it isn't dependent on
 a browser, and can be run over any box-like set of objects that
@@ -60,7 +61,7 @@ Colosseum is part of the `BeeWare suite`_. You can talk to the community through
 
 * `@pybeeware on Twitter`_
 
-* The `beeware/general`_ channel on Gitter.
+* `Discord <https://beeware.org/bee/chat/>`__
 
 We foster a welcoming and respectful community as described in our
 `BeeWare Community Code of Conduct`_.
@@ -78,7 +79,6 @@ want to contribute code, please `fork the code`_ and `submit a pull request`_.
 .. _BeeWare suite: http://beeware.org
 .. _Read The Docs: https://colosseum.readthedocs.io
 .. _@pybeeware on Twitter: https://twitter.com/pybeeware
-.. _beeware/general: https://gitter.im/beeware/general
 .. _BeeWare Community Code of Conduct: http://beeware.org/community/behavior/
 .. _log them on Github: https://github.com/beeware/colosseum/issues
 .. _fork the code: https://github.com/beeware/colosseum

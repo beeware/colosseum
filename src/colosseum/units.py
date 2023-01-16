@@ -144,6 +144,9 @@ class Percent(Unit):
             return self.val == other.val and self.suffix == other.suffix
         return False
 
+    def __lt__(self, other):
+        return self.val < other.val
+
 
 px = PixelUnit()
 

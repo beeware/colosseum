@@ -1,18 +1,36 @@
 from unittest import TestCase
 
 from colosseum.shapes import Rect
-from colosseum.units import px
+from colosseum.units import px, percent
 from colosseum.validators import (
     ValidationError,
     is_border_spacing,
     is_cursor,
     is_integer,
     is_number,
+    is_percentage,
     is_quote,
     is_rect,
     is_uri,
 )
 from colosseum.wrappers import Quotes
+
+
+class PercentTests(TestCase):
+    def test_percentage(self):
+        percent_value = is_percentage("100%")
+
+        self.assertEqual(percent_value, 100*percent)
+        self.assertEqual(type(percent_value), type(percent))
+
+        with self.assertRaises(ValidationError):
+            is_percentage("-100%")
+
+        with self.assertRaises(ValidationError):
+            is_percentage("100")
+
+        with self.assertRaises(ValidationError):
+            is_percentage('spam')
 
 
 class NumericTests(TestCase):
