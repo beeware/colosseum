@@ -1,5 +1,5 @@
 from ast import literal_eval
-from collections import Sequence
+from collections.abc import Sequence
 
 from .colors import NAMED_COLOR, hsl, rgb
 from .exceptions import ValidationError
