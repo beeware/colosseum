@@ -1,12 +1,11 @@
 The Colosseum Developer and User community
 ==========================================
 
-Colosseum is part of the `BeeWare suite`_. You can talk to the
-community through:
+Colosseum is part of the `BeeWare suite`_. You can talk to the community through:
 
-* `@pybeeware on Twitter`_
-
-* The `pybee/general`_ channel on Gitter.
+* `@beeware@fosstodon.org on Mastodon`_
+* `Discord`_
+* The Colosseum `Github Discussions forum`_
 
 Code of Conduct
 ---------------
@@ -25,14 +24,11 @@ If you experience problems with Colosseum, `log them on GitHub`_. If you
 want to contribute code, please `fork the code`_ and `submit a pull request`_.
 
 .. _BeeWare suite: http://pybee.org
-.. _Read The Docs: https://colosseum.readthedocs.io
-.. _@pybeeware on Twitter: https://twitter.com/pybeeware
-.. _pybee/general: https://gitter.im/pybee/general
-.. _BeeWare Users Mailing list: https://groups.google.com/forum/#!forum/beeware-users
-.. _BeeWare Developers Mailing list: https://groups.google.com/forum/#!forum/beeware-developers
+.. _@beeware@fosstodon.org on Mastodon: https://fosstodon.org/@beeware
+.. _Discord: https://beeware.org/bee/chat/
+.. _Github Discussions forum: https://github.com/beeware/colosseum/discussions
+.. _Code of Conduct: http://beeware.org/community/behavior/
+.. _Russell Keith-Magee: mailto:russell@keith-magee.com
 .. _log them on Github: https://github.com/pybee/colosseum/issues
 .. _fork the code: https://github.com/pybee/colosseum
 .. _submit a pull request: https://github.com/pybee/colosseum/pulls
-
-.. _Code of Conduct: http://pybee.org/contributing/index.html
-.. _Russell Keith-Magee: mailto:russell@keith-magee.com

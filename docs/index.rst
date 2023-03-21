@@ -80,14 +80,20 @@ Community
 
 Colosseum is part of the `BeeWare suite`_. You can talk to the community through:
 
- * `@pybeeware on Twitter`_
+* `@beeware@fosstodon.org on Mastodon`_
+* `Discord`_
+* The Colosseum `Github Discussions forum`_
 
- * `pybee/general on Gitter`_
+We foster a welcoming and respectful community as described in our
+`BeeWare Community Code of Conduct`_.
 
 .. _BeeWare suite: http://pybee.org
 .. _Read The Docs: https://colosseum.readthedocs.io
-.. _@pybeeware on Twitter: https://twitter.com/pybeeware
-.. _pybee/general on Gitter: https://gitter.im/pybee/general
+.. _@beeware@fosstodon.org on Mastodon: https://fosstodon.org/@beeware
+.. _Discord: https://beeware.org/bee/chat/
+.. _Github Discussions forum: https://github.com/beeware/colosseum/discussions
+.. _BeeWare Community Code of Conduct: http://beeware.org/community/behavior/
+
 
 .. toctree::
    :maxdepth: 2
