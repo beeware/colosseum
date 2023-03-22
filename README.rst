@@ -59,9 +59,9 @@ Community
 
 Colosseum is part of the `BeeWare suite`_. You can talk to the community through:
 
-* `@pybeeware on Twitter`_
-
-* `Discord <https://beeware.org/bee/chat/>`__
+* `@beeware@fosstodon.org on Mastodon`_
+* `Discord`_
+* The Colosseum `Github Discussions forum`_
 
 We foster a welcoming and respectful community as described in our
 `BeeWare Community Code of Conduct`_.
@@ -78,7 +78,9 @@ want to contribute code, please `fork the code`_ and `submit a pull request`_.
 .. _Technical reference: http://colosseum.readthedocs.io/en/latest/reference/index.html
 .. _BeeWare suite: http://beeware.org
 .. _Read The Docs: https://colosseum.readthedocs.io
-.. _@pybeeware on Twitter: https://twitter.com/pybeeware
+.. _@beeware@fosstodon.org on Mastodon: https://fosstodon.org/@beeware
+.. _Discord: https://beeware.org/bee/chat/
+.. _Github Discussions forum: https://github.com/beeware/colosseum/discussions
 .. _BeeWare Community Code of Conduct: http://beeware.org/community/behavior/
 .. _log them on Github: https://github.com/beeware/colosseum/issues
 .. _fork the code: https://github.com/beeware/colosseum
