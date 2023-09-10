@@ -20,11 +20,11 @@ jobs:
           - 'package'
     steps:
     # Fetch main branch for comparison, then check out current branch.
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         ref: main
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Set up Python
@@ -54,7 +54,7 @@ jobs:
             experimental: true
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.7.0
       with:
