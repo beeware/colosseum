@@ -13,17 +13,20 @@ def _numeric_validator(num_value, numeric_type, min_value, max_value):
         num_value = numeric_type(num_value)
     except (ValueError, TypeError):
         error_msg = "Cannot coerce {num_value} to {numeric_type}".format(
-            num_value=num_value, numeric_type=numeric_type.__name__)
+            num_value=num_value, numeric_type=numeric_type.__name__
+        )
         raise ValidationError(error_msg)
 
     if min_value is not None and num_value < min_value:
-        error_msg = 'Value {num_value} below minimum value {min_value}'.format(
-            num_value=num_value, min_value=min_value)
+        error_msg = "Value {num_value} below minimum value {min_value}".format(
+            num_value=num_value, min_value=min_value
+        )
         raise ValidationError(error_msg)
 
     if max_value is not None and num_value > max_value:
-        error_msg = 'Value {num_value} above maximum value {max_value}'.format(
-            num_value=num_value, max_value=max_value)
+        error_msg = "Value {num_value} above maximum value {max_value}".format(
+            num_value=num_value, max_value=max_value
+        )
         raise ValidationError(error_msg)
 
     return num_value
@@ -37,7 +40,12 @@ def is_number(value=None, min_value=None, max_value=None):
     """
 
     def validator(num_value):
-        return _numeric_validator(num_value=num_value, numeric_type=float, min_value=min_value, max_value=max_value)
+        return _numeric_validator(
+            num_value=num_value,
+            numeric_type=float,
+            min_value=min_value,
+            max_value=max_value,
+        )
 
     if min_value is None and max_value is None:
         return validator(value)
@@ -45,7 +53,7 @@ def is_number(value=None, min_value=None, max_value=None):
         return validator
 
 
-is_number.description = '<number>'
+is_number.description = "<number>"
 
 
 def is_integer(value=None, min_value=None, max_value=None):
@@ -56,7 +64,12 @@ def is_integer(value=None, min_value=None, max_value=None):
     """
 
     def validator(num_value):
-        return _numeric_validator(num_value=num_value, numeric_type=int, min_value=min_value, max_value=max_value)
+        return _numeric_validator(
+            num_value=num_value,
+            numeric_type=int,
+            min_value=min_value,
+            max_value=max_value,
+        )
 
     if min_value is None and max_value is None:
         return validator(value)
@@ -64,7 +77,7 @@ def is_integer(value=None, min_value=None, max_value=None):
         return validator
 
 
-is_integer.description = '<integer>'
+is_integer.description = "<integer>"
 
 
 def is_length(value):
@@ -76,7 +89,7 @@ def is_length(value):
     return value
 
 
-is_length.description = '<length>'
+is_length.description = "<length>"
 
 
 def is_percentage(value):
@@ -86,17 +99,17 @@ def is_percentage(value):
         raise ValidationError(str(error))
 
     if not isinstance(value, units.Percent):
-        error_msg = 'Value {value} is not a Percent unit'.format(value=value)
+        error_msg = f"Value {value} is not a Percent unit"
         raise ValidationError(error_msg)
 
     if value < units.Percent(0):
-        error_msg = 'Value {value} can not negative'.format(value=value)
+        error_msg = f"Value {value} can not negative"
         raise ValidationError(error_msg)
 
     return value
 
 
-is_percentage.description = '<percentage>'
+is_percentage.description = "<percentage>"
 
 
 def is_color(value):
@@ -108,7 +121,7 @@ def is_color(value):
     return value
 
 
-is_color.description = '<color>'
+is_color.description = "<color>"
 
 
 def is_border_spacing(value):
@@ -125,7 +138,7 @@ def is_border_spacing(value):
     return value
 
 
-is_border_spacing.description = '<length> <length>?'
+is_border_spacing.description = "<length> <length>?"
 
 
 def is_rect(value):
@@ -133,12 +146,12 @@ def is_rect(value):
     try:
         value = parser.rect(value)
     except ValueError:
-        raise ValidationError('Value {value} is not a rect shape'.format(value=value))
+        raise ValidationError(f"Value {value} is not a rect shape")
 
     return value
 
 
-is_rect.description = '<rect>'
+is_rect.description = "<rect>"
 
 
 def is_quote(value):
@@ -146,21 +159,24 @@ def is_quote(value):
     try:
         value = parser.quotes(value)
     except ValueError:
-        raise ValidationError('Value {value} is not a valid quote'.format(value=value))
+        raise ValidationError(f"Value {value} is not a valid quote")
 
     return value
 
 
-is_quote.description = '[<string> <string>]+'
+is_quote.description = "[<string> <string>]+"
 
 
-URI_RE = re.compile(r"""(
+URI_RE = re.compile(
+    r"""(
     (?:url\(\s?'[A-Za-z0-9\./\:\?]*'\s?\))  # Single quotes and optional spaces
     |
     (?:url\(\s?"[A-Za-z0-9\./\:\?]*"\s?\))  # Double quotes and optional spaces
     |
     (?:url\(\s?[A-Za-z0-9\./\:\?]*\s?\))    # No quotes and optional spaces
-)""", re.VERBOSE)
+)""",
+    re.VERBOSE,
+)
 
 
 def is_uri(value):
@@ -173,7 +189,7 @@ def is_uri(value):
     return value
 
 
-is_uri.description = '<uri>'
+is_uri.description = "<uri>"
 
 
 def is_cursor(value):
@@ -190,6 +206,8 @@ def is_cursor(value):
     return value
 
 
-is_cursor.description = ('[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize '
-                         '| ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize '
-                         '| w-resize | text | wait | help | progress ] ]')
+is_cursor.description = (
+    "[ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize "
+    "| ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize "
+    "| w-resize | text | wait | help | progress ] ]"
+)

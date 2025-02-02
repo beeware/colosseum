@@ -2,4 +2,4 @@ from tests.utils import W3CTestCase
 
 
 class TestBlockReplacedHeight(W3CTestCase):
-    vars().update(W3CTestCase.find_tests(__file__, 'block-replaced-height-'))
+    vars().update(W3CTestCase.find_tests(__file__, "block-replaced-height-"))

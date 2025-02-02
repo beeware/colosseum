@@ -126,7 +126,7 @@ class BaseUnitTests(TestCase):
 class PixelUnitTests(TestCase):
     def setUp(self):
         self.simple = Display(dpi=96, width=640, height=480)
-        self.print = Display(dpi=300, width=8.27*300, height=11.69*300)  # A4
+        self.print = Display(dpi=300, width=8.27 * 300, height=11.69 * 300)  # A4
         self.hidpi = Display(dpi=326, width=640, height=1136)  # iPhone 7
 
         self.helvetica12 = Helvetica(12)
@@ -154,8 +154,8 @@ class PixelUnitTests(TestCase):
 
         self.assertEqual(p.lu(size=100), 320)
 
-        self.assertEqual(str(p), '5px')
-        self.assertEqual(repr(p), '5px')
+        self.assertEqual(str(p), "5px")
+        self.assertEqual(repr(p), "5px")
         self.assertEqual(p, 5)
         self.assertEqual(p, 5 * px)
 
@@ -163,7 +163,7 @@ class PixelUnitTests(TestCase):
 class AbsoluteUnitTests(TestCase):
     def setUp(self):
         self.simple = Display(dpi=96, width=640, height=480)
-        self.print = Display(dpi=300, width=8.27*300, height=11.69*300)  # A4
+        self.print = Display(dpi=300, width=8.27 * 300, height=11.69 * 300)  # A4
         self.hidpi = Display(dpi=326, width=640, height=1136)  # iPhone 7
 
     def test_pica(self):
@@ -255,7 +255,7 @@ class AbsoluteUnitTests(TestCase):
 class ViewportUnitTests(TestCase):
     def setUp(self):
         self.simple = Display(dpi=96, width=640, height=480)
-        self.print = Display(dpi=300, width=8.27*300, height=11.69*300)  # A4
+        self.print = Display(dpi=300, width=8.27 * 300, height=11.69 * 300)  # A4
         self.hidpi = Display(dpi=326, width=640, height=1136)  # iPhone 7
 
     def test_viewwidth(self):
@@ -330,7 +330,7 @@ class ViewportUnitTests(TestCase):
 class FontUnitTests(TestCase):
     def setUp(self):
         self.simple = Display(dpi=96, width=640, height=480)
-        self.print = Display(dpi=300, width=8.27*300, height=11.69*300)  # A4
+        self.print = Display(dpi=300, width=8.27 * 300, height=11.69 * 300)  # A4
         self.hidpi = Display(dpi=326, width=640, height=1136)  # iPhone 7
 
         self.helvetica12 = Helvetica(12)
@@ -488,8 +488,8 @@ class AngleUnitTests(TestCase):
     def test_rad(self):
         p = 1 * rad
         self.assertEqual(p.dup(math.pi).deg(), 180)
-        self.assertEqual(p.dup(math.pi/2).deg(), 90)
-        self.assertEqual(p.dup(math.pi*2).deg(), 360)
+        self.assertEqual(p.dup(math.pi / 2).deg(), 90)
+        self.assertEqual(p.dup(math.pi * 2).deg(), 360)
 
         self.assertEqual(str(p), "1rad")
         self.assertEqual(repr(p), "1rad")
@@ -502,7 +502,7 @@ class AngleUnitTests(TestCase):
 
     def test_turn(self):
         p = 1 * turn
-        self.assertEqual(p.dup(.5).deg(), 180)
+        self.assertEqual(p.dup(0.5).deg(), 180)
         self.assertEqual(p.dup(1).deg(), 360)
         self.assertEqual(p.dup(1.125).deg(), 405)
 

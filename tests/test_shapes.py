@@ -24,5 +24,5 @@ class ShapeUnitTests(TestCase):
 
     def test_shape_string(self):
         rect = Rect(1 * px, 3 * px, 2 * px, 4 * px)
-        self.assertEqual(str(rect), 'rect(1px, 3px, 2px, 4px)')
-        self.assertEqual(repr(rect), 'rect(1px, 3px, 2px, 4px)')
+        self.assertEqual(str(rect), "rect(1px, 3px, 2px, 4px)")
+        self.assertEqual(repr(rect), "rect(1px, 3px, 2px, 4px)")

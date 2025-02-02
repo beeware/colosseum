@@ -8,14 +8,16 @@ class Rect:
         self._bottom = bottom
 
     def __eq__(self, other):
-        return (other.__class__ == self.__class__
-                and other._top == self._top
-                and other._right == self._right
-                and other._left == self._left
-                and other._bottom == self._bottom)
+        return (
+            other.__class__ == self.__class__
+            and other._top == self._top
+            and other._right == self._right
+            and other._left == self._left
+            and other._bottom == self._bottom
+        )
 
     def __repr__(self):
-        return 'rect({top}, {right}, {left}, {bottom})'.format(
+        return "rect({top}, {right}, {left}, {bottom})".format(
             top=self._top, right=self._right, left=self._left, bottom=self._bottom
         )
 

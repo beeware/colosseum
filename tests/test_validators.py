@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from colosseum.shapes import Rect
-from colosseum.units import px, percent
+from colosseum.units import percent, px
 from colosseum.validators import (
     ValidationError,
     is_border_spacing,
@@ -20,7 +20,7 @@ class PercentTests(TestCase):
     def test_percentage(self):
         percent_value = is_percentage("100%")
 
-        self.assertEqual(percent_value, 100*percent)
+        self.assertEqual(percent_value, 100 * percent)
         self.assertEqual(type(percent_value), type(percent))
 
         with self.assertRaises(ValidationError):
@@ -30,18 +30,18 @@ class PercentTests(TestCase):
             is_percentage("100")
 
         with self.assertRaises(ValidationError):
-            is_percentage('spam')
+            is_percentage("spam")
 
 
 class NumericTests(TestCase):
 
     def test_integer(self):
-        self.assertEqual(is_integer('1'), 1)
+        self.assertEqual(is_integer("1"), 1)
 
         validator = is_integer(min_value=0, max_value=12)
-        self.assertEqual(validator('1'), 1)
-        self.assertEqual(validator('0'), 0)
-        self.assertEqual(validator('12'), 12)
+        self.assertEqual(validator("1"), 1)
+        self.assertEqual(validator("0"), 0)
+        self.assertEqual(validator("12"), 12)
 
         with self.assertRaises(ValidationError):
             validator(-2)
@@ -50,15 +50,15 @@ class NumericTests(TestCase):
             validator(15)
 
         with self.assertRaises(ValidationError):
-            validator('spam')
+            validator("spam")
 
     def test_number(self):
-        self.assertEqual(is_number('1'), 1.0)
+        self.assertEqual(is_number("1"), 1.0)
 
         validator = is_number(min_value=0, max_value=12)
-        self.assertEqual(validator('1.0'), 1.0)
-        self.assertEqual(validator('0.0'), 0.0)
-        self.assertEqual(validator('12.0'), 12.0)
+        self.assertEqual(validator("1.0"), 1.0)
+        self.assertEqual(validator("0.0"), 0.0)
+        self.assertEqual(validator("12.0"), 12.0)
 
         with self.assertRaises(ValidationError):
             validator(-2)
@@ -67,30 +67,36 @@ class NumericTests(TestCase):
             validator(15)
 
         with self.assertRaises(ValidationError):
-            validator('spam')
+            validator("spam")
 
 
 class BorderSpacingTests(TestCase):
 
     def test_border_spacing_valid_str_1_item(self):
-        self.assertEqual(is_border_spacing('1').horizontal, 1 * px)
-        self.assertEqual(is_border_spacing('1').vertical, 1 * px)
+        self.assertEqual(is_border_spacing("1").horizontal, 1 * px)
+        self.assertEqual(is_border_spacing("1").vertical, 1 * px)
 
     def test_border_spacing_valid_str_1_item_with_spaces(self):
-        self.assertEqual(is_border_spacing('  1  ').horizontal, 1 * px)
-        self.assertEqual(is_border_spacing('  1  ').vertical, 1 * px)
+        self.assertEqual(is_border_spacing("  1  ").horizontal, 1 * px)
+        self.assertEqual(is_border_spacing("  1  ").vertical, 1 * px)
 
     def test_border_spacing_valid_str_2_items(self):
-        self.assertEqual(is_border_spacing('1 2').horizontal, 1 * px)
-        self.assertEqual(is_border_spacing('1 2').vertical, 2 * px)
+        self.assertEqual(is_border_spacing("1 2").horizontal, 1 * px)
+        self.assertEqual(is_border_spacing("1 2").vertical, 2 * px)
 
     def test_border_spacing_valid_str_2_items_with_spaces(self):
-        self.assertEqual(is_border_spacing('  1  2  ').horizontal, 1 * px)
-        self.assertEqual(is_border_spacing('  1  2  ').vertical, 2 * px)
+        self.assertEqual(is_border_spacing("  1  2  ").horizontal, 1 * px)
+        self.assertEqual(is_border_spacing("  1  2  ").vertical, 2 * px)
 
     def test_border_spacing_valid_int_1_item(self):
-        self.assertEqual(is_border_spacing(1).horizontal, 1 * px, )
-        self.assertEqual(is_border_spacing(1).vertical, 1 * px, )
+        self.assertEqual(
+            is_border_spacing(1).horizontal,
+            1 * px,
+        )
+        self.assertEqual(
+            is_border_spacing(1).vertical,
+            1 * px,
+        )
 
     def test_border_spacing_valid_int_2_items_sequence(self):
         # List
@@ -116,32 +122,32 @@ class BorderSpacingTests(TestCase):
 
     def test_border_spacing_invalid_units_str_2_item_commas(self):
         with self.assertRaises(ValidationError):
-            is_border_spacing('1, 2')
+            is_border_spacing("1, 2")
 
     def test_border_spacing_invalid_units_str_1_item(self):
         with self.assertRaises(ValidationError):
-            is_border_spacing('a a')
+            is_border_spacing("a a")
 
     def test_border_spacing_invalid_units_str_2_items(self):
         with self.assertRaises(ValidationError):
-            is_border_spacing('b')
+            is_border_spacing("b")
 
     def test_border_spacing_invalid_units_sequence_2_items(self):
         # List
         with self.assertRaises(ValidationError):
-            is_border_spacing(['a', 'b'])
+            is_border_spacing(["a", "b"])
 
         # Tuple
         with self.assertRaises(ValidationError):
-            is_border_spacing(('a', 'b'))
+            is_border_spacing(("a", "b"))
 
     def test_border_spacing_invalid_length_str_0_items(self):
         with self.assertRaises(ValidationError):
-            is_border_spacing('')
+            is_border_spacing("")
 
     def test_border_spacing_invalid_length_str_3_items(self):
         with self.assertRaises(ValidationError):
-            is_border_spacing('1 2 3')
+            is_border_spacing("1 2 3")
 
     def test_border_spacing_invalid_length_sequence_0_items(self):
         # List
@@ -170,11 +176,11 @@ class RectTests(TestCase):
     """
 
     def test_rect_valid(self):
-        self.assertEqual(is_rect('rect(1px, 3px, 2px, 4px)'), Rect(1, 3, 2, 4))
+        self.assertEqual(is_rect("rect(1px, 3px, 2px, 4px)"), Rect(1, 3, 2, 4))
 
     def test_rect_invalid(self):
         with self.assertRaises(ValidationError):
-            is_rect('1px, 3px 2px, 4px')
+            is_rect("1px, 3px 2px, 4px")
 
 
 class QuotesTests(TestCase):
@@ -185,7 +191,7 @@ class QuotesTests(TestCase):
     """
 
     def test_quote_valid(self):
-        self.assertEqual(is_quote("'<' '>' '{' '}'"), Quotes([('<', '>'), ('{', '}')]))
+        self.assertEqual(is_quote("'<' '>' '{' '}'"), Quotes([("<", ">"), ("{", "}")]))
 
     def test_quote_invalid(self):
         with self.assertRaises(ValidationError):
@@ -268,7 +274,7 @@ class CursorTests(TestCase):
             is_cursor("auto, url( something )")
 
         with self.assertRaises(ValidationError):
-            is_cursor(["foobar", 'blah'])
+            is_cursor(["foobar", "blah"])
 
         with self.assertRaises(ValidationError):
             is_cursor(["auto", "url(something)"])
