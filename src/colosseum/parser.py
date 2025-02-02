@@ -26,7 +26,7 @@ def units(value):
         for suffix, unit in Unit.UNITS:
             if value.endswith(suffix):
                 try:
-                    return float(value[:-len(suffix)]) * unit
+                    return float(value[: -len(suffix)]) * unit
                 except ValueError:
                     pass
 
@@ -35,7 +35,7 @@ def units(value):
         except ValueError:
             pass
 
-    raise ValueError('Unknown size %s' % value)
+    raise ValueError("Unknown size %s" % value)
 
 
 def color(value):
@@ -59,44 +59,46 @@ def color(value):
         return value
 
     elif isinstance(value, str):
-        if value[0] == '#':
+        if value[0] == "#":
             return pound_sign_color(value)
-        elif value.startswith('rgba'):
+        elif value.startswith("rgba"):
             try:
-                values = value[5:-1].split(',')
+                values = value[5:-1].split(",")
                 if len(values) == 4:
-                    return rgb(int(values[0]), int(values[1]), int(values[2]), float(values[3]))
+                    return rgb(
+                        int(values[0]), int(values[1]), int(values[2]), float(values[3])
+                    )
             except ValueError:
                 pass
-        elif value.startswith('rgb'):
+        elif value.startswith("rgb"):
             try:
-                values = value[4:-1].split(',')
+                values = value[4:-1].split(",")
                 if len(values) == 3:
                     return rgb(int(values[0]), int(values[1]), int(values[2]))
             except ValueError:
                 pass
 
-        elif value.startswith('hsla'):
+        elif value.startswith("hsla"):
             try:
-                values = value[5:-1].split(',')
+                values = value[5:-1].split(",")
                 if len(values) == 4:
                     return hsl(
                         int(values[0]),
-                        int(values[1].strip().rstrip('%')) / 100.0,
-                        int(values[2].strip().rstrip('%')) / 100.0,
-                        float(values[3])
+                        int(values[1].strip().rstrip("%")) / 100.0,
+                        int(values[2].strip().rstrip("%")) / 100.0,
+                        float(values[3]),
                     )
             except ValueError:
                 pass
 
-        elif value.startswith('hsl'):
+        elif value.startswith("hsl"):
             try:
-                values = value[4:-1].split(',')
+                values = value[4:-1].split(",")
                 if len(values) == 3:
                     return hsl(
                         int(values[0]),
-                        int(values[1].strip().rstrip('%')) / 100.0,
-                        int(values[2].strip().rstrip('%')) / 100.0,
+                        int(values[1].strip().rstrip("%")) / 100.0,
+                        int(values[2].strip().rstrip("%")) / 100.0,
                     )
             except ValueError:
                 pass
@@ -106,7 +108,7 @@ def color(value):
             except KeyError:
                 pass
 
-    raise ValueError('Unknown color %s' % value)
+    raise ValueError("Unknown color %s" % value)
 
 
 def pound_sign_color(value):
@@ -130,7 +132,7 @@ def pound_sign_color(value):
             r=int(value[1] + value[1], 16),
             g=int(value[2] + value[2], 16),
             b=int(value[3] + value[3], 16),
-            a=int(value[4] + value[4], 16) / 0xff,
+            a=int(value[4] + value[4], 16) / 0xFF,
         )
     elif len(value) == 7:
         return rgb(
@@ -143,10 +145,10 @@ def pound_sign_color(value):
             r=int(value[1:3], 16),
             g=int(value[3:5], 16),
             b=int(value[5:7], 16),
-            a=int(value[7:9], 16) / 0xff,
+            a=int(value[7:9], 16) / 0xFF,
         )
     else:
-        raise ValueError('Unknown color %s' % value)
+        raise ValueError("Unknown color %s" % value)
 
 
 def border_spacing(value):
@@ -162,7 +164,7 @@ def border_spacing(value):
     if isinstance(value, Sequence) and not isinstance(value, str):
         values = value
     elif isinstance(value, (int, float)):
-        values = (value, )
+        values = (value,)
     else:
         values = [x.strip() for x in value.split()]
 
@@ -174,28 +176,32 @@ def border_spacing(value):
         vertical = units(values[1])
         return BorderSpacing(horizontal, vertical)
 
-    raise ValueError('Unknown border spacing %s' % str(value))
+    raise ValueError("Unknown border spacing %s" % str(value))
 
 
 def rect(value):
     """Parse a given rect shape."""
-    value = ' '.join(val.strip() for val in value.split())
-    if (value.startswith('rect(') and value.endswith(')')
-            and value.count('rect(') == 1 and value.count(')') == 1):
-        value = value.replace('rect(', '')
-        value = value.replace(')', '').strip()
+    value = " ".join(val.strip() for val in value.split())
+    if (
+        value.startswith("rect(")
+        and value.endswith(")")
+        and value.count("rect(") == 1
+        and value.count(")") == 1
+    ):
+        value = value.replace("rect(", "")
+        value = value.replace(")", "").strip()
 
         values = None
-        if value.count(',') == 3:
-            values = value.split(',')
-        elif value.count(',') == 0 and value.count(' ') == 3:
-            values = value.split(' ')
+        if value.count(",") == 3:
+            values = value.split(",")
+        elif value.count(",") == 0 and value.count(" ") == 3:
+            values = value.split(" ")
 
         if values is not None:
             values = [units(val.strip()) for val in values]
             return Rect(*values)
 
-    raise ValueError('Unknown shape %s' % value)
+    raise ValueError("Unknown shape %s" % value)
 
 
 def quotes(value):
@@ -212,7 +218,7 @@ def quotes(value):
         # Flatten list of tuples
         values = [repr(item) for sublist in value for item in sublist]
     else:
-        raise ValueError('Unknown quote %s' % value)
+        raise ValueError("Unknown quote %s" % value)
 
     # Length must be a multiple of 2
     if len(values) > 0 and len(values) % 2 == 0:
@@ -228,14 +234,14 @@ def quotes(value):
                 parsed_values.append((opening, closing))
 
                 if len(opening) == 0 or len(closing) == 0:
-                    raise ValueError('Invalid quotes %s' % value)
+                    raise ValueError("Invalid quotes %s" % value)
 
             except SyntaxError:
-                raise ValueError('Invalid quotes %s' % value)
+                raise ValueError("Invalid quotes %s" % value)
 
         return Quotes(parsed_values)
 
-    raise ValueError('Length of quote items must be a multiple of 2!')
+    raise ValueError("Length of quote items must be a multiple of 2!")
 
 
 ##############################################################################
@@ -244,24 +250,28 @@ def quotes(value):
 def _parse_outline_property_part(value, outline_dict):
     """Parse outline shorthand property part for known properties."""
     from .constants import (  # noqa
-        OUTLINE_COLOR_CHOICES, OUTLINE_STYLE_CHOICES, OUTLINE_WIDTH_CHOICES,
+        OUTLINE_COLOR_CHOICES,
+        OUTLINE_STYLE_CHOICES,
+        OUTLINE_WIDTH_CHOICES,
     )
 
-    for property_name, choices in {'outline_color': OUTLINE_COLOR_CHOICES,
-                                   'outline_style': OUTLINE_STYLE_CHOICES,
-                                   'outline_width': OUTLINE_WIDTH_CHOICES}.items():
+    for property_name, choices in {
+        "outline_color": OUTLINE_COLOR_CHOICES,
+        "outline_style": OUTLINE_STYLE_CHOICES,
+        "outline_width": OUTLINE_WIDTH_CHOICES,
+    }.items():
         try:
             value = choices.validate(value)
         except (ValueError, ValidationError):
             continue
 
         if property_name in outline_dict:
-            raise ValueError('Invalid duplicated property!')
+            raise ValueError("Invalid duplicated property!")
 
         outline_dict[property_name] = value
         return outline_dict
 
-    raise ValueError('Outline value "{value}" not valid!'.format(value=value))
+    raise ValueError(f'Outline value "{value}" not valid!')
 
 
 def outline(value):
@@ -280,9 +290,9 @@ def outline(value):
         elif isinstance(value, Sequence):
             values = value
         else:
-            raise ValueError('Unknown outline %s ' % value)
+            raise ValueError("Unknown outline %s " % value)
     else:
-        raise ValueError('Unknown outline %s ' % value)
+        raise ValueError("Unknown outline %s " % value)
 
     # We iteratively split by the first left hand space found and try to validate if that part
     # is a valid <outline-style> or <outline-color> or <ourline-width> (which can come in any order)
@@ -293,7 +303,7 @@ def outline(value):
     for idx, part in enumerate(values):
         if idx > 2:
             # Outline can have a maximum of 3 parts
-            raise ValueError('Outline property shorthand contains too many parts!')
+            raise ValueError("Outline property shorthand contains too many parts!")
 
         outline_dict = _parse_outline_property_part(part, outline_dict)
 
@@ -306,14 +316,16 @@ def outline(value):
 def _parse_border_property_part(value, border_dict, direction=None):
     """Parse border shorthand property part for known properties."""
     from .constants import (  # noqa
-        BORDER_COLOR_CHOICES, BORDER_STYLE_CHOICES, BORDER_WIDTH_CHOICES
+        BORDER_COLOR_CHOICES,
+        BORDER_STYLE_CHOICES,
+        BORDER_WIDTH_CHOICES,
     )
 
-    direction = '' if direction is None else direction + '_'
+    direction = "" if direction is None else direction + "_"
     property_validators = {
-        'border_{direction}width'.format(direction=direction): BORDER_WIDTH_CHOICES,
-        'border_{direction}style'.format(direction=direction): BORDER_STYLE_CHOICES,
-        'border_{direction}color'.format(direction=direction): BORDER_COLOR_CHOICES,
+        f"border_{direction}width": BORDER_WIDTH_CHOICES,
+        f"border_{direction}style": BORDER_STYLE_CHOICES,
+        f"border_{direction}color": BORDER_COLOR_CHOICES,
     }
 
     for property_name, choices in property_validators.items():
@@ -323,12 +335,12 @@ def _parse_border_property_part(value, border_dict, direction=None):
             continue
 
         if property_name in border_dict:
-            raise ValueError('Invalid duplicated property!')
+            raise ValueError("Invalid duplicated property!")
 
         border_dict[property_name] = value
         return border_dict
 
-    raise ValueError('Border value "{value}" not valid!'.format(value=value))
+    raise ValueError(f'Border value "{value}" not valid!')
 
 
 def border(value, direction=None):
@@ -346,9 +358,9 @@ def border(value, direction=None):
         elif isinstance(value, Sequence):
             values = value
         else:
-            raise ValueError('Unknown border %s ' % value)
+            raise ValueError("Unknown border %s " % value)
     else:
-        raise ValueError('Unknown border %s ' % value)
+        raise ValueError("Unknown border %s " % value)
 
     # We iteratively split by the first left hand space found and try to validate if that part
     # is a valid <border-width> or <border-style> or <border-color> (which can come in any order)
@@ -359,31 +371,33 @@ def border(value, direction=None):
     for idx, part in enumerate(values):
         if idx > 2:
             # Border can have a maximum of 3 parts
-            raise ValueError('Border property shorthand contains too many parts!')
+            raise ValueError("Border property shorthand contains too many parts!")
 
-        border_dict = _parse_border_property_part(part, border_dict, direction=direction)
+        border_dict = _parse_border_property_part(
+            part, border_dict, direction=direction
+        )
 
     return border_dict
 
 
 def border_right(value):
     """Parse border string into a dictionary of outline properties."""
-    return border(value, direction='right')
+    return border(value, direction="right")
 
 
 def border_left(value):
     """Parse border string into a dictionary of outline properties."""
-    return border(value, direction='left')
+    return border(value, direction="left")
 
 
 def border_bottom(value):
     """Parse border string into a dictionary of outline properties."""
-    return border(value, direction='bottom')
+    return border(value, direction="bottom")
 
 
 def border_top(value):
     """Parse border string into a dictionary of outline properties."""
-    return border(value, direction='top')
+    return border(value, direction="top")
 
 
 ##############################################################################
@@ -403,9 +417,9 @@ def uri(value):
     if isinstance(value, str):
         value = value.strip()
     else:
-        raise ValueError('Value {value} must be a string')
+        raise ValueError("Value {value} must be a string")
 
-    if value.startswith('url(') and value.endswith(')'):
+    if value.startswith("url(") and value.endswith(")"):
         # Remove the 'url(' and ')'
         value = value[4:-1].strip()
 
@@ -420,7 +434,7 @@ def uri(value):
         else:
             return Uri(value)
 
-    raise ValueError('Invalid url %s' % value)
+    raise ValueError("Invalid url %s" % value)
 
 
 ##############################################################################
@@ -431,7 +445,7 @@ def cursor(values):
     from .constants import CURSOR_OPTIONS
 
     if isinstance(values, str):
-        values = [val.strip() for val in values.split(',')]
+        values = [val.strip() for val in values.split(",")]
 
     validated_values = []
     has_cursor_option = False
@@ -443,20 +457,22 @@ def cursor(values):
             option_count += 1
 
             if option_count > 1:
-                raise ValueError('There can only be one cursor option in {values}!'.format(values=values))
+                raise ValueError(f"There can only be one cursor option in {values}!")
 
             continue
         else:
             if has_cursor_option:
-                raise ValueError('Values {values} are in incorrect order. '
-                                 'Cursor option must come last!'.format(values=values))
+                raise ValueError(
+                    "Values {values} are in incorrect order. "
+                    "Cursor option must come last!".format(values=values)
+                )
             try:
                 value = uri(value)
                 validated_values.append(value)
                 continue
             except ValueError:
-                raise ValueError('Value {value} is not a valid url value'.format(value=value))
+                raise ValueError(f"Value {value} is not a valid url value")
 
-        raise ValueError('Value {value} is not a valid cursor value'.format(value=value))
+        raise ValueError(f"Value {value} is not a valid cursor value")
 
     return Cursor(validated_values)

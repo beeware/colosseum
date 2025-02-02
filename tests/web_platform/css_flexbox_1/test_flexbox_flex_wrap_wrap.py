@@ -2,4 +2,4 @@ from tests.utils import W3CTestCase
 
 
 class TestFlexboxFlexWrapWrap(W3CTestCase):
-    vars().update(W3CTestCase.find_tests(__file__, 'flexbox-flex-wrap-wrap'))
+    vars().update(W3CTestCase.find_tests(__file__, "flexbox-flex-wrap-wrap"))

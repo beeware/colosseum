@@ -2,4 +2,4 @@ from tests.utils import W3CTestCase
 
 
 class TestPercentageHeights(W3CTestCase):
-    vars().update(W3CTestCase.find_tests(__file__, 'percentage-heights-'))
+    vars().update(W3CTestCase.find_tests(__file__, "percentage-heights-"))

@@ -98,19 +98,19 @@ some CSS3 tests (especially in the flexbox and grid modules) may be incorrect.
 Picking a test
 --------------
 
-All the tests are located under the tests directory. Each test directory contains 
-a ``not_implemented`` file. This is a list of tests that are currently known to 
-fail - because the logic necessary to make the test pass isn't implemented. 
+All the tests are located under the tests directory. Each test directory contains
+a ``not_implemented`` file. This is a list of tests that are currently known to
+fail - because the logic necessary to make the test pass isn't implemented.
 Pick one of these tests, and delete it from the ``not_implemented`` file.
 
 For the purposes of this example, we're going to pick the
-``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts`` (this test is no longer available, as it has already been fixed). 
+``block-formatting-contexts-006`` test in ``web_platform/CSS2/normal_flow/test_block_formatting_contexts`` (this test is no longer available, as it has already been fixed).
 
 The first test run
 ------------------
 
 Each test file contains a single test class. In order to run the test, you must specify
-the path to this class, separated by dots. For our example, you can run the single test 
+the path to this class, separated by dots. For our example, you can run the single test
 out of the test suite::
 
     $ python setup.py test -s tests.web_platform.CSS2.normal_flow.test_block_formatting_contexts.TestBlockFormattingContexts.test_block_formatting_contexts_006
@@ -376,7 +376,7 @@ documented with references to the `CSS specification
 include equally verbose documentation, and cross references to any paragraphs
 in the specification.
 
-The test suite uses a ``TestNode`` as the basis for it's document model. A
+The test suite uses a ``ExampleNode`` as the basis for it's document model. A
 test node has three attributes of particular interest:
 
     * ``style``, storing the CSS style declaration that applies to the node.
@@ -385,7 +385,7 @@ test node has three attributes of particular interest:
       attribute match those of the CSS specification (e.g., ``width``,
       ``margin_top``, ``z_index``, and so on).
 
-    * ``layout``, storing the computed values for the layout of the TestNode.
+    * ``layout``, storing the computed values for the layout of the ExampleNode.
       These values are *always* in integer pixels. The layout describes the
       position of a content box (defined by ``content_top``, ``content_right``,
       ``content_bottom`` and ``content_left``), relative to the content box of
@@ -394,7 +394,7 @@ test node has three attributes of particular interest:
       surrounded by a margin box. These are also given in pixels, relative to
       the content box of the parent element.
 
-    * ``children``, a list of TestNodes that are descendents of this node. A
+    * ``children``, a list of ExampleNodes that are descendents of this node. A
       leaf node in the DOM tree is a node with an empty children list.
 
 The layout algorithm roughly consists of:

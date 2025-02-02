@@ -1,4 +1,3 @@
-
 class Size:
     """Representation of the size of a node in the DOM.
 
@@ -13,6 +12,7 @@ class Size:
         the height is the minimum allowed width.
     ratio: The height between height and width. width = height * ratio
     """
+
     def __init__(self, node):
         self._node = node
         self._width = None
@@ -161,14 +161,17 @@ class Box:
     absolute_content_right: The right position of the box, relative to the block container
 
     """
+
     def __init__(self, node):
         self.node = node
         self._reset()
 
     def __repr__(self):
-        return '<Box (%sx%s @ %s,%s)>' % (
-            self.content_width, self.content_height,
-            self.absolute_content_left, self.absolute_content_top,
+        return "<Box ({}x{} @ {},{})>".format(
+            self.content_width,
+            self.content_height,
+            self.absolute_content_left,
+            self.absolute_content_top,
         )
 
     # def __eq__(self, value):
@@ -420,7 +423,8 @@ class Box:
     @property
     def absolute_border_box_top(self):
         return (
-            self.__origin_top + self._content_top
+            self.__origin_top
+            + self._content_top
             - self.padding_top
             - self.border_top_width
         )
@@ -428,7 +432,8 @@ class Box:
     @property
     def absolute_border_box_right(self):
         return (
-            self.__origin_left + self._content_left
+            self.__origin_left
+            + self._content_left
             + self.content_width
             + self.padding_right
             + self.border_right_width
@@ -437,7 +442,8 @@ class Box:
     @property
     def absolute_border_box_bottom(self):
         return (
-            self.__origin_top + self._content_top
+            self.__origin_top
+            + self._content_top
             + self.content_height
             + self.padding_bottom
             + self.border_bottom_width
@@ -446,7 +452,8 @@ class Box:
     @property
     def absolute_border_box_left(self):
         return (
-            self.__origin_left + self._content_left
+            self.__origin_left
+            + self._content_left
             - self.padding_left
             - self.border_left_width
         )
@@ -484,11 +491,21 @@ class Box:
 
     @property
     def absolute_padding_box_right(self):
-        return self.__origin_left + self._content_left + self.content_width + self.padding_right
+        return (
+            self.__origin_left
+            + self._content_left
+            + self.content_width
+            + self.padding_right
+        )
 
     @property
     def absolute_padding_box_bottom(self):
-        return self.__origin_top + self._content_top + self.content_height + self.padding_bottom
+        return (
+            self.__origin_top
+            + self._content_top
+            + self.content_height
+            + self.padding_bottom
+        )
 
     @property
     def absolute_padding_box_left(self):

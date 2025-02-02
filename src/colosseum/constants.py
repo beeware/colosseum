@@ -15,8 +15,7 @@ from .validators import (
 class Choices:
     "A class to define allowable data types for a property."
 
-    def __init__(self, *constants, validators=None,
-                 explicit_defaulting_constants=None):
+    def __init__(self, *constants, validators=None, explicit_defaulting_constants=None):
         self.constants = set(constants)
         self.explicit_defaulting_constants = explicit_defaulting_constants or []
         self.validators = validators or []
@@ -29,7 +28,7 @@ class Choices:
             except ValidationError:
                 pass
 
-        if value == 'none':
+        if value == "none":
             value = None
 
         for const in self.constants:
@@ -43,7 +42,7 @@ class Choices:
         raise ValueError()
 
     def __str__(self):
-        choices = set([str(c).lower().replace('_', '-') for c in self.constants])
+        choices = {str(c).lower().replace("_", "-") for c in self.constants}
         for validator in self.validators:
             choices.add(validator.description)
 
@@ -64,7 +63,7 @@ class OtherProperty:
         return repr(self)
 
     def __repr__(self):
-        return '{class_name}("{name}")'.format(class_name=self.__class__.__name__, name=self._name)
+        return f'{self.__class__.__name__}("{self._name}")'
 
     def value(self, context):
         try:
@@ -76,27 +75,27 @@ class OtherProperty:
 ######################################################################
 # Versions of the HTML standard
 ######################################################################
-HTML4 = 'html4'
-HTML5 = 'html5'
+HTML4 = "html4"
+HTML5 = "html5"
 
 ######################################################################
 # Common constants
 ######################################################################
 
-AUTO = 'auto'
-COLUMN = 'column'
-ROW = 'row'
-TRANSPARENT = 'transparent'
+AUTO = "auto"
+COLUMN = "column"
+ROW = "row"
+TRANSPARENT = "transparent"
 default = object()
 
 ######################################################################
 # Explicit defaulting constants
 ######################################################################
 
-INITIAL = 'initial'
-INHERIT = 'inherit'
-UNSET = 'unset'
-REVERT = 'revert'
+INITIAL = "initial"
+INHERIT = "inherit"
+UNSET = "unset"
+REVERT = "revert"
 
 ######################################################################
 # Margins
@@ -116,21 +115,21 @@ PADDING_CHOICES = Choices(validators=[is_length, is_percentage])
 # 8.5 Border properties
 ######################################################################
 
-THIN = 'thin'
-MEDIUM = 'medium'
-THICK = 'thick'
+THIN = "thin"
+MEDIUM = "medium"
+THICK = "thick"
 
 BORDER_WIDTH_CHOICES = Choices(THIN, MEDIUM, THICK, validators=[is_length])
 
-HIDDEN = 'hidden'
-DOTTED = 'dotted'
-DASHED = 'dashed'
-SOLID = 'solid'
-DOUBLE = 'double'
-GROOVE = 'groove'
-RIDGE = 'ridge'
-INSET = 'inset'
-OUTSET = 'outset'
+HIDDEN = "hidden"
+DOTTED = "dotted"
+DASHED = "dashed"
+SOLID = "solid"
+DOUBLE = "double"
+GROOVE = "groove"
+RIDGE = "ridge"
+INSET = "inset"
+OUTSET = "outset"
 
 BORDER_STYLE_CHOICES = Choices(
     None,
@@ -155,28 +154,28 @@ BORDER_COLOR_CHOICES = Choices(
 # 9.2.4 The display property
 ######################################################################
 
-INLINE = 'inline'
-BLOCK = 'block'
-LIST_ITEM = 'list-item'
-INLINE_BLOCK = 'inline-block'
-TABLE = 'table'
-INLINE_TABLE = 'inline-table'
-TABLE_ROW_GROUP = 'table-row-group'
-TABLE_HEADER_GROUP = 'table-header-group'
-TABLE_FOOTER_GROUP = 'table-footer-group'
-TABLE_ROW = 'table-row'
-TABLE_COLUMN_GROUP = 'table-column-group'
-TABLE_COLUMN = 'table-column'
-TABLE_CELL = 'table-cell'
-TABLE_CAPTION = 'table-caption'
+INLINE = "inline"
+BLOCK = "block"
+LIST_ITEM = "list-item"
+INLINE_BLOCK = "inline-block"
+TABLE = "table"
+INLINE_TABLE = "inline-table"
+TABLE_ROW_GROUP = "table-row-group"
+TABLE_HEADER_GROUP = "table-header-group"
+TABLE_FOOTER_GROUP = "table-footer-group"
+TABLE_ROW = "table-row"
+TABLE_COLUMN_GROUP = "table-column-group"
+TABLE_COLUMN = "table-column"
+TABLE_CELL = "table-cell"
+TABLE_CAPTION = "table-caption"
 
 # CSS Flexbox
-FLEX = 'flex'
-INLINE_FLEX = 'inline-flex'
+FLEX = "flex"
+INLINE_FLEX = "inline-flex"
 
 # CSS Grid
-GRID = 'grid'
-INLINE_GRID = 'inline-grid'
+GRID = "grid"
+INLINE_GRID = "inline-grid"
 
 DISPLAY_CHOICES = Choices(
     None,
@@ -194,10 +193,8 @@ DISPLAY_CHOICES = Choices(
     TABLE_COLUMN,
     TABLE_CELL,
     TABLE_CAPTION,
-
     FLEX,
     INLINE_FLEX,
-
     GRID,
     INLINE_GRID,
 )
@@ -207,23 +204,25 @@ DISPLAY_CHOICES = Choices(
 # 9.3.2 Box offsets
 ######################################################################
 
-STATIC = 'static'
-RELATIVE = 'relative'
-ABSOLUTE = 'absolute'
-FIXED = 'fixed'
+STATIC = "static"
+RELATIVE = "relative"
+ABSOLUTE = "absolute"
+FIXED = "fixed"
 
 POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
-BOX_OFFSET_CHOICES = Choices(AUTO, validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
+BOX_OFFSET_CHOICES = Choices(
+    AUTO, validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 9.5.1 Positioning the float
 # 9.5.2 Controlling flow next to floats
 ######################################################################
 
-LEFT = 'left'
-RIGHT = 'right'
-BOTH = 'both'
+LEFT = "left"
+RIGHT = "right"
+BOTH = "both"
 
 FLOAT_CHOICES = Choices(LEFT, RIGHT, None)
 CLEAR_CHOICES = Choices(None, LEFT, RIGHT, BOTH)
@@ -238,14 +237,14 @@ Z_INDEX_CHOICES = Choices(AUTO, validators=[is_integer])
 # 9.10 Text Direction
 ######################################################################
 
-RTL = 'rtl'
-LTR = 'ltr'
+RTL = "rtl"
+LTR = "ltr"
 
 DIRECTION_CHOICES = Choices(RTL, LTR)
 
-NORMAL = 'normal'
-EMBED = 'embed'
-BIDI_OVERRIDE = 'bidi-override'
+NORMAL = "normal"
+EMBED = "embed"
+BIDI_OVERRIDE = "bidi-override"
 
 UNICODE_BIDI_CHOICES = Choices(NORMAL, EMBED, BIDI_OVERRIDE)
 
@@ -270,25 +269,29 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 ######################################################################
 # overflow
 
-SCROLL = 'scroll'
-VISIBLE = 'visible'
+SCROLL = "scroll"
+VISIBLE = "visible"
 
-OVERFLOW_CHOICES = Choices(VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_constants=[INHERIT])
+OVERFLOW_CHOICES = Choices(
+    VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 11.1.2 Clip
 ######################################################################
 # clip
 
-CLIP_CHOICES = Choices(AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT])
+CLIP_CHOICES = Choices(
+    AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 11.2 Visibility
 ######################################################################
 
-VISIBLE = 'visible'
-HIDDEN = 'hidden'
-COLLAPSE = 'collapse'
+VISIBLE = "visible"
+HIDDEN = "hidden"
+COLLAPSE = "collapse"
 
 VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 
@@ -302,7 +305,9 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 
 # quotes
-QUOTES_CHOICES = Choices(None, INITIAL, validators=[is_quote], explicit_defaulting_constants=[INHERIT])
+QUOTES_CHOICES = Choices(
+    None, INITIAL, validators=[is_quote], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 12.4 Automatic counters and numbering
@@ -323,30 +328,40 @@ QUOTES_CHOICES = Choices(None, INITIAL, validators=[is_quote], explicit_defaulti
 # 13.3.1 Page break properties
 ######################################################################
 
-AUTO = 'auto'
-ALWAYS = 'always'
-AVOID = 'avoid'
-LEFT = 'left'
-RIGHT = 'right'
+AUTO = "auto"
+ALWAYS = "always"
+AVOID = "avoid"
+LEFT = "left"
+RIGHT = "right"
 
 # page_break_before
-PAGE_BREAK_BEFORE_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
+PAGE_BREAK_BEFORE_CHOICES = Choices(
+    AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT]
+)
 
 # page_break_after
-PAGE_BREAK_AFTER_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
+PAGE_BREAK_AFTER_CHOICES = Choices(
+    AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT]
+)
 
 # page_break_inside
-PAGE_BREAK_INSIDE_CHOICES = Choices(AUTO, AVOID, explicit_defaulting_constants=[INHERIT])
+PAGE_BREAK_INSIDE_CHOICES = Choices(
+    AUTO, AVOID, explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 13.3.2 Breaks inside elements
 ######################################################################
 
 # orphans
-ORPHANS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
+ORPHANS_CHOICES = Choices(
+    validators=[is_integer], explicit_defaulting_constants=[INHERIT]
+)
 
 # widows
-WIDOWS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
+WIDOWS_CHOICES = Choices(
+    validators=[is_integer], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 14.1 Foreground color
@@ -397,33 +412,37 @@ BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 ######################################################################
 
 # text_indent
-TEXT_INDENT_CHOICES = Choices(validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
+TEXT_INDENT_CHOICES = Choices(
+    validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 16.2 Alignment
 ######################################################################
 
 # text_align
-LEFT = 'left'
-RIGHT = 'right'
-CENTER = 'center'
-JUSTIFY = 'justify'
+LEFT = "left"
+RIGHT = "right"
+CENTER = "center"
+JUSTIFY = "justify"
 
-TEXT_ALIGN_CHOICES = Choices(LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT])
+TEXT_ALIGN_CHOICES = Choices(
+    LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT]
+)
 
 
 class TextAlignInitialValue:
 
     def value(self, context):
         """Return the initial alignment value based on direction."""
-        direction = getattr(context, 'direction')
+        direction = getattr(context, "direction")
         if direction is LTR:
             return LEFT
 
         if direction is RTL:
             return RIGHT
 
-        raise ValueError('Undefined value "{value}" for direction property!'.format(value=direction))
+        raise ValueError(f'Undefined value "{direction}" for direction property!')
 
 
 ######################################################################
@@ -431,34 +450,46 @@ class TextAlignInitialValue:
 ######################################################################
 
 # text_decoration
-UNDERLINE = 'underline'
-OVERLINE = 'overline'
-LINE_THROUGH = 'line-through'
-BLINK = 'blink'
+UNDERLINE = "underline"
+OVERLINE = "overline"
+LINE_THROUGH = "line-through"
+BLINK = "blink"
 
-TEXT_DECORATION_CHOICES = Choices(None, UNDERLINE, OVERLINE, LINE_THROUGH, BLINK,
-                                  explicit_defaulting_constants=[INHERIT])
+TEXT_DECORATION_CHOICES = Choices(
+    None,
+    UNDERLINE,
+    OVERLINE,
+    LINE_THROUGH,
+    BLINK,
+    explicit_defaulting_constants=[INHERIT],
+)
 
 ######################################################################
 # 16.4 Letter and word spacing
 ######################################################################
 
 # letter_spacing
-LETTER_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
+LETTER_SPACING_CHOICES = Choices(
+    NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT]
+)
 
 # word_spacing
-WORD_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
+WORD_SPACING_CHOICES = Choices(
+    NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 16.5 Capitalization
 ######################################################################
 
 # text_transform
-CAPITALIZE = 'capitalize'
-UPPERCASE = 'uppercase'
-LOWERCASE = 'lowercase'
+CAPITALIZE = "capitalize"
+UPPERCASE = "uppercase"
+LOWERCASE = "lowercase"
 
-TEXT_TRANSFORM_CHOICES = Choices(CAPITALIZE, UPPERCASE, LOWERCASE, None, explicit_defaulting_constants=[INHERIT])
+TEXT_TRANSFORM_CHOICES = Choices(
+    CAPITALIZE, UPPERCASE, LOWERCASE, None, explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 16.6 White space
@@ -466,12 +497,14 @@ TEXT_TRANSFORM_CHOICES = Choices(CAPITALIZE, UPPERCASE, LOWERCASE, None, explici
 
 # white_space
 # NORMAL = 'normal'
-PRE = 'pre'
-NOWRAP = 'nowrap'
-PRE_WRAP = 'pre-wrap'
-PRE_LINE = 'pre-line'
+PRE = "pre"
+NOWRAP = "nowrap"
+PRE_WRAP = "pre-wrap"
+PRE_LINE = "pre-line"
 
-WHITE_SPACE_CHOICES = Choices(NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_defaulting_constants=[INHERIT])
+WHITE_SPACE_CHOICES = Choices(
+    NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 17. Tables
@@ -479,8 +512,8 @@ WHITE_SPACE_CHOICES = Choices(NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_
 # 17.4.1 Caption position and alignment
 ######################################################################
 
-TOP = 'top'
-BOTTOM = 'bottom'
+TOP = "top"
+BOTTOM = "bottom"
 
 # caption_side
 CAPTION_SIDE_CHOICES = Choices(TOP, BOTTOM, explicit_defaulting_constants=[INHERIT])
@@ -498,17 +531,21 @@ TABLE_LAYOUT_CHOICES = Choices(AUTO, FIXED, explicit_defaulting_constants=[INHER
 
 
 # border_collapse
-COLLAPSE = 'collapse'
-SEPARATE = 'separate'
+COLLAPSE = "collapse"
+SEPARATE = "separate"
 
-BORDER_COLLAPSE_CHOICES = Choices(COLLAPSE, SEPARATE, explicit_defaulting_constants=[INHERIT])
+BORDER_COLLAPSE_CHOICES = Choices(
+    COLLAPSE, SEPARATE, explicit_defaulting_constants=[INHERIT]
+)
 
 # border_spacing
-BORDER_SPACING_CHOICES = Choices(validators=[is_border_spacing], explicit_defaulting_constants=[INHERIT])
+BORDER_SPACING_CHOICES = Choices(
+    validators=[is_border_spacing], explicit_defaulting_constants=[INHERIT]
+)
 
 # empty_cells
-SHOW = 'show'
-HIDE = 'hide'
+SHOW = "show"
+HIDE = "hide"
 
 EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT])
 
@@ -518,29 +555,48 @@ EMPTY_CELLS_CHOICES = Choices(SHOW, HIDE, explicit_defaulting_constants=[INHERIT
 # 18.1 Cursors
 # cursor
 
-AUTO = 'auto'
-CROSSHAIR = 'crosshair'
-DEFAULT = 'default'
-POINTER = 'pointer'
-MOVE = 'move'
-E_RESIZE = 'e-resize'
-NE_RESIZE = 'ne-resize'
-NW_RESIZE = 'nw-resize'
-N_RESIZE = 'n-resize'
-SE_RESIZE = 'se-resize'
-SW_RESIZE = 'sw-resize'
-S_RESIZE = 's-resize'
-W_RESIZE = 'w-resize'
-TEXT = 'text'
-WAIT = 'wait'
-PROGRESS = 'progress'
-HELP = 'help'
+AUTO = "auto"
+CROSSHAIR = "crosshair"
+DEFAULT = "default"
+POINTER = "pointer"
+MOVE = "move"
+E_RESIZE = "e-resize"
+NE_RESIZE = "ne-resize"
+NW_RESIZE = "nw-resize"
+N_RESIZE = "n-resize"
+SE_RESIZE = "se-resize"
+SW_RESIZE = "sw-resize"
+S_RESIZE = "s-resize"
+W_RESIZE = "w-resize"
+TEXT = "text"
+WAIT = "wait"
+PROGRESS = "progress"
+HELP = "help"
 
-CURSOR_OPTIONS = [AUTO, CROSSHAIR, DEFAULT, POINTER, MOVE, E_RESIZE, NE_RESIZE, NW_RESIZE, N_RESIZE, SE_RESIZE,
-                  SW_RESIZE, S_RESIZE, W_RESIZE, TEXT, WAIT, PROGRESS, HELP]
+CURSOR_OPTIONS = [
+    AUTO,
+    CROSSHAIR,
+    DEFAULT,
+    POINTER,
+    MOVE,
+    E_RESIZE,
+    NE_RESIZE,
+    NW_RESIZE,
+    N_RESIZE,
+    SE_RESIZE,
+    SW_RESIZE,
+    S_RESIZE,
+    W_RESIZE,
+    TEXT,
+    WAIT,
+    PROGRESS,
+    HELP,
+]
 
 # Since the order is important, the cursor options are used in the is_cursor validator
-CURSOR_CHOICES = Choices(validators=[is_cursor], explicit_defaulting_constants=[INHERIT])
+CURSOR_CHOICES = Choices(
+    validators=[is_cursor], explicit_defaulting_constants=[INHERIT]
+)
 
 ######################################################################
 # 18.4 Dynamic outlines
@@ -571,7 +627,7 @@ OUTLINE_STYLE_CHOICES = Choices(
 )
 
 # outline_color
-INVERT = 'invert'
+INVERT = "invert"
 
 OUTLINE_COLOR_CHOICES = Choices(
     INVERT,
@@ -585,14 +641,14 @@ OUTLINE_COLOR_CHOICES = Choices(
 # Flex flow (CSS-flexbox-1, Section 5)
 ######################################################################
 
-ROW_REVERSE = 'row-reverse'
-COLUMN_REVERSE = 'column-reverse'
+ROW_REVERSE = "row-reverse"
+COLUMN_REVERSE = "column-reverse"
 
 FLEX_DIRECTION_CHOICES = Choices(ROW, ROW_REVERSE, COLUMN, COLUMN_REVERSE)
 
-NOWRAP = 'no-wrap'
-WRAP = 'wrap'
-WRAP_REVERSE = 'wrap-reverse'
+NOWRAP = "no-wrap"
+WRAP = "wrap"
+WRAP_REVERSE = "wrap-reverse"
 
 FLEX_WRAP_CHOICES = Choices(NOWRAP, WRAP, WRAP_REVERSE)
 
@@ -605,7 +661,7 @@ ORDER_CHOICES = Choices(validators=[is_integer])
 FLEX_GROW_CHOICES = Choices(validators=[is_number])
 FLEX_SHRINK_CHOICES = Choices(validators=[is_number])
 
-CONTENT = 'content'
+CONTENT = "content"
 
 FLEX_BASIS_CHOICES = Choices(CONTENT, AUTO, validators=[is_length, is_percentage])
 
@@ -613,21 +669,25 @@ FLEX_BASIS_CHOICES = Choices(CONTENT, AUTO, validators=[is_length, is_percentage
 # Flex Alignment (CSS-flexbox-1, Section 8)
 ######################################################################
 
-FLEX_START = 'flex-start'
-FLEX_END = 'flex-end'
-CENTER = 'center'
-SPACE_BETWEEN = 'space-between'
-SPACE_AROUND = 'space-around'
+FLEX_START = "flex-start"
+FLEX_END = "flex-end"
+CENTER = "center"
+SPACE_BETWEEN = "space-between"
+SPACE_AROUND = "space-around"
 
-JUSTIFY_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND)
+JUSTIFY_CONTENT_CHOICES = Choices(
+    FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND
+)
 
-BASELINE = 'baseline'
-STRETCH = 'stretch'
+BASELINE = "baseline"
+STRETCH = "stretch"
 
 ALIGN_SELF_CHOICES = Choices(AUTO, FLEX_START, FLEX_END, CENTER, BASELINE, STRETCH)
 ALIGN_ITEMS_CHOICES = Choices(AUTO, FLEX_START, FLEX_END, CENTER, BASELINE, STRETCH)
 
-ALIGN_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND, STRETCH)
+ALIGN_CONTENT_CHOICES = Choices(
+    FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND, STRETCH
+)
 
 
 ######################################################################
@@ -640,7 +700,7 @@ GRID_TEMPLATE_AREA_CHOICES = Choices(None)  # strings=True), initial=None
 
 GRID_AUTO_CHOICES = Choices(AUTO)  # track_sizes=True)
 
-DENSE = 'dense'
+DENSE = "dense"
 
 GRID_AUTO_FLOW_CHOICES = Choices(ROW, COLUMN, DENSE)
 

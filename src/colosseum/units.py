@@ -1,9 +1,24 @@
 import math
 
 __all__ = [
-    'ch', 'cm', 'em', 'ex', 'inch', 'mm', 'pc', 'percent',
-    'pt', 'px', 'vh', 'vmax', 'vmin', 'vw', 'deg', 'rad',
-    'grad', 'turn',
+    "ch",
+    "cm",
+    "em",
+    "ex",
+    "inch",
+    "mm",
+    "pc",
+    "percent",
+    "pt",
+    "px",
+    "vh",
+    "vmax",
+    "vmin",
+    "vw",
+    "deg",
+    "rad",
+    "grad",
+    "turn",
 ]
 
 LU_PER_PIXEL = 64
@@ -20,7 +35,7 @@ class BaseUnit:
     def __repr__(self):
         int_value = int(self.val)
         value = int_value if self.val == int_value else self.val
-        return '{}{}'.format(value, self.suffix)
+        return f"{value}{self.suffix}"
 
     def __str__(self):
         return repr(self)
@@ -69,7 +84,7 @@ class AngleUnit(BaseUnit):
 
 class PixelUnit(Unit):
     def __init__(self, val=None):
-        super().__init__('px', val)
+        super().__init__("px", val)
 
     def dup(self, val):
         return PixelUnit(val)
@@ -84,7 +99,9 @@ class PixelUnit(Unit):
 
 class FontUnit(Unit):
     def lu(self, display=None, font=None, size=None):
-        return round(LU_PER_PIXEL * self.val * (getattr(font, self.suffix) / 72) * display.dpi)
+        return round(
+            LU_PER_PIXEL * self.val * (getattr(font, self.suffix) / 72) * display.dpi
+        )
 
     def dup(self, val):
         return FontUnit(self.suffix, val)
@@ -131,7 +148,7 @@ class ViewportUnit(Unit):
 
 class Percent(Unit):
     def __init__(self, val=None):
-        super().__init__('%', val)
+        super().__init__("%", val)
 
     def lu(self, display=None, font=None, size=None):
         return round(LU_PER_PIXEL * self.val / 100.0 * size)
@@ -150,24 +167,24 @@ class Percent(Unit):
 
 px = PixelUnit()
 
-em = FontUnit('em')
-ex = FontUnit('ex')
-ch = FontUnit('ch')
+em = FontUnit("em")
+ex = FontUnit("ex")
+ch = FontUnit("ch")
 
-pt = AbsoluteUnit('pt', 1)
-pc = AbsoluteUnit('pc', 12)
-inch = AbsoluteUnit('in', 72)
-cm = AbsoluteUnit('cm', 28.3465)
-mm = AbsoluteUnit('mm', 2.83465)
+pt = AbsoluteUnit("pt", 1)
+pc = AbsoluteUnit("pc", 12)
+inch = AbsoluteUnit("in", 72)
+cm = AbsoluteUnit("cm", 28.3465)
+mm = AbsoluteUnit("mm", 2.83465)
 
-vh = ViewportUnit('vh', lambda d: d.content_height)
-vmax = ViewportUnit('vmax', lambda d: max(d.content_width, d.content_height))
-vmin = ViewportUnit('vmin', lambda d: min(d.content_width, d.content_height))
-vw = ViewportUnit('vw', lambda d: d.content_width)
+vh = ViewportUnit("vh", lambda d: d.content_height)
+vmax = ViewportUnit("vmax", lambda d: max(d.content_width, d.content_height))
+vmin = ViewportUnit("vmin", lambda d: min(d.content_width, d.content_height))
+vw = ViewportUnit("vw", lambda d: d.content_width)
 
 percent = Percent()
 
-deg = AngleUnit('deg', 1)
-grad = AngleUnit('grad', 0.9)
-rad = AngleUnit('rad', 180/math.pi)
-turn = AngleUnit('turn', 360)
+deg = AngleUnit("deg", 1)
+grad = AngleUnit("grad", 0.9)
+rad = AngleUnit("rad", 180 / math.pi)
+turn = AngleUnit("turn", 360)

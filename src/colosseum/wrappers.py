@@ -16,18 +16,20 @@ class BorderSpacing:
 
     def __repr__(self):
         if self._vertical is None:
-            string = 'BorderSpacing({horizontal})'.format(horizontal=repr(self._horizontal))
+            string = f"BorderSpacing({repr(self._horizontal)})"
         else:
-            string = 'BorderSpacing({horizontal}, {vertical})'.format(horizontal=repr(self._horizontal),
-                                                                      vertical=repr(self._vertical))
+            string = "BorderSpacing({horizontal}, {vertical})".format(
+                horizontal=repr(self._horizontal), vertical=repr(self._vertical)
+            )
         return string
 
     def __str__(self):
         if self._vertical is not None:
-            string = '{horizontal} {vertical}'.format(horizontal=self._horizontal,
-                                                      vertical=self._vertical)
+            string = "{horizontal} {vertical}".format(
+                horizontal=self._horizontal, vertical=self._vertical
+            )
         else:
-            string = '{horizontal}'.format(horizontal=self._horizontal)
+            string = f"{self._horizontal}"
 
         return string
 
@@ -51,11 +53,12 @@ class Quotes:
         Quotes([('<', '>'), ('{', '}')])
         Quotes([('<', '>'), ('{', '}'), ('[', ']')])
     """
+
     def __init__(self, values):
         self._quotes = values
 
     def __repr__(self):
-        return 'Quotes({values})'.format(values=self._quotes)
+        return f"Quotes({self._quotes})"
 
     def __str__(self):
         quotes = []
@@ -63,7 +66,7 @@ class Quotes:
             quotes.append(repr(start))
             quotes.append(repr(end))
 
-        return ' '.join(val for val in quotes)
+        return " ".join(val for val in quotes)
 
     def __len__(self):
         return len(self._quotes)
@@ -76,14 +79,14 @@ class Quotes:
         try:
             return self._quotes[level][0]
         except IndexError:
-            raise IndexError('Quotes level out of range')
+            raise IndexError("Quotes level out of range")
 
     def closing(self, level):
         """Return the opening quote for the given level."""
         try:
             return self._quotes[level][-1]
         except IndexError:
-            raise IndexError('Quotes level out of range')
+            raise IndexError("Quotes level out of range")
 
 
 class Shorthand:
@@ -93,11 +96,14 @@ class Shorthand:
         if self.VALID_KEYS:
             for key in kwargs:
                 if key not in self.VALID_KEYS:
-                    raise ValueError('Invalid key "{key}". Valid keys are {keys}'.format(key=key,
-                                                                                         keys=self.VALID_KEYS))
+                    raise ValueError(
+                        'Invalid key "{key}". Valid keys are {keys}'.format(
+                            key=key, keys=self.VALID_KEYS
+                        )
+                    )
                 setattr(self, key, kwargs[key])
         else:
-            raise ValueError('Shorthand must define `VALID_KEYS`')
+            raise ValueError("Shorthand must define `VALID_KEYS`")
 
     def __eq__(self, other):
         return other.__class__ == self.__class__ and self.to_dict() == other.to_dict()
@@ -106,10 +112,12 @@ class Shorthand:
         items = []
         properties = self.to_dict()
         for key, value in properties.items():
-            items.append("{key}={value}".format(key=key, value=repr(value)))
+            items.append(f"{key}={repr(value)}")
 
         class_name = self.__class__.__name__
-        string = "{class_name}({items})".format(class_name=class_name, items=', '.join(items))
+        string = "{class_name}({items})".format(
+            class_name=class_name, items=", ".join(items)
+        )
         return string.format(**properties)
 
     def __str__(self):
@@ -117,7 +125,7 @@ class Shorthand:
         for key, value in self.to_dict().items():
             parts.append(str(value))
 
-        return ' '.join(parts)
+        return " ".join(parts)
 
     def to_dict(self):
         """Return dictionary of the defined properties."""
@@ -130,27 +138,27 @@ class Shorthand:
 
 
 class Outline(Shorthand):
-    VALID_KEYS = ['outline_color', 'outline_style', 'outline_width']
+    VALID_KEYS = ["outline_color", "outline_style", "outline_width"]
 
 
 class BorderTop(Shorthand):
-    VALID_KEYS = ['border_top_width', 'border_top_style', 'border_top_color']
+    VALID_KEYS = ["border_top_width", "border_top_style", "border_top_color"]
 
 
 class BorderRight(Shorthand):
-    VALID_KEYS = ['border_right_width', 'border_right_style', 'border_right_color']
+    VALID_KEYS = ["border_right_width", "border_right_style", "border_right_color"]
 
 
 class BorderBottom(Shorthand):
-    VALID_KEYS = ['border_bottom_width', 'border_bottom_style', 'border_bottom_color']
+    VALID_KEYS = ["border_bottom_width", "border_bottom_style", "border_bottom_color"]
 
 
 class BorderLeft(Shorthand):
-    VALID_KEYS = ['border_left_width', 'border_left_style', 'border_left_color']
+    VALID_KEYS = ["border_left_width", "border_left_style", "border_left_color"]
 
 
 class Border(Shorthand):
-    VALID_KEYS = ['border_width', 'border_style', 'border_color']
+    VALID_KEYS = ["border_width", "border_style", "border_color"]
 
 
 class Uri:
@@ -177,7 +185,7 @@ class ImmutableList(list):
         super().__init__(iterable)
 
     def _get_error_message(self, err):
-        return str(err).replace('list', self.__class__.__name__, 1)
+        return str(err).replace("list", self.__class__.__name__, 1)
 
     # def __eq__(self, other):
     #     return other.__class__ == self.__class__ and self == other
@@ -190,7 +198,7 @@ class ImmutableList(list):
             raise err.__class__(error_msg)
 
     def __setitem__(self, index, value):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def __hash__(self):
         return hash((self.__class__.__name__, tuple(self)))
@@ -198,39 +206,39 @@ class ImmutableList(list):
     def __repr__(self):
         class_name = self.__class__.__name__
         if len(self) != 0:
-            text = '{class_name}([{data}])'.format(data=repr(list(self))[1:-1], class_name=class_name)
+            text = f"{class_name}([{repr(list(self))[1:-1]}])"
         else:
-            text = '{class_name}()'.format(class_name=class_name)
+            text = f"{class_name}()"
 
         return text
 
     def __str__(self):
-        return ', '.join(str(v) for v in self)
+        return ", ".join(str(v) for v in self)
 
     def copy(self):
         return self.__class__(self)
 
     # Disable mutating methods
     def append(self, object):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def extend(self, iterable):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def insert(self, index, object):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def pop(self, index=None):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def remove(self, value):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def reverse(self):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
     def sort(self, cmp=None, key=None, reverse=False):
-        raise TypeError("{} values cannot be changed!".format(self.__class__.__name__))
+        raise TypeError(f"{self.__class__.__name__} values cannot be changed!")
 
 
 class Cursor(ImmutableList):

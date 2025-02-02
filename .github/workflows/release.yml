@@ -3,22 +3,58 @@ name: Create Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
+  ci:
+    name: CI
+    uses: ./.github/workflows/ci.yml
+    with:
+      attest-package: "true"
+
   release:
     name: Create Release
+    needs: ci
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      # This permission is required for trusted publishing.
+      id-token: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set build variables
+        run: |
+          echo "VERSION=${GITHUB_REF_NAME#v}" | tee -a $GITHUB_ENV
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.3.0
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          python-version: "3.x"
+
+      - name: Get packages
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: ${{ needs.ci.outputs.artifact-name }}
+          path: dist
+
+      - name: Install packages
+        run: pip install dist/*.whl
+
+      - name: Check version number
+        # Check that the setuptools_scm-generated version number is still the same when
+        # installed from a wheel with setuptools_scm not present.
+        run: |
+          set -x
+          test $(python -c "from colosseum import __version__; print(__version__)") = $VERSION
+
+      - name: Create release
+        uses: ncipollo/release-action@v1.15.0
+        with:
+          name: ${{ env.VERSION }}
           draft: true
-          prerelease: false
+          artifacts: dist/*
+          artifactErrorsFailBuild: true
+
+      - name: Publish release to Test PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository_url: https://test.pypi.org/legacy/

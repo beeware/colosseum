@@ -2,14 +2,14 @@ from unittest import TestCase
 
 from colosseum.dimensions import Box
 
-from .utils import TestNode
+from .utils import ExampleNode
 
 
 class SizeTests(TestCase):
     def setUp(self):
         self.maxDiff = None
 
-        self.node = TestNode()
+        self.node = ExampleNode()
         self.node.layout = Box(self.node)
         # Mark the layout as "in calculation"
         self.node.layout.dirty = None
@@ -177,86 +177,89 @@ class BoxTests(TestCase):
     def setUp(self):
         self.maxDiff = None
 
-        self.node = TestNode()
+        self.node = ExampleNode()
         self.node.layout = Box(self.node)
         self.node.layout.content_width = 10
         self.node.layout.content_height = 16
 
-        self.child1 = TestNode()
+        self.child1 = ExampleNode()
         self.child1.layout.content_width = 10
         self.child1.layout.content_height = 16
-        self.child2 = TestNode()
+        self.child2 = ExampleNode()
 
-        self.grandchild1_1 = TestNode()
+        self.grandchild1_1 = ExampleNode()
         self.grandchild1_1.layout.content_width = 10
         self.grandchild1_1.layout.content_height = 16
-        self.grandchild1_2 = TestNode()
+        self.grandchild1_2 = ExampleNode()
 
         self.node.children = [self.child1, self.child2]
         self.child1.children = [self.grandchild1_1, self.grandchild1_2]
 
     def assertLayout(self, box, expected):
         actual = {}
-        if 'origin' in expected:
-            actual['origin'] = (box._origin_left, box._origin_top)
+        if "origin" in expected:
+            actual["origin"] = (box._origin_left, box._origin_top)
 
-        if 'size' in expected:
-            actual['size'] = {}
-            if 'border' in expected['size']:
-                actual['size']['border'] = (box.border_box_width, box.border_box_height)
+        if "size" in expected:
+            actual["size"] = {}
+            if "border" in expected["size"]:
+                actual["size"]["border"] = (box.border_box_width, box.border_box_height)
 
-            if 'padding' in expected['size']:
-                actual['size']['padding'] = (box.padding_box_width, box.padding_box_height)
+            if "padding" in expected["size"]:
+                actual["size"]["padding"] = (
+                    box.padding_box_width,
+                    box.padding_box_height,
+                )
 
-            if 'content' in expected['size']:
-                actual['size']['content'] = (box.content_width, box.content_height)
+            if "content" in expected["size"]:
+                actual["size"]["content"] = (box.content_width, box.content_height)
 
-        if 'relative' in expected:
-            actual['relative'] = {}
-            if 'border' in expected['relative']:
-                actual['relative']['border'] = (
+        if "relative" in expected:
+            actual["relative"] = {}
+            if "border" in expected["relative"]:
+                actual["relative"]["border"] = (
                     box.border_box_top,
                     box.border_box_right,
                     box.border_box_bottom,
                     box.border_box_left,
                 )
 
-            if 'padding' in expected['relative']:
-                actual['relative']['padding'] = (
+            if "padding" in expected["relative"]:
+                actual["relative"]["padding"] = (
                     box.padding_box_top,
                     box.padding_box_right,
                     box.padding_box_bottom,
                     box.padding_box_left,
                 )
 
-            if 'content' in expected['relative']:
-                actual['relative']['content'] = (
+            if "content" in expected["relative"]:
+                actual["relative"]["content"] = (
                     box.content_top,
                     box.content_right,
                     box.content_bottom,
                     box.content_left,
                 )
 
-        if 'absolute' in expected:
-            actual['absolute'] = {}
-            if 'border' in expected['absolute']:
-                actual['absolute']['border'] = (
+        if "absolute" in expected:
+            actual["absolute"] = {}
+            if "border" in expected["absolute"]:
+                actual["absolute"]["border"] = (
                     box.absolute_border_box_top,
                     box.absolute_border_box_right,
                     box.absolute_border_box_bottom,
                     box.absolute_border_box_left,
                 )
 
-            if 'padding' in expected['absolute']:
-                actual['absolute']['padding'] = (
+            if "padding" in expected["absolute"]:
+                actual["absolute"]["padding"] = (
                     box.absolute_padding_box_top,
                     box.absolute_padding_box_right,
                     box.absolute_padding_box_bottom,
                     box.absolute_padding_box_left,
                 )
 
-            if 'content' in expected['absolute']:
-                actual['absolute']['content'] = (
+            if "content" in expected["absolute"]:
+                actual["absolute"]["content"] = (
                     box.absolute_content_top,
                     box.absolute_content_right,
                     box.absolute_content_bottom,
@@ -275,23 +278,23 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {
-                    'content': (10, 16),
-                    'padding': (10, 16),
-                    'border': (10, 16),
+                "origin": (0, 0),
+                "size": {
+                    "content": (10, 16),
+                    "padding": (10, 16),
+                    "border": (10, 16),
                 },
-                'relative': {
-                    'content': (0, 10, 16, 0),
-                    'padding': (0, 10, 16, 0),
-                    'border': (0, 10, 16, 0),
+                "relative": {
+                    "content": (0, 10, 16, 0),
+                    "padding": (0, 10, 16, 0),
+                    "border": (0, 10, 16, 0),
                 },
-                'absolute': {
-                    'content': (0, 10, 16, 0),
-                    'padding': (0, 10, 16, 0),
-                    'border': (0, 10, 16, 0),
-                }
-            }
+                "absolute": {
+                    "content": (0, 10, 16, 0),
+                    "padding": (0, 10, 16, 0),
+                    "border": (0, 10, 16, 0),
+                },
+            },
         )
 
     def test_set_top(self):
@@ -300,11 +303,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (5, 10, 21, 0)},
-                'absolute': {'content': (5, 10, 21, 0)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (5, 10, 21, 0)},
+                "absolute": {"content": (5, 10, 21, 0)},
+            },
         )
 
         # Set the top to a new value
@@ -313,11 +316,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (7, 10, 23, 0)},
-                'absolute': {'content': (7, 10, 23, 0)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (7, 10, 23, 0)},
+                "absolute": {"content": (7, 10, 23, 0)},
+            },
         )
 
     def test_set_left(self):
@@ -326,11 +329,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 15, 16, 5)},
-                'absolute': {'content': (0, 15, 16, 5)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (0, 15, 16, 5)},
+                "absolute": {"content": (0, 15, 16, 5)},
+            },
         )
 
         # Set the left to a new value
@@ -339,11 +342,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (0, 17, 16, 7)},
-                'absolute': {'content': (0, 17, 16, 7)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (0, 17, 16, 7)},
+                "absolute": {"content": (0, 17, 16, 7)},
+            },
         )
 
     def test_set_height(self):
@@ -352,11 +355,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 5)},
-                'relative': {'content': (0, 10, 5, 0)},
-                'absolute': {'content': (0, 10, 5, 0)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 5)},
+                "relative": {"content": (0, 10, 5, 0)},
+                "absolute": {"content": (0, 10, 5, 0)},
+            },
         )
 
         # Set the height to a new value
@@ -365,11 +368,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 7)},
-                'relative': {'content': (0, 10, 7, 0)},
-                'absolute': {'content': (0, 10, 7, 0)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 7)},
+                "relative": {"content": (0, 10, 7, 0)},
+                "absolute": {"content": (0, 10, 7, 0)},
+            },
         )
 
     def test_set_width(self):
@@ -378,11 +381,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (5, 16)},
-                'relative': {'content': (0, 5, 16, 0)},
-                'absolute': {'content': (0, 5, 16, 0)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (5, 16)},
+                "relative": {"content": (0, 5, 16, 0)},
+                "absolute": {"content": (0, 5, 16, 0)},
+            },
         )
 
         # Set the width to a new value
@@ -391,11 +394,11 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (7, 16)},
-                'relative': {'content': (0, 7, 16, 0)},
-                'absolute': {'content': (0, 7, 16, 0)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (7, 16)},
+                "relative": {"content": (0, 7, 16, 0)},
+                "absolute": {"content": (0, 7, 16, 0)},
+            },
         )
 
     def test_descendent_offsets(self):
@@ -411,31 +414,31 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (7, 18, 23, 8)},
-                'absolute': {'content': (7, 18, 23, 8)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (7, 18, 23, 8)},
+                "absolute": {"content": (7, 18, 23, 8)},
+            },
         )
 
         self.assertLayout(
             self.child1.layout,
             {
-                'origin': (8, 7),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (9, 20, 25, 10)},
-                'absolute': {'content': (16, 28, 32, 18)},
-            }
+                "origin": (8, 7),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (9, 20, 25, 10)},
+                "absolute": {"content": (16, 28, 32, 18)},
+            },
         )
 
         self.assertLayout(
             self.grandchild1_1.layout,
             {
-                'origin': (18, 16),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (11, 22, 27, 12)},
-                'absolute': {'content': (27, 40, 43, 30)},
-            }
+                "origin": (18, 16),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (11, 22, 27, 12)},
+                "absolute": {"content": (27, 40, 43, 30)},
+            },
         )
 
         # Modify the grandchild position
@@ -446,31 +449,31 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (7, 18, 23, 8)},
-                'absolute': {'content': (7, 18, 23, 8)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (7, 18, 23, 8)},
+                "absolute": {"content": (7, 18, 23, 8)},
+            },
         )
 
         self.assertLayout(
             self.child1.layout,
             {
-                'origin': (8, 7),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (9, 20, 25, 10)},
-                'absolute': {'content': (16, 28, 32, 18)},
-            }
+                "origin": (8, 7),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (9, 20, 25, 10)},
+                "absolute": {"content": (16, 28, 32, 18)},
+            },
         )
 
         self.assertLayout(
             self.grandchild1_1.layout,
             {
-                'origin': (18, 16),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (13, 24, 29, 14)},
-                'absolute': {'content': (29, 42, 45, 32)},
-            }
+                "origin": (18, 16),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (13, 24, 29, 14)},
+                "absolute": {"content": (29, 42, 45, 32)},
+            },
         )
 
         # Modify the child position
@@ -481,31 +484,31 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (0, 0),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (7, 18, 23, 8)},
-                'absolute': {'content': (7, 18, 23, 8)},
-            }
+                "origin": (0, 0),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (7, 18, 23, 8)},
+                "absolute": {"content": (7, 18, 23, 8)},
+            },
         )
 
         self.assertLayout(
             self.child1.layout,
             {
-                'origin': (8, 7),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (15, 26, 31, 16)},
-                'absolute': {'content': (22, 34, 38, 24)},
-            }
+                "origin": (8, 7),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (15, 26, 31, 16)},
+                "absolute": {"content": (22, 34, 38, 24)},
+            },
         )
 
         self.assertLayout(
             self.grandchild1_1.layout,
             {
-                'origin': (24, 22),
-                'size': {'content': (10, 16)},
-                'relative': {'content': (13, 24, 29, 14)},
-                'absolute': {'content': (35, 48, 51, 38)},
-            }
+                "origin": (24, 22),
+                "size": {"content": (10, 16)},
+                "relative": {"content": (13, 24, 29, 14)},
+                "absolute": {"content": (35, 48, 51, 38)},
+            },
         )
 
     def test_dirty_handling(self):
@@ -549,23 +552,23 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (200, 100),
-                'size': {
-                    'content': (10, 16),
-                    'padding': (10, 16),
-                    'border': (10, 16),
+                "origin": (200, 100),
+                "size": {
+                    "content": (10, 16),
+                    "padding": (10, 16),
+                    "border": (10, 16),
                 },
-                'relative': {
-                    'content': (50, 85, 66, 75),
-                    'padding': (50, 85, 66, 75),
-                    'border': (50, 85, 66, 75),
+                "relative": {
+                    "content": (50, 85, 66, 75),
+                    "padding": (50, 85, 66, 75),
+                    "border": (50, 85, 66, 75),
                 },
-                'absolute': {
-                    'content': (150, 285, 166, 275),
-                    'padding': (150, 285, 166, 275),
-                    'border': (150, 285, 166, 275),
+                "absolute": {
+                    "content": (150, 285, 166, 275),
+                    "padding": (150, 285, 166, 275),
+                    "border": (150, 285, 166, 275),
                 },
-            }
+            },
         )
 
         # Add a margin.
@@ -577,24 +580,23 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (200, 100),
-                'size': {
-                    'content': (10, 16),
-                    'padding': (10, 16),
-                    'border': (10, 16),
+                "origin": (200, 100),
+                "size": {
+                    "content": (10, 16),
+                    "padding": (10, 16),
+                    "border": (10, 16),
                 },
-                'relative': {
-                    'content': (50, 85, 66, 75),
-                    'padding': (50, 85, 66, 75),
-                    'border': (50, 85, 66, 75),
+                "relative": {
+                    "content": (50, 85, 66, 75),
+                    "padding": (50, 85, 66, 75),
+                    "border": (50, 85, 66, 75),
                 },
-                'absolute': {
-                    'content': (150, 285, 166, 275),
-                    'padding': (150, 285, 166, 275),
-                    'border': (150, 285, 166, 275),
-
+                "absolute": {
+                    "content": (150, 285, 166, 275),
+                    "padding": (150, 285, 166, 275),
+                    "border": (150, 285, 166, 275),
                 },
-            }
+            },
         )
 
         # Add a border. This will push out the margin box.
@@ -606,23 +608,23 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (200, 100),
-                'size': {
-                    'content': (10, 16),
-                    'padding': (10, 16),
-                    'border': (24, 28),
+                "origin": (200, 100),
+                "size": {
+                    "content": (10, 16),
+                    "padding": (10, 16),
+                    "border": (24, 28),
                 },
-                'relative': {
-                    'content': (50, 85, 66, 75),
-                    'padding': (50, 85, 66, 75),
-                    'border': (45, 91, 73, 67),
+                "relative": {
+                    "content": (50, 85, 66, 75),
+                    "padding": (50, 85, 66, 75),
+                    "border": (45, 91, 73, 67),
                 },
-                'absolute': {
-                    'content': (150, 285, 166, 275),
-                    'padding': (150, 285, 166, 275),
-                    'border': (145, 291, 173, 267),
+                "absolute": {
+                    "content": (150, 285, 166, 275),
+                    "padding": (150, 285, 166, 275),
+                    "border": (145, 291, 173, 267),
                 },
-            }
+            },
         )
 
         # Add padding. This will push out the margin and border boxes.
@@ -634,23 +636,23 @@ class BoxTests(TestCase):
         self.assertLayout(
             self.node.layout,
             {
-                'origin': (200, 100),
-                'size': {
-                    'content': (10, 16),
-                    'padding': (32, 36),
-                    'border': (46, 48),
+                "origin": (200, 100),
+                "size": {
+                    "content": (10, 16),
+                    "padding": (32, 36),
+                    "border": (46, 48),
                 },
-                'relative': {
-                    'content': (50, 85, 66, 75),
-                    'padding': (41, 95, 77, 63),
-                    'border': (36, 101, 84, 55),
+                "relative": {
+                    "content": (50, 85, 66, 75),
+                    "padding": (41, 95, 77, 63),
+                    "border": (36, 101, 84, 55),
                 },
-                'absolute': {
-                    'content': (150, 285, 166, 275),
-                    'padding': (141, 295, 177, 263),
-                    'border': (136, 301, 184, 255),
+                "absolute": {
+                    "content": (150, 285, 166, 275),
+                    "padding": (141, 295, 177, 263),
+                    "border": (136, 301, 184, 255),
                 },
-            }
+            },
         )
 
     def test_relative_equalities(self):
@@ -678,29 +680,29 @@ class BoxTests(TestCase):
 
         self.assertEqual(
             self.node.layout.content_left + self.node.layout.content_width,
-            self.node.layout.content_right
+            self.node.layout.content_right,
         )
         self.assertEqual(
             self.node.layout.content_top + self.node.layout.content_height,
-            self.node.layout.content_bottom
+            self.node.layout.content_bottom,
         )
 
         self.assertEqual(
             self.node.layout.padding_box_left + self.node.layout.padding_box_width,
-            self.node.layout.padding_box_right
+            self.node.layout.padding_box_right,
         )
         self.assertEqual(
             self.node.layout.padding_box_top + self.node.layout.padding_box_height,
-            self.node.layout.padding_box_bottom
+            self.node.layout.padding_box_bottom,
         )
 
         self.assertEqual(
             self.node.layout.border_box_left + self.node.layout.border_box_width,
-            self.node.layout.border_box_right
+            self.node.layout.border_box_right,
         )
         self.assertEqual(
             self.node.layout.border_box_top + self.node.layout.border_box_height,
-            self.node.layout.border_box_bottom
+            self.node.layout.border_box_bottom,
         )
 
     def test_absolute_equalities(self):
@@ -728,29 +730,33 @@ class BoxTests(TestCase):
 
         self.assertEqual(
             self.node.layout.absolute_content_left + self.node.layout.content_width,
-            self.node.layout.absolute_content_right
+            self.node.layout.absolute_content_right,
         )
         self.assertEqual(
             self.node.layout.absolute_content_top + self.node.layout.content_height,
-            self.node.layout.absolute_content_bottom
+            self.node.layout.absolute_content_bottom,
         )
 
         self.assertEqual(
-            self.node.layout.absolute_padding_box_left + self.node.layout.padding_box_width,
-            self.node.layout.absolute_padding_box_right
+            self.node.layout.absolute_padding_box_left
+            + self.node.layout.padding_box_width,
+            self.node.layout.absolute_padding_box_right,
         )
         self.assertEqual(
-            self.node.layout.absolute_padding_box_top + self.node.layout.padding_box_height,
-            self.node.layout.absolute_padding_box_bottom
+            self.node.layout.absolute_padding_box_top
+            + self.node.layout.padding_box_height,
+            self.node.layout.absolute_padding_box_bottom,
         )
 
         self.assertEqual(
-            self.node.layout.absolute_border_box_left + self.node.layout.border_box_width,
-            self.node.layout.absolute_border_box_right
+            self.node.layout.absolute_border_box_left
+            + self.node.layout.border_box_width,
+            self.node.layout.absolute_border_box_right,
         )
         self.assertEqual(
-            self.node.layout.absolute_border_box_top + self.node.layout.border_box_height,
-            self.node.layout.absolute_border_box_bottom
+            self.node.layout.absolute_border_box_top
+            + self.node.layout.border_box_height,
+            self.node.layout.absolute_border_box_bottom,
         )
 
     def test_collapse_top(self):
