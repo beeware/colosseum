@@ -1044,7 +1044,7 @@ class CssDeclarationTests(TestCase):
             node.style.quotes = [">"]
 
         with self.assertRaises(ValueError):
-            node.style.quotes = [(">")]
+            node.style.quotes = [">"]
 
     ##############################################################################
     # Outline shorthand
