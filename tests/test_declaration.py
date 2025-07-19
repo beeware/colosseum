@@ -69,9 +69,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_length(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices(validators=[is_length]), initial=0
-            )
+            prop = validated_property("prop", choices=Choices(validators=[is_length]), initial=0)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 0 * px)
@@ -143,9 +141,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_integer(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices(validators=[is_integer]), initial=0
-            )
+            prop = validated_property("prop", choices=Choices(validators=[is_integer]), initial=0)
 
         obj = MyObject()
         self.assertEqual(obj.prop, 0)
@@ -180,9 +176,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_color(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices(validators=[is_color]), initial="goldenrod"
-            )
+            prop = validated_property("prop", choices=Choices(validators=[is_color]), initial="goldenrod")
 
         obj = MyObject()
         self.assertEqual(obj.prop, NAMED_COLOR[GOLDENROD])
@@ -216,9 +210,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_allow_uri(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices(validators=[is_uri]), initial="url(google.com)"
-            )
+            prop = validated_property("prop", choices=Choices(validators=[is_uri]), initial="url(google.com)")
 
         obj = MyObject()
         self.assertEqual(str(obj.prop), 'url("google.com")')
@@ -250,9 +242,7 @@ class PropertyChoiceTests(TestCase):
 
     def test_values(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices("a", "b", None), initial="a"
-            )
+            prop = validated_property("prop", choices=Choices("a", "b", None), initial="a")
 
         obj = MyObject()
         self.assertEqual(obj.prop, "a")
@@ -897,12 +887,8 @@ class CssDeclarationTests(TestCase):
 
     def test_other_property_valid(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices(AUTO, None), initial=OtherProperty("other_prop")
-            )
-            other_prop = validated_property(
-                "other_prop", choices=Choices(0, AUTO), initial=AUTO
-            )
+            prop = validated_property("prop", choices=Choices(AUTO, None), initial=OtherProperty("other_prop"))
+            other_prop = validated_property("other_prop", choices=Choices(0, AUTO), initial=AUTO)
 
         obj = MyObject()
         self.assertEqual(obj.prop, AUTO)
@@ -922,9 +908,7 @@ class CssDeclarationTests(TestCase):
 
     def test_other_property_invalid_incorrect_property_name(self):
         class MyObject:
-            prop = validated_property(
-                "prop", choices=Choices(AUTO, None), initial=OtherProperty("foobar")
-            )
+            prop = validated_property("prop", choices=Choices(AUTO, None), initial=OtherProperty("foobar"))
 
         obj = MyObject()
         with self.assertRaises(ValueError):
@@ -948,9 +932,7 @@ class CssDeclarationTests(TestCase):
         with self.assertRaises(ValueError):
 
             class MyObject:
-                prop = validated_property(
-                    "prop", choices=Choices(AUTO, None), initial=SomeProperty()
-                )
+                prop = validated_property("prop", choices=Choices(AUTO, None), initial=SomeProperty())
 
     def test_other_property_callable_invalid_value_not_a_method(self):
         class SomeProperty:
@@ -959,9 +941,7 @@ class CssDeclarationTests(TestCase):
         with self.assertRaises(ValueError):
 
             class MyObject:
-                prop = validated_property(
-                    "prop", choices=Choices(AUTO, None), initial=SomeProperty()
-                )
+                prop = validated_property("prop", choices=Choices(AUTO, None), initial=SomeProperty())
 
     ##############################################################################
     # Quotes
@@ -1167,9 +1147,7 @@ class CssDeclarationTests(TestCase):
             setattr(node.style, f"border_{direction}_color", "black")
 
             shorthand = f"border_{direction}"
-            self.assertEqual(
-                str(getattr(node.style, shorthand)), "thick solid rgba(0, 0, 0, 1.0)"
-            )
+            self.assertEqual(str(getattr(node.style, shorthand)), "thick solid rgba(0, 0, 0, 1.0)")
             self.assertEqual(
                 str(node.style),
                 "border-{direction}-color: rgba(0, 0, 0, 1.0); "
@@ -1189,12 +1167,8 @@ class CssDeclarationTests(TestCase):
                 str(getattr(node.style, f"border_{direction}_color")),
                 "rgba(0, 0, 0, 1.0)",
             )
-            self.assertEqual(
-                str(getattr(node.style, f"border_{direction}_style")), "solid"
-            )
-            self.assertEqual(
-                str(getattr(node.style, f"border_{direction}_width")), "thick"
-            )
+            self.assertEqual(str(getattr(node.style, f"border_{direction}_style")), "solid")
+            self.assertEqual(str(getattr(node.style, f"border_{direction}_width")), "thick")
 
     def test_border_shorthands_valid_property_tuple_sets_shorthand_subproperties(self):
         for direction in ["bottom", "left", "right", "top"]:
@@ -1207,12 +1181,8 @@ class CssDeclarationTests(TestCase):
                 str(getattr(node.style, f"border_{direction}_color")),
                 "rgba(0, 0, 0, 1.0)",
             )
-            self.assertEqual(
-                str(getattr(node.style, f"border_{direction}_style")), "solid"
-            )
-            self.assertEqual(
-                str(getattr(node.style, f"border_{direction}_width")), "thick"
-            )
+            self.assertEqual(str(getattr(node.style, f"border_{direction}_style")), "solid")
+            self.assertEqual(str(getattr(node.style, f"border_{direction}_width")), "thick")
 
     def test_border_shorthand_valid(self):
         node = ExampleNode(style=CSS())
@@ -1248,10 +1218,7 @@ class CssDeclarationTests(TestCase):
 
         self.assertEqual(
             str(node.style.border_color),
-            "(rgba(0, 0, 0, 1.0), "
-            "rgba(0, 0, 0, 1.0), "
-            "rgba(0, 0, 0, 1.0), "
-            "rgba(0, 0, 0, 1.0))",
+            "(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 1.0))",
         )
         self.assertEqual(node.style.border_style, ("solid", "solid", "solid", "solid"))
         self.assertEqual(node.style.border_width, ("thick", "thick", "thick", "thick"))
@@ -1260,10 +1227,7 @@ class CssDeclarationTests(TestCase):
         node.style.border = "red"
         self.assertEqual(
             str(node.style.border_color),
-            "(rgba(255, 0, 0, 1.0), "
-            "rgba(255, 0, 0, 1.0), "
-            "rgba(255, 0, 0, 1.0), "
-            "rgba(255, 0, 0, 1.0))",
+            "(rgba(255, 0, 0, 1.0), rgba(255, 0, 0, 1.0), rgba(255, 0, 0, 1.0), rgba(255, 0, 0, 1.0))",
         )
         self.assertEqual(node.style.border_style, (None, None, None, None))
         self.assertEqual(str(node.style.border_width), "(0px, 0px, 0px, 0px)")
@@ -1275,10 +1239,7 @@ class CssDeclarationTests(TestCase):
         node.style.border = "red"
         self.assertEqual(
             str(node.style.border_color),
-            "(rgba(255, 0, 0, 1.0), "
-            "rgba(255, 0, 0, 1.0), "
-            "rgba(255, 0, 0, 1.0), "
-            "rgba(255, 0, 0, 1.0))",
+            "(rgba(255, 0, 0, 1.0), rgba(255, 0, 0, 1.0), rgba(255, 0, 0, 1.0), rgba(255, 0, 0, 1.0))",
         )
         self.assertEqual(node.style.border_style, (None, None, None, None))
         self.assertEqual(str(node.style.border_width), "(0px, 0px, 0px, 0px)")

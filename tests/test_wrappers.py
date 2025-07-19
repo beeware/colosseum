@@ -19,7 +19,6 @@ from colosseum.wrappers import (
 
 
 class BorderSpacingTests(TestCase):
-
     def test_valid_1_arg_string(self):
         border_spacing = BorderSpacing("1")
         self.assertEqual(border_spacing.horizontal, "1")
@@ -68,7 +67,6 @@ class BorderSpacingTests(TestCase):
 
 
 class QuotesTests(TestCase):
-
     # Valid cases
     def test_quotes_valid_1_pair(self):
         quotes = Quotes([("<", ">")])
@@ -102,14 +100,12 @@ class QuotesTests(TestCase):
 
 
 class TestShorthand(TestCase):
-
     def test_shorthand_invalid_empty(self):
         with self.assertRaises(ValueError):
             Shorthand()
 
 
 class TestShorthandOutline(TestCase):
-
     def test_shorthand_outline_valid_empty(self):
         outline = Outline()
         self.assertEqual(str(outline), "")
@@ -126,18 +122,14 @@ class TestShorthandOutline(TestCase):
         for prop_1, prop_2 in perms:
             kwargs = {prop_1: 1, prop_2: 2}
             outline = Outline(**kwargs)
-            self.assertEqual(
-                str(outline), " ".join(str(v[1]) for v in sorted(kwargs.items()))
-            )
+            self.assertEqual(str(outline), " ".join(str(v[1]) for v in sorted(kwargs.items())))
 
     def test_shorthand_outline_valid_3_kwargs(self):
         perms = permutations(["outline_color", "outline_style", "outline_width"])
         for prop_1, prop_2, prop_3 in perms:
             kwargs = {prop_1: 1, prop_2: 2, prop_3: 3}
             outline = Outline(**kwargs)
-            self.assertEqual(
-                str(outline), " ".join(str(v[1]) for v in sorted(kwargs.items()))
-            )
+            self.assertEqual(str(outline), " ".join(str(v[1]) for v in sorted(kwargs.items())))
 
     def test_shorthand_outline_valid_get_values(self):
         perms = permutations(["outline_color", "outline_style", "outline_width"])
@@ -180,7 +172,6 @@ class TestShorthandOutline(TestCase):
 
 
 class TestShorthandBorder(TestCase):
-
     def test_shorthand_boder_valid_empty(self):
         for wrapper_class in [Border, BorderBottom, BorderLeft, BorderRight, BorderTop]:
             wrapper = wrapper_class()
@@ -195,13 +186,11 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             for property_name in [
                 f"border_{direction}color",
                 f"border_{direction}style",
                 f"border_{direction}width",
             ]:
-
                 wrapper = wrapper_class(**{property_name: 1})
                 self.assertEqual(str(wrapper), "1")
                 self.assertEqual(getattr(wrapper, property_name), 1)
@@ -214,7 +203,6 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             perms = permutations(
                 [
                     f"border_{direction}color",
@@ -236,9 +224,7 @@ class TestShorthandBorder(TestCase):
                         kwargs[prop_2] = 2
 
                 wrapper = wrapper_class(**kwargs)
-                self.assertEqual(
-                    str(wrapper), " ".join(str(v[1]) for v in kwargs.items())
-                )
+                self.assertEqual(str(wrapper), " ".join(str(v[1]) for v in kwargs.items()))
 
     def test_shorthand_outline_valid_3_kwargs(self):
         for direction, wrapper_class in {
@@ -248,7 +234,6 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             perms = permutations(
                 [
                     f"border_{direction}color",
@@ -265,9 +250,7 @@ class TestShorthandBorder(TestCase):
                     kwargs[property_name] = idx + 1
 
                 wrapper = wrapper_class(**kwargs)
-                self.assertEqual(
-                    str(wrapper), " ".join(str(v[1]) for v in kwargs.items())
-                )
+                self.assertEqual(str(wrapper), " ".join(str(v[1]) for v in kwargs.items()))
 
     def test_shorthand_outline_valid_get_values(self):
         for direction, wrapper_class in {
@@ -277,7 +260,6 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             perms = permutations(
                 [
                     f"border_{direction}color",
@@ -306,7 +288,6 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             perms = permutations(
                 [
                     f"border_{direction}color",
@@ -335,7 +316,6 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             perms = permutations(
                 [
                     f"border_{direction}color",
@@ -363,7 +343,6 @@ class TestShorthandBorder(TestCase):
             "right_": BorderRight,
             "top_": BorderTop,
         }.items():
-
             perms = permutations(
                 [
                     f"border_{direction}color",
@@ -390,7 +369,6 @@ class TestShorthandBorder(TestCase):
 
 
 class ImmutableListTests(TestCase):
-
     def test_immutable_list_initial(self):
         # Check initial
         ilist = ImmutableList()
@@ -456,7 +434,6 @@ class ImmutableListTests(TestCase):
 
 
 class CursorTests(TestCase):
-
     def test_cursor_initial(self):
         # Check initial
         ilist = Cursor()

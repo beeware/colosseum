@@ -14,9 +14,7 @@ CLEANSE = open(os.path.join(os.path.dirname(__file__), "cleanse.js")).read()
 INSPECT = open(os.path.join(os.path.dirname(__file__), "inspect.js")).read()
 
 
-TEST_CLASS_TEMPLATE = open(
-    os.path.join(os.path.dirname(__file__), "test_class.tpy")
-).read()
+TEST_CLASS_TEMPLATE = open(os.path.join(os.path.dirname(__file__), "test_class.tpy")).read()
 
 
 class Loader(NSObject):
@@ -201,9 +199,7 @@ class W3CTestExtractor(toga.App):
         loader.path = self.path
         loader.output = self.output
 
-        NSTimer.scheduledTimerWithTimeInterval(
-            0.5, target=loader, selector=SEL("run:"), userInfo=None, repeats=False
-        )
+        NSTimer.scheduledTimerWithTimeInterval(0.5, target=loader, selector=SEL("run:"), userInfo=None, repeats=False)
 
         # Show the main window
         self.main_window.show()
@@ -215,12 +211,8 @@ if __name__ == "__main__":
         print()
         print("where: ")
         print("    <base>: root of the web-platform-tests checkout")
-        print(
-            "    <input>: subdirectory of the web-platform-tests css test set to convert"
-        )
-        print(
-            "    <output>: base output directory. Use 'debug' to dump the tests discovered"
-        )
+        print("    <input>: subdirectory of the web-platform-tests css test set to convert")
+        print("    <output>: base output directory. Use 'debug' to dump the tests discovered")
         print()
         print("  e.g.: w3c.py ~/path/to/web-platform-tests CSS2/abspos ../tests")
         print()

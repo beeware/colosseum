@@ -216,7 +216,6 @@ class ParseColorTests(TestCase):
 
 
 class ParseRectTests(TestCase):
-
     def test_rect_valid_commas(self):
         expected_rect = Rect(1 * px, 3 * px, 2 * px, 4 * px)
 
@@ -227,9 +226,7 @@ class ParseRectTests(TestCase):
         self.assertEqual(parser.rect("rect(1px, 3px, 2px, 4px)"), expected_rect)
 
         # Comma separated with units and extra spaces
-        self.assertEqual(
-            parser.rect("  rect(  1px  ,  3px  ,  2px,  4px  )  "), expected_rect
-        )
+        self.assertEqual(parser.rect("  rect(  1px  ,  3px  ,  2px,  4px  )  "), expected_rect)
 
     def test_rect_valid_spaces(self):
         expected_rect = Rect(1 * px, 3 * px, 2 * px, 4 * px)
@@ -318,7 +315,6 @@ class ParseRectTests(TestCase):
 
 
 class ParseQuotesTests(TestCase):
-
     # Valid cases
     def test_quotes_valid_string_2_items(self):
         value = "'«' '»'"
@@ -403,7 +399,6 @@ class ParseQuotesTests(TestCase):
 
 
 class ParseOutlineTests(TestCase):
-
     # Valid cases
     def test_parse_outline_shorthand_valid_str_3_parts(self):
         expected_output = {
@@ -534,7 +529,6 @@ class ParseOutlineTests(TestCase):
 
 
 class ParseBorderTests(TestCase):
-
     # Valid cases
     def test_parse_border_shorthand_valid_str_3_parts(self):
         for direction, func in {
@@ -731,7 +725,6 @@ class ParseBorderTests(TestCase):
 
 
 class ParseUriTests(TestCase):
-
     def test_url_valid_single_quotes_url(self):
         url = parser.uri("url('some.url')")
         self.assertEqual(str(url), 'url("some.url")')
@@ -798,7 +791,6 @@ class ParseUriTests(TestCase):
 
 
 class ParseCursorTests(TestCase):
-
     def test_cursor_valid_string_1_item_option(self):
         for option in CURSOR_OPTIONS:
             cursor = parser.cursor(option)
@@ -899,11 +891,7 @@ class ParseCursorTests(TestCase):
         perms = permutations(CURSOR_OPTIONS, 3)
         for option1, option2, option3 in perms:
             with self.assertRaises(ValueError):
-                parser.cursor(
-                    "{option1}, {option2}, {option3}".format(
-                        option1=option1, option2=option2, option3=option3
-                    )
-                )
+                parser.cursor(f"{option1}, {option2}, {option3}")
 
     def test_cursor_invalid_order_string_3_items_option_2_uri_1(self):
         perms = permutations(CURSOR_OPTIONS, 2)

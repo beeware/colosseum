@@ -43,13 +43,7 @@ def build_document(data, parent=None):
     if "tag" in data:
         node = ExampleNode(name=data["tag"])
         node.parent = parent
-        node.style.update(
-            **{
-                attr: value
-                for attr, value in data["style"].items()
-                if hasattr(node.style, attr)
-            }
-        )
+        node.style.update(**{attr: value for attr, value in data["style"].items() if hasattr(node.style, attr)})
 
         if "children" in data:
             for child in data["children"]:
@@ -137,7 +131,8 @@ def clean_layout(layout):
 def output_layout(layout, depth=1):
     if "tag" in layout:
         return (
-            "  " * depth + "* {tag}{n[content][size][0]}x{n[content][size][1]}"
+            "  " * depth
+            + "* {tag}{n[content][size][0]}x{n[content][size][1]}"
             " @ ({n[content][position][0]}, {n[content][position][1]})"
             "\n".format(
                 n=layout,
@@ -152,13 +147,9 @@ def output_layout(layout, depth=1):
             # + '  border: {n[border_box][size][0]}x{n[border_box][size][1]}'
             #   ' @ ({n[border_box][position][0]}, {n[border_box][position][1]})'
             #   '\n'.format(n=layout)
-            + "".join(
-                output_layout(child, depth=depth + 1)
-                for child in layout.get("children", [])
-            )
+            + "".join(output_layout(child, depth=depth + 1) for child in layout.get("children", []))
             if layout
-            else ""
-            + ("\n" if layout and layout.get("children", None) and depth > 1 else "")
+            else "" + ("\n" if layout and layout.get("children", None) and depth > 1 else "")
         )
     else:
         return "  " * depth + "* '{text}'\n".format(text=layout["text"].strip())
@@ -178,8 +169,9 @@ class LayoutTestCase(TestCase):
         found_problem = False
         tag = ("<" + expected["tag"] + "> ") if "tag" in expected else ""
         output.append(
-            "    " + "    " * depth + "* {tag}{n[size][0]}x{n[size][1]}"
-            " @ ({n[position][0]}, {n[position][1]})".format(
+            "    "
+            + "    " * depth
+            + "* {tag}{n[size][0]}x{n[size][1]} @ ({n[position][0]}, {n[position][1]})".format(
                 n=expected["content"],
                 tag=tag,
             )
@@ -213,17 +205,16 @@ class LayoutTestCase(TestCase):
                 + "    " * depth
                 + " " * len(tag)
                 + "  {n.content_width}x{n.content_height}"
-                " @ ({n.absolute_content_left}, {n.absolute_content_top})".format(
-                    n=actual.layout
-                )
+                " @ ({n.absolute_content_left}, {n.absolute_content_top})".format(n=actual.layout)
             )
 
         output.append(
             "    "
             + "    " * depth
             + " " * len(tag)
-            + "  padding: {n[size][0]}x{n[size][1]}"
-            " @ ({n[position][0]}, {n[position][1]})".format(n=expected["padding_box"])
+            + "  padding: {n[size][0]}x{n[size][1]} @ ({n[position][0]}, {n[position][1]})".format(
+                n=expected["padding_box"]
+            )
         )
 
         try:
@@ -254,17 +245,16 @@ class LayoutTestCase(TestCase):
                 + "    " * depth
                 + " " * len(tag)
                 + "  padding: {n.padding_box_width}x{n.padding_box_height}"
-                " @ ({n.absolute_padding_box_left}, {n.absolute_padding_box_top})".format(
-                    n=actual.layout
-                )
+                " @ ({n.absolute_padding_box_left}, {n.absolute_padding_box_top})".format(n=actual.layout)
             )
 
         output.append(
             "    "
             + "    " * depth
             + " " * len(tag)
-            + "  border: {n[size][0]}x{n[size][1]}"
-            " @ ({n[position][0]}, {n[position][1]})".format(n=expected["border_box"])
+            + "  border: {n[size][0]}x{n[size][1]} @ ({n[position][0]}, {n[position][1]})".format(
+                n=expected["border_box"]
+            )
         )
 
         try:
@@ -295,9 +285,7 @@ class LayoutTestCase(TestCase):
                 + "    " * depth
                 + " " * len(tag)
                 + "  border: {n.border_box_width}x{n.border_box_height}"
-                " @ ({n.absolute_border_box_left}, {n.absolute_border_box_top})".format(
-                    n=actual.layout
-                )
+                " @ ({n.absolute_border_box_left}, {n.absolute_border_box_top})".format(n=actual.layout)
             )
 
         expected_children = expected.pop("children", [])
@@ -305,17 +293,11 @@ class LayoutTestCase(TestCase):
         n_expected = len(expected_children)
         if n_actual == n_expected:
             for actual_child, expected_child in zip(actual.children, expected_children):
-                child_problem = self._assertLayout(
-                    actual_child, expected_child, output, depth=depth + 1
-                )
+                child_problem = self._assertLayout(actual_child, expected_child, output, depth=depth + 1)
                 found_problem = found_problem or child_problem
         else:
             found_problem = True
-            output.append(
-                ">>  "
-                + "    " * depth
-                + f"  Found {n_actual} children, expected {n_expected}"
-            )
+            output.append(">>  " + "    " * depth + f"  Found {n_actual} children, expected {n_expected}")
 
         return found_problem
 
@@ -341,26 +323,14 @@ class W3CTestCase(LayoutTestCase):
         not_implemented_file = os.path.join(dirname, "not_implemented")
         try:
             with open(not_implemented_file) as f:
-                expected_failures.update(
-                    {
-                        "test_" + line.strip().replace("-", "_")
-                        for line in f
-                        if line.strip()
-                    }
-                )
+                expected_failures.update({"test_" + line.strip().replace("-", "_") for line in f if line.strip()})
         except OSError:
             pass
 
         not_compliant = os.path.join(dirname, "not_compliant")
         try:
             with open(not_compliant) as f:
-                expected_failures.update(
-                    {
-                        "test_" + line.strip().replace("-", "_")
-                        for line in f
-                        if line.strip()
-                    }
-                )
+                expected_failures.update({"test_" + line.strip().replace("-", "_") for line in f if line.strip()})
         except OSError:
             pass
 
@@ -369,13 +339,7 @@ class W3CTestCase(LayoutTestCase):
         not_valid_file = os.path.join(dirname, "not_valid")
         try:
             with open(not_valid_file) as f:
-                ignore.update(
-                    {
-                        "test_" + line.strip().replace("-", "_")
-                        for line in f
-                        if line.strip()
-                    }
-                )
+                ignore.update({"test_" + line.strip().replace("-", "_") for line in f if line.strip()})
         except OSError:
             pass
 
@@ -398,11 +362,7 @@ class W3CTestCase(LayoutTestCase):
                 extra.append("\n".join(f"See {h}" for h in input_data["help"]))
                 extra.append("")
 
-            extra.append(
-                "Test: http://test.csswg.org/harness/test/{}_dev/single/{}/".format(
-                    css_test_module, css_test_name
-                )
-            )
+            extra.append(f"Test: http://test.csswg.org/harness/test/{css_test_module}_dev/single/{css_test_name}/")
 
             # The actual test method. Builds a document, lays it out,
             # and checks against the reference rendering.
@@ -442,7 +402,6 @@ class W3CTestCase(LayoutTestCase):
             else:
                 found = "-".join(filename.split(".")[:-1]) == group
             if found:
-
                 test_name, test_method = make_test(dirname, filename)
                 if test_name not in ignore:
                     tests[test_name] = test_method

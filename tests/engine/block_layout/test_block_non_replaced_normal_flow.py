@@ -21,9 +21,7 @@ class WidthTests(LayoutTestCase):
         )
 
     def test_left_margin(self):
-        node = ExampleNode(
-            name="div", style=CSS(display=BLOCK, height=10, margin_left=AUTO)
-        )
+        node = ExampleNode(name="div", style=CSS(display=BLOCK, height=10, margin_left=AUTO))
 
         self.layout_node(node)
 
@@ -38,9 +36,7 @@ class WidthTests(LayoutTestCase):
         )
 
     def test_right_margin(self):
-        node = ExampleNode(
-            name="div", style=CSS(display=BLOCK, height=10, margin_right=AUTO)
-        )
+        node = ExampleNode(name="div", style=CSS(display=BLOCK, height=10, margin_right=AUTO))
 
         self.layout_node(node)
 
@@ -88,9 +84,7 @@ class WidthTests(LayoutTestCase):
         )
 
     def test_width_auto_left_margin(self):
-        node = ExampleNode(
-            name="div", style=CSS(display=BLOCK, width=50, height=10, margin_left=AUTO)
-        )
+        node = ExampleNode(name="div", style=CSS(display=BLOCK, width=50, height=10, margin_left=AUTO))
 
         self.layout_node(node)
 
@@ -105,9 +99,7 @@ class WidthTests(LayoutTestCase):
         )
 
     def test_width_auto_right_margin(self):
-        node = ExampleNode(
-            name="div", style=CSS(display=BLOCK, width=50, height=10, margin_right=AUTO)
-        )
+        node = ExampleNode(name="div", style=CSS(display=BLOCK, width=50, height=10, margin_right=AUTO))
 
         self.layout_node(node)
 
@@ -124,9 +116,7 @@ class WidthTests(LayoutTestCase):
     def test_width_auto_left_and_right_margin(self):
         node = ExampleNode(
             name="div",
-            style=CSS(
-                display=BLOCK, width=50, height=10, margin_left=AUTO, margin_right=AUTO
-            ),
+            style=CSS(display=BLOCK, width=50, height=10, margin_left=AUTO, margin_right=AUTO),
         )
 
         self.layout_node(node)
@@ -144,9 +134,7 @@ class WidthTests(LayoutTestCase):
     def test_width_fixed_left_and_right_margin(self):
         node = ExampleNode(
             name="div",
-            style=CSS(
-                display=BLOCK, width=50, height=10, margin_left=30, margin_right=40
-            ),
+            style=CSS(display=BLOCK, width=50, height=10, margin_left=30, margin_right=40),
         )
 
         self.layout_node(node)
@@ -272,9 +260,7 @@ class HeightTests(LayoutTestCase):
         )
 
     def test_height_auto_top_margin(self):
-        node = ExampleNode(
-            name="div", style=CSS(display=BLOCK, width=10, height=50, margin_top=AUTO)
-        )
+        node = ExampleNode(name="div", style=CSS(display=BLOCK, width=10, height=50, margin_top=AUTO))
 
         self.layout_node(node)
 

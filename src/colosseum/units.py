@@ -52,7 +52,6 @@ class BaseUnit:
 
 
 class Unit(BaseUnit):
-
     def lu(self, display=None, font=None, size=None):
         return round(LU_PER_PIXEL * self.val)
 
@@ -99,9 +98,7 @@ class PixelUnit(Unit):
 
 class FontUnit(Unit):
     def lu(self, display=None, font=None, size=None):
-        return round(
-            LU_PER_PIXEL * self.val * (getattr(font, self.suffix) / 72) * display.dpi
-        )
+        return round(LU_PER_PIXEL * self.val * (getattr(font, self.suffix) / 72) * display.dpi)
 
     def dup(self, val):
         return FontUnit(self.suffix, val)

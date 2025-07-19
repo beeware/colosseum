@@ -25,9 +25,7 @@ class BorderSpacing:
 
     def __str__(self):
         if self._vertical is not None:
-            string = "{horizontal} {vertical}".format(
-                horizontal=self._horizontal, vertical=self._vertical
-            )
+            string = f"{self._horizontal} {self._vertical}"
         else:
             string = f"{self._horizontal}"
 
@@ -96,11 +94,7 @@ class Shorthand:
         if self.VALID_KEYS:
             for key in kwargs:
                 if key not in self.VALID_KEYS:
-                    raise ValueError(
-                        'Invalid key "{key}". Valid keys are {keys}'.format(
-                            key=key, keys=self.VALID_KEYS
-                        )
-                    )
+                    raise ValueError(f'Invalid key "{key}". Valid keys are {self.VALID_KEYS}')
                 setattr(self, key, kwargs[key])
         else:
             raise ValueError("Shorthand must define `VALID_KEYS`")
@@ -115,9 +109,7 @@ class Shorthand:
             items.append(f"{key}={repr(value)}")
 
         class_name = self.__class__.__name__
-        string = "{class_name}({items})".format(
-            class_name=class_name, items=", ".join(items)
-        )
+        string = "{class_name}({items})".format(class_name=class_name, items=", ".join(items))
         return string.format(**properties)
 
     def __str__(self):

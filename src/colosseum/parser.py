@@ -65,9 +65,7 @@ def color(value):
             try:
                 values = value[5:-1].split(",")
                 if len(values) == 4:
-                    return rgb(
-                        int(values[0]), int(values[1]), int(values[2]), float(values[3])
-                    )
+                    return rgb(int(values[0]), int(values[1]), int(values[2]), float(values[3]))
             except ValueError:
                 pass
         elif value.startswith("rgb"):
@@ -182,12 +180,7 @@ def border_spacing(value):
 def rect(value):
     """Parse a given rect shape."""
     value = " ".join(val.strip() for val in value.split())
-    if (
-        value.startswith("rect(")
-        and value.endswith(")")
-        and value.count("rect(") == 1
-        and value.count(")") == 1
-    ):
+    if value.startswith("rect(") and value.endswith(")") and value.count("rect(") == 1 and value.count(")") == 1:
         value = value.replace("rect(", "")
         value = value.replace(")", "").strip()
 
@@ -373,9 +366,7 @@ def border(value, direction=None):
             # Border can have a maximum of 3 parts
             raise ValueError("Border property shorthand contains too many parts!")
 
-        border_dict = _parse_border_property_part(
-            part, border_dict, direction=direction
-        )
+        border_dict = _parse_border_property_part(part, border_dict, direction=direction)
 
     return border_dict
 
@@ -462,10 +453,7 @@ def cursor(values):
             continue
         else:
             if has_cursor_option:
-                raise ValueError(
-                    "Values {values} are in incorrect order. "
-                    "Cursor option must come last!".format(values=values)
-                )
+                raise ValueError(f"Values {values} are in incorrect order. Cursor option must come last!")
             try:
                 value = uri(value)
                 validated_values.append(value)

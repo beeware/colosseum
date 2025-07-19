@@ -738,24 +738,20 @@ class BoxTests(TestCase):
         )
 
         self.assertEqual(
-            self.node.layout.absolute_padding_box_left
-            + self.node.layout.padding_box_width,
+            self.node.layout.absolute_padding_box_left + self.node.layout.padding_box_width,
             self.node.layout.absolute_padding_box_right,
         )
         self.assertEqual(
-            self.node.layout.absolute_padding_box_top
-            + self.node.layout.padding_box_height,
+            self.node.layout.absolute_padding_box_top + self.node.layout.padding_box_height,
             self.node.layout.absolute_padding_box_bottom,
         )
 
         self.assertEqual(
-            self.node.layout.absolute_border_box_left
-            + self.node.layout.border_box_width,
+            self.node.layout.absolute_border_box_left + self.node.layout.border_box_width,
             self.node.layout.absolute_border_box_right,
         )
         self.assertEqual(
-            self.node.layout.absolute_border_box_top
-            + self.node.layout.border_box_height,
+            self.node.layout.absolute_border_box_top + self.node.layout.border_box_height,
             self.node.layout.absolute_border_box_bottom,
         )
 

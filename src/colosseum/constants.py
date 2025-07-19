@@ -211,9 +211,7 @@ FIXED = "fixed"
 
 POSITION_CHOICES = Choices(STATIC, RELATIVE, ABSOLUTE, FIXED)
 
-BOX_OFFSET_CHOICES = Choices(
-    AUTO, validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT]
-)
+BOX_OFFSET_CHOICES = Choices(AUTO, validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 9.5.1 Positioning the float
@@ -272,18 +270,14 @@ MAX_SIZE_CHOICES = Choices(None, validators=[is_length, is_percentage])
 SCROLL = "scroll"
 VISIBLE = "visible"
 
-OVERFLOW_CHOICES = Choices(
-    VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_constants=[INHERIT]
-)
+OVERFLOW_CHOICES = Choices(VISIBLE, HIDDEN, SCROLL, AUTO, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 11.1.2 Clip
 ######################################################################
 # clip
 
-CLIP_CHOICES = Choices(
-    AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT]
-)
+CLIP_CHOICES = Choices(AUTO, validators=[is_rect], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 11.2 Visibility
@@ -305,9 +299,7 @@ VISIBILITY_CHOICES = Choices(VISIBLE, HIDDEN, COLLAPSE)
 ######################################################################
 
 # quotes
-QUOTES_CHOICES = Choices(
-    None, INITIAL, validators=[is_quote], explicit_defaulting_constants=[INHERIT]
-)
+QUOTES_CHOICES = Choices(None, INITIAL, validators=[is_quote], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 12.4 Automatic counters and numbering
@@ -335,33 +327,23 @@ LEFT = "left"
 RIGHT = "right"
 
 # page_break_before
-PAGE_BREAK_BEFORE_CHOICES = Choices(
-    AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT]
-)
+PAGE_BREAK_BEFORE_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
 
 # page_break_after
-PAGE_BREAK_AFTER_CHOICES = Choices(
-    AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT]
-)
+PAGE_BREAK_AFTER_CHOICES = Choices(AUTO, ALWAYS, AVOID, LEFT, RIGHT, explicit_defaulting_constants=[INHERIT])
 
 # page_break_inside
-PAGE_BREAK_INSIDE_CHOICES = Choices(
-    AUTO, AVOID, explicit_defaulting_constants=[INHERIT]
-)
+PAGE_BREAK_INSIDE_CHOICES = Choices(AUTO, AVOID, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 13.3.2 Breaks inside elements
 ######################################################################
 
 # orphans
-ORPHANS_CHOICES = Choices(
-    validators=[is_integer], explicit_defaulting_constants=[INHERIT]
-)
+ORPHANS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
 
 # widows
-WIDOWS_CHOICES = Choices(
-    validators=[is_integer], explicit_defaulting_constants=[INHERIT]
-)
+WIDOWS_CHOICES = Choices(validators=[is_integer], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 14.1 Foreground color
@@ -412,9 +394,7 @@ BACKGROUND_COLOR_CHOICES = Choices(default, TRANSPARENT, validators=[is_color])
 ######################################################################
 
 # text_indent
-TEXT_INDENT_CHOICES = Choices(
-    validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT]
-)
+TEXT_INDENT_CHOICES = Choices(validators=[is_length, is_percentage], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.2 Alignment
@@ -426,13 +406,10 @@ RIGHT = "right"
 CENTER = "center"
 JUSTIFY = "justify"
 
-TEXT_ALIGN_CHOICES = Choices(
-    LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT]
-)
+TEXT_ALIGN_CHOICES = Choices(LEFT, RIGHT, CENTER, JUSTIFY, explicit_defaulting_constants=[INHERIT])
 
 
 class TextAlignInitialValue:
-
     def value(self, context):
         """Return the initial alignment value based on direction."""
         direction = getattr(context, "direction")
@@ -469,14 +446,10 @@ TEXT_DECORATION_CHOICES = Choices(
 ######################################################################
 
 # letter_spacing
-LETTER_SPACING_CHOICES = Choices(
-    NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT]
-)
+LETTER_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
 
 # word_spacing
-WORD_SPACING_CHOICES = Choices(
-    NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT]
-)
+WORD_SPACING_CHOICES = Choices(NORMAL, validators=[is_length], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.5 Capitalization
@@ -487,9 +460,7 @@ CAPITALIZE = "capitalize"
 UPPERCASE = "uppercase"
 LOWERCASE = "lowercase"
 
-TEXT_TRANSFORM_CHOICES = Choices(
-    CAPITALIZE, UPPERCASE, LOWERCASE, None, explicit_defaulting_constants=[INHERIT]
-)
+TEXT_TRANSFORM_CHOICES = Choices(CAPITALIZE, UPPERCASE, LOWERCASE, None, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 16.6 White space
@@ -502,9 +473,7 @@ NOWRAP = "nowrap"
 PRE_WRAP = "pre-wrap"
 PRE_LINE = "pre-line"
 
-WHITE_SPACE_CHOICES = Choices(
-    NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_defaulting_constants=[INHERIT]
-)
+WHITE_SPACE_CHOICES = Choices(NORMAL, PRE, NOWRAP, PRE_WRAP, PRE_LINE, explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 17. Tables
@@ -534,14 +503,10 @@ TABLE_LAYOUT_CHOICES = Choices(AUTO, FIXED, explicit_defaulting_constants=[INHER
 COLLAPSE = "collapse"
 SEPARATE = "separate"
 
-BORDER_COLLAPSE_CHOICES = Choices(
-    COLLAPSE, SEPARATE, explicit_defaulting_constants=[INHERIT]
-)
+BORDER_COLLAPSE_CHOICES = Choices(COLLAPSE, SEPARATE, explicit_defaulting_constants=[INHERIT])
 
 # border_spacing
-BORDER_SPACING_CHOICES = Choices(
-    validators=[is_border_spacing], explicit_defaulting_constants=[INHERIT]
-)
+BORDER_SPACING_CHOICES = Choices(validators=[is_border_spacing], explicit_defaulting_constants=[INHERIT])
 
 # empty_cells
 SHOW = "show"
@@ -594,9 +559,7 @@ CURSOR_OPTIONS = [
 ]
 
 # Since the order is important, the cursor options are used in the is_cursor validator
-CURSOR_CHOICES = Choices(
-    validators=[is_cursor], explicit_defaulting_constants=[INHERIT]
-)
+CURSOR_CHOICES = Choices(validators=[is_cursor], explicit_defaulting_constants=[INHERIT])
 
 ######################################################################
 # 18.4 Dynamic outlines
@@ -675,9 +638,7 @@ CENTER = "center"
 SPACE_BETWEEN = "space-between"
 SPACE_AROUND = "space-around"
 
-JUSTIFY_CONTENT_CHOICES = Choices(
-    FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND
-)
+JUSTIFY_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND)
 
 BASELINE = "baseline"
 STRETCH = "stretch"
@@ -685,9 +646,7 @@ STRETCH = "stretch"
 ALIGN_SELF_CHOICES = Choices(AUTO, FLEX_START, FLEX_END, CENTER, BASELINE, STRETCH)
 ALIGN_ITEMS_CHOICES = Choices(AUTO, FLEX_START, FLEX_END, CENTER, BASELINE, STRETCH)
 
-ALIGN_CONTENT_CHOICES = Choices(
-    FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND, STRETCH
-)
+ALIGN_CONTENT_CHOICES = Choices(FLEX_START, FLEX_END, CENTER, SPACE_BETWEEN, SPACE_AROUND, STRETCH)
 
 
 ######################################################################
