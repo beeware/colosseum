@@ -432,7 +432,6 @@ TEXT_ALIGN_CHOICES = Choices(
 
 
 class TextAlignInitialValue:
-
     def value(self, context):
         """Return the initial alignment value based on direction."""
         direction = getattr(context, "direction")

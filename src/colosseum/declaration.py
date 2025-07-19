@@ -1,4 +1,5 @@
-from . import engine as css_engine, parser
+from . import engine as css_engine
+from . import parser
 from .constants import (  # noqa
     ALIGN_CONTENT_CHOICES,
     ALIGN_ITEMS_CHOICES,

@@ -137,7 +137,8 @@ def clean_layout(layout):
 def output_layout(layout, depth=1):
     if "tag" in layout:
         return (
-            "  " * depth + "* {tag}{n[content][size][0]}x{n[content][size][1]}"
+            "  " * depth
+            + "* {tag}{n[content][size][0]}x{n[content][size][1]}"
             " @ ({n[content][position][0]}, {n[content][position][1]})"
             "\n".format(
                 n=layout,
@@ -178,7 +179,9 @@ class LayoutTestCase(TestCase):
         found_problem = False
         tag = ("<" + expected["tag"] + "> ") if "tag" in expected else ""
         output.append(
-            "    " + "    " * depth + "* {tag}{n[size][0]}x{n[size][1]}"
+            "    "
+            + "    " * depth
+            + "* {tag}{n[size][0]}x{n[size][1]}"
             " @ ({n[position][0]}, {n[position][1]})".format(
                 n=expected["content"],
                 tag=tag,
@@ -442,7 +445,6 @@ class W3CTestCase(LayoutTestCase):
             else:
                 found = "-".join(filename.split(".")[:-1]) == group
             if found:
-
                 test_name, test_method = make_test(dirname, filename)
                 if test_name not in ignore:
                     tests[test_name] = test_method
