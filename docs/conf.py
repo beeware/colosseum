@@ -15,7 +15,6 @@
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
-import io
 import os
 import re
 

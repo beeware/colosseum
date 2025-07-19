@@ -1172,10 +1172,10 @@ class CssDeclarationTests(TestCase):
             )
             self.assertEqual(
                 str(node.style),
-                "border-{direction}-color: rgba(0, 0, 0, 1.0); "
-                "border-{direction}-style: solid; "
-                "border-{direction}-width: thick"
-                "".format(direction=direction),
+                f"border-{direction}-color: rgba(0, 0, 0, 1.0); "
+                f"border-{direction}-style: solid; "
+                f"border-{direction}-width: thick"
+                "",
             )
 
     def test_border_shorthands_valid_property_str_sets_shorthand_subproperties(self):
