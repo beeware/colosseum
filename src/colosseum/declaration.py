@@ -172,7 +172,7 @@ def validated_property(name, choices, initial):
         # The initial value might be a OtherProperty or Custom class with a value method
         try:
             # Check it has a value attribute
-            value_attr = getattr(initial, "value")
+            value_attr = initial.value
 
             # Check the value attribute is a callable
             if not callable(value_attr):
@@ -199,9 +199,7 @@ def validated_property(name, choices, initial):
             value = choices.validate(value)
         except ValueError:
             raise ValueError(
-                "Invalid value '{}' for CSS property '{}'; Valid values are: {}".format(
-                    value, name, choices
-                )
+                f"Invalid value '{value}' for CSS property '{name}'; Valid values are: {choices}"
             )
 
         if value != getattr(self, "_%s" % name, initial):

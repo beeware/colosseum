@@ -55,9 +55,37 @@ Tracker = "https://github.com/beeware/colosseum/issues"
 Source = "https://github.com/beeware/colosseum"
 
 [tool.ruff.lint]
-extend-select = ["E", "F", "I"]
-ignore = ["F401", "E501"]
+extend-select = [
+    "E",      # pycodestyle
+    "W",      # pycodestyle
+    "F",      # pyflakes
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "YTT",    # flake8-2020
+    "ASYNC",  # flake8-async
+    "C4",     # flake8-comprehensions
+    "I",      # isort
+    # The SIM rules are *very* opinionated, and don't necessarily make for better code.
+    # They may be worth occasionally turning on just to see if something could actually
+    # use improvement.
+    # "SIM",    # flake8-simplify
+]
+ignore = [
+    "E501",    # line length
+    "B007",    # loop control variable not used
+    "B018",    # useless expression
+    "B019",    # memory leaks from functools.lru_cache / functools.cache
+    "B024",    # abstract base class without abstract methods / properties
+    "B027",    # empty method in abstract base class
+    "B904",    # use raise ... from ...
+    "C400",    # unnecessary generator
+    "C408",    # use dict literal instead of dict()
+    "C414",    # unnecessary list() use within sorted()
+    "C416",    # unnecessary list comprehension
+]
 
+[tool.ruff.lint.per-file-ignores]
+"docs/conf.py" = ["F401"]
 [tool.setuptools_scm]
 # To enable SCM versioning, we need an empty tool configuration for setuptools_scm
 

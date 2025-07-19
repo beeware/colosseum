@@ -18,16 +18,12 @@ class BorderSpacing:
         if self._vertical is None:
             string = f"BorderSpacing({repr(self._horizontal)})"
         else:
-            string = "BorderSpacing({horizontal}, {vertical})".format(
-                horizontal=repr(self._horizontal), vertical=repr(self._vertical)
-            )
+            string = f"BorderSpacing({repr(self._horizontal)}, {repr(self._vertical)})"
         return string
 
     def __str__(self):
         if self._vertical is not None:
-            string = "{horizontal} {vertical}".format(
-                horizontal=self._horizontal, vertical=self._vertical
-            )
+            string = f"{self._horizontal} {self._vertical}"
         else:
             string = f"{self._horizontal}"
 
@@ -97,9 +93,7 @@ class Shorthand:
             for key in kwargs:
                 if key not in self.VALID_KEYS:
                     raise ValueError(
-                        'Invalid key "{key}". Valid keys are {keys}'.format(
-                            key=key, keys=self.VALID_KEYS
-                        )
+                        f'Invalid key "{key}". Valid keys are {self.VALID_KEYS}'
                     )
                 setattr(self, key, kwargs[key])
         else:

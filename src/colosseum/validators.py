@@ -12,21 +12,15 @@ def _numeric_validator(num_value, numeric_type, min_value, max_value):
     try:
         num_value = numeric_type(num_value)
     except (ValueError, TypeError):
-        error_msg = "Cannot coerce {num_value} to {numeric_type}".format(
-            num_value=num_value, numeric_type=numeric_type.__name__
-        )
+        error_msg = f"Cannot coerce {num_value} to {numeric_type.__name__}"
         raise ValidationError(error_msg)
 
     if min_value is not None and num_value < min_value:
-        error_msg = "Value {num_value} below minimum value {min_value}".format(
-            num_value=num_value, min_value=min_value
-        )
+        error_msg = f"Value {num_value} below minimum value {min_value}"
         raise ValidationError(error_msg)
 
     if max_value is not None and num_value > max_value:
-        error_msg = "Value {num_value} above maximum value {max_value}".format(
-            num_value=num_value, max_value=max_value
-        )
+        error_msg = f"Value {num_value} above maximum value {max_value}"
         raise ValidationError(error_msg)
 
     return num_value

@@ -215,10 +215,8 @@ class LayoutTestCase(TestCase):
                 ">>  "
                 + "    " * depth
                 + " " * len(tag)
-                + "  {n.content_width}x{n.content_height}"
-                " @ ({n.absolute_content_left}, {n.absolute_content_top})".format(
-                    n=actual.layout
-                )
+                + f"  {actual.layout.content_width}x{actual.layout.content_height}"
+                f" @ ({actual.layout.absolute_content_left}, {actual.layout.absolute_content_top})"
             )
 
         output.append(
@@ -256,10 +254,8 @@ class LayoutTestCase(TestCase):
                 ">>  "
                 + "    " * depth
                 + " " * len(tag)
-                + "  padding: {n.padding_box_width}x{n.padding_box_height}"
-                " @ ({n.absolute_padding_box_left}, {n.absolute_padding_box_top})".format(
-                    n=actual.layout
-                )
+                + f"  padding: {actual.layout.padding_box_width}x{actual.layout.padding_box_height}"
+                f" @ ({actual.layout.absolute_padding_box_left}, {actual.layout.absolute_padding_box_top})"
             )
 
         output.append(
@@ -297,10 +293,8 @@ class LayoutTestCase(TestCase):
                 ">>  "
                 + "    " * depth
                 + " " * len(tag)
-                + "  border: {n.border_box_width}x{n.border_box_height}"
-                " @ ({n.absolute_border_box_left}, {n.absolute_border_box_top})".format(
-                    n=actual.layout
-                )
+                + f"  border: {actual.layout.border_box_width}x{actual.layout.border_box_height}"
+                f" @ ({actual.layout.absolute_border_box_left}, {actual.layout.absolute_border_box_top})"
             )
 
         expected_children = expected.pop("children", [])
@@ -402,9 +396,7 @@ class W3CTestCase(LayoutTestCase):
                 extra.append("")
 
             extra.append(
-                "Test: http://test.csswg.org/harness/test/{}_dev/single/{}/".format(
-                    css_test_module, css_test_name
-                )
+                f"Test: http://test.csswg.org/harness/test/{css_test_module}_dev/single/{css_test_name}/"
             )
 
             # The actual test method. Builds a document, lays it out,

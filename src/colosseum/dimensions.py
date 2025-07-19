@@ -167,12 +167,7 @@ class Box:
         self._reset()
 
     def __repr__(self):
-        return "<Box ({}x{} @ {},{})>".format(
-            self.content_width,
-            self.content_height,
-            self.absolute_content_left,
-            self.absolute_content_top,
-        )
+        return f"<Box ({self.content_width}x{self.content_height} @ {self.absolute_content_left},{self.absolute_content_top})>"
 
     # def __eq__(self, value):
     #     return all([

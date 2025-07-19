@@ -463,8 +463,8 @@ def cursor(values):
         else:
             if has_cursor_option:
                 raise ValueError(
-                    "Values {values} are in incorrect order. "
-                    "Cursor option must come last!".format(values=values)
+                    f"Values {values} are in incorrect order. "
+                    "Cursor option must come last!"
                 )
             try:
                 value = uri(value)

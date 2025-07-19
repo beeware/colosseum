@@ -17,9 +17,7 @@ class Rect:
         )
 
     def __repr__(self):
-        return "rect({top}, {right}, {left}, {bottom})".format(
-            top=self._top, right=self._right, left=self._left, bottom=self._bottom
-        )
+        return f"rect({self._top}, {self._right}, {self._left}, {self._bottom})"
 
     def __str__(self):
         return repr(self)

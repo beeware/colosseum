@@ -893,11 +893,7 @@ class ParseCursorTests(TestCase):
         perms = permutations(CURSOR_OPTIONS, 3)
         for option1, option2, option3 in perms:
             with self.assertRaises(ValueError):
-                parser.cursor(
-                    "{option1}, {option2}, {option3}".format(
-                        option1=option1, option2=option2, option3=option3
-                    )
-                )
+                parser.cursor(f"{option1}, {option2}, {option3}")
 
     def test_cursor_invalid_order_string_3_items_option_2_uri_1(self):
         perms = permutations(CURSOR_OPTIONS, 2)
