@@ -183,8 +183,6 @@ html_static_path = ["_static"]
 # Output file base name for HTML help builder.
 htmlhelp_basename = "colosseumdoc"
 
-# The sphinx-rtd-theme import is handled above in the conditional block
-
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
