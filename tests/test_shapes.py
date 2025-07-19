@@ -5,6 +5,7 @@ from colosseum.units import px
 
 
 class ShapeUnitTests(TestCase):
+
     def test_shape_properties(self):
         rect = Rect(1, 3, 2, 4)
         self.assertEqual(rect.top, 1)

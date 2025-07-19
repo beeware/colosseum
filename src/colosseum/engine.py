@@ -23,7 +23,11 @@ from .dimensions import Box
 
 def is_block_level_element(node):
     # 9.2.1 P1
-    return node.style.display is BLOCK or node.style.display is LIST_ITEM or node.style.display is TABLE
+    return (
+        node.style.display is BLOCK
+        or node.style.display is LIST_ITEM
+        or node.style.display is TABLE
+    )
 
 
 def is_block_container(node):
@@ -39,7 +43,11 @@ def is_block_container(node):
 
 def is_inline_level_element(node):
     # 9.2.2 P1
-    return node.style.display is INLINE or node.style.display is INLINE_TABLE or node.style.display is INLINE_BLOCK
+    return (
+        node.style.display is INLINE
+        or node.style.display is INLINE_TABLE
+        or node.style.display is INLINE_BLOCK
+    )
 
 
 def is_inline_block_element(node):
@@ -114,7 +122,11 @@ def layout(display, node, standard=HTML5):
     # FIXME: Find the actual line in the standard that causes this.
     # It might be in the HTML5 spec, rather than the CSS spec.
     if standard is HTML5:
-        node.layout.content_height = display.content_height - node.layout.collapse_top - node.layout.collapse_bottom
+        node.layout.content_height = (
+            display.content_height
+            - node.layout.collapse_top
+            - node.layout.collapse_bottom
+        )
 
 
 class AnonymousBlockBox:
@@ -177,10 +189,18 @@ def layout_box(display, node, containing_block, viewport, font):
     node.layout.margin_bottom = calculate_size(node.style.margin_bottom, vertical)
     node.layout.margin_left = calculate_size(node.style.margin_left, horizontal)
 
-    node.layout.border_top_width = calculate_size(node.style.border_top_width, horizontal)
-    node.layout.border_right_width = calculate_size(node.style.border_right_width, vertical)
-    node.layout.border_bottom_width = calculate_size(node.style.border_bottom_width, horizontal)
-    node.layout.border_left_width = calculate_size(node.style.border_left_width, vertical)
+    node.layout.border_top_width = calculate_size(
+        node.style.border_top_width, horizontal
+    )
+    node.layout.border_right_width = calculate_size(
+        node.style.border_right_width, vertical
+    )
+    node.layout.border_bottom_width = calculate_size(
+        node.style.border_bottom_width, horizontal
+    )
+    node.layout.border_left_width = calculate_size(
+        node.style.border_left_width, vertical
+    )
 
     node.layout.padding_top = calculate_size(node.style.padding_top, horizontal)
     node.layout.padding_right = calculate_size(node.style.padding_right, vertical)
@@ -197,7 +217,9 @@ def layout_box(display, node, containing_block, viewport, font):
         calculate_height_and_margins(node, vertical)
 
     if node.style.position is ABSOLUTE or node.style.position is FIXED:  # Section 9.6
-        raise NotImplementedError("Section 9.6 - Absolute positioning")  # pragma: no cover
+        raise NotImplementedError(
+            "Section 9.6 - Absolute positioning"
+        )  # pragma: no cover
     elif node.style.float is not None:
         raise NotImplementedError("Section 9.5 - Floats")  # pragma: no cover
     else:  # Section 9.4 - Normal flow
@@ -354,7 +376,9 @@ def calculate_inline_replaced_width(node, context):
         if node.style.height is AUTO:
             if node.intrinsic.width is not None:  # P2
                 content_width = node.intrinsic.width
-            elif node.intrinsic.height is not None and node.intrinsic.ratio is not None:  # P3
+            elif (
+                node.intrinsic.height is not None and node.intrinsic.ratio is not None
+            ):  # P3
                 content_width = round(node.intrinsic.height * node.intrinsic.ratio)
             elif node.intrinsic.ratio is not None:  # P4
                 content_width = (
@@ -376,7 +400,11 @@ def calculate_inline_replaced_width(node, context):
         content_width = node.style.width.px(**context)
 
     node.layout.content_width = content_width
-    node.layout.content_left = node.layout.margin_left + node.layout.border_left_width + node.layout.padding_left
+    node.layout.content_left = (
+        node.layout.margin_left
+        + node.layout.border_left_width
+        + node.layout.padding_left
+    )
 
 
 def calculate_block_non_replaced_normal_flow_width(node, context):
@@ -409,7 +437,9 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
                 node.layout.margin_right = 0
 
     if (
-        node.layout.margin_left is not AUTO and node.style.width is not AUTO and node.layout.margin_right is not AUTO
+        node.layout.margin_left is not AUTO
+        and node.style.width is not AUTO
+        and node.layout.margin_right is not AUTO
     ):  # P3
         if node.style.direction is LTR:
             node.layout.margin_right = (
@@ -433,7 +463,9 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
             )
 
     elif (
-        node.layout.margin_left is AUTO and node.style.width is not AUTO and node.layout.margin_right is not AUTO
+        node.layout.margin_left is AUTO
+        and node.style.width is not AUTO
+        and node.layout.margin_right is not AUTO
     ):  # P4
         node.layout.margin_left = (
             context["size"]
@@ -446,7 +478,9 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
         )
 
     elif (
-        node.layout.margin_left is not AUTO and node.style.width is AUTO and node.layout.margin_right is not AUTO
+        node.layout.margin_left is not AUTO
+        and node.style.width is AUTO
+        and node.layout.margin_right is not AUTO
     ):  # P4
         content_width = (
             context["size"]
@@ -459,7 +493,9 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
         )
 
     elif (
-        node.layout.margin_left is not AUTO and node.style.width is not AUTO and node.layout.margin_right is AUTO
+        node.layout.margin_left is not AUTO
+        and node.style.width is not AUTO
+        and node.layout.margin_right is AUTO
     ):  # P4
         node.layout.margin_right = (
             context["size"]
@@ -505,7 +541,11 @@ def calculate_block_non_replaced_normal_flow_width(node, context):
         raise Exception("Unknown S10.3.3 layout case")  # pragma: no cover
 
     node.layout.content_width = content_width
-    node.layout.content_left = node.layout.margin_left + node.layout.border_left_width + node.layout.padding_left
+    node.layout.content_left = (
+        node.layout.margin_left
+        + node.layout.border_left_width
+        + node.layout.padding_left
+    )
 
 
 def calculate_block_replaced_normal_flow_width(node, context):
@@ -577,13 +617,17 @@ def calculate_height_and_margins(node, context):
         else:
             # This branch should never execute.
             # If it does, we've missed something along the way.
-            raise Exception("Unknown normal flow height calculation")  # pragma: no cover
+            raise Exception(
+                "Unknown normal flow height calculation"
+            )  # pragma: no cover
 
 
 def calculate_inline_non_replaced_height(node, context):
     "Implements S10.6.1"
     node.layout.content_height = node.intrinsic.height
-    node.layout.content_top += node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
+    node.layout.content_top += (
+        node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
+    )
 
 
 def calculate_inline_replaced_height(node, context):
@@ -594,7 +638,11 @@ def calculate_inline_replaced_height(node, context):
     if node.layout.margin_bottom is AUTO:  # P1
         node.layout.margin_bottom = 0
 
-    if node.style.width is AUTO and node.style.height is AUTO and node.intrinsic.height is not None:  # P2
+    if (
+        node.style.width is AUTO
+        and node.style.height is AUTO
+        and node.intrinsic.height is not None
+    ):  # P2
         content_height = node.intrinsic.height
     elif node.style.height is AUTO and node.intrinsic.ratio:  # P3
         content_height = node.layout.content_width * node.intrinsic.ratio
@@ -606,7 +654,9 @@ def calculate_inline_replaced_height(node, context):
         content_height = node.style.height.px(**context)
 
     node.layout.content_height = content_height
-    node.layout.content_top += node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
+    node.layout.content_top += (
+        node.layout.margin_top + node.layout.border_top_width + node.layout.padding_top
+    )
 
 
 def calculate_block_non_replaced_normal_flow_height(node, context):
@@ -639,7 +689,9 @@ def calculate_block_non_replaced_normal_flow_height(node, context):
     else:
         if node.parent is not None and node.parent.style.height is not AUTO:
             parent_height = node.parent.style.height.px(**context)
-            content_height = node.style.height.px(display=context["display"], font=context["font"], size=parent_height)
+            content_height = node.style.height.px(
+                display=context["display"], font=context["font"], size=parent_height
+            )
         else:
             content_height = node.style.height.px(**context)
         if node.style.max_height is not None:  # 10.7 Maximum height

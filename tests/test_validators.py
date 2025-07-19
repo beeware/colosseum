@@ -34,6 +34,7 @@ class PercentTests(TestCase):
 
 
 class NumericTests(TestCase):
+
     def test_integer(self):
         self.assertEqual(is_integer("1"), 1)
 
@@ -70,6 +71,7 @@ class NumericTests(TestCase):
 
 
 class BorderSpacingTests(TestCase):
+
     def test_border_spacing_valid_str_1_item(self):
         self.assertEqual(is_border_spacing("1").horizontal, 1 * px)
         self.assertEqual(is_border_spacing("1").vertical, 1 * px)

@@ -15,6 +15,7 @@
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
+import io
 import os
 import re
 
@@ -51,7 +52,9 @@ project = "Colosseum"
 copyright = "2013, Russell Keith-Magee"
 
 with open("../src/colosseum/__init__.py", encoding="utf8") as version_file:
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file.read(), re.M)
+    version_match = re.search(
+        r"^__version__ = ['\"]([^'\"]*)['\"]", version_file.read(), re.M
+    )
     if version_match:
         release = version_match.group(1)
     else:
@@ -103,12 +106,12 @@ pygments_style = "sphinx"
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
-    import importlib.util
-
-    if importlib.util.find_spec("sphinx_rtd_theme") is not None:
-        html_theme = "sphinx_rtd_theme"
-    else:
+    try:
+        import sphinx_rtd_theme
+    except ModuleNotFoundError:
         html_theme = "default"
+    else:
+        html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -183,6 +186,14 @@ html_static_path = ["_static"]
 # Output file base name for HTML help builder.
 htmlhelp_basename = "colosseumdoc"
 
+try:
+    import sphinx_rtd_theme
+
+    html_theme = "sphinx_rtd_theme"
+except ImportError:
+    # The sphinx-rtd-theme package is not installed, so to the default
+    pass
+
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
@@ -231,7 +242,9 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [("index", "colosseum", "Colosseum Documentation", ["Russell Keith-Magee"], 1)]
+man_pages = [
+    ("index", "colosseum", "Colosseum Documentation", ["Russell Keith-Magee"], 1)
+]
 
 # If true, show URL addresses after external links.
 # man_show_urls = False

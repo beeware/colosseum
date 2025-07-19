@@ -20,7 +20,9 @@ class ChildLayoutTests(LayoutTestCase):
             style=CSS(display=BLOCK, height=10),
         )
 
-        root = ExampleNode(name="div", style=CSS(display=BLOCK), children=[child1, child2, child3])
+        root = ExampleNode(
+            name="div", style=CSS(display=BLOCK), children=[child1, child2, child3]
+        )
 
         layout(self.display, root)
 
@@ -68,7 +70,9 @@ class ChildLayoutTests(LayoutTestCase):
             style=CSS(display=BLOCK, height=10, margin=20),
         )
 
-        root = ExampleNode(name="div", style=CSS(display=BLOCK), children=[child1, child2, child3])
+        root = ExampleNode(
+            name="div", style=CSS(display=BLOCK), children=[child1, child2, child3]
+        )
 
         layout(self.display, root)
 
