@@ -101,7 +101,7 @@ def validated_shorthand_property(name, parser, wrapper):
         properties = {}
         for property_name in wrapper.VALID_KEYS:
             try:
-                properties[property_name] = getattr(self, "_%s" % property_name)
+                properties[property_name] = getattr(self, f"_{property_name}")
             except AttributeError:
                 pass
 
@@ -145,16 +145,16 @@ def unvalidated_property(name, choices, initial):
     initial = choices.validate(initial)
 
     def getter(self):
-        return getattr(self, "_%s" % name, initial)
+        return getattr(self, f"_{name}", initial)
 
     def setter(self, value):
-        if value != getattr(self, "_%s" % name, initial):
-            setattr(self, "_%s" % name, value)
+        if value != getattr(self, f"_{name}", initial):
+            setattr(self, f"_{name}", value)
             self.dirty = True
 
     def deleter(self):
         try:
-            delattr(self, "_%s" % name)
+            delattr(self, f"_{name}")
             self.dirty = True
         except AttributeError:
             # Attribute doesn't exist
@@ -177,12 +177,12 @@ def validated_property(name, choices, initial):
             # Check the value attribute is a callable
             if not callable(value_attr):
                 raise ValueError(
-                    'Initial value "%s" `value` attribute is not callable!' % initial
+                    f'Initial value "{initial}" `value` attribute is not callable!'
                 )
 
         except AttributeError:
             raise ValueError(
-                'Initial value "%s" does not have a value attribute!' % initial
+                f'Initial value "{initial}" does not have a value attribute!'
             )
 
     def getter(self):
@@ -192,7 +192,7 @@ def validated_property(name, choices, initial):
         except AttributeError:
             initial_value = initial
 
-        return getattr(self, "_%s" % name, initial_value)
+        return getattr(self, f"_{name}", initial_value)
 
     def setter(self, value):
         try:
@@ -202,13 +202,13 @@ def validated_property(name, choices, initial):
                 f"Invalid value '{value}' for CSS property '{name}'; Valid values are: {choices}"
             )
 
-        if value != getattr(self, "_%s" % name, initial):
-            setattr(self, "_%s" % name, value)
+        if value != getattr(self, f"_{name}", initial):
+            setattr(self, f"_{name}", value)
             self.dirty = True
 
     def deleter(self):
         try:
-            delattr(self, "_%s" % name)
+            delattr(self, f"_{name}")
             self.dirty = True
         except AttributeError:
             # Attribute doesn't exist
@@ -690,7 +690,7 @@ class CSS:
         for name, value in styles.items():
             name = name.replace("-", "_")
             if name not in _CSS_PROPERTIES:
-                raise NameError("Unknown CSS style '%s'" % name)
+                raise NameError(f"Unknown CSS style '{name}'")
 
             if value is None:
                 delattr(self, name)
@@ -703,7 +703,7 @@ class CSS:
         dup._node = node
         for style in _CSS_PROPERTIES:
             try:
-                setattr(dup, style, getattr(self, "_%s" % style))
+                setattr(dup, style, getattr(self, f"_{style}"))
             except AttributeError:
                 pass
         return dup
@@ -735,7 +735,7 @@ class CSS:
         result = []
         for name in _CSS_PROPERTIES:
             try:
-                result.append((name, getattr(self, "_%s" % name)))
+                result.append((name, getattr(self, f"_{name}")))
             except AttributeError:
                 pass
         return result
@@ -743,7 +743,7 @@ class CSS:
     def keys(self):
         result = set()
         for name in _CSS_PROPERTIES:
-            if hasattr(self, "_%s" % name):
+            if hasattr(self, f"_{name}"):
                 result.add(name)
         return result
 
@@ -754,9 +754,7 @@ class CSS:
         non_default = []
         for name in _CSS_PROPERTIES:
             try:
-                non_default.append(
-                    (name.replace("_", "-"), getattr(self, "_%s" % name))
-                )
+                non_default.append((name.replace("_", "-"), getattr(self, f"_{name}")))
             except AttributeError:
                 pass
 

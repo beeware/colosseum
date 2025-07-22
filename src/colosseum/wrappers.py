@@ -162,7 +162,7 @@ class Uri:
         self._url = url
 
     def __repr__(self):
-        return 'url("%s")' % self._url
+        return f'url("{self._url}")'
 
     def __str__(self):
         return repr(self)

@@ -35,7 +35,7 @@ def units(value):
         except ValueError:
             pass
 
-    raise ValueError("Unknown size %s" % value)
+    raise ValueError(f"Unknown size {value}")
 
 
 def color(value):
@@ -108,7 +108,7 @@ def color(value):
             except KeyError:
                 pass
 
-    raise ValueError("Unknown color %s" % value)
+    raise ValueError(f"Unknown color {value}")
 
 
 def pound_sign_color(value):
@@ -148,7 +148,7 @@ def pound_sign_color(value):
             a=int(value[7:9], 16) / 0xFF,
         )
     else:
-        raise ValueError("Unknown color %s" % value)
+        raise ValueError(f"Unknown color {value}")
 
 
 def border_spacing(value):
@@ -176,7 +176,7 @@ def border_spacing(value):
         vertical = units(values[1])
         return BorderSpacing(horizontal, vertical)
 
-    raise ValueError("Unknown border spacing %s" % str(value))
+    raise ValueError(f"Unknown border spacing {str(value)}")
 
 
 def rect(value):
@@ -201,7 +201,7 @@ def rect(value):
             values = [units(val.strip()) for val in values]
             return Rect(*values)
 
-    raise ValueError("Unknown shape %s" % value)
+    raise ValueError(f"Unknown shape {value}")
 
 
 def quotes(value):
@@ -218,7 +218,7 @@ def quotes(value):
         # Flatten list of tuples
         values = [repr(item) for sublist in value for item in sublist]
     else:
-        raise ValueError("Unknown quote %s" % value)
+        raise ValueError(f"Unknown quote {value}")
 
     # Length must be a multiple of 2
     if len(values) > 0 and len(values) % 2 == 0:
@@ -234,10 +234,10 @@ def quotes(value):
                 parsed_values.append((opening, closing))
 
                 if len(opening) == 0 or len(closing) == 0:
-                    raise ValueError("Invalid quotes %s" % value)
+                    raise ValueError(f"Invalid quotes {value}")
 
             except SyntaxError:
-                raise ValueError("Invalid quotes %s" % value)
+                raise ValueError(f"Invalid quotes {value}")
 
         return Quotes(parsed_values)
 
@@ -290,9 +290,9 @@ def outline(value):
         elif isinstance(value, Sequence):
             values = value
         else:
-            raise ValueError("Unknown outline %s " % value)
+            raise ValueError(f"Unknown outline {value} ")
     else:
-        raise ValueError("Unknown outline %s " % value)
+        raise ValueError(f"Unknown outline {value} ")
 
     # We iteratively split by the first left hand space found and try to validate if that part
     # is a valid <outline-style> or <outline-color> or <ourline-width> (which can come in any order)
@@ -358,9 +358,9 @@ def border(value, direction=None):
         elif isinstance(value, Sequence):
             values = value
         else:
-            raise ValueError("Unknown border %s " % value)
+            raise ValueError(f"Unknown border {value} ")
     else:
-        raise ValueError("Unknown border %s " % value)
+        raise ValueError(f"Unknown border {value} ")
 
     # We iteratively split by the first left hand space found and try to validate if that part
     # is a valid <border-width> or <border-style> or <border-color> (which can come in any order)
@@ -434,7 +434,7 @@ def uri(value):
         else:
             return Uri(value)
 
-    raise ValueError("Invalid url %s" % value)
+    raise ValueError(f"Invalid url {value}")
 
 
 ##############################################################################

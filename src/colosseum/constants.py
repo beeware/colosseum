@@ -69,7 +69,7 @@ class OtherProperty:
         try:
             return getattr(context, self._name)
         except AttributeError:
-            raise ValueError('Property "%s" not found!' % self._name)
+            raise ValueError(f'Property "{self._name}" not found!')
 
 
 ######################################################################

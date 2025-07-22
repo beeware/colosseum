@@ -11,11 +11,6 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.12.4
     hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.20.0
-    hooks:
-      - id: pyupgrade
-        args: [--py39-plus]
+      - id: ruff-check
+        args: [ --fix ]
