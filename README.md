@@ -4,15 +4,10 @@ alt="image" />](https://beeware.org/colosseum)
 # Colosseum
 
 [![image](https://img.shields.io/pypi/pyversions/colosseum.svg)](https://pypi.python.org/pypi/colosseum)
-
 [![image](https://img.shields.io/pypi/v/colosseum.svg)](https://pypi.python.org/pypi/colosseum)
-
 [![image](https://img.shields.io/pypi/status/colosseum.svg)](https://pypi.python.org/pypi/colosseum)
-
 [![image](https://img.shields.io/pypi/l/colosseum.svg)](https://github.com/beeware/colosseum/blob/main/LICENSE)
-
 [![Build Status](https://github.com/beeware/colosseum/workflows/CI/badge.svg?branch=main)](https://github.com/beeware/colosseum/actions)
-
 [![Discord server](https://img.shields.io/discord/836455665257021440?label=Discord%20Chat&logo=discord&style=plastic)](https://beeware.org/bee/chat/)
 
 An independent implementation of the CSS layout algorithm. This
