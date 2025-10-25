@@ -38,14 +38,48 @@ classifiers=[
     "Topic :: Software Development :: User Interfaces",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 # Extras used by developers *of* colosseum are pinned to specific versions to
 # ensure environment consistency.
-dev = [
+pre-commit = [
     "pre-commit == 4.3.0",
+]
+
+pytest = [
     "pytest == 8.4.2",
+]
+
+setuptools-scm = [
     "setuptools_scm == 9.2.1",
-    "tox == 4.30.3",
+]
+
+towncrier = [
+    "towncrier==25.8.0",
+]
+
+tox-uv = [
+    "tox-uv == 1.28.0",
+]
+
+dev = [
+    {include-group = "pre-commit"},
+    {include-group = "pytest"},
+    {include-group = "setuptools-scm"},
+    {include-group = "tox-uv"},
+]
+
+tox-py-test-env = [
+    {include-group = "pre-commit"},
+    {include-group = "pytest"},
+    {include-group = "towncrier"},
+]
+
+docs = [
+    "pyenchant == 3.3.0",
+    "sphinx == 8.2.3",
+    "sphinx-autobuild == 2024.10.3",
+    "sphinx-rtd-theme == 3.0.2",
+    "sphinxcontrib-spelling == 8.0.1",
 ]
 
 [project.urls]
