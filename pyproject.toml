@@ -45,12 +45,8 @@ pre-commit = [
     "pre-commit == 4.3.0",
 ]
 
-pytest = [
+test = [
     "pytest == 8.4.2",
-]
-
-setuptools-scm = [
-    "setuptools_scm == 9.2.1",
 ]
 
 towncrier = [
@@ -62,16 +58,11 @@ tox-uv = [
 ]
 
 dev = [
+    "setuptools_scm == 9.2.1",
     {include-group = "pre-commit"},
     {include-group = "pytest"},
-    {include-group = "setuptools-scm"},
+    {include-group = "test"},
     {include-group = "tox-uv"},
-]
-
-tox-py-test-env = [
-    {include-group = "pre-commit"},
-    {include-group = "pytest"},
-    {include-group = "towncrier"},
 ]
 
 docs = [
