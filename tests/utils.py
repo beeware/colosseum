@@ -301,7 +301,9 @@ class LayoutTestCase(TestCase):
         n_actual = len(actual.children)
         n_expected = len(expected_children)
         if n_actual == n_expected:
-            for actual_child, expected_child in zip(actual.children, expected_children):
+            for actual_child, expected_child in zip(
+                actual.children, expected_children, strict=True
+            ):
                 child_problem = self._assertLayout(
                     actual_child, expected_child, output, depth=depth + 1
                 )
