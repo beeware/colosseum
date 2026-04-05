@@ -31,7 +31,7 @@ jobs:
           python-version: "3.x"
 
       - name: Get packages
-        uses: actions/download-artifact@v8.0.0
+        uses: actions/download-artifact@v8.0.1
         with:
           name: ${{ needs.ci.outputs.artifact-name }}
           path: dist
@@ -47,7 +47,7 @@ jobs:
           test $(python -c "from colosseum import __version__; print(__version__)") = $VERSION
 
       - name: Create release
-        uses: ncipollo/release-action@v1.20.0
+        uses: ncipollo/release-action@v1.21.0
         with:
           name: ${{ env.VERSION }}
           draft: true
