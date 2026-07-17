@@ -14,3 +14,7 @@ repos:
       - id: ruff-format
       - id: ruff-check
         args: [ --fix ]
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.27.0
+    hooks:
+      - id: zizmor

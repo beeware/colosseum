@@ -15,16 +15,21 @@ on:
         description: "Name of the uploaded artifact; use for artifact retrieval."
         value: ${{ jobs.package.outputs.artifact-name }}
 
+# Read-only by default. Jobs that need additional permissions declare them
+# explicitly (e.g. package needs id-token/attestations for provenance).
+permissions:
+  contents: read
+
 jobs:
   pre-commit:
     name: Pre-commit checks
-    uses: beeware/.github/.github/workflows/pre-commit-run.yml@main
+    uses: beeware/.github/.github/workflows/pre-commit-run.yml@741cc5a311012ee0ee195938889a337449d01eeb  # main
     with:
       pre-commit-source: "--group pre-commit"
 
   towncrier:
     name: Check towncrier
-    uses: beeware/.github/.github/workflows/towncrier-run.yml@main
+    uses: beeware/.github/.github/workflows/towncrier-run.yml@741cc5a311012ee0ee195938889a337449d01eeb  # main
     with:
       tox-source: "--group tox-uv"
 
@@ -34,7 +39,7 @@ jobs:
       id-token: write
       contents: read
       attestations: write
-    uses: beeware/.github/.github/workflows/python-package-create.yml@main
+    uses: beeware/.github/.github/workflows/python-package-create.yml@741cc5a311012ee0ee195938889a337449d01eeb  # main
     with:
       attest: ${{ inputs.attest-package }}
 
@@ -56,18 +61,19 @@ jobs:
             experimental: true
     steps:
     - name: Checkout
-      uses: actions/checkout@v7.0.0
+      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
       with:
         fetch-depth: 0
+        persist-credentials: false
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v6.3.0
+      uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
       with:
         python-version: ${{ matrix.python-version }}
         allow-prereleases: true
 
     - name: Get Packages
-      uses: actions/download-artifact@v8.0.1
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
       with:
         name: ${{ needs.package.outputs.artifact-name }}
         path: dist
