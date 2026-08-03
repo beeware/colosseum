@@ -3,22 +3,22 @@ import math
 __all__ = [
     "ch",
     "cm",
+    "deg",
     "em",
     "ex",
+    "grad",
     "inch",
     "mm",
     "pc",
     "percent",
     "pt",
     "px",
+    "rad",
+    "turn",
     "vh",
     "vmax",
     "vmin",
     "vw",
-    "deg",
-    "rad",
-    "grad",
-    "turn",
 ]
 
 LU_PER_PIXEL = 64

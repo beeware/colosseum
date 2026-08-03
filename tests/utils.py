@@ -36,7 +36,7 @@ class ExampleNode:
         self.style = style.copy(self) if style else CSS()
 
     def __repr__(self):
-        return f"<{self.name}:{id(self)} {str(self.layout)}>"
+        return f"<{self.name}:{id(self)} {self.layout!s}>"
 
 
 def build_document(data, parent=None):

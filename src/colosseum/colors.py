@@ -25,7 +25,7 @@ class hsl(Color):
     def __init__(self, h, s, l, a=1.0):  # noqa: E741
         self.h = h
         self.s = s
-        self.l = l  # noqa
+        self.l = l
         self.a = a
 
     def __repr__(self):
@@ -44,9 +44,7 @@ class hsl(Color):
             r, g, b = x + m, c + m, m
         elif h < 3.0:
             r, g, b = m, c + m, x + m
-        elif h < 4.0:
-            r, g, b = m, x + m, c + m
-        elif h < 5.0:
+        elif h < 4.0 or h < 5.0:
             r, g, b = m, x + m, c + m
         else:
             r, g, b = c + m, m, x + m

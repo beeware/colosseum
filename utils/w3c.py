@@ -192,7 +192,7 @@ class W3CTestExtractor(toga.App):
         filenames = [
             os.path.join(self.root, "css", self.path, f)
             for f in os.listdir(os.path.join(self.root, "css", self.path))
-            if f.endswith(".xht") or f.endswith(".htm") or f.endswith(".html")
+            if f.endswith((".xht", ".htm", ".html"))
         ]
 
         loader = Loader.alloc().init()
