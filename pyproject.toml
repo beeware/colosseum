@@ -110,6 +110,15 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "docs/conf.py" = ["F401"]
+# Ignores needed to pass the Ruff 0.16 update.
+"src/colosseum/declaration.py" = ["TRY004"]
+"src/colosseum/engine.py" = ["TRY002"]
+"src/colosseum/parser.py" = ["TRY004"]
+"src/colosseum/units.py" = ["RUF012"]
+"src/colosseum/wrappers.py" = ["BLE001", "PLC0206", "RUF012"]
+"tests/web_platform/css_flexbox_1/*.py" = ["N999"]
+"utils/w3c.py" = ["EXE001", "SIM115"]
+
 [tool.setuptools_scm]
 # To enable SCM versioning, we need an empty tool configuration for setuptools_scm
 
