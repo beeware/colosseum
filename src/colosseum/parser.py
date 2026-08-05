@@ -176,7 +176,7 @@ def border_spacing(value):
         vertical = units(values[1])
         return BorderSpacing(horizontal, vertical)
 
-    raise ValueError(f"Unknown border spacing {str(value)}")
+    raise ValueError(f"Unknown border spacing {value!s}")
 
 
 def rect(value):
@@ -249,7 +249,7 @@ def quotes(value):
 ##############################################################################
 def _parse_outline_property_part(value, outline_dict):
     """Parse outline shorthand property part for known properties."""
-    from .constants import (  # noqa
+    from .constants import (
         OUTLINE_COLOR_CHOICES,
         OUTLINE_STYLE_CHOICES,
         OUTLINE_WIDTH_CHOICES,
@@ -315,7 +315,7 @@ def outline(value):
 ##############################################################################
 def _parse_border_property_part(value, border_dict, direction=None):
     """Parse border shorthand property part for known properties."""
-    from .constants import (  # noqa
+    from .constants import (
         BORDER_COLOR_CHOICES,
         BORDER_STYLE_CHOICES,
         BORDER_WIDTH_CHOICES,

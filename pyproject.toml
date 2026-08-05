@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "setuptools==83.0.0",
-    "setuptools_scm==10.2.0",
+    "setuptools_scm==10.2.1",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -42,7 +42,7 @@ classifiers=[
 # Extras used by developers *of* colosseum are pinned to specific versions to
 # ensure environment consistency.
 pre-commit = [
-    "pre-commit == 4.6.0",
+    "pre-commit == 4.6.1",
 ]
 
 test = [
@@ -54,11 +54,11 @@ towncrier = [
 ]
 
 tox-uv = [
-    "tox-uv == 1.35.2",
+    "tox-uv == 1.36.0",
 ]
 
 dev = [
-    "setuptools_scm == 10.0.5",
+    "setuptools_scm == 10.2.1",
     {include-group = "pre-commit"},
     {include-group = "test"},
     {include-group = "tox-uv"},
@@ -110,6 +110,15 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "docs/conf.py" = ["F401"]
+# Ignores needed to pass the Ruff 0.16 update.
+"src/colosseum/declaration.py" = ["TRY004"]
+"src/colosseum/engine.py" = ["TRY002"]
+"src/colosseum/parser.py" = ["TRY004"]
+"src/colosseum/units.py" = ["RUF012"]
+"src/colosseum/wrappers.py" = ["BLE001", "PLC0206", "RUF012"]
+"tests/web_platform/css_flexbox_1/*.py" = ["N999"]
+"utils/w3c.py" = ["EXE001", "SIM115"]
+
 [tool.setuptools_scm]
 # To enable SCM versioning, we need an empty tool configuration for setuptools_scm
 

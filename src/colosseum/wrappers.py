@@ -16,9 +16,9 @@ class BorderSpacing:
 
     def __repr__(self):
         if self._vertical is None:
-            string = f"BorderSpacing({repr(self._horizontal)})"
+            string = f"BorderSpacing({self._horizontal!r})"
         else:
-            string = f"BorderSpacing({repr(self._horizontal)}, {repr(self._vertical)})"
+            string = f"BorderSpacing({self._horizontal!r}, {self._vertical!r})"
         return string
 
     def __str__(self):
@@ -106,7 +106,7 @@ class Shorthand:
         items = []
         properties = self.to_dict()
         for key, value in properties.items():
-            items.append(f"{key}={repr(value)}")
+            items.append(f"{key}={value!r}")
 
         class_name = self.__class__.__name__
         string = "{class_name}({items})".format(
@@ -116,7 +116,7 @@ class Shorthand:
 
     def __str__(self):
         parts = []
-        for key, value in self.to_dict().items():
+        for value in self.to_dict().values():
             parts.append(str(value))
 
         return " ".join(parts)
