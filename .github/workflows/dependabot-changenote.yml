@@ -5,11 +5,15 @@ on:
     branches:
       - 'dependabot/**'
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   changenote:
     name: Dependabot Change Note
-    permissions:
-      contents: read
     uses: beeware/.github/.github/workflows/dependabot-changenote.yml@main
     secrets:
       BRUTUS_PAT_TOKEN: ${{ secrets.BRUTUS_PAT_TOKEN }}
+    with:
+      changenote-format: "md"
